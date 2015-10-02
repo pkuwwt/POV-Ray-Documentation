@@ -1,3 +1,5 @@
 # POV-Ray-Documentation
-unofficial POV-Ray Documentation forked from [[www.povray.com/documentation]]
+Unofficial POV-Ray Documentation forked from [[www.povray.com/documentation]]
+
+Please visit [[http://pkuwwt.github.com/POV-Ray-Documentation/]].
 
