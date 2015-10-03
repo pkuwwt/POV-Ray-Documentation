@@ -1,4 +1,4 @@
-amera {
+camera {
    location <2,1,0>
    up       y
    right    x
