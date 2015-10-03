@@ -1,0 +1,88 @@
+<html>
+<head>
+<link rel=StyleSheet href="../pdbstyle.css" type="text/css" media=all>
+<title>Field of view and focal length</title>
+</head>
+<body bgcolor="#ffffff">
+<!-- Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40175012-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script language="JavaScript">
+<!--
+   if (self.location.href != top.location.href) {
+      top.location.href = self.location.href;
+   }
+-->
+</script>
+
+
+
+<center><table width=800><tr><td>
+
+<center>
+<h1>Field of view and focal length</h1>
+Written by <a href="http://paulbourke.net/miscellaneous/">Paul Bourke</a><br>
+April 2003<p>
+See also: <a href="../aperture/">Changing to/from vertical/horizontal aperture</a>
+</center>
+<p><br><p>
+
+<p align="justify">
+Camera and photography people tend to talk about lens characteristics in terms of
+"focal distance" while those involved in synthetic image generator (such as raytracing)
+tend to think in terms of field of view for a pinhole camera model, 
+or aperture (different meaning to camera
+terminology). The following discusses (an idealised at least) way to estimate the field of
+from the focal distance.
+view
+</p>
+
+<p align="justify">
+The focal length of a lens is an inherent property of the lens, it is the distance from the
+center of the lens to the point at which objects at infinity focus. 
+Note: this is referred to as a rectilinear lens.
+</p>
+
+<center><img src="diagram.gif" width=500 height=298></center><p>
+
+<p align="justify">
+That there are three possible ways to measure field of view: horizontally, vertically,
+or diagonally. The horizontal field of view will be used here, the other two can be
+derived from this.
+From the figure above, simple geometry gives the horizontal field of view 
+</p>
+
+<center>
+horizontal field of view = 2 atan(0.5 width / focallength) 
+</center>
+
+<p align="justify">
+where "width" is the horizontal width of the sensor (projection plane). So for example, 
+for a 35mm film (frame is 24mm x 36mm), and a 20mm (focal length) lens, the horizontal
+aperture would be almost 84 degrees (vertical aperture of 62 degrees). The above formula
+can similarly be used to calculate the vertical aperture using the vertical height of the
+film area, namely:
+</p>
+
+<center>
+vertical field of view = 2 atan(0.5 height / focallength)
+</center>
+
+<p align="justify">
+So for example, for 120mm medium format film (height 56mm) and the same 20mm focal length
+lens as above, the vertical field of view is about 109 degrees.
+</p>
+
+</td></tr></table></center>
+</body>
+</html>
+

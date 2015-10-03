@@ -1,0 +1,100 @@
+<html>
+<head>
+<link rel=StyleSheet href="../pdbstyle.css" type="text/css" media=all>
+<title>Aperture changing</title>
+</head>
+<body bgcolor="#ffffff">
+<!-- Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40175012-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script language="JavaScript">
+<!--
+   if (self.location.href != top.location.href) {
+      top.location.href = self.location.href;
+   }
+-->
+</script>
+
+
+
+<center><table width=800><tr><td>
+
+<center>
+<h1>Changing to/from vertical/horizontal aperture</h1>
+Written by <a href="http://paulbourke.net/miscellaneous/">Paul Bourke</a><br>
+March 2000<p>
+See also: <a href="../lens/">Field of view and focal length</a>
+</center>
+<p><br><p>
+
+<p align="justify">
+PovRay measures its aperture in the horizontal direction, that is,
+a camera aperture of 60 is the horizontal field of view. Some other
+packages (for example OpenGL gluPerspective()) 
+measure their aperture vertically.
+When converting camera settings from these other applications one
+needs to compute the corresponding horizontal aperture if one wants the
+views to match.
+</p>
+
+<p align="justify">
+It isn't difficult, here's the solution. By calculating the distance from
+the camera to the center of the screen one gets the following:
+</p>
+
+<center>
+height / tan(vaperture/2) = width / tan(haperture/2)
+</center>
+
+<p>Solving this gives<p>
+
+<center>
+haperture = 2 atan[ width tan(vaperture/2) / height]
+</center>
+<br>Or going the other way<br>
+<center>
+vaperture = 2 atan[ height tan(haperture/2) / width]
+</center>
+<p>
+
+<center>
+<img src="aperture.gif" width=371 height=290>
+</center>
+<p>
+
+<p align="justify">
+Where width and height are the dimensions of the screen.
+For example, a camera specification to match an OpenGL camera aperture
+of 60 degrees might be:
+</p>
+
+<pre>
+camera {
+   location <200,3600,4000>
+   up y
+   right -width*x/height
+   angle 60*1.25293
+   sky <0,1,0>
+   look_at <200+10000*cos(-clock),3600+2500,4000+10000*sin(-clock)>
+}
+</pre>
+
+<p align="justify">
+Note that the word "aperture", while in common usage in the computer graphics
+industry, has a very different meaning in the photographic/camera industry. A
+much better term is "field of view".
+</p>
+
+</td></tr></table></center>
+</body>
+</html>
+
