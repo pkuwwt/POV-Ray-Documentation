@@ -1,0 +1,524 @@
+<html>
+<head>
+<link rel=StyleSheet href="../pdbstyle.css" type="text/css" media=all>
+<title>CubeRender technique</title>
+</head>
+<body bgcolor="#ffffff">
+<!-- Google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40175012-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script language="JavaScript">
+<!--
+   if (self.location.href != top.location.href) {
+      top.location.href = self.location.href;
+   }
+-->
+</script>
+
+
+
+<center><table width=800><tr><td>
+
+<center>
+<h1>CubeRender</h1>
+<H3>Fast 360 degree 3D model exploration technique using 6 precomputed views
+mapped onto the interior faces of a cube</H3>
+Written by <a href="http://paulbourke.net/miscellaneous/">Paul Bourke</a><b3>
+January 1991<p>
+<a href="imagesets/">Image sets and other resources</a>
+<p>
+<a href="#opengl">OpenGL</a> -- 
+<a href="#radiance">Radiance</a> --
+<a href="#geomview">GeomView</a> --
+<a href="#macintosh">Macintosh</a> --
+<a href="#vrml">VRML</a> --
+<a href="#povray">PovRay</a>
+</center>
+
+<p><br><p>
+
+<h3>Introduction</h3>
+
+<p align="justify">
+This report discusses an interesting technique that makes it possible to
+interactively view a high quality rendered environment from a single position
+using only 6 precomputed renderings. The technique has great potential for
+Architectural presentation of rendered scenes because it combines the ability
+to have fast (interactive) user control over the view direction while at the
+same time presenting very high quality renderings.
+</p>
+
+<h3>The problem</h3>
+
+<p align="justify">
+The realism now possible with many rendering packages can be very attractive as
+a presentation tool. The considerable time required (often hours) to perform
+such renderings is not a concern because they are performed well ahead of the
+presentation. At the other end of the scale is the user controlled walk through
+experience where the user may choose to explore the environment at their
+leisure. In order to achieve 15 to 20 frames per second, only very simple
+models with crude rendering techniques can be attempted. There simply isn't
+computer hardware fast enough to perform high quality rendering of
+geometrically complicated models. The question then is what solutions exists
+between these two extremes? How can one present a 3D environment so that the
+user can explore it interactively and at the same time view it with a 
+high degree of realism.
+</p>
+
+<h3>A previous attempt</h3>
+
+<p align="justify">
+One approach, which was the topic of a previous report by myself, is to
+precompute many views at many positions within the 3D model. In the example I
+demonstrated, 8 views (45 degree steps) were created for each view position. The
+view positions were all at an average human 
+eye height and lay on a regular grid aligned to fit
+on the interior of the environment, a room in the example. The correct view was
+determined from the database of precomputed views as the user moved from node
+to node and turned between view directions. In this solution both the movement
+between nodes and the changes in view direction at a node are discrete. Because
+of the potentially large number of images necessary both these discrete steps
+were quite large, 45 degrees for turning and 2 meters for movement. Even this
+resulted in weeks of rendering time as well as hundreds of megabytes of disk
+storage.
+</p>
+
+<h3>This solution</h3>
+
+<p align="justify">
+The approach taken here is to separate the exploration process into two
+activities, that of moving from one position to another in the scene and that
+of turning ones head while remaining at rest. Since an acceptable way of
+exploring an Architectural environment is to move to a position and then look
+around, this solution slows down the rate at which movement between positions
+can be achieved but it greatly speeds up the way the viewer can look about from
+a particular position. It is expected that, in implementations of this
+technique, while the movement between positions remains discrete, the changes
+in view direction can become continuous and unconstrained.
+</p>
+
+<p align="justify">
+Consider a viewing position within a 3D environment and make 6 renderings from
+this position. These 6 renderings are taken along each of the coordinate axes
+(positive and negative), they are each perspective views with a 90 degree
+camera aperture. Another way of imagining these 6 views is as the projection of
+the scene onto each of the faces of a unit cube centered at the view
+position.
+</p>
+
+<p align="justify">
+Once these 6 images have been generated, forget about the original model and
+create a new model which consists of only a unit cube centered at the origin
+with each of the 6 images applied as a texture (image map) to each internal
+face of the cube. The interesting part is that if the inside of the cube is
+viewed from the origin the seams of the cube cannot be seen (given that the
+cube is rendered with ambient light only). Indeed, as the view direction is
+changed what one sees is the same as what one would see with the same view
+direction in the original model.
+</p>
+
+<p align="justify">
+The advantages are that the "rendering" of the cube with textures can be done
+very quickly. Very little is needed in the rendering pipeline since there are
+no light sources, only ambient light and no reflected rays need to be computed.
+In fact many graphical engines have fast inbuilt texture mapping routines ideal
+for exactly this sort of operation.
+</p>
+
+<a name="example1"><h3>Example 1</h3></a>
+
+<p align="justify">
+As an example, the following shows the 6 precomputed views from a computer 
+based 3D model created by Matiu Carr.
+</p>
+
+<p><center><img src="cubeRender1.gif" width="425" height="319">
+</center><br>Figure 1<p>
+
+<p align="justify">
+The views are arranged as if the cube they are applied to is folded out. An
+alternative method of folding out the cube is shown in figure 2 where the top
+and bottom faces are cut into quarters.
+</p>
+
+<p><center><img src="cubeRender2.gif" width="425" height="213">
+</center><br>Figure 2<p>
+
+<p align="justify">
+As can be seen there are no "gaps" although there are discontinuities at the
+seams. With some imagination you might believe that the discontinuities go away
+when the cube is folded back together. Two views from the interior of this cube
+are shown below on the left along with the same view on the right but this time
+with the edges of the cube shown.
+<p>
+
+<p><center><img src="cubeRender3.gif" width="425" height="212">
+</center><br>Figure 3<p>
+
+<center><img src="cubeRender4.gif" width="425" height="213">
+</center><br>Figure 4<p>
+
+<p align="justify">
+Looking at the images on the left, it is hard to imagine that you are viewing
+only the walls of a cube with murals painted on them. It is quite easy to
+imagine the painted walls when the edges of the cube are visible as in the
+images on the right.
+</p>
+
+<p align="justify">
+Here is a <a href="spin.mpg">movie</a> generated using the approach 
+described above. (<a href="imagesets/01_tiff/">Raw images</a>)
+</p>
+
+<a name="example2"><h3>Example 2</h3></a>
+
+Model by Bill Rattenbury. (<a href="imagesets/02_tiff/">Raw images</a>)
+<p>
+
+<p><center><img src="cuberender6.jpeg" width="600" height="450"></center><br>
+Figure 5 - The folded out cube.<p>
+
+<p><center><img src="cuberender7.jpeg" width="400" height="400"></center><br>
+Figure 6 - The views on the left have the edges shown.<p>
+
+<p><center><img src="cuberender8.jpeg" width="500" height="499"></center><br>
+Figure 7 - Here is the cube viewed from the outside.<p>
+
+<p><br><p>
+
+<a name="geomview"><h3>Geomview Viewer</h3></a>
+
+<p align="justify">
+If you have Geomview and texture capabilities then the following 
+<a href="imagesets/oogl/">6 OOGL files</a> will allow experimentation.
+Be sure to locate the camera at the origin [W]reset and just use
+the [o]rbit tool.
+</p>
+
+<p><br><p>
+
+<a name="macintosh"><h3>Macintosh viewer</h3></a>
+
+<p align="justify">
+A Macintosh viewer was written for evaluation purposes. 
+It displayed the view from
+any user chosen view direction as well as giving the user control over the
+camera aperture and window size. The camera view direction can be entered
+directly as a vector or the left-right and up-down arrow keys will rotate the
+view direction in the horizontal or vertical plane respectively given an user
+specified angle increment.
+</p>
+
+<p align="justify">
+The viewer can also be used to view user generated environments given that the
+user can create the 6 precomputed views correctly. Examples of six precomputed
+view images are supplied with the Macintosh viewer as PICT files. The
+orientation of the 6 views with respect to each other must match the example in
+figure 1, this orientation is shown explicitly in the following cube 
+mapping diagram.
+</p>
+
+<p><center><img src="cubeRender5.gif" width="425" height="319"></center><br>
+Figure 8 (<a href="imagesets/04_tiff">Raw images</a>)<p>
+
+<p align="justify">
+The Macintosh viewer had the additional ability to show where the edges of the
+cube are, this is nice for demonstration purposes and was employed to
+generate the images shown in this document.
+</p>
+
+<p><br><p>
+
+<a name="povray"><h3>POVRAY Example</h3></a>
+<a href="imagesets/03_tiff">Raw images</a>,
+<a href="povray1.pov">POVRAY scene</a>,
+<a href="povray1.ini">POVRAY ini</a><p>
+
+<p align="justify">
+The following example was created by 
+<a href="http://www.strout.net/">Joseph Strout</a> and demonstrates
+how the 6 views might be created using POVRAY.
+</p>
+<center><img src="cuberender9.gif" width="700" height="525">
+</center><br>Figure 9<p>
+
+<p><br><p>
+
+<a name="radiance"><h3>Radiance Example</h3></a>
+
+<p align="justify">
+If you are using Radiance then the next two appendices contain the code
+necessary to create the appropriate texture mapped cube from a position within
+your favorite Radiance model. They are also provided with this document as two
+scripts MAKE6 and MAP6. Your use of these for a Radiance model called
+"mymodel.rad" looking from position (x,y,z) might be something like this, of
+course you will need to substitute your favourite or necessary options for the
+first two steps.
+</p>
+<pre>
+	oconv mymodel.rad &gt; mymodel.oct
+	make6 x y z mymodel
+	map6 x y z | oconv - &gt; x_y_z.oct
+	rview	-av 1 1 1 -ab 0 -ps 1 -dr 0 -lr 0 \
+		-vh 90 -vv 90 -vp 0 0 0 x_y_z.oct
+</pre>
+
+<p align="justify">
+The following are the Radiance rpict calls required to create the 6 views from
+one view position. The important thing here are the up vectors for the top and
+bottom views so that the mapping onto the cube works correctly later on.
+</p>
+
+<pre>
+#
+# Call this with four parameters
+# The first three are the camera position coordinates
+# The last is the oct file name (.oct assumed)
+#
+rpict -vp $1 $2 $3 -vd 1 0 0 -vh 90 -vv 90 \
+      -av .1 .1 .1 \
+      -x 300 -y 300 \
+      $4.oct &gt; $1_$2_$3_p+100.pic
+rpict -vp $1 $2 $3 -vd -1 0 0 -vh 90 -vv 90 \
+      -av .1 .1 .1 \
+      -x 300 -y 300 \
+      $4.oct &gt; $1_$2_$3_p-100.pic
+rpict -vp $1 $2 $3 -vd 0 1 0 -vh 90 -vv 90 \
+      -av .1 .1 .1 \
+      -x 300 -y 300 \
+      $4.oct &gt; $1_$2_$3_p0+10.pic
+rpict -vp $1 $2 $3 -vd 0 -1 0 -vh 90 -vv 90 \
+      -av .1 .1 .1 \
+      -x 300 -y 300 \
+      $4.oct &gt; $1_$2_$3_p0-10.pic
+rpict -vp $1 $2 $3 -vd 0 0 1 -vu 0 1 0 -vh 90 -vv 90 \
+      -av .1 .1 .1 \
+      -x 300 -y 300 \
+      $4.oct &gt; $1_$2_$3_p00+1.pic
+rpict -vp $1 $2 $3 -vd 0 0 -1 -vu 0 1 0 -vh 90 -vv 90 \
+      -av .1 .1 .1 \
+      -x 300 -y 300 \
+      $4.oct &gt; $1_$2_$3_p00-1.pic
+</pre>
+
+<p align="justify">
+The following is the Radiance model of a cube with 6 views mapped on as
+colourpicts. Replace $1, $2, and $3 with the coordinates of your view position.
+It is this model which is rendered using rview or rpict, remembering that the
+view position should be (0,0,0) and the ambient light level needs to be high
+since there are no light sources.
+</p>
+
+<pre>
+void plastic flat
+0 0
+5 1 1 1 0 0
+flat colorpict top
+13 red green blue $1_$2_$3_p00+1.pic picture.cal pic_u pic_v 
+   -t -.5 -.5 0 -ry 180
+0 0
+flat colorpict bottom
+11 red green blue $1_$2_$3_p00-1.pic picture.cal pic_u pic_v 
+   -t -.5 -.5 0
+0 0
+flat colorpict left
+15 red green blue $1_$2_$3_p-100.pic picture.cal pic_u pic_v 
+   -t -.5 -.5 0 -rz 90 -ry 90
+0 0
+flat colorpict right
+15 red green blue $1_$2_$3_p+100.pic picture.cal pic_u pic_v 
+   -t -.5 -.5 0 -rz -90 -ry -90
+0 0
+flat colorpict back
+13 red green blue $1_$2_$3_p0+10.pic picture.cal pic_u pic_v 
+   -t -.5 -.5 0 -rx 90
+0 0
+flat colorpict front
+15 red green blue $1_$2_$3_p0-10.pic picture.cal pic_u pic_v 
+   -t -.5 -.5 0 -rz 180 -rx -90
+0 0
+top polygon p1
+0 0 12         -0.5               -0.5                0.5
+               -0.5                0.5                0.5
+                0.5                0.5                0.5
+                0.5               -0.5                0.5
+bottom polygon p2
+0 0 12         -0.5               -0.5               -0.5
+                0.5               -0.5               -0.5
+                0.5                0.5               -0.5
+               -0.5                0.5               -0.5
+back polygon p3
+0 0 12          0.5                0.5               -0.5
+                0.5                0.5                0.5
+               -0.5                0.5                0.5
+               -0.5                0.5               -0.5
+front polygon p4
+0 0 12          0.5               -0.5               -0.5
+               -0.5               -0.5               -0.5
+               -0.5               -0.5                0.5
+                0.5               -0.5                0.5
+left polygon p5
+0 0 12         -0.5               -0.5               -0.5
+               -0.5                0.5               -0.5
+               -0.5                0.5                0.5
+               -0.5               -0.5                0.5
+right polygon p6
+0 0 12          0.5               -0.5               -0.5
+                0.5               -0.5                0.5
+                0.5                0.5                0.5
+                0.5                0.5               -0.5</pre>
+
+<p><br><p>
+
+<a name="vrml"><h3>VRML Example</h3></a>
+
+<p align="justify">
+A <a href="cuberender.wrl">VRML example</a>, 
+a <a href="cuberender_wrl.txt">text version</a>,
+the <a href="imagesets/01_jpeg/">raw images</a>.
+</p>
+
+For this to function properly your VRML player must support the following
+<br>
+<ul>
+<li>Allow view direction rotation without moving the camera position
+from the origin.
+<li>The surfaces need to totally ignore light position by either
+supporting ambient light only, or by honouring the ambientColor settings
+for the surfaces of the cube.
+<li>Any camera based "headlight" needs to be turned off.
+</ul>
+
+<p><center><img src="vrmldemo.jpg" width="600" height="742"></center><p>
+
+<p><br><p>
+
+<h3><a name="opengl">OpenGL Example</a></h3>
+
+<p align="justify">
+OpenGL is ideally suited to employing this technique as long as your
+OpenGL implementation has good texture mapping support. It is simply
+necessary to create the 6 faces of a cube specifying the texture coordinates
+and map the six images onto the faces appropriately.
+</p>
+
+<p align="justify">
+The source code to a simple OpenGL program that implements this technique
+along with 6 example textures is <a href="imagesets/opengl/">provided here</a>.
+To compile it you will need to have the GL libraries as well as the GLUT
+libraries correctly installed.
+</p>
+
+<p align="justify">
+The "usage" for the viewer supplied is as follows, note the construction
+line toggle which is nice for showing people where the edges of the cube
+actually are.
+</p>
+
+<pre>
+Usage:    cuberender -x nnn -y nnn [-h] [-f] [-c]
+      -x nnn   width of the images, required
+      -y nnn   height of the images, required
+          -h   this text
+          -f   full screen
+          -c   show construction lines
+Key Strokes
+  arrow keys   rotate left/right/up/down
+  left mouse   rotate left/right/up/down
+middle mouse   roll
+ right mouse   menus
+         &lt;,&gt;   decrease, increase aperture
+           c   toggle construction lines
+           q   quit
+</pre>
+
+<p align="justify">
+The example images provided <a href="imagesets/opengl/">here</a>
+are 512 square, using a 4D51T card in a Dec Alpha this could be rotated at
+around 10 frames per second.
+</p>
+
+<h3>Antialising</h3>
+The code provided above uses GL_NEAREST in the calls<br>
+&nbsp;&nbsp;&nbsp;
+	glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);<br>
+&nbsp;&nbsp;&nbsp;
+	glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);<br>
+<p align="justify">
+This means that the textures are sampled at their centers and this can
+lead to aliasing artifacts. One way around this is to use GL_LINEAR
+instead in which case a 2x2 average is formed, however this leads to
+the need for special handling at the edges. OpenGL provides support for
+this but it means that you need to create textures that have a 1 pixel
+border where the border has the appropriate pixels from the adjacent
+faces.</p>
+
+So the calls would change as follows<br>
+&nbsp;&nbsp;&nbsp;
+glTexImage2D(GL_TEXTURE_2D,0,4,w+2,h+2,0,GL_RGBA,GL_UNSIGNED_BYTE,bottom);<br>
+becomes<br>
+&nbsp;&nbsp;&nbsp;
+glTexImage2D(GL_TEXTURE_2D,0,4,w+2,h+2,1,GL_RGBA,GL_UNSIGNED_BYTE,bottom);<br>
+and<br>
+&nbsp;&nbsp;&nbsp;
+glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);<br>
+&nbsp;&nbsp;&nbsp;
+glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);<br>
+become<br>
+&nbsp;&nbsp;&nbsp;
+glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);<br>
+&nbsp;&nbsp;&nbsp;
+glTexParameterf(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+<p>
+
+<h3>Comparison between CubeView and Apple QuickTime VR</h3>
+
+The characteristics are ordered in three sections, those which are clearly
+in CubeViews favour, those for which there is little difference, and finally
+those in QuickTimeVR's favour. Most of the items in QuickTime VR's favour 
+arise simply from a lack of work being done to refine this technique, they
+are not inherent to the technique itself.
+
+<pre>
+Attribute                               CubeView         QuickTime VR
+---------------------------------------------------------------------------
+Full 360 vertical viewing               Yes              No
+Image quality                           Excellent        Lossy compression
+Ease of scene generation                Very easy        More difficult
+Multiplatform scene generation          Yes              Maybe one day
+Distortion                              None             Some
+Full camera attribute control           Yes              Not yet
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Full 360 horizontal viewing             Yes              Yes
+Based on precomputed information        Yes              Yes
+Suitable for computer generated scenes  Yes              Yes
+File sizes                              Similar          Similar
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Multiplatform playback support          Could be         Yes
+Fast playback (interactive)             Needs work       Yes
+Multiple nodes                          Needs work       Yes
+Object nodes and views                  Needs work       Yes
+Suitable for photographic scenes        Difficult        Yes
+---------------------------------------------------------------------------
+</pre>
+<p>
+
+<h3>References</h3>
+<p>
+Greene, N. (1986) <br>
+Environment Mapping and Other Applications of World Projections. <br>
+IEEE Computer Graphics and Applications, November 1986 (p. 21-29).
+<p>
+
+</td></tr></table></center>
+</body>
+</html>

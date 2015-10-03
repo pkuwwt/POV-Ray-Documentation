@@ -1,0 +1,282 @@
+#VRML V1.0 ascii
+
+Separator {
+	Info {
+		string "My testbed for VRML primitives"
+	}
+
+	# Point light source
+	PointLight {
+		on TRUE
+		intensity 2
+		color 1 1 1
+		location 0 0 0
+	}
+	
+	# Camera attributes
+	PerspectiveCamera {
+		position 0 0 0
+		orientation 1 0 0 1.57079632
+		focalDistance 1
+		heightAngle 1.7
+	}
+
+	# Front face
+   Separator {
+      ShapeHints {
+         vertexOrdering COUNTERCLOCKWISE
+         faceType CONVEX
+      }
+      Material {
+         ambientColor [0.2 0.2 0.2]
+         diffuseColor [] 
+         specularColor []
+      }
+      MaterialBinding {
+         value PER_FACE
+      }
+      Coordinate3 {
+         point [ 
+				-1  1 -1,
+				 1  1 -1,
+				 1  1  1,
+				-1  1  1,
+         ]
+      }
+      Texture2 {
+         filename "front.jpeg"
+         wrapS REPEAT
+         wrapT REPEAT
+      }
+      Texture2Transform {
+         translation 0 0
+         rotation 0
+         scaleFactor 1 1
+         center 0 0
+      }
+      IndexedFaceSet {
+         coordIndex [0, 1, 2, 3, -1]
+      }
+   }
+   
+	# Back face
+   Separator {
+      ShapeHints {
+         vertexOrdering COUNTERCLOCKWISE
+         faceType CONVEX
+      }
+      Material {
+         ambientColor [0.2 0.2 0.2]
+         diffuseColor [] 
+         specularColor []
+      }
+      MaterialBinding {
+         value PER_FACE
+      }
+      Coordinate3 {
+         point [ 
+				-1  -1 -1,
+				 1  -1 -1,
+				 1  -1  1,
+				-1  -1  1,
+         ]
+      }
+      Texture2 {
+         filename "back.jpeg"
+         wrapS REPEAT
+         wrapT REPEAT
+      }
+      Texture2Transform {
+         translation 0 0
+         rotation 0
+         scaleFactor 1 1
+         center 0 0
+      }
+      IndexedFaceSet {
+         coordIndex [0, 1, 2, 3, -1]
+      }
+   }
+
+	# Left face
+   Separator {
+      ShapeHints {
+         vertexOrdering COUNTERCLOCKWISE
+         faceType CONVEX
+      }
+      Material {
+         ambientColor [0.2 0.2 0.2]
+         diffuseColor [] 
+         specularColor []
+      }
+      MaterialBinding {
+         value PER_FACE
+      }
+      Coordinate3 {
+         point [ 
+				-1 -1 -1,
+				-1  1 -1,
+				-1  1  1,
+				-1 -1  1,
+         ]
+      }
+      Texture2 {
+         filename "left.jpeg"
+         wrapS REPEAT
+         wrapT REPEAT
+      }
+      Texture2Transform {
+         translation 0 0
+         rotation 0
+         scaleFactor 1 1
+         center 0 0
+      }
+      IndexedFaceSet {
+         coordIndex [0, 1, 2, 3, -1]
+      }
+   }
+
+	# Right face
+   Separator {
+      ShapeHints {
+         vertexOrdering COUNTERCLOCKWISE
+         faceType CONVEX
+      }
+      Material {
+         ambientColor [0.2 0.2 0.2]
+         diffuseColor [] 
+         specularColor []
+      }
+      MaterialBinding {
+         value PER_FACE
+      }
+      Coordinate3 {
+         point [ 
+				1 -1 -1,
+				1  1 -1,
+				1  1  1,
+				1 -1  1,
+         ]
+      }
+      Texture2 {
+         filename "right.jpeg"
+         wrapS REPEAT
+         wrapT REPEAT
+      }
+      Texture2Transform {
+         translation 0 0
+         rotation 0
+         scaleFactor 1 1
+         center 0 0
+      }
+      IndexedFaceSet {
+         coordIndex [0, 1, 2, 3, -1]
+      }
+   }
+
+	# Bottom face
+   Separator {
+      ShapeHints {
+         vertexOrdering COUNTERCLOCKWISE
+         faceType CONVEX
+      }
+      Material {
+         ambientColor [0.2 0.2 0.2]
+         diffuseColor [] 
+         specularColor []
+      }
+      MaterialBinding {
+         value PER_FACE
+      }
+      Coordinate3 {
+         point [ 
+				-1 -1 -1,
+				 1 -1 -1,
+				 1  1 -1,
+				-1  1 -1,
+         ]
+      }
+      Texture2 {
+         filename "bottom.jpeg"
+         wrapS REPEAT
+         wrapT REPEAT
+      }
+      Texture2Transform {
+         translation 0 0
+         rotation 0
+         scaleFactor 1 1
+         center 0 0
+      }
+      IndexedFaceSet {
+         coordIndex [0, 1, 2, 3, -1]
+      }
+   }
+
+	# Top face
+   Separator {
+      ShapeHints {
+         vertexOrdering COUNTERCLOCKWISE
+         faceType CONVEX
+      }
+      Material {
+         ambientColor [0.2 0.2 0.2]
+         diffuseColor [] 
+         specularColor []
+      }
+      MaterialBinding {
+         value PER_FACE
+      }
+      Coordinate3 {
+         point [ 
+				-1 -1 1,
+				 1 -1 1,
+				 1  1 1,
+				-1  1 1,
+         ]
+      }
+      Texture2 {
+         filename "top.jpeg"
+         wrapS REPEAT
+         wrapT REPEAT
+      }
+      Texture2Transform {
+         translation 0 0
+         rotation 0
+         scaleFactor 1 1
+         center 0 0
+      }
+      IndexedFaceSet {
+         coordIndex [0, 1, 2, 3, -1]
+      }
+   }
+
+	# IndexedLineSet
+#	Separator {
+#		Material {
+#			emissiveColor [.5 .5 .5]
+#		}
+#		Coordinate3 {
+#			point	[ 
+#				-1.05 -1.05 -1.05,
+#				 1.05 -1.05 -1.05,
+#				 1.05  1.05 -1.05,
+#				-1.05  1.05 -1.05,
+#				-1.05  1.05  1.05,
+#				 1.05  1.05  1.05,
+#				 1.05 -1.05  1.05,
+#				-1.05 -1.05  1.05,
+#			]
+#		}
+#		MaterialBinding {
+#			value OVERALL
+#		}
+#		IndexedLineSet {
+#			coordIndex	[ 
+#				0, 1,  2, 3, 4, 5, 6, 7, 0, -1,
+#				4, 7, -1,
+#				0, 3, -1,
+#				1, 6, -1,
+#				2, 5, -1,
+#			]
+#		}
+#	}
+}

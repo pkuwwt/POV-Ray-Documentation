@@ -1,0 +1,47 @@
+#!/usr/bin/tcsh
+# Call as
+#    make6 vpx vpy vpz basename seqnum
+
+rpict -vp $1 $2 $3 -vd 1 0 0 -vh 90 -vv 90 -vu 0 0 1 -vtv \
+	-w -t 30 -ab 10 -av 0 0 0 \
+	-x 2048 -y 2048 $4.oct > front$5.pic
+pfilt -1 -e 1 -x 512 -y 512 -r 1 front$5.pic > front$5.filt
+ra_ppm front$5.filt front$5.ppm
+rm -rf front$5.filt
+
+rpict -vp $1 $2 $3 -vd -1 0 0 -vh 90 -vv 90 -vu 0 0 1 -vtv \
+	-w -t 30 -ab 10 -av 0 0 0 \
+	-x 2048 -y 2048 $4.oct > back$5.pic
+pfilt -1 -e 1 -x 512 -y 512 -r 1 back$5.pic > back$5.filt
+ra_ppm back$5.filt back$5.ppm
+rm -rf back$5.filt
+
+rpict -vp $1 $2 $3 -vd 0  1 0 -vh 90 -vv 90 -vu 0 0 1 -vtv \
+	-w -t 30 -ab 10 -av 0 0 0 \
+	-x 2048 -y 2048 $4.oct > left$5.pic
+pfilt -1 -e 1 -x 512 -y 512 -r 1 left$5.pic > left$5.filt
+ra_ppm left$5.filt left$5.ppm
+rm -rf left$5.filt
+
+rpict -vp $1 $2 $3 -vd 0 -1 0 -vh 90 -vv 90 -vu 0 0 1 -vtv \
+	-w -t 30 -ab 10 -av 0 0 0 \
+	-x 2048 -y 2048 $4.oct > right$5.pic
+pfilt -1 -e 1 -x 512 -y 512 -r 1 right$5.pic > right$5.filt
+ra_ppm right$5.filt right$5.ppm
+rm -rf right$5.filt
+
+rpict -vp $1 $2 $3 -vd 0 0 1 -vh 90 -vv 90 -vu 0 -1 0 -vtv \
+	-w -t 30 -ab 10 -av 0 0 0 \
+	-x 2048 -y 2048 $4.oct > top$5.pic
+pfilt -1 -e 1 -x 512 -y 512 -r 1 top$5.pic > top$5.filt
+ra_ppm top$5.filt top$5.ppm
+rm -rf top$5.filt
+
+rpict -vp $1 $2 $3 -vd 0 0 -1 -vh 90 -vv 90 -vu 1 0 0 -vtv \
+	-w -t 30 -ab 10 -av 0 0 0 \
+	-x 2048 -y 2048 $4.oct > bottom$5.pic
+pfilt -1 -e 1 -x 512 -y 512 -r 1 bottom$5.pic > bottom$5.filt
+ra_ppm bottom$5.filt bottom$5.ppm
+rm -rf bottom$5.filt
+
+
