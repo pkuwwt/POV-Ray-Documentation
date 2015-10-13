@@ -1,0 +1,43 @@
+//---------------------------------------------------------
+//---------------------------------------------------------
+#include "rand.inc" // random functions include file
+#include "transforms.inc" // for Reorientate_Trans
+#declare Random_1 = seed (23528);
+//---------------------------------------------------------
+
+union{
+ #local Nr = 0;     // start
+ #local EndNr = 150; // end
+ #while (Nr< EndNr)
+   // differ a little bit form spherical position:
+   #local RandScale = (1+0.1*rand(Random_1)); 
+   #local Position  = RandScale * VRand_On_Sphere(Random_1);
+   union{ // inner union 
+
+   cone{ <0,0,0>, 0.02, Position, 0.01 
+         texture { pigment{ color rgb< 0.75, 0.5, 0.30> }  
+                   normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 }
+                 } // end of texture 
+       } //---------------
+
+   sphere{ <0,0,0>, 0.1  //, 1.5
+           scale <1,0.5,1>// y orientated
+           // turn it in direction zero to Position:
+           Reorient_Trans( <0,1,0>, Position )
+           translate Position // move it to position
+           texture{ pigment{ color rgb< 1.0, 0.15, 0.0> }
+                    normal { bumps 0.5 scale 0.05 }
+                    finish { phong 1 }
+                  } // end of texture
+         } //---------------
+   } // end inner union
+ #local Nr = Nr + 1;  // next Nr
+ #end // --------------- end of loop
+ rotate<0,0,0>
+
+ translate<0,1.25,0>
+ rotate<0,0,0>
+} // end of union
+//---------------------------------------------------------
+//---------------------------------------------------------

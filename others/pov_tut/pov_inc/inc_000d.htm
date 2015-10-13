@@ -1,0 +1,143 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Ein kurzes Include File Tutorial f&uuml;r POV-Ray">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Include File Tutorial ">
+<title>Ein kurzes Include-Dateien-Tutorial f&uuml;r POV-Ray </title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Kleines Include-Dateien-Tutorial f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="inc_000e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="inc_000e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="inc_000i.htm"><font size="2">Italiano</font></a>
+        <a href="inc_000i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="inc_000f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000d.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000d.htm"--><b>Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000d.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_000d.htm"--><b>Wozu Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">Eigene Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">und wie aufrufen.</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_200d.htm">Schreibweisen, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_200d.htm">&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300d.htm">Wo speichern?</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="inc_400d.htm">Design von Include Files</b></nobr></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="inc_700d.htm">Eigene Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_700d.htm">zum 'Insert Menu'</b></a><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Wozu Include-Dateien in POV-Ray?</b></h2>
+<p align="justify">&nbsp; Die Szenenbeschreibungssprache (SDL) von POV-Ray besitzt das
+m&auml;chtige und sehr n&uuml;tzliche Strukturelement der <b>Include-Dateien</b>, wohlbekannt in allen
+Programmiersprachen.<br>
+<b>Include-Dateien sind eines der elementaren Werkzeuge des modularen Programmierens!</b><br>
+<b>Der Include-Dateien-Mechanismus ist ein Mittel
+&nbsp; um unn&ouml;tige Arbeiten zu vermeiden und die Entwicklung von POV-Ray-Szcenen zu beschleunigen.
+</b><br>
+Die ist ein kleines Include-Dateien-Tutorial&quot; wie wie sie funktionieren und
+gibt einige gruns&auml;tzliche Tips, dar&uuml;ber <b>was man tun sollte und was man besser bleiben lassen sollte</b>.<br>
+<font size="-1">Es ist ein Ergebnis meiner eigenen Erfahrung beim Gebrauch von Include-Dateien<br>
+[die sowohl viele gro&szlig;e Erfolgserlebnisse  :-) als auch viele Niederlagen und Katastrophen beinhalten :-(.]</font></p>
+
+<p align="justify"><font size="+1"><b>Was ist eine Include-Datei?</b></font><br>
+   &nbsp; Include-Dateien (Datei-Endung: <b>.inc</b>) sind <b>einfache  ASCII-Text-Dateien</b> (Text ohne jegliche Formatierungen !),
+    welche jede Art von Textteilen f&uuml;r POV-Ray beinhalten <font size="-1"> (in correktem POV-Ray-Syntax!).</font>
+    Sie k&ouml;nnen &uuml;berall <font size="-1"> (wo es einen Sinn macht!)</font>
+    in einen POV-Ray-Szenentext (Datei-Endung: .pov  )eingef&uuml;gt werden.<br>
+    Originalton der POV-Ray-Hilfe-Datei (engl.):
+    &quot;Die Include-Datei wird eingelesen, als ob sie direkt an diesem Punkt eingef&uuml;gt wird.
+     Das Benutzen der Include-Datei ist fast dasselbe wie das Ausschneiden und Einf&uuml;gen (cut and paste)
+    des gesamten Inhalts der Datei unsere Szene.&quot;</p>
+<p align="justify"><font size="+1"><b>Was kann man in eine Include-Datei hinein schreiben?</b></font><br>
+    &nbsp; Nahezu jeden Teil eines ASCII-Textes, vorausgesetzt er macht irgendeinen Sinn in POV-Ray.<br>
+    Alle Sachen, welche wir mehr als einmal verwenden wollen
+    und nicht jedes mal von Neuem zusammenschreiben wollen.
+    (Objekts, Farben - colors, textures, materials, Funktionen, Deklarationen n&uuml;tzlicher Abk&uuml;rzungen, etc.)<br>
+    Include-Dateien k&ouml;nnen z.B. auch Elemente und Teile von gr&ouml;&szlig;eren Projekten enthalten, um <b>komplexe Strukturen leichter handhaben</b> zu k&ouml;nnen.<br>
+<p align="justify"><font size="+1"><b>Kann man andere Include-Dateien in eine Include-Datei 'include'n?</b></font><br>
+   &nbsp; <b>Ja, man kann!</b> Komplexe Objekte ben&ouml;tigen sehr oft andere Include-Dateien f&uuml;r ihre Teile!<br>
+   Auch rekursive, sich selbst aufrufende Include-Dateien sind m&ouml;glich!
+</td></tr></table>
+
+<div align="center">
+</div>
+<font size="-1">....</font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

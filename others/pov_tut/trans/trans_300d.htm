@@ -1,0 +1,234 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Transformationen mit POV-Ray - scale und Reflexion</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller">
+<meta name="Description" content="Geometrische Transformationen in POV-Ray, Skalieren,
+      Ma&szlig;stabsver&auml;nderung, Parallel-Streckung, Streckung, Spiegelung an einer Koordinatenebene, Euler-Affinit&auml;t,
+      Rotieren, Drehung, Translation, Parallelverschiebung, Transformationsmatrizen, Scherung, affine Abbildungen, affine Abbildungsmatrizen, zusammengefa&szlig;te Transformationen">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Povray, Raytracing, 3D-Grafik, 3d-Graphik, Computergraphik, konstruieren,
+      geometrische Transformationen, Skalieren, Ma&szlig;stabsver&auml;nderung, Parallel-Streckung, Streckung, Spiegelung an einer Koordinatenebene, Euler-Affinit&auml;t,
+      Rotieren, Rotation, Drehung, Translation, Parallelverschiebung, Transformationsmatrizen, Scherung, affine Abbildungen, affine Abbildungsmatrizen, zusammengefa&szlig;te Transformationen">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometrische Transformationen in POV-Ray </b></font>
+ </td></h6>
+ <td align="right">
+        <a href="trans_300e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="trans_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="trans_300i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_300f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <a href="trans_000d.htm">Geometrische</b></a><br>
+ &nbsp;       <a href="trans_000d.htm">Transformationen</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Elementare </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Transformationen</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100d.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200d.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</a><br>
+ &nbsp; &nbsp; - <!--a href="trans_300d.htm"--><b>&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <!--a href="trans_300d.htm"--><b>Spiegelung</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Weitere</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Transformationen</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400d.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450d.htm">Scherung</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470d.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500d.htm">&quot;transform { &nbsp;...&nbsp; }&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="trans_500d.htm">&nbsp;und &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800d.htm">Vektoren und</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800d.htm">Transformationen</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding=4 width="95%">
+ <tr>
+  <td><h2 align="center"><nobr>&quot;scale&quot; &nbsp; und Reflexion<br>
+   <font size=-1>Ma&szlig;stab &auml;ndern, spiegeln</nobr>
+      <br><nobr> = skalieren,  auch bez&uuml;glich einzelner Koordinatenrichtungen</font></nobr></h2>
+</td></tr></table>
+
+<table  border="1" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="85%">
+ <tr>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('scale1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="scale1t.jpg" border="0" width="320"  height="240"
+                   alt="Sample scale 640x480" title="Sample scale 640x480"></a>
+            </td></tr></table><br>
+<pre>#declare RedBall =
+sphere{&lt;0,0,0&gt;,1
+       texture{ pigment{ color rgb&lt;1,0,0&gt;}
+                finish { diffuse 0.9 phong 1}}}
+//--------------------- row in z direction ------
+object{RedBall scale&lt;1.00,1,1&gt; translate&lt;0,0, 0&gt;}
+object{RedBall scale&lt;0.67,1,1&gt; translate&lt;0,0,-3&gt;}
+object{RedBall scale&lt;0.33,1,1&gt; translate&lt;0,0,-6&gt;}
+object{RedBall scale&lt;1.50,1,1&gt; translate&lt;0,0, 3&gt;}
+object{RedBall scale&lt;2.50,1,1&gt; translate&lt;0,0, 6&gt;}
+// -------------------- row  in x direction ----
+object{RedBall scale&lt;1,4.6,1&gt; translate&lt;-6,0, 0&gt;}
+object{RedBall scale&lt;1,2.0,1&gt; translate&lt;-3,0, 0&gt;}
+object{RedBall scale&lt;1,0.6,1&gt; translate&lt; 3,0, 0&gt;}
+object{RedBall scale&lt;1,0.3,1&gt; translate&lt; 6,0, 0&gt;}
+//-----------------------------------------------</b></td></font></pre>
+
+<td bgcolor="#eee8d0" valign="top">
+     <font size="4">
+    <b><font size="+1">scale</font>  = skalieren,<br> Ma&szlig;stab &auml;ndern</b></font><br>
+    <font size="3">
+     allgemeiner Syntax:
+<pre><b>scale &lt;s<SUB>x</SUB>,s<SUB>y</SUB>,s<SUB>z</SUB>&gt;</b></pre>
+    dies bewirkt eine Multiplikation (Vergr&ouml;&szlig;erung oder Verkleinerung) der Dimensionen
+    eines Objektes in den 3 Grundrichtungen. Dabei werden die x-Werte (Breite) mit <b>s<SUB>x</SUB></b>,
+    die y-Werte (H&ouml;he) mit <b>s<sub>y</sub></b>und die z-Werte (Tiefe) mit <b>s<sub>z</sub></b> multipliziert.<br>
+</td></font>
+</tr></table>
+
+<table  border="1" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="85%">
+ <tr>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+
+              <img src="mirror_scale.jpg" border="0" width="320"  height="150"
+                   alt="Sample mirror" title="Sample mirror">
+            </td></tr></table><br>
+<pre>#declare Wheel =
+union{
+ // zu Details vgl. meine POV-Ray Beispiel-Szenen
+ }// end of object &quot;Wheel&quot;
+//--------------------- 2 Wheels  ------
+object{Wheel translate&lt;1,0, 0&gt;}
+object{Wheel translate&lt;0,0,-3&gt; <b>scale &lt;-1,1,1&gt;</b>}
+//-----------------------------------------------</b></td></font></pre>
+
+<td bgcolor="#eee8d0" valign="top">
+    <font size="4">
+    <b>Spiegelung an einer Koordinatenebene:</b></font><br>
+    <font size="3">
+<pre><b>scale &lt;-1,1,1&gt;</b></pre>
+    dies bewirkt eine Spiegelung des Objektes an der yz-Ebene in x-Richtung.
+</td></font>
+</tr></table>
+
+
+<p align="justify"><font size="3">
+<b>Beispiele:</b><br>
+&quot;<b>scale&lt;1,1,1&gt;</b>&quot; bewirkt nichts, d.h. es wird alles 1:1 dargestellt.<br>
+&quot;<b>scale&lt;1,0.5,1&gt;</b>&quot; staucht in y-Richtung auf die halbe H&ouml;he.<br>
+&quot;<b>scale&lt;2,1,1&gt;</b>&quot; streckt in x-Richtung auf die doppelte Breite.<br>
+&quot;<b>scale&lt;-1,1,1&gt;</b>&quot; spiegelt das Objekt in x-Richtung an der yz-Ebene.<br>
+<br>
+<img src="warn.gif" border="0" width="32" height="30">
+<font size="3"><b><i>Achtung:</i></b></font> <b>scale &lt;2,0,0&gt;</b> z.B. verursacht eine
+&quot;<b>Parse Warning: Illegal Value: Scale X by 0.0. Changed to 1.0.</b>&quot;<br>
+Dies bedeutet: der Ausdruck wurde zu <b>scale &lt;2,1,1&gt;</b> ge&auml;ndert interpretiert, <br>
+denn das Multiplizieren einer Komponente mit Null macht keinerlei Sinn!</font><br>
+<font size="1">Es ist dringend empfohlen die Abk&uuml;rzungen x, y, z zusammen mit scale zu vermeiden.
+ ( In POV-Ray: x = &lt;1,0,0&gt;, y = &lt;0,1,0&gt;, z = &lt;0,0,1&gt;).</font>
+</p>
+<p align="left"><b><img src="warn.gif" width="31" height="30" border="0" alt="Attention!" title="Attention!">
+    <font size="+2">Man beachte:</font></b><br>
+ <b><font size="+1">Die Hintereinander-Ausf&uuml;hrung von<br>
+    Drehungen, Verschiebungen und Skalieren<br>
+   sind im allgemeinen nicht kommutativ!</font></b>
+<br> D.h. nicht vertauschbar, d.h. das Ergebnis ist von der Reihenfolge abh&auml;ngig!<br>
+Diees ist bei zu hastigem Erstellen von Szenenbeschreibungen
+eine h&auml;ufig auftretende Fehlerquelle hohen <nobr>Frust-Potentials!!!</nobr>.
+</font></p>
+<table align="center" width="95%"><tr><td>
+<p align=justify ><font face="Arial, Verdana, Helvetica" size="3">
+<b> Hinweis: </b><br>
+&quot;scale&quot; kann sowohl auf K&ouml;rper, als auch auf andere &quot;Objekte&quot; wie Texturen(&quot;texture&quot;),
+Farbmuster (&quot;pigment&quot;), scheinbare Oberfl&auml;chenverformungen (&quot;normal&quot;) angewandt werden.
+</font>
+</p>
+
+
+
+</td>
+</tr>
+</table>
+</div><hr>
+<h6 align="justify">
+ <a href="trans_100d.htm">translate</a> |
+ <a href="trans_200d.htm">rotate</a> |
+ <!--a href="trans_300d.htm"-->scale</a> |
+ <a href="trans_400d.htm">matrix</a> |
+ <a href="trans_450d.htm">Scherung</a> |
+ <a href="trans_470d.htm">transforms.inc</a> |
+ <a href="trans_500d.htm">transform</a> |
+ <a href="trans_800d.htm">Vektor-Transformationen</a>
+<h6>
+
+
+</td></h5></div>    <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="en-us">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2007, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="sky, skies, realistic sky, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, 3d graphics, computer graphics">
+<meta name="Description" content="Creating realistic skies with POV-Ray">
+
+<title>How to create realistic skies with POV-Ray - part 2</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table border="0" width="95%"><tr>
+ <td><h6><nobr>Descriptions and Examples for the POV-Ray raytracer</nobr><br>
+         <nobr>by Friedrich A. Lohm&uuml;ller</nobr> </td></h6>
+ <td align="right"><nobr>
+ <a href="p_sky2d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_sky2d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_sky2i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky2i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_sky2f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_sky2f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000e.htm">Realistic Skies</b></a></font></nobr><br>
+ &nbsp; &nbsp; - <a href="p_sky1.htm">A Realistic Sky</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky2.htm"--><b>Partly Cloudy Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3.htm">Layers of Clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4.htm">Stacked planes clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky5.htm">Shadow Casting</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky6.htm">Massiv media clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70.htm">Sunset Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7.htm">Starry Skies</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky8.htm">Skydomes + skymaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky9.htm">Skyboxes + cubemaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky10.htm">HDRI environment</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<p align="center"><b>
+<h2 align="center">How to create Realistic Skies with POV-Ray</h2></b>
+<p align="center"><font size="-1"><a href="p_sky000e.htm">Overview</a> |
+<a href="p_sky1.htm">1</a> | <!--a href="p_sky2.htm"-->2</a> |
+<a href="p_sky3.htm">3</a> | <a href="p_sky4.htm">4</a> |
+<a href="p_sky5.htm">5</a> | <a href="p_sky6.htm">6</a> |
+<a href="p_sky70.htm">7.0</a> | <a href="p_sky7.htm">7.1</a> | <a href="p_sky8.htm">8</a> |
+<a href="p_sky9.htm">9</a> | <a href="p_sky10.htm">10</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" cellspacing="10">
+
+<tr><td valign="top">
+    <h3 align="left"><b>Another simple partly cloudy sky:</b></h3>
+    <h5 align=left>The sky is formed by a blue plane which is decorated by some
+        clouds. The clouds also become realisticly smaller at the horizon!
+        And also here the realistic fog covers the black line at the horizon - the gap between
+        the ground plane and the sky plane. <br>
+        The only problem here: - see above!
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// sky ---------------------------
+plane{&lt;0,1,0&gt;,1 hollow
+       texture{
+        pigment{ bozo turbulence 0.92
+          color_map {
+           [0.00 rgb &lt;0.2, 0.3, 1&gt;*0.5]
+           [0.50 rgb &lt;0.2, 0.3, 1&gt;*0.8]
+           [0.70 rgb &lt;1,1,1&gt;]
+           [0.85 rgb &lt;0.25,0.25,0.25&gt;]
+           [1.0 rgb &lt;0.5,0.5,0.5&gt;]}
+          scale&lt;1,1,1.5&gt;*2.5
+          translate&lt;1.0,0,-1&gt;
+          }// end of pigment
+        finish {ambient 1 diffuse 0}
+        }// end of texture
+        scale 10000
+     }// end of plane
+
+// fog on the ground -------------
+fog { fog_type   2
+      distance   50
+      color      White
+      fog_offset 0.1
+      fog_alt    1.5
+      turbulence 1.8
+    }
+//--------------------------------</b></td></pre></tr></table></h5>
+
+    </td>
+    <td valign="top"><table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/p_sky04.jpg" border="0" width="320" height="240" hspace="0" vspace="0"></td></tr>
+        </table>
+    <h5 align="center">A partly cloudy sky with realistic horizon.<br>
+<font size="-1"><a href="pov/p_sky04.txt">Description of this scenery for POV-Ray</a></font></h5>
+
+   </td></tr>
+<tr><td colspan="2">
+<p align="right">
+<font size="-1"><font size="-1"><a href="p_sky000e.htm">Overview</a> |
+<a href="p_sky1.htm">1</a> | <!--a href="p_sky2.htm"-->2</a> |
+<a href="p_sky3.htm">3</a> | <a href="p_sky4.htm">4</a> |
+<a href="p_sky5.htm">5</a> | <a href="p_sky6.htm">6</a> |
+<a href="p_sky70.htm">7.0</a> | <a href="p_sky7.htm">7.1</a> | <a href="p_sky8.htm">8</a> |
+<a href="p_sky9.htm">9</a> | <a href="p_sky10.htm">10</a></b></font></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td></tr></table><!-- end footer -->
+</font>
+</body>
+</html>

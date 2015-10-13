@@ -1,0 +1,288 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="keywords" content="une horloge, animation, animation 3D, mpeg video, avi video, gif anim&eacute;, ray tracing, PoV, POV-Ray, POVRAY, graphique 3D, descriptions ray tracing, povray tutoriel">
+<meta name="description" content="L'Animation d'une Horloge - Animations 3D avec POV-Ray - descriptions, didacticiels,tutoriel et exemples pour POV-Ray logiciel rayt racing">
+<title>L'Animation d'une Horloge - Animation 3D acec POV-Ray -  tutoriels, descriptions et exemples pour le ray tracer de POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table  border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__eng.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="back to overview" title="back to overview"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp;  Animation 3D avec POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Quelques bases et exemples sur les animations.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim113e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim113e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim113i.htm"><font size="2">Italiano </font></a>
+        <a href="anim113i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim113d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim113d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">Galerie d'Animations 3D</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anif.htm">Animation 3D</b></a><br>
+ &nbsp;&nbsp; <i>Table des mati&egrave;res</i><br>
+&nbsp; <!--a href="anim001f.htm"-->  0. Bases.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001f.htm">Exemple du base.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002f.htm">D'Images &agrave; Vid&eacute;o.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005f.htm">Connaissance de base.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008f.htm">Commandes d'animation.</b></a><br>
+&nbsp; <!--a href="anim11f.htm"--> I. Animations  cycliques.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11f.htm">Objets tournants.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112f.htm">Plan&egrave;tes en orbite.</b></a><br>
+&nbsp; <b>&gt</b> 1.3. <!--a href="anim113f.htm"--><b>Une horloge.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12f.htm">Cam&eacute;ra tournante.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121f.htm">Cam&eacute;ra deplac&eacute;e lin&eacute;aire</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13f.htm">Le probl&egrave;me </b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13f.htm"> de la roue.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131f.htm">Roues roulantes.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14f.htm">Engrenages.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141f.htm">Cha&icirc;ne &agrave; rouleaux.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142f.htm">Cha&icirc;ne de bicyclette.</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15f.htm">Balancement.</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151f.htm">Pendule de Newton</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2. <a href="anim152f.htm">Rock le rocking chair !</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16f.htm">Oscillation.</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170f.htm">Bielle d'accouplement</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17f.htm">Bielle et manivelle.</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18f.htm">Psych&eacute;d&eacute;lique + Op-Art.</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190f.htm">Compteurs</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim190f.htm"> + Compte &agrave; rebours.</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200f.htm">La pliage d'un cube.</b></a><br>
+
+&nbsp; II. Mouvements non-lin&eacute;aires<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220f.htm">Acc&eacute;l&eacute;rer et ralentir 1.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222f.htm">Acc&eacute;l&eacute;rer et ralentir 2.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240f.htm">Chuter et bondir.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260f.htm">Acc&eacute;l&eacute;ration selon</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260f.htm">formules physiques.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280f.htm">Mouvements</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280f.htm">avec fonctions spline.</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Chemins pour<br>&nbsp; &nbsp; &nbsp;  des animations avec<br>&nbsp; &nbsp; &nbsp; des courbes spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210f.htm">Courbes spline.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21f.htm">Spline ferm&eacute;.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22f.htm">Animation Paths.</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="85%" cellpadding="10">
+<tr><td width="20%">
+    <table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+    <tr><td><img src="im/Clockface_002c.gif" border="0" width="80" height="80"></td></tr></table>
+    </td>
+    <td width="80%" align="center">
+     <h1>L'Animation d'une Horloge &nbsp;<br>
+     <font size="-1">Les aiguilles sur le cadran d'une horloge<br>
+          tournent avec des allures diff&eacute;rentes.<br>
+          Une animation cyclique.</font></td></h1>
+    <td width="10%">&nbsp; &nbsp; &nbsp; &nbsp;</nobr></td>
+</tr></table>
+
+
+<table align="center" width="85%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top">
+ <p align="justify"><font size="+1"><b>La rotation des aiguilles d'une horloge :</b></font><br>
+Pendant l'aiguille des heures tourne 360 degr&eacute;s durant 12 heures
+l'aiguille des minutes doit tourner 12 fois plus = 360*12 degr&eacute;s.
+Et encore l'aiguille des secondes doit tourner un autre 60 fois plus = 360*12*60 degr&eacute;s.<br>
+<font size="-1">Nous d&eacute;clarons une variable de base Clock_Time o&ugrave; nous pouvons ajuter des valeurs de test entre 0 et 1.</font>
+
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare Clock_Time = clock+0.00;
+// rotation angles in degrees -------------
+#declare Rotate_H   = Clock_Time*360;
+#declare Rotate_Min = Clock_Time*360*12;
+#declare Rotate_Sec = Clock_Time*360*12*60</b></td></pre></tr></table>
+&Agrave; l'avenant pour tester un temps donn&eacute; comme <br>
+&nbsp; <b>'2h 20min 30sec'</b> nous devons d&eacute;clarer :
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#declare Clock_Time =
+ clock + 2/12 + 20/(720) + 30/(43200);</b></td></pre></tr></table>
+<font size="-1">Pour une animation cyclique de 12 heures d'une horloge
+il est recommand&eacute; de tenir compte que 12 h = 720 min = 43200 secondes!<br>
+De l&agrave; pour une animation cyclique avec un fichier petit
+est meilleur de renonce &agrave; l'aiguille des secondes! Pour voir le  courant de l'aiguille des secondes
+on a besoin d'une animation avec 43200 images ('frames')!</font><br>
+<b>Le saut des minutes et des secondes :</b><br>
+Si nous voulons les aiguilles des minutes et des secondes de sauter seulement sur les
+positions de minutes et/ou secondes completes (chaque 6 degr&eacute;s) nous devons ajuter :
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#declare Rotate_Min=int(Rotate_Min/6+0.01)*6;
+#declare Rotate_Sec=int(Rotate_Sec/6+0.01)*6;</b></td></pre></tr></table>
+
+<p align="justify"><font size="+1"><b>Les aiguilles d'une horloge:</b></font><br>
+<font size="-1">Pour faire l'aspect du cadran ind&eacute;pendant de les dimensions
+nous appliquer tous les mesures au rayon de base du cadran :</font>
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare CR = 0.400; // rayon du cadran
+// flatten cylinders we use here;
+#declare Flat = &l;1,1,0.025&gt;;
+//-----------------------------------
+#declare Face_D = 0.001;
+// length of hands -------------
+#declare Hd_H_Len   = CR*0.60;
+#declare Hd_Min_Len = CR*0.85;
+#declare Hd_Sec_Len = CR*0.95;
+// radii of the hands ---------
+#declare Hd_H_D   = CR*0.055;
+#declare Hd_Min_D = CR*0.035;
+#declare Hd_Sec_D = CR*0.020;
+// position z of hands --------
+#declare Hd_H_Z   = CR*0.05;
+#declare Hd_Min_Z = CR*0.04;
+#declare Hd_Sec_Z = CR*0.03;
+//-----------------------------------------</b></td></pre></tr></table>
+Pour les aiguilles et les marques nous utilsons de cylindres aplatis.
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>// aiguille des heures ----------------
+cylinder{ &lt;0,0,0&gt;,&lt;0,Hd_H_Len,0&gt;,Hd_H_D
+          scale Flat
+          rotate &lt;0,0,-Rotate_H&gt;
+          translate&lt;0,0,-Hd_H_Z&gt;
+          texture{ Hands_Texture } }
+// aiguille des minutes ------------------
+cylinder{ &lt;0,0,0&gt;,&lt;0,Hd_Min_Len,0&gt;,Hd_Min_D
+          scale Flat
+          rotate &lt;0,0,-Rotate_Min&gt;
+          translate&lt;0,0,-Hd_Min_Z&gt;
+          texture{ Hands_Texture }  }
+// body center ----------------------------
+cylinder{ &lt;0,0,-Hd_H_Z&gt;,&lt;0,0,0&gt;,Hd_H_D*1.5
+          texture{ Hands_Texture } }
+// face base ------------------------------
+cylinder{ &lt;0,0,0&gt;,&lt;0,0, Face_D&gt;,CR
+          texture{ Face_Texture } }
+//-----------------------------------------</b></td></pre></tr></table>
+Pour plus de d&eacute;tails du cadran, de l'aiguille des secondes et les textures
+voir le fichier de la sc&egrave;ne.
+</p>
+</td>
+ <td colspan="1" valign="top">
+ <div align="center">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Clockface_003c.jpg" width="240" height="240" alt="Clockface" title="Clockface"></td></tr>
+  </table><font size="-1">Le cadran : Les aiguilles.</font>
+
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Clockface_004c.jpg" width="240" height="240" alt="Clockface" title="Clockface"></td></tr>
+  </table><font size="-1">Le cadran : Les marques pour les heures et les minutes.</font>
+
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Clockface_005c.jpg" width="240" height="240" alt="Clockface" title="Clockface"></td></tr>
+  </table><font size="-1">Le cadran complet.</font>
+<br>
+<br>
+<br>
+
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#909090"  bordercolorlight="#ffffff">
+  <tr><td><nobr>
+          <img src="im/Clockface_001c_720.gif" width="120" height="120" alt="Clockface animation" title="Clockface animation">
+          <img src="im/Clockface_00_00cs16.gif" width="120" height="120" alt="Clockface animation" title="Clockface animation">
+          </nobr></td></tr>
+  </table><font size="-1">Deux animations de cadrans .</font>
+   <h5 align="center">Description de la sc&egrave;ne pour POV-Ray :<br>
+   <a href="pov/Clockface_00.ini">&quot;Clockface_00.ini&quot;</a> et <br>
+   <a href="pov/Clockface_00.pov">&quot;Clockface_00.pov&quot;</a>
+ </td></h5> </div>
+</tr>
+</table>
+
+<table align="center" width="85%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top"><div align="center">
+  <table align="center" border="3" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Clock_c.jpg" width="240" height="320" alt="station clock" title="station clock"></td></tr>
+  </table><font size="-1">Une horloge de la gare</font></div>
+  </td>
+ <td colspan="1" valign="bottom">
+ Queques exemples pour l'application:<br>
+<br>
+<br>
+<br>
+  <div align="center">
+  <table align="center" border="3" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Alarm_Clock_c.jpg" width="240" height="240" alt="Alarm clock" title="Alarm clock"></td></tr>
+  </table><font size="-1">Un r&eacute;veil</font></div>
+  </td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+
+</table>
+
+
+
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Scale Modelling with POV-Ray  - Adapting Plans to background grid.</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Scale Modelling with POV-Ray">
+<meta name="keywords" content="Scale modelling, POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=685,height=380");
+ New.focus();  }
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=1065,height=570");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>Scale Modelling with POV-Ray</b></font> -
+      </div>
+ </td></h6>
+ <td align="right">
+        <a href="s_mod_300i.htm"><font size="2">Italiano </font></a>
+        <a href="s_mod_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="s_mod_300f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="s_mod_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="s_mod_300d.htm"><font size="2">Deutsch </font></a>
+        <a href="s_mod_300d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp; - <a href="s_mod_000e.htm">Scale Modelling</b></a><br>
+ &nbsp; &nbsp; <a href="s_mod_000e.htm">with POV-Ray</b></a><br>
+<br>
+&nbsp; -  <a href="s_mod_100e.htm">Squared Background</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_100e.htm">in m and cm</b></a><br>
+ &nbsp; -  <a href="s_mod_150e.htm">Orthographic View</b></a><br>
+ &nbsp;<b>&gt;</b> <!--a href="s_mod_300e.htm"--><b>Adapting Plans</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <!--a href="s_mod_300e.htm"--><b>to Background Grid</b></a><br>
+
+ &nbsp; -  <a href="s_mod_500e.htm">Multiple Views Rendering</b></a><br>
+
+<br>
+<br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--font size="-1"><b>Scale Modelling of Objects for POV-Ray</b</font-->
+
+<h3 align="left"><a name="Top"></a><b>Adapting Plans to Background Grid</b></h3>
+
+<table >
+<tr>
+ <td valign="top"><b>How to adapt a plan to a raster plane in POV-Ray</b><br>
+  <font size="-1">For pecise working we use an <b>orthographic camera</b> looking vertically
+   to the plain of the plan image.
+   We use a <b>background plan with a raster</b> width of 1m / 0.1m.<br>
+   ( Raster_Plate macro, see: <a href="s_mod_100e.htm" target="_new">Squared Background</a>)<br>
+   In front of this background we place a box with an texture of
+   an <b>image_map</b> by a <b>transparent plan image</b> (gif or png, non-interlaced!).<br>
+   This box must be <b>scaled to the original aspect ratio of the plan image</b>.<br>
+<br>
+   <b>Size of the plan box:</b><br>
+   <b>1st method:</b> Use an image of the plan cutted to the total length or height of the object.
+   Than we only have to scale by the original total length or height of the object.<br>
+   <b>2nd method:</b> We have to know  the original length of an detail in the plan.
+   We add a cylinder of this length in front of the plan.
+   Then we have to encrease the box of the plan image until the detail in the plan
+   fits to this cylinder. <br>
+  </font><br>
+<b>Example:</b><br>
+<font size="-1"><b>
+&nbsp; plan image name: E63_Plan_Side1_255.gif,<br>
+&nbsp; plan image size: 640 x 320 pixel,<br>
+&nbsp; background palette number: 255<br>
+&nbsp; original object lenght: 10.26 meter.</b></font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-------------------------------------------//
+#declare Base_Texture =
+  texture{ pigment{ color rgb&lt;1,1,1&gt;*1.2 }}
+//--------------------------------------------
+object{ Raster_Plate(
+   1.0,   0.010, // 1st distance/width,
+   0.1,   0.080, // 2nd distance/width,
+   Base_Texture, // non= pigment{Clear}
+   0.6, // Intensity, // Line gray intensity
+   &lt;-5.13,-0.05,-0.0>, &lt;5.13,0,5.10>, //box
+  ) //----------------------------------------
+ rotate&lt;-90,0,0&gt;
+ translate&lt;0,0.001,0&gt;
+} //------------------------------------------
+
+//#declare Plan_Front =
+box{ &lt;0,0,0&gt;,&lt;1,1,0.00001&gt;
+   texture{
+    pigment{
+     // image on xy plane (aspect ratio 1:1)
+     // from &lt;0,0,0&gt; to &lt;1,1,0&gt;
+     image_map{ gif &quot;E63_Plan_Side1_255.gif&quot;
+     map_type 0 // 0=planar
+     interpolate 2 // 0=none, 1=linear,
+      // 2=bilinear, 4=normalized distance
+     once //
+  // For transpartent palette images:
+  // (&lt;=256 colors)
+  //    gif version 87a, non interlaced,
+  // or png palette, non interlaced.
+     transmit 255, 1 // Palette, Amount
+    } // end of image_map
+   } // end of pigment
+  } // end of texture
+scale&lt;1,320/640,1&gt; // original aspect ratio
+translate&lt;-0.5,0,0&gt;// centered in x
+
+//  Adjusting to raster size  -----------------
+//original loco length:
+scale 10.26 // in meter
+translate&lt;0,0.00,-0.01&gt;  // in front!
+no_shadow
+
+} // end box with image_map
+//------------------------------------------//</td></b></pre></tr></table>
+
+ </td>
+ <td align="center" valign="top">
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/show_plan_gif_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/E63_Plan_Side1_255s.jpg" border="0" width="320" height="160"
+                   alt="The Plan" title="The Plan"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>The Plan</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Plan_Loco_how_001c.jpg" border="0" width="320" height="240"
+                   alt="Adapting the plan" title="Adapting the plan"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Adapting the plan</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage2('im/show_plan_adapted_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Plan_Loco_001n.jpg" border="0" width="320" height="160"
+                   alt="Plan adapted" title="Plan adapted"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Plan adapted</b></a></font>
+<br>
+<br>
+<font size="-1"><b>This scene in POV-Ray: <a href="pov/Plan_Loco_001.pov">Plan_Loco_001.pov</a><br>
+Needs gif image: <a href="im/E63_Plan_Side1_255.gif">E63_Plan_Side1_255.gif</a><b></font><br>
+
+<font size="-2">(Put the image in same directory like the scene file<br>
+ or in the POV-Ray include file directory)</font>
+<br>
+<br>
+<br>
+
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/E63_Plan_Axes_000_1m.jpg" border="0" width="320" height="160"
+                   alt="Continue with the construction" title="Continue with the construction"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Continue with the construction</b></font>
+
+
+</tr>
+</table>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align="right" width="25%">
+&nbsp;</tr></table><!-- end footer -->
+</body>
+</html>

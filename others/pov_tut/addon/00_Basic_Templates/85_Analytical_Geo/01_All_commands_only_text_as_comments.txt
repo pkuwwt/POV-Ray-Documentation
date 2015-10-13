@@ -1,0 +1,131 @@
+//------------------------------------------------------------------------------------
+// All the following commands need to include the file "analytical_g.inc"
+// and a declaration of the radius of lines and the radius of points
+//------------------------------------------------------------------------------------
+#include "analytical_g.inc"
+//------------------------------------------------------------------------------------
+#declare Rl  = 0.055; // radius of lines  - Radius der Strecken
+#declare Rp  = 0.105; // radius of points - Radius der Punkte
+//------------------------------------------------------------------------------------
+/*  
+//------------------------------------------------------------------------------------ Examples - Beispiele
+// Samples for geometric objects and calculations with "analytical_g.inc":  
+//------------------------------------------------------------------------------------
+// point:
+ sphere{ A, 0.02 pigment{ color Green*0.5 } }
+
+//  Unambiguous marking of positions: 
+// xy projection of a Point A: 
+ sphere{ <A.x,A.y,0>, 0.02 pigment{ color Red*0.5 } } 
+ 
+ // 1) Wire_box-Method :  
+ object{ Wire_Box( o, P,0.015/2,0) pigment{ color Yellow }} 
+ // or:
+ object{ Show_Wire_Box( P, 0.015/2 )  pigment{ color Yellow }}   
+ 
+ // 2) Suporting cylinder in y direction:     
+ object{ Show_Y_( P, 0.015/2) pigment{ color Yellow } } 
+ 
+ // 3) Suporting cylinder in y direction with projections of xz components:     
+ object{ Show_Yxz( P, 0.015/2) pigment{ color Yellow } } 
+
+// vector
+ object{ Vector( A,B, 0.015) pigment{ color Green }}
+
+// distance marker
+ object{ Distance_Marker(P1, P2, 0.015) pigment{ color Green}}
+ 
+// straight line - Gerade
+ cylinder{ P1 - 10*(P2-P1), P2+10*(P2-P1), 0.015 pigment{ color Green*0.8 }}
+
+// line BC 
+ cylinder { B, C,  0.015/2   pigment{ color Orange }}
+
+// triangle ABC
+ triangle { A, B, C       pigment{ color YellowGreen transmit 0.5 }}
+
+// plane by Parameters: 
+ object{ Plane_Dir( Start, Dir1, Dir2, Start, End ) pigment{ color Green}}
+
+// plane by normal representation, N=<A,B,C>, D: .....    
+ object{ Plane_Nor( Normal, D, Start, End) pigment{ color Green}}
+
+// plane by normal representation, with normal vector N and a point P:  
+ object{ Plane_NoP( Normal, P, Start, End) pigment{ color Green}}
+
+//------------------------------------------------------------------------------------
+// point of intersection of straght line and plane 
+ // Line by i.e. start point and direction 
+ #declare P = <x1,x2,x3> #declare Dir = <d1,d2,d3>
+ //  Plane declared as an object: 
+ #declare Plane = ...; s.o.
+ #declare Point_of_intersection = trace ( Plane, A, Dir ) 
+  // With normal vector in the point of intersection - 
+  // the name of the normal vector must be predeclared by: 
+ #declare Normal = <0,0,0>
+ #declare Point_of_intersection = trace ( Plane, A, Dir, Normal) 
+
+//------------------------------------------------------------------------------------
+ 
+
+// Circle (M,r) around axis:
+ // Circle line: ...............   
+ object{ Circle_Line ( Center, Radius, 0.015, Axis) pigment{ color Yellow }}
+ // Circle area .............   
+ object{ Circle_Disc ( Center, Radius, Axis) pigment{ color Yellow transmit 0.5 }}
+//Circum circle of a triangle P1P2P3: 
+ // Circle line: ...............   
+ object{ Circle_Line_out( P1, P2, P3, 0.015) pigment{ color Yellow }}
+ // Circle area .............   
+ object{ Circle_Disc_out( P1, P2, P3 ) pigment{ color Yellow transmit 0.5 }}
+ // Circumcircle center.   
+ object{ Triangle_M_out( P1, P2, P3 ) pigment{ color Green }}
+ // Circumcircle radius .........   
+ Triangle_R_out( P1, P2, P3 ) 
+//Incircle of a triangle P1P2P3: 
+ // Circle line: ...............   
+ object{ Circle_Line_in ( P1, P2, P3, 0.015) pigment{ color Yellow }}
+ // Circle area .............   
+ object{ Circle_Disc_in ( P1, P2, P3 ) pigment{ color Yellow transmit 0.5 }}
+ // Incircle center ..   
+ object{ Triangle_M_in ( P1, P2, P3 ) pigment{ color Green }}
+  Incircle radius ...........   Triangle_R_in ( P1, P2, P3 ) 
+// Incircle of a triangle P1P2P3: 
+ // Circle line: ...............   
+ object{ Circle_Line_in ( P1, P2, P3, 0.015) pigment{ color Yellow }}
+ //  Circle area .............   
+ object{ Circle_Disc_in ( P1, P2, P3 ) pigment{ color Yellow transmit 0.5 }}
+ // Incircle center ..   
+ object{ Triangle_M_in ( P1, P2, P3 ) pigment{ color Green }}
+ // Incircle radius ...........   
+ Triangle_R_in ( P1, P2, P3 ) 
+
+// Tetrahedron 
+// Tetrahedron by edge vectors V1,V2,V3: 
+ object{ Tetrahedron_by_Edges ( V1,V2,V3, 0.015,0.02, Filled) pigment{ color Green transmit 0.5}}
+// Tetrahedron by corners P1P2P3P4: .... 
+ object{ Tetrahedron_by_Corners ( P0,P1,P2,P3, 0.015,0.02, Filled) pigment{ color Green transmit 0.5}}
+
+// Parallelepiped - box
+// Parallelepiped by edge vectors V1,V2,V3:
+ object{ Parallelepiped_by_Edges ( V1,V2,V3, 0.015,0.02, Filled) pigment{ color Green transmit 0.5}}
+// Parallelepiped by corners P1P2P3P4: .... 
+object{ Parallelepiped_by_Corners ( P0,P1,P2,P3, 0.015,0.02, Filled) pigment{ color Green transmit 0.5}}
+
+// sphere, ellipsoid, cylinder, cone: 
+
+// Sphere with center M and radius R:  
+ sphere { Center, R   pigment{ color White }
+// Ellipsoid, center M, radii Rx,Ry,Rz:  
+ sphere { Center, R scale   pigment{ color Green transmit 0.5 }
+// Cylinder, centers of the ends M1 and M2 and radius R: 
+ cylinder { M1,M1, R   pigment{ color Green transmit 0.5 }
+// Cone with base center M1, base radius R1 and top at M2: 
+ cone { M1,R1, M2, 0   pigment{ color Green transmit 0.5 }
+// Truncated cone, centers of the ends M1, M2 and radii R1 and R2: 
+  cone { M1,R1, M2, R2   pigment{ color Green transmit 0.5 }
+*/
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------- end samples
+

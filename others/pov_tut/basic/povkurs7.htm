@@ -1,0 +1,338 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, POV-Ray, POV-Ray 3.6, Raytracing-Beschreibung, POV-Ray-Anleitungen, 3D-Grafik, texturen">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Gestaltung der K&ouml;rperoberfl&auml;chen, Texturieren von Objekten, POV-Ray-Kurs Teil 7</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<!-- header -->
+ <table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a><h6><nobr>Einf&uuml;hrung in die Beschreibungssprache des Raytracers POV-Ray</nobr>
+  &nbsp; <nobr> &nbsp; &nbsp; - Seite 7</nobr><br>
+ von Friedrich A. Lohm&uuml;ller</td></h6>
+ <td align="right">
+        <a href="povtuto7.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povtuto7.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti7.htm"><font size="2">Italiano</font></a>
+        <a href="povtuti7.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povtutf7.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povtutf7.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povkurs0.htm">POV-Ray Einf&uuml;hrung</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povkurs0.htm">INHALT&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povkurs1.htm">Arbeiten mit POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povkurs2.htm">Grunds&auml;tzliches zum</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm">Erstellen von Szenentexten.</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#xyzKoordinaten">R&auml;umliche Koordinaten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#ZahlenundVektoren">Zahlen und Vektoren</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povkurs3.htm">Szenen-Aufbau</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; Ein Grundbeispiel.<br>
+<nobr>&nbsp;<b> 4.</b> <a href="povkurs4.htm">Header einer Szene</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; #include-Dateien<br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povkurs5.htm">Geometrische Grundobjekte</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; und andere K&ouml;rper</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povkurs6.htm">Transformationen</b></a></nobr> <br>
+<nobr> &nbsp; &nbsp; &nbsp; Streckung, Drehung, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Verschiebung u. andere.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs6.htm#CSG">CSG</b></a>: </b>union, </nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr><b>&gt;7.</b> <!--a href="povkurs7.htm"--><b>Farben und Oberfl&auml;chen</b></nobr></a>
+<nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povkurs8.htm">#declare, #local, #macro</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Platzhalter, flexible Objekte.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povkurs9.htm">#while</b></a> Schleifen</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Grundbeispiele.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povkursa.htm">#include</b></a>, Include-Dateien.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Wiederverwendbare Objekte.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povkursb.htm">Rationelles Arbeiten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Geschwindigkeit, Flexibilit&auml;t,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; modulares Arbeiten</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.1 auf 3.5/3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.5/3.6 auf 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insrtd_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<font size="+1"><b>Die Gestaltung der <a name="KoerperOberfaechen">K&ouml;rperOberf&auml;chen</a></font> -
+&nbsp; Das Texturieren von Objekten</b><br>
+ <font size="-1">( Anmalen - Verbeulen - Helligkeit und Glanzeigenschaften)</font>
+
+<table border="0" width="100%" align="center" valign="top"><tr>
+<td><b>textur{ }</b> = Oberfl&auml;chenbeschaffenheit (&quot;<b>texture</b>&quot;) <br>
+Eine Textur besteht im wesentlichen aus:<br>
+&nbsp; &nbsp; <b>pigment{ }</b> Farbe und Durchsichtigkeit</b> (&quot;&quot;)<br>
+&nbsp; &nbsp; <b>normal { }</b> Oberfl&auml;chen-Rauhheit</b> (&quot;<b>normal</b>&quot;)<br>
+<nobr>&nbsp; &nbsp; <b>finish { }</b> Oberfl&auml;chen-Helligkeit u. -Glanz</b> (&quot&quot;)</nobr><br>
+<font size="-1">Beispiel:</font>
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ pigment{ color Orange}
+         normal { bumps 0.5 scale 0.05 }
+         finish { phong 1.0 reflection{0.2} }
+       }</b></td></pre></tr></table>
+
+<font size="-1">
+Die Befehle &quot;pigment{...}&quot;, &quot;normal{...}&quot; und &quot;finish{...}&quot; k&ouml;nnen prinzipiell alleine stehen
+(ohne in &quot;texture{...}&quot; eingebunden zu sein),
+um jedoch eine klare Strukture zu erhalten ist es sehr empfehlenswert
+diese Sachen in einen gemeinsamen Container  &quot;texture{...}&quot; zu packen! </font><br>
+</td><td>
+<img src="im/txtur01.gif" border="0" width="240" height="180"></a>
+</td></tr></table>
+
+<hr>
+<font size="+1"><b>pigment{color ... }</b> - Farbe (mu&szlig;!) und Durchsichtigkeit (kann!)</font><br>
+<font size="-1">Sofern zuvor die Zeile: #include &quot;colors.inc&quot; vorhanden ist,<br>
+kann mit vordefinierten Farben mit englisch/amerikanischen Namen gearbeitet werden:<br>
+z.B.:  <b>pigment{ color Red }</b><br>
+Ferner l&auml;&szlig;t sich jede beliebige Farbe aus Rot, Gr&uuml;n und Blau mischen ("Additive Farbmischung"!),<br>
+dazu verwendet man die Anweisung <b>pigment{color rgb&lt;..,..,..&gt;}</b> (red,green,blue).<br>
+Die in der Klammern einzusetzenden 3 Zahlen f&uuml;r die Farbst&auml;rken m&uuml;ssen Werte zwischen 0.000 und
+1.000 darstellen. Dabei bedeutet 1.00 = 100% und 0.00 = 0% der jeweiligen Farbe.<br>
+&nbsp;</font>
+<font size="-1">Hier einige <b>Beispiele f&uuml;r rgb-definierte Farben:</b></font><br>
+<table border="0" width="95%" align="center"><tr>
+<td><font size="-1"><b>color rgb&lt;0,0,0&gt;</b> = Schwarz (&quot;color Black&quot;),<br>
+<b>color rgb&lt;0.5,0.5,0.5&gt;</b> = Grau (&quot;color Grey&quot;), <br>
+<b>color rgb&lt;1,1,1&gt;</b> = Wei&szlig; (&quot;color White&quot;),<br>
+<b>color rgb&lt;1,0,0&gt;</b> = Rot (&quot;color Red&quot;),<br>
+<b>color rgb&lt;0,1,0&gt;</b> = Gr&uuml;n (&quot;color Green&quot;),<br>
+<b>color rgb&lt;0,0,1&gt;</b> = Blau (&quot;color Blue&quot;),<br>
+<b>color rgb&lt;1,1,0&gt;</b> = Gelb (&quot;color Yellow&quot;),<br>
+<b>color rgb&lt;0,1,1&gt;</b> = HimmelBlauGr&uuml;n genannt: Cyan<br>
+<b>color rgb&lt;1,0,1&gt;</b> = RotViolett genannt: Magenta.<br>
+<b>color rgb&lt;1,0.65,0&gt;</b> = OrangeGelb<br>
+<b>color rgb&lt;0.25,1,0&gt;</b> = Gelbgr&uuml;n (&quot;color YellowGreen&quot;),<br>
+<b>color rgb&lt;1,0,0.25&gt;</b> = Weinrot .<br>
+
+Ferner kann man Farben <b>aufhellen bzw. abdunkeln</b>:<br>
+<b>color rgb&lt;1,0.5,0.5&gt;</b> = HellRot <br>
+<b>color rgb&lt;0.5,0,0&gt;</b> = DunkelRot </font><br>
+</td><td valign="top">
+   <table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/txtur_col.jpg" border="0" width="160" height="200"></td></tr>
+   </table>
+</td></tr></table>
+Es lohnt sich, es einfach mal selbst auszuprobieren !!! <br>
+
+<font size="-1">Das menschliche Auge kann ungef&auml;hr 16 Millionen Farbt&ouml;ne unterscheiden.
+F&uuml;r eine Repr&auml;sentation im Computer ben&ouml;tigt man 24 bit pro Farbpixel! <br>
+Es empfiehlt sich die Monitoreinstellung der Graphikkarte zu &uuml;berpr&uuml;fen: sie sollte auf mindesten 24 bit Farben ('true-color')
+eingestellt sein. Die Fabrikeinstellung betr&auml;gt oft weniger
+(16 bit Farben oder 'hight colors') - kein Problem mit den meisten Computergames,
+aber mit POV-Ray wird man den Unterschied sehen!</font>
+<hr>
+Nach <b>#include &quot;textures.inc&quot;</b> kann man die darin<br>
+definierte <b>vorgefertigte Farbmuster</b> (pigment)<br>
+und <b>vorgefertigte Texturen</b> verwenden.
+<table width="100%" valign="top"><tr><td valign="top">
+<font size="-1">
+Beispiel <b>vorgefertigtes pigment</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ pigment{ Jade }
+          finish{ phong 1 }
+        }</b></td></pre></tr></table>
+
+Andere vorgefertigte Pigmente sind z.B.: <br>
+Candy_Cane, Red_Marble, Brown_Agate. </font>
+</td><td>
+<font size="-1">
+Beispiel <b>vorgefertigte Texture</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ Cork
+         finish{ phong 1 }
+       }</b></td></pre></tr></table>
+Andere vorgefertigte Texturen sind z.B.: <br>
+Polished_Chrome, Polished_Brass.</font>
+</td><td align="center">
+   <table border="2" bgcolor="#efefef" align="center"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+   <tr><td><img src="im/Pigment_Jade.jpg" border="0" width="80" height="80"></td></tr>
+   </table><font size="-1">Jade</font>
+
+
+
+</td></tr>
+<tr><td>
+<b>Transparentes Material mit Refraktion:</b> <br>
+<font size="-2">(Refraktion = Lichtbrechung)<br>
+</font><font size="-1">F&uuml;r z.B. dickes Glas mit Lichtbrechung<br>
+ben&ouml;tigt man  &quot;interior{ }&quot;</font>:<br>
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>material{ texture{ ... }
+          interior{ ior 1.5 }
+        }</b> // end of material</b></td></pre></tr></table>
+</td><td>
+<font size="-1">
+Beispiel <b>vorgefertigtes Material</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>material{ M_Glass3 }</b></td></pre></tr></table>
+<br>
+<br>
+</td><td align="center">
+   <table border="2" bgcolor="#efefef"
+    bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/M_Glass.jpg" border="0" width="80" height="80"></td></tr>
+   </table><font size="-1">Glass</font>
+
+
+</td></tr>
+</table>
+
+<hr>
+<table width="100%" align="center"><tr>
+<td><font size="+1"><b>normal{ ... }</b></font> <b>Oberfl&auml;chen-Rauhheit</b> (kann! falls nicht glatt) <br>
+Wird diese Eigenschaft nicht definiert, so bleibt die Oberfl&auml;che glatt. <br>
+<font size="-1">Einige interessante Effekte sind z.B.:</font><br>
+<font size="-1"><b>bumps</b> -Beulen; <b>waves</b> -Wellen;
+<b>dents</b> - Zacken;<br>
+<b>ripples</b> -Rippel; <b>wrinkles</b> - Knitter.</font><br>
+<td align="center"><table border="2" bgcolor="#efefef"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/normal00.jpg" border="0" width="80" height="80"></td></tr>
+   </table>
+</td>
+</tr></table>
+<p align="justify">
+<font size="-1">Sind einzelne Effekte nicht sofort zu erkennen, so liegt es meist daran, da&szlig; sie zu gro&szlig; eingestellt wurden.
+Dies l&auml;&szlig;t sich durch Hinzuf&uuml;gen z.B. der Anweisung "scale 0.05" oder &auml;hnlicher Werte &auml;ndern -
+man mu&szlig; die richtige Gr&ouml;&szlig;e probieren!<br>
+Wesentlich ist es zu wissen, da&szlig; diese Effekte nur ein mehr oder weniger rhythmisches Kippen des Normalenvektors
+("Lot auf die Fl&auml;che") auf der Oberfl&auml;che hervorrufen. Nach diesem Lot werden die Reflexion des Lichts und der
+Schattenfall auf der Oberfl&auml;che berechnet (Reflexionswinkel = Einfallswinkel, jeweils zum Lot hin gemessen).<br>
+Die Silhouettenlinie (K&ouml;rperumri&szlig;) der K&ouml;rper bleibt davon (leider!) unber&uuml;hrt! Das bedeutet,
+da&szlig; die Verbeulung des K&ouml;rpers nur scheinbar ist! Sofern die unver&auml;nderte Siluette keine st&ouml;renden
+Effekte verursacht, lassen sich mit solchen und vielen weiteren Funktionen jedoch verbl&uuml;ffend realistische
+Oberfl&auml;chen modellieren. </font><br>
+
+<hr>
+<table width="100%" align="center"><tr>
+<td><font size="+1"><b>finish {....}</b></font> - Oberfl&auml;chen-Helligkeit und -Glanz</b><font size="-1"> (sollte definiert werden!)</font><br>
+
+ <font size="-1">Die wichtigsten Werte sind:</font> <br>
+<font size="-1">(Hier wird vorausgesetzt, dass der Befehl &quot;<b>global_settings {assumed_gamma 1.0 }</b>&quot;
+im Kopf der Szenendatei eingef&uuml;gt ist!) </front><br>
+<b>ambient</b> 0.10 <font size="-1">Schattenhelligkeit der Farbe (ist voreingestellt als &quot;default&quot; auf 0.10)</font><br>
+<font size="-1">(simuliert die durch indirekte Beleuchtung hervorgerufene Helligkeit. Eine korrekte Berechnung von allem zur
+indirekten Beleuchtung beitragendem Licht (radiosity) ist praktisch nur n&auml;herungsweise m&ouml;glich!)</font><br>
+<b>diffuse</b> 0.90 <font size="-1">Anteil der durch direkte Beleuchtung erzeugte Helligkeit (vgl. hierzu die Anmerkungen unten!).</font><br>
+<b>reflection</b> 0.15 <font size="-1">SpiegelungsAnteil der Helligkeit</font><br>
+<b>phong</b> 1.0 <font size="-1">Einfache Erzeugung von Glanzlichtern</font><br>
+<b>specular</b> 0.5 <font size="-1">Einfache Erzeugung von fl&auml;chigem Schimmer.</font><br>
+     </td>
+<td><table border="2" bgcolor="#efefef"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/txtur_r0.jpg" border="0" width="80" height="80"></td></tr>
+   </table>
+</td>
+</tr></table>
+<p align="justify">
+<font size="+1"><b>!!! Anmerkung:</b></font>
+
+<font size="-1">Die Grundeinstellung (&quot;default&quot;) von ambient und finish betr&auml;gt (bei Version 3.1 und 3.5):
+ &quot;finish{ambient 0.1 diffuse 0.6}&quot;. Dabei wird vorausgesetzt, da&szlig; die grunds&auml;tzliche Kontrasteinstellung
+ mittels &quot;global_settings { assumed_gamma 1.0 }&quot; festgelegt wird.
+
+ Dies l&auml;&szlig;t auf Monitoren von Rechnern mit Intel-Prozessoren (486er, Pentium etc.)
+die <b>Farben viel zu dunkel</b> erscheinen ! <b>Es empfiehlt sich
+durch &quot;finish {ambient 0.10 diffuse 0.90}&quot;  oder etwa &quot;finish {ambient 0.15 diffuse 0.85}&quot;
+die Werte zu erh&ouml;hen. </font></b>
+<br>
+<font size="-1">Am besten legt man die Werte f&uuml;r diffuse und ambient generell durch die Anweisung
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#default{ finish{ ambient 0.1 diffuse 0.9 }}</b></td></pre></tr></table>
+ am Anfang einer Szenenbeschreibung
+ und &auml;ndert diese nur noch bei z.B. spiegelnden Fl&auml;chen entsprechend ab.<br>
+Werden f&uuml;r die &quot;default-Werte&quot; bei Textur-Definitionen sp&auml;ter andere Werte angegeben, so
+&uuml;berschreiben diese bei der neu definierten Textur die Werte der Grundeinstellung.</font><br>
+
+<font size="-1">Will man K&ouml;rper plastischer, aber nicht heller darstellen (weniger indirektes Licht,
+h&auml;rteren Kontrast der Beleuchtung, tiefere Schatten ), so sollte die Summe aus
+ambient und diffuse beibehalten werden. Z.B. durch: &quot;finish {ambient 0.05 diffuse 0.95}&quot;
+Betr&auml;gt die Summe aus ambient, diffuse und reflection mehr als 1, dann
+erscheint die Beleuchtung meist unrealistisch! Die K&ouml;rper erscheinen dann oft in ihren
+Schattenpartien strukturlos ausgefressen, wie auf einem &uuml;berbelichteten Photo. <br>
+Leuchtende K&ouml;rper stellt man nicht durch &uuml;bertrieben helle Texturen da (sie strahlen trotzdem nicht!!!),
+sondern besser durch Lichtquellen in schattenlosen K&ouml;rpern mit dem Kommando "looks_like" - diese
+strahlen dann auch richtig!</font>
+</font>
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povkurs0.htm">Teil 0</a> |
+<a href="povkurs1.htm">Teil 1</a>  | <b><a href="povkurs2.htm">Teil 2</a> |
+<a href="povkurs3.htm">Teil 3</a>  | <a href="povkurs4.htm">Teil 4</a> |
+<a href="povkurs5.htm">Teil 5</a>  | <a href="povkurs6.htm">Teil 6</a> |
+<!--a href="povkurs7.htm"-->Teil 7</a>  | <a href="povkurs8.htm">Teil 8</a> |
+<a href="povkurs9.htm">Teil 9</a>  | <a href="povkursa.htm">Teil 10</a> |
+                                     <a href="povkursb.htm">Teil 11</a></b></font></p>
+</td></tr></table>
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

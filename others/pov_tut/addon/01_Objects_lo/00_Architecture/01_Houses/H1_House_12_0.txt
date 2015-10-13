@@ -1,0 +1,60 @@
+//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------- textures
+#declare Wall_Texture_Outside = 
+      texture { pigment{ color White*1.1}
+                normal { bumps 0.5 scale 0.005} 
+                finish { phong 1}
+              } // end of texture
+//----------------------------------------------------------------
+#declare Wall_Texture_Inside = 
+      texture { pigment{ color White*1.1}
+                finish { phong 1}
+              } // end of texture
+//----------------------------------------------------------------
+#declare Roof_Texture = 
+// layered texture!!!
+      texture { pigment{ color rgb<0.8,0.30,0.2>*0.9} 
+                normal { gradient z scallop_wave scale<1,1,0.15>} 
+                finish { phong 1}
+              } // end of texture
+ 
+      texture { pigment{ gradient x 
+                         color_map{[0.00 color Clear]
+                                   [0.90 color Clear]
+                                   [0.95 color White*0.1]
+                                   [1.00 color White*0.1]}
+                          scale 0.25}
+                 finish { phong 1}
+              } // end of texture
+
+//---------------------------------------------------------------
+#declare Window_Texture = 
+         texture{ pigment{ color rgb< 0.75, 0.5, 0.30>*0.35 } // brown  
+                  // pigment{ color White*1.2}
+                  finish { phong 0.1}}
+//-------------------------------------------------------------------------------------// 
+#include "House_12_0.inc"
+//-------------------------------------------------------------------------------------// 
+object{ House_12_0 ( // main house: x = +/-2.80, h = 5.20, z = 7.50,
+                     // side part : z = 4.60, x ~ 2.50, h = 4.70. 
+                     Wall_Texture_Outside
+                     Wall_Texture_Inside 
+                     Window_Texture
+                     Roof_Texture
+                   )  //----------------------------------------------------------------//
+        rotate<0, 0,0>
+        translate<-1+1,0.00, -2>
+      }   
+//---------------------------------------------------------------------------------------
+object{ House_12_0 ( // main house: x = +/-2.80, h = 5.20, z = 7.50,
+                     // side part : z = 4.60, x ~ 2.50, h = 4.70. 
+                     Wall_Texture_Outside
+                     Wall_Texture_Inside 
+                     Window_Texture
+                     Roof_Texture
+                   )  //----------------------------------------------------------------//
+        rotate<0,-90,0>
+        translate  <17-2,0,2>
+      }   
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

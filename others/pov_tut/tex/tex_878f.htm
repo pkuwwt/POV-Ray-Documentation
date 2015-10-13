@@ -1,0 +1,346 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures with POV-Ray  - image_map</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="description" content="Textures avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=520");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Conception de Surface en &raquo;texture&laquo; avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_878e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_878e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_878i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_878i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_878d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_878d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+ &nbsp;       <!--a href="tex_000f.htm"--><b>Conception de Surface</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000f.htm">Coleurs et Textures</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001f.htm">Syntaxe de texture</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001f.htm">Exemple de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200f.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300f.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">Exemples normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400f.htm">finish{ ... } </b></a><br>-->
+ <nobr>&nbsp; &nbsp; <a href="tex_210f.htm">Textures pr&ecirc;tes-&agrave;-l'emploi</b></a></nobr><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210f.htm">Rules</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150f.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160f.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110f.htm">Couleurs do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110f.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120f.htm">Transparence</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700f.htm">Motifs - Patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700f.htm">types de motifs</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500f.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550f.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs rayures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs par pigments</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650f.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651f.htm">pigment_pattern (2)</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750f.htm">Listes de Motifs</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750f.htm">Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755f.htm">Motifs par hasard</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760f.htm">Motifs Fractal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Autres motifs</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780f.htm">Warps</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_780f.htm">warp mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_790f.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800f.htm">Mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_800f.htm">m&eacute;thodes de mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820f.htm">pigment_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830f.htm">texture_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840f.htm">normal_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850f.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860f.htm">material_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870f.htm">image_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_875f.htm">image_map+gif 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_876f.htm">image_map+gif 2</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_878f.htm"--><b>image_map+gamma</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880f.htm">bump_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_885f.htm">transparency maps 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_886f.htm">transparency maps 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_887f.htm">transparency maps 3</b></a><br>
+ &nbsp; &nbsp; <a href="tex_890f.htm">Superpositions</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880f.htm">bump_map{ ... }</b></a><br>
+ &nbsp; &nbsp; <a href="tex_890f.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890f.htm">layered textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900f.htm">Votre textures</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="95%" align="center"><tr><td><!-- global table-->
+<b><font size="5"> image_map  et   gamma  </b></font><br>
+   <font size="3">&nbsp;Une caract&eacute;ristique de image_map, <b><font color="#800000">nouveau en POV-Ray version 3.7</font></b></font>
+<hr><font size="2"><p><b>Il ya une grande diff&eacute;rence entre POV-Ray version 3.6.2 et version 3.7<br>
+dans le traitement de la gamma des images utilis&eacute;es dans image_map : </p></b></font>
+
+
+</td>
+</tr>
+<table width="90%">
+ <tr>
+  <td valign="top">
+<b>&quot;image_map&quot; avec POV-Ray 3.6.2 :</b><br>
+  <table border="1" cellspacing="4" cellpadding="4">
+<tr><td bgcolor="#f8f8f0"><pre><b>//--------------------------------------
+#version 3.6;
+global_settings{ assumed_gamma 1.0 }
+#default{ finish{ ambient 0.1 diffuse 0.9}}
+//--------------------------------------
+// ...
+// box with layered textures
+box { &lt;-0.04,-0.04,0&gt;,&lt 1.03, 1.04, 0.01&gt;
+      // 1st layer: White
+      texture{
+        pigment{ color rgb&lt;1,1,1&gt;*1.1 }
+        finish{ phong 1}
+      } // ------------------------------
+      // 2nd layer: image_map
+      texture{
+        pigment{
+          image_map{
+          jpeg "Image_gamma_0.jpg"
+          map_type 0
+          interpolate 2
+          once
+         } // end of image_map
+       } //  end of pigment
+     } // end of texture
+
+     scale &lt;4/3,1,1&gt;*1.75
+     translate&lt;-1.5,0.1,-2&gt;
+} // end of box //-----------------------</b></td></pre>
+  </tr>
+  </table>
+<font size="2">Un macro pour l'adaptation du gamma d'image<br>
+en image_maps avec POV-Ray version 3.6.2. est
+<a href="../backgrnd/p_sky8.htm" target="_new">ici</a>.</font>
+</td>
+
+
+<td valign="top">
+<h6 align="center">
+  <table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Image_gamma_0s.jpg" border="0" width="200"  height="150"
+       alt="image for image_map" title="image for image_map"></a>
+      </td></tr></table>L'image utiliser ici pour image_map<br>
+      Fichier d'image : <a href="im/Image_gamma_0.jpg">Image_gamma_0.jpg</a>
+       <br>
+       <br>
+  <table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Image_gamma36_1.jpg" border="0" width="320"  height="240"
+       alt="image_map with POV-Ray 3.6" title="image_map with POV-Ray 3.6"></a>
+      </td></tr></table>image_map avec POV-Ray 3.6 ... un probl&egrave;me de gamma !<br>
+       Fichier de sc&egrave;ne POV-Ray 3.6.2 : <a href="pov/Image_gamma36_1.pov">Image_gamma36_1.pov</a></h6>
+</td>
+</tr></table-->
+
+<table width="90%">
+<tr><td><b>&quot;image_map&quot; avec POV-Ray 3.7 (RC6) :</b><br>
+  <table border="1" cellspacing="4" cellpadding="4">
+<tr><td bgcolor="#f8f8f0"><pre><b>//--------------------------------------
+#version 3.7;
+global_settings{ assumed_gamma 1.0 }
+#default{ finish{ ambient 0.1 diffuse 0.9}}
+//--------------------------------------
+// ...
+// box with layered textures
+box { &lt;-0.04,-0.04,0&gt;,&lt 1.03, 1.04, 0.01&gt;
+      // 1st layer: White
+      texture{
+        pigment{ color rgb&lt;1,1,1&gt;*1.1 }
+        finish{ phong 1}
+      } // ------------------------------
+      // 2nd layer: image_map
+      texture{
+        pigment{
+          image_map{
+          jpeg "Image_gamma_0.jpg"
+          map_type 0
+          interpolate 2
+          once
+         } // end of image_map
+       } //  end of pigment
+     } // end of texture
+
+     scale &lt;4/3,1,1&gt;*1.75
+     translate&lt;-1.5,0.1,-2&gt;
+} // end of box //-----------------------</b></td></pre>
+
+</tr>
+</table>
+ </td>
+<td>
+&nbsp;<b>   </b>&nbsp;
+</td>
+ <td valign="top"><h6 align="center"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Image_gamma37_1.jpg" border="0" width="320"  height="240"
+       alt="image_map with POV-Ray 3.6" title="image_map with POV-Ray 3.6"></a>
+      </td></tr></table>image_map avec POV-Ray 3.7, default gamma handling<br>
+        Fichier de sc&egrave;ne POV-Ray 3.7 : <a href="pov/Image_gamma37_1.pov">Image_gamma37_1.pov</a>
+</td></h6>
+</tr></table>
+
+<table width="90%"><tr><td><b>&quot;image_map&quot; en POV-Ray 3.7 (RC6)<br>
+ avec correction gamma del'image input :<br>
+<font size="-1"> Nou pouvons remplacer le gamma default !</font></b><br>
+<table border="1" cellspacing="4" cellpadding="4">
+<tr><td bgcolor="#f8f8f0"><pre><b>// box avec layered textures
+box { &lt;-0.04,-0.04,0&gt;,&lt 1.03, 1.04, 0.01&gt;
+      // 1st layer: White
+      texture{
+        pigment{ color rgb&lt;1,1,1&gt;*1.1 }
+        finish{ phong 1}
+      } // ------------------------------
+      // 2nd layer: image_map
+      texture{
+        pigment{
+          image_map{
+          jpeg "Image_gamma_0.jpg"
+          <font color="#800000">gamma 2.0</font>
+          map_type 0
+          interpolate 2
+          once
+         } // end of image_map
+       } //  end of pigment
+     } // end of texture
+     scale &lt;4/3,1,1&gt;*1.75
+     translate&lt;-1.5,0.1,-2&gt;
+} // end of box //-----------------------</b></td></pre>
+
+</tr>
+</table>
+ </td>
+<td>
+&nbsp;<b>   </b>&nbsp;
+</td>
+<td valign="top"><h6 align="center"><br>
+
+  <table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Image_gamma37_2.jpg" border="0" width="320"  height="240"
+       alt="image_map with POV-Ray 3.6" title="image_map with POV-Ray 3.6"></a>
+      </td></tr></table>image_map avec POV-Ray 3.7 et 'gamma 2.0'<br>
+
+</td></h6>
+</tr></table>
+
+<hr size="3">
+<table width="90%"><tr><td><b>&quot;image_map&quot; en POV-Ray 3.7 (RC6)<br>
+ avec correction gamma + emission:</b><br>
+<table border="1" cellspacing="4" cellpadding="4">
+<tr><td bgcolor="#f8f8f0"><pre><b>// box with layered textures
+box { &lt;-0.04,-0.04,0&gt;,&lt 1.03, 1.04, 0.01&gt;
+      // 1st layer: White
+      texture{
+        pigment{ color rgb&lt;1,1,1&gt;*1.1 }
+        finish{ phong 1}
+      } // ------------------------------
+      // 2nd layer: image_map
+      texture{
+        pigment{
+          image_map{
+          jpeg "Image_gamma_0.jpg"
+          <font color="#800000">gamma 2.5</font>
+          map_type 0
+          interpolate 2
+          once
+         } // end of image_map
+       } //  end of pigment
+       <font color="#800000">finish{ emission 0.3 }</font>
+     } // end of texture
+     scale &lt;4/3,1,1&gt;*1.75
+     translate&lt;-1.5,0.1,-2&gt;
+} // end of box //-----------------------</b></td></pre>
+
+</tr>
+</table>
+ </td>
+ <td>
+&nbsp;<b>   </b>&nbsp;
+</td>
+<td valign="top"><h6 align="center"><br>
+
+  <table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Image_gamma37_4.jpg" border="0" width="320"  height="240"
+       alt="image_map with POV-Ray 3.6" title="image_map with POV-Ray 3.6"></a>
+      </td></tr></table>image_map avec POV-Ray 3.7<br>
+  et 'gamma 2.5' + 'emission 0.3'<br>
+</td>
+</tr>
+</table>
+
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

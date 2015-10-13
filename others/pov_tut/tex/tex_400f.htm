@@ -1,0 +1,275 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="Textures avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Conception de Surface en &raquo;texture&laquo; avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_400e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_400e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_400i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_400i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_400d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_400d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+ &nbsp; <b>Conception de Surface</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000f.htm">Coleurs et Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp;<a href="tex_001f.htm">Syntaxe de texture</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001f.htm">Exemple de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200f.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300f.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330f.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2f.htm">Exemples normal</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_400f.htm"--><b>finish{ ... } </b></a><br>
+ <nobr>&nbsp; &nbsp; <a href="tex_210f.htm">Textures pr&ecirc;tes-&agrave;-l'emploi</b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="tex_210f.htm">R&egrave;gles de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150f.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160f.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110f.htm">Couleurs en do-it-yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110f.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120f.htm">Transparence</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700f.htm">Motifs - Patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700f.htm">types de motifs</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500f.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550f.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs rayures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750f.htm">Listes de Motifs</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750f.htm">Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755f.htm">Motifs par hasard</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760f.htm">Motifs Fractal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Autres motifs</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780f.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780f.htm">warp mapping</b></a><br> -->
+ &nbsp; &nbsp; <a href="tex_790f.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800f.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800f.htm">méthodes de mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820f.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830f.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840f.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850f.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860f.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870f.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880f.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890f.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890f.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900f.htm">Votre textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="85%" align="center"><tr><td><!-- global table-->
+
+<table><tr>
+ <td>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/txtur_r0.jpg" width="80" height="80" alt="color rgb" border="0"></td></tr></table>
+ </td>
+ <td><h3 align="left"><b>&nbsp; La Syntaxe de &raquo;texture&laquo;</b></h3>
+   <font size="5"><b><p>&nbsp;
+     &quot;finish {.....}&quot;
+     &nbsp; &nbsp;</p>
+ </td>
+</tr></table>
+
+<h5 align="justify">
+La luminosit&eacute; de les partes de la surface caus&eacute;e de les environs
+par la lumi&egrave;re indirect  et la qualit&eacute; de la r&eacute;flexion est d&eacute;fini
+par &quot;finish {.....}&quot;.
+(La refraction de la lumi&egrave;re est d&eacute;fini par &quot;interior {.....}&quot;.)<br>
+Les valeurs plus importants sont : (les valeurs num&eacute;riques ici sont exemplaire!)<br>
+</h5>
+<table><tr>
+<td><h5 align="justify">
+ <b>ambient 0.10</b> (default: ambient 0.10)
+  C'est la luminosit&eacute; de les partes de la surface
+   caus&eacute;e de les environs par la lumi&egrave;re indirect.<br>
+ C'est seulement une simulation de cet effet de l'illumination
+ indirecte, une calcule un peu plus correct on peut simuler avec
+ la radiosit&eacute; (radiosity) - un calcule totalement correcte de l'illumination
+ est presque impossible!<br>
+ &quot;ambient 1 diffuse 0&quot; = l'objet n'a pas des ombres<br>(C'est bon pour un ciel!).<br>
+<br>
+
+ <b>diffuse 0.9</b> (default: diffuse 0.6) Dans cette parte la luminosit&eacute;
+    de la surface est caus&eacute;e de la lumi&egrave;re directe!</h5>
+  </td>
+  <td><img src="im/txtur_fi00.jpg" border="0" width="240" height="80"></td>
+</tr>
+
+<tr>
+<td><h5 align="justify">
+  <b>ambient color&lt;0.25,0,0&gt;</b> C'est la possibilit&eacute; de definir la couleur
+   de la lumi&egrave;re indirect (C'est seulement une simulation!)</h5>
+  </td>
+  <td><img src="im/txtur_fi07.jpg" border="0" width="240" height="80"></td>
+</tr><tr>
+ <td><h5 align="justify">
+  <b>phong 1.0</b> Une forme tr&egrave;s simple pour la simulation
+ des rehauts sur un surface par la m&eacute;thode de phong.<br>
+  <b>phong_size 70</b> Les dimensions des rehauts de type phong.<br>
+  1 = tr&egrave;s mat; 40 = plastique; 250 = tr&egrave;s brillant !</h5>
+  </td>
+  <td><img src="im/txtur_fi01.jpg" border="0" width="240" height="80"></td>
+</tr>
+
+<tr>
+ <td><h5 align="justify">
+  <b>specular</b> rehauts ressemblant &agrave; phong<br>
+  <b>roughness</b> dimensions des rehauts de type specular.<br>
+    1 = very rough, large highlights;
+   <nobr>0.05 (default) plastique;</nobr> <nobr>0,0005 tr&egrave;s mat</nobr>, sans rehauts.</h5>
+ </td>
+  <td><img src="im/txtur_fi06.jpg" border="0" width="240" height="80">
+  </td>
+</tr>
+
+<tr>
+ <td><h5 align="justify">
+   <b>reflection 0.15</b>  C'est le composant del'illumination
+  caus&eacute; de la r&eacute;flexion des autres objets.</h5>
+  </td>
+  <td><img src="im/txtur_fi02.jpg" border="0" width="240" height="80"></td>
+</tr>
+<tr>
+ <td><h5 align="justify">
+  <b>metallic</b> (Sans valeur num&eacute;rique!)
+  pour simuler avec phong ou specular un brillant m&eacute;tallique.</h5>
+</td>
+  <td>
+</td>
+
+</tr>
+<tr>
+ <td><h5 align="justify">
+  <b>brilliance 4</b> le brillant de la surface, (default = 1)
+       plus grand ce valeur plus m&eacute;tallique.</h5>
+ </td>
+  <td><img src="im/txtur_fi05.jpg" border="0" width="240" height="80">
+  </td>
+</tr>
+
+<tr>
+ <td><h5 align="justify">
+   <b>irid { 0.25</b> Simulation de l'irisation = interferences &agrave; couche mince (films d'huile etc.)
+     ( 0.25 = part de lumi&egrave;re r&eacute;flect&eacute;e)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>thickness 0.2</b> // &eacute;paisseur de couche mince<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>turbulence 0.7 }</b> </h5>
+</td>
+  <td><img src="im/txtur_fi03.jpg" border="0" width="240" height="80"></td>
+ <td>
+</tr>
+</table>
+
+</h5>
+
+<h5 align="justify"><b>Important:</b><br>
+ Les valeurs pr&eacute;r&eacute;gl&eacute;s (default values) sont :
+ &quot;finish {ambient 0.1 diffuse 0.6 }&quot;.<br>
+  Pour ordinateurs avec Intel's (486, Pentium etc.) cette mani&egrave;re de repr&eacute;senter
+  les couleurs est trop fonc&eacute;e! Il est indiqu&eacute; sur ces syst&egrave;mes d'augmenter ces
+  valeurs &agrave; <nobr>&raquo; finish {ambient 0.1 diffuse 0.9} &laquo;</nobr>
+</h5>
+
+<table width="100%" align="center">
+<tr>
+<td><pre><b>texture{ pigment{color White}
+         finish {ambient 0.1
+                 diffuse 0.9
+                 phong 1}
+       } // end of texture </b></pre>
+<h5 align="justify">
+Est meilleur de definer cette valeurs au debut de les fichiers de sc&egrave;ne
+en qualit&eacute; de une attitude fondamentale :</h5>
+<pre><b>
+#default{finish{ambient 0.1 diffuse 0.9}}</b></pre>
+</td>
+<td><img src="im/white1.gif" border="0" width="120"  height="120"  alt="avec ambient 0.1 diffuse 0.9"
+     title="avec ambient 0.1 diffuse 0.9"><br>avec ambient 0.1 diffuse 0.9</td>
+<td><img src="im/white2.gif" border="0" width="120"  height="120"  alt="sans ambient and diffuse"
+     title="sans ambient and diffuse"><br>sans ambient et diffuse</td>
+</tr></table>
+
+<h5 align="justify">
+Si vous voulez que un objet appara&icirc;t avec plus de contraste entre les partes
+fonc&eacute;e et les partes brillantes vous devez penser &agrave; ce que
+la somme de ambient, diffuse et reflection doit &ecirc;tre 1.00 = 100 % pour
+une apparences r&eacute;aliste.
+Pour cette raison se nous augmentons l'ambient nous devons diminuer
+conform&eacute;ment le diffuse,
+ p.ex. <nobr>&raquo; finish {ambient 0.05 diffuse 0.95} &laquo;.</nobr><br>
+<br>
+Pour faire une couleur plus sombre ou plus clair ne changez pas les
+valeurs de &quot;ambient&quot; ou de &quot;diffuse&quot;!
+Est meilleur de changer les valeurs rgb par augmenter les composant  du blanc
+ou reduire le composant de la couleur.<br>
+Par ex. :<br>
+rouge :  &quot;Red&quot; = <nobr>rgb&lt;&nbsp;1&nbsp;,&nbsp;0&nbsp;,&nbsp;0&nbsp;&gt;</nobr><br>
+rouge clair :   <nobr>rgb&lt;1 ,0.5 ,0.5 &gt;</nobr><br>
+rouge fonc&eacute; :    <nobr>rgb&lt;0.5, 0,0&gt;</nobr><br>
+</h5>
+
+
+</td></tr></table><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

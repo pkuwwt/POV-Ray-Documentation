@@ -1,0 +1,20 @@
+//-----------------------------------------------------------------------------
+#local Chain_Color =  color rgb< 1, 1, 1>*0.65;     // base color of the chains
+#local Wheel_Texture =  texture { pigment{ color rgb< 1, 0.80, 0.55>*0.5 } 
+                                  normal { bumps 0.5 scale 0.01 }
+                                  finish { phong 1 reflection 0.00}
+                                } // end of texture 
+//-----------------------------------------------------------------------------
+#include "Track_Chain_0.inc"
+//-----------------------------------------------------------------------------
+object{ Track_Chain_0( 2.20, // Chain_Length > 4*Chain_Radius; total legth in x
+                       0.30, // Chain_Radius,  // half total height in y 
+                       0.45, // Chain_Depth__,   // depth in z 
+                       Chain_Color,   // base color of the chains  
+                       Wheel_Texture   //  texture of the wheels  
+                     ) //----------------------------------------- 
+        scale <1,1,1> 
+        rotate<0,0,0> 
+        translate<0,0,0> }//---------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------

@@ -1,0 +1,177 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Transformations with POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015 by Friedrich A. Lohmueller">
+<meta name="Description" content="Basics about geometric transformations with POV-Ray, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d grafic, 3d graphic, computergraphic,
+      geometric transformations with POV-Ray, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometric Transformations with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_000d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a><br>
+        <a href="trans_000i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_000i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp; <!--a href="trans_000e.htm"--><b>Geometric</b></a><br>
+ &nbsp; <!--a href="trans_000e.htm"--><b>Transformations</b></a><br>
+ &nbsp;&nbsp; - <!--a href="trans_000e.htm"--><b>Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Elementary </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100e.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200e.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">mirror symmetry</b></a><br>
+ <br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Other</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400e.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450e.htm">Shearing</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470e.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500e.htm">&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="trans_500e.htm">&nbsp;and &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Vectors and</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Transformations</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="95%"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr><td>
+
+
+<table border="1" cellpadding="0"  align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td colspan="4" width="640" height="480" align="center" valign="top" bgcolor="ffffff">
+      <table align="center" border="4"  bgcolor="#efefef"
+              bordercolor="#c0c0c0" bordercolordark="#f0f0f0" bordercolorlight="#808080">
+              <tr><td><img src="basic2.jpg" border="0" width="640" height="480"
+       alt="Sample transformations" title="Sample transformations"></td></tr></table>
+  </tr>
+  <tr><td height="30" valign="top"  colspan="4">
+         &nbsp; <a href="trans_100e.htm"><font size="2">
+          Elementary Transformations</b></font></a>
+       </td>
+  </tr>
+</table>
+</td></tr>
+<tr><td>
+<table border="1" cellpadding="0"  align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td width="160"  height="120" align="center" valign="top" bgcolor="ffffff">
+       <img src="shearing.jpg" alt="shearing" title="shearing" border="0" width="160" height="120"></td>
+      <td width="160"  height="120" align="center" valign="top" bgcolor="ffffff">
+       <img src="matrix-shear_y_to_x.jpg" border="0" width="160"  height="120"></td>
+      <td width="160"  height="120" align="center" valign="top" bgcolor="ffffff">
+       <img src="Rotate_Around_Trans.jpg" border="0" width="160" height="120"></td>
+      <td width="160"  height="120" align="center" valign="top" bgcolor="ffffff">
+       <img src="Center_Trans_xyz.gif" border="0" width="160" height="120"></td>
+  </tr>
+  <tr><td height="30" valign="top"  colspan="4">
+         &nbsp; <a href="trans_470e.htm"><font size="2">
+          Other Transformations</b></font></a></td></tr>
+
+</table>
+</td></tr>
+<tr><td>
+<table border="1" cellpadding="0"  align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td width="160"  height="120" align="center" valign="top" bgcolor="ffffff">
+       <img src="vrotate.jpg" border="0" width="160" height="120"> </td>
+      <td width="160"  height="120" align="center" valign="top" bgcolor="ffffff">
+       <img src="vaxis_rotate.jpg" border="0" width="160" height="120" > </td>
+      <td width="160"  height="120" align="center" valign="top" bgcolor="ffffff">
+       <img src="vcross.jpg" border="0" width="160" height="120" > </td>
+      <td width="160"  height="120" align="center" valign="top" bgcolor="ffffff">
+       <img src="vturbulence.jpg" border="0" width="160" height="120" > </td>
+   </tr>
+  <tr><td height="30" valign="top"  colspan="4">
+         &nbsp; <a href="trans_800e.htm"><font size="2">
+          Vectors and Transformations</b></font></a></td></tr>
+
+</table>
+</td></tr>
+</table>
+
+
+</td></tr>
+    <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

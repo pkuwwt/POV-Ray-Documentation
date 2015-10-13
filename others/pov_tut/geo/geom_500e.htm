@@ -1,0 +1,182 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Regular dodecahedron, Geometric Basics for Raytracing with POV-Ray">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, povray tutorial, 3D grafic, geometric basics for raytracing, regular dodecahedron">
+<title>Geometric Basics for Raytracing - Geometry with POV-Ray - Regular Dodecahedron</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Elementary Geometry</b></font>
+      <font size="-1"> for Raytracing</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_500i.htm"><font size="2">Italiano </font></a>
+        <a href="geom_500i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_500f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="geom_500f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_500d.htm"><font size="2">Deutsch </font></a>
+        <a href="geom_500d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="geom_000e.htm">Geometrical Basics</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000e.htm">for Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050e.htm">Right-angled Triangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070e.htm">Pythagorean Theorem</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080e.htm">Trigonometry Basics</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090e.htm">Law of cosines</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100e.htm">Equilateral Triangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150e.htm">Regular Polygon</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200e.htm"--><i>Polyhedron</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200e.htm">Tetrahedron</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250e.htm">Octahedron</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300e.htm">Cube &amp; Cuboid</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_500e.htm"--><b>Dodecahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700e.htm">Icosahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260e.htm">Cuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270e.htm">Truncated Octahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280e.htm">Rhombicuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800e.htm">Truncated Icosahedron</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_c000e.htm"--><i>Circles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100e.htm">Tangent circles</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200e.htm">Internal Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300e.htm">External Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"><!-- global-->
+
+<table width="50%"><tr>
+   <td><img src="im/Dodekahedron_120t.gif" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><h2><b><nobr>Regular Dodecahedron</nobr></b>
+       <font size="-1">Some useful geometrical facts</font></h2></td>
+   <td><table border="0" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <img src="im/Fold_Dodekahedron_120t.gif" width="120" height="120" border="0" hspace="0" vspace="0"></td></tr></table>
+   </td>
+</tr></table>
+<br>
+<font size="-1"><i>In the following we write for the square root of a number the expression &quot;sqrt(</i>ZAHL<i>)&quot; <br>
+conforming to the syntax used in POV-Ray.</i></font><br>
+<br>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><b>Dimensions of a regular dodecahedron</b><br>
+ <font size="-1">Length of an edge of the dodecahedron: <b>a</b>.</font></td>
+ </tr>
+ <tr>
+  <td  valign="top">
+<font size="-1">The radius of circumsphere:</font><br>
+<b> R  =  a / 4 * sqrt( 3 ) * ( 1 + sqrt(5) ) ;</b><br>
+
+<font size="-1">The radius of edgesphere (tangent to edges):</font><br>
+<b> Re =  a / 4 * ( 3 + sqrt(5) ) ;</b><br>
+<br>
+<font size="-1">The radius of the insphere:</font><br>
+<b> Ri =  a / 2 * sqrt( ( 25 + 10*sqrt(5))/10 );</b><br>
+<br>
+<nobr><font size="-1">The angle between two faces:  ~116.57&deg;  </nobr></font><br>
+<nobr><font size="-1">Face_Angle = </font><br><b>degrees( acos(-1/5*sqrt(5)) );  </nobr></b><br>
+<br>
+<nobr><font size="-1">The angle between two edges: ~ ~121.72&deg;   </nobr></font><br>
+<nobr><font size="-1">Face_Edge_Angle = </font><br><b>degrees( acos(  -sqrt( (5-sqrt(5))/10 ) )  );</nobr></b><br>
+<br>
+<b></b>
+</td>
+ </tr>
+</table>
+</div>
+
+</td>
+<td valign="top" width="50%">
+  <table border="1" bgcolor="#eeeeee" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Fold_Dodekahedron_320t.gif" width="320" height="320" border="0" hspace="0" vspace="0"></td>
+    </tr></table> <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Flolding of a regular dodecahedron</font><br>
+
+
+
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- global-->
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td>&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

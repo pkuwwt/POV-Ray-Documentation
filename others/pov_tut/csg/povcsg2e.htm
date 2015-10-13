@@ -1,0 +1,163 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, povray, POVRAY, POV-Ray, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, csg, Constructive Solid Geometry, boolean algebra, union, merge, intersection, difference, inverse">
+<meta name="description" content="tutorial on CSG - Constructive Solid Geometry with POV-Ray - part II">
+<title>csg tutorial - Constructive Solid Geometry with POV-Ray - part II</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg2i.htm"><font size="2">Italiano </font></a>
+        <a href="povcsg2i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg2f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="povcsg2f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg2.htm"><font size="2">Deutsch </font></a>
+        <a href="povcsg2.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1e.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1e.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1e.htm">Geometry</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg2e.htm"--><b>union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3e.htm">difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4e.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4e.htm">+ invers</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg5e.htm">clipped_by</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg6e.htm">coincident surfaces</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg7e.htm">textures in CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Boolean Algebra with Solids - part II</h5>
+<h2 align="center">About "union" and "merge"</h2>
+
+<table border="0" width="90%" align="center"><tr><td>
+<div align="center">
+
+<table border="0" cellpadding="0" cellspacing="0">
+   <tr>
+      <td><img src="boole_u.gif" width="130" height="100"></td>
+      <td width="180" height="10"><br><br>
+          <b>union{...}</b> or <b>merge{...}</b></td>
+      <td><table align="center" border="2" bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+         <tr><td><img src="boole_u.jpg" width="130" height="98"></td></tr></table>
+      </td>
+   </tr>
+</table>
+</div>
+<p align="justify">
+Both commands were used to combine two ore more objects to a new object. The objects may be objects
+without any physical connections!<br>
+These commands are usefull to give different objects the same texture or to transforme them
+together (by scale, rotate, translate or matrix) with only one command.<br>
+e.g.: This makes it easy to create a pawn figure by different primitiv solids and then texture it
+with a continuous wood texture.<br>
+
+<b>Transparent objects and "union":</b><br>
+The command &quot;<b>merge{...}</b>&quot; lets disappear the internal surfaces of the connected objects - this is
+only of special interest if objects are transparent and have to look like made in one casting.
+In other cases - using opaque textures - it is not necessary to use &quot;merge&quot;
+because &quot;union&quot; has the same effect (most times faster!).<br>
+<br>
+</p>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td width="320" height="10"> <b>Sample:</b><br>
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b><font color="#800000">union{</font>
+  sphere{&lt;0,1,0&gt;,0.35}
+  cone{&lt;0,0,0&gt;,0.45,&lt;0,1.2,0&gt;,0}
+  texture{T_Glass3} interior{I_Glass}
+  translate &lt;-0.5, 0, 0&gt;
+     <font color="#800000">}</font>
+<font color="#800000">merge{ </font>
+  sphere{&lt;0,1,0&gt;,0.35}
+  cone{&lt;0,0,0&gt;,0.45,&lt;0,1.2,0&gt;,0}
+  texture{T_Glass3} interior{I_Glass}
+  translate &lt; 0.5, 0, 0&gt;
+     <font color="#800000">}</font></b></td></pre></tr></table>
+</td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_m3.jpg" width="320" height="240"></td></tr></table>
+           <font size="2">A glass texture with <b>union{...}</b> and with <b>merge{...}</b></font>
+        </td>
+    </tr>
+</table>
+</div>
+</tr></td></table>
+
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1e.htm">CSG</a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg2e.htm"-->union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3e.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4e.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5e.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6e.htm">coincident surfaces</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7e.htm">textures</b></a></font></td>
+</tr>
+</table>
+</div>
+</tr></td></table>
+
+</td></h5>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

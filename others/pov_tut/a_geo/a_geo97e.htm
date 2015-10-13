@@ -1,0 +1,301 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2011 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="Analytical Geometry with POV-Ray, Angle between Triange and Plane, raytracing, PoV, POVRAY, POV-Ray 3.6, computer graphics, 3d graphics, raytracing tutorials, POV-Ray Samples">
+<meta name="description" content="Analytical Geometry with POV-Ray - Samples - Calculations of the Angle between a Triange and the yz-Plane with POV-Ray">
+<title>Calculations of the Angle between a Triange and the yz-Plane.- Analytical Geometry with POV-Ray - Samples</title>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=680,height=550");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr> <nobr>by Friedrich A. Lohmueller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo97d.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="a_geo97d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+        <!--a href="a_geo95i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo95i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo95f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo95f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<!--- end of header -->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index.htm">Home</b></a>
+<table border="1" align="center"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__eng.htm"><img src="im/a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__eng.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__e.htm">Analytical Geometry</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__e.htm">with POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__e.htm">- Index -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insert_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -      <a href="a_geo00e.htm">Basics </b></a><br>
+&nbsp; &nbsp; <a href="a_geo00e.htm">Possibilities and Needs</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00e.htm"--><b>Points &amp; Lines</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo10e.htm">Points in 3D</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo20e.htm">Line Sections, Straight,</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20e.htm">Vectors, Distance Markers</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30e.htm">Surfaces &amp; Planes</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo40e.htm">Output of Results,</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40e.htm">Captions</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo45e.htm">Points of Intersection</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo50e.htm">Circles</b></a><br>
+ &nbsp; &nbsp; <!--a href="a_geo60e.htm"--><b>Solids</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo60e.htm">Tetrahedron</b></a><br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61e.htm">Pyramide</b></a><br-->
+ &nbsp; &nbsp; -  <a href="a_geo62e.htm">Parallelepiped</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo65e.htm">Round Solids</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00e.htm">&nbsp;</b></a--><br>
+&nbsp; -  <a href="a_geo70e.htm">Overview by Table</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70e.htm">on &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80e.htm">Vector Analysis</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80e.htm">with POV-Ray</b></a><br>
+&nbsp; -  <a href="a_geo85e.htm">Righthanded &amp; Lefthanded</b></a><br>
+ &nbsp; &nbsp; <a href="a_geo85e.htm">Systems of Coordinates</b></a><br>
+ &nbsp; &nbsp; <a href="a_geo85e.htm">and the Cross Product</b></a><br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00e.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00e.htm"--><b>Samples from</b></a> <br>
+&nbsp; &nbsp; <!--a href="a_geo00e.htm"--><b>Analytical Geometry</b></a><br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91e.htm">Parallelogram of the</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo91e.htm">Middles of the Edges</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo92e.htm">Trace Points of a Straight Line</b></a></nobr><br>
+&nbsp; &nbsp; - <a href="a_geo93e.htm">Calculations <br> &nbsp; &nbsp; &nbsp; about a Triangle</b></a><br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo94e.htm">Area of a Parallelogram</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp; &nbsp;  <a href="a_geo94e.htm">and Cross Product</b></a><br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95e.htm"-->Shadow of a Pyramid</b></a></nobr><br>
+&nbsp; &nbsp; - <a href="a_geo96e.htm">Hit a plane || yz-plane</b></a><br>
+&nbsp; &nbsp;<b> &gt;  <!--a href="a_geo97e.htm"-->Angle triange yz-plane</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+    <table align="center" width="50%"><tr>
+    <td align="center" valign="middle" colspan="2"><h3><nobr>Analytical Geometry with POV-Ray</nobr></h3>
+                                                                          <h4><nobr> - Samples -</nobr></h4></td>
+    </tr><tr>
+    <td align="center" valign="top">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="im/Angle2Plane_00cs_.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+                  <td><img src="im/Angle2Plane_01cs_.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+    </td>
+    <td align="center" valign="middle"><h2 align="center"><nobr> &nbsp; &nbsp; Angle between a triange <br>
+                                                                 &nbsp; &nbsp; and the yz-plane.</h2></td>
+    </tr>
+    </table>
+ </td>
+</tr>
+</table>
+
+<div align="center">
+<table width="95%" align="center" cellpadding="5">
+ <tr>
+  <td colspan="1">
+        <h5 align="justify"><b>The triangle is given by 3 points:
+          </b><br>
+
+          <font size="-1">(<i>For details on textures see the scene file!</i>)</font>
+          <pre><b>#declare A = &lt;-0.00,1.20,-1.00&gt;;
+// and 2 point s on a plane || to yz:
+#declare B = &lt; 2.00,1.50, 1.50&gt;;
+#declare C = &lt; 2.00,0.00,-1.000&gt;;
+
+// Showing points A, B and C:
+sphere{ &lt;0,0,0&gt;, 0.075 translate A
+        texture{ T_YellowGreen }
+      }
+sphere{ &lt;0,0,0&gt;, 0.075 translate B
+        texture{ T_Yellow }
+      }
+sphere{ &lt;0,0,0&gt;, 0.075 translate C
+        texture{ T_Orange }
+      }
+triangle{ A,B,C
+         pigment{color rgbt&lt;1,1,0.5,0.5&gt;}}
+// and the plane x = 2:
+box { &lt;0.00, 0.00,-2.00&gt;,&lt; 0.025, 5.00, 3.50&gt;
+      texture { pigment{ color rgb&lt;1, 1, 1&gt;}
+                finish { phong 1 }
+              } // end of texture
+       translate C
+    } // end of box --------------------------</b></pre>
+<b>Calculation of the base point P of a line <br>&nbsp; perpendicular to the line CB:</b><br>
+<pre><b>// Angle between AC and BC at point C:
+#declare Angle_C = degrees(VAngle(B-C,A-C));
+
+// Distance from C to the base point P
+//  of a line perpendicular to BC:
+#declare Len_P = vlength(A-C)*cos(radians(Angle_C));
+
+// Base point P on line CB:
+#declare P = C + (B-C)*Len_P/vlength(B-C);
+// Show P (red)
+sphere{ &lt;0,0,0&gt;, 0.08 translate P
+        texture{ T_Red }
+      }</td></pre></b>
+
+
+ <td valign="top">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('im/a_geo_Angle2Plane_0im.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="im/Angle2Plane_00c_.jpg"
+                      width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Base Point P of a line <br>&nbsp; perpendicular to the line CB</b></h5>
+
+
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<!-- ////////////////////////////////////////////////////////////////////// -->
+ <tr>
+  <td colspan="1">
+        <h5 align="justify"><b>Calculation of the angle between the triangle ABC<br> and a plane parallel to the yz-plane:</b><br>
+          <!--font size="-1">(<i>For details on textures see the scene file!</i>)  </font-->
+          <pre><b>#declare PA_Vector = A-P ;
+object{  Vector( &lt;0,0,0&gt;,PA_Vector, 0.025)
+         translate P
+         texture{ T_Lila }
+      }
+// vertical to CL on plane x=2:
+#declare PB_Vector = B-P;
+object{  Vector( &lt;0,0,0&gt;,PB_Vector, 0.025)
+         translate P
+         texture{ T_Cyan }
+      } </pre></b>
+
+<font size="2"><b>Vertical to PB in plane x=2:</font><br>
+<font size="1">&nbsp; [ <i>The components of a vector: A=&lt;A.x,A.y,A.z&gt;</i>]</font><br>
+<font size="2"><b>Note: <br>
+  &nbsp; A 2D-vector V<sub>1</sub> = &lt; x<sub>1</sub>, y<sub>1</sub>&gt; is perpendicular<br>
+  &nbsp;&nbsp;  to a vector V<sub>2</sub> = &lt;-y<sub>1</sub>, x<sub>1</sub>&gt; !<br>
+  By analogy: <br>
+  &nbsp; A 3D-vector V<sub>1</sub> = &lt; 0, y<sub>1</sub>, z<sub>1</sub>&gt; is perpendicular<br>
+  &nbsp;&nbsp;  to a vector V<sub>2</sub> = &lt; 0, -z<sub>1</sub>, y<sub>1</sub>&gt; !
+  </b></p></font>
+<pre><b>#declare Vertical_to_PB =
+         &lt;0,PB_Vector.z,-PB_Vector.y> ;
+object{  Vector(&lt;0,0,0&gt;,Vertical_to_PB, 0.025)
+         translate P
+         pigment{ rgb&lt;1,0,0.5&gt; }
+      }
+
+// Angle between vector PA (violet) and
+// vector perpenticular to PB in plane x=2
+// (wine red)
+#declare Angle_ABC_to_Plane =
+         degrees(VAngle(Vertical_to_PB,PA_Vector));
+
+// Angle between CB and z direction:
+#declare Angle_PB_to_Z =
+         degrees(atan((B.y-C.y)/(B.z-C.z)));</b></pre>
+</td>
+ <td valign="top">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('im/a_geo_Angle2Plane_1im.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="im/Angle2Plane_01c_.jpg"
+                      width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b> Angle between a triangle and<br> a plane parallel to the yz-plane.</b><br>
+   <font size="-1">This scene for <nobr>POV-Ray:</nobr>
+   <a href="pov/AngleTriangle2Plane_1.pov">&quot;AngleTriangle2Plane_1.pov&quot; file</a><br>
+   Needs my include file: <a href="http://www.f-lohmueller.de/pov_tut/down/insert_a.htm">&quot;shapes_lo.inc&quot;</a> (see 'step 2')</h5>
+  <br>
+
+  <b>Note:</b> <font size="-1">If we have a triange with only one point on the plane || to the yz plane, we
+                  need to calculate the second point on the plane like in '<a href="a_geo96e.htm">Hit a plane || yz-plane</b></a>'.</font>
+
+  <p align="center">
+
+         <table border="3" bgcolor="#EFEFEF" cellpadding="0" align="center"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+             <tr><td><a href="../../pov_anim/ani_3520d.htm" target="_blank">
+                     <img src="im/3D_Rot_Anim_00c.gif"
+                      width="160" height="120" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table><font size="1"><a href="../../pov_anim/ani_3520d.htm">Animation see here!</a></font></p>
+
+ </td>
+</tr>
+
+</table>
+</div>
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</body>
+</html>

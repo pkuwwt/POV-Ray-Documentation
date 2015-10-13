@@ -1,0 +1,245 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=500,height=650");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="sam_150i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="sam_150i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_150f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="sam_150f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_150d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="sam_150d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_110e.htm">House</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_115e.htm">Roof</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_130e.htm">Tower</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_134e.htm">Castle</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_14_e.htm">Window + Door</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_15_e.htm">Stairs</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <!--a href="sam_150e.htm"--><b>Stairs</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="sam_155e.htm">Winding Stairs</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_158e.htm">Pyramid</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_510e.htm">Columns</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_18_e.htm">Arch</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_160e.htm">Fences</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_220e.htm">Furnitur</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_250e.htm">Household</b></a><br>
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="90%">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('stair/Stair_C_constr_00im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="stair/Stair_C_constr0.jpg" border="0" width="160" height="240"
+                   alt="Stair_C_constr0" title="Click for a bigger example: Stair_C_constr0"></a></td>
+            </tr></table><br>
+ </td>
+ <td valign="top">
+  <h1 align="left"><b>Stair </b></h1>
+   <h6 align="justify">This How To shows the construction of a simple stair as a
+     massive structure.<br>
+    For this we first define the outer dimensions:
+    Length, height and width of the stair.  <br>
+    Then we decide how big the approximate height of the steps should be.
+    Then the number and the dimensions of the steps are calculated automatically.<br>
+    A special problem is the wall texture with bricks and mortar:
+    the pattern must be adapted by transformations to the step height, step width and step deepth.
+   <br>
+
+   An include file to use this object as a read-made object you can find
+   at my <a href="../objects/obj_000e.htm">POV-Ray Objects page</a>.
+  </td></h6>
+</tr>
+</table>
+<table cellpadding="5" width="80%">
+<tr>
+ <td valign="top"><b>How To Do:</b><br>
+  <h6 align="justify">First we declare the texture and the outer dimensions of the wall:</h6>
+<pre><b>#declare Step_Texture =
+ texture{
+   pigment{ color rgb&lt;0.9,0.8,0.6&gt;}
+   finish { diffuse 0.9 phong 0.1}
+        } // end of texture
+//----------------------------------
+// height of the stair (Y),
+#declare Stair_Y = 2.00;
+// length of the stair (X)
+#declare Stair_X = 4.00;
+// stair width (Z)
+#declare Step_Z  = 1.50; </b></pre>
+
+<h6 align="justify">Then we define the approximate height of the steps:</h6>
+<pre><b>#declare Step_Height = 0.175;</b></pre>
+<h6 align="justify">From this we calculate the number of steps and the real
+dimensions of the steps:</h6>
+ <pre><b>// total number of steps
+#local N_o_Steps =
+     int(Stair_Y/Step_Height);
+// real step height caculating:
+#local Step_H = Stair_Y/N_o_Steps;
+// -------------------------------------
+// deepth of one step in x direction:
+#local Step_X = Stair_X / N_o_Steps;
+// -------------------------------------
+</b></pre>
+
+ <h6 align="justify">With these values we can buildt up a stair in
+ a while loop: <br>
+(here with intentionally clearly seperated elements!)
+</h6>
+ </td>
+</tr>
+<tr>
+ <td align="center"><table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="stair/Stair_C_constr1.jpg" border="0" width="320" height="200"
+                   alt="Steps by while loop" title="Steps by while loop"></a></td>
+            </tr></table>Stair - basic shape
+ </td>
+</tr>
+<tr>
+ <td valign="top"><pre><b>union{
+ #local Nr = 0;   // start steps
+ #while (Nr &lt;  N_o_Steps)
+
+  box { &lt;Nr*Step_X, 0, 0&gt;,&lt;Stair_X, Step_H-0.01, Step_Z&gt;
+        translate&lt;0,Nr*Step_H,0&gt;
+      }
+
+ #local Nr = Nr+1;
+ #end //------------ end of while loop
+ // end of steps
+ texture{Step_Texture}
+ //----------------------------------//
+ translate&lt;-2.00,0.00, 0.00&gt;
+} // end of union </b></pre>
+</table>
+<hr>
+<table cellpadding="5" width="80%">
+ <b>Realistic Wall Texture</b><br>
+<h6 align="justify">
+With the POV-Ray pattern type &quot;bricks&quot; used as a &quot;texture normal&quot;
+it's possible to simulate bricks with mortar in a relativly simple way:
+</h6>
+<pre><b>
+#declare Brick_Scale     = &lt;0.09,0.061,0.061&gt;;
+#declare Brick_Translate = &lt;0.0, 0.025,-0.0&gt;;
+#declare Brick_Intensity = 0.10;
+//--------------------------------------
+#declare Step_Texture =  // sandstone
+  texture{ pigment{ color rgb&lt; 0.90, 0.78, 0.60&gt;}
+           normal { pigment_pattern{
+                         brick
+                         color rgb 0.1,
+                         color rgb 0.9
+                         scale Brick_Scale
+                         translate Brick_Translate
+                         rotate&lt;0,0,0&gt;}
+                    Brick_Intensity
+                  } // end of normal
+                    finish { diffuse 0.9 phong 0.1}
+         } // end of texture
+//----------------------------------------------------</b></pre>
+ </td>
+</tr>
+<tr>
+ <td align="center"><table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('stair/Stair_C_constr_00im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="stair/Stair_C_constr2.jpg" border="0" width="320" height="200"
+                   alt="Wall pattern" title="Click for a bigger example: Wall pattern"></a></td>
+            </tr></table>Wall with interstices.
+ </td>
+</tr>
+
+<tr>
+ <td valign="top">
+<h6 align="justify">The Adaption of the height and width of the pattern to
+the dimensions of the wall is a difficult thing. For problems with
+the &quot;bricks&quot; pattern see my comments in the turorial
+<a href="sam_130e.htm">Tower with Battlements</a>.
+</h6>
+</td></tr></table>
+
+
+ <h5><b>Ready-made POV-Ray objects</b> as <br>
+ include files and example files you'll find <br>
+  at the <a href="../objects/obj_000e.htm">POV-Ray Objects Page</b></a></h5>
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

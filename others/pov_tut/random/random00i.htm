@@ -1,0 +1,224 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="numeri pseudo-casuali, numeri casuali, valori &nbsp;aleatori et casualit&agrave; con in POV-Ray - parte I - tutorial et esempi per POV-Ray, un programma di raytracing">
+<meta name="keywords" content="numeri pseudo-casuali, numeri casuali, valori &nbsp;aleatori, casualit&agrave;, pov, povray, POV-Ray, raytracing, 3d grafica, raytracing descrizioni, povray tutorial">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Casualit&agrave; con POV-Ray - parte 1</title>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="1"><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr> di <nobr>Friedrich A. Lohm&uuml;ller,</nobr></font><br>
+ <hr size="3">
+ <div align="center"><font size="5">Casualit&agrave; con POV-Ray</font>&nbsp; &nbsp; &nbsp;</div>
+ </td>
+
+  <td align="right">
+        <a href="random00e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="random00e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="random00f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="random00f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="random00d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="random00d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr>  <!--a href="random00i.htm"--><b><font size="3">Casualit&agrave; con POV-Ray</font></b></a></nobr><br>
+<nobr>&nbsp;&nbsp; -  <a href="random1i.htm">Numeri casuali in Loops</b></a></nobr><br>
+&nbsp;&nbsp; -  <a href="random2i.htm">Quadratico e cubico</b></a><br>
+&nbsp;&nbsp; -  <a href="random3i.htm">Colori e Scale</b></a><br>
+&nbsp;&nbsp; -  <a href="random4i.htm">Inclinare e piegare</b></a><br>
+&nbsp;&nbsp; -  <a href="random5i.htm">Alberi con casualit&agrave;</b></a><br>
+&nbsp;&nbsp; -  <a href="random6i.htm">L'include file 'rand.inc'</b></a><br>
+&nbsp;&nbsp; -  <a href="random7i.htm">height_field riempito</b></a><br>
+&nbsp;&nbsp; -  <a href="random8i.htm">Fiore casuale</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../down/inserti_a.htm">Insert Menu Add-on</b></a><br>
+&nbsp; &nbsp; &amp; <a href="../down/pov_dwni.htm">Download</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<font size="4"><nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; Index</font></nobr>
+<table border="1" cellspacing="2" cellpadding="0" bordercolor="#C0C0C0">
+ <tr>
+  <td width="80" align="center">
+      <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="random1i.htm"><img src="im/random_2s.jpg" border="0" width="80" height="60" hspace="0" vspace="0"
+                                     alt="Random Numbers" title="Random Numbers"></a></td>
+      </tr></table>
+  </td>
+  <td valign="top">&nbsp;<b>1.</b></td>
+  <td valign="top">&nbsp;<a href="random1i.htm">Numeri casuali in Loops</a><font size="2"><br>
+      &nbsp;Fondamenti su Numeri casuali come<br>
+      &nbsp;usati di POV-Ray e come usarle in loops.</font>
+  </td>
+ </tr>
+ <tr>
+  <td width="80" align="center">
+      <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="random2i.htm"><img src="im/random_8s.jpg" border="0" width="80" height="80" hspace="0" vspace="0"
+                                     alt="Irregularity quadratic and cubic" title="Irregularity quadratic and cubic"></a></td>
+      </tr></table>
+  </td>
+  <td valign="top">&nbsp;<b>2.</b></td>
+  <td valign="top"><nobr>&nbsp;<a href="random2i.htm">Irregularit&agrave; quadratico e cubico&nbsp;</a></nobr><font size="2"><br>
+      &nbsp;La collocazione aleatoria<br>
+      &nbsp;bidimensionale e tridimensionale</font>
+  </td>
+
+ </tr>
+ <tr>
+  <td width="80" align="center">
+      <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="random3i.htm"><img src="im/random_cs.jpg" border="0" width="80" height="80" hspace="0" vspace="0"
+                                     alt="Colors and Scale by Random" title="Colors and Scale by Random"></a></td>
+      </tr></table>
+  </td>
+  <td valign="top">&nbsp;<b>3.</b></td>
+  <td valign="top">&nbsp;<a href="random3i.htm">Colori e Scale per caso</a><font size="2"><br>
+      &nbsp;Come si pu&ograve; controllare i fattori di<br>
+      &nbsp;ingrandimento e i colori per casualit&agrave;.</font>
+  </td>
+ </tr>
+ <tr>
+  <td width="80" align="center">
+      <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="random4i.htm"><img src="im/random_mast2s.jpg" border="0" width="80" height="60" hspace="0" vspace="0"
+                                     alt="Tilting and Bending" title="Tilting and Bending"></a></td>
+      </tr></table>
+  </td>
+  <td valign="top">&nbsp;<b>4.</b></td>
+  <td valign="top"><nobr>&nbsp;<a href="random4i.htm">Inclinare e piegare per caso&nbsp;</a></nobr><font size="2"><br>
+      &nbsp;Creare deviazioni con un aspetto naturale<br>
+      &nbsp;con numeri casuali</font>
+  </td>
+ </tr>
+ <tr>
+  <td width="80" align="center">
+      <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="random5i.htm"><img src="im/random_trees4s.jpg" border="0" width="80" height="60" hspace="0" vspace="0"
+                                     alt="Trees by Random" title="Trees by Random"></a></td>
+      </tr></table>
+  </td>
+  <td valign="top">&nbsp;<b>5.</b></td>
+  <td valign="top">&nbsp;<a href="random5i.htm">Alberi con casualit&agrave;</a><font size="2"><br>
+    &nbsp;Come si pu&ograve; piantare una serie d'alberi<br>
+    &nbsp;con irregolarit&agrave; naturali.</font>
+  </td>
+
+ </tr>
+ <tr>
+  <td width="80" align="center">
+      <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="random6i.htm"><img src="im/rand_functions_3s.jpg" border="0" width="80" height="60" hspace="0" vspace="0"
+                                     alt="Include File 'rand.inc'" title="Include File 'rand.inc'"></a></td>
+      </tr></table>
+  </td>
+  <td valign="top">&nbsp;<b>6.</b></td>
+  <td valign="top">&nbsp;<a href="random6i.htm">L'include file 'rand.inc'</a><font size="2"><br>
+      &nbsp;Una breve panoramica delle funzioni,<br>
+      &nbsp;che ci vengono dichiarate.</font>
+  </td>
+ </tr>
+ <tr>
+  <td width="80" align="center">
+      <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="random7i.htm"><img src="im/VRand_in_Object_Hfs.jpg" border="0" width="80" height="60" hspace="0" vspace="0"
+                                    alt="Filled height_field" title="Filled height_field"></a></td>
+      </tr></table>
+  </td>
+  <td valign="top">&nbsp;<b>7.</b></td>
+  <td valign="top">&nbsp;<a href="random7i.htm">height_field riempito</a><font size="2"><br>
+      &nbsp;VRand_In_Object utilizzato con<br>
+      &nbsp;una montagne di height_field.</font>
+  </td>
+ </tr>
+ <tr>
+  <td width="80" align="center">
+      <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="random8i.htm"><img src="im/VRand_On_Sphere_2s.jpg" border="0" width="80" height="60" hspace="0" vspace="0"
+                                     alt="Random Flower" title="Random Flower"></a></td>
+      </tr></table>
+  </td>
+  <td valign="top">&nbsp;<b>8.</b></td>
+  <td valign="top">&nbsp;<a href="random8i.htm">Fiore casuale</a><font size="2"><br>
+      &nbsp;VRand_On_Sphere</font>
+  </td>
+<br>
+ </tr>
+</table>
+</td></tr></table>
+ </td>
+</tr>
+<tr><td> &nbsp; &nbsp; </td>
+<td><div align="center">
+<!--a href="random00i.htm"-->0</a> |
+<a href="random1i.htm">1</a> | <a href="random2i.htm">2</a> | <a href="random3i.htm">3</a> |
+<a href="random4i.htm">4</a> | <a href="random5i.htm">5</a> | <a href="random6i.htm">6</a> |
+<a href="random7i.htm">7</a> | <a href="random8i.htm">8</a></b></div>
+
+ </td>
+</tr>
+
+</table>
+</div>
+
+</td></tr> <!--end 2nd column -->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

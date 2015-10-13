@@ -1,0 +1,299 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="POV-Ray tutorial- While loops and POV-Ray -  transformations">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, tutorial, mathematics, while loop, transformation">
+<title>About Loops and POV-Ray - Overview</title>
+
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+ <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>About Loops with POV-Ray</b></b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+     <a href="povlup0i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+     <a href="povlup0i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povlup0f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+     <a href="povlup0f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povlup0d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+     <a href="povlup0d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<b>&gt;</b><!--a href="povlup0e.htm"--><b><font size="3"><nobr>Loops in POV-Ray</nobr></font></b></a><br>
+ &nbsp; 1. <a href="povlup7e.htm">For + While</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup7e.htm">Comparison</b></a><br>
+ &nbsp; 2.  <a href="povlup1e.htm">Linear</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="povlup1e.htm">Transformations</b></a><br>
+ &nbsp; 3.  <a href="povlup2e.htm">Circular</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="povlup2e.htm">Transformations</b></a><br>
+ &nbsp; 4.  <a href="povlup3e.htm">Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4e.htm">Screws</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup4e.htm"> &amp; Spirals</b></a><br>
+ &nbsp; 6.  <a href="povlup5e.htm">Twisting</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5e.htm">Spirals</b></a><br>
+ &nbsp; 7.  <a href="povlup6e.htm">Snails</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6e.htm">&amp; Ammonites</b></a><br>
+ &nbsp; 8.  <a href="povlup9e.htm">Spherical Spirals 1</b></a><br>
+ &nbsp; 9.  <a href="povlup10e.htm">Spherical Spirals 2</b></a><br>
+ &nbsp;10.  <a href="povlup8e.htm">Fibonacci Spirals</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+ <br>
+ related pages:<br>
+ &nbsp; <a href="../sinus/povsi3e1.htm" target="_new">Loops, Sine, Cosine</b></a><br>
+
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+
+
+<!--h1 align="center">About While-Loops with POV-Ray</h1-->
+
+<div align="center">
+<table border="1" cellpadding="2" cellspacing="2">
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup7e.htm"><img src="im/for_loop_linear_.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+&nbsp; </td>
+ <td valign="top">
+<a href="povlup7e.htm">For Loops and While Loops<br>
+ (Comparison)</a>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup1e.htm"><img src="im/povloop1.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top" align="left">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup1e.htm"><img src="im/povloop3.jpg" width="60" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <a href="povlup1e.htm">Loops and Linear Transformations</a>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup2e.htm"><img src="im/povloop4_4.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup2e.htm"><img src="im/povloop6.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+<a href="povlup2e.htm">Loops and Circular Transformations</a></td>
+
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup3e.htm"><img src="im/povloopm.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup3e.htm"><img src="im/povloopo.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+<a href="povlup3e.htm">Moebius and Similar Things</a></td>
+
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup4e.htm"><img src="im/povloop7.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup4e.htm"><img src="im/povloop9.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+<a href="povlup4e.htm">Screws and Spirals</a></td>
+
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup5e.htm"><img src="im/povloop9d.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup5e.htm"><img src="im/povloop9e.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+<a href="povlup5e.htm">Twisting Spirals</a></td>
+
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup6e.htm"><img src="im/povloopb.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup6e.htm"><img src="im/povloopc.jpg" width="60" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+<a href="povlup6e.htm">Snails and Ammonites</a></td>
+
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup9e.htm"><img src="im/SphericalSpiral_1c.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup9e.htm"><img src="im/SphericalSpiral_2c.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+<a href="povlup9e.htm">Spherical Spirals 1<br>
+ (Circular Spherical Transformations)</a></td>
+
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup10e.htm"><img src="im/SphericalSpiral_4c.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup10e.htm"><img src="im/SphericalSpiral_5c.jpg" width="80" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+<a href="povlup10e.htm">Spherical Spirals 2<br>
+ (Circular Spherical Transformations)</a></td>
+
+</tr>
+<tr>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup8e.htm"><img src="im/FibonacciSpiral_01.jpg" width="60" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+      <tr><td><a href="povlup8e.htm"><img src="im/FibonacciSpiral_05.jpg" width="60" height="60" border="0"></a></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+<a href="povlup8e.htm">Spirals by Fibonacci Numbers</a></td>
+
+</tr>
+</table>
+</div>
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <!--a href="povlup0e.htm"-->Overview</a> |
+     <a href="povlup7e.htm">For + While</a> |
+     <a href="povlup1e.htm">Linear</a> |
+     <a href="povlup2e.htm">Circular</a> |
+     <a href="povlup3e.htm">Moebius</a> |
+     <a href="povlup4e.htm">Screws+Spirals</a> |
+     <a href="povlup5e.htm">Twisted Spirals</a> |
+     <a href="povlup6e.htm">Snails</a> |
+     <a href="povlup9e.htm">Spherical 1</a> |
+     <a href="povlup10e.htm">Spherical 2</a> |
+     <a href="povlup8e.htm">Fibonacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

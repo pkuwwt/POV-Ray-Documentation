@@ -1,0 +1,213 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2007 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="Analytical Geometry with POV-Ray, Calculations of the Shadow of a Pyramid, raytracing, PoV, POVRAY, POV-Ray 3.6, computer graphics, 3d graphics, raytracing tutorials, POV-Ray Samples">
+<meta name="description" content="Analytical Geometry with POV-Ray - Samples - Calculations of the Shadow of a Pyramid with POV-Ray">
+<title>Calculations of the Shadow of a Pyramid - Analytical Geometry with POV-Ray - Samples</title>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=640,height=450");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr> <nobr>by Friedrich A. Lohmueller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo95d.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="a_geo95d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+        <!--a href="a_geo95i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo95i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo95f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo95f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<!--- end of header -->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index.htm">Home</b></a>
+<table border="1" align="center"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__eng.htm"><img src="im/a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__eng.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__e.htm">Analytical Geometry</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__e.htm">with POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__e.htm">- Index -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insert_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -      <a href="a_geo00e.htm">Basics </b></a><br>
+&nbsp; &nbsp; <a href="a_geo00e.htm">Possibilities and Needs</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00e.htm"--><b>Points &amp; Lines</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo10e.htm">Points in 3D</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo20e.htm">Line Sections, Straight,</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20e.htm">Vectors, Distance Markers</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30e.htm">Surfaces &amp; Planes</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40e.htm">Output of Results,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40e.htm">Captions</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo45e.htm">Points of Intersection</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo50e.htm">Circles</b></a><br>
+ &nbsp; &nbsp; <!--a href="a_geo60e.htm"--><b>Solids</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo60e.htm">Tetrahedron</b></a><br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61e.htm">Pyramide</b></a><br-->
+ &nbsp; &nbsp; -  <a href="a_geo62e.htm">Parallelepiped</b></a><br>
+ &nbsp; &nbsp; -  <a href="a_geo65e.htm">Round Solids</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00e.htm">&nbsp;</b></a--><br>
+&nbsp; -  <a href="a_geo70e.htm">Overview by Table</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70e.htm">on &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80e.htm">Vector Analysis</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80e.htm">with POV-Ray</b></a> <br>
+&nbsp; -  <a href="a_geo85e.htm">Righthanded &amp; Lefthanded</b></a><br>
+ &nbsp; &nbsp; <a href="a_geo85e.htm">Systems of Coordinates</b></a><br>
+ &nbsp; &nbsp; <a href="a_geo85e.htm">and the Cross Product</b></a><br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00e.htm">&nbsp;</b></a--><br>
+&nbsp; -  <!--a href="a_geo00e.htm"--><b>Samples from</b></a><br>
+&nbsp; &nbsp; <!--a href="a_geo00e.htm"--><b>Analytical Geometry</b></a><br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91e.htm">Parallelogram of the</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo91e.htm">Middles of the Edges</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo92e.htm">Trace Points of a Straight Line</b></a></nobr><br>
+&nbsp; &nbsp; - <a href="a_geo93e.htm">Calculations <br> &nbsp; &nbsp; &nbsp; about a Triangle</b></a><br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo94e.htm">Area of a Parallelogram</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp; &nbsp;  <a href="a_geo94e.htm">and Cross Product</b></a><br>
+<nobr>&nbsp;&nbsp;<b> &gt; <!--a href="a_geo95e.htm"-->Shadow of a Pyramid</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96e.htm">Hit a plane || yz-plane</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97e.htm">Angle of triangle &amp; yz-plane</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+    <table align="center" width="50%"><tr>
+    <td align="center" valign="middle" colspan="2"><h3><nobr>Analytical Geometry with POV-Ray</nobr></h3>
+                                                                          <h4><nobr> - Samples -</nobr></h4></td>
+    </tr><tr>
+    <td align="center" valign="top">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="im/a_geo_pyramide_shadow01s.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+    </td>
+    <td align="center" valign="middle"><h2 align="center"><nobr> &nbsp; &nbsp; The Shadow of a Pyramid</h2></td>
+    </tr>
+    </table>
+ </td>
+</tr>
+</table>
+
+<div align="center">
+<table width="95%" align="center" cellpadding="5">
+ <tr>
+  <td colspan="1">
+        <h5 align="justify"><b>Calculations of the Shadow of a Pyramid with POV-Ray</b><br>
+         A quadratic pyramid is defined by the height H = 4 m and the base width of R = 6 m.
+         The center of the base is at the center of the coordinate system.<br>
+         The direction of the parallel light is given by the vector L = &lt;-2,-1,-1.5&gt;. <br>
+         Which coordinates has the shadow of the tip of the pyramid? <br>
+<pre><b>
+#declare R = 6 ;
+#declare H = 4 ;
+// vertex of the pyramid:
+#declare S = &lt; 0, H, 0 &gt;;
+// corners of the base:
+#declare A  = &lt;-R/2, 0.0, R/2&gt;;
+#declare B  = &lt;-R/2, 0.0,-R/2&gt;;
+#declare C  = &lt; R/2, 0.0,-R/2&gt;;
+#declare D  = &lt; R/2, 0.0, R/2&gt;;
+// the light beam through S:
+#declare L = &lt; -2, -1, -1.5&gt;</b></pre>
+
+The shadow F of the pyramid tip S is the xz trace point
+of the straight line through S with the direction L.
+This value can be calculated with POV-Ray easily:<br>
+
+<pre><b>
+// F = xz trace point of the beam through S:
+#declare F  = S -(S.y/L.y)*L ; </b></pre>( here:  S.y = H = the y component of S, <br>
+ &nbsp; L.y = the y component of L.)<br>
+
+The equation of the straight line through S with the direction L is : <br>
+x<sub>1</sub> = 0 + v * (-2 &nbsp; ) <br>
+x<sub>2</sub> = H + v * (-1 &nbsp; ) <br>
+x<sub>3</sub> = 0 + v * (-1.5) <br>
+<br>
+For the xz trace point we have here x<sub>2</sub> = 0, <br>
+i.e.  0 = H + v * (-1  ) or   v = H.
+From there the wanted xz trace point has the coordinates <br>
+<b>F = ( -8 / 0 / -6 )</b>.
+
+ </td></h5>
+ <td valign="top">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('im/a_geo_pyramid_shadow01_im.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="im/a_geo_pyramide_shadow01t.jpg"
+                      width="320" height="220" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Calculations of the Shadow of a Pyramid</b><br>
+   <font size="-1">This scene for <nobr>POV-Ray:</nobr>
+    <a href="a_geo_pyramid_shadow01.txt">&quot;.txt&quot; file</a> or
+    <a href="a_geo_pyramid_shadow01.pov">&quot;.pov&quot; file</a> </h5>
+</td>
+</tr>
+
+</table>
+</div>
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</body>
+</html>

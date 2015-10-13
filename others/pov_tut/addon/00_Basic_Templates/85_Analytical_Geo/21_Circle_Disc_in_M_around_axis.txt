@@ -1,0 +1,41 @@
+//------------------------------------------------------------------------------------
+#include "analytical_g.inc"
+//------------------------------------------------------------------------------------
+#declare A  = < 0.50, 0.30,-0.70>;
+#declare B  = < 0.20, 0.80, 0.40>;
+
+#declare C = (A+B)/2; // middle of AB
+
+//------------------------------------------------------------------------------------
+sphere{ A, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( A, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ B, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( B, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ C, 0.035 pigment{ color rgb<1,0.5,0> } no_shadow }
+object{ Show_Yxz( C, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+//------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+// the Axis: 
+object{ Vector( A,B, 0.02) pigment{ color rgb<0.2,0.5,0.0> } }
+//------------------------------------------------------------------------------------
+
+// Circle (M,r) around axis:
+
+// Circle line: ...............   
+object{ Circle_Line ( C,      // center point ------------------
+                      0.40,   // radius of circle 
+                      0.01,   // minor radius of circle torus
+                      B-A   ) // vector of axis  
+        pigment{ color Yellow }
+      } // end of object "Circle_Line(...)" --------------------
+      
+// Circle disc:  .............   
+object{ Circle_Disc ( C,      // center point ------------------
+                      0.40,   // radius of circle 
+                      B-A   ) // vector of axis  
+        pigment{ color Yellow transmit 0.7 }
+      } // end of object "Circle_Disc(...)" --------------------
+
+//------------------------------------------------------------------------------------

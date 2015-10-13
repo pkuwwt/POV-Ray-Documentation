@@ -1,0 +1,203 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Modellare in scala con POV-Ray - Sfondo quadrettato</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Modellare in scala con POV-Ray">
+<meta name="keywords" content="modellare in scala, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=840,height=665");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Modellare in scala con POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="s_mod_100e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="s_mod_100e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="s_mod_100f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="s_mod_100f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="s_mod_100d.htm"><font size="2">Deutsch</font></a>
+        <a href="s_mod_100d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#objects"><b><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+<br>
+&nbsp; &nbsp;<a href="s_mod_000i.htm">Modellare in scala</b></a><br>
+ &nbsp; &nbsp; <a href="s_mod_000i.htm">con POV-Ray</b></a><br>
+<br>
+&nbsp;<b>&gt;</b> <!--a href="s_mod_100i.htm"--><b>Sfondo quadrettato</b></a><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="s_mod_100i.htm"--><b>in metri e centimetri</b></a><br>
+ &nbsp; -  <a href="s_mod_150i.htm">Vista ortografica</b></a><br>
+ &nbsp; -  <a href="s_mod_300i.htm">Adattare piani</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_300i.htm">allo sfondo quadrettato</b></a><br>
+
+ &nbsp; - <a href="s_mod_500i.htm">Rendering a viste multiple</b></a><br>
+
+<br>
+<br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--font size="-1"><b>Scale Modelling of Objects for POV-Ray</b</font-->
+
+<a name="Top"></a>
+<b><font size="+2">Sfondo quadrettato</font></b>
+in metri e centimetri<br>
+
+<table >
+<tr>
+ <td valign="top"><b>Macro per un Sfondo quadrettato</b><br>
+  <font size="-1">Un <b>sfondo quadrettato</b> con l'ampiezza di 1 m et 0,1 m si faccia
+  con le macro seguenti (q.v. l'immagine in margine!).
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//------------------------------------- ////////////
+#macro Raster_Lines (RScale, LineW, Intensity_)
+ pigment{ gradient x scale RScale
+          color_map{
+           [0.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [1.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           } // end color_map
+         } // end pigment
+ #end// of Raster(RScale, HLine)-macro
+//------------------------------------- ////////////
+//------------------------------------- ////////////
+#macro Raster_Plate(
+    RD1, Width1,//primary raster distance/width,
+    RD2, Width2,//secondary raster distance/width,
+    Base_Texture, //  non = pigment { Clear }
+    Intensity, // Line gray intensity
+    Start_Box, End_Box, // vectors
+  ) //------------------------------------------
+//----------------------------------------------
+box{ Start_Box,End_Box
+     texture{ Base_Texture }
+  #if (RD1 &gt; 0 ) // raster big  RD1, Width1,
+    texture { Raster_Lines(RD1,Width1,Intensity) }
+    texture { Raster_Lines(RD1,Width1,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+  #if (RD2 &gt; 0 ) // raster small RD2, Width2,
+    texture { Raster_Lines(RD2,Width2,Intensity) }
+    texture { Raster_Lines(RD2,Width2,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+} // end box -----------------------------------
+#end // ------------------------------ end of macro
+//------------------------------------- ////////////
+
+// How to use:  ------------------------------------
+
+#declare Base_Texture =
+  texture{ pigment{ color rgb&lt;1,1,1&lt;*1.2}}
+//--------------------------------------------------
+object{ Raster_Plate(
+    1.0, 0.010,// 1st raster distance/width,
+    0.1, 0.045,// 2nd raster distance/width,
+    Base_Texture, // non = pigment{Clear}
+    0.6, // Intensity, // Line gray intensity
+    &lt;-2,-0.05,-2&gt;, &lt;2,0,2&gt;, //Start/End
+  ) //----------------------------------------------
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.001,0&gt;
+} //------------------------------------------------</td></b></pre></tr></table>
+
+Questo sfondo quadrettato si pu&ograve; voltare in ogni direzione necesaria molto facile!
+(l'immagine in margine!)
+
+ </td>
+ <td align="center" valign="top">
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Plan_Squared_000co.jpg" border="0" width="320" height="240"
+                   alt="Squared Background" title="Squared Background"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Come si fa uno sfondo quadrettato</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Plan_Squared_001c.jpg" border="0" width="320" height="320"
+                   alt="Possible Scales" title="Possible Scales"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Le scale possibili</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/show_Background_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Squared_Background_000_c.jpg" border="0" width="320" height="240"
+                   alt="squared background" title="squared background"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Lo sfondo quadrettato</b></a></font>
+<br>
+<br>
+<font size="-1"><b>Questa scena per POV-Ray: <br>
+<a href="pov/Squared_Background_000.pov">Squared_Background_000.pov</a></font><br>
+
+</tr>
+</table>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

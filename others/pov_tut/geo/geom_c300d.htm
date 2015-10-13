@@ -1,0 +1,275 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Externe Tangenten zweier Kreise, Elementare Geometrie f&uuml;r Raytracing mit POV-Ray">
+<meta name="keywords" content="Externe Tangenten zweier Kreise, POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Elementare Geometrie f&uuml;r Raytracing mit POV-Ray">
+<title>Elementare Geometrie f&uuml;r Raytracing mit POV-Ray - Externe Tangenten zweier Kreise</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Elementare Geometrie</b></font>
+      <font size="-1"> f&uuml;r Raytracing</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_c300e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="geom_c300e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="geom_c300i.htm"><font size="2">Italiano</font></a>
+        <a href="geom_c300i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_c300f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="geom_c300f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="geom_000d.htm">Geometrie Grundlagen</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000d.htm">f&uuml;r Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050d.htm">Rechtwinkliges Dreieck</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070d.htm">Pythagoras</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080d.htm">Trigonometrie Basis</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090d.htm">Kosinussatz</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100d.htm">Gleichseitiges Dreieck</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150d.htm">Regul&auml;res Polygon</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200d.htm"--><i>Polyeder</i></b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200d.htm">Regul&auml;rer Tetraeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250d.htm">Regul&auml;rer Oktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300d.htm">W&uuml;rfel &amp; Quader</b></b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500d.htm">Regul&auml;rer Dodekaheder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700d.htm">Regul&auml;rer Ikosaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260d.htm">Kuboktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270d.htm">Oktaederstumpf</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280d.htm">Rhombenkuboktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800d.htm">Ikosaederstumpf</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000d.htm"--><i>Kreise</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100d.htm">Tangierende Kreise</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200d.htm">Interne Tangenten</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_c300d.htm"--><b>Externe Tangenten</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%"><tr>
+   <td><h2><b>Externe Tangenten zweier Kreise</b><br>
+<font size="-1"><i>Im folgenden wird f&uuml;r die Quadratwurzel einer Zahl, der englische Ausdruck &quot;sqrt(</i>ZAHL<i>)&quot; <br>
+gem&auml;&szlig; der von POV-Ray verwendeten Syntax geschrieben.</i></font><br>
+<font size="-2">Anmerkung: Hier werden Objekte der 2D-Geometrie durch 3D-Objekte in der xy-Ebene dargestellt.<br>
+Daher m&uuml;ssen alle Koordinaten die z-Komponente Null haben! ( &lt;?,?,0&gt;) </font></td></h2>
+
+
+ </tr>
+ </table>
+
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<table border="1" cellpadding="5" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+ <td>
+ <font size="-1"><nobr>Wir suchen die <b>externe Tangente  <b> zu den Ber&uuml;hrungspunkten  &nbsp; &nbsp;</nobr><br>
+    T<sub>1</sub> und T<sub>2</sub></b> von zwei Kreisen  C<sub>1</sub>(M<sub>1</sub>,r<sub>1</sub>)</b> und
+    <b>C<sub>2</sub>(M<sub>2</sub>,r<sub>2</sub>)</b> mit<br>
+    den Radien <b>r<sub>1</sub> &gt; r<sub>2</sub></b> ,
+    wie in nebenstehender Abbildung.<br>
+    Der Abstand der Mittelpunkte ist <b>d</b>.<br>
+    Der Unterschied der Radien ist <b>r<sub>i</sub> = r<sub>1</sub> - r<sub>2</sub>.</b><br>
+ </font>
+ </td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top">
+ <font size="-1">Das Dreieck M<sub>1</sub>,S,M<sub>2</sub> hat einen rechten Winkel bei S.
+ Die Strecke(T<sub>1</sub>,T<sub>2</sub>) ist parallel zur Strecke(M<sub>2</sub>,S) und hat dieselbe L&auml;nge.<br>
+ Daher gilt <b>t = |T<sub>1</sub>,T<sub>2</sub>| = sqrt( d<sup>2</sup> - r<sub>i</sub><sup>2</sup>).</b><br>
+ Der Winkel<b> &#945; = atan(r<sub>i</sub>/t).</b> oder  &nbsp; <b> &#945; =  asin(r<sub>i</sub>/d).</b><br>
+ </font></td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top">
+ <font size="-1">Die Berechnung der L&auml;nge des gesamten G&uuml;rtels:<br>
+ Die L&auml;nge des Segments um den Kreis C<sub>1</sub>:<br>
+ <b>l<sub>1</sub> = 2&#960;&#183;r<sub>1</sub> &#183;(180+2&#183;&#945;)/360</b>.<br>
+  Die L&auml;nge des Segments um den Kreis C<sub>2</sub>:<br>
+ <b>l<sub>2</sub> = 2&#960;&#183;r<sub>2</sub> &#183;(180-2&#183;&#945;)/360</b>.<br>
+ Die gesamte L&auml;nge des G&uuml;rtels ist:
+ <b>l = l<sub>1</sub> + l<sub>2</sub> + 2&#183;t </b>.<br>
+ </font>
+ </td>
+ </tr>
+</table>
+
+</div>
+
+</td>
+<td width="50%"  valign="top" align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/External_Tangents_00ec.jpg" width="400" height="256" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Externe Tangenten an zwei Kreise gerendert mit POV-Ray</font><br>
+
+ <!--font size="-2">Note: To <b>avoid any collision with built-in identifiers and reserved words in POV-Ray</b>,
+ it's strongly recommanded to <b>use only words beginning with capital letters for all identifiers of variables declared by the user,</b><br>
+   i.e. use &quot;R1&quot; instead of &quot;r<sub>1</sub>&quot;
+ and use &quot;Y2&quot; instead of &quot;y<sub>M2</sub>&quot;.</font>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local X1= 0.40; #local Y1= 0.80; #local R1= 0.20;
+#local X2= 0.64; #local Y2= 0.15; #local R2= 0.15;
+#local M1 = &lt;X1,Y1,0&gt;; #local M2 = &lt;X2,Y2,0&gt;
+//------------------------------------------------
+#local M_Dist = sqrt(pow(X2-X1,2)+pow(Y2-Y1,2));
+#local M2_S = sqrt(pow(M_Dist,2)-pow(R1+R2,2));
+#if ( X1 &lt; X2) #local Alpha =
+          180-abs(degrees(atan((Y2-Y1)/(X2-X1))));
+#else          #local Alpha =
+            abs( degrees( atan((Y2-Y1)/(X2-X1))));
+#end
+
+#local Beta = abs(degrees(asin( M2_S/M_Dist)));
+#local Gamma =  Alpha - Beta;
+#local T1 = M1-&lt;(R1)*cos( radians(Gamma)),
+                (R1)*sin( radians(Gamma)),0&gt;;
+#local T2 = M2+&lt;(R2)*cos( radians(Gamma)),
+                (R2)*sin( radians(Gamma)),0&gt;;</b></td></pre>
+    </tr></table><font size="-1">The calulation of the tangent from T<sub>1</sub> to T<sub>2</sub> in POV-Ray
+</font-->
+
+</td>
+</tr><tr><td colspan="2"><hr></td></tr>
+<table>
+
+<table align="center" border="0" cellpadding="2" width="95%"> <!--pair left -->
+<tr><td colspan="2" valign="top" width="50%" align="center"><p align="left">
+<b>Wozu kann man diese Geometrie gebrauchen?</b><br>
+Hier einige Beispiele:<br>
+ </td></p>
+<td colspan="2" valign="top" width="50%" align="center">
+ </td></p>
+
+
+</td>
+</tr>
+<tr>
+ <td colspan="2" width="390" valign="top">
+     <table><tr><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><img src="im/Round_Conic_Torus_1.jpg" border="0" width="160" height="160"></td>
+   </tr></table><font size="1">Ein konische runder Torus.</b>
+    </td><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><img src="im/Round_Conic_Prism_1.jpg" border="0" width="160" height="160"></td>
+   </tr></table><font size="1"><b>Ein konische rundes Prisma.</b>
+
+       </td></tr></table>
+ </td>
+<td colspan="2" width="390" valign="top">
+     <table><tr><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><a href="../animate/anim141d.htm" target="_new"><img src="im/Roller_Chain_014t.gif" border="0" width="160" height="120"></a></td>
+   </tr></table><font size="1"><b>Eine Gleiskette oder ein F&ouml;rderband.</b></font><br>
+  <font size="-1">Animations Tutorial:<br>
+    <a href="../animate/anim141d.htm">'Rollende Kette'</a></font><br>
+
+          </td><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><a href="../animate/anim142d.htm" target="_new"><img src="im/Bike_Chain_35t.gif" border="0" width="160" height="160"></a></td>
+   </tr></table><font size="1"><b>Rollende Fahrradkette.</b></font><br>
+   <font size="-1">Animations Tutorial:<br>
+    <a href="../animate/anim142d.htm">'Fahrradkette'</a><br>
+    Eine Animation siehe hier:<br>
+    <a href="../../pov_anim/ani_4000d.htm">'Animation Bike Chain'</a> </font>
+       </td></tr></table>
+ </td>
+ </tr>
+<tr><td colspan="2">
+  <!--This shape in a macro as a <b>ready made object</b>: <a href="../objects/obj_350e.htm">Erlenmeyer_Shape_1</a> <br>
+  Application of this  shape in a macro as a <b>ready made object</b>: <a href="../objects/obj_880e.htm">Erlenmeyer_Shape_1</a> <br>
+  </font-->
+</td>
+<td colspan="2">
+</td>
+</table>
+
+</td></tr>
+</table>
+
+
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2007 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content=">Geometrische K&ouml;rper, Kugel, Ellipsoid, Zylinder, Kegel, Kegelstumpf, Analytische Geometrie, Raytracing, PoV, POVRAY, POV-Ray 3.6, Computergraphik, 3D-Graphik, Computergrafik, Raytracer Beschreibungen, Povray Tutorial, Beispiele">
+<meta name="description" content="Analytische Geometrie mit POV-Ray - Konstruktion von Kreisen, Umkreis und  Inkreis mit POV-Ray">
+<TITLE>K&ouml;rper III - Kugel, Ellipsoid, Zylinder, Kegel, Kegelstumpf - Analytische Geometrie mit POV-Ray</TITLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=645,height=500");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</HEAD>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo65e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="a_geo65e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="a_geo65i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo65i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo65f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo65f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index_d.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__ger.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__ger.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__d.htm">Analytische Geometrie</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">mit POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">- Inhalts&uuml;bersicht -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insrtd_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -    <a href="a_geo00d.htm">Grunds&auml;tzliches</b></a><br>
+&nbsp; &nbsp; <a href="a_geo00d.htm">zur Arbeitsweise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>Punkte &amp; Linien</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo10d.htm">Punkte in 3D</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo20d.htm">Strecken, Geraden,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20d.htm">Vektoren, Abstandspfeile</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30d.htm">Fl&auml;chen u. Ebenen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40d.htm">Ausgabe Resultate,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40d.htm">Beschriftung</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45d.htm">Schnittpunkte</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50d.htm">Kreise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60d.htm">Tetraeder</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61d.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62d.htm">Parallelflach (Spat)</b></a> <br>
+ &nbsp; &nbsp;<b>&gt; <!--a href="a_geo65d.htm"-->Runde K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <a href="a_geo70d.htm">Tabellarischer</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm">&Uuml;berblick</b> &uuml;ber</a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm"> &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80d.htm">Vektorrechnung</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80d.htm">mit POV-Ray</b></a> <br>
+&nbsp; -  <a href="a_geo85d.htm">Rechts- u. linksh&auml;ndige</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">Koordinatensysteme</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">und das Vektorprodukt</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Beispiele aus der</b></a> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Analytischen Geometrie</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91d.htm">Seitenmitten-Parallelogramm</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo92d.htm">Spurpunkte einer Geraden</b></a> <br>
+&nbsp; &nbsp; -  <a href="a_geo93d.htm">Berechnungen am Dreieck</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo94d.htm">Parallelogrammfl&auml;che</b></a></nobr> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo94d.htm">und Vektorprodukt</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95d.htm">Schatten einer Pyramide</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96d.htm">Schnitt mit Ebene || zu yz</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97d.htm">Winkel zw. Dreieck yz-Ebene</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+    <table align="center" width="50%"><tr>
+      <td align="center" valign="middle" colspan="2"><h3><nobr>Analytische Geometrie mit POV-Ray</nobr></h3></td>
+    </tr>
+   <tr nowrap>
+    <td align="center" valign="top" nowrap><h2><nobr>K&ouml;rper III&nbsp;</nobr></h2>
+                                                                        <h1>Kugel, Ellipsoid,<br> Zylinder, Kegel, Kegelstumpf &nbsp;</h1>
+    </td>
+   <td align="center" valign="middle">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="a_geo_sph1s.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+  </td>
+</tr>
+</table>
+
+<div align="center">
+<table width="95%" align="center" cellpadding="10">
+<tr><td colspan="2"><hr size="3" width="100%"></td></tr>
+</table>
+
+<table width="95%" align="center" cellpadding="10">
+ <tr><td valign="top">
+  <h3><b>Kugel<br> um Mittelpunkt M mit Radius R</b></h3>
+   <h5 align="justify">
+ <pre><b>sphere{ M, R &nbsp;
+        pigment{ color White }}</b></pre></h5>
+<br>
+<br>
+ <h3><b>Ellipsoid<br> mit Mittelpunkt M<br> und den Radien Rx,Ry,Rz:</b></h3>
+   <h5 align="justify">
+<pre><b>sphere{ o, 1 scale&lt;Rx,Ry,Rz&gt;
+        translate M
+        pigment{ color Green transmit 0.5 }}</b></pre></h5>
+
+ </td>
+<td valign="top" align="right">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_sph1_im.htm')"
+                     onMouseover="window.status='ShowSingleImage';return true"
+                     onMouseOut="window.status=''">
+                     <img src="a_geo_sph1t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Kugel und Ellipse</b><br>
+   <font size="-1">Szene f&uuml;r <nobr>POV-Ray:</nobr>
+    <a href="a_geo_sph1.txt">&quot;.txt&quot;-Datei</a> oder
+    <a href="a_geo_sph1.pov">&quot;.pov&quot;-Datei</a></font></h5>
+ </td>
+ </tr>
+</table>
+<table width="95%" align="center" cellpadding="10">
+<tr><td colspan="2"><hr size="3" width="100%"></td></tr>
+</table>
+
+<table width="95%" align="center" cellpadding="10">
+<tr>
+ <td valign="top">
+<h3><b>Zylinder<br> mit Endmittelpunkten M1, M2<br> und Radius R:</b></h3>
+<h5 align="justify">
+<pre><b>cylinder{ M1,M1, R
+          pigment{ color Green transmit 0.5}}</b></pre></h5>
+</td>
+<td align="right">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_cyl1_im.htm')"
+                     onMouseover="window.status='ShowSingleImage';return true"
+                     onMouseOut="window.status=''">
+                     <img src="a_geo_cyl1t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Zylinder</b><br>
+   <font size="-1">Szene f&uuml;r <nobr>POV-Ray:</nobr>
+    <a href="a_geo_cyl1.txt">&quot;.txt&quot;-Datei</a> oder
+    <a href="a_geo_cyl1.pov">&quot;.pov&quot;-Datei</a></font></h5>
+</td></tr>
+<tr><td colspan="2"><hr size="3" width="100%"></td></tr>
+</table>
+
+<table width="95%" align="center" cellpadding="10">
+<tr>
+ <td valign="top">
+<h3><b>Kegel mit Basismittelpunkt M1, Basisradius R1 und Spitze M2:</b></h3>
+<h5 align="justify">
+<pre><b>cone{ M1,R1, M2, 0
+      pigment{ color Green transmit 0.5 }}</b></pre></h5>
+<br>
+<br>
+<h3><b>Kegelstumpf, Endmittelpunkte M1, M2, Radien R1, R2:</b></h3>
+<h5 align="justify">
+<pre><b>cone { M1,R1, M2, R2
+       pigment{ color Green transmit 0.5 }} </b></pre></h5>
+
+</td>
+<td align="right">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_con1_im.htm')"
+                     onMouseover="window.status='ShowSingleImage';return true"
+                     onMouseOut="window.status=''">
+                     <img src="a_geo_con1t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Kegel und Kegelstumpf.</b><br>
+   <font size="-1">Szene f&uuml;r <nobr>POV-Ray:</nobr>
+    <a href="a_geo_con1.txt">&quot;.txt&quot;-Datei</a> oder
+    <a href="a_geo_con1.pov">&quot;.pov&quot;-Datei</a></font></h5>
+</td></tr>
+<tr><td colspan="2"><hr size="3" width="100%"></td></tr>
+</table>
+</div>
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</BODY>
+</HTML>

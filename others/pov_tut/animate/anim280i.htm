@@ -1,0 +1,269 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="keywords" content="Controllo di movimenti con funzioni spline, Animazione 3D, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg video, avi video, gif animate,  esempi POV-Ray, tutoriale POV-Ray">
+<meta name="Description" content="Controllo di movimenti con funzioni spline, Animazioni 3D con POV-Ray - Descrizioni ed esempi per il raytracer POV-Ray di Friedrich A. Lohmueller">
+<title>Controllo di movimenti con funzioni spline - Animazioni 3D con POV-Ray - Descrizioni ed esempi per il raytracer POV-Ray. </title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ita.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="Tutorial POV-Ray" title="Tutorial POV-Ray"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; Animazione 3D con POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Fondamenti ed esempi per l'animazione 3D.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim280e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim280e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim280f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="anim280f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim280d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim280d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+   </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">Galeria Animazione 3D</b></a><br>
+ - <a href="../pov__ita.htm#ani"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anii.htm">Animazione 3D</b></a><br>
+ &nbsp;&nbsp; <i>Indice del contenuto</i><br>
+&nbsp; <!--a href="anim001i.htm"-->  0. Nozioni fondamentali</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001i.htm">Esempio di base</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002i.htm">Da Immagini al Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005i.htm">Termini tecnici di base</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008i.htm">Comandi di Animazione</b></a><br>
+&nbsp; <!--a href="anim11i.htm"--> I. Animazioni ciclici </b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11i.htm">Oggetti rotanti</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112i.htm">Pianeti in orbita</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113i.htm">L'Orologio</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12i.htm">Fotocamera rotante</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121i.htm">Fotocamera in volo dritto</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13i.htm">Il Problema di</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13i.htm"> Ruota Western</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131i.htm">Ruote Girante</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14i.htm">Ingranaggi</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141i.htm">Catena di Trasmissione</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142i.htm">Catena della Bicicletta</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15i.htm">Pendolo oscillante</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151i.htm">Pendolo di Newton</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2. <a href="anim152i.htm">Rock il Rocking Chair!</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16i.htm">Molla a spirale</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170i.htm">Biella di accoppiamento</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17i.htm">Biella motrice</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18i.htm">Psychedelico + Op-Art </b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190i.htm">Contatori + Countdown</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200i.htm">Piegatura di un Cubo</b></a><br>
+
+&nbsp; II. Movimenti non-lineari<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220i.htm">Accelerare e Frenare 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222i.htm">Accelerare e Frenare 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240i.htm">Cadere e Saltellare</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260i.htm">Accelerazione secondo</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260i.htm">le formule de la fisica</b></a><br>
+&nbsp; <b>&gt</b> 4. <!--a href="anim280i.htm"--><b>Controllo di movimenti</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <!--a href="anim280i.htm"--><b>con funzioni spline</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Sentieri di Animazione<br>&nbsp; &nbsp; &nbsp; con Spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210i.htm">Curve Spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21i.htm">Spline ciuso</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22i.htm">Sentieri di Animazione</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table align="center" width="85%" cellpadding="5">
+<tr><td width="20%"><img src="im/Spline_move_006ss_256.gif" border="1" width="80" height="60"></td>
+    <td>
+     <h1>Controllo dei movimenti<br>
+         con funzioni spline<br>
+      <font size="2">Moto non-lineare in animazioni<br>
+      per la simulazione di accelerazione ou decelerazione realistiche<br>
+      con curve spline in POV-Ray.<br></font>
+    </td></h1>
+</tr>
+</table>
+
+<table width="100%" align="center" cellpadding="3"><!--1-->
+<tr>
+<td colspan="3" align="left" valign="top">
+
+
+<table width="100%" align="left" cellpadding="10"><!--1-->
+  <tr>
+  <td valign="top">
+<b><font size="+1"><b>Uso de la funzione spline per il conrollo del movimento.</b></font></b><br>
+Con questa funzione si pu&ograve; realizzare molto facile percorsi realistici senza nessuna calcolazione
+con formuli della fisica.<br>
+<font size="2"><b>Esempio:</b> Una sfera si muovo lungo al'asse x.<br>
+Per questo fissiamo una serie di punti, dove si trova la sfera mentre il tempo passa.
+La scala del tempo si estende da  0 a 1 in passi uguali da 0,100.</font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>//----------------------------------------
+// I coordinati dei punti di spline
+#declare P0 = &lt;-0.50, 0, 0&gt;;//controllo
+#declare P1 = &lt; 0.00, 0, 0&gt;;
+#declare P2 = &lt; 0.50, 0, 0&gt;;
+#declare P3 = &lt; 1.00, 0, 0&gt;;
+#declare P4 = &lt; 1.50, 0, 0&gt;;
+#declare P5 = &lt; 2.00, 0, 0&gt;;
+#declare P6 = &lt; 5.00, 0, 0&gt;;
+#declare P7 = &lt; 8.00, 0, 0&gt;;
+#declare P8 = &lt; 8.50, 0, 0&gt;;
+#declare P9 = &lt; 9.00, 0, 0&gt;;
+#declare P10= &lt; 9.50, 0, 0&gt;;
+#declare P11= &lt;10.00, 0, 0&gt;;
+#declare P12= &lt;10.50, 0, 0&gt;;//controllo
+
+#declare <font color="#900000">Spline_1</font> =
+  spline {
+    natural_spline
+   -0.100, P0, // control point
+    0.000, P1, // starting point
+    0.100, P2,
+    0.200, P3,
+    0.300, P4,
+    0.400, P5,
+    0.500, P6,
+    0.600, P7,
+    0.700, P8,
+    0.800, P9,
+    0.900, P10,
+    1.000, P11, // end point
+    1.100, P12  // control point
+  }// end of spline ---------------
+//---------------------------------------</b></td></pre></tr></table>
+<font size="2">Nota 1: Per uno spline di tipo 'natural_spline' abbiamo bisogno<br>
+ di due punti di controllo 'P0' e 'P11', uno primo e un altro doppo lo spline.<br>
+ I valori della funzione spline sono dichiarati entro 'P1' et 'P12'.<br>
+ Nota 2: The time values run from -0.1 to 1.1 in steps by 0.100.
+
+  <table border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Spline_marker_.jpg" width="300" height="80" alt="Spline points" title="Spline point"></td></tr>
+</table>Il test qui mostra i punti che definiscono lo spline:<br></font>
+<font size="1">(Questa sezione si pu&ograve; commentare fuori con '/*  */', se tutto va bene!)</font>
+<br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>//----------------------------------------
+// visual test of the spline points
+#declare Marker   =
+ sphere{&lt;0,0,0&gt;,0.05 pigment{Red}}
+#declare Marker_C =
+ sphere{&lt;0,0,0&gt;,0.05 pigment{Yellow}}
+//--------- set msrkers:
+object{ Marker_C translate P0 }
+object{ Marker translate P1 }
+object{ Marker translate P2 }
+object{ Marker translate P3 }
+object{ Marker translate P4 }
+object{ Marker translate P5 }
+object{ Marker translate P6 }
+object{ Marker translate P7 }
+object{ Marker translate P8 }
+object{ Marker translate P9 }
+object{ Marker translate P10 }
+object{ Marker translate P11 }
+object{ Marker_C translate P12 }
+// end test of the spline
+//---------------------------------------</b></td></pre></tr> </table>
+<br>
+<font size="2">Poi possiamo animare una sfera muovante con<br>
+una animazione con i valori di 'clock' da 0 a 1.</font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>//----------------------------------------
+// The moving sphere:
+sphere{ &lt;0,0,0&gt;,0.5
+  texture{
+    pigment{ rgb&lt;1.0,1.0,1&gt;*0.05 }
+    finish { phong 1 reflection{ 0.1 } }
+    translate&lt;0,0.5,0&gt;
+    translate <font color="#900000">Spline_1(clock)</font>
+      } // end of sphere
+//---------------------------------------</b></td></pre></tr> </table>
+</td>
+<td valign="top">
+<table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Spline_move_004s_5s256.gif" width="160" height="96" alt="Spline move" title="Spline move"></td></tr>
+</table>
+<h6 align="center">
+ Descrizione della scena<br>
+  per POV-Ray:<br><a href="pov/Spline_move_1.ini"> &quot;Spline_move_1.ini&quot;</a>
+    e <br> <a href="pov/Spline_move_1.pov">&quot;Spline_move_1.pov&quot;</a></h6>
+
+</td>
+</tr>
+<tr><td colspan="3"><hr></td></tr></table>
+<tr>
+<td colspan="2">
+<h6 align="center">
+<table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Spline_move_002b_064.gif" width="400" height="200" alt="Spline move" title="Spline move"></td></tr>
+</table>
+ Descrizione della scena
+  per POV-Ray:<br><a href="pov/Spline_move_1.ini"> &quot;Spline_move_1.ini&quot;</a>
+    e <a href="pov/Spline_move_1.pov">&quot;Spline_move_1.pov&quot;</a></h6>
+
+
+
+
+</td>
+<tr>
+</table>
+
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</body>
+</html>

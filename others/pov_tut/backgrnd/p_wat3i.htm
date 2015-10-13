@@ -1,0 +1,226 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="it">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="acqua realistica, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, grafica elettronica 3d, computer graphics">
+<meta name="Description" content="Come creare acqua realistica con POV-Ray">
+
+<title>Come creare acqua realistica con POV-Ray - parte 3</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=550");
+ New.focus();  }
+-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <td align="right"><nobr>
+ <a href="p_wat3.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_wat3.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_wat3d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_wat3d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_wat3f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_wat3f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#ani"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+<nobr> - <a href="p_wat2.htm"><font size="+1">Acqua realistica</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_wat2.htm">Opaca e riflettante</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat2i.htm">Mare mosso</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_wat3i.htm"--><b>Parzialmente trasparente</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat4i.htm">Vortice d'Acqua</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat5i.htm">Acqua in un Bicchiere</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat6i.htm">Acqua con Isosurface</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat7i.htm">Mare con Isosurface</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwni.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h1 align="center">Acqua realistica con POV-Ray</h1>
+<p align="center"><b>parte
+<a href="p_wat1i.htm"> 1</a> | <a href="p_wat2i.htm"> 2</a> | <!--a href="p_wat3i.htm"--></b> 3</a><b> |
+<a href="p_wat4i.htm"> 4</a> | <a href="p_wat5i.htm"> 5</a> | <a href="p_wat6i.htm"> 6</a> |
+<a href="p_wat7i.htm"> 7</a></b></p>
+
+<div align="center">
+<table border="0" width="90%" align="center" cellpadding="4">
+
+<tr><td>
+    <p align="justify"><font size="+1"><b>Una superficie dell'acqua <br>parzialmente trasparente e<br>parzialmente riflettante:<br></b></font>
+    <font size="2">Talvolta l'acqua si presenta come parzialmente trasparente e parzialmente riflettante.
+    Questo si p&ugrave;o fare con usare una testura &quot;Glass3&quot; (acqua chiara) o &quot;Green_Glass&quot;
+        (fieno marino verde nell'acqua!). In questi casi il &egrave; raccomandato di definire un terreno solido (sabbioso o verde)
+        - questo ha una influenza grande nel aspetto della superficie de l'acqua.
+</font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// ground -----------------------------
+plane{&lt;0,1,0&gt;, 0  translate&lt;0,-3,0&gt;
+       texture{pigment{color LightWood}
+               normal {bumps 0.25
+                       scale 0.05}
+               finish {ambient 0.45
+                       diffuse 0.55}
+               }// end of texture
+       }// end of plane 1
+
+// sea water --------------------------
+plane{&lt;0,1,0&gt;, 0
+      texture{ Green_Glass
+              normal{ripples 0.3
+                     scale 0.25
+                     turbulence 0.75
+                     translate&lt; 1,0,2&gt;}
+              finish{ambient 0.45
+                     diffuse 0.55
+                     reflection 0.3}
+             }// end of texture
+     interior{I_Glass}
+     }// end of plane 2
+//-------------------------------------</b></td></pre></tr></table><br>
+
+    </td>
+    <td align="center"><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_watr5.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/p_watr5.jpg" border="0" width="300" height="225" hspace="0" vspace="0"
+                  alt="Sample Water 5 640x480" title="Sample Water 5 640x480"></a></td></tr>
+        </table>
+     <font size="-1"><b>Parzialmente trasparente e riflettante.<br>
+     Descrizione di questa scena per POV-Ray:</b> <a href="povw/p_watr5.txt">p_watr5.txt</a></font>
+</td></tr>
+<tr><td>
+    <p align="justify"><font size="+1"><b>Onde concentriche<br>intorno a un palo:<br></b></font>
+    <font size="2"> </font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// sea water --------------------------
+plane{&lt;0,1,0&gt;, 0
+      texture{ Green_Glass
+              normal{ripples 0.3
+                     scale 0.25
+                     turbulence 0.5
+                     translate&lt; 1,0,2&gt;}
+              finish{ambient 0.45
+                     diffuse 0.55
+                     reflection 0.3}
+             }// end of texture
+     interior{I_Glass}
+     }// end of plane 2
+//-------------------------------------</b></td></pre></tr></table>
+
+    </td>
+    <td align="center"><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_watr6.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/p_watr6.jpg" border="0" width="300" height="225" hspace="0" vspace="0"
+                  alt="Sample Water 6 640x480" title="Sample Water 6 640x480"></a></td></tr></table>
+    <font size="-1"><b>Onde concentriche intorno a un palo.<br>
+     Descrizione di questa scena per POV-Ray: </b><a href="povw/p_watr6.txt">p_watr6.txt</a></font>
+ </h5>
+</td>
+</tr>
+<tr><td colspan="2">
+<b>Note: </b> Un problema particolare pu&ograve; sorgere se si vuole stare a galla una nave:<br>
+ <table align="center" border="3"  bgcolor="#efefef"
+  bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr>
+  <td align="center">
+   <img src="../x_sam/canoe/canoe6s.jpg" border="0" width="240"  height="180"
+   alt="Canoe" title="Canoe"></a></td>
+  <td align="center">
+   <img src="../x_sam/canoe/canoe7s.jpg" border="0" width="240"  height="180"
+   alt="Canoe" title="Canoe"></a></td>
+ </tr>
+ </table>
+</td>
+</tr>
+ <tr>
+<td align="right">
+   <i><b>Hoops! &nbsp; &nbsp; &nbsp; &nbsp;</b></i> <br>
+   &nbsp;
+</td>
+<td>Come si fa correttamente, vede qui: <br>
+   <a href="../x_sam/tec_550i.htm" target="_new">Una Canoa nell'acqua</a>
+</td>
+ </tr>
+<tr><td colspan="2">
+
+
+<p align="right"><b>parte
+<a href="p_wat1i.htm"> 1</a> | <a href="p_wat2i.htm"> 2</a> | <!--a href="p_wat3i.htm"--></b> 3</a><b> |
+<a href="p_wat4i.htm"> 4</a> | <a href="p_wat5i.htm"> 5</a> | <a href="p_wat6i.htm"> 6</a> |
+<a href="p_wat7i.htm"> 7</a></b></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

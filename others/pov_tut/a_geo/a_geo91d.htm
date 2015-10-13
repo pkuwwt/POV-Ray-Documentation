@@ -1,0 +1,245 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2007 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="Analytische Geometrie, raytracing, Seitenmittenparallelogramm, Seitenmitten-Parallelogramm, PoV, POVRAY, POV-Ray 3.6, Computergraphik, 3D-Graphik, Computergrafik, Raytracer Beschreibungen, Povray Tutorial, Beispiele">
+<meta name="description" content="Analytische Geometrie mit POV-Ray - Beispiel - Seitenmittenparallelogramm">
+<title>Seitenmitten-Parallelogramm</title>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=645,height=500");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo91e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="a_geo91e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="a_geo91i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo91i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo91f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo91f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index_d.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__ger.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__ger.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__d.htm">Analytische Geometrie</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">mit POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">- Inhalts&uuml;bersicht -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insrtd_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -    <a href="a_geo00d.htm">Grunds&auml;tzliches</b></a><br>
+&nbsp; &nbsp; <a href="a_geo00d.htm">zur Arbeitsweise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>Punkte &amp; Linien</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo10d.htm">Punkte in 3D</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo20d.htm">Strecken, Geraden,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20d.htm">Vektoren, Abstandspfeile</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30d.htm">Fl&auml;chen u. Ebenen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40d.htm">Ausgabe Resultate,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40d.htm">Beschriftung</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45d.htm">Schnittpunkte</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50d.htm">Kreise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60d.htm">Tetraeder</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61d.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62d.htm">Parallelflach (Spat)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo65d.htm">Runde K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <a href="a_geo70d.htm">Tabellarischer</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm">&Uuml;berblick</b> &uuml;ber</a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm"> &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80d.htm">Vektorrechnung</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80d.htm">mit POV-Ray</b></a> <br>
+&nbsp; -  <a href="a_geo85d.htm">Rechts- u. linksh&auml;ndige</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">Koordinatensysteme</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">und das Vektorprodukt</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Beispiele aus der</b></a> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Analytischen Geometrie</b></a> <br>
+<nobr>&nbsp; &nbsp;<b>&gt; <!--a href="a_geo91d.htm"-->Seitenmitten-Parallelogramm</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo92d.htm">Spurpunkte einer Geraden</b></a> <br>
+&nbsp; &nbsp; -  <a href="a_geo93d.htm">Berechnungen am Dreieck</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo94d.htm">Parallelogrammfl&auml;che</b></a></nobr> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo94d.htm">und Vektorprodukt</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95d.htm">Schatten einer Pyramide</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96d.htm">Schnitt mit Ebene || zu yz</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97d.htm">Winkel zw. Dreieck yz-Ebene</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+    <table align="center" width="50%"><tr>
+    <td align="center" valign="middle" colspan="2"><h3><nobr>Analytische Geometrie mit POV-Ray</nobr></h3>
+                                                                          <h4><nobr> - Beispiele -</nobr></h4></td>
+    </tr><tr>
+    <td align="center" valign="middle">
+       <h2 align="center"><nobr>Das Seitenmitten-Parallelogramm &nbsp; &nbsp;</nobr>
+                                eines beliebigen Vierecks</h2> a quatrilateral </td>
+    <td align="center" valign="top">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="a_geo_s01s.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+    </table>
+ </td>
+</tr>
+</table>
+
+<div align="center">
+<table width="95%" align="center" cellpadding="5">
+ <tr>
+  <td colspan="1" valign="top">&nbsp;<br>
+        <h4>Das Seitenmittenviereck eines Vierecks</h4>
+        <h5 align="justify"> Ein r&auml;umliches Viereck wird durch 4 Punkte definiert:
+<pre><b>#declare P  = &lt; 1.5, 0.0,-4.0&gt;;
+#declare Q  = &lt; 4.0, 1.0, 3.5&gt;;
+#declare R  = &lt; 0.0, 1.5, 3.5&gt;;
+#declare S  = &lt;-3.0, 4.0,-2.5&gt;;</b></pre>
+         Ein beliebiges r&auml;umliches Viereck ist nicht unbedingt flach.
+         Im Gegensatz zu 2-dimensionalen Vierecken ist eine Vierecksfl&auml;che im Raum
+         nicht eindeutig &uuml;ber 4 Punkte definierbar!<br>
+
+ </td></h5>
+ <td valign="top">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_im92_0.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="a_geo_s00t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Ein beliebiges Viereck ist nicht unbedingt flach.</b> </h5>
+</td>
+</tr>
+
+ <tr>
+  <td valign="top"><h5 align="justify">
+         Die Seitenmitten M<sub>PQ</sub>, M<sub>QR</sub>, M<sub>RS</sub> und M<sub>SP</sub> des Vierecks ergeben sich wie folgt:
+<pre><b>#declare M_PQ = (P+Q)/2;
+#declare M_QR = (Q+R)/2;
+#declare M_RS = (R+S)/2;
+#declare M_SP = (S+P)/2;</b></pre>
+Verbindet man die Seitenmitten, so ergibt sich ein Parallelogramm.<br>
+
+         Vertauscht man z.B. die Punkte S und R:
+<pre><b>#declare S  = &lt; 0.0, 1.5, 3.5&gt;;
+#declare R  = &lt;-3.0, 4.0,-2.5&gt;;
+</b></pre>
+         so erh&auml;lt man wieder ein Parallelogramm.<br>
+         <br>
+         <br><b>Das Seitenmittenviereck eines beliebigen Vierecks
+             ist immer ein Parallelogramm.</b><br>
+         <br>
+         <b>Beweis: </b><br>
+         F&uuml;r den Kantenvektor M<sub>PQ</sub>M<sub>QR </sub> gilt:<br>
+           <b>M<sub>PQ</sub>M<sub>QR </sub></b>  = (Q+R)/2 - (P+Q)/2<br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= Q/2 + R/2 - P/2 - Q/2<br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= <b>R/2 - P/2</b>. <b>(I)</b><br>
+           <br>
+         F&uuml;r den gegen&uuml;berliegenden <br> Kantenvektor M<sub>PS</sub>M<sub>RS </sub> gilt:<br>
+           <b>M<sub>PQ</sub>M<sub>QR </sub></b> = (R+S)/2 - (S+P)/2<br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= R/2 + S/2 - S2 - P/2<br>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= <b>R/2 - P/2</b>. <b>(II)</b><br>
+          <br>
+         Vergleicht man (I) mit (II) so erkennt man, dass die beiden Kanten durch denselben
+         Vektor dargestellt werden, d.h. sie sind parallel und gleich lang.<br>
+         Ein Viereck, bei dem zwei einander gegen&uuml;ber liegende Kanten
+         gleich lang u. parallel sind, mu&szlig; ein Parallelogramm sein. <br>
+         <br>
+
+ </td></h5>
+ <td valign="top">
+       <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+              bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_im92_1.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="a_geo_s01t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Das Seitenmittenviereck eines beliebigen Viereck ist ein Parallelogramm.</b><br>
+    <font size="-1">Diese Szene f&uuml;r <nobr>POV-Ray:</nobr>
+    <a href="a_geo_sm1.txt">&quot;.txt&quot;-Datei</a> oder
+    <a href="a_geo_sm1.pov">&quot;.pov&quot;-Datei</a></font></h5>
+
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_im92_2.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="a_geo_s02t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Das Seitenmittenparallelogramm auch bei verschr&auml;nkten Eckpunkten.</b><br>
+    <font size="-1">Diese Szene f&uuml;r <nobr>POV-Ray:</nobr>
+    <a href="a_geo_sm2.txt">&quot;.txt&quot;-Datei</a> oder
+    <a href="a_geo_sm2.pov">&quot;.pov&quot;-Datei</a></font></h5>
+</td>
+</tr>
+
+</table>
+</div>
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</body>
+</html>

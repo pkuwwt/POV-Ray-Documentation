@@ -1,0 +1,216 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures with POV-Ray - layered textures</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="textures with POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design of Surfaces by &quot;texture&quot; with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_890d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_890d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a><br>
+        <a href="tex_890i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_890i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_890f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_890f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000e.htm">Design of Surfaces</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000e.htm">Colors and Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001e.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001e.htm">Basic Sample</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200e.htm">pigment{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300e.htm">normal{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">normal Samples</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400e.htm">finish{...} </b></a><br>
+-->
+ &nbsp; &nbsp;  <a href="tex_210e.htm">Ready-made Textures</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210e.htm">Rules</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150e.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160e.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110e.htm">Do-it-yourself Colors</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110e.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120e.htm">Transparency</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700e.htm">Patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700e.htm">pattern types</b></a><br>
+ &nbsp; &nbsp; &nbsp; Regular patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500e.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550e.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Stripes pattern</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600e.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750e.htm">Patterns Lists</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750e.htm">Regular Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755e.htm">Random Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760e.htm">Fractal Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765e.htm">Other Patterns</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780e.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780e.htm">warp mapping</b></a><br> -->
+ &nbsp; &nbsp; <a href="tex_790e.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800e.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800e.htm">Mapping Methods</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600e.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820e.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830e.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840e.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850e.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860e.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870e.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880e.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <!--a href="tex_890e.htm"--><b>Superpositions</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_890e.htm"--><b>Layered Textures</b></a><br>
+ &nbsp; &nbsp; &nbsp;      <a href="tex_893e.htm">squared paper grid</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_900e.htm">Your own Textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="90%" align="center"><tr><td><!-- global table-->
+<font size="6"><b><p align="center">Layered Textures<br>
+</font><h3>Layers of Partly Tansparent Patterns</h3>
+</font></b>
+<font size="2"><p>We can layer over a basic texture a second or more partly transparent textures!
+The last defined texture will be seen a the top of the surface and where this texture is transparent we can see the lower
+texture layers.</p>
+<p><br>
+  <b>Example 1: &quot;Layered Textures&quot;</b>:</p></font>
+<div align="center">
+<br>
+<table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/layerd1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/layerd1t.jpg" border="0" width="320"  height="240"
+       alt="Sample layered textures 640x480" title="Sample  layered textures 640x480"></a>
+      </td></tr></table>
+<br>
+<table border="1" cellspacing="3" cellpadding="4" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>sphere{ &lt;0,0,0&gt;,1
+        scale &lt;1.2,1,1&gt;
+        translate&lt;0,1.3,0&gt;
+        texture{ Polished_Chrome
+               } // end of texture #1
+        texture{ Peel scale 0.5 translate&lt;2,0,0&gt;
+                 normal  { wrinkles 0.75 scale 0.1}
+                 finish  { diffuse 0.9 phong 0.3}
+               } // end of texture #2 obendrauf
+       } // end of sphere</b></td></pre>
+</tr>
+</table>
+</div>
+<br>
+<font size="2">
+<p>  <b>Example 2: &quot;Layered Textures&quot;</b>:</p></font>
+<div align="center">
+<br>
+<table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/layerd2i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/layerd2t.jpg" border="0" width="320"  height="240"
+       alt="Sample layered textures 640x480" title="Sample  layered textures 640x480"></a>
+      </td></tr></table>
+<br>
+<table align="center" border="1"  cellspacing="3" cellpadding="4" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#declare Textur1 = //--------------------  texture 1
+texture{
+  pigment{ ripples scale 0.5 turbulence 0.75
+    color_map { [0.0 color Green]
+                [0.4 color Yellow]
+                [0.4 color White]
+                [1.0 color YellowGreen]
+              } // end of color_map
+          } // end of pigment
+  normal { wrinkles 0.75 scale 0.1}
+  finish { diffuse 0.65
+          reflection 0.25 phong 1}
+} //------------------------------ end of texture 1
+#declare Textur2 = //-------------------  texture 2
+texture{
+  pigment{gradient&lt;0,1,0&gt; scale 0.5 turbulence 1.25
+    color_map { [0.0 color Clear]
+                [0.7 color Clear]
+                [0.7 color rgb&lt;1,0.75,0&gt; ]
+                [1.0 color Gray50 ]
+                 } // end of color_map
+        } // end of pigment
+ normal { ripples 0.8 scale 0.02 turbulence 0.5 }
+ finish { diffuse 0.9 phong 1}
+ } //----------------------------- end of texture 2
+//-------------------------------------------------
+sphere{&lt;0,0,0&gt;,1 scale &lt;1.2,1,1&gt;
+      texture{Textur1}
+      texture{Textur2}
+      translate&lt;0,1,0&gt;
+      } // end of sphere --------------------------</b></td></pre>
+</tr>
+</table>
+<br>
+</div>
+
+</td></tr></table><!-- global table -->
+
+
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

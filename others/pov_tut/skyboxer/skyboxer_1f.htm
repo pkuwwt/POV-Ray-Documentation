@@ -1,0 +1,235 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="fr">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="Skybox Viewer pour POV-Ray, 360&deg; panoramas, ciel r&eacute;aliste, nuages r&eacute;alistes, realistic sky, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, infographie 3D, computer graphics">
+<meta name="Description" content="Skybox Viewer pour POV-Ray, 360&deg; panoramas">
+
+<title>Un Skybox Viewer pour sc&egrave;nes de POV-Ray - part 1</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <td align="right"><nobr>
+ <a href="skyboxer_1.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="skyboxer_1.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="skyboxer_1d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="skyboxer_1d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="skyboxer_1i.htm"><font size="2">Italiano</font></a>
+ <a href="skyboxer_1i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr> - <b><font size="+1">SkyboxViewer</font></b></a></nobr><br>
+ &nbsp; &nbsp;&gt; <!--a href="skyboxer_1f.htm"--><b>Informations de Base</b></a><br>
+ &nbsp; &nbsp; -  <a href="skyboxer_2f.htm"><b>Skyboxes avec POV-Ray</b></a><br>
+ &nbsp; &nbsp; -  <a href="skyboxer_3f.htm"><b>Galerie des Skybox</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h1 align="center"><b>Un Skybox Viewer pour sc&egrave;nes de <nobr>POV-Ray</nobr></b></h1>
+<p align="center"><font size="-1"></b>
+                  <!--a href="skyboxer_1f.htm"-->Informations de Base + T&eacute;l&eacute;chargement</a>  |<b>
+                  <a href="skyboxer_2f.htm">Skyboxes avec POV-Ray</a><b> |
+                  <a href="skyboxer_3f.htm">Galerie des Skybox</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" cellspacing="10">
+<tr><td valign="top">
+    <h2 align="left"><b>Skybox Viewer</b> <br>
+                    <font size="-1">un logiciel gratuit (freeware) par Gerd Platl.</font></h2>
+                   <b>T&eacute;l&eacute;chargement</b> ici:
+                   <a href="prog/SkyboxViewer.zip" target="_new">SkyboxViewer.zip</a> (1.963.120 Bytes ~1.9 MB),<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <font size="-1"><b>version 1.01, 20 janvier 2010.</b></font> <br>
+                   <font size="-1">(Contenu : le programme SkyboxViewer.exe [669.696 Bytes ~654 kB],<br>
+                   &nbsp; des fichiers d'exemple skybox et POV-Ray<br>
+                   &nbsp; et fichiers ReadMe en allemand et en anglais.)</font>
+    <p align="justify"><font size="-1"><b>Qu'est que c'est? - Informations de Base - </b></font><br>
+        Le SkyboxViewer est un logiciel OpenGL pour afficher et explorer sc&eacute;nario en 3d scenarios d'un point de vue fixe.
+       <font size="-1">Pour cela 6 images avec des nomes de fichier d&eacute;fini (voir ci-dessous) sont charg&eacute;es par le logiciel.<br>
+               Avec la souris et les touches nous pouvons changer la direction de vue dans un panorama de 360&deg;, &agrave; droite et &agrave; gauche,
+               vers le haut, vers le bas et nous pouvons aussi zoomer dedans et dehors de la sc&egrave;ne.<br>
+               <br>
+               Pour comprendre le Skybox est vous pouvez lire
+               mon tutoriel <br>
+               <a href="../backgrnd/p_sky9f.htm" target="_new">Skyboxes avec POV-Ray</a>.<br>
+
+               Les 6 images pour les 6 faces d'un skybox on peut faire avec des sc&egrave;nes en
+                <b>POV-Ray</b> (comme d&eacute;crit ici) ou avec des sc&egrave;nes en <b>Terragen</b> et avec beaucoup des autres logiciels 3d.</font>
+  </td>
+    <td valign="top">
+    <h5 align="center">
+    <table border="3" bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="gif/PalldioPalace_extern.gif" border="0" width="208" height="128" hspace="0" vspace="0"></td></tr>
+        </table> &nbsp; <br>
+    <table border="3" bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="gif/Skybox_Water222.gif" border="0" width="208" height="128" hspace="0" vspace="0"></td></tr>
+        </table>Une vue anim&eacute;e de Skybox.<br>
+     <!--font size="-1"><a href="pov/p_sky01.txt">Description of this scenery for POV-Ray</a--></font></h5>
+ </td>
+</tr>
+<tr>
+ <td colspan="2"><b>L'arrangement des 6 images de skybox :</b>
+  <!-- 6images -->
+  <table width="512" border="0" cellpadding="0" cellspacing="2">
+  <tr>
+   <td>&nbsp;</td>
+   <td><table border="2"  bgcolor="#EFEFEF"
+              bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><img src="im/Skybox_Water10_128_top.jpg" border="0" width="128" height="128" hspace="0" vspace="0"></td></tr>
+       </table>
+   </td>
+   </tr>
+   <tr>
+   <td><table border="2"  bgcolor="#EFEFEF"
+             bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/Skybox_Water10_128_left.jpg" border="0" width="128" height="128" hspace="0" vspace="0"></td></tr>
+       </table></td>
+   <td><table border="2"  bgcolor="#EFEFEF"
+             bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/Skybox_Water10_128_front.jpg" border="0" width="128" height="128" hspace="0" vspace="0"></td></tr>
+       </table></td>
+   <td><table border="2"  bgcolor="#EFEFEF"
+              bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/Skybox_Water10_128_right.jpg" border="0" width="128" height="128" hspace="0" vspace="0"></td></tr>
+       </table></td>
+   <td><table border="2"  bgcolor="#EFEFEF"
+              bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/Skybox_Water10_128_back.jpg" border="0" width="128" height="128" hspace="0" vspace="0"></td></tr>
+       </table></td>
+  </tr>
+  <tr>
+   <td>&nbsp;</td>
+   <td><table border="2"  bgcolor="#EFEFEF"
+             bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/Skybox_Water10_128_base.jpg" border="0" width="128" height="128" hspace="0" vspace="0"></td></tr>
+      </table></td>
+  <td colspan="2" valign="top">&nbsp;
+   <i>L'arrangement des 6 images :</i><br>
+   <font size="-1"><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _top<br>
+       &nbsp; &nbsp; &nbsp; &nbsp;_left &nbsp;_front  &nbsp;_right  &nbsp;_back<br>
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _base</b></font><br>
+   </td>
+ </tr>
+</table>  <!-- 6images -->
+
+</td>
+</tr>
+<tr><td colspan="2">
+<b>Les conventions de nomes du SkyboxViewer</b> pour les fichiers d'image : <br>
+  <font size="-1">&lt;skyboxname&gt;</font> est un nome en ascii que on peut choisir librement.<br>
+  <font size="-1">&lt;ext&gt;</font> c'est le type d'image (BMP, JPG, PNG ou TGA)<br>
+<font size="-2">&nbsp; &nbsp; &nbsp; &nbsp; Les types de fichier d'image support&eacute;s : &nbsp; -------------------------------------------------------- <br>
+&nbsp; &nbsp; &nbsp; &nbsp;  *.bmp &nbsp;    Windows Bitmap<br>
+&nbsp; &nbsp; &nbsp; &nbsp;  *.jpg &nbsp;    JPEG - Joint Photographic Experts Group <br>
+&nbsp; &nbsp; &nbsp; &nbsp;  *.png &nbsp;    Portable Network Graphics <br>
+&nbsp; &nbsp; &nbsp; &nbsp;  *.tga &nbsp;    TARGA File Format (only unkompressed image files are supported)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; ------------------------------------------------------------------------------------------------------------------------ <br>
+</font>
+
+Les 6 images de skybox on doit nommer comme suit :<br>
+<table border="1" cellspaceing="3" >
+<tr><td><h6>&nbsp; &lt;skyboxname><b>_front</b>.&lt;ext&gt;</td></h6><td><h6>&nbsp;front side picture</td></h6></tr>
+<tr><td><h6>&nbsp; &lt;skyboxname><b>_right</b>.&lt;ext&gt;</td></h6><td><h6>&nbsp;right side picture</td></h6></tr>
+<tr><td><h6>&nbsp; &lt;skyboxname><b>_back</b>.&lt;ext&gt; </td></h6><td><h6>&nbsp;back side picture</td></h6></tr>
+<tr><td><h6>&nbsp; &lt;skyboxname><b>_left</b>.&lt;ext&gt; </td></h6><td><h6>&nbsp;left side picture</td></h6></tr>
+<tr><td><h6>&nbsp; &lt;skyboxname><b>_top</b>.&lt;ext&gt;  </td></h6><td><h6>&nbsp;upper side picture</td></h6></tr>
+<tr><td><h6>&nbsp; &lt;skyboxname><b>_base</b>.&lt;ext&gt; </td></h6><td><h6>&nbsp;bottom side picture</td></h6></tr>
+</table>
+Le logiciel cherche pour s&eacute;ries d'image de skybox seulement dans un <b>registre</b> nomm&eacute; &quot;<b>Skyboxes</b>&quot;.<br>
+Plusieurs de s&eacute;ries d'skybox sont trouv&eacute;es par ordre alphab&eacute;tique.<br>
+Cel&agrave; demande une <b>structure de registre</b> suivante :<br>
+<table border="1" cellpadding="3" >
+<tr><td rowspan="7" valign="top"><h6>AnyDirectory/</td></h6><td rowspan="6" valign="top">Skyboxes/</td><td>MySkybox1_back.jpg</td></tr>
+<tr><td>MySkybox1_base.jpg</td></tr>
+<tr><td>MySkybox1_front.jpg</td></tr>
+<tr><td>MySkybox1_left.jpg</td></tr>
+<tr><td>MySkybox1_right.jpg</td></tr>
+<tr><td>MySkybox1_top.jpg</td></tr>
+
+<tr><td>SkyboxViewer.exe</td><td>&nbsp;</td></tr>
+</table>
+
+<br>
+<br>
+
+
+</td></tr>
+<tr><td colspan="2">
+<p align="right"> <font size="-1"></b>
+                  <!--a href="skyboxer_1f.htm"-->Information de Base + T&eacute;l&eacute;chargement</a>  |<b>
+                  <a href="skyboxer_2f.htm">Skyboxes avec POV-Ray</a><b> |
+                  <a href="skyboxer_3f.htm">Galerie des Skybox</a></b></font></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+
+</font>
+</body>
+</html>

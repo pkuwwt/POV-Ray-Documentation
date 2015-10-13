@@ -1,0 +1,262 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - Transparency mapping 3</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="description" content="Transparency mapping, Texturen mit POV-Ray">
+<meta name="keywords" content="Transparency mapping, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_887e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_887e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_887i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_887i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_887f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_887f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001d.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_110d.htm">Farben Do-it-Yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700d.htm">Muster</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp; &nbsp; Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750d.htm">Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_875d.htm">image_map+gif 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_876d.htm">image_map+gif 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_878d.htm">image_map+gamma</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_885d.htm">transparency maps 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_886d.htm">transparency maps 2</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_887d.htm"--><b>transparency maps 3</b></a><br>
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="90%" align="center"><tr><td colspan="2"><!-- global table-->
+<div align="center">
+<font size="5"><b>Transparency mapping</b> (3)</font><br>
+<font size="4">Die Steuerung der Transparenz durch Muster.</font>
+<hr size="3">
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<font size="3"><b>Beispiel 4: Ahornblatt</b></font><br>
+<font size="-1">Transparentes Ausschneiden und Texturieren eines Blattes.<br>
+Hierzu ben&ouml;tigt man ein Photo eines realen Blattes, vorbereitet in einem Bildbearbeitungsprogramm.</font>
+<table border="1" cellspacing="3" cellpadding="4" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>//-------------------------------------
+#declare P_Map = // pigment map ------
+ pigment{
+   image_map{ jpeg "Acer01_diff.jpg"
+              interpolate 2 once
+            } //
+        } // -------------------------
+#declare T_Map = // transparency map -
+ pigment{
+   image_map{ jpeg "Acer01_trans.jpg"
+              interpolate 2 once
+            } //
+        }// --------------------------
+#declare N_Map = // normal or bump map
+ normal{
+   bump_map{ jpeg "Acer01_bump.jpg"
+        interpolate 2 bump_size 5 once
+           } //
+       } // --------------------------
+#declare Leaf_Texture =  //-----------
+texture{ pigment{ P_Map }
+         normal { N_Map }
+         finish { phong 0.5 }
+       } // --------------------------
+//------------------------------------
+#declare Leaf_Material =  //----------
+material{
+   texture{
+      pigment_pattern{ T_Map }
+      texture_map{
+        [0.0 pigment{rgbf&lt;1,1,1,1&gt;}]
+        [0.7 Leaf_Texture  ]
+        [1.0 Leaf_Texture  ]
+       } // end texture_map
+     }// end texture
+  }// end material -------------------
+// -----------------------------------
+sphere{ &lt;0,0,0&gt;,0.65
+        scale&lt;1,1,0.75&gt;
+        translate&lt;0.5,0.5,0.1&gt;
+        clipped_by{
+           box{ &lt;0,0,0&gt;, &lt;1,1,-1&gt; }
+         } // clipped_by
+        material{ Leaf_Material }
+        rotate&lt; 60,-90,0&gt;
+        translate&lt;0.63,-0.69,-0.46&gt;
+ } // end of box ---------------------
+//-------------------------------------</b></td></pre>
+</tr>
+</table>
+<br>
+<font size="2"><b>Anmerkung:</b> Speichern Sie die entsprechenden<br>
+&nbsp; Bilddateien im gleichen Unterverzeichnis wie<br>
+&nbsp; die Szenendateien oder in jedem anderen<br>
+&nbsp; Unterverzeichnis in Ihren Includedateien-Pfaden.
+
+</font>
+
+
+</td>
+<td valign="top">
+<br>
+<div align="center">
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Acer01_diff_tn.jpg" border="0" width="160" height="160"
+       alt="Example trancparency mappping" title="Example trancparency mappping"></a>
+       </td>
+  </tr>
+</table>
+<font size="2">Das Bild f&uuml;r pigment map: <br>
+<a href="im/Acer01_diff.jpg">Acer01_diff.jpg</a> (512x512 pixels)</font>
+
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Acer01_trans_tn.jpg" border="0" width="160" height="160"
+       alt="Example pigment mappping" title="Example pigment mappping"></a>
+       </td>
+  </tr>
+</table>
+<font size="2">Das Bild f&uuml;r transparency map: <br>
+<a href="im/Acer01_trans.jpg">Acer01_trans.jpg</a> (512x512 pixels)</font>
+
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Acer01_bump_tn.jpg" border="0" width="160" height="160"
+       alt="Example trancparency mappping" title="Example trancparency mappping"></a>
+       </td>
+  </tr>
+</table>
+<font size="2">Das Bild f&uuml;r bump map: <br>
+<a href="im/Acer01_bump.jpg">Acer01_bump.jpg</a> (512x512 pixels)</font>
+
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Acer_Leaf_01c.jpg" border="0" width="320" height="240"
+       alt="Example Acer Leaf" title="Example  Acer Leaf"></a>
+       </td>
+  </tr>
+</table>
+<font size="2">POV-Ray: <a href="pov/Acer_Leaf_01.pov">Acer_Leaf_01.pov</a><br>
+<font size="2">Version ohne Gamma-Korrektur f&uuml;r POV-Ray 3.7: <br>
+               Szenendatei f&uuml;r  <b>POV-Ray 3.7</b>: <a href="pov/Acer_Leaf_01.pov">Acer_Leaf_01.pov</a>,<br>
+               ben&ouml;tigt die drei obigen Bilder !!!
+<font size="2">Version ohne Gamma-Korrektur f&uuml;r POV-Ray 3.6.2: <br>
+               Szenendatei f&uuml;r <b>POV-Ray 3.6</b>: <a href="pov/Acer_Leaf_01_36.pov">Acer_Leaf_01_36.pov</a>,<br>
+               ben&ouml;tigt die drei obigen Bilder !!!
+</font>
+</div>
+</td>
+</tr>
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

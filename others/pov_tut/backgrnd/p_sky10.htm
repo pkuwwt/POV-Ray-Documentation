@@ -1,0 +1,230 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="en-us">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="HDRI environment mapping, High Dynamic Range Image, sky, skies, realistic sky, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, 3d graphics, computer graphics">
+<meta name="Description" content="HDRI environment mapping, High Dynamic Range Image, - How to create realistic skies with POV-Ray">
+
+<title>How to create realistic skies with POV-Ray - part 10 - HDRI environment mapping, High Dynamic Range Images</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=840,height=655");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table border="0" width="95%"><tr>
+ <td><h6><nobr>Descriptions and Examples for the POV-Ray raytracer</nobr><br>
+         <nobr>by Friedrich A. Lohm&uuml;ller</nobr> </td></h6>
+ <td align="right"><nobr>
+ <a href="p_sky10d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_sky10d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_sky10i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky10i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_sky10f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_sky10f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000e.htm">Realistic Skies</b></a></font></nobr><br>
+ &nbsp; &nbsp; - <a href="p_sky1.htm">A Realistic Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky2.htm">Partly Cloudy Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3.htm">Layers of Clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4.htm">Stacked planes clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky5.htm">Shadow Casting</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky6.htm">Massiv media clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70.htm">Sunset Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7.htm">Starry Skies</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky8.htm">Skydomes + skymaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky9.htm">Skyboxes + cubemaps</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky10.htm"--><b>HDRI environment</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">How to create Realistic Skies with POV-Ray</h2>
+<p align="center"><font size="-1"><a href="p_sky000e.htm">Overview</a> |
+<a href="p_sky1.htm">1</a> | <a href="p_sky2.htm">2</a> |
+<a href="p_sky3.htm">3</a> | <a href="p_sky4.htm">4</a> |
+<a href="p_sky5.htm">5</a> | <a href="p_sky6.htm">6</a> |
+<a href="p_sky70.htm">7.0</a> | <a href="p_sky7.htm">7.1</a> | <a href="p_sky8.htm">8</a> |
+<a href="p_sky9.htm">9</a></b>| <!--a href="p_sky10.htm"-->10</a></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" cellspacing="10">
+<tr><td valign="top">
+    <h3 align="left"><b>HDRI environment mapping:</b></h3>
+    <h5 align="justify">The word inside a sphere - simulated environment.<br>
+     A <b>HDRI</b> - <b>High Dynamic Range Image</b> can be used instead of light_source
+     and ambient light settings. These type of images contain 32 bit per color pixel and
+     this is much more detailed information than normal images, which usually use 8 bit per color pixel.
+     This means that the bright parts are brighter, the dark parts are darker and there is much more
+     variance in between. <br>
+     A <b>light probe image</b> is a high dynamic range image of the illumination conditions
+     at a point in space! Each light probe image represents a full 360 &times; 360 degrees,
+     or 4pi steradians.<br>
+     Such images can be used to illuminate rendering scenes with image-based lighting.<br>
+
+     Sure this is only <b>another &quot;cheap and dirty trick&quot;</b> for &quot;real&quot; raytracing fans,
+     because is simulates an environment that not really there!
+     <b>But</b> have a short look at the sample images here: You'll see - <b>the effect is fantastic!</b><br>
+     &nbsp;<br>
+     Since version 3.7 <b>POV-Ray supports HDRI</b> (with the extention .hdr) .<br>
+     <br>
+    It's a good idea also to use radiosity for hdr images to get a full realistic look.
+     For radiosity and hdr illumination we need to set the finish components ambient and diffuse to zero.
+     So it is a good idea not to define ambient and diffuse in any textures used in our scenes,
+     but declare it generally as a default.<br>
+     All normal light sources should be dimmed down, only some flashlight to light up the shadows
+     should be used with hdr images - remember the hdr image makes the light in the scene!
+     <br>
+     For HDRI illumination we have to declare:<br>
+
+
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// hdr environment -----------------------
+sky_sphere{
+  pigment{
+    image_map{ hdr "building_probe.hdr"
+               gamma 1.1
+               map_type 1 interpolate 2}
+      }// end pigment
+      rotate &lt;0,40,0&gt; //
+} // end sphere with hdr image -----------</b></td></pre></tr></table>
+<font size="-1" color="#BF0000">Updated 23-Nov-2013 for POV-Ray 3.7.0 !</font>
+<br>
+<br>
+ Samples on <b>HDRI high dynamic range images</b> or <b>light probe images</b> you can find here:<br>
+ <a href="http://www.debevec.org/Probes/" target="_new">Light Probe Image Gallery</b></a> by Paul E. Debevec (en, es).
+ </td>
+ <td valign="top">
+    <h6 align="center">
+    <table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><a href="javascript:ShowImage('im/sky_10_2m.htm')"
+                         onMouseover="window.status='ShowSingleImage';return true"
+                         onMouseOut="window.status=''">
+                <img src="im/hdr_sample_001_medium.jpg"
+                 border="0" width="320" height="240" hspace="0" vspace="0"
+                 alt="click for higher resolution" titel="click for higher resolution"></a></td></tr>
+        </table><b>HDRI sample 1</b><br>
+        <font size="-2">Click on the image for a higher resolution!</font> <br>
+      <table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/hdri_building_probe.jpg"
+                 border="0" width="256" height="256" hspace="0" vspace="0"</a></td></tr>
+        </table>HDRI probe angular map used here<br>
+ </h6>
+</td></tr>
+<tr><td valign="top">
+     <h6 align="center">
+     <table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/hdr_sample_002_ohdr_or.jpg"
+                 border="0" width="320" height="240" hspace="0" vspace="0"</a></td></tr>
+        </table><b>POV-Ray scene 2 without HDRI illumination</b></h6>
+</td>
+<td valign="top">
+    <h6 align="center">
+     <table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><a href="javascript:ShowImage('im/sky_10_2im.htm')"
+                         onMouseover="window.status='ShowSingleImage';return true"
+                         onMouseOut="window.status=''">
+                <img src="im/hdr_sample_002_medium.jpg"
+                 border="0" width="320" height="240" hspace="0" vspace="0"
+                 alt="click for higher resolution" titel="click for higher resolution"></a></td></tr>
+        </table><b>POV-Ray scene 2 with HDRI illumination</b><br>
+                 <font size="-2">Click on the image for a higher resolution!</font></h6>
+     <font size="-1">Description of this scenery for POV-Ray
+     <a href="pov/hdr_sample_002.txt">hdr_sample_002.txt</a> or
+     <a href="pov/hdr_sample_002.pov">hdr_sample_002.pov</a><br>
+     Download the high dynamic range image here:<br>
+     <a href="http://www.debevec.org/Probes/" target="_new">Light Probe Image Gallery</b></a> by Paul E. Debevec.<br>
+     Download the helicopter model for POV-Ray here:<br>
+     <a href="../objects/obj_800e.htm" target="_new">Ready-made Objects for POV-Ray - Helicopter_01</a>.
+     </font>
+
+   </td></tr>
+<tr><td colspan="2">
+<p align="right"><font size="-1"><a href="p_sky000e.htm">Overview</a> |
+<a href="p_sky1.htm">1</a> | <a href="p_sky2.htm">2</a> |
+<a href="p_sky3.htm">3</a> | <a href="p_sky4.htm">4</a> |
+<a href="p_sky5.htm">5</a> | <a href="p_sky6.htm">6</a> |
+<a href="p_sky70.htm">7.0</a> | <a href="p_sky7.htm">7.1</a> | <a href="p_sky8.htm">8</a> |
+<a href="p_sky9.htm">9</a></b>| <!--a href="p_sky10.htm"-->10</a></font></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td align="right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+
+</font>
+</body>
+</html>

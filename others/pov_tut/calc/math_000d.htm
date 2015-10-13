@@ -1,0 +1,144 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="keywords" content="POV-Ray, POV, povray, Raytracing, 3D-Grafik, 3D-Graphik">
+<meta name="Description" content="Deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen zu 3D-Grafik mittels Raytracing und photorealistischer Computergrafik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<title>Koordinatennetze und Achsen f&uuml;r 2- und 3dimensionale Koordinatensysteme.
+       Darstellung mathematischer Funktionen in 2D Raytracer POV-Ray</title>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030"
+      link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b><nobr>Netze und Achsen f&uuml;r Koordinatensysteme.</nobr><br>
+            <nobr>Darstellung mathematischer Funktionen in POV-Ray.</b></nobr></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="math_000e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="math_000e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="math_000i.htm"><font size="2">Italiano</font></a>
+        <a href="math_000i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="math_000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3" >
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ <b>&gt;</b><!--a href="math_000d.htm"--><b><nobr>Koordinatensysteme</nobr></b></a><br>
+&nbsp;&nbsp;<!--a href="math_000d.htm"--><b><nobr>und 2D-Funktionen</nobr></b></a><br>
+<br>
+&nbsp; -  <a href="math_100d.htm">Karopapier</b></a><br>
+&nbsp; -  <a href="math_200d.htm">Koordinatensysteme</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200d.htm">mit Achsen</b></a><br>
+<nobr>&nbsp; -  <a href="math_300d.htm">Makro f&uuml;r Raster</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300d.htm">mit 2 Niveaus</b></a><br>
+&nbsp; -  <a href="math_500d.htm">2D-Funktionen</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500d.htm">Beispiele</b></a><br>
+<nobr>&nbsp; -  <a href="math_600d.htm">Mathematische Funktionen</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600d.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2" width="90%" align="center"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<!--- end of header -->
+<a name="top"></a>
+<h1><div align="center"><font size="1">(Verwendet Javascript zum Anzeigen einiger Beispiel-Bilder in 600x450 !)</font></font>
+
+
+ <table border="1" cellspacing="2" cellpadding="2" width="90%"
+     bordercolor="#f0f0f0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td width="80" height="60" align="center" valign="top">
+      <a href="math_100d.htm"><img src="im/grid1s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>1.</b></td>
+     <td valign="top"><font size="3">
+      <a href="math_100d.htm">Karopapier - gerasterte Ebene</b></a></font><br>
+         <font size="2">(Objekte: plane. Methoden: color_map, layered textures, macro.)</font><br></td></tr>
+ <tr><td width="80" height="60" align="center" valign="top">
+      <a href="math_200d.htm"><img src="im/axis_n0s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>2.</b></td>
+     <td valign="top"><font size="3">
+      <a href="math_100d.htm"> Koordinatensysteme mit Achsen</b></a></font><br>
+         <font size="2">(Objekte: cone, cylinder, sphere, prism. Methoden: declare, union.)</font><br></td></tr>
+ <tr><td width="80" height="60" align="center" valign="top">
+      <a href="math_300d.htm"><img src="im/raster_plate_2cs.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>2.</b></td>
+     <td valign="top"><font size="3">
+         <a href="math_300d.htm">Gitternetze mit 2 Niveaus</b></a></font><br>
+         <font size="2">(Objects: cone, cylinder, plane. Methods: #macro #declare, union.)</font><br></td></tr>
+ <tr><td width="80" height="80" align="center" valign="top">
+      <a href="math_500d.htm"><img src="im/povfun3s.jpg" border="0" width="80" height="80"></a></td>
+     <td valign="top" align="right"><b>3.</b></td>
+     <td valign="top"><font size="3">
+         <a href="math_500d.htm">Darstellung von Mathematischen Funktionen<br> in einem 2D-Koordinatensystem</b></a></font><br>
+         <font size="2">(Objekte: cone, cylinder, sphere.  Methoden: #declare, union, #macro, #while.)</font><br></td></tr>
+ <tr><td width="80" height="80" align="center" valign="top">
+      <a href="math_600d.htm"><font size="-2"><b>pow(X,Y),sqrt,<br>int,abs,<br>sin,cos,tan, mod .....</b></font></a></td>
+     <td valign="top" align="right"><b>&nbsp;</b></td>
+     <td valign="top"><font size="3">
+         <a href="math_600d.htm">Mathematische Funktionen in POV-Ray</b></a></font><br>
+         <font size="2"> </font><br></td></tr>
+ </td>
+</tr>
+</table>
+</h3>
+
+
+<!-- end 2nd column -->
+</td></tr>
+<!--tr><td valign="middle" align="center"><a href="#top">top</a></td></tr-->
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</font>
+</body>
+</html>

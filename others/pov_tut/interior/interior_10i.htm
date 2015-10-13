@@ -1,0 +1,274 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Design del Interno dei Oggetti trasparenti con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Design del Interno dei Oggetti trasparenti con material, interior e media - une introduzione al linguaggio di descrizione di scene (SDL) del raytracer POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, infographie, 3D computer graphics, oggeti transparenti, material, textures, interior, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr>raytracer POV-Ray </nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Design del Interno dei Oggetti trasparenti</b></font>
+      <font size="-1"><b>con POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_10e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_10e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_10f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_10f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_10d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_10d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+<br>
+<br>
+<nobr> &nbsp; <a href="interior_000i.htm">Indice del contenuto</b></a></nobr><br>
+ &nbsp; <a href="interior_000i.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05i.htm">Sintassi di material,</b></a><br>
+ &nbsp; &nbsp; &nbsp;  texture e interior</b><br>
+&nbsp; -  <a href="interior_03i.htm">Vetro della finestra</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; e max_trace_level </b></a><br>
+&nbsp; -  <a href="interior_001i.htm">fog - Nebia</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <!--a href="interior_10i.htm"--><b>Sintassi di media</b></a> <br>
+&nbsp; -  <a href="interior_30i.htm">Media e Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; con/senza density map <br>
+&nbsp; -  <a href="interior_20i.htm">Raggi nella Nebbia </b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -  <a href="interior_40i.htm">Spada di Luce</b></a> <br>
+&nbsp; -  <a href="interior_44i.htm">Fiamme di candele</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -  <a href="interior_50i.htm">Luce della Finestra </b></a><br>
+&nbsp; -  <a href="interior_70i.htm">Vapore, Fumo, Nuvole</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -  <a href="interior_60i.htm">Tromba d'Aria.</b></a> <br>
+
+<nobr>&nbsp; Problemi Speciali con Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_080i.htm">Cambiare la scala di Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_090i.htm">Sovrapposizione di Media</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="50%" align="center"><tr><td>           <!-- inner table -->
+
+<h1 align="center"><b>La Sintassi di &quot;media&quot;  &nbsp; &nbsp; &nbsp;<br></b>
+</h1>
+
+<p align="center">Esempi di base per la sintassi dei 3 typi di &quotmedia&quot  &nbsp; &nbsp; &nbsp;</b>
+</p>
+
+<table width="90%">
+<tr>
+ <td><h6>
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_type_emission_1.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table><b>emission</b> <br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>sphere{ &lt;0,0,0&gt;, 1
+        pigment{rgbt 1}
+        hollow
+ interior{ //-----------
+  media{
+   <b>emission &lt;1,1,1&gt;</b>
+   intervals 3
+   samples 1,1 //min,max
+   } // end of media ---
+ } // end of interior
+ translate &lt;0,1.00,0&gt;
+} //----- end of sphere</b></td></pre>
+ </tr>
+ </table>
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_type_scattering_1.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table> <b>scattering</b><br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>sphere{ &lt;0,0,0&gt;, 1
+        pigment{rgbt 1}
+        hollow
+ interior{ //-----------
+  media{
+   <b>scattering{1,&lt;1,1,1&gt;}</b>
+   intervals 3
+   samples 1,1 //min,max
+   } // end of media ---
+ } // end of interior
+ translate &lt;0,1.00,0&gt;
+} //----- end of sphere</b></td></pre>
+ </tr>
+ </table>
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_type_absorption_1.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table> <b>absorption</b><br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>sphere{ &lt;0,0,0&gt;, 1
+        pigment{rgbt 1}
+        hollow
+ interior{ //-----------
+  media{
+   <b>absorption &lt;1,1,1&gt;</b>
+   intervals 3
+   samples 1,1 //min,max
+   } // end of media ---
+ } // end of interior
+ translate &lt;0,1.00,0&gt;
+} //----- end of sphere</b></td></pre>
+ </tr>
+ </table>
+ </td></h6>
+</tr><tr>
+<td colspan="3"><hr size="3"></td>
+</tr><tr>
+<td colspan="3">Se prendiamo il valore di colore &lt;1,0.5,0&gt;(arancione) al posto di &lt;1,1,1&gt;(bianco) abbiamo questo:</td>
+</tr><tr>
+ <td><h6>
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_type_emission_2.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table><b>emission &lt;1,0.5,0&gt;</b>
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_type_scattering_2.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table> <b>scattering &lt;1,0.5,0&gt;</b>
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_type_absorption_2.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table> <b>absorption &lt;1,0.5,0&gt;</b>
+ </td></h6>
+
+</tr></table>
+</div>
+ <div align="center">
+<p align="left">
+ <b>Emitting media:</b> Questo media &egrave; buono per la simulazione del interiore di un oggetto che em&eacute;tte luce.<br>
+       Questo tipo del oggetto non &egrave; illuminato di sorgenti luminose e non pu&ograve; ricevere alcune ombre del altri oggetti.<br>
+       Ma, in realit&agrave;, questo oggetto non pu&ograve; em&eacute;ttre luce e non pu&ograve; illuminare altri oggetti!<br>
+       Per ottenire questo effetto dobbiamo istallare una fonte di luce all'interno della media.<br>
+       Se un altro oggetto si trova nella media, il colore di media &egrave; addizionato al colore di questo oggetto.<br>
+       <font size="-1">Applicato principalmente per fiamme, fuoco o plasma e nuvole luminose.</font><br>.
+      <br>
+ <b>Scattering media:</b> Simulazone di un interiore che pu&ograve; diffondere luce di un colore definito.<br>
+    Se il colore della luce diffusa &egrave; arancione, l'oggetto ha un'ombra con il colore della luce restante (blu verde).<br>
+    La media stessa si pu&ograve; vedere in colore arancione sopra un fondo buio
+    (se la fonte di luce non ha la parola chiave &quot; media_interaction off&quot;)
+    e in colore blu davanti a un fondo bianco.  <br>
+       <font size="-1">Applicato principalmente per nebbia, nuvole buie e per vapore.</font><br>.
+      <br>
+ <b>Absorping media:</b> Simulazione di un interiore che pu&ograve; assorbire luce di un colore definito.<br>
+    Se il colore della luce assorbita &egrave; arancione, l'oggetto ha un'ombra con il colore della luce restante (blu verde).<br>
+     La media stessa si rappresente totalmente in colore blu, il colore della luce restante.<br>
+    <font size="-1">Applicato principalmente per nebbia molto buia e per vapore.</font><br>.
+      <br>
+</font>
+</td>
+</tr><tr>
+<td><hr size="3"></td>
+</tr><tr>
+<td colspan="2"><h5>
+<font size="+1"><b>&quot;media&quot; -  valori de base (default values):</b></font><br>
+<pre>
+absorption  &lt;0,0,0&gt; // colore di luce assorbata.
+emission  &lt;0,0,0&gt;  // colore di luce emessa.
+scattering{ 1            // Type 1 = isotropic scattering, 2 = Mie haze, 3 = Mie murky
+                         // Type 4 = Rayleigh scattering,  5 = Henyey-Greenstein scattering
+            &lt;0,0,0 &gt;       //
+            eccentricity  0.0    // eccentricità con non isotropic tipi di scattering
+            extinction 1.0   // la velocità di assorzione di luce di scattering media
+          }                  // useful if the media absorbs too much light
+//--------------
+  method       : 3      // 3 = adaptive sampling; only performed if the minimum samples are set to 3 or more.
+                        // Sample method 3 ignores the maximum samples value.
+                 aa_level     : 4    // specifies the anti-aliasing recursion depth
+                 aa_threshold : 0.1  // with method 3
+                        // method 2 distributes samples evenly along the viewing ray
+                        // method 1 samples the density of particles at a specified number
+                        // of points along the ray's path. Sub-samples are also taken until
+                        // the results reach a specified confidence level .
+  intervals    : 10     // specifies the integer number of intervals used to sample the ray
+  samples      : 1, 1   // min_samples, max_samples taken per interval
+  confidence   : 0.9    // decrease for slower more accurate results
+  variance     : 1/128  // increase for slower more accurate results
+// Note: the maximum number of samples limits the calculations even if
+// &nbsp;&nbsp;&nbsp; &nbsp; the proper variance and confidence are never reached.
+  ratio        : 0.9  // distributes intervals differently between lit and unlit areas
+</pre>
+
+</h5>
+</td>
+</tr>
+</table>
+</div>
+
+
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

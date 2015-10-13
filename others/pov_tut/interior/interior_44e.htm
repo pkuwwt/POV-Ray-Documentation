@@ -1,0 +1,345 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Design of the Interior of transparent Shapes with POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content=">Design of the interior of transparent shapes with POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3D computer graphics, textures, transparent shapes, interior, material, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples for the POV-Ray Raytracer </nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Design of the Interior of transparent Shapes</b></font>
+      <font size="-1"><b> in POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_44i.htm"><font size="2">Italiano</font></a>
+        <a href="interior_44i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_44f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_44f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_44d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_44d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp; <a href="interior_000e.htm">Content Overview</b></a><br>
+ &nbsp; <a href="interior_000e.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05e.htm">Syntax material</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="interior_05e.htm">texture + interior</b></a> <br>
+&nbsp; -  <a href="interior_03e.htm">Window Glass</b></a><br>
+ &nbsp; &nbsp; &nbsp; + max_trace_level <br>
+&nbsp; -  <a href="interior_001e.htm">Fog, Mist or Haze</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10e.htm">Syntax Media</b></a> <br>
+&nbsp; -  <a href="interior_30e.htm">Media+Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; with/without density map <br>
+&nbsp; -  <a href="interior_20e.htm">Beames in the Fog</b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -   <a href="interior_40e.htm">Light Sword</b></a> <br>
+&nbsp; -   <!--a href="interior_44e.htm"--><b>Candle Flames</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -   <a href="interior_50e.htm">Light through Window</b></a><br>
+&nbsp; -   <a href="interior_70e.htm">Steam, Smoke, Clouds</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -   <a href="interior_60e.htm">Dust Devils</b></a> <br>
+
+<nobr>&nbsp; Special Problems with Media</b></a></nobr><br>
+&nbsp; -  <a href="interior_080e.htm">Scaling of Media</b></a> <br>
+&nbsp; -  <a href="interior_090e.htm">Overlapping Media</b></a> <br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="90%" align="center" cellpadding="20"><tr><td>           <!-- inner table -->
+
+<h2 align="center"><a name="Top"></a><b>Candle Flames<br> by Emitting Media</b>
+      <br><font size="-1">Using <nobr>&quot;media emission&quot;</nobr> keyword<br>
+                          for the simulation of a burning candle's flame.</font><br>
+</h2>
+<td>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/Candle_1demo_m.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table><font size="-2">Candle flames by media emission.</font>
+
+</td></tr></table><hr>
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<tr>
+ <td valign="top" rowspan="2">
+ <p align="justify">With media emission we can simulate burning candle flames.
+ The container object we use (here: an egg shape) should be clear and made hollow
+ <font size="-1">(allows media and for effects inside!).</font>
+ The shape can be scaled together with the media to a candle flame shape.<br>
+
+<font size="-1">  Note: The color of the &quot;emitted&quot; Light is specified after the &quot;emission&quot; keyword.
+ But &quot;media&quot; not really &quot;emit&quot; light - it only means that it's visible without any extern illumination!<br>
+ If we want the media shining with casting shadows etc., we have to put an additional light_source in the center!
+</font> <br>
+
+ </font></p>
+ <br>
+
+
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre>// -----------------------------------------
+#local Flame__Shape =
+merge{    // egg
+intersection{
+   sphere{&lt;0,0,0&gt;,1}
+   box{&lt;-1,-D,-1&gt;,&lt; 1,1  ,1&gt;}
+   scale &lt;1,2.5,1&gt;}
+intersection{
+   sphere{&lt;0,0,0&gt;,1}
+   box{&lt;-1,-1 ,-1&gt;,&lt; 1,0+0.01,1&gt;}
+   }
+} // end of merge
+// -----------------------------------------
+#local C__Flame =
+object{
+  Flame__Shape
+  hollow
+  pigment{ color rgbf&lt;1,1,1,1&gt;}// clear!
+  finish { ambient 0 diffuse 0 }
+  interior {
+    media {
+      emission color rgb&lt;1.0,0.75,0.1&gt;*1.75
+      intervals 9
+      samples 1, 20
+      confidence 0.9999
+      variance 1/100
+      density{ spherical
+               ramp_wave
+               turbulence 0.15
+               color_map {
+               [0.0 color rgb &lt;0.0,0.0,0.0&gt;]
+               [0.6 color rgb &lt;0.8,0.3,0.0&gt;]
+               [0.9 color rgb &lt;1.0,0.8,0.3&gt;]
+               [1.0 color rgb &lt;1.0,1.0,0.1&gt;]
+                         } // end color_map
+            scale &lt;1,2.5,1&gt;
+          } // end of density
+    }//end of media
+}//------------------------------------------
+</b></td></pre></tr></table>
+ <br>
+
+ </font></p>
+ <br>
+ </td>
+ <td align="center"><h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/candle_flame_1.jpg" width="240"  height="320"  vspace="0" hspace="0"></td>
+    </tr></table>media with simple spherical density_map and visible containter object - not scaled!</h6>
+ </td>
+</tr>
+<tr>
+ <td align="center"><h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/candle_flame_2.jpg" width="240"  height="320"  vspace="0" hspace="0"></td>
+    </tr></table>media with simple spherical density_map, scaled to flame shape.</h6>
+ </td>
+</tr>
+</tr>
+<tr>
+ <td valign="top">
+ <b>The Inner Glowing media:</b><br>
+ A density map with &quot;crackle&quot; cutted by second a spherical density map with soft borders.
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre>media{
+    emission color rgb&lt;1.0, 0.75, 0.1&gt;*2.75
+    intervals 3
+    samples 32
+    method 3
+    aa_threshold 0.1 aa_level 5
+    density{ crackle  turbulence 0.3
+             scale 0.75 translate&lt;0,24,0&gt;
+             color_map {
+                    [0 rgb 0]
+                    [0.00 rgb 0]
+                    [0.07 rgb 1]
+                    [0.10 rgb 1]
+                    [0.12 rgb 0]
+                    [1.00 rgb 0]
+              } // end color_map
+           } // end density
+     density{ spherical
+              color_map {
+                    [0 rgb 0]
+                    [0.7 rgb 1]
+                    [1 rgb 1]
+                } // end color_map
+            } // end density
+   scale&lt;1,2.5,1&gt;*0.5
+   translate&lt;0,0.01,0&gt;
+ }// end media
+//------------------------------------------
+</b></td></pre></tr></table>
+
+ </td>
+ <td align="center"> <h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/candle_flame_3.jpg" width="240"  height="320"  vspace="0" hspace="0"></td>
+    </tr></table> Added an inner glowing area with a second media with a crackle cut with soft borders by another spherical density map.</h6>
+ </td>
+</tr>
+
+
+<tr>
+ <td valign="top">
+  If we want the candle to shine, we should add a lightsource to the flame shape,<br>
+  (note: &quot;emission media&quot; does not really shine!)<br>
+  to get soft shadow borders we take an area_light which intensity is controlled by a number up from 0. <br>
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre>#if(Shining__On &gt; 0) //---------------------
+light_source{
+   &lt;0,0,0&gt;
+   color rgb &lt;0.8, 0.5, 0.2&gt;*Shining__On
+   area_light       // kind of light source
+   &lt;0,0,0&gt;&lt;0,0.25,0&gt;//lights spread area
+   1, 10      // total number of lights x,y
+   adaptive 3 // 0,1,2,3...
+   jitter // adds random softening of light
+   translate&lt;0,CandleHeight+0.45,0&gt;
+} //---------------- end of area_light -----
+#end // of "#if(Shining__On>0)"
+</b></td></pre>
+
+</tr></table>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+
+ </td>
+ </td>
+ <td align="center"> <h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/candle_flame_4.jpg" width="240"  height="320"  vspace="0" hspace="0"></td>
+    </tr></table> Added a soft area_light to let the candles really shine! </h6>
+<h5 align="center">Scene description for <nobr>POV-Ray:</nobr><br>
+ <a href="pov/candle_flame_4.txt">&quot;candle_flame_4.txt&quot;</a> or
+ <a href="pov/candle_flame_4.pov">&quot;candle_flame_4.pov&quot;</a></h5>
+<br>
+
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  For more realism it's a good idea to make the light source more wide and also
+  to add a second &quot;area_light&quot; rotated by 90 degrees.<br>
+  <font size="-1">Another proposition by Thierry Banel: </font><br>
+  With &quot;fade_distance&quot; and &quot;fade_power&quot; we can simulate the fading
+  of the candle light at relatively short distance.
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+  This object is available as a <b>ready-made object for POV-Ray</b><br>
+  here: <a href="../objects/obj_280e.htm"><b>Burning Candle</b></a></nobr></b>
+ </td>
+ <td align="center">  <h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/Candle_2_s.jpg" width="240"  height="320"  vspace="0" hspace="0"></td>
+    </tr></table>More realistic: &quot;area_light&quot; +  &quot;Fade_Distance&quot; + &quot;Fade_Power&quot;!</h6>
+<h5 align="center">Include file and samples for <nobr>POV-Ray</nobr> see  &quot;Candle_2&quot; at <br>
+<a href="../objects/obj_280d.htm"><b>Ready-made Objects</b></a></nobr></b> </h5>
+<br>
+
+ </td>
+</tr>
+
+
+</table>
+
+</td>
+</tr>
+</table>
+</div>
+<hr size="3">
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

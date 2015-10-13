@@ -1,0 +1,143 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Variable in POV-Ray - &uuml;ber #declare, #local">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Variable in POV-Ray, #declare, #local">
+<title>Variable in POV-Ray - &uuml;ber #declare, #local</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>&Uuml;ber Variable in POV-Ray</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="var_200e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="var_200e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="var_200i.htm"><font size="2">Italiano</font></a>
+        <a href="var_200i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="var_200f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="var_200f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000d.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_000d.htm">Vordefinierte Variable</a></b><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_100d.htm">#declare, #local</a><br>
+ &nbsp;&nbsp;<b>&gt;</b>  <!--a href="var_200d.htm"--><b>Ausdr&uuml;cke</b></a><br>
+<!--
+ &nbsp; &nbsp; &nbsp; <a href="var_300d.htm">Funktionen</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_400d.htm">Vektoren</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_500d.htm">Arrays</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_600d.htm">Strings</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_800d.htm">#macro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_810d.htm">trace, inside,</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp;<a href="var_810d.htm">max_extent</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="var_820d.htm">#default</b></a><br>
+-->
+<br>
+ &nbsp;&nbsp;- <a href="inc_000d.htm">Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000d.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Mathematische Ausdr&uuml;cke</b><br>
+  <font size="-1">... </font></h2>
+<p align="justify">In der Szenen Beschreibungssprache (SDL) von POV-Ray kann man ein B&uuml;ndel von<br>
+mathematischen und logischen Operatoren f&uuml;r Berechnungen in POV-Ray verwenden.<br>
+<font size="-1"><b>Operatoren in POV-Ray:</b></font><br>
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td ><pre><b><font size="+1" color="#000000">Mathe Operatoren</font></b>
+<b>(  )  *  /  +  - </b>   <i>und logisches NICHT:</i> <b> ! </b>
+#declare Result = -0.45*A + (B*B - 4)*C; //
+#local Angle_1 = degrees( atan ( 2.5 / sqrt(2));</b> // Winkelwert in Grad
+<br>
+<b><font size="+1" color="#000000">Relationale Operatoren.</font></b>
+<b>&lt;  &lt;=  =  !=  &gt;=  &gt; </b>
+ #declare Green_or_Red = pigment{ rgb&lt(clock &lt;= 0.5),(clock > 0.5),0;&gt,}
+<br>
+<b><font size="+1" color="#000000">Logische Operatoren</font></b>
+<b>  &  // = UND</b>
+<b>  |  // = ODER </b>
+<b>  &! // = UND NICHT</b>
+//<i>Anmerkung: Die Argumente A und B werden nicht bitweise sondern logisch behandelt! </i>
+#if (A & B)
+  ... // mach dies, wenn beide A und B wahr sind
+#end
+#if (A | B)
+  ... // mach dies, wenn entweder A oder B wahr ist
+#end</b></td></pre>
+ </tr>
+<tr>
+<td colspan="2">
+<font size="-1"><b>Achtung:</b> Jedes #declare oder #local von Zahlen, Vektoren oder Farben (color) <b>verlangt ein Semicolon am Ende</b>!</font>
+</td>
+ </tr>
+</table>
+</div>
+
+<br>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

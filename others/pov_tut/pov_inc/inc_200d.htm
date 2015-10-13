@@ -1,0 +1,125 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Ein kurzes Include File Tutorial f&uuml;r POV-Ray">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Include File Tutorial ">
+<title>Ein kurzes Include-Dateien-Tutorial f&uuml;r POV-Ray </title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Kleines Include-Dateien-Tutorial f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="inc_200e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="inc_200e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="inc_200i.htm"><font size="2">Italiano</font></a>
+        <a href="inc_200i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_200f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="inc_200f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000d.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000d.htm"--><b>Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000d.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_000d.htm">Wozu Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">Eigene Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">und wie aufrufen.</b></a><br>
+ &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_200d.htm"--><b>Schreibweisen, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp;&nbsp; &nbsp; <!--a href="inc_200d.htm"--><b>&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300d.htm">Wo speichern?</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="inc_400d.htm">Design von Include Files</b></nobr></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="inc_700d.htm">Eigene Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_700d.htm">zum 'Insert Menu'</b></a><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="90%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Spezielle Schreibweisen f&uuml;r Include-Dateien.</b></h2>
+
+
+<p align="justify"><font size="+1"><b>Include-Datei-Endung:</b></font><br>
+&nbsp; Die Standard-Endung f&uuml;r Include-Dateien ist: '<b>.inc</b>' <br>
+Dies ist nur eine Konvention um zu verdeutlichen, dass dies keine unabh&auml;ngige Textdatei ist!<br>
+<font size="-1"> (Grunds&auml;tzlich ist die Datei nichts als ein einfacher ASCII-Text, <br>
+genau wie die Szenendatei mit der Datei-Endung '.pov'.)</font><br>
+Einige POV-Ray Anwender bevorzugen noch zus&auml;tzlich die Datei-Endung '<b>.mcr</b>'<br>
+f&uuml;r Include-Dateien, welche Makros enthalten.<br>
+
+<br>
+<font size="+1"><b>Der Dateiname einer Include-Datei:</b></font><br>
+&nbsp; Verwenden Sie keinerlei Namen von Include-Dateien, die von POV-Ray mitgeliefert werden.<br>
+Verwenden Sie treffende Namen:<br>
+ z.B.: 'Table_01.inc', wenn die Datei die Definition von 'Table_01' enth&auml;lt.<br>
+<nobr><img src="im/warn.gif" border="0" width="32" height="30">
+<b>Um Kollisionen mit fest definierten POV-Ray-Variablen oder reservierten W&ouml;rten</nobr><br> von POV-Ray zu vermeiden</b>,
+ist es dringend empfohlen,<br><b>f&uuml;r alle vom Anwender definierten Platzhaltern und Variablen,<br>
+nur W&ouml;rter, die mit Gro&szlig;buchstaben beginnen zu verwenden:</b><br>
+<br>
+<font size="+1"><b>Besser '#local' als '#declare':</b></font><br>
+&nbsp;  Man verwende besser '#local' anstatt '#declare' f&uuml;r alle Definitionen innerhalb von einer Include-Datei, die
+keine Bedeutung ausserhalb der Include-Datei haben
+(Ausgenommen f&uuml;r das Objekt das wir mit der Include-Datei definieren wollen!).<br>
+Dies sch&uuml;tzt jegliche Variablen gleichen Namens, die ausserhalb verwendet werden (in einer Szenendatei oder einer anderen
+ Indclude-Datei), davor durch den Aufruf dieser Indclude-Datei ver&auml;ndert zu werden.
+<div align="center">
+</div>
+<font size="-1">....</font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

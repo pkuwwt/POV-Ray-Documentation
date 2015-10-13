@@ -1,0 +1,182 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Ein kurzes Include File Tutorial f&uuml;r POV-Ray">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Include File Tutorial, Elemente im Insert-Menu">
+<title>Ein kurzes Include-Dateien-Tutorial f&uuml;r POV-Ray - Eigene Elemente zum Insert-Menu hinzuf&uuml;gen.</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Kleines Include-Dateien-Tutorial f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="inc_700e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="inc_700e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="inc_700i.htm"><font size="2">Italiano</font></a>
+        <a href="inc_700i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_700f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="inc_700f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000d.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000d.htm"--><b>Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000d.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_000d.htm">Wozu Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">Eigene Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">und wie aufrufen.</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_200d.htm">Schreibweisen, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_200d.htm">&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300d.htm">Wo speichern?</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp;  <a href="inc_400d.htm">Design von Include Files</b></nobr></a><br>
+ &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_700d.htm"--><b>Eigene Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <!--a href="inc_700d.htm"--><b>zum 'Insert Menu'</b></a><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="90%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Eigene Elemente zum Insert-Menu hinzuf&uuml;gen.</b><br>
+                    <font size="-2">(POV-Ray for Windows version 3.6 oder 3.7)</font></h2>
+
+<p align="justify">
+
+   Das Objekt, das man zum 'Insert Menu' hinzuf&uuml;gen will, sollte in handlich kleiner 'Thumbnail'-Aufl&ouml;sung
+   wie etwa 160 x 120 Pixel in POV-Ray gerendert werden.
+   Dabei sollte eine Ansicht gew&auml;hlt werden, die alle essenziellen Details des Objekts klar darstellen.
+   Sodann macht man eine kleine Textdatei, die alles beinhaltet,
+   was zum Einf&uuml;gen in eine POV-Ray-Szenendatei diese Objektes notwendig ist:
+<br>
+<table border="0" align="center"><tr>
+<td>
+     <div align="center">
+     <table border="1" cellpadding="3" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr>
+    <td><img src="im/Table_01.jpg" width="160" height="120" alt="Table_01.jpg" border="0"></td>
+   </tr>
+   </table><b>Thumbnail-Bild von '10 - Table_01.jpg'<br>
+            f&uuml;r das 'insert menu'</b>.</div>
+
+</td><td>
+    <div align="center">
+    <table border="1" cellpadding="3" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr>
+    <td><pre><b>//------------------------------------
+#include "Table_01.inc"
+//------------------------------------
+object{ Table_01
+        scale&lt;1,1,1&gt;
+        rotate&lt;0,0,0&gt;
+        translate&lt;0,0,0&gt;
+      }
+//------------------------------------</b></td></pre></tr>
+     </table><b>Die Textdatei '10 - Table_01.txt'<br>
+        f&uuml;r das 'insert menu'</b>
+     </div>
+
+</td></tr>
+</table>
+<br>
+Nun erzeugt man ein Unterverzeichnis f&uuml;r unsere eigenen Insert-Menu-Sachen.<br>
+Man bezeichnet es z.B. mit '00 - MyInsertMenu'.
+<i>(Der Teil '00 - ' wird im POV-Ray-Editor nicht zu sehen, die Nummern bestimmen lediglich die Reihenfolge in der
+die einzelnen Elemente sortiert erscheinen werden!)</i><br>
+ <div align="center">
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/InsMen_1.jpg" width="550" height="430" alt="Insert Menu Listing" border="0"></td>
+ </tr></table> </div>
+ <br>
+Man mu&szlig; nun dieses Unterverzeichnis &ouml;ffnen und die beiden Dateien (das Bild und den kurzen Szenentextabschnitt)
+mit demselben Namen und derselben Nummerierung dort einf&uuml;gen.
+<i>(In POV-Ray 3.62 mu&szlig; das Thumbnail-Bildchen im Format '.bmp' sein!)</i><br>
+
+ <div align="center">
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/InsMen_3.jpg" width="550" height="200" alt="Insert Menu Listing" border="0"></td>
+ </tr></table> </div>
+<br>
+Wenn wir nun den POV-Ray-Editor mit einen Szenentext &ouml;ffnen, k&ouml;nnen wir unser neues Objekt wie all die &uuml;brigen
+Objekte &uuml;ber das Insert-Men&uuml; einf&uuml;gen:<br>
+
+ <div align="center">
+ <table border="1" cellpadding="3" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td><img src="im/InsMen_5.jpg" width="650" height="620" alt="using Table_01" border="0"></td>
+ </tr>
+ </table><b>Verwendung des Objekts 'Table_01' in einer Szenendatei
+            &uuml;ber das 'insert menu'</b>.</div>
+
+
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

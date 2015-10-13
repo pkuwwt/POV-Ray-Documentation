@@ -1,0 +1,212 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font>
+  <hr size="3">
+  <div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font>
+  </div>
+ </td>
+ <td align="right">
+        <a href="shapes115e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes115e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes115i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes115i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes115f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes115f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; Inhalts&uuml;bersicht<br>
+<a href="shapes100d.htm">Grundformen</b></a><br>
+&nbsp; -  <a href="shapes110d.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120d.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130d.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140d.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150d.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160d.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170d.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180d.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190d.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350d.htm">superellipsoid</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes115d.htm"--><b>ovus</b></a><br>
+<br>
+<nobr><a href="shapes200d.htm">K&ouml;rper mit Makros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000d.htm">K&ouml;rper in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400d.htm">Andere K&ouml;rper als Makros</b></a></nobr><br>
+<a href="shapes600d.htm">3D-Text-Objekte</b></a><br>
+<a href="shapes000d.htm">Andere Formen</b></a><br>
+<a href="shapes666d.htm">Non CSG K&ouml;rper</b></a><br>
+<nobr><a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900d.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="2" cellpadding="4">
+ <tr>
+<td >
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="2" width="650">
+ <tr>
+  <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/ovus_big.jpg" border="0" width="320"  height="240"
+                   alt="Beispiel ovus" title="Beispiel ovus">
+            </td></tr></table>
+</td><td><font size="6"><b>ovus</b>  <nobr>= Ei-Form,</nobr></font><br>
+   eine ovale Kugelform<br>
+<nobr><b>Neu in POV-Ray Version 3.7</b></nobr><br>
+    Allgemeiner Syntax:
+<table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>ovus{ r<SUB>base</SUB>,r<SUB>top</SUB>
+      texture{ ... ... }
+    } </b></td></pre></tr></table>
+Hierbei ist <b>r<SUB>base</SUB></b> der Radius der Basiskugel<br>
+   und <b>r<SUB>top</SUB></b>
+    der Radius an der Spitze.<br>
+Das Beispiel hier:
+<table align="center" border="4" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>ovus{ 1.00, 0.65
+  // base_radius, top_radius
+  // with  top_radius &lt base_radius!
+  texture{
+   pigment{ color rgb&lt;1.0,0.65,0&gt;*0.9}
+   normal { bumps 0.75 scale 0.03 }
+   finish { phong 1
+         reflection{0.1 metallic 0.1}}
+   } // end of texture
+  scale 0.5
+  translate&lt;0,0.5,0&gt;
+}  //-------------------------------</b></td></pre></tr></table>
+
+
+</td></tr></table>
+
+<table align="center" cellpadding="5" width="90%"><tr><td><p align="center">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/ovus_serie.jpg" border="0" width="608"  height="160"
+                   alt="Beispiel ovus" title="Beispiel ovus">
+            </td></tr></table><font size="-1">Variationen von <b>ovus{ 1, ... }</b> (von links:) <b>r<SUB>top</SUB></b> = 1.00, 0.85, 0.65, 0.45, 0.25</font></p>
+ </td></tr></table>
+<table align="center" cellpadding="2" width="650"><tr><td>
+<p align="justify"><font face="Arial, Verdana, Helvetica" size="3">
+<b>Probleme mit der Rechengenauigkeit</b>:<br>
+</font>Unter bestimmten Blickwinkeln und bestimmten Werten von r<SUB>base</SUB> und r<SUB>top</SUB>
+kann es zu Fehlern in der Figur kommen.
+Geringste &Auml;nderungen der Werte reichen meist um diesen Fehler zu umgehen.</b></font>
+</td></p></tr></table>
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="2" width="650">
+<tr>
+  <td valign="top">
+<br>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/ovus_defectus.jpg" border="0" width="320"  height="240"
+                   alt="Samples spheres 600x450" title="Samples spheres 600x450">
+            </td></tr></table>
+      </td>
+
+  <td width="50%">
+    <font face="Arial,Verdana,Helvetica" size="2" color="#505030">
+    <b>Bei dieser Szene tritt nebenstehender Fehler auf:</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+
+<table align="center" border="4" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>camera{
+ location &lt; 2.00, 2.00, -2.00&gt;
+ right x*image_width/image_height
+ angle    85
+ look_at  &lt; 0.00, 1.50,  0.00&gt;
+ } // end camera
+
+light_source{ &lt;-500,2500,-2500&gt;
+              color rgb&lt;1,1,1&gt;}
+
+ovus{ 1.00, 0.85
+  // base_radius, top_radius
+  // with  top_radius &lt base_radius!
+  texture{
+   pigment{ color rgb&lt;1,0.65, 0&gt;*0.9}
+   normal { bumps 0.75 scale 0.03 }
+   finish { phong 1
+        reflection{0.1 metallic 0.1}}
+   } // end of texture
+  translate&lt;0,1,0&gt;
+}  //-----------------------------</b></td></pre></font></tr></table>
+</td></tr></table>
+
+
+</tr>
+</table>
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr>
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="POV-Ray Anleitungen - Zufallszahlen und Schleifen mit POV-Ray Teil I: Grundlagen der Zufallszahlen">
+<meta name="keywords" content=" Raytracing, POV, POVRAY, POV-Ray 3.6, Rendern, 3D-Graphik, Computergraphik, Grafik, Tutorial, Anleitung, Beschreibungen, Beispiele, Mathematik,
+            Zufallszahlen, While-Schleifen">
+<title>Zufall mit POV-Ray - Teil 1: Grundlagen</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top">
+     <font size="1"><nobr>POV-Ray Raytracer</nobr> <nobr>Beschreibungen und Beispiele</nobr>
+                    <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font><a name="top"></a>
+ <hr size="3">
+   <div align="center">
+      <font size="5">&nbsp; &nbsp;Zufall mit POV-Ray</font> (Teil 1)
+   </div>
+ </td>
+ <td align="right">
+        <a href="random1e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="random1e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="random1i.htm"><font size="2">Italiano</font></a>
+        <a href="random1i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="random1f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="random1f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><b>&gt;</b> <a href="random00d.htm"><font size="+1">Zufall mit POV-Ray</font></b></a></nobr><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="random1d.htm"--><b>Zufall und Schleifen</b></a><br>
+ &nbsp; &nbsp; -  <a href="random2d.htm">quadratisch + kubisch</b></a><br>
+ &nbsp; &nbsp; -  <a href="random3d.htm">Farben + Ma&szlig;stab</b></a><br>
+ &nbsp; &nbsp; -  <a href="random4d.htm">Kippen + Neigen</b></a><br>
+ &nbsp; &nbsp; -  <a href="random5d.htm">B&auml;ume mit Zufall</b></a><br>
+ &nbsp; &nbsp; -  <a href="random6d.htm">Include-Datei 'rand.inc'</b></a><br>
+ &nbsp; &nbsp; -  <a href="random7d.htm">height_field gef&uuml;llt</b></a><br>
+ &nbsp; &nbsp; -  <a href="random8d.htm">Blume mit Zufall</b></a><br>
+<br>
+ &nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="120" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/random_2s.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="5"><nobr>&nbsp;Zufallszahlen und Schleifen</font> &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="0" width="650">
+<tr>
+ <td colspan="2">
+   <p align="justify">POV-Ray besitzt eine Funktion zur Erzeugung verschiedener
+   Folgen von Zufallszahlen.  Bei Verwendung dieser Zufallszahlenfunktion in While-Schleife
+   lassen sich in POV-Ray sehr realistische zuf&auml;llige Verteilungen simulieren.<br>
+   Zur Demonstration der Wirkung dieser Zufallszahlen-Funktion werden im folgenden
+   While-Schleifen <nobr>(engl.: while loop)</nobr> zum regelm&auml;&szlig;igen Anordnen von Objekten verwendet.
+   Grunds&auml;tzliche zur Verwendung von Schleifen in POV-Ray
+   wurde bereits im Abschnitt &quot;Schleifen mit POV-Ray&quot; erkl&auml;rt.
+   <br>
+     <font size="-1">
+  <b>Hinweis:</b> Alle <nobr>POV-Ray</nobr>-Szenendateien der folgenden Beispiele sind downloadbar
+  (mit der Endung: .pov, alternativ auch als .txt Text-Dateien!). </font>
+   <br>&nbsp;<br>
+   Betrachten wir hier erst einmal
+  eine einfache Schleife, welche kleine Kugeln l&auml;ngs der <nobr>x-Achse</nobr>
+  von <nobr>x = -5<nobr> bis </nobr>x = +5</nobr> plaziert:
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#declare Ball =
+sphere{&lt;0,0,0&gt;,0.25
+       texture{
+         pigment{color rgb&lt;1,0.65,0&gt;}
+         finish {phong 1}
+              } // end of texture
+       } // end of sphere ------------
+#declare NrX = -10;     // start
+#declare EndNrX = 10;   // end
+#while (NrX &lt; EndNrX+1)
+ object{Ball translate&lt;NrX*0.5,0,0&gt;}
+
+ #declare NrX = NrX + 1;  //next Nr
+#end // ------------ end of loop -----</b></td></pre>
+ </tr>
+</table>
+<br>
+</td>
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/random_0.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <div align="center"><font size="2"><a href="pov/random_0.pov">Szenenbeschreibung f&uuml;r POV-Ray</a>
+     oder <a href="pov/random_0.txt">.txt</a></font></div>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+   <p align="justify">Mittels &quot;<b>#declare Random_1 = seed (1153);</b>&quot; definiert man
+   die zu verwendende Zufallszahlenfolge.<br>
+   Der Aufruf dieser Werte erfolgt durch
+   &quot;<b>rand( Random_1 )</b>&quot;. Jeder Aufruf dieser Art erzeugt eine andere
+   Zufallszahl mit einem Wert zwischen 0 und 1.<br>
+   </p>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#declare Rnd_1 = seed (1153);
+//------------------------------------
+#declare Ball =
+sphere{&lt;0,0,0&gt;,0.5
+       texture{
+         pigment{color rgb&lt;1,0.65,0&gt;}
+         finish {phong 1}
+              } // end of texture
+       } // end of sphere ------------
+#declare NrX = -5;     // start
+#declare EndNrX = 5;   // end
+#while (NrX &lt; EndNrX+1)
+ object{Ball
+        translate&lt;NrX, rand(Rnd_1),0&gt;}
+
+ #declare NrX = NrX + 1;  //next Nr
+#end // ------------ end of loop -----</b></td></pre>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/random_1.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <div align="center"><font size="2"><a href="pov/random_1.pov">Szenenbeschreibung f&uuml;r POV-Ray</a>
+     oder <a href="pov/random_1.txt">.txt</a></font></div>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+   <p align="justify">Bei der Definition der Zufallszahlenfolge
+   durch &quot;<b>#declare Random_1 = seed (1153);</b>&quot; erzeugt jede
+   andere &quot;seed&quot;-Zahl eine andere Zufallszahlenfolge. Dadurch kann
+   man ausprobieren of eine andere Zahl als &quot;seed&quot; (=Same) nicht
+   vielleicht eine &quot;nettere&quot; Zufallszahlenfolge
+   produziert.<br>
+   <font size="-1">Die ist ein <b>reproduzierbaren Zufall</b>, d.h. bei jedem erneuten Rendern derselben
+      Szenen-Datei wird wieder genau die gleich Folge von Werten zwischen 0 und 1 produziert.
+      Man nennt diese so gewonnenen Zufallszahlen daher auch korrekter Pseudo-Zufallszahlen.</font><br>
+  <b> Einige Beispiele f&uuml;r die Verwendung von 'rand(...)'</b><br>
+   <font size="-1"><b>Werte zwischen 0 und 1</b>: &nbsp; &nbsp; &nbsp; &quot;<b>rand( Random_1)</b>&quot;<br>
+   <b>Werte zwischen 0 und 5</b>: &nbsp; &nbsp; &nbsp; &quot;<b>5*rand( Random_1)</b>&quot;<br>
+   <b>Werte zwischen -1 und +1</b>:&nbsp; &nbsp; &quot;<b> -1+2* rand( Random_1)</b>&quot; oder <nobr>&quot;<b>2*(0.5-rand( Random_1))</b>&quot;</nobr><br>
+   <b>Ganzzahlen zwischen 0 und 10</b>:&nbsp; &quot;&nbsp;<b>int( 10*rand( Random_1) )</b> &nbsp;&quot;</font>
+</p>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//-----------------------------------
+#declare Rnd_1 = seed (1153);
+#declare Rnd_2 = seed (553) ;
+//-----------------------------------
+#declare Ball_1 =
+sphere{&lt;0,0,0&gt;,0.5
+       texture{
+         pigment{color rgb&lt;1,0.65,0&gt;}
+         finish {phong 1}
+              } // end of texture
+       } // end of sphere -----------
+#declare Ball_2 =
+sphere{&lt;0,0,0&gt;,0.5
+       texture{
+         pigment{color &lt;1,0.2.0,0&gt;}
+         finish {phong 1}
+              } // end of texture
+       } // end of sphere -----------
+#declare NrX = -5;     // start
+#declare EndNrX = 5;   // end
+#while (NrX &lt; EndNrX+1)
+ object{Ball_1
+      translate&lt;NrX,5*rand(Rnd_1),0&gt;}
+ object{Ball_2
+      translate&lt;NrX,2*rand(Rnd_2),0&gt;}
+
+ #declare NrX = NrX + 1;  //next Nr
+#end // ---------- end of loop ------</b></td></pre>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/random_2.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <div align="center"><font size="2"><a href="pov/random_2.pov">Szenenbeschreibung f&uuml;r POV-Ray</a>
+     oder <a href="pov/random_2.txt">.txt</a></font></div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div align="center"><b>
+<a href="random00d.htm">0</a> |
+<!--a href="random1d.htm"-->1</a>  | <a href="random2d.htm">2</a> | <a href="random3d.htm">3</a> |
+<a href="random4d.htm">4</a> | <a href="random5d.htm">5</a> | <a href="random6d.htm">6</a> |
+<a href="random7d.htm">7</a> | <a href="random8d.htm">8</a></b></div>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5>
+</tr>
+<tr>
+<td valign="bottom" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

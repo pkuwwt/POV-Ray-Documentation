@@ -1,0 +1,36 @@
+
+//---------------------------------------------------------------------------
+#declare Pigment_1 = 
+pigment{ spiral1 1  sine_wave
+         color_map {[0, rgb 0.0]
+                    [1, rgb 1 ]
+                   }
+          rotate<90,0,0>
+          scale<1,0.30,1> 
+        } // end of pigment  
+
+
+#declare fn_Pigment_1 = 
+function {pigment{ Pigment_1} }
+
+
+isosurface { //-------------------------------------------------------------
+
+  function{  sqrt(x*x*4 + z*z*4) 
+             - abs(y) 
+
+             + fn_Pigment_1(x,y,z).gray*0.15
+          }
+  threshold 0
+  accuracy 0.0001
+  max_gradient 5
+  contained_by {box {<-1,-1,-1>, < 1,0, 1>}}
+  //open
+  texture { pigment{ color rgb<0.7,0.6,0.85>*0.9}
+            finish { specular 0.1 roughness 0.005  phong 1 phong_size 20}
+          }
+  scale 1.0
+  rotate <0,-90, 0>
+  translate <-0, 1.0, 0>
+} // end of isosurface ----------------------------------------------------- 
+

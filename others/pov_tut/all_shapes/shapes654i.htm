@@ -1,0 +1,299 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes654e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes654e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes654f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes654f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes654d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes654d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp;&nbsp; Indice<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+<nobr><a href="shapes200i.htm">Forme con macros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+<a href="shapes000i.htm">Altri Oggetti</b></a><br>
+<a href="shapes666i.htm">Forme Non-CSG</b></a><br>
+<br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes650i.htm">height_field con immagini</b></a></nobr><br>
+&nbsp; -  <a href="shapes652i.htm">height_field rastered</b></a><br>
+<nobr>&nbsp; &gt;<!--a href="shapes654i.htm"--><b>height_field con funzioni</b></a></nobr><br>
+&nbsp; -  <a href="shapes655i.htm">height_field massivo</b></a><br>
+<nobr>&nbsp; -  <a href="shapes656i.htm">HF - monti e valli</a></nobr><br>
+&nbsp; -  <a href="shapes710i.htm">HF_Square</b></a><br>
+&nbsp; -  <a href="shapes720i.htm">HF_Sphere</b></a><br>
+&nbsp; -  <a href="shapes730i.htm">HF_Cylinder</b></a><br>
+&nbsp; -  <a href="shapes740i.htm">HF_Torus</b></a><br>
+<br>
+<nobr><a href="shapes900i.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table width="70%" align="center" border="0"><tr><td><!-- global -->
+     <table align="center" border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/HF_by_function_6b_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/HF_by_function_06s.jpg" border="0" width="160"  height="120"
+                   alt="Esempio &quot;height_field&quot; con fonzioni" title="Esempio &quot;height_field&quot; con fonzioni></a></td>
+           <td>
+            <a href="javascript:ShowImage('im/HF_by_function_08bim.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/HF_by_function_08bs.jpg" border="0" width="160"  height="120"
+                   alt="Esempio &quot;height_field&quot; con fonzioni" title="Esempio &quot;height_field&quot; con fonzioni"></a></td>
+                   </tr></table>
+</td>
+<td><h2>&quot;height_field&quot;con funzioni:</h2>
+<h3 align="center">Come creare montagne<br> con funzioni</h3>
+</td>
+</tr>
+<tr><td colspan="2">
+<hr>
+</td></tr>
+
+<tr><td valign="top">
+ <h4 align="left" ><a name="Raster"></a><b>Esempio: Una Montagne con &quot;height_field&quot; di funzioni:</b></h4>
+ <table border="4"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+   <tr><td>
+ <pre><b>#declare HF_Res_X = 1024; // number of points in x
+#declare HF_Res_Z = 1024; // number of points in z
+#declare HF_Function  = function{0.1+0.1*sin(x*30)}
+#declare HF_Amplitude = 0.5;
+
+height_field{
+  function  HF_Res_X, HF_Res_Z
+  { HF_Function(x,0,y) * HF_Amplitude }
+  //smooth
+  //water_level 0
+  texture { pigment{ color rgb&lt;0.6,0.5,1&gt;}
+            finish { phong 1 phong_size 400
+                     reflection{0.25 metallic}}
+          } // end of texture
+  translate&lt; 0,0.001,0&gt;
+  scale &lt;1,1,1&gt;
+}//------------------------------------------------ </td></pre></b>
+    </tr></table>
+ </td>
+ <td valign="top">
+&nbsp;<br>
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_01.jpg" border="0" width="320" height="240"></a></td></tr></table>
+            &quot;height_field&quot; con la funzione<br>
+             function{0.1+0.1*sin(x*30)}</h6>
+ </td></tr>
+
+
+ <tr><td valign="top">
+ <h4 align="left" ><a name="Raster"><b>Variationi sulla funzione &quot;height_field&quot; :</b></h4>
+
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_03.jpg" border="0" width="320" height="240"></a></td></tr></table>
+            &quot;height_field&quot; con la funzione<br>
+             function{0.1+0.1*sin(x*30)+0.1-0.1*cos(z*30))}</h6>
+
+ </td>
+ <td valign="top">
+&nbsp;<br>
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_04.jpg" border="0" width="320" height="240"></a></td></tr></table>
+            &quot;height_field&quot; con la funzione<br>
+             function{0.2+0.05*sin(x*20)+0.035*sin(z*70)}</h6>
+ </td></tr>
+
+<tr><td valign="top">
+ <h4 align="left" ><a name="Raster"><b>Esempio: &quot;height_field&quot; con una funzione incorporata; in POV-Ray :</b></h4>
+ <table border="4"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare HF_Res_X = 1024; // number of points in x
+#declare HF_Res_Z = 1024; // number of points in z
+#declare HF_Function  =
+ function(x,y,z) {1+f_snoise3d(x*10,y*10,z*10)*0.3}
+#declare HF_Amplitude = 0.5;
+
+height_field{
+  function  HF_Res_X, HF_Res_Z
+  { HF_Function(x,0,y) * HF_Amplitude }
+  //smooth
+  //water_level 0
+  texture { pigment{ color rgb&lt;0.83,0.42,0.67&gt;}
+            finish { phong 1 phong_size 400
+                     reflection{0.25 metallic}}
+          } // end of texture
+  translate&lt; 0,-0.4,0&gt;
+  scale &lt;1,1,1&gt;
+}//------------------------------------------------ </td></pre></b>
+    </tr></table>
+ </td>
+ <td valign="top">
+&nbsp;<br>
+&nbsp;<br>
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_06.jpg" border="0" width="320" height="240"></a></td></tr></table>
+            &quot;height_field&quot; con la funzione<br>
+            function(x, y, z) {1 + f_snoise3d(x*10,y*10,z*10)*0.30 }</h6>
+ </td></tr>
+
+
+<tr><td valign="top">
+ <h4 align="left" ><a name="Raster"><b>Exemple : &quot;height_field&quot; con una funzione del valore grigio dei pigmenti :</b></h4>
+ <table border="4"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare HF_Res_X = 1024; // number of points in x
+#declare HF_Res_Z = 1024; // number of points in z
+#declare HF_Function  =
+ function{
+   pigment{
+     crackle turbulence 0.45
+     color_map{
+       [0.00, color 0.00]
+       [0.10, color 0.25]
+       [0.12, color 0.30]
+       [0.30, color 0.30]
+       [0.70, color 0.27]
+       [1.00, color 0.25]
+     }// end color_map
+    scale &lt;0.25,0.005,0.25&gt;*0.7
+   } // end pigment
+ } // end function
+#declare HF_Amplitude = 0.5;
+
+height_field{
+  function  HF_Res_X, HF_Res_Z
+  { HF_Function(x,0,y).gray * HF_Amplitude }
+  //smooth
+  //water_level 0
+  texture { pigment{ color rgb&lt;0.83,0.42,0.67&gt;}
+            finish { phong 1 phong_size 400
+                     reflection{0.25 metallic}}
+          } // end of texture
+  translate&lt; 0,0.00,0&gt;
+  scale &lt;1,1,1&gt;
+}//------------------------------------------------ </td></pre></b>
+    </tr></table>
+ </td>
+ <td valign="top">
+&nbsp;<br>
+&nbsp;<br>
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_08.jpg" border="0" width="320" height="240"></a></td></tr></table>
+            &quot;height_field&quot; con la funzione
+     <table border="0" align="center"><tr><td>
+ <h6>function{<br>
+   &nbsp; pigment{<br>
+   &nbsp; &nbsp; crackle turbulence 0.45<br>
+   &nbsp; &nbsp; color_map{<br>
+   &nbsp; &nbsp; &nbsp; [0.00, color 0.00]<br>
+   &nbsp; &nbsp; &nbsp; [0.10, color 0.25]<br>
+   &nbsp; &nbsp; &nbsp; [0.12, color 0.30]<br>
+   &nbsp; &nbsp; &nbsp; [0.30, color 0.30]<br>
+   &nbsp; &nbsp; &nbsp; [0.70, color 0.27]<br>
+   &nbsp; &nbsp; &nbsp; [1.00, color 0.25]<br>
+   &nbsp; &nbsp; &nbsp; }// end color_map<br>
+   &nbsp; &nbsp; scale &lt;0.25,0.005,0.25&gt;*0.7<br>
+   &nbsp; } // end pigment<br>
+ } // end function </td></h6></tr></table></h6>
+
+</td></tr>
+
+
+</table>
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr>
+</table>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

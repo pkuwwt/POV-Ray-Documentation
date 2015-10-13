@@ -1,0 +1,271 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, POV-Ray Objects, Fertige Objekte f&uuml;r POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=515");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Beispiele</b></font> -
+      <font size="-1"><b>Die Erstellung von Objekten f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="sam_390e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="sam_390e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="sam_390i.htm"><font size="2">Italiano</font></a>
+        <a href="sam_390i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_390f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="sam_390f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table><a name="start"></a><hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="sam_000d.htm">POV-Ray Beispiele</b></a><br>
+ &nbsp; &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; -  <a href="sam_300d.htm">Geometrie</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_360d.htm">Bauern-Figur</a><br>
+ &nbsp; &nbsp; -  <a href="sam_370d.htm">Drahtgitter-W&uuml;rfel</a><br>
+ &nbsp; &nbsp; -  <a href="sam_380d.htm">Oktagon</a><br>
+ &nbsp; &nbsp; -  <!--a href="sam_390d.htm"--><b>Eiform</a><br>
+ &nbsp; &nbsp; -  <a href="sam_400d.htm">Star - Stern</a><br>
+ &nbsp; &nbsp; -  <a href="sam_410d.htm">Optische Linse</a><br>
+ &nbsp; &nbsp; -  <a href="sam_420d.htm">Schachbrett</a><br>
+ &nbsp; &nbsp; -  <a href="sam_450d.htm">Rundkolben-Form</b></a><br>
+<nobr> &nbsp; &nbsp; -  <a href="sam_470d.htm">Erlenmeyerkolben-Form</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="sam_460d.htm">Zwei-Zylinder-Blob</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_440d.htm">Regul&auml;rer Tetraeder</a><br>
+ &nbsp; &nbsp; -  <a href="sam_430d.htm">Penrose-Dreieck</a><br>
+ &nbsp; &nbsp; -  <a href="sam_340d.htm">Yin &amp; Yang</a><br>
+ &nbsp; &nbsp; -  <a href="sam_310d.htm">Fischblase</a><br>
+ &nbsp; &nbsp; -  <a href="sam_320d.htm">3fach Fischblase</a><br>
+ &nbsp; &nbsp; -  <a href="sam_330d.htm">Dreipass</a><br>
+&nbsp; -  <a href="sam_100d.htm">Architektur</b></a><br>
+<!--&nbsp; -  <a href="sam_400d.htm">Pflanzen</b></a><br-->
+&nbsp; -  <a href="tec_000d.htm">Technik</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; 
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+<table cellspacing="10" cellpadding="5" width="95%">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="3"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('geo/povegg_0im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="geo/povegg0s.jpg" border="0" width="80" height="60"
+                   alt="egg shape" title="Klicken Sie f&uuml;r ein gr&ouml;&szlig;eres Beispiel: Eiform"></a></td>
+            </tr></table><br>
+
+ </td>
+ <td valign="top">
+  <h1 align="left"><b>Ei - Eiform</b></h1>
+  <h6>Die Konstruktion einer Eiform.<br>
+      Zeigt die Verwendung von &quotintersection&quot bzw. &quotdifference&quot.<br>
+     Objekte: &nbsp; &quot;box&quot;, &quot;sphere&quot;.<br>
+     Methoden: &quot;#declare&quot;, &quot;union{...}&quot;, &quot;intersection&quot;, &quot;difference&quot;. <br>
+   Klicken Sie <a href="javascript:ShowImage('geo/povegg_0im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">hier f&uuml;r ein Beispiel</a>!
+
+
+
+   <br>
+  <!-- Eine Include-Datei mit der man dieses Objekt als Fertig-Objekt verwenden kann
+   findet man auf meiner <a href="../objects/obj_000d.htm">POV-Ray Objects-Seite</a>.-->
+  </td></h6>
+</tr>
+</table>
+
+
+<table cellspacing="10" cellpadding="5" width="85%">
+<tr>
+ <td valign="top" >
+ <p align="justify"><b><font size="+1">Die Konstruktion:</font></b><br>
+    Das Gemeinsame<br>
+     <nobr>(Schnittmenge = intersection)</nobr> einer Kugel bzw. eines Ellipsoides
+    (jeweils hellgrau) und eines Quaders (dunkelgrau) bildet eine Halbkugel (untere Ei-H&auml;lfte)
+    bzw. ein halbes Ellipsoid (obere Ei-H&auml;lfte). Beide H&auml;lften werden mittels "union"
+    zu einem neuen K&ouml;rper verbunden.<br>
+    Dasselbe l&auml;&szlig;t sich auch mit Differenz-Bildung mit den Spiegelbildern der
+    Quader bez&uuml;glich der xz-Ebene erreichen.
+ </td></p>
+
+ <td><h6 align="center">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/povegg0.gif" width="400" height="300" hspace="0" vspace="0"></td></tr>
+ </table><b>Ansicht von vorn (Blick in z-Richtung)</b><br>
+
+ </td>
+</tr>
+</table>
+
+
+<table cellspacing="20" cellpadding="5" >
+<tr>
+  <td bgcolor="#f9f9f0">
+   <h4 align="justify">
+<pre><b>//-----------------------------------------
+#declare Ei_Tex =            //  &lt;--1
+texture{ pigment{color White}
+         normal {bumps 0.4 scale 0.01}
+         finish {diffuse 0.9 phong 0.1}
+       } // end of texture
+//---------------------------//  &lt;--2
+#declare Ei_oben =
+intersection{
+ sphere{&lt;0,0,0&gt;,1 scale&lt;1,1.75,1&gt;}
+ box{&lt;-1,0,-1&gt;,&lt;1,1.75,1&gt;}
+//</b>Alternativ mit "difference":<b>
+// difference{
+// sphere{&lt;0,0,0&gt;,1 scale&lt;1,1.75,1&gt;}
+// box{&lt;-1,-1.75,-1&gt;,&lt;1,0,1&gt;}
+ }//------------------------------------
+
+ #declare Ei_unten =
+intersection{
+ sphere{&lt;0,0,0&gt;,1 scale&lt;1,1,1&gt;}
+ box{&lt;-1,-1,-1&gt;,&lt;1,0,1&gt;}
+//</b>Alternativ mit "difference":<b>
+//difference{
+// sphere{&lt;0,0,0&gt;,1 scale&lt;1,1,1&gt;}
+// box{&lt;-1,0,-1&gt;,&lt;1,1,1&gt;}
+ }//------------------------------------
+
+ #declare Ei =
+union{ object{Ei_oben }
+       object{Ei_unten}
+       texture{Ei_Tex}
+ }//--------------------------// &lt;--3
+object{ Ei_oben  translate&lt;-1.1,1.1,0&gt;
+        texture{Ei_Tex}}
+object{ Ei_unten translate&lt;-1.1,0.9,0&gt;
+        texture{Ei_Tex}}
+object{ Ei       translate&lt; 1.1,1.0,0&gt;}
+//-------------------------------- end</b></td></pre></h4>
+<td>Dies ergibt folgendes Bild:<br>&nbsp;<br>
+
+ <table align="center" border="5"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+ <tr>
+ <td width="240"  height="180" align="center">
+   <a href="javascript:ShowImage('geo/povegg_0im.htm')"
+   onMouseover="window.status='ShowSingleImage';return true"
+   onMouseOut="window.status=''">
+   <img src="geo/povegg0t.jpg" border="0" width="240"  height="180"
+   alt="Ei-Form 600x450" title="Ei-Form 600x450"></a></td>
+ </tr>
+ </table>
+ <h5 align="center">Szenenbeschreibung f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="geo/povegg0.txt">&quot;povegg0.txt&quot;</a> oder
+ <a href="geo/povegg0.pov">&quot;povegg0.pov&quot;</a></h5>
+</td></tr>
+
+<tr><td colspan="2"><h3><b>Variation zum Thema:</b></h3>
+ <p>Ersetzt man die markierten Passagen wie folgt:</font></td></p></tr>
+<tr><td bgcolor="#f9f9f0">
+<pre><b>//----------------------------//von &lt;--1
+#declare Ei_Tex =
+ texture{pigment{color rgb&lt;1,0.85,0.0&gt;}
+         normal {bumps 0.75 scale 0.1}
+         finish {diffuse 0.9 phong 1}}
+                              //bis &lt;--2
+//----------------------------//ab  &lt;--3
+union{
+object{ Ei scale 0.4 translate&lt;-1,1,-1&gt;}
+object{ Ei scale 0.4 translate&lt; 0,1,-1&gt;}
+object{ Ei scale 0.4 translate&lt; 1,1,-1&gt;}
+object{ Ei scale 0.4 translate&lt;-1,1, 0&gt;}
+object{ Ei scale 0.4 translate&lt; 0,1, 0&gt;}
+object{ Ei scale 0.4 translate&lt; 1,1, 0&gt;}
+object{ Ei scale 0.4 translate&lt;-1,1, 1&gt;}
+object{ Ei scale 0.4 translate&lt; 0,1, 1&gt;}
+object{ Ei scale 0.4 translate&lt; 1,1, 1&gt;}
+rotate&lt;-40,40,0&gt;
+translate&lt;0.3,0.7,-0.1&gt;
+}//---------------------------------- end </b></td></pre>
+
+
+</td>
+<td valign="top">
+
+
+so ergibt sich folgendes Bild:<br>&nbsp;<br>
+<table  align="center" border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+<tr>
+ <td width="240"  height="180" align="center">
+   <a href="javascript:ShowImage('geo/povegg_1im.htm')"
+   onMouseover="window.status='ShowSingleImage';return true"
+   onMouseOut="window.status=''">
+   <img src="geo/povegg1t.jpg" border="0" width="240"  height="180"
+   alt="Eiform 600x450" title="Eiform 600x450"></a></td>
+</tr>
+</table>
+
+
+</td></tr></table>
+<tr><td>
+
+  <!--<h5><b>Download aller gebrauchsferigen POV-Ray Objekte</b><br>
+   zip-gepackt (Include-Dateien mit Beispieldateien und mit den<br>
+   entsprechenden Insert Menu Add-ons  für komfortable Benutzung)<br>
+  auf der <a href=""><b>Download-Seite</b></a>.-->
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

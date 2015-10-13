@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+#declare Base_Height_     = 0.25; 
+#declare Base_Half_Width_ = 0.12; 
+#declare Neck_Length_     = 0.05;
+#declare Neck_Radius_     = 0.03;
+#declare Fillet_Radius_   = 0.10; 
+#declare Base_Border_Radius_ = 0.025; 
+//-------------------------------------------------------------------------------------//
+#include "shapes_lo2/Erlenmeyer_Shape_1.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Erlenmeyer_Shape_1(  Base_Height_, // Base_H, // 
+                             Base_Half_Width_, // Base_Half_Width, //  
+                             Neck_Length_, // Neck_Len, // 
+                             
+                             Neck_Radius_, // Neck_R, // 
+                             Fillet_Radius_, // Fillet_R, // 
+                             Base_Border_Radius_, // Base_Border_R,//  
+                             
+                             0, // Merge_On, // 
+                          ) //-------------------------
+ 
+        texture { pigment{ color rgb< 1, 1, 1> }  
+                  finish { phong 1}
+                 } // end of texture 
+
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.00, 0.00>}
+//-------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------
+                              

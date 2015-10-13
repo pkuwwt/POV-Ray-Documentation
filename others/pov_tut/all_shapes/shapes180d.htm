@@ -1,0 +1,240 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font>
+  <hr size="3">
+  <div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font>
+  </div>
+ </td>
+ <td align="right">
+        <a href="shapes180e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes180e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes180i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes180i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes180f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes180f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; Inhalts&uuml;bersicht<br>
+<a href="shapes100d.htm">Grundformen</b></a><br>
+&nbsp; -  <a href="shapes110d.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120d.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130d.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140d.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150d.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160d.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170d.htm">plane</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes180d.htm"--><b>sor</b></a><br>
+&nbsp; -  <a href="shapes190d.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350d.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115d.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200d.htm">K&ouml;rper mit Makros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000d.htm">K&ouml;rper in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400d.htm">Andere K&ouml;rper als Makros</b></a></nobr><br>
+<a href="shapes600d.htm">3D-Text-Objekte</b></a><br>
+<a href="shapes000d.htm">Andere Formen</b></a><br>
+<a href="shapes666d.htm">Non CSG K&ouml;rper</b></a><br>
+<nobr><a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900d.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4">
+ <tr>
+<td >
+
+<div align="center">
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="2" width="650">
+ <tr>
+  <td><table align="left" border="1" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/basics8.jpg" border="0" width="320"  height="240"
+                   alt="Sample sor" title="Sample sor"></td></tr></table>
+  </td>
+  <td><h1 align="center"><b>&quot;sor&quot; - Rotationsk&ouml;rper</b></h1>
+  </td>
+</tr>
+
+<tr>
+ <td colspan="2">
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="2" >
+<tr>
+  <td>
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>&quot;sor&quot;</b><br> <nobr>= <b>s</b>urface <b>o</b>f <b>r</b>evolution</nobr><br><b> = Rotationsk&ouml;rper</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+    allgemeiner Syntax:
+    <table align="center" border="4" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>sor{ n,
+      &lt;&nbsp;x<SUB>1, </SUB>y<SUB>1</SUB>&nbsp;&gt;,
+      &lt;&nbsp;x<SUB>2, </SUB>y<SUB>2</SUB>&nbsp;&gt;,
+      &lt;&nbsp;x<SUB>3, </SUB>y<SUB>3</SUB>&nbsp;&gt;,
+               ...
+      &lt;&nbsp;x<SUB>n, </SUB>y<SUB>n</SUB>&nbsp;&gt;
+      texture{ ... }
+      }</b></td></pre></tr></table>
+</td>
+<td><p align="justify">
+     <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+     <b>Hierbei wird durch <b>&quot;n&quot;</b> Punkte <nobr>&lt;&nbsp;x<SUB>i, </SUB>y<SUB>i</SUB>&nbsp;&gt;</b> <font size="-1"><i>(i=1 ... n)</i></font><b></nobr>
+     eine Umri&szlig;linie des K&ouml;rpers in der xy-Ebene definiert.
+     Diese Punkte werden durch eine Spline-Kurve verbunden. Der K&ouml;rper entsteht durch Rotation dieser Kurve um
+     die <nobr>y-Achse.</nobr></b><br> Im Normalfall wird diese Kurve senkrecht zur y-Achse geschlossen, will man einen offenen K&ouml;rper
+     erhalten, so mu&szlig; der Zusatzbefehl &quot;<b>open</b>&quot; zugef&uuml;gt werden.<br>Eventuelle Rechenfehler, die sich durch L&ouml;cher
+     in der K&ouml;rperoberfl&auml;che zeigen, lassen sich durch den Zusatz &quot;<b>sturm</b>&quot; reduzieren (dies erzwingt die Verwendung
+     des langsameren, aber genaueren Sturmschen Algorithmus zur Wurzelberechnung). </p>
+ </td></tr>
+<tr><td colspan="2">
+   Will man eine andere Lage des Rotationsk&ouml;rpers erreichen, so mu&szlig; den Rotationsk&ouml;rper mittels
+   &quot;rotate&lt;&nbsp; , &nbsp; ,&nbsp;&nbsp; &gt;&quot; und &quot;translate&lt;&nbsp;,&nbsp;,&nbsp;&gt;&quot;
+   in die gew&uuml;nschte Position gedreht und geschoben werden.<br>
+</td></tr>
+</table>
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+<tr>
+ <td colspan="2">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/sor1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/sor1t.jpg" border="0" width="320"  height="240"
+                   alt="Sample 1 sor 600x450" title="Sample 1 prism 600x450"></a></td></tr></table>
+      </td>
+</tr>
+<tr>
+ <td>
+   <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+   <b>Beispiel links:</b><br></font>
+<table align="center" border="4" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>// Rotationsk&ouml;rper
+// am Nullpunkt (closed, aufgeschnitten):
+sor{ 8, //n=8 Punkte!
+     &lt; 0.00, 0.00&gt;,
+     &lt; 0.60, 0.00&gt;,
+     &lt; 0.72, 0.44&gt;,
+     &lt; 0.31, 0.93&gt;,
+     &lt; 0.49, 1.26&gt;,
+     &lt; 0.48, 1.35&gt;,
+     &lt; 0.43, 1.56&gt;,
+     &lt; 0.16, 1.60&gt;
+     texture{
+       pigment{color White}
+       finish { phong 0.5}
+    }
+  } // end of sor
+
+
+//-----------------------</b></td></pre></tr></table>
+ </td>
+ <td>
+   <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+   <b>Beispiel rechts:</b><br></font>
+<table align="center" border="4" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>// Rotationsk&ouml;rper
+// rechts: (open)
+sor{ 8, //n=8 Punkte!
+     &lt; 0.00, 0.00&gt;,
+     &lt; 0.60, 0.00&gt;,
+     &lt; 0.72, 0.44&gt;,
+     &lt; 0.31, 0.93&gt;,
+     &lt; 0.49, 1.26&gt;,
+     &lt; 0.48, 1.35&gt;,
+     &lt; 0.43, 1.56&gt;,
+     &lt; 0.16, 1.60&gt;
+     open // &lt;--------------!!!
+     translate&lt;2,0,0&gt;
+     texture{
+       pigment{color White}
+       finish {phong 0.5}
+     }
+   } // end of sor
+//-----------------------</b></td></pre></tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="2">
+   <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+    <b>Anmerkung:
+    Warum &quot;sor&quot; statt &quot;lathe&quot; ?</b>(letzeres erscheint meist sehr viel flexibler!)<br>
+    <b>Schnittberechnungen mit &quot;sor&quot;-Objekten f&uuml;hren lediglich auf quadratische Gleichungen,
+    wogegen Schnitttests mit &quot;lathe&quot;-Objekten auf Gleichungen 6.Grades f&uuml;hren. Quadratische Gleichungen
+    sind sowohl schneller als auch genauer l&ouml;sbar. Da solche Objekte stets sehr viele Teilfl&auml;chen besitzen,
+    ist dies von gro&szlig;er Bedeutung.</b></font><br>
+ </font>
+</tr>
+</table>
+
+</td></tr></table>
+
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr>
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

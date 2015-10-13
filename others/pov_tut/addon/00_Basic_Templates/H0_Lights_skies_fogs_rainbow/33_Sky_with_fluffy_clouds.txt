@@ -1,0 +1,62 @@
+// sky ---------------------------------------------------------------
+// sky textures --------------------------------------------------------
+#declare T_Clouds  =
+texture {
+    pigment { bozo
+        turbulence 1.5
+        octaves 10
+        omega 0.5
+        lambda 2.5
+        color_map { [0.0 color rgbf<1, 1, 1, 1> ]
+                    [0.2 color rgbf<0.85, 0.85, 0.85, 0.00>*1.5 ]
+                    [0.5 color rgbf<0.95, 0.95, 0.95, 0.90>*1.12  ]
+                    [0.6 color rgbf<1, 1, 1, 1> ]
+                    [1.0 color rgbf<1, 1, 1, 1> ] }
+    }
+
+    finish {ambient 0.95 diffuse 0.1}
+}
+
+//--------------------------------------------------------------------
+union { // make sky planes: 
+
+ plane { <0,1,0>, 500 hollow //!!!!
+        texture { bozo scale 1
+                  texture_map{ 
+                       [ 0.0  T_Clouds ]
+                       [ 0.5  T_Clouds ]
+                       [ 0.6  pigment{color rgbf<1,1,1,1> }] 
+                       [ 1.0  pigment{color rgbf<1,1,1,1> }] 
+                      } 
+                       scale <500,1,1000>} translate<-400,0,300> } 
+
+ plane { <0,1,0> , 10000  hollow
+        texture{ pigment {color rgb<0.24,0.38,0.7>*0.50}
+                 finish {ambient 1 diffuse 0}}}
+scale<1.5,1,1.25>  
+rotate<0,0,0> translate<0,0,0>}                          // end of sky
+//--------------------------------------------------------------------
+
+// fog on the ground -------------------------------------------------
+fog { fog_type   2
+      distance   50
+      color      rgb<1,1,1>*0.75
+      fog_offset 0.1
+      fog_alt    1.5
+      turbulence 1.8
+    }
+//-----------------------------------------------// end of ground fog
+//--------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

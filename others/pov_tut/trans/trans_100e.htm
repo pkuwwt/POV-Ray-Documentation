@@ -1,0 +1,201 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Transformations with POV-Ray - translate</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2008 by Friedrich A. Lohmueller">
+<meta name="Description" content="Basics about geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d grafics, 3d graphics, computer graphics,
+      geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometric Transformations with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_100d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_100d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a><br>
+        <a href="trans_100i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_100i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_100f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_100f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp; <a href="trans_000e.htm">Geometric</b></a><br>
+ &nbsp; <a href="trans_000e.htm">Transformations</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Elementary </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <!--a href="trans_100e.htm"--><b>&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200e.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">mirror symmetry;</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Other</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400e.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450e.htm">Shearing</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470e.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500e.htm">&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="trans_500e.htm">&nbsp;and &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Vectors and</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Transformations</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="95%">
+ <tr>
+  <td><h1 align="center"><nobr>&quot;translate&quot; &nbsp; = move</nobr>
+</td></h1></tr></table>
+
+<table  border="1" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4">
+ <tr>
+  <td bgcolor="#eee8d0">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('trans1i.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="trans1t.jpg" border="0" width="320"  height="240"
+                   alt="Samples translation 640x480" title="Samples translation 640x480"></a>
+            </td></tr></table>
+      </td>
+<td bgcolor="#eee8d0">
+     <font size="4">
+    <b>translate = move</b></font><br>
+    <font size="3">
+     general syntax:
+<pre><b>translate &lt;x<SUB>1</SUB>,y<SUB>1</SUB>,z<SUB>1</SUB>&gt;</b></pre>
+    this moves an object relative to it's current position
+    <br> by <b>x<SUB>1</SUB></b> in x direction (horizontal)
+    <br> by <b>y<SUB>1</SUB></b> in y direction (vertical) and
+    <br> by <b>z<SUB>1</SUB></b> in z direction (deepth).
+ </td></font>
+</tr>
+<tr>
+<td bgcolor="#eee8d0" colspan="2">
+ <font size="4">
+ Sample:
+<pre>#declare OrangeYellow = color rgb&lt;1,0.85,0&gt;;
+#declare Ball1 =
+ sphere{&lt;0,0,0&gt;,1
+        texture{ pigment{ color OrangeYellow}
+                 finish { diffuse 0.9 phong 1}}
+ }
+//-------------------------------------------------
+#declare Ball2 =
+ sphere{&lt;0,0,0&gt;,1
+ texture{ pigment{ color NeonPink}
+          finish { diffuse 0.9 phong 1}}
+ }
+//-------------------------------------------------
+object{Ball1 translate&lt; 4, 0,-4&gt;}
+object{Ball1 translate&lt; 4, 0, 0&gt;}
+object{Ball1 translate&lt; 4, 0, 4&gt;}
+object{Ball1 translate&lt; 4, 0, 8&gt;}
+object{Ball1 translate&lt; 4, 2, 8&gt;}
+object{Ball1 translate&lt; 4, 4, 8&gt;}
+object{Ball1 translate&lt; 4, 6, 8&gt;}
+object{Ball1 translate&lt; 4, 8, 8&gt;}
+<br>
+object{Ball2 translate&lt;-4, 2,0&gt;}
+object{Ball2 translate&lt;-2, 2,0&gt;}
+object{Ball2 translate&lt; 0, 2,0&gt;}
+object{Ball2 translate&lt; 2, 2,0&gt;}
+object{Ball2 translate&lt; 4, 2,0&gt;}
+object{Ball2 translate&lt;-4, 2,4&gt;}
+object{Ball2 translate&lt;-2, 2,4&gt;}
+object{Ball2 translate&lt; 0, 2,4&gt;}
+object{Ball2 translate&lt; 2, 2,4&gt;}
+object{Ball2 translate&lt; 4, 2,4&gt;}
+//-------------------------------------------------</td></pre></font>
+ </tr>
+</table>
+<table align="center" width="95%"><tr><td>
+<p align="justify"><font size="3">
+<b> Hint: </b><br>
+We can use &quot;translate&quot; also with other objects like light sources, textures(&quot;texture&quot;),
+color patterns (&quot;pigment&quot;) and simulated surface structures (&quot;normal&quot;).
+</font>
+</p></td></tr></table></div>
+<hr size="3">
+<h6 align="justify">
+ <!--a href="trans_100e.htm"-->translate</a> |
+ <a href="trans_200e.htm">rotate</a> |
+ <a href="trans_300e.htm">scale</a> |
+ <a href="trans_400e.htm">matrix</a> |
+ <a href="trans_450e.htm">shearing</a> |
+ <a href="trans_470e.htm">transforms.inc</a> |
+ <a href="trans_500e.htm">transform</a> |
+ <a href="trans_800e.htm">vector transformations</a>
+<h6>
+
+
+
+</td></tr></table></td></tr>
+
+
+<!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

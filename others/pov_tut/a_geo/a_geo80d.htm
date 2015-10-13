@@ -1,0 +1,253 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2007 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="Analytische Geometrie, Vektorrechnung, Raytracing, PoV, POVRAY, POV-Ray 3.6, Computergraphik, 3D-Graphik, Computergrafik, Raytracer Beschreibungen, Povray Tutorial, Beispiele">
+<meta name="description" content="Analytische Geometrie, Vektorrechnung mit POV-Ray">
+<TITLE>Analytische Geometrie mit POV-Ray - Vektorrechnung mit  POV-Ray</TITLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=710,height=530");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</HEAD>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo80e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="a_geo80e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="a_geo80i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo80i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo80f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo80.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index_d.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__ger.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__ger.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__d.htm">Analytische Geometrie</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">mit POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">- Inhalts&uuml;bersicht -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insrtd_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -    <a href="a_geo00d.htm">Grunds&auml;tzliches</b></a><br>
+&nbsp; &nbsp; <a href="a_geo00d.htm">zur Arbeitsweise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>Punkte &amp; Linien</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo10d.htm">Punkte in 3D</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo20d.htm">Strecken, Geraden,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20d.htm">Vektoren, Abstandspfeile</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30d.htm">Fl&auml;chen u. Ebenen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40d.htm">Ausgabe Resultate,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40d.htm">Beschriftung</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45d.htm">Schnittpunkte</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50d.htm">Kreise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60d.htm">Tetraeder</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61d.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62d.htm">Parallelflach (Spat)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo65d.htm">Runde K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <a href="a_geo70d.htm">Tabellarischer</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm">&Uuml;berblick</b> &uuml;ber</a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm"> &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; <b>&gt; <!--a href="a_geo80d.htm"--><b>Vektorrechnung</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <!--a href="a_geo80d.htm"-->mit POV-Ray</b></a> <br>
+&nbsp; - <a href="a_geo85d.htm">Rechts- u. linksh&auml;ndige</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">Koordinatensysteme</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">und das Vektorprodukt</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Beispiele aus der</b></a> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Analytischen Geometrie</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91d.htm">Seitenmitten-Parallelogramm</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo92d.htm">Spurpunkte einer Geraden</b></a> <br>
+&nbsp; &nbsp; -  <a href="a_geo93d.htm">Berechnungen am Dreieck</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo94d.htm">Parallelogrammfl&auml;che</b></a></nobr> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo94d.htm">und Vektorprodukt</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95d.htm">Schatten einer Pyramide</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96d.htm">Schnitt mit Ebene || zu yz</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97d.htm">Winkel zw. Dreieck yz-Ebene</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+
+  <table align="center" width="95%" cellspacing="10"><tr>
+    <td align="center" valign="top">
+        <h3><nobr>Analytische Geometrie mit POV-Ray</nobr></h3>
+        <h5 align="center"><font size="+1"><b>Vektorrechnung mit  <nobr>POV-Ray</nobr></b></font><br><nobr></nobr></h5>
+        <h6 align="left">
+         <font size="+1"><b>  </b></font><br>
+        </h6>
+       <h6 align="left"><font size="+1"><b> </b></font>
+         </td></h6>
+      <td align="center" valign="top">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="tabelles.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+      </td>
+ </tr>
+    </table>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+   <h5 align="center">Zusammenstellung der in POV-Ray vorhandenen Ausdr&uuml;cke und Funktionen f&uuml;r Vektoren</h5>
+ <td>
+</tr>
+</table>
+
+<div align="center">
+<table border="1" width="95%" align="center" cellpadding="2">
+<tr>
+ <td><h5 align="justify"><b>In POV-Ray <br>definierte Vektoren</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800">o = &lt; 0, 0, 0&gt;  (Ursprung!),
+                                                                          <br> x = &lt;1, 0, 0&gt;; y = &lt;0, 1, 0&gt;; z = &lt;0, 0, 1&gt;;
+                                                                          <br> xy = &lt; 1, 1, 0&gt;; yz = &lt; 0, 1, 1&gt;; xz = &lt; 1, 0, 1&gt;;
+                                                                          <br> t = &lt;0, 0, 0, 1&gt;; u = &lt;1, 0&gt;; v = &lt;0, 1&gt;; </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Vektoraddition</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> &lt;a,b,c&gt; +  &lt;d,e,f&gt; =  &lt;a+d,b+e,c+f&gt;</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Multiplikation mit Skalar</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800">5 * &lt;1,2,-5&gt; = &lt;5,10,-25&gt;</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Extrahieren von Komponenten</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> Ist V = &lt; a, b, c &gt;,  dann ist  a = V.x, b = V.y und c = V.z .  </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Projektion auf Koordinatenebene</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800">Die Projektion von P auf die xz-Ebene ist &lt;P.x,0,P.z&gt;</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>L&auml;nge (Betrag)  eines Vektors: |V|</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800">vlength(V)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Skalarprodukt V<sub>1</sub>*V<sub>2</sub></b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800">vdot(V1,V2)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Vektor V normierter auf L&auml;nge 1</b><br>Einheitsvektor in Richtung von V </td></h5>
+ <td><h6 align="justify"><b><font color="#338800">vnormalize(V)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Vektorprodukt V<sub>1</sub> x V<sub>2</sub></b><br>Kreuzprodukt V<sub>1</sub> x V<sub>2</sub></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> vcross(V1,V2)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Rotation eines Vektors V<sub>1</sub></b> um<br>einen Vektor <b>V<sub>2</sub></b> mit <b>A Grad</b> </sub></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> vaxis_rotate(V1,V2,A) </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Rotation eines Vektors V<sub>1</sub></b> um die<br>Achsen mit jeweils V<sub>2</sub>.x, V<sub>2</sub>.y, V<sub>2</sub>.z .</sub></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> vrotate(V1,V2) </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>mit &quot;math.inc&quot;</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> &nbsp;</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Projektion eines Vektors V</b> auf <br>eine durch die Achse definierte Ebene</td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> VProject_Plane(V, Achse) </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Projektion eines Vektors V</b> auf <br>die Achse</td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> VProject_Axis(V, Achse) </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Vektor senkrecht zur Achse</b><br> und in der Ebene von V und Achse</td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> VPerp_Adjust(V, Achse) </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Vektor senkrecht zu V<sub>1</sub> und V<sub>2</sub></b><br> </td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> VPerp_To_Plane(V1, V2)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Kosinus des Winkels <br>zwischen V<sub>1</sub> und V<sub>2</sub></b> </td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> VCos_Angle(V1, V2)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Winkel zw. V<sub>1</sub> und V<sub>2</sub></b> in Radiant </td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> VAngle(V1, V2)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Winkel zw. V<sub>1</sub> und V<sub>2</sub></b> in Grad</td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> VAngleD(V1, V2) </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>mit &quot;transforms.inc&quot;</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> &nbsp;</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><nobr><b>Scherung eines Objekts</b>, dabei zeigt</nobr><br>x-Achse nach A,  y nach B, z nach C.</td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> Shear_Trans(A, B, C)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Scherung eines Objekts</b> wie oben <br>zus&auml;tzlich Verschiebung um D.</td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> Matrix_Trans(A, B, C, D) </font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Streckt l&auml;ngs einer Achse</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> Axial_Scale_Trans(Achse, Betrag)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Rotiert um eine Achse</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> Axis_Rotate_Trans(Achse, Winkel)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Rotiert um einen Punkt</b><br> um &lt;Rotx,Roty,Rotz&gt;</td></h5>
+ <td><h6 align="justify"><b><font color="#338800"> Rotate_Around_Trans( &lt;Rotx,Roty,Rotz&gt;, Rotationszentrum)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Reorientiert von Achse1<br> zur neuen Achse2</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800">Reorient_Trans(Achse1, Achse2)</font></b></td></h6>
+</tr><tr>
+ <td><h5 align="justify"><b>Reorientiert derartig,<br> da&szlig; y Achse nach YAxis zeigt</b></td></h5>
+ <td><h6 align="justify"><b><font color="#338800">Point_At_Trans(YAxis)</font></b></td></h6>
+</tr>
+
+</table>
+</div>
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</BODY>
+</HTML>

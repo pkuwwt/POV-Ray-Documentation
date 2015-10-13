@@ -1,0 +1,242 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="POV-Ray tutorials - While loops and POV-Ray  - chiocciole e ammoniti">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, rendering, 3d graphica, computer graphica, tutorial, descrizioni, while loop, chiocciole, ammoniti">
+<title>Cicli e POV-Ray -  chiocciole e ammoniti</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr> di <nobr>Friedrich A. Lohm&uuml;ller,</nobr>
+<br>in parti tradotto di Paolo Taraboi<br>
+  <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Cicli in POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+        <a href="povlup6e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povlup6e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povlup6f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="povlup6f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povlup6d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="povlup6d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0i.htm"><font size="3">Cicli con POV-Ray</font></b></a><br>
+ &nbsp; 1.  <a href="povlup7i.htm">For e While</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup7i.htm">Comparazione</b></a><br>
+ &nbsp; 2.  <a href="povlup1i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup1i.htm">lineari</b></a><br>
+ &nbsp; 3.  <a href="povlup2i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup2i.htm">circolari</b></a><br>
+ &nbsp; 4.  <a href="povlup3i.htm">Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4i.htm">Viti e spirali</b></a><br>
+ &nbsp; 6.  <a href="povlup5i.htm">Spirali</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5i.htm">intrecciate</b></a><br>
+<b>&gt;</b>7.  <!--aa href="povlup6i.htm"--><b>Chiocciole</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <!--aa href="povlup6i.htm"--><b>e ammoniti</b></a><br>
+ &nbsp; 8.  <a href="povlup9i.htm" >Spirali sferiche 1</b></a><br>
+ &nbsp; 9.  <a href="povlup10i.htm">Spirali sferiche 2</b></a><br>
+ &nbsp;10.  <a href="povlup8i.htm">Spirali Fibonacci</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwni.htm">Download</b></a><br>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<a name="start"></a>
+<h2 align="center">Cicli per Chiocciole e Ammoniti</h2>
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="5" width="90%">
+<tr>
+ <td colspan="2">
+<p align="justify">Negli ultimi esempi spirali e sfere avevano sempre
+le stesse dimensioni. Adesso vediamo come ridurre costantemente
+le dimensioni delle sfere, il raggio e l'altezza della filettatura
+di una chiocciola:</p>
+</td>
+</tr>
+<tr>
+ <td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//-------------------------------------
+#declare Ball =
+sphere{&lt;0,0,0&gt;,0.5
+     texture{pigment{color
+                     rgb&lt;1,0.65,0.0&gt;}
+             finish {phong 1}}}
+#declare Radius0=3.0;// basic radius
+#declare NR=9;//number of revolutions
+#declare NpR=100;//number elements p.r.
+#declare Scale=0.75; //per revolution
+#declare HpR=0.8;//difference in y p.r.
+//-------------------------------------
+#local Hd       = HpR/NpR;
+#local Scale_p  = pow(Scale,1/360);
+#local Scale_pE = pow(Scale_p,360/NpR);
+#local Old_S = Scale_pE;
+#local Old_H = Hd;
+#declare Nr = 0;         //start
+#declare EndNr = NR*NpR; //  end
+#while (Nr&lt; EndNr)
+ object{Ball
+        translate&lt;Radius0,0,0&gt;
+        scale Old_S
+        translate&lt;0,Old_H,0&gt;
+        rotate&lt;0,Nr*360/NpR,0&gt;}
+ #declare Nr = Nr+1;  // next Nr
+ #declare Old_S =Scale_pE*Old_S;
+ #declare Old_H =Old_H+Hd*Old_S;
+#end // ------------ end of loop -----</b></td></pre>
+ </tr>
+</table>
+ </td>
+ <td><table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloopa.jpg" width="320" height="240"></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Scena per <nobr>POV-Ray:</nobr> <a href="pov/povloopa.pov">povloopa.pov</a><br>
+                                 o: <a href="pov/povloopa.txt">povloopa.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+<tr>
+ <td>
+<p align="justify">Se riduciamo l'altezza della filettatura a zero otteniamo
+la classica forma di<br>
+<nobr><b>&quot;Ammonitus povrayensis&quot;</b>:</nobr></p>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//-----------------------------------
+#declare Ball =
+ sphere{&lt;0,0,0&gt;,1.0
+        texture{...see above...}}}
+#declare Radius0     = 3.5;
+#declare NR = 9;//number of revolutions
+#declare NpR=50;//number of elem.p.r.
+#declare Scale = 0.55; //per revolution
+#declare HpR   = 0.00;
+<b>//------------------------------------</b></td></pre>
+ </tr>
+</table>
+ </td>
+ <td><table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloopb.jpg" width="320" height="240"></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Scena per <nobr>POV-Ray:</nobr> <a href="pov/povloopb.pov">povloopb.pov</a><br>
+                                 o: <a href="pov/povloopb.txt">povloopb.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+<tr>
+ <td>
+<p align="justify">Scalando l'aspetto dell'elemento di base e facendo del texturing
+   con pietre e graniti &egrave; possibile ottenere quasi qualsiasi tipo
+   di conchiglia o ammonite.
+   Cose ne dite per esempi di questa <br>
+<b>&quot;Turritella turris var. povensis&quot;</b>?</p>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//---------------------------------
+#declare Ball =
+sphere{&lt;0,0,0&gt;,0.70
+       scale &lt;1,1.5,1&gt;
+       texture{T_Stone3 scale 1.5
+               finish {phong 0.3}}}
+#declare Radius0 = 1.5;
+#declare NR=9.1;
+//number of revolutions
+#declare NpR = 30;
+//number of elements per revolution
+#declare Scale=0.78;
+//per revolution
+#declare HpR    = 1.6;
+//---------------------------------</b></td></pre>
+ </tr>
+</table>
+ </td>
+ <td><table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloopc.jpg" width="320" height="427"></td>
+      </tr></table>
+<div align="center">
+<font size="2">
+    Scena per <nobr>POV-Ray:</nobr> <a href="pov/povloopc.pov">povloopc.pov</a><br>
+                                 o: <a href="pov/povloopc.txt">povloopc.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+</table>
+</div>
+
+
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0i.htm">Index</a> |
+     <a href="povlup7i.htm">Cicli for e while</a> |
+     <a href="povlup1i.htm">lineare</a> |
+     <a href="povlup2i.htm">circolare</a> |
+     <a href="povlup3i.htm">Moebius</a> |
+     <a href="povlup4i.htm">Viti et Spirali</a> |
+     <a href="povlup5i.htm">intrecciato</a> |
+     <!--a href="povlup6i.htm"-->Chiocciole</a> |
+     <a href="povlup9i.htm">Sferico 1</a> |
+     <a href="povlup10i.htm">Sferico 2</a> |
+     <a href="povlup8i.htm">Fibonnacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

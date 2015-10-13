@@ -1,0 +1,213 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, povray, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, 3d graphics, computer graphics, raytracing descriptions, POV-Ray tutorials, scene file header, include files, camera, light_source">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>The Scene File Header - include files, camera, light_source, POV-Ray Course part 4</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Introduction to the Scene Description Langage</nobr> of the <nobr> POV-Ray Raytracer</nobr>
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; - page 4 -</nobr>
+ <br><nobr>by Friedrich A. Lohm&uuml;ller</nobr></b>
+  <td align="right">
+        <a href="povtuti4.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="povtuti4.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povtutf4.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="povtutf4.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs4.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="povkurs4.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povtuto0.htm">POV-Ray Introduction</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povtuto0.htm">Content&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtuto1.htm">Working with POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtuto2.htm">Basics on</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; <a href="povtuto2.htm">How To Make a Scene.</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; <a href="povtuto2.htm#xyzKoordinaten">3D Coordinates</b></a>,</nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; <a href="povtuto2.htm#ZahlenundVektoren">Floats and Vectors</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtuto3.htm">Scene Structure</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; Basic example.<br>
+<nobr><b>&gt;4.</b> <!--a href="povtuto4.htm"--><b>Scene File Header</a></b>,</nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; #include files</b>,<br>
+<nobr>&nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtuto5.htm">Basic Geometric Objects</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; and other shapes</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtuto6.htm">Transformations</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Streching, Turning, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Moving and others.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtuto6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtuto7.htm">Colors on Surfaces</b></nobr><br></a>
+<nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtuto8.htm">#declare, #local, #macro,</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  placeholders + flexible objects</b>.</a></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtuto9.htm">#while</b></a> Loops</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Basic examples.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutoa.htm">#include</b></a>, include files,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; re-usable objects.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutob.htm">Efficiency</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; speed, flexibility,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; modulare working</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; adapting from 3.1 to 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; adapting from 3.5;3.6 to 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+
+<table border="0" align="center" width="90%"><tr><td>
+<p align="justify">
+<font size="+2"><b><a name="includefiles">#include</a></b></font> - The include files in the header.<br>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#include &quot;colors.inc&quot;
+#include &quot;textures.inc&quot;
+#include &quot;shapes.inc&quot; </b></td></pre></tr></table>
+If we have inserted this line
+we can use about 100 different English color expressions like 'pigment{color YellowGreen}'.<br>
+
+In these text files we have prefabricated definitions like color expressions (<b>#include &quot;colors.inc&quot;</b>),
+and some texture expressions (<b>#include &quot;textures.inc&quot;</b> or <b>&quot;glass.inc&quot;</b> etc.) and
+the shapes of special geometric objects (<b>#include &quot;shapes.inc&quot;</b> etc.). <br>
+<font size="-1">Such include files you can also
+create by yourself (save the text files with a name ending in &quot;.inc&quot;). They are just simply parts
+of ASCII-text and will be inserted in your scene description when POV-Ray is parsing
+(= translating the keywords in mathematical equations) the scene file for rendering.<br>
+It's highly recommanded to advanced users to take a look in these files to see &quot;how to do this&quot;.<br>
+But be carefully: <b>Don't ever change anything in the 'standard include files'</b> nor add something to them:
+If you do so, scene files of other people may fail with such changed files!
+How to make your own include files for fast access to your own objects and textures
+ see here: <a href="povtutoa.htm#include">#Include</a>!<br>
+</font><br>
+
+
+
+<hr>
+ <font size="+2"><b></b><a name="camera"><b>camera</b></a></font> - The standpoint of the viewer
+ and where he looks at.
+<table align="center" border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>camera { location&lt;0,1,-3&gt; // standpoint of the viewer
+         look_at &lt;0,1,0&gt; // where to look at
+         right x*image_width/image_height  // aspect ratio
+         angle 75 // camera angle
+       } </b></td></pre></tr></table>
+
+        <b>Multible camera definitions for a comfortable fast changing of the position</b><br>
+we can define in the following way:
+<table align="center" border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#declare Cam1 = camera { location&lt;0,1,-3&gt;
+                         look_at &lt;0,1,0&gt;
+                         right x*image_width/image_height
+                         angle 45 }
+#declare Cam2 = camera { ultra_wide_angle angle 180 &nbsp;
+                         location&lt;2,4,-2&gt;
+                         right x*image_width/image_height
+                         look_at &lt;0,1,0&gt;} //etc.,
+camera{Cam1} // for fast changing of the camera
+             // just exchange only the "1" by "2"! </b></td></pre></tr></table>
+
+</td></tr></table>
+<table border="0" align="center" width="90%"><tr><td>
+<p align="justify"><br>
+A more detailed description of the types of cameras and further details about the camera you can find here:
+<a href="../camera_light/camlit_e1.htm" target="_new">Cameras, Light Sources and Details</b></a><br>
+
+<img src="im/warn.gif" border="0" width="32" height="30">
+<b> Attention: </b>For easier keeping track in complex scenes<br> <b> the camera should
+look from negative z direction on the center &lt;0,0,0&gt; </b>of the world.
+<font size="-1">Only if your looking
+ constantly from this direction expressions like &quot;in front of/ behind of&quot; ,
+ &quot;above / beneath &quot; , and &quot;left of/ right of&quot; will have an unambiguous
+ sense for the orientation in the cyberspace!</font><br>
+<br>
+<hr width="100%">
+<font size="+2"><b><a name="light_source">light_source</a></b></font>  - The sun and other lights.<br>
+The most important and also easiest kind of light source is a point light. For this type you
+have to add only the coordinates of the location and the color of the light:
+<table align="center" border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>light_source{ &lt;1000,1000,-1500&gt; color White}</b></td></pre></tr></table>
+Other <b>types of lightsources</b></a> are
+e.g. the spot light and the area light (produces soft shadows).<br>
+A more detailed description of the types of light sources and further details about the lights you can find here:
+<a href="../camera_light/camlit_e1.htm" target="_new">Cameras, Light Sources and Details</b></a><br>
+<br>
+<font size="-1">It is possible to install in a scene nearly an infinite number of light sources,
+but the rendering time is proportional to the number of light sources! And ... rendering scenes
+over many days and nights is not a great achievement of the author of this scene!</font>
+</p>
+</td>
+</tr>
+</table>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtuto0.htm">part 0</a> |
+<a href="povtuto1.htm">part 1</a>  | <a href="povtuto2.htm">part 2</a> |
+<a href="povtuto3.htm">part 3</a>  | <!--a href="povtuto4.htm"-->part 4</a> |
+<a href="povtuto5.htm">part 5</a>  | <a href="povtuto6.htm">part 6</a>  |
+<a href="povtuto7.htm">part 7</a>  | <a href="povtuto8.htm">part 8</a> |
+<a href="povtuto9.htm">part 9</a>  | <a href="povtutoa.htm">part 10</a> |
+                                     <a href="povtutob.htm">part 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

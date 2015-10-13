@@ -1,0 +1,243 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, povray, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, descrizione raytracing, tutorial POV-Ray, descrizione di scene di POV-Ray, grafica 3d">
+<meta name="description" content="POV-Ray corso per principianti - un introduzione alla lingua descrittiva di scene, tutoriale">
+<link rel="stylesheet"type="text/css" href="lo1style.css">
+
+<title>Comme descrivere una scena, vettori, coordinati - POV-Ray corso parte 2</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+  <h6><nobr>Introduzione al linguaggio di descrizione di scene del raytracer POV-Ray</nobr>
+    <nobr> &nbsp; &nbsp; &nbsp; &nbsp; pagina 2</nobr><br>
+    di Friedrich A. Lohm&uuml;ller </td></h6>
+ <td align="right">
+        <a href="povtuto2.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povtuto2.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtutf2.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povtutf2.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs2.htm"><font size="2">Deutsch</font></a>
+        <a href="povkurs2.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br></font>
+ &nbsp;<br>
+ &nbsp;&nbsp; <a href="povtuti0.htm">Introduzione a POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp; <a href="povtuti0.htm">Indice del contenuto</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtuti1.htm">Usare POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+ <b>&gt;2.</b> <!--a href="povtuti2.htm"--></b><b>Principi fondamentali</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comme descrivere una scena?</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtuti2.htm#xyzKoordinaten">Coordinate 3D</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtuti2.htm#ZahlenundVektoren">Numeri e vettori</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtuti3.htm">Struttura di Scena</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Esempio di Base.</b></a></nobr><br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtuti4.htm">Scene file header:</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; #include files</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtuti5.htm">Oggetti geometrici di base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; et altri oggetti</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtuti6.htm">Trasformazioni</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; scala, rotazione, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translazione e altri.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtuti7.htm">Colori e superfici</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtuti8.htm">#declare, #local, #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  Variabili e oggetti flessibili</b>.</a></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtuti9.htm">#while</b></a> - loops, cicli.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Esempi di Base.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutia.htm">#include</b></a>, include files.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Oggetti riutilizzabili.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutib.htm">Efficienza</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; velocit&agrave;, flessibilit&agrave;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; lavorare con moduli.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.1 a 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutia.htm#version37">POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/inserti_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwni.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<font size="+1"><b><a name="Grundsatz">I principi fondamentali di descrivere una scena</a></b></font><br>
+
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify">
+Per descrivere una scena usiamo <b>un insieme delle dichiarazione consistenti del testo con le
+parole chiavi ed i valori, che devono essere scritti con attenzione! </b><br>
+&nbsp; Una virgola o una graffa al posto errato &egrave;
+probabile da scompigliare sulla scena intera o POV-Ray non &egrave; pi&ugrave; in grado di rendere questa scena.
+Il programma &egrave; considera le lettere minuscole e maiuscola come caratteri differenti!
+Inoltre, non usi i caratteri nazionali specifici fuori dei commenti o nei nomi dei file! <br>
+Il parser <font size="-1">(= la parte del programma, che traduce le dichiarazione redatte in formule matematiche)</font>
+ legge il testo <b>dall'alto al basso</b>.
+Non usi le abbreviazioni prima che le abbiate dichiarate! <br>
+Non dividere le parole chiavi con spazi, ma a volte la parola chiave
+deve essere separata con spazi dai loro valori corrispondenti.
+Cio&egrave;. &quot;scale2&quot; &egrave; un errore, ma &quot;scale 2&quot; &egrave; giusto!
+Gli spazi multipli e CR/LF fra le parole chiave sono ignorati.<br>
+Dopo i caratteri '<b>//</b>'  si possa scrivere <b>i commenti</b> e i commenti possono usare tutte caratteri nazionali specifiche,
+il resto della linea sar&agrave; ignorato.
+Con lunghi commenti che si estendono per pi&ugrave; che uno linea si deve usare la sequenza '<b>/ *</b>'
+('inizio del commento') e '<b>*/</b>' ('fino del commento').
+
+</td></p></tr></table>
+<hr>
+<font size="+1"><b><a name="xyzKoordinaten">Coordinate xyz</a> e vettori </b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify">
+<font size="-1">POV-Ray usa normalmente un cosiddetto <b>sistema di coordinate &agrave; &quot;mano sinistra&quot;</b>. <br>
+Le coordinate tridimensionali per le direzioni di x, y e z sono definite relativamente l'una doppo l'altra come segue:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b> a <b>destra</b>, positivo che segue il vostro <b>pollice</b> - orizzontale<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b> in <b>alto</b> &nbsp;&nbsp;, positivo, seguente la vostra <b>indice</b> - verticale <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b> <b>avanti</b>&nbsp; &nbsp;, positivo, seguente la vostra <b>dito medio</b>
+- via della profondit&agrave; dello spazio<br>
+</font>
+
+<br>
+<div align="center">
+<table align="center" border="2"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+ <tr><td valign="top">
+     <img src="im/lefthand.jpg" border="0"  width="180" height="240"
+      alt="left hand axis" title="left hand axis"></td>
+     <td valign="top">
+     <img src="im/povray_coordinates.jpg" border="0" width="320" height="240"
+      alt="3d coordinates" titel="3d coordinates"></td>
+     <td valign="top">
+     <img src="im/axes_left_240.jpg" width="240" height="240"
+      alt="pov axes rotation left handed" title="pov axes  rotation left handed"></td></tr>
+</table>
+</div>
+<table align="center" border="0">
+<tr>
+<td valign="top" width="180">
+<font size="-1"><b>Sistema di coordinate<br>
+                a &quot;mano sinistra&quot;.</b>
+
+</td>
+<td valign="top" width="320">
+<font size="-1">Posizione <b>&lt;1,2,3&gt;</b><br>
+I coordinati:  x = 1,  una unit&agrave; a destra,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; y = 2, due unit&agrave; in alto,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; z = 3, tre unit&agrave; avanti.
+</font>
+</td>
+<td valign="top" width="240">
+<font size="-1">Gli angoli: &quot;rotate&lt;Xrot,Yrot,Zrot&gt;&quot; <b>rotazione &egrave; in senso antiorario</b>,<br>
+ osservando nel senso positivo dell'asse!<br>
+(regola del pollice sinistro )</font>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<font size="-1"><b>Attenzione: Tutte le espressioni relative come &quot;di destra&quot;, &quot;su&quot; e &quot;a sinistra&quot;, etc.
+hanno un senso corretto soltanto<br> se la vostra camera (punto di vista = &quot;posizione&quot;) &egrave; ad una posizione negativa di z
+e indica verso l'asse positiva di z!</b></font><br>
+<font size="-1">Per principianti si &egrave; molto raccomandato usare un piano come suolo per facilitare l'orientazione nello spazio tridimensionale!</font><br>
+<br>
+ <font size="-1">Un cambio verso uno sistema di coordinate a &quot;mano destra&quot;
+  &egrave; possibile per principio
+ (q.v. mia descrizione di <b>right and left handed coordinate systems and the vectorproduct</b> a
+  &quot;<a href="../a_geo/a_geo__e.htm#9">Analytical Geometry with POV-Ray</a>!)
+ Ma a causa dei cambiamenti necessari in molti oggetti nel &quot;Insert Menu&quot; e
+ nei file d'esempio del'internet, questo non &egrave; raccomandato -   per lo meno per i novellini!</font>
+
+
+</td></p></tr></table>
+
+<hr>
+<font size="+1"><b><a name="ZahlenundVektoren">Numeri e vettori</a></b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify">
+<font size="-1">I gruppi ordinati di 2, 3, 4 o 5 valori numeriche (chiamati &quot;vettori&quot;)
+sono scritti tra parentesi separati dalle virgole:  <b>&lt; , , &gt;</b> .
+Per esempio, il punto a x = 0.2, y = 3.35 e z = 1 &egrave; rappresentato di <nobr>&lt; 0.2.3.35.1 &gt;</nobr>.
+Le coordinate sono notate nell'ordine alfabetico secondo &quot;la regola del mano di sinistra&quot; <b>&lt;x,y,z&gt; </b> o
+con due dimensioni: <b>&lt;u,v&gt; </b> ! </font><br>
+<b>Nota:</b> I vettori seguenti sono predefiniti in POV-Ray: <br>
+<!--font size="-1"--><b>o=&lt;0,0,0&gt;, x=&lt;1,0,0&gt;, y=&lt;0,1,0&gt;, z=&lt;0,0,1&gt;, u=&lt;1,0&gt;, v=&lt;0,1&gt;.</b></font><br>
+</td></tr></table>
+&nbsp;<br>
+<font size="+1"><b>Non calculare! - POV-Ray pu&ograve; calculare da solo!</b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+
+&Egrave; possibile descrivere i valori dalle <b>espressioni aritmetiche</b>, dalle variabili e dalle formule aritmetiche.<br>
+<font size="-1">Se un vettore &egrave; collegato con un'espressione aritmetica come &quot;*&quot; allora
+il funzionamento &egrave; applicato ad ogni componente del vettore:
+<nobr>&lt; 0.5,1.0,3.5 &gt;*2</nobr> = <nobr>&lt; 0.5*2,1.0*2,3.5*2 &gt;</nobr> = <nobr>&lt; 1.0.2.0.7.0 &gt;</nobr>.</font><br>
+
+I segni aritmetici di base sono: <b>+, -, *, /</b>  e parentesi rotonde.<br>
+Per la <b>radice quadrata</b> usiamo <b>sqrt( )</b> e per <b>&#960</b><b></b> = 3.14.... usiamo <b>pi</b>.<br>
+<b>Esponenti:</b> Per <b>A<sup>2</sup></b> scriviamo <b>A*A</b> o <b>pow(A,2)</b>, per <b>A<sup>3</sup></b> scriviamo <b>pow(A,3)</b>.<br>
+<b>Angoli:</b> Per la trasformazione di un angolo A nei gradi al relativo valore radiante esiste la funzione <b>radians(A)</b>.
+Il bisogno del tan(A) del cos(A) del sin(A) di funzioni la discussione dell'angolo A nel valore radiante.
+Con <b>atan2(A, B)</b> potete calcolare il arctan di A/B, questo date il valore dell'angolo nei radianti.
+Cambiando un valore R di radianti ad un valore di grado &egrave; possibile da <b>degrees(R)</b>. <br>
+<font size="-1">Con queste e con molti altre funzioni per numeri, per vettori e per sequenze di caratteri,
+anche utenti molto avanzati possono essere soddisfatti!</font></font>
+</td></p></tr></table>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtuti0.htm">parte 0</a> |
+<a href="povtuti1.htm">parte 1</a>  | <!--a href="povtuti2.htm"-->parte 2</a> |
+<a href="povtuti3.htm">parte 3</a>  | <a href="povtuti4.htm">parte 4</a> |
+<a href="povtuti5.htm">parte 5</a>  | <a href="povtuti6.htm">parte 6</a>  |
+<a href="povtuti7.htm">parte 7</a>  | <a href="povtuti8.htm">parte 8</a> |
+<a href="povtuti9.htm">parte 9</a>  | <a href="povtutia.htm">parte 10</a> |
+                                      <a href="povtutib.htm">parte 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

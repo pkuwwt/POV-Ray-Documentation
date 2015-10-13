@@ -1,0 +1,393 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Objects with POV-Ray 3.6 / 3.7 - objects and macros from my include file shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, POV-Ray, 3d graphics, raytracing descriptions, povray tutorials, beginners, advanced, geometric objects, csg, macros">
+<meta name="description" content="Defining geometric objects by macros for the raytracing program POV-Ray 3.6, povray, pov ">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a></font>
+ <hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+ </td>
+  <td align="right">
+        <a href="shapes3_30i.htm"><font size="2">Italiano </font></a>
+        <a href="shapes3_30f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_30f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes3_30f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_30d.htm"><font size="2">Deutsch </font></a>
+        <a href="shapes3_30d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="3">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000e.htm">Overview</a><br>
+<br>
+<nobr><a href="shapes3_0000e.htm">Objects in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11e.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20e.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21e.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40e.htm">Egg</b></a><br>
+-  <a href="shapes3_40e.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43e.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43e.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42e.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45e.htm">Ring_Sphere</b></a><br>
+<b>&gt;</b><!--a href="shapes3_30e.htm"--><b>Column_N</b></a><br>
+<b>&gt;</b><!--a href="shapes3_30e.htm"--><b>Column_N_AB</b></a><br>
+<b>&gt;</b><!--a href="shapes3_30e.htm"--><b>Pyramid_N</b></a><br>
+<b>&gt;</b><!--a href="shapes3_30e.htm"--><b>Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50e.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50e.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80e.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85e.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85e.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22e.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60e.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65e.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70e.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70e.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+<div align="center">
+<font size="2">Geometric object definded in my
+                <a href="../down/insert_a.htm" alt="Download" title="Download">include file &quot;shapes3.inc&quot;</a>
+                               (formerly &quot;shapes_lo.inc&quot;).</font>
+</td></tr>
+<tr>
+<td valign="top">
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="95%">
+ <tr>
+  <td valign="top">
+<br>
+<br>
+<br>
+       <table border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr30.jpg" border="0" width="120"  height="120"  alt="Column_N" title="Column_N"></td>
+       </tr></table>
+<br>
+<br>
+<br>
+<br>
+<br>
+       <table border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/Column_N_AB.jpg" border="0" width="120"  height="90"  alt="Column_N_AB" title="Column_N_AB"></td>
+       </tr></table>
+
+
+ </td>
+ <td valign="top">
+   <font size="5"><b>Column_N</b></font><br>
+   <font size="2">A column with N edges<br>
+   <i>general syntax:</i>
+   </font>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td  valign="top" bgcolor="#fefefe">
+  <pre><b>object{ Column_N( N,
+                  Radius,
+                  Height
+                ) //------
+        texture{ ... }
+      } // end of object -
+
+</b></td></pre></tr></table>
+ <font size="2">
+   <b>N</b> >2 = the number of edges,<br>
+   <b>Radius</b> = incircle radius,<br>
+   <b>Height</b> = total height in y.<br>
+   <br>
+ </font>
+
+   <font size="5"><b>Column_N_AB</b></font><br>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td  valign="top" bgcolor="#fefefe">
+  <pre><b>object{ Column_N_AB(
+          N,
+          Point_A, Point_B,
+          Radius,
+        ) //--------------
+        texture{ ... }
+      } // end of object -
+</b></td></pre></tr></table>
+
+ </td>
+ <td valign="top">
+<br>
+<br>
+<br>
+      <table border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr31.jpg" border="0" width="120"  height="120"  alt="Pyramid_N" title="Pyramid_N"></td>
+       </tr></table>
+<br>
+<br>
+<br>
+<br>
+<br>
+      <table border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/Pyramid_N_AB.jpg" border="0" width="120"  height="90"  alt="Pyramid_N_AB" title="Pyramid_N_AB"></td>
+       </tr></table>
+ </td>
+ <td valign="top">
+   <font size="5"><b>Pyramid_N</b></font><br>
+   <font size="2">A pyramid with N edges<br>
+   <i>general syntax:</i>
+   </font>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td  valign="top" bgcolor="#fefefe">
+  <pre><b>object{ Pyramid_N( N,
+                   Radius1,
+                   Radius2,
+                   Height
+                 ) //------
+        texture{ ... }
+      } // end of object --</b></td></pre></tr></table>
+<font size="2">
+   <b>N</b> >2 = the number of edges,<br>
+   <b>Radius1</b> = base incircle radius,<br>
+   <b>Radius2</b> = top incircle radius,<br>
+   <b>Height</b> = total height in y.<br>
+</font>
+
+ <font size="5"><b>Pyramid_N_AB</b></font><br>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td  valign="top" bgcolor="#fefefe">
+  <pre><b>object{ Pyramid_N_AB(
+         N,
+         Point_A, Radius_A,
+         Point_B, Radius_B,
+        ) //---------------
+        texture{ ... }
+      } // end of object --</b></td></pre></tr></table>
+
+ </td>
+</tr>
+<tr>
+<td colspan="2">
+   <i>Example:</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>#include "shapes3.inc"
+object{ Column_N( 14, 1.8, 1.30 )
+        texture{ pigment{color rgb&lt;1,1,1&gt;}
+                 finish {phong 1}
+               } // end of texture
+      } // end of object ----------------</b></font></td></pre>
+   </tr></table>
+  </font>
+
+
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>#include "shapes3.inc"
+//------------------ N,Point_A,Point_B,R
+object{ Column_N_AB(
+        8,&lt;0,0.5,-1&gt;,&lt;1.5,1.5,-0.5&gt;,0.45)
+        texture{
+           pigment{ color rgbt&lt;1,1,1,0.6&gt;}
+           normal { bumps 0.5 scale 0.005}
+           finish { phong 1}
+         } // end texture
+         scale&lt;1,1,1&gt;
+         rotate&lt;0,0,0&gt;
+         translate&lt;0,0,0&gt;
+      } // end of object ----------------</b></font></td></pre>
+   </tr></table>
+
+
+
+ </td>
+ <td colspan="2">
+    <i>Example: </i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>#include "shapes3.inc"
+object{ Pyramid_N( 14, 1.8, 1.30, 1.00 )
+        texture{ pigment{color rgb&lt;1,1,1&gt; }
+                 finish {phong 1}
+               } // end of texture
+      } // end of object ----------------</b></font></td></pre>
+   </tr></table>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>#include "shapes3.inc"
+//------------------ N,Point_A,Point_B,R
+object{ Pyramid_N_AB(
+        8,&lt;0,1,-1&gt;,0.5,&lt;1.5,1.5,-0.5&gt;,0.25)
+        texture{
+           pigment{ color rgbt&lt;1,1,1,0.6&gt;}
+           normal { bumps 0.5 scale 0.005}
+           finish { phong 1}
+         } // end texture
+         scale&lt;1,1,1&gt;
+         rotate&lt;0,0,0&gt;
+         translate&lt;0,0,0&gt;
+      } // end of object ----------------</b></font></td></pre>
+   </tr></table>
+
+
+ </td>
+ </tr>
+</table>
+
+<br>
+<hr width="90%">
+
+<table align="center" width="95%"><tr><td>
+<font size="4"><b>Macros in detail</b></font><br>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>//------------------------------------- Pyramid_N()
+#macro Pyramid_N (N, Radius1, Radius2, Height)
+//------------------------------------------------
+#local D= 0.00001;
+intersection{
+ #local Nr = 0;    // start
+ #local EndNr = N; // end
+ #while (Nr &lt; EndNr)
+ // linear prism in z-direction:
+ prism{ -2.00 ,2.00 , 5 //------------------------
+     &lt;-2.00, 0.00&gt;, &lt; 1.00,  0.00&gt;,
+     &lt; 0.00+Radius2/Radius1,1.00&gt;,
+     &lt;-2.00,1.00&gt;, &lt;-2.00, 0.00&gt;
+     //turns prism in z direction:
+     rotate&lt;-90,0,0&gt; scale&lt;1,1,-1&gt;
+     scale &lt;Radius1+Nr*D,Height+Nr*D,Radius1+Nr*D&gt;
+     rotate&lt;0,Nr * 360/EndNr,0&gt;
+   } // end of prism -----------------------------
+ #local Nr = Nr + 1;    // next Nr
+ #end // ----------------  end of loop
+} // end of intersection
+#end // ------------------------------ end of macro</b></font></td></pre>
+   </tr></table>
+<font size="3">If we start this macro with N = 1 the result will be a
+degenerated intersection out of just one prism. <br>
+So, all we have to do, is turn around the y axis these elements by 360/N
+and intersect them all:</font><br>
+   <table align="center" border="0" >
+   <tr><td colspan="2">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+       <td><img src="im/mymcr30a.jpg" border="0" width="320"  height="240"  alt="Samples one prism" title="Samples one prism"></td>
+       <td><img src="im/mymcr30b.jpg" border="0" width="320"  height="240"  alt="Samples intersection of prisms" title="Samples intersection of prisms"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr>
+       <td> <font size="1"><b>N = 1, Radius1 = 1.70, Radius2 = 1.10, Height= 1.50</b></font>
+       </td>
+       <td> <font size="1"><b>N = 11, Radius1 = 1.70, Radius2 = 1.10, Height= 1.50</b></font>
+       </td>
+  </tr></table>
+
+<p align="justify" ><font size="3">A Column with N edges is nothing else, than a truncated pyramid with
+top radius = base radius, so the following macro will work together with the above macro:
+</font></p>
+
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>//----------------------------------- Column_N()
+#macro Column_N  (N, Radius, Height )
+//---------------------------------------------
+object{ Pyramid_N (N, Radius, Radius, Height )}
+#end //--------------------------- end of macro</b></font></td></pre>
+   </tr></table>
+
+   <table align="center" border="0" >
+   <tr><td colspan="2">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+       <td><img src="im/mymcr30c.jpg" border="0" width="320"  height="240"  alt="Samples column" title="Samples column"></td>
+       <td><img src="im/mymcr30d.jpg" border="0" width="320"  height="240"  alt="Samples column" title="Samples column"></td>
+          </tr></table>
+     </td>
+   </tr>
+   <tr>
+       <td> <font size="1"><b>N = 3, Radius = 1.00, Height= 0.50 </b></font></td>
+       <td> <font size="1"><b>N = 14, Radius = 1.80,  Height= 1.30 </b></font></td>
+  </tr>
+   <tr><td colspan="2">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+       <td><img src="im/mymcr30e.jpg" border="0" width="320"  height="240"  alt="Samples column" title="Samples column"></td>
+       <td><img src="im/mymcr30f.jpg" border="0" width="320"  height="240"  alt="Samples column" title="Samples column"></td>
+          </tr></table>
+     </td>
+   </tr>
+   <tr>
+       <td> <font size="1"><b>N = 7, Radius = 2.00,  Height= 1.00 </b></font></td>
+       <td> <font size="1"><b>N = 7, Radius1 = 2.00, Height= 1.00 </b></font></td>
+  </tr>
+  </table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

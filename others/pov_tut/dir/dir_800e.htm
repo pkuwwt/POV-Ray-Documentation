@@ -1,0 +1,162 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, Language Directives">
+<meta name="description" content="tutorial on Language Directives with POV-Ray - part I">
+<title>Language Directives with POV-Ray - part I, english</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Conditional Statements</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="dir_800i.htm"><font size="2">Italiano </font></a>
+        <a href="dir_800i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="dir_800f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="dir_800f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="dir_800d.htm"><font size="2">Deutsch </font></a>
+        <a href="dir_800d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="dir_000e.htm">Conditional</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="dir_000e.htm">Statements</b></a><br>
+<br>
+ &nbsp; <b>Branching</b></a> <br>
+ &nbsp; <a href="dir_000e.htm">#if(...) ... #else ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100e.htm">in loops</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_200e.htm">in macros</b></a> <br>
+ &nbsp; &nbsp; - <a href="dir_300e.htm">in animations</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_400e.htm">turning on/off of parts</b></a> <br>
+ &nbsp; <a href="dir_000e.htm">#switch(...) #case(..) ...</b></a> <br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="dir_000e.htm">#range(..) ... #end</b></a> <br>
+ &nbsp; &nbsp; - <a href="dir_700e.htm">selection by tables</b></a> <br>
+<br>
+ &nbsp; <b>Check for Existence</b></a> <br>
+ &nbsp; &nbsp;&gt; <!--a href="dir_800e.htm"--><b>#ifdef(...) #ifndef(...)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_810e.htm">Check in include files</b></a> <br>
+<nobr> &nbsp; &nbsp; -  <a href="dir_820e.htm">Defaults in include files</b></nobr></a> <br>
+<br>
+ &nbsp; <b>Loops</b></a><br>
+<nobr> &nbsp;<a href="dir_900e.htm">Prechecked, Postchecked,</b></a></nobr><br>
+<nobr> &nbsp;<a href="dir_900e.htm">Count-controlled, Early-Exit</b></a></nobr><br>
+ &nbsp; &nbsp;&nbsp;<a href="dir_900e.htm">#while(...)... #end</b></a> <br>
+ &nbsp; &nbsp;&nbsp;<a href="dir_900e.htm">#for(...)... #end</b></a> <br>
+ &nbsp; &nbsp; - Samples: <br>
+<nobr> &nbsp; &nbsp; - <a href="../loop/povlup1e.htm" target="_new">Loops with POV-Ray</a></nobr><br>
+ &nbsp; &nbsp; - <a href="../sinus/povsi3e1.htm" target="_new">Loops, Sine, Cosine</a><br>
+ &nbsp; &nbsp; - <a href="../random/random1e.htm" target="_new">Random with POV-Ray</a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h2 align="center">Branching by Check for Existance</h2>
+
+<table align="center" width="95%" border="0"><tr><td>
+<p align="justify">In the scenery description language (SDL) of POV-Ray there are structures,
+which allow us to realizise conditional statements depending on weather a variable is declared or not:
+<br>
+
+
+ <br>
+</p></td></tr></table>
+
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><font size="-1"><i>Syntax in POV-Ray:</i></font><br>
+   </td><br>
+  <td width="50%">&nbsp;
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" valign="top">
+<pre><b>#ifdef (<i></b>Variable</i><b>)</b>
+ ... <i>statement</i><b>
+#else </b>// (optional)
+ ... <i>statement2</i><b>
+#end </b></td></pre>
+  <td width="50%" valign="top">
+<b>Checks if a variable is declared.</b><br>
+<font size="-1">This declaration can be done <br>
+ global by  &quot;#declare&quot; as well as also <br>
+local by &quot;#local&quot; .</font>
+ </tr>
+ <tr>
+  <td width="50%" valign="top"><font size="-2"></font>
+<pre><b>#ifndef (<i></b>Variable</i><b>)</b>
+ ... <i>statement</i><b>
+#else </b>// (optional)
+ ... <i>statement2</i><b>
+#end </b></td></pre>
+  <td width="50%" valign="top">
+<b>Checks if a variable is not declared</b>
+ </tr>
+ <tr>
+  <td width="50%" valign="top"><font size="-2"></font>
+<pre><b>#undef (<i></b>Variable</i><b>)</b>
+</td></pre>
+  <td width="50%" valign="top">
+<b>Destroys a former declared variable.</b><br>
+<font size="-1">If there exist multiple local declared vrsions of a variable, the
+most recent and most local one will be destroyed (deleted), all variables with the same name at higher
+levels (declared by &quot;#declare&quot; or &quot;#local&quot;) will still exist.
+ </font>
+ </tr>
+ </table>
+</div>
+<br>
+
+</td></tr></table> <!-- global-->
+
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align=right  width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

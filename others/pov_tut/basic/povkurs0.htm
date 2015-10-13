@@ -1,0 +1,308 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, pov, POV-Ray, POV-Ray 3.6, Raytracing-Beschreibung, POV-Ray-Anleitungen, Einf&uuml;rung in POV-Ray, Computergraphik, 3D-Grafik, 3D-Graphik">
+<meta name="description" content="&Uuml;bersicht &uuml;ber den Raytracer POV-Ray - eine Einf&uuml;hrung in die Beschreibungssprache">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=850,height=665");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+<title>POV-Ray Anf&auml;ngerkurs Teil 0</title>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<!-- header -->
+
+ <table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+  <h6><nobr>Einf&uuml;hrung in die Beschreibungssprache des Raytracers POV-Ray</nobr>
+  &nbsp; <nobr> &nbsp; &nbsp; &nbsp; - Seite 0 -</nobr><br>
+ von Friedrich A. Lohm&uuml;ller
+ <h2 align="center">
+   <!--b><nobr>Die Beschreibungssprache</nobr> <nobr>des Raytracers POV-Ray</b></nobr></b--->
+  </td></h2></h6>
+<td align="right">
+        <a href="povtuto0.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povtuto0.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti0.htm"><font size="2">Italiano</font></a>
+        <a href="povtuti0.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povtutf0.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povtutf0.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+   </td>
+</tr></table>
+<hr size="4" width="95%" align="center">
+<a name="Index"></a>
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ <b>&gt;</b>&nbsp;</font><!--a href="povkurs0.htm"--><b>POV-Ray Einf&uuml;hrung</b></a><font size="2"><br>
+ &nbsp; &nbsp;<!--a href="povkurs0.htm"--><b>INHALT&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povkurs1.htm">Arbeiten mit POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povkurs2.htm">Grunds&auml;tzliches zum</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm">Erstellen von Szenentexten.</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#xyzKoordinaten">R&auml;umliche Koordinaten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#ZahlenundVektoren">Zahlen und Vektoren</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povkurs3.htm">Szenen-Aufbau</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; Ein Grundbeispiel.<br>
+<nobr>&nbsp;<b> 4.</b> <a href="povkurs4.htm">Header einer Szene</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; #include-Dateien<br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povkurs5.htm">Geometrische Grundobjekte</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; und andere K&ouml;rper</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povkurs6.htm">Transformationen</b></a></nobr> <br>
+<nobr> &nbsp; &nbsp; &nbsp; Streckung, Drehung, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Verschiebung u. andere.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs6.htm#CSG">CSG</b></a>: </b>union, </nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povkurs7.htm">Farben und Oberfl&auml;chen</b></nobr></a>
+<nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish </b></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povkurs8.htm">#declare, #local, #macro</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Platzhalter, flexible Objekte.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povkurs9.htm">#while</b></a> Schleifen</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Grundbeispiele.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povkursa.htm">#include</b></a>, Include-Dateien.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Wiederverwendbare Objekte.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povkursb.htm">Rationelles Arbeiten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Geschwindigkeit, Flexibilit&auml;t,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; modulares Arbeiten</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.1 auf 3.5/3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.5/3.6 auf 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkursb.htm#version37">POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insrtd_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<div align="center">
+<p align="center"><font size="4">
+   <b><nobr>Eine Einf&uuml;hrung in die Szenenbeschreibungssprache (SDL)</nobr><br><nobr>von POV-Ray</b><nobr></font></p>
+
+   <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/cgpov_g_im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/cgpov_g_s.jpg" border="0" width="400" height="300"
+                   alt="Klicken Sie f&uuml;r ein gr&ouml;&szlig;eres Beispiel des POV-Ray Demos" titel="Klicken Sie f&uuml;r ein gr&ouml;&szlig;eres Beispiel des POV-Ray Demos"></a></td>
+            </tr></table>
+</div>
+<br>
+
+<table align="center" border="0" cellspacing="2" cellpadding="0" width="90%">
+<tr>
+ <td width="30" align="center" valign="top">
+    <b>1. &nbsp;</b></td>
+ <td><a href="povkurs1.htm">
+    Programm verwenden:</b></a>
+    <font size="-1"><b>Komfortable Textschablonen aus dem<br> <nobr>&quot;Insert Menu Addon&quot;</nobr>.
+    Aufbau einer Szene, Rendern des Bildes, Editier-M&ouml;glichkeiten.</b></font></td>
+</tr>
+<tr>
+ <td width="30" align="center" valign="top">
+    <b>2. &nbsp;</b></td>
+ <td><a href="povkurs2.htm#Grundsatz">
+    Grunds&auml;tzliches zum Schreiben von Texten.</b></a>
+    <font size="-1"><nobr>&quot;//&quot;</nobr> und <nobr>&quot;/*...*/&quot;.</nobr></b><br>
+    <b>xyz - R&auml;umliche Koordinaten,
+     Zahlen, Vektoren <font size="-2">(&lt; , , &gt;)</font>, Berechnungen.</font></b></a>
+    </td>
+
+</tr>
+<tr>
+ <td width="30" align="center" valign="top">
+  <b>3. &nbsp;</b></td>
+ <td><a href="povkurs3.htm#WasGehoerZuEinerSzene">Was geh&ouml;rt zu einer Szene? </a><br>
+     <font size="-1">Ein Grundbeispiel einer Szene.</font></b>
+     </b></td>
+</tr>
+<tr>
+ <td width="30" align="center" valign="top">
+  <b>4. &nbsp;</b></td>
+ <td><a href="povkurs4.htm">Die Header einer Szene</a>: </b>
+     <a href="povkurs4.htm#includeDateien">#include-Dateien</a></b>,
+     <a href="povkurs4.htm#camera">camera</a></b>,
+     <a href="povkurs4.htm#light_source">light_source.</a></b></td>
+</tr>
+<tr>
+ <td width="30" align="center" valign="top">
+  <b>5. &nbsp;</b></td>
+ <td><a href="povkurs5.htm">Grundobjekte</b></a><b>
+     <font size="-1">(sphere, box, cylinder, cone, torus, plane)<br>
+      u. andere K&ouml;rper (aus shapes.inc, "height_field", "text").</font></td>
+</tr>
+<tr>
+ <td width="30" align="center" valign="top">
+  <b>6.</b></td>
+ <td><a href="povkurs6.htm#Transformationen">Transformationen</b></a>
+     <b><font size="-1">(Ma&szlig;stab, Rotation, Verschiebung und andere) u.</font></b><br>
+     <a href="povkurs6.htm#CSG"> CSG</b></a><b><font size="-1">- union (merge); difference; intersection. </font></b></td>
+</tr>
+<tr>
+ <td width="30" align="center" valign="top">
+  <b>7. </b></td>
+ <td><a href="povkurs7.htm#KoerperOberfaechen">Farben und Oberfl&auml;chen</b></a>
+     <font size="-1"><b> (texture, pigment, normal, finish)</b></font></td>
+</tr>
+<tr>
+ <td width="30" align="center" valign="top">
+     <b> 8. </b></td>
+ <td><a href="povkurs8.htm">#declare, #local</b></a><b>, </b>
+     <a href="povkurs8.htm#macro">#macro</b></a><b>, </b>
+     <font size="-1"><b>Abk&uuml;rzungen, Platzhalter und flexible Objekte.</font></b></td>
+<tr>
+<tr>
+ <td width="30" align="center" valign="top">
+   <b>9.</b></td>
+ <td><a href="povkurs9.htm">#while</b></a><b>
+     <font size="-1"> - Massenproduktion deluxe mit Schleifen</font><b></td>
+</tr>
+<tr>
+ <td width="30" align="center" valign="top">
+   <b>10. </b></td>
+ <td><a href="povkursa.htm#include">#include</b></a>.
+     <font size="-1"><b>Include-Dateien<br>
+      Wiederverwendbare Objekte - nicht alles neu konstruieren!</font></b></td>
+<tr>
+<tr>
+ <td width="30" align="center" valign="top">
+   <b>11.</b></td>
+ <td><a href="povkursb.htm">
+     Tipps f&uuml;r rationelles Arbeiten</b></a><b>,
+     <font size="-1"> Geschwindigkeit, flexibel bleiben, <br>
+     &Uuml;berblick behalten, d.h. modular arbeiten -&gt;# declare <br>
+     <b>Anpassung von POV-Ray 3.1 Szenen-Dateien an POV-Ray Version 3.5/3.6</b><br>
+     <b>Anpassung von POV-Ray 3.5/3.6 Szenen-Dateien an POV-Ray 3.7</b></b><br>
+     <b>Verwendung von POV-Ray Version 3.6.2 und 3.7 mit Windows Vista</b></font></td>
+</tr>
+</table>
+
+</h3>
+<hr>
+<table border="0" align="center" width="98%"><tr><td>
+<h6 align="justify">
+Die folgende kurze Einf&uuml;hrung in <a href="http://www.povray.org">POV-Ray</b></a>,
+ dem <b>P</b>ersistance <b>O</b>f <b>V</b>ision <b>Ray</b>traying Programm,<br>
+ beabsichtigt nicht vollst&auml;ndig zu sein!<br>
+Sie soll nur eine schnelle Einstiegshilfe in die Grundregeln f&uuml;r Anf&auml;nger darstellen.<br>
+Zu einer detailierten Darstellung einzelner Themen sei auf meine anderen
+<a href="../pov__ger.htm">POV-Ray-Tutorials</a> verwiesen. <br>
+Der fortgeschrittene Raytracer-Anwender sollte unbedingt die originale englischsprachige
+Dokumentation zu Hilfe nehmen. Ein starkes Motiv sein gelerntes
+<a href="povkurse.htm" target="_new">Englisch</a> mal richtig anzuwenden.
+Vieles l&auml;&szlig;t sich indes auch mit nur m&auml;&szlig;igen Kenntnissen der englischen Sprache verstehen!<br>
+Unbedingt empfehlenswert ist es, alle mit dem Programm gelieferten Beispiele einmal (zumindest
+in klein!) rechnen zu lassen und sich die Texte der Szenenbeschreibungen einmal genau anzusehen!
+F&uuml;r den Beginn tieferen Kennenlernens sind besonders die Dateien im POV-Ray-Verzeichnis
+&quot;scenes&quot; eine Pflichtlekt&uuml;re! <br>
+F&uuml;r Verbesserungsvorschl&auml;ge oder R&uuml;ckmeldung (email) bin ich jederzeit dankbar!<br>
+Besuchen Sie unsere Homepage <a href="http://www.f-lohmueller.de/index_d.htm">www.f-lohmueller.de</a> f&uuml;r
+weitere Anleitungen und Inspirationen. <br>
+<br>
+      &nbsp; <font color="#CC0000"><b>NEU:</b></font> 08. Nov. 2013: <font color="#CC0000"><b>POV-Ray 3.7.0 ist da!</b></font><br>
+      &nbsp; Details: <a href="http://www.povray.org/download">http://www.povray.org/download</a>.<br>
+<nobr>&nbsp; <font color="#CC0000"><b>Update:</b></font> 16. Nov. 2014: <font color="#CC0000"><b>POV-Ray 3.7.0 Unofficial for Mac</b></nobr><br>
+      &nbsp; Details: <a href="http://megapov.inetart.net/povrayunofficial_mac/">http://megapov.inetart.net/povrayunofficial_mac/</a>.<br>
+      &nbsp; <font color="#CC0000"><b>Update:</b></font> 10. Okt. 2014: <a href="down/shapes3.inc">shapes3.inc</a> <b></b>.</font><br>
+     &nbsp; Update meines <a href="../down/insert_a.htm" target="_new">Insert Menu Add-on f&uuml;r POV-Ray 3.7</a> 20-Nov-2014<br>
+Wesentliche Neuerungen empfehlen die Verwendung von POV-Ray 3.7:<br>
+Die F&auml;higkeit zum <b>SMP (Symmetric multiprocessing)</b> mit den heute g&auml;ngigen <b>Multicore-Prozessoren beschleunigt den Renderprozess</b> stark
+( z.B. Intel i7 -> 4 cores -> 8 threads parallel m&ouml;glich -> ca. 8 mal schneller! ).<br>
+Daneben besitzt POV-Ray 3.7 ein stark <b>&uuml;berarbeitetes 'Insert Menu'</b>, welches jetzt die wichtigsten Teile meines bisherigen
+<nobr>'Insert Menu Add-on'</nobr> f&uuml;r POV-Ray 3.6.2 enth&auml;lt. <br>
+Neu ist u.a. die <b>For-Schleife</b> (#for(COUNTER,START,END,STEP) .... #end), diverse neue Musterfunktionen sowie die M&ouml;glichkeit
+Bilder sowohl in <b>JPEG-Format</b> (platzsparend!) als auch im .hdr-Format zu erzeugen. Ferner kann man
+jetzt Szenen durch HDRI Umgebungs-Bilder indirekt beleuchten lassen (<a href="http://www.f-lohmueller.de/pov_tut/backgrnd/p_sky10d.htm">HDRI environment mapping</a>).
+<br>
+Meine bisherige Include-Datei 'shapes_lo.inc' wird mit POV-Ray 3.7.0 durch die verbesserte Datei 'shapes3.inc' ersetzt.
+Diese Datei und die zugeh&ouml;rigen Schablonentexte des Insert Menu k&ouml;nnen auf meiner <a href="../down/insrtd_a.htm">Download-Seite</a> bereits jetzt heruntergeladen
+werden.
+</h6>
+
+<h5 align="right"><b>Viel Spa&szlig; mit POV-Ray!</b><br>
+  &nbsp; <b>Friedrich A. Lohm&uuml;ller</b><br>
+<font size="-1">04. Jan. 2014</font></h5>
+</td></tr></table>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><!--a href="povkurs0.htm"-->Teil 0</a> |
+<a href="povkurs1.htm">Teil 1</a>  | <b><a href="povkurs2.htm">Teil 2</a> |
+<a href="povkurs3.htm">Teil 3</a>  | <a href="povkurs4.htm">Teil 4</a> |
+<a href="povkurs5.htm">Teil 5</a>  | <a href="povkurs6.htm">Teil 6</a> |
+<a href="povkurs7.htm">Teil 7</a>  | <a href="povkurs8.htm">Teil 8</a> |
+<a href="povkurs9.htm">Teil 9</a>  | <a href="povkursa.htm">Teil 10</a> |
+                                     <a href="povkursb.htm">Teil 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+ <td align="right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

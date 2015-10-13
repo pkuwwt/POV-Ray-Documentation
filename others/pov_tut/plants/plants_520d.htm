@@ -1,0 +1,258 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="POV-Ray Anleitungen - Pflanzen mit POV-Ray">
+<meta name="keywords" content=" Raytracing, POV, POVRAY, POV-Ray 3.6, Rendern, 3D-Graphik, Computergraphik, Grafik, Tutorial, Anleitung, Beschreibungen, Beispiele, Pflanzen mit POV-Ray">
+<title>Pflanzen mit POV-Ray - Texturen f&uuml;r Arbaro</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=695");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top">
+     <font size="1"><nobr>POV-Ray Raytracer</nobr> <nobr>Beschreibungen und Beispiele</nobr>
+                    <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font><a name="top"></a>
+ <hr size="3">
+   <div align="center">
+      <font size="5">&nbsp; &nbsp;Pflanzen mit POV-Ray</font>
+   </div>
+ </td>
+ <td align="right">
+        <a href="plants_520e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="plants_520e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="plants_520i.htm"><font size="2">Italiano</font></a>
+        <a href="plants_520i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="plants_520f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="plants_520f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr> -  <a href="plants_00d.htm"><font size="+1">Pflanzen mit POV-Ray</font></b></a></nobr><br>
+<!--&nbsp;&nbsp; -  <a href="plants_200d.htm">Fibonacci + Random</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_300d.htm">Gras-Makros</b></a><br-->
+&nbsp;&nbsp; -  <a href="plants_400d.htm">B&auml;ume mit POV-Tree</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_410d.htm">POV-Tree Baum-Beispiele</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_420d.htm">Texturen f&uuml;r POV-Tree</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_500d.htm">B&auml;ume mit Arbaro</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_510d.htm">Arbaro Baum-Beispiele</b></a><br>
+&nbsp;&nbsp;&nbsp; <b>&gt;</b> <!--a href="plants_520d.htm"--><b>Texturen f&uuml;r Arbaro</b></a><br>
+<!--&nbsp;&nbsp; -  <a href="plants_600e.htm">Leaves + Flowers</b></a><br-->
+<br>
+&nbsp;&nbsp; -  <a href="plants_050d.htm">Andere Planzenbeispiele</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../objects/obj_400d.htm">Fertig-Objekte Pflanzen</b></a><br>
+&nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="arbaro/im/ATree_sassafras_100s.jpg" width="80" height="80" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="5"><nobr>&nbsp;Texturen f&uuml;r Arbaro</font> &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="2">
+   <p align="justify">In den Dateien von Arbaro f&uuml;r die meshes der Baumobjekte (z.B. hier: <b>sassafras_m.inc</b>)<br>
+  sind alle meshes ohne jegliche Texturen deklariert!<br>
+   <b><i>Hinzuf&uuml;gen von Texturen:</i></b>
+ <table border="2"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+ <tr>
+ <td valign="top" bgcolor="#ffffff">
+<pre><b>// tree textures:  --------------------------------
+#declare Stem_Texture =
+texture{ pigment{ color rgb&lt; 0.75, 0.5, 0.30&gt;*0.25}
+        normal{bumps 0.75 scale&lt;0.025,0.075,0.025&gt;}
+         finish { phong 0.2 }
+       } // end of texture
+#declare Leaves_Texture_1 =
+texture{ pigment{ color rgbf&lt;0.2,0.5,0, 0.1&gt;*0.75}
+         normal { bumps 0.15 scale 0.05 }
+         finish { phong 1 }
+       } // end of texture
+#declare Leaves_Texture_2 =
+texture{ pigment{ color rgbf&lt;0.2,0.5,0, 0.2&gt;*0.25}
+         normal { bumps 0.15 scale 0.05 }
+         finish { phong 0.2 }
+       } // end of texture
+//-------------------------------------------------
+#include "sassafras_m.inc"
+//-------------------------------------------------
+// tree with leaves
+union{ object{ sassafras_13_stems
+               texture{ Stem_Texture }
+             } //---------------------
+       object{ sassafras_13_leaves
+               double_illuminate
+               texture{ Leaves_Texture_1 }
+               interior_texture{ Leaves_Texture_2 }
+             } //---------------------
+       rotate &lt;0,90,0&gt;
+       tanslate &lt;0,0,0&gt;
+     } // end of union
+
+// tree without leaves
+object{ sassafras_13_stems
+        texture{ Stem_Texture }
+        scale 0.7
+        rotate &lt;0,45,0&gt;
+        translate &lt;11,0,0&gt;
+      } //------------------------  </b></td></tr></pre>
+ </table>
+
+</td>
+</tr>
+<tr>
+<td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im/sassafras_m000.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            <img src="arbaro/im/sassafras_m000.jpg" width="400" height="400" border="0" hspace="0" vspace="0"
+             title="Click for higher resolution!"></a></td>
+    </tr></table>
+
+     <font size="1"><i>Baumbeispiel 'sassafras' mit Texturen.</i></font><br>
+<font size="2" align="center"><b>Szenenbeschreibung f&uuml;r POV-Ray:</b><br>
+ <a href="arbaro/pov/sassafras_m000.pov">&quot;sassafras_m000.pov&quot;</a> und
+ <a href="arbaro/pov/sassafras_m.inc">&quot;sassafras_m.inc&quot;</a> (25.4 MB)</font>
+
+</td>
+</tr>
+<tr>
+<td>
+  Mit realistischem Himmel und Boden:
+</td>
+</tr>
+<tr>
+<td>
+
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im/ATree_sassafras_m100.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            <img src="arbaro/im/ATree_sassafras_m100.jpg" width="400" height="400" border="0" hspace="0" vspace="0"
+             title="Click for higher resolution!"></a></td>
+    </tr></table>
+
+     <font size="1"><i>Baumbeispiel 'sassafras' mit Texturen in einer 'realen' Welt.</i></font><br>
+<font size="2" align="center"><b>Szenenbeschreibung f&uuml;r POV-Ray:</b><br>
+ <a href="arbaro/pov/ATree_sassafras_m100.pov">&quot;ATree_sassafras_m100.pov&quot;</a> und
+ <a href="arbaro/pov/sassafras_m.inc">&quot;sassafras_m.inc&quot;</a> (25.4 MB)</font>
+</td>
+</tr>
+<tr>
+<td>
+ <table border="2"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+ <tr>
+ <td valign="top" bgcolor="#ffffff">
+<pre><b>// automn leaves:
+#declare Leaves_Texture_1 =
+texture{ pigment{ bozo
+                  color_map{
+                  [0.0 color rgbf&lt;1,0.1,0,0.2&gt;*0.7]
+                  [1.0 color rgbf&lt;1,0.7,0, 0.2&gt;]
+                           } // color_map
+                }  // pigment
+         normal { bumps 0.15 scale 0.05 }
+         finish { phong 1 reflection 0.00}
+       } // end of texture
+//-------------------------------------------------
+#declare Leaves_Texture_2 =
+texture{ pigment{ color rgbf&lt;1,0.5,0.0,0.4&gt;*0.5}
+         normal { bumps 0.15 scale 0.05 }
+         finish { phong 0.2 }
+       } // end of texture
+//-------------------------------------------------</b></td></tr></pre>
+ </table>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im/ATree_sassafras_m400.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            <img src="arbaro/im/ATree_sassafras_m400.jpg" width="400" height="400" border="0" hspace="0" vspace="0"
+             title="Click for higher resolution!"></a></td>
+    </tr></table>
+
+     <font size="1"><i>Baumbeispiel 'sassafras' mit Herbst-Texturen.</i></font><br>
+<font size="2" align="center"><b>Szenenbeschreibung f&uuml;r POV-Ray:</b><br>
+ <a href="arbaro/pov/ATree_sassafras_m400.pov">&quot;ATree_sassafras_m400.pov&quot;</a> und
+ <a href="arbaro/pov/sassafras_m.inc">&quot;sassafras_m.inc&quot;</a> (25.4 MB)</font>
+
+
+
+ </td>
+</tr>
+<tr>
+<td>
+<!--div align="center"><b>
+<a href="plants_00d.htm">0</a> |
+<a href="plants_100d.htm">1</a>  | <a href="plants_200d.htm">2</a> | <a href="plants_300d.htm">3</a> |
+<a href="plants_400d.htm">4</a> | <a href="plants_500d.htm">5</a> | <a href="plants_600d.htm">6</a> |
+<a href="plants_700d.htm">7</a> | <a href="plants_800d.htm">8</a></b></div-->
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></h5>
+</tr>
+<tr>
+<td valign="bottom" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

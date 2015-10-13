@@ -1,0 +1,300 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Funzioni matematiche in sistemi di coordinate con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Funzioni mmatematiche in sistemi di coordinate con POV-Ray">
+<meta name="keywords" content="Funzioni mmatematiche, Carta quadrettata, reticoli, assi di coordinate, sistemi di coordinate, funzioni matematiche, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=660,height=670");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_500e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="math_500e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="math_500f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="math_500f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_500d.htm"><font size="2">Deutsch</font></a>
+        <a href="math_500d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000i.htm"><nobr>Sistemi di coordinate</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000i.htm"><nobr>e funzioni in 2D</nobr></b></a><br>
+<br>
+      &nbsp; - <a href="math_100i.htm">Carta quadrettata</b></a><br>
+<nobr>&nbsp; - <a href="math_200i.htm">Sistemi di coordinate</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200i.htm">con gli assi</b></a><br>
+<nobr>&nbsp; -  <a href="math_300i.htm">Macro per un reticolo</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300i.htm">con due livelli</b></a><br>
+&nbsp; <b>&gt;</b>  <!--a href="math_500i.htm"--><b>Funzioni 2D</b></a><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="math_500i.htm"--><b>Esempio</b></a><br>
+<nobr>&nbsp; -  <a href="math_600i.htm">Funzioni matematiche</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600i.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2" width="80%" align="center"><!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+
+<table align="center" cellspacing="5"  cellpadding="15">
+<tr>
+ <td nowrap colspan="2">
+ <font size="5"><b>Funzioni matematiche in sistemi di coordinate</b></font><br>
+  Come si fa un grafico di una funzione matematica con POV-Ray<br>
+ <font size="-1">Oggetti:&nbsp;&nbsp;&nbsp; &quot;plane, cylinder, cone, sphere &quot;.<br>
+     Metodi: &quot;color_map, layered textures,  #macro, #while&quot;</font>
+  </td>
+</tr>
+<tr>
+
+ <td valign="top" width="66%">
+ <h5>Per la visualizzazione di una funzione matematica prendiamo un piano quadrettato
+     con gli assi 2D come lo sfondo.
+     Per ottenere un campo visivo quadratico dobbiamo usare una risoluzione come
+<pre>[600x600, No AA, mosaic]
+width="600"
+height="60" 0
+Antialias=Off
++SP16
++B1024</pre>
+ nel file <b>quickres.ini</b> di POV-Ray.<br>
+Alternativa: Possiamo aggiungere la lina <pre>+h600 +w600</pre>
+nella linea di comando nel editore di POV-Ray. </h5>
+ <!-- sub -->
+ <table cellpadding="10"><tr><td colspan="1" valign="top">
+Per il grafico di una funzione come &quot;<b>f(x) = 0.5*x + 3</b>&quot; usiamo sfere piccole
+ collegato insieme con un while loop:
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>union{
+ #declare X   = -5.5; // start X
+ #declare EndX = 5.5; // end   X
+ #while ( X &lt; EndX )
+
+  sphere{ &lt;0,0,0&gt;,0.025
+          pigment{ color rgb&lt;1,0.65,0&gt;}
+          translate&lt; X,0.5*X+3, 0&gt;}
+
+ #declare X = X + 0.002;  // next Nr
+ #end // --------------- end of loop
+} // end of union
+//------------------------------------ end</b></td></pre></tr></table>
+<b><i>Attenzione:</i> <br>
+<font size="-1">Si deve scrivere &quot;X&quot; (lettera  maiuscola!), e non &quot;x&quot;,<br>
+               anche &quot;Y&quot; invece di &quot;y&quot; e &quot;Z&quot; invece di &quot;z&quot;</b><br>
+               Molte lettere minuscole sono parole chiave in POV-Ray:<br>
+               &nbsp;&nbsp;  <b>x = &lt;1,0,0;&gt;, y = &lt;0,1,0;&gt;, z = &lt;0,0,1;&gt;</b> !!!! <br>
+               Si scrive anche &quot;<b>X*X</b>&quot; per &quot;<b>x<sup>2</sup></b>&quot;,
+               e &quot;<b>(X-2)*(X-2)*(X-2)</b>&quot; per &quot;<b>(x-2)<sup>3</sup></b>&quot;.&nbsp;&nbsp;</font>
+<br>
+<br>
+<font size="-1"><b>Un alto problema:</b> Si usiamo espressioni dove si fa una divisione con la variabile nel denominatore
+dobbiamo evitare un <b>division by zero error</b>.
+Questo si pu&ograve; fare con il commando '#if', nonostante il non &egrave; necessario perche POV-Ray
+&egrave; in grado di riconoscere un denominatore con il valore zero.<br>
+</font>Esempio:
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>union{
+ #declare X   = -5.5; // start X
+ #declare EndX = 5.5; // end   X
+ #while ( X &lt; EndX )
+
+  #if ( (X - 2 != 0) )
+  sphere{ &lt;0,0,0&gt;,0.025
+          pigment{ color rgb&lt;1,0.65,0&gt; }
+          translate&lt; X, 1/4*3/(X-2)-3, 0&gt;}
+  #end
+ #declare X = X + 0.001;  // next Nr
+#end // --------------- end of loop
+} // end of union
+//--------------------------------------- end</b></td></pre></tr></table>
+<font size="-1">&nbsp; &nbsp; &nbsp; &nbsp; <b>'!=' significa: 'no uguale' !</b> </font>
+</td></tr></table>
+ <!-- sub -->
+
+
+<h5 align="center">Esempi di funzioni matematiche<br>
+ <b>Download degli archivi per POV-Ray qui:</b><br>
+Esempio 1: <a href="pov/povfun1.pov">povfun1.pov</a>,
+Esempio 2: <a href="pov/povfun2.pov">povfun1.pov</a>,<br>
+Esempio 3: <a href="pov/povfun3.pov">povfun1.pov</a>,
+Esempio 4: <a href="pov/povfun4.pov">povfun1.pov</a>,<br>
+Esempio 5: <a href="pov/povfun5.pov">povfun1.pov</a>,
+Esempio 6: <a href="pov/povfun6.pov">povfun1.pov</a>.<br>
+<br>
+Pi&ugrave; esempi si puo la sezzione <b>&quot;math functions&quot;</b><br>
+ nel mio <a href="../down/inserti_a.htm">&quot;Insert Menu Add-on&quot;.</b></a>
+</h5>
+
+<table width="90%" align="center"><tr><td>
+Pi&ugrave; di detaigli qui <a href="math_600i.htm" target="_new"><nobr><b>Funzioni matematiche in POV-Ray</b></nobr></a>:
+</td> </tr></table>
+
+
+   <!--sub2 -->
+
+</td> <!-- row2 -->
+<td   valign="top">
+<div align="center">Esempi</div><br>
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/povfun1i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/povfun1t.jpg" border="0" width="200" height="200"
+     alt="Sample mathematical functions 700x700" title="Sample mathematical functions 700x700"></a></td>
+  </tr>
+ </table>
+ <div align="center"><font size="-1">Download questo file de la scena <br> per POV-Ray:
+ <a href="pov/povfun1.txt"><i>povfun1.txt</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/povfun2i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/povfun2t.jpg" border="0" width="200" height="200"
+     alt="Sample mathematical functions 700x700" title="Sample mathematical functions 700x700"></a></td>
+  </tr>
+ </table>
+  <div align="center"><font size="-1">Download questo file de la scena <br> per POV-Ray:
+ <a href="pov/povfun2.txt"><i>povfun2.txt</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/povfun3i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/povfun3t.jpg" border="0" width="200" height="200"
+     alt="Sample mathematical functions 700x700" title="Sample mathematical functions 700x700"></a></td>
+  </tr>
+ </table>
+ <div align="center"><font size="-1">Download questo file de la scena <br> per POV-Ray:
+ <a href="pov/povfun3.txt"><i>povfun3.txt</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/povfun4i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/povfun4t.jpg" border="0" width="200" height="200"
+     alt="Sample mathematical functions 700x700" title="Sample mathematical functions 700x700"></a></td>
+  </tr>
+ </table>
+ <div align="center"><font size="-1">Download questo file de la scena <br> per POV-Ray:
+ <a href="pov/povfun4.txt"><i>povfun4.txt</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/povfun5i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/povfun5t.jpg" border="0" width="200" height="200"
+     alt="Sample mathematical functions 700x700" title="Sample mathematical functions 700x700"></a></td>
+  </tr>
+ </table>
+ <div align="center"><font size="-1">Download questo file de la scena <br> per POV-Ray:
+ <a href="pov/povfun5.txt"><i>povfun5.txt</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/povfun6i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/povfun6t.jpg" border="0" width="200" height="200"
+     alt="Sample mathematical functions 700x700" title="Sample mathematical functions 700x700"></a></td>
+  </tr>
+ </table>
+ <div align="center"><font size="-1">Download questo file de la scena <br> per POV-Ray:
+ <a href="pov/povfun6.txt"><i>povfun6.txt</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+</td></tr></table>  <!--inner>
+
+
+</td>
+</tr>
+</table>  <!--main>
+
+</div>
+
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

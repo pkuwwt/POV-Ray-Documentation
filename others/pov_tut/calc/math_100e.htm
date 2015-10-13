@@ -1,0 +1,177 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="nofollow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="keywords" content="pov, povray, raytracing, POV-Ray, 3d graphics, raytracing descriptions, POV-Ray tutorial">
+<meta name="description" content="Construction of a grid plane by 3 layered textures, tutorials and samples for the POVRAY raytracing program">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<title>A Squared Paper for a Coordinate Plane by 3 layered Textures</title>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_100i.htm"><font size="2">Italiano </font></a>
+        <a href="math_100i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_100f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="math_100f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_100d.htm"><font size="2">Deutsch </font></a>
+        <a href="math_100d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000e.htm"><nobr>Coordinate Systems</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000e.htm"><nobr>and 2D Functions</nobr></b></a><br>
+<br>
+&nbsp; <b>&gt;</b> <!--a href="math_100e.htm"--><b>Squared Paper</b></a><br>
+<nobr>&nbsp; -  <a href="math_200e.htm">Coordinate Systems</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200e.htm">with Axes</b></a><br>
+<nobr>&nbsp; -  <a href="math_300e.htm">Macro for Grids</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300e.htm">with 2 Levels</b></a><br>
+&nbsp; -  <a href="math_500e.htm">2D Functions</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500e.htm">Samples</b></a><br>
+<nobr>&nbsp; -  <a href="math_600e.htm">Math Functions</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600e.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+<!--- end of header -->
+
+
+<table align="center" cellpadding="3">
+<tr>
+ <td nowrap colspan="2">
+ <h1 align="center">Grid Plane - Squared Paper</h1>
+ <h3 align="center">The Construction of a Grid Pane by 3 layered Textures.</h3>
+ <font size="-1">Objects:&nbsp;&nbsp;&nbsp; &quot;plane&quot;.<br>
+     Methods: &quot;color_map, layered textures, macro&quot;</font>
+ <td>
+</tr>
+<tr>
+<td>
+
+<h3><b>Construction in Details:</b></h3>
+<h4>Two lattice grilles, each of them realized by a color_map<br>
+<font size="-1">   (thin dark opac + wide clear transparent),<br></font>
+   with one of them rotated by 90 degrees, are layered <br>
+   together with a white background.
+</h4>
+
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr>
+   <td valign="top" bgcolor="#ffffff">
+<pre><b>// ------------------&lt;&lt;&lt; Raster macro
+#macro Raster(RScale, RLine)
+pigment{
+   gradient x scale RScale
+   color_map{
+     [0.000   color rgb&lt;1,1,1&gt;*0.5]
+     [0+RLine color rgb&lt;1,1,1&gt;*0.5]
+     [0+RLine color rgbt&lt;1,1,1,1&gt;]
+     [1-RLine color rgbt&lt;1,1,1,1&gt;]
+     [1-RLine color rgb&lt;1,1,1&gt;*0.5]
+     [1.000   color rgb&lt;1,1,1&gt;*0.5]
+            }
+       } // end of pigment
+#end// of "Raster(RScale, RLine)"
+
+// -------------------&lt;&lt;&lt;&lt; Grid macro
+#macro Grid(RasterScale,
+            RasterHalfLine,
+            Background_pigment)
+plane{&lt;0,1,0&gt;, 0
+       //layered textures!!!!
+      texture{ Background_pigment
+             } //  base color
+      texture{ Raster(RasterScale,
+                      RasterHalfLine)
+             } // 2nd layer
+      texture{ Raster(RasterScale,
+                      RasterHalfLine)
+               rotate&lt;0,90,0&gt;
+             } // 3rd layer
+     } // end of plane
+#end // end of macro &quot;Grid(...)&quot;
+// -----------------------------------
+// use it:
+object{Grid(0.50,0.035,
+   pigment{color rgb&lt;1,1,1&gt;*1.1})}
+// ------------------------- end -----</td></b></pre></tr></table>
+
+
+<td>
+<br>
+<br>
+<font size="-1"><b>'layered textures':</b></font><br>
+ <table  align="center"  border="5"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <img src="im/grid1.jpg" border="0" width="320"  height="240"
+     alt="Sample layered grids 320x240" title="Sample layered grids 320x240"></a></td>
+  </tr>
+ </table>
+Another view of the grid plane:<br>
+ <table  align="center"  border="5"  bgcolor="#efefef"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="320"  height="240"  align="center">
+     <img src="im/grid2.jpg" border="0" width="320"  height="240"
+     alt="Sample grid 320x240" title="Sample grid 320x240"></a></td>
+  </tr>
+ </table>
+ <font size="-1">Scene description for <nobr>POV-Ray:</nobr>
+  <a href="pov/grid01.pov"><b>grid01.pov</b></a></font>
+</td>
+</tr>
+</table>
+</center>
+<br>
+
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

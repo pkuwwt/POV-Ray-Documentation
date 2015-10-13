@@ -1,0 +1,334 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller">
+<meta name="keywords" content="3D-Animationen, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg Video, avi Video, animierte Gifs, Raytracing Beschreibungen, POV-Ray Beispiele, POV-Ray Anleitungen">
+<meta name="Description" content="Kurbel mit Pleuelstange - 3D-Animation mit POV-Ray -  deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik">
+<title>Kurbel mit Pleuelstange - 3D-Animation mit POV-Ray - deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen
+       zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ger.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="zur&uuml;ck zur &Uuml;bersicht" title="zur&uuml;ck zur &Uuml;bersicht"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animationen mit POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Grundlagen und Beispiele zu Animationen.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim170e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim170e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim170i.htm"><font size="2">Italiano</font></a>
+        <a href="anim170i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim170f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="anim170f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm"> Animationen Galerie</b></a><br>
+ - <a href="../pov__ger.htm"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anid.htm">3D Animation</b></a><br>
+ &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; <!--a href="anim1d.htm"-->  0. Grundlagen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001d.htm">Beispiel</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002d.htm">Von Bildern zum Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005d.htm">Grundbegriffe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008d.htm">Animationsbefehle</b></a><br>
+&nbsp; <!--a href="anim11d.htm"--> I. Zyklische Animationen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11d.htm">Objekt-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112d.htm">Planeten im Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113d.htm">Animierte Uhr</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12d.htm">Kamera-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121d.htm">Kamera Geradeausflug</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13d.htm">Western-Kutschen</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim13d.htm">-Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131d.htm">Rollende R&auml;der</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14d.htm">Zahnradgetriebe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141d.htm">Rollende Kette</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142d.htm">Fahrradkette</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15d.htm">Pendelschwingung</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151d.htm">Newtonpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152d.htm">Schaukelstuhl</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16d.htm">Federpendel</b></a><br>
+&nbsp; <b>&gt</b> 7. <!--a href="anim170d.htm"--><b>Koppelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17d.htm">Pleuelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18d.htm">Psychedelic + Op-Art </b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190d.htm">Z&auml;hler + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200d.htm">Faltung eines W&uuml;rfels</b></a><br>
+
+&nbsp; II. Nichtlineare Bewegungen<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim220d.htm"> +Bremsen 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim222d.htm"> + Bremsen 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240d.htm">Fallen + H&uuml;pfen</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260d.htm">Beschleunigung nach</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260d.htm">physikalischen Formeln</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280d.htm">Geschwindigkeitssteuerung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280d.htm">mit Spline-Funktionen</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animationspfade<br>&nbsp; &nbsp; &nbsp;  mit Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210d.htm">Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21d.htm">Geschlossene Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22d.htm">Animationspfade</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="95%" cellpadding="10">
+<tr><td width="100"><img src="im/Coupling_Rod_2d.gif" border="1" width="80" height="60"></td>
+    <td width="80%" align="center">
+     <font size="6">Koppelstange</font> <br>
+      <font size="3">Zyklische Animation mit Sinus- und Kosinus-Funktion.</font></td>
+     <td width="10%">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr></td>
+</tr></table>
+<table align="center" width="85%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top">
+
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Pleuel2_n0c160.gif" width="160"  height="160"  alt="pleuel" title="pleuel"></td></tr>
+  </table>Bei der Rotation eines Objekts in<br>
+            einem Radius R<br>  um ein Zentrum O =&lt;0,0&gt; <br>
+          mit einem Rotationswinkel A <font size="-1">(in Grad)</font>,<br>
+          verschiebt es es sich<br>  zu einem Punkt &lt;X,Y&gt;, mit<br>
+          <b> X = R * cos( radians ( A ) );</b><font size="-1">(gr&uuml;n)</font><br>
+          <b> Y = R * sin ( radians ( A ) );</b><font size="-1">(orange)</font><br>
+          <font size="-1"><b>Note:</b> In POV-Ray ben&ouml;tigen sin() und cos()<br>
+          &nbsp; ihre Argumente in Radiant!</font>
+</td>
+ <td colspan="1" valign="top" align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Rods_Demo_0.gif" width="160"  height="160"  alt="pleuel" title="pleuel"></td></tr>
+  </table><font size="3">Der Radius ist hier<br>
+                     Rc = der Radius<br>
+                 des Kopplungspunktes.</font>
+</td>
+</tr>
+<tr>
+ <td colspan="2" valign="top">
+
+  <p align="justify"><b>Koppelstange - verbindet die Antriebsr&auml;der miteinander.</b><br>
+  Deklarieren und Berechnen der Grundgr&ouml;&szlig;en:<br>
+
+  <table align="center" border="2" bgcolor="#EFEFEF"
+
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><pre><b>#local Gauge_ = 1.435; // standard gauche
+#local Wheel_R = 1.00/2; // wheel radius
+#local Con_R  = 0.20;   // conjunction radius
+#local Conjunction_Len = 1.20;
+       // conjunction length = axis distance
+
+#local Time = clock + 0.00;
+#local Wheel_Angle = 360*1*Time; // rotation angel
+#local Wheel_Circ = 2*pi*Wheel_R ;// wheel circumference
+#local Wheel_Move  = Wheel_Circ*Wheel_Angle/360;
+
+// Conjunction position relative to wheel center:
+#local Con_Y = Con_R * sin( radians( Wheel_Angle ));
+#local Con_X = Con_R * cos( radians( Wheel_Angle ));</b></td></pre></tr>
+  </table>
+<font size="-1">R&auml;der und Koppelstange findet man als <b>Makros definiert in meinem Railway System 'RW_System'</b>,
+  entsprechende Gleise gibt es im <b>Rail Track System 'RT_System'</b>.<br></font>
+  <table width ="90%" align="center"><tr>
+  <td><table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+         <tr><td><img src="im/RW_Wheel_11_0t.jpg" border="0" width="80"  height="60"  alt="pleuel" title="pleuel"></td></tr>
+         </table><font size="-2">&nbsp; &nbsp; <b>RW_Wheel_11</b></font>
+  </td>
+  <td><table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+         <tr><td><img src="im/RW_Axix_11_0t.jpg" border="0" width="80"  height="60"  alt="RW_Axix_11" title="RW_Axix_11"></td></tr>
+         </table><font size="-2"><b>&nbsp; &nbsp; RW_Axix_11</b></font>
+  </td>
+  <td><table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+         <tr><td><img src="im/RW_Coupling_Rod_00_0t.jpg" border="0" width="80"  height="60"  alt="RW_Coupling_Rod_00" title="RW_Coupling_Rod_00"></td></tr>
+         </table><font size="-2"><b>RW_Coupling_Rod_00</b></font>
+  </td>
+  <td><table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+         <tr><td><img src="im/RT_Track_Straight_00t.jpg" border="0" width="80"  height="60"  alt="RT_Track_Straight_00" title="RT_Track_Straight_00"></td></tr>
+         </table><font size="-2"><b>RT_Track_Straight_00</b></font>
+  </td>
+  </tr>
+  </table>
+   2 Achsen mit R&auml;dern und Koppelstange:<br>
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><pre><b>//--------------------------------------------------------------//
+#include "RW_System/RW_Axis_11.inc"
+#local Axis =         // Achse mit Räder
+object{ RW_Axis_11(
+          2*Wheel_R, // wheel diameter, <b></b>// in meter
+          12,   // Number_Of_Spokes, //
+          0.20, // Connector Radius // 0 or &gt;wheel diameter/2
+                // must be between:  &lt; 0 and &lt; 0.5 wheel diameter
+          0.15, // counterweight depth, // 0=non, &lt; wheel radius
+          Gauge_, // gauge in meter
+                  ) //------------------------------------------//
+        rotate&lt;0,0,Wheel_Angle&gt;
+      } //------------------------------------------------------//
+#include "RW_System/RW_Coupling_Rod_00.inc"
+#declare Coupling_Rod = // Koppelstange
+union{
+ object{ RW_Coupling_Rod_00(
+           Conjunction_Len,// coupling rod length x+(link to link)
+           0.12, // rod height in y
+           0.06, // depth in -z //
+           0.09, // Rod_End_R // radius end links, >Rod_H/2 !
+           1,    // Oil_Fillers_On // 0 = non, 1= On
+          ) //-----
+         scale &lt;-1,1,1&lg;// mirrowed to x-
+       }
+ // coupling rod axes
+ cylinder{&lt;0,0,-0.05&gt;,&lt;0,0,0.05&gt;,0.03 texture{ Rod_Metal_1} }
+ cylinder{&lt;0,0,-0.05&gt;,&lt;0,0,0.05&gt;,0.03 texture{ Rod_Metal_1}
+                            translate&lt;-Conjunction_Len,0,0&gt; }
+} // end union Coupling_Rod ------------------------------------//
+//--------------------------------------------------------------//
+#include "RT_System/RT_Track_Straight_00.inc" //
+#declare Rail_Spikes_On = 1; // optional, default = 0,
+#declare Track =      // Gleis
+object{ RT_Track_Straight_00(
+            Wheel_Circ , // track length in x+ in meter
+            2.00 , //  number of ties per meter; ~1.5
+          ) //----------------------------------------
+      } //------------------------------------------------------//
+//--------------------------------------------------------------//
+
+union{ // ---- 2 axes with connecting rods:
+  object{ Axis translate&lt;-Conjunction_Len,0,0&gt;}
+  object{ Axis translate&lt;        0,0,0&gt;}
+  object{ Coupling_Rod translate&lt;+Con_X,+Con_Y,-Gauge_/2-0.12&gt;}
+  object{ Coupling_Rod scale&lt;1,1,-1&gt;
+                       translate&lt;-Con_X,-Con_Y,+Gauge_/2+0.12&gt;}
+ translate&lt;0,Wheel_R,0&gt;
+ translate&lt;-Wheel_Move,0,0&gt; // move it by clock to the right!
+ translate&lt;0,Height_Rail_Top,0&gt; // lift it to rail top
+} // end of union ----------------------------------------------//
+
+union{ // ----- adding the rail tracks:
+ #local Nr = -3;     // start
+ #local EndNr = 4; // end
+ #while (Nr &lt; EndNr)
+   object{ Track translate&lt; Nr*Wheel_Circ,0,0 &gt;}
+ #local Nr = Nr + 1;  // next Nr
+ #end // --------------- end of loop
+} // end of union ----------------------------------------------//
+//--------------------------------------------------------------//
+// animated 'camera':
+#declare Camera_Position = Camera_Position+&lt;-Wheel_Move,0,0&gt;;
+#declare Camera_Look_At =  Camera_Look_At +&lt;-Wheel_Move,0,0&gt;;
+//-----------------------------------------
+camera{ location Camera_Position
+        right    x*image_width/image_height
+        angle    Camera_Angle
+        look_at  Camera_Look_At
+      } //------------------------------------------------------//
+//--------------------------------------------------------------//</b></td></pre></tr>
+  </table>   <font size="-1">....</font>
+
+ </p>
+</td>
+</tr>
+<tr>
+ <td colspan="1" valign="top" align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Coupling_Rod_tut1.jpg" width="240"  height="128"  alt="Coupling_Rod" title="Coupling_Rod"></td></tr>
+  </table><font size="-1"><b>2 Achsen mi Koppelstange.</b></font>
+ </td>
+ <td colspan="1" valign="middle" align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Coupling_Rod_tut_01.gif" border="0" width="240"  height="128"  alt="coupling rods" title="coupling rods"></td></tr>
+  </table><font size="-1"><b>Animierte Koppelstange auf Gleis.</b></font>
+<br>
+<br>
+   <font size="3"><b>Szenenbeschreibungen<br>  f&uuml;r POV-Ray:</b></font><br>
+   <font size="2"><a href="pov/Coupling_Rod_tut_01_.ini">&quot;Coupling_Rod_tut_01_.ini&quot;</a> und<br>
+   <a href="pov/Coupling_Rod_tut_01_.pov">&quot;Coupling_Rod_tut_01_.pov&quot;</a><br>
+
+   und die hier verwendeten Include-Dateien: <br>
+   <a href="pov/RW_Wheel_11.inc">&quot;RW_Wheel_11.inc&quot;</a>,<br>
+
+   <a href="pov/RW_Axis_11.inc">&quot;RW_Axis_11.inc&quot;</a>,<br>
+   <a href="pov/RW_Coupling_Rod_00.inc">&quot;RW_Coupling_Rod_00.inc&quot;</a>,<br>
+        Diese Szene ben&ouml;tigt Schienen<br>
+        aus meinem Include-Dateien-Set<br>
+    <a href="../modelling/dwn/RT_down_d.htm" target="_new">Rail Track System for POV-Ray</a></font></font>
+ </td>
+</tr>
+<tr><td colspan="2">
+  <font size="-1"><b>Achtung :</b>
+  Die Include-Dateien sollten in den entsprechenden
+  Unterverzeichnissen 'RT_System' und 'RT_System'
+  irgendwo im 'include file path' liegen,
+  wie in obigem Text beschrieben!</font>
+                     <br>
+  &nbsp;<br>
+
+ Ein Beispiel einer derartigen Animation<br>
+ findet man hier:  <a href="../../pov_anim/ani_6000d.htm">3D-Animations - Railroad</b></a> (Linked Axes).</b>
+</td>
+  </p>
+</tr>
+</table>
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

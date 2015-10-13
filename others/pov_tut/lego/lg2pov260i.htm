@@ -1,0 +1,218 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>LEGO&reg; CAD e POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Rendering di modelli LEGO di programmi CAD come LDraw o LEGO Digital Designer con il programma di raytracing POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, Computer grafica 3D, modelli LEGO, LEGO CAD, LDraw, LEGO Digital Designer, LeoGEO, L3PAO">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <table width="100%" border="0"><tr>
+ <td valign="top">
+<table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><img src="im/LEGO000tt.jpg" alt="LEGO in POV-Ray" title="LEGO in POV-Ray" width="80" height="60" border="0"></td></tr></table> </td>
+ <td>
+<p align="center"><font size="5">&nbsp; &nbsp; Modelli &nbsp;LEGO<sup>&reg;</sup> Virtuali di Programmi CAD nel POV-Ray</font>
+<br><font size="2">Rendering di modelli LEGO<sup>&reg;</sup> virtuali di programmi CAD <br>
+come <b>LDraw</b>&trade; e <b>LeoGEO</b> o <b>LEGO Digital Designer</b><sup>&reg;</sup> con POV-Ray</font></p></h6>
+ </td>
+ <td align="right">
+        <a href="lg2pov260e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="lg2pov260e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="lg2pov260f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="lg2pov260f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="lg2pov260d.htm"><font size="2">Deutsch </font></a>
+        <a href="lg2pov260d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="lg2pov000i.htm"--><b>LEGO<sup>&reg;</sup> e POV-Ray</b></a><br>
+ &nbsp;&nbsp; <a href="lg2pov000i.htm">Indice del Contenuto</a><br>
+<a href="lg2pov100i.htm"> <b>CAD per LEGO<sup>&reg;</sup></b></a><br>
+&nbsp; <nobr>-  <a href="lg2pov110i.htm">LEGO Digital Designer<sup>&reg;</sup></b></nobr></a><br>
+&nbsp; -  <a href="lg2pov140i.htm">LDraw  &trade;</b></a><br>
+&nbsp; -  <a href="lg2pov160i.htm">LDraw + LeoCAD</b></a><br>
+&nbsp; -  <a href="lg2pov170i.htm">LDraw + MLCad</b></a><br>
+<br>
+<a href="lg2pov200i.htm">Di CAD a POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov220i.htm">LeoCAD a POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov240i.htm">Assi + Scale</b></a><br>
+&nbsp; -&gt;<!--a href="lg2pov260i.htm"--><b>Colori adatti.</b></a><br>
+<nobr>&nbsp; -  <a href="lg2pov280i.htm">Oggetti POV-Ray di LGeo</b></nobr></a><br>
+<br>
+&nbsp; -  <a href="lg2pov300i.htm">LEGO<sup>&reg;</sup> misure + reticolo</b></a><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+<h3 align="center"><a name="Top"></a>
+</h3>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+  <td colspan="2"><h2>Colori Adottati di Oggetti LGEO POV-Ray<br>
+    </td></h2></tr>
+
+<tr><td colspan="2"><p align="justify">
+  Per una interpretazione corretta dei colori con POV-Ray il &egrave; necessario usare un contrasto standardizzato.
+  L'adottamento corretto del contrast &egrave; detto &quot;gamma correction&quot;. <br>
+  La maniera di fare questo &egrave; differente in POV-Ray version 3.6 e nella nuova versione multicore 3.7<br>
+ <font size="-2"> (attualmente solo come una versione beta, ma per in applicazioni standard funziona senza problemi seri)</font>.<br>
+  <br>
+  <b>In POV-Ray 3.6</b> dobbiamo <b>aggiungere</b> al inizio del testo di nostra scena 2 righe:
+  <b><pre>#version 3.6
+global_settings{assumed_gamma 1.0}</pre></b>
+  <b>In POV-Ray 3.7</b>  dobbiamo <b>aggiungere</b> al inizio del testo di nostra scena solo la riga:
+<b><pre>#version 3.7</pre></b>
+  <b>Per POV-Ray 3.6, 3.6.2, 3.7</b> insieme la riga:
+<b><pre>#if (version &lt; 3.7) global_settings{ assumed_gamma 1.0 } #end</pre></b>
+
+
+<font size="-2">(Niente di &quot;gamma correction&quot; nel file di scena pi&ugrave; in version 3.7, queste chose
+ sono (pi&ugrave; consequente adesso) trasferito in file &quot;POVRAY.INI&quot; !)</font>
+  <p align="justify">
+  I colori dei elementi LEGO virtuali per POV-Ray di LGEO sono definiti nel file incude
+  <b>&quot;LGEO\lg\lg_colors.inc&quot;</b>.<br>
+  Alcuni colori si presenta fatto senza correzione gamma. Ci&ograve; &egrave; il est necessario di correggere
+  i valori dei colori un poco. I colori qui sono anche definiti senza nessuno &quot;normal&quot;
+  e senza &quot;reflection&quot; - in consequenza i mattoncini sembranno und poco smorto.
+  Ma possiamo correggere questo con creare un nuovo file include per es. &quot;lg_color2.inc&quot;.
+  Dobbiamo memorizzare questo file nella stessa directory come il file originale.
+  (Non dimenticare chambiare anche il nome nel file include e/o file di scena della vostra scena!).
+  </p>
+<br>
+<table align="center"><tr>
+ <td valign="top"> <h5>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Test1_36_no_g_orig_color.jpg" width="240" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> POV-Ray3.6 senza correzione gamma<br> e lg_color.inc originale. </h5>
+ </td>
+ <td valign="top"> <h5>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Test1_36_with_g_orig_color.jpg" width="240" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> POV-Ray3.6 con correzione gamma<br> e lg_color.inc originale.</h5>
+ </td>
+ <td valign="top"> <h5>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Test1_36_with_g_adapted_color.jpg.jpg" width="240" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> POV-Ray3.6 con gamma/POV-Ray 3.7<br> e lg_color2.inc adottato.</h5>
+ </td>
+</tr></table>
+ <p align="justify">
+ Allora, come vuole i colori &egrave; vostra decisione absolutamente libera
+ - Le piace una testura di tipo zebra o qualcos'altro pazzo? - Libert&agrave; senza confini!
+ - ma penso la versione qui in alto pi&ugrave; destra mi sembra di essere la versione  pi&ugrave;
+  &quot;realistico&quot; come il rosso di plastica classico dei mattoncini LEGO<sup>&reg;</sup>.
+<br>
+ <font size="-1">Non ho riveduto tutto il set dei colori di file include LGEO adesso.
+ Ma potete download qui il mio primo esperimento di correzione del <nobr>file include color </nobr>
+  <a href="pov/lg_color2.inc">lg_color2.inc</a> per vedere i mie modificazioni.</font>
+  </p>
+<br>
+<br>
+<br>
+Ancora qualche esempio:
+<table align="center"><tr>
+ <td valign="top"> <h5 align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Pyra_Test0.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> Con LGEO lg_color.inc originale</h5>
+ </td>
+ <td valign="top"> <h5 align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Pyra_Test0mc.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> Con lg_color2.inc adottato</h5>
+ </td>
+<br>
+<table align="center"><tr>
+ <td valign="top"> <h5 align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Castle_1_o.jpg" width="360" height="480" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> Con LGEO lg_color.inc originale</h5>
+ </td>
+ <td valign="top"> <h5 align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Castle_1_m.jpg" width="360" height="480" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> Con lg_color2.inc adottato</h5>
+ </td>
+
+
+</tr></table>
+ </td></tr></table>
+
+
+ </div>
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+  <img src="../email.gif" width="15" height="10" border="0" alt="email" title="email"> email:
+  <a href="mailto:Friedrich.Lohmueller_at_t-online.de">Friedrich.Lohmueller_at_t-online.de</a><br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ <table border="1" cellspacing="0" cellpadding="0">
+ <tr><td  width="450"><p align="center">
+     <font size="2">La parola LEGO<sup>&reg;</sup> &egrave; un marchio registrato per le aziende del Gruppo LEGO,<br>
+     che non sponsorizza, autorizza o supporta ufficialmente questo sito.<br>
+      <nobr>&nbsp;La propria homepage di LEGO<sup>&reg;</sup>:
+      <a href="http://www.lego.com"><font size="2">www.lego.com</font></a><font size="2">, e la  propria<br>
+       homepage di LEGO Mindstorms system: </font>
+      <a href="http://www.legomindstorms.com"><font size="2">mindstorms.lego.com</font></a></nobr></td>
+ </tr></table>
+ </td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

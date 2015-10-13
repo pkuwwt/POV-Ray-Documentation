@@ -1,0 +1,39 @@
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+// ---------------------------------------- optional textures:
+#declare Rim_Texture = 
+ texture{ //pigment{color White*1.2} 
+          Polished_Chrome
+          finish { phong 1}
+        } // end of texture
+#declare Tire_Texture = 
+ texture { pigment{color rgb<1,1,1>*0.1}
+          // normal {bumps 0.5 scale 0.05}
+           finish { phong 0.1}
+         } // end of texture
+ texture { pigment{agate  scale 0.005
+                   color_map{ 
+                               [0.0 color Clear]
+                               [0.1 color Clear]
+                               [0.3 color rgbt<0.11,0.10,0.07,0.7> ]
+                               [0.8 color Clear]
+                               [1.0 color Clear]
+                            }
+                  }
+           finish { phong 0.1 }
+         } // end of texture
+#declare Tread_Texture = 
+  texture{ pigment{color rgb<1,1,1>*0.1}
+           normal { bumps 0.5 scale 0.01}
+           finish { phong 0.1}
+         } // end of texture
+//----------------------------------------------------------------------
+#include "Wheel_L01.inc"
+//----------------------------------------------------------------------
+object{ Wheel_L01 ( -clock*360/6 ) // in degrees; 
+        // wheel radius = 0.40; scale it by i.e.: scale MyRadius/0.40 
+        scale 1     // scale MyRadius/0.40
+        translate<0,0,0>
+      } //--------------------------------------------------------------
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------

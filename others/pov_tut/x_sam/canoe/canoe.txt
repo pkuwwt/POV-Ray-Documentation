@@ -1,0 +1,83 @@
+// POV-Ray 3.6 / 3.7 Scene File "canoe.pov"
+// created by Friedrich A. Lohmueller, 2009/Jan-2011
+// Demo of the  transform { ...}-statement
+#version 3.6; // 3.7;
+#global_settings{ assumed_gamma 1.0 }
+#default{ finish{ ambient 0.1 diffuse 0.9 }}
+
+#include "colors.inc"
+#include "textures.inc"
+
+// camera -----------------------------------------------------------
+#declare Cam0 = camera {perspective angle 40
+                        location  < 0.0 , 3.5 ,-8.0>
+                        right     x*image_width/image_height
+                        look_at   <0.4 , 0.2 , 0.0>}
+camera{Cam0}
+// sun ---------------------------------------------------------------
+light_source{<1500,2500,-2500> color rgb<1,0.9,0.8>}
+// sky ---------------------------------------------------------------
+sphere{<0,0,0>,1 hollow
+       texture{pigment{gradient <0,1,0>
+                       color_map{[0.0 color White  ]
+                                 [0.3 color SkyBlue*0.7]
+                                 [1.0 color NavyBlue] }
+                       quick_color White }
+               finish {ambient 1 diffuse 0}
+               }
+       scale 10000}
+//------------------------------------------------------------------------------ Positions
+#declare Canoe_Position1 = transform {   rotate< 0,  30,0> translate< 0,0,1>}
+#declare Canoe_Position2 = transform {   rotate<-6,  20,0> translate<1.5,0,5>}
+#declare Canoe_Position3 = transform {   rotate< 5,  0,0> scale 0.55 translate< -0.3,0,-2.00>}
+
+//--------------------------------------------------------------------------------------------
+
+
+//---------------------------------------------------------- Canoe construction
+#declare Canoe_outside=
+sphere {<0,0,0>,1 scale <3,1.5,1> rotate<0,0,0> translate<0,0.5,0> }
+
+#declare Canoe =
+union{
+intersection{
+ object{ Canoe_outside }
+ object{ Canoe_outside scale <0.98,0.95,0.94>  inverse}
+ sphere {<0,0,0>,1 scale <2.5,1,20> rotate<0,0,0> translate<0,1.3,0>  inverse}
+       texture{ pigment{ color White*1.1}
+                finish { phong 1}}
+ } // end of outside structure of the canoe
+
+ intersection{  // Wanna sit down in my canoe ???
+  object{ Canoe_outside
+          texture{ pigment{ color White*1.1}
+                   finish { phong 1}}}
+ union{
+  box {<-0.20,0,-1>,<0.20,0.05,1> rotate<0,0,  0> translate< 0.0,0.21,0>}
+  box {<-0.20,0,-1>,<0.20,0.05,1> rotate<0,0,-10> translate<-2.0,0.40,0>}
+  box {<-0.20,0,-1>,<0.20,0.05,1> rotate<0,0, 10> translate< 2.0,0.40,0>}
+  texture{ pigment{ color MediumWood}
+           finish { phong 1}}
+  }// end of inside union
+ }//end of  inside intersection
+
+}// end of Canoe
+//---------------------------------------------------< Canoe placed here!
+object{ Canoe transform Canoe_Position1}
+object{ Canoe transform Canoe_Position2}
+object{ Canoe transform Canoe_Position3}
+
+//------------------------------------------------------- the Water ----
+
+difference{
+plane{<0,1,0>, 0 }
+object{Canoe_outside   transform Canoe_Position1 }
+object{Canoe_outside   transform Canoe_Position2 }
+object{Canoe_outside   transform Canoe_Position3 }
+   texture{Polished_Chrome
+                    normal { crackle 1 scale 5
+                             turbulence 1 translate<0,0,5>}
+                    finish { diffuse 0.5 reflection 0.30}}
+          }// end of difference
+
+//------------------------------------------------------------------- end

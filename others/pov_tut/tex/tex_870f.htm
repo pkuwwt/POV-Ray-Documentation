@@ -1,0 +1,205 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures with POV-Ray  - image_map</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="Textures avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=520");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Conception de Surface en &raquo;texture&laquo; avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_870e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_870e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_870i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_870i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_870d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_870d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+ &nbsp;       <!--a href="tex_000f.htm"--><b>Conception de Surface</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000f.htm">Coleurs et Textures</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001f.htm">Syntaxe de texture</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001f.htm">Exemple de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200f.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300f.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">Exemples normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400f.htm">finish{ ... } </b></a><br>-->
+ <nobr>&nbsp; &nbsp; <a href="tex_210f.htm">Textures pr&ecirc;tes-&agrave;-l'emploi</b></a></nobr><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210f.htm">Rules</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150f.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160f.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110f.htm">Couleurs do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110f.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120f.htm">Transparence</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700f.htm">Motifs - Patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700f.htm">types de motifs</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500f.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550f.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs rayures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750f.htm">Listes de Motifs</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750f.htm">Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755f.htm">Motifs par hasard</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760f.htm">Motifs Fractal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Autres motifs</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780f.htm">Warps</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_780f.htm">warp mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_790f.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800f.htm">Mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_800f.htm">m&eacute;thodes de mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820f.htm">pigment_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830f.htm">texture_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840f.htm">normal_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850f.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860f.htm">material_map{...}</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_870f.htm"--><b>image_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_875f.htm">image_map+gif 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_876f.htm">image_map+gif 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_878f.htm">image_map+gamma</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880f.htm">bump_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_885f.htm">transparency maps 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_886f.htm">transparency maps 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_887f.htm">transparency maps 3</b></a><br>
+ &nbsp; &nbsp; <a href="tex_890f.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890f.htm">layered textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900f.htm">Votre textures</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+<h2><nobr>&raquo; image_map{ ... } &laquo;</nobr>
+<font size="-1">- Int&eacute;grer des images en surfaces.</font></h2>
+
+
+
+<hr size="3">
+<h5>// <b>Exemple pour  <nobr>&raquo; image_map{...} &laquo;</nobr> :</b></h2>
+<br>
+<table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage2('im/imagem0i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/imagem0t.jpg" border="0" width="320"  height="240"
+       alt="Sample image_map 640x480" title="Samples image_map 640x480"></a>
+      </td></tr></table>
+<br>
+<table border="1" cellspacing="4" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>sphere{&lt;0,0,0&gt;, 1
+   texture{
+    pigment{
+     // mapps an image on the xy plane
+     // von &lt;0,0,0&gt; bis &lt;1,1,0&gt;
+     // (aspect ratio 1:1)
+     image_map{ png &quot;plasma3.png&quot;
+     // imagetype &quot;file name&quot; - Path + .tga etc.
+     // acceptés : gif, tga, iff, ppm, pgm, png, jpeg, tiff, sys
+     map_type 0 // 0=planar, 1=spherical, 2=cylindrical, 5=torus
+     interpolate 2
+      // 0=none, 1=linear, 2=bilinear, 4=normalized distance
+     once //
+      }} // end of image_map, end of pigment
+    finish { diffuse 0.9 phong 1}// end of finish
+     scale 2 translate&lt;-1,-1,0&gt;} // end of texture
+  translate&lt;0.5,1.2,0&gt;} // end of sphere  ---------------</b></pre>
+</td>
+</tr>
+</table>
+<br>
+
+<hr size="3">
+<h5 align="justify">
+Si on veut projeter une image nomm&eacute;e  <nobr>&raquo; MyImage.tga &laquo;</nobr>  avec un rapport
+hauteur/longueur de = 3:4 dans une surface d'une hauteur (direction des y) de 0.90 et
+la longueur (direction des x) de 1.20 on doit mettre &agrave; l'&eacute;chelle l'image projet&eacute;e
+de fa&ccedil;on appropri&eacute;e : </h5>
+
+
+
+<p align="justify">// <b>Exemple :</b></p></font>
+<br>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/imagem1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/imagem1t.jpg" border="0" width="320" height="240"
+       alt="Sample image_map 640x480" title="Samples image_map 640x480"></a>
+      </td></tr></table>
+
+<br>
+
+<table border="1" cellspacing="4" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>box{&lt;0,0,0&gt;, &lt;1.20, 0.90,0.01&gt;
+     texture{ pigment { image_map{ gif &quot;CGrafLo.gif&quot;
+                        map_type 0 interpolate 2 once }
+                        scale &lt;1.20,0.90,1&gt; }
+              finish  { ambient 0.1 diffuse 0.9 phong 1}}
+     scale 2.5 rotate&lt;0,W1,0&gt; translate&lt;-1.2,0.3,0&gt;}</b></td></pre>
+</tr>
+</table>
+
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

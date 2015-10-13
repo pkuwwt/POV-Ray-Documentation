@@ -1,0 +1,313 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Objekte mit POV-Ray 3.6 / 3.7 - Objekte und Macros aus meiner Include-Datei shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Deutschland">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, 3D-Graphik, Computergrafik, Raytracing Beschreibungen, Povray Anleitungen, Anf&auml;ger, Fortgeschrittene, geometrische Objekte, CSG, Macros">
+<meta name="description" content="Definieren geometrischer Objekte durch Macros f&uuml;r das Freeware-Raytracing-Programm POV-Ray 3.6, povray, pov">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+ <hr size="3"><div align="center"><font size="+2">Geometrische K&ouml;rper in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes3_50e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes3_50e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes3_50i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes3_50f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_50f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes3_50f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000d.htm"--><b>Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+&nbsp;<br>
+<br>
+<nobr><a href="shapes3_0000d.htm">Objekte in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11d.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20d.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21d.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40d.htm">Egg</b></a><br>
+-  <a href="shapes3_40d.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42d.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45d.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N_AB</b></a><br>
+<b>&gt;</b><!--a href="shapes3_50d.htm"--><b>Round_Pyramid_N_out</b></a><br>
+<b>&gt;</b><!--a href="shapes3_50d.htm"--><b>Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80d.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22d.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60d.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65d.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+<div align="center">
+<font size="2">Geometrische K&ouml;rper aus meiner Include-Datei <a href="../down/insrtd_a.htm" alt="Download" title="Download">&quot;shapes3.inc&quot;</a></font>
+<font size="2">( ehemals &quot;shapes_lo.inc&quot;):</font><br>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td><div align="center">
+      <table align="center" border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/Round_Pyramid_N_out_truncated.jpg" border="0" width="160" height="120" alt="Round_Pyramid_N" title="Round_Pyramid_N">
+       </td></tr></table>
+       <font size="2">Round_Pyramid_N_out</font><br>
+      <table align="center" border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr50i.jpg" border="0" width="160" height="120" alt="Round_Pyramid_N" title="Round_Pyramid_N">
+       </td></tr></table>
+       <font size="2">Round_Pyramid_N column</font><br>
+      <table align="center" border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/macro50.jpg" border="0" width="160" height="120" alt="Round_Pyramid_N" title="Round_Pyramid_N">
+       </td></tr></table>
+       <font size="2">Round_Pyramid wireframe</font><br>
+      <table align="center" border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/macro51.jpg" border="0" width="160" height="120" alt="Wire_N_Pyramid truncated" title="Wire_N_Pyramid truncated">
+       </td></tr></table>
+       <font size="2">Round_Pyramid wireframe</font><br>
+      <table align="center" border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/macro51b.jpg" border="0" width="160" height="120" alt="Round_Pyramid_N" title="Round_Pyramid_N">
+       </td></tr></table>
+       <font size="2">Round_Pyramid wireframe</font><br>
+      <table align="center" border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/macro52.jpg" border="0" width="160" height="120" alt="Round_Pyramid_N" title="Round_Pyramid_N">
+       </td></tr></table>
+       <font size="2">Round_N_Pyramid filled</font><br>
+      <table align="center" border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/macro53.jpg" border="0" width="160" height="120" alt="Round_Pyramid_N" title="Round_Pyramid_N">
+       </td></tr></table>
+        <font size="2">... truncated</font><br>
+      <table align="center" border="1" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/macro54.jpg" border="0" width="160" height="120" alt="Round_Pyramid_N" title="Round_Pyramid_N">
+       </td></tr></table>
+       <font size="2">... merge</font><br>
+       </div>
+   </td>
+ <td>
+   <font size="5"><b>Round_Pyramid_N_out</b></font><br>
+   <font size="2">Regul&auml;re abgerundete Pyramide mit N Ecken<br>
+                  <b>definiert &uuml;ber Umkreisradien</b>.</font><br>
+   <font size="2">
+   <i>Syntax:</i>
+   </font>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td  valign="top" bgcolor="#fefefe">
+     <pre><b>object{ Round_Pyramid_N_out( N,
+               Point_A, R_out_A,
+               Point_B, R_out_B,
+               R_Border,
+               Fill_On, Merge_On
+             ) //----------------
+        texture{ ... ... }
+      } // end of object --------</b></td></pre></tr></table>
+<br>
+   <font size="5"><b>Round_Pyramid_N_in</b></font><br>
+   <font size="2">Regul&auml;re abgerundete Pyramide mit N Ecken<br>
+                  <b>definiert &uuml;ber Inkreisradien</b>.</font><br>
+   <font size="2">
+   <i>Syntax:</i>
+   </font>
+   <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td  valign="top" bgcolor="#fefefe">
+     <pre><b>object{ Round_Pyramid_N_in( N,
+              Point_A, R_in_A,
+              Point_B, R_in_B,
+              R_Border,
+              Fill_On, Merge_On
+            ) //-------ö---------
+        texture{ ... ... }
+      } // end of object --------</b></td></pre></tr></table>
+ <font size="2">
+    <b>N</b> &gt;2 = Anzahl der Ecken,<br>
+    <b>Point_A, R_out_A</b> = A, Umkreisradius bei A,<br>
+    <b>Point_B, R_out_B</b> = B, Umkreisradius bei B,<br>
+    <b>Point_A, R_in_A</b> = A, Inkreisradius bei A,<br>
+    <b>Point_B, R_in_B</b> = B, Inkreisradius bei B,<br>
+    <b>R_Border</b> = the radius of the edges,<br>
+    <b>Fill_On</b>:  0 = Drahtpyramide, 1 = gef&uuml;llte Form.<br>
+    <b>Merge_On</b>: 0 = union, 1 = merge <br>
+     (bei transparentem Material).
+ </font><br>
+ <br>
+ <br>
+ <br>
+
+  <font size="2">
+    <i>Beispiel:</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><pre><b>#include "shapes3.inc"
+object{ Round_Pyramid_N_out(
+           8 , // number of side faces
+           &lt;-0.25,0.35,-0.8&gt;, 0.40,// A, R_out_A,
+                   &lt;1,1.1,0&gt;, 0.70,// B, R_out_B,
+           0.08, // border radius
+           1, // 1 = filled, 0 = wire
+           0  // 0 = union, 1 = merge
+        ) //-------------------------------------
+        texture{ pigment{ rgb&lt;1,1,1&gt; }
+                 finish { phong 1 }
+               } // end of texture --------------
+      } // end of object //----------------------</b></td></pre></tr></table>
+
+    <i>Beispiel:</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><pre><b>#include "shapes_lo.inc"
+object{ Round_Pyramid_N_in(
+           5 , // number of side faces
+           &lt;0,0.00,0&gt;, 1.00, &lt;0,1.25,0&gt;, 0.00,
+           0.05, // border radius
+           0,   // 1 = filled, 0 = wire
+           0   // 0 = union, 1 = merge
+        ) //-------------------------------------
+        texture{ pigment{ color rgb&lt;1,1,1&gt;}
+                 finish { phong 1}
+               } // end of texture
+      } // end of object ------------------------</b></td></pre></tr></table>
+
+</font>
+</td>
+</tr>
+</table>
+
+<hr width="90%">
+
+<table align="center" width="95%">
+<tr><td>
+
+<div align="center">
+<font size="2">Einige Beispielbilder mit diesem Makro:</font>
+<br>
+ <div align="center">
+ <table align="center" border="0" >
+   <tr>
+     <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr50c.jpg" border="0" width="320"  height="320" alt="Round_N_Pyramid" title="Round_N_Pyramid"></td>
+     </tr></table>
+     </td>
+     <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr50d.jpg" border="0" width="320"  height="320" alt="Round_N_Pyramid" title="Round_N_Pyramid"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr50e.jpg" border="0" width="320"  height="240" alt="Round_N_Pyramid" title="Round_N_Pyramid"></td>
+     </tr></table>
+     </td>
+     <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr50f.jpg" border="0" width="320" height="240" alt="Round_N_Pyramid" title="Round_N_Pyramid"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr50g.jpg" border="0" width="320" height="240" alt="Round_N_Pyramid" title="Round_N_Pyramid"></td>
+     </tr></table>
+     </td>
+     <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr50h.jpg" border="0" width="320" height="240" alt="Round_N_Pyramid" title="Round_N_Pyramid"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr50i.jpg" border="0" width="320" height="240" alt="Round_N_Pyramid" title="Round_N_Pyramid"></td>
+     </tr></table>
+     </td>
+     <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr50j.jpg" border="0" width="320" height="240" alt="Round_N_Pyramid" title="Round_N_Pyramid"></td>
+     </tr></table>
+     </td>
+   </tr>
+  </table>
+  </div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

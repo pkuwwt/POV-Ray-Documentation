@@ -1,0 +1,197 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti geometrichi per POV-Ray 3.6 / 3.7  del mio include file &quot;shapes3.inc&quot;</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, POV-Ray, 3d graphics, raytracing descriptions, povray tutorials, beginners, advanced, geometric objects, csg, macros">
+<meta name="description" content="Defining geometric objects by macros for the raytracing program POV-Ray 3.6, povray, pov ">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=570,height=585");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030"
+      link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2">Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+                      <nobr>di  Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+ <hr size="3"><div align="center"><font size="+2">Oggetti Geometrici di POV-Ray </font></div>
+  <td align="right">
+        <a href="shapes3_60e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes3_60e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes3_60f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes3_60f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_60d.htm"><font size="2">Deutsch</font></a>
+        <a href="shapes3_60d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+ </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_1.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp; <a href="../all_shapes/shapes000i.htm">Indice</a><br>
+<br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11i.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20i.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21i.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40i.htm">Egg</b></a><br>
+-  <a href="shapes3_40i.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43i.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43i.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42i.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45i.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30i.htm">Column_N</b></a><br>
+-  <a href="shapes3_30i.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30i.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30i.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50i.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50i.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80i.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85i.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85i.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22i.htm">Round_N_Tube_Polygon</b></a><br>
+<b>&gt;</b><!--a href="shapes3_60i.htm"--><b>Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65i.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70i.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70i.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+
+<div align="center">
+<font size="2">Questo oggetto &egrave; definito con una macro nel mio
+  <a href="../down/insert_a.htm" alt="Download" title="Download">include file &quot;shapes3.inc&quot;</a>
+  .<br>
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="90%">
+ <tr>
+  <td>
+   <br>
+   <br>
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/Round_Conic_Torus_big.jpg"
+                border="0" width="320" height="240" alt="Round_Conic_Torus" title="Round_Conic_Torus"></td>
+       </tr></table>
+  </td>
+  <td><font size="5"><b>Round_Conic_Torus</b></font><br>
+   <font size="2">
+   <i>Sintassi generale:</i>
+   </font>
+
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td  valign="top" bgcolor="#fefefe">
+     <pre><b>object{ Round_Conic_Torus(
+                         Center_Distance,
+                         R_upper,
+                         R_lower,
+                         Border_R,
+                         Merge_On
+                       ) //--------------
+         texture{ ... }
+      } // end of object ----------------</b></td></pre></tr></table>
+ <font size="2">
+    <b>Center_Distance</b> = <br>
+    &nbsp; &nbsp; &nbsp;  distanza verticale dei centri di tori,<br>
+    <b>R_upper</b> >0, raggio a &lt;0,C_distance,0&gt;.<br>
+    <b>R_lower</b> >0, raggio a zero.<br>
+    <b>Border_R</b> = raggio del bordo, max.=min(R_lower,R_upper)<br>
+    <b>Merge_On</b>   0 = union, 1 = merge.<br>
+ </font>
+ </td>
+</tr>
+</table>
+<table border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="90%">
+<tr>
+  <td>
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td>
+              <a href="javascript:ShowImage('im/Round_Conic_Torus_1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/Round_Conic_Torus_160.jpg"
+                border="0" width="160" height="160"
+                alt="Round_Conic_Torus_demo" title="Round_Conic_Torus_demo"></td>
+       </tr></table>
+    <div align="center">
+    <font size="2"><i><b>Archivio esempio</b></i><br>
+          <a href="pov/Round_Conic_Torus_demo.txt">&quot;.txt&quot;</a>
+        o <a href="pov/Round_Conic_Torus_demo.pov">&quot;.pov&quot;</a></font>
+    </div>
+  </td>
+  <td><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></td>
+  <td colspan="1" align="center">
+   <i>Esempio:</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><pre><b>#include "shapes3.inc"
+object{ Round_Conic_Torus(
+           1.00, // >0, vertical center distance
+           0.80, // >0, upper radius
+           0.50, // >0, lower radius
+           0.10, // border radius,
+             // max. = min(lower radius, upper radius)!
+           0 // Merge_On: 0 or 1
+        ) // ------------------------------------
+        texture{ pigment{ color rgb &lt;1,1,1&gt;}
+                 finish { phong 0.1}
+               } // end texture
+        scale &lt;1,1,1&gt;
+        rotate &lt;0,0,0&gt;
+        translate &lt; 0, 1, 0&gt;
+      } // end of object --------------------</b></td></pre></font>
+ </tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

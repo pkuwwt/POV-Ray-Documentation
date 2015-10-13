@@ -1,0 +1,163 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, POV-Ray ini file povray.ini">
+<meta name="description" content="tutorial on POV-Ray Details - The POV-Ray master ini file 'povray.ini">
+<title>POV-Ray Details -  The POV-Ray master ini file 'povray.ini'</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>POV-Ray Details</b></font><br>
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="pov_100i.htm"><font size="2">Italiano </font></a>
+        <a href="pov_100i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov_100f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="pov_100f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="pov_100d.htm"><font size="2">Deutsch </font></a>
+        <a href="pov_100d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_000e.htm">What's Where?</b></a><br>
+&nbsp;&nbsp;&nbsp;<b>&gt;</b> <!--a href="pov_100e.htm"--><b>'povray.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_200e.htm">'quickres.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_300e.htm">Output directives</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_400e.htm">Command Line</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="inc_000e.htm">A short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000e.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center">The POV-Ray master ini file<b> 'povray.ini'</b></h2>
+<p align="justify">
+<font size="+1"><b>Location:</b></font> (Win7, Vista)<br>
+<font size="-1">User directory: </font><br>
+ <b>C:\Users\USERNAME\Documents\POV-Ray\3.7\</b><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>ini\povray.ini:</b><br>
+<font size="-1">This is the main ini file of the POV-Ray program.<br>
+Among others the 'povray.ini' contains: <br>
+
+the <b>Library_Path</b> for include files (this tells POVRay where to search for include files),<br>
+and the <b>Output_File_Name</b> (where the image is stored).</font><br>
+
+<br>
+<font size="+1"><b>How to tell <nobr>POV-Ray</nobr>, where to store the rendered images:</b></font><br>
+<font size="-1">By default POV-Ray stores the file of the rendered image in the directory of the current scene file.<br>
+If we want POV-Ray to save all images in a directory named i.e. 'povray_images',<br>
+we have to add to 'povray.ini' the following line:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <b>Output_File_Name=&quot;C:\MyFiles\povray_images\&quot;</b><br>
+Output_File_Name=&quot;C:\MyFiles\povray_images\&quot;<br>
+Don't forget the backslash at the end, otherwise every image will be placed in 'MyFiles' and will be named 'povray_images.bmp' (or: '.png').
+This will cause that every rendering of an other new scene will overwrite the image of any previous rendering!</font>
+<br>
+<br>
+<font size="+1"><b>How to tell <nobr>POV-Ray</nobr>, where to find our self-made Include Files:</b></font><br>
+<font size="-1">Path to own include files:</b><br>
+<font size="-1">
+It's recommanded to save the own <nobr>POV-Ray</nobr> include files in a special directory like '<b>povray_inc</b>'
+and not to mix it up with the original <nobr>POV-Ray</nobr> include files.<br>
+If we want POV-Ray to find our self-made include files in the directory i.e. '<b>povray_inc</b>', <br>
+we have to add to '<b>povray.ini</b>' the following line:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <b>Library_Path=&quot;C:\MyFiles\povray_inc\&quot;</b></font><br>
+<br>
+<br>
+<font size="+1"><b>How to edit 'povray.ini':</b></font> <br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_tools_3.jpg" alt="POV-Ray tools" title="POV-Ray tools"
+           border="0" hspace="0" vspace="0" width="466" height="202"></a>
+      </td>
+  </tr></table>
+
+</div>
+<font size="+1"><b>Example for 'Output_Path' and 'Library_Path' in the file 'povray.ini':</b></font> <br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_ini_edit.jpg" alt="POV-Ray tools" title="POV-Ray tools"
+           border="0" hspace="0" vspace="0" width="458" height="250"></a>
+      </td>
+  </tr></table>
+
+</div>
+<b>Note:</b> With POV-Ray 3.6.2 we can specify up to 20 own 'Library_Path'.<br>
+With POV-Ray 3.6 beta RC3 this limitation does not exist anymore! <br>
+<img src="im/warn.gif" border="0" width="32" height="30"><font size="+1">POV-Ray reads 'povray.ini' and 'quickres.ini' only once during program start.<br>
+                                                         Any  <b>change in these files need a shut down and restart
+ of the <nobr>POV-Ray</nobr> editor program to take effect!</b></font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

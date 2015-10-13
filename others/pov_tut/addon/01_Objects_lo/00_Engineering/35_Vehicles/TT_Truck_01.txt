@@ -1,0 +1,17 @@
+//---------------------------------------------------------
+#declare Trailer_Angle = 0; //  ~ +/-110
+#declare Wheel_Angle   = 0; // ~  +/-60
+#declare Truck_Texture =  
+   texture{ pigment{ color rgb<1,1,1>*1.1}
+            finish { diffuse 0.9 phong 1}
+          }
+//----------------------------------------
+#include "Truck_01.inc"
+//---------------------------------------------------------
+object{ Truck_01( Wheel_Angle, // Front wheel angle: ~  +/-60
+                  Trailer_Angle, // Trailer angle:   ~ +/-110
+                  Truck_Texture 
+                ) //-----------------------------------------
+scale< 1,1,1>
+rotate<0,0,0> translate<0.00,0,0.00>}
+//---------------------------------------------------------

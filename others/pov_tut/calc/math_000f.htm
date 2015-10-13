@@ -1,0 +1,145 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Quadrillages et Axes pour Syst&egrave;mes de coordonn&eacute;es et Visualisations des Fonctions math&eacute;matiques avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="description" content="Syst&egrave;mes de coordonn&eacute;es et Visualisations des Fonctions math&eacute;matiques avec POV-Ray, Objets pr&ecirc;t &agrave; l'usage pour POV-Ray">
+<meta name="keywords" content="Syst&egrave;mes de coordonn&eacute;e, fonctions math&eacute;matiques POV, POVRAY, POV-Ray, Raytracing, 3D-Grafique, infographique, 3D Graphique">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=530,height=680");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b><nobr>Quadrillages et Axes pour Syst&egrave;mes de coordonn&eacute;es</nobr><br>
+      <nobr>et Visualisations des Fonctions math&eacute;matiques</b></nobr></font></div>
+ </td></h6>
+ <td align="right">
+   <a href="math_000e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="math_000e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="math_000i.htm"><font size="2">Italiano</font></a>&nbsp;
+   <a href="math_000i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="math_000d.htm"><font size="2">Deutsch</b></a>&nbsp;
+   <a href="math_000d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'AccueilHome</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ <b>&gt;</b><!--a href="math_000f.htm"--><b><nobr>Syst&egrave;mes de coordonn&eacute;es</nobr></b></a><br>
+&nbsp;&nbsp;<!--a href="math_000f.htm"--><b><nobr>et Fonctions en 2D</nobr></b></a><br>
+<br>
+      &nbsp; - <a href="math_100f.htm">Papier quadrill&eacute;</b></a><br>
+<nobr>&nbsp; -  <a href="math_200f.htm">Syst&egrave;me de coordonn&eacute;es</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200f.htm">avec les axes</b></a><br>
+<nobr>&nbsp; -  <a href="math_300f.htm">Macro pour un quadrillage</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300f.htm">avec deux niveaux</b></a><br>
+&nbsp; -  <a href="math_500f.htm">Fonctions 2D</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500f.htm">Examples</b></a><br>
+<nobr>&nbsp; -  <a href="math_600f.htm">Fonctions math&eacute;matiques</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600f.htm">en POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<h1><div align="center"><font size="1">
+  (uses javascript to show some sample images in 600x450 pixels)</font></font>
+
+<table border="1" align="center" cellspacing="2" cellpadding="2" width="90%"
+     bordercolor="#f0f0f0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td width="80" height="60" align="center" valign="top">
+      <a href="math_100f.htm"><img src="im/grid1s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>1.</b></td>
+     <td valign="top"><font size="3">
+         <a href="math_100f.htm">Papier quadrill&eacute;</b></a></font><br>
+         <font size="2">(Objets: plane. M&egrave;thods: color_map, layered textures, #macro.)</font><br></td></tr>
+ <tr><td width="80" height="60" align="center" valign="top">
+      <a href="math_200f.htm"><img src="im/axis_n0s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>2.</b></td>
+     <td valign="top"><font size="3">
+         <a href="math_200f.htm">Syst&egrave;mes de coordonn&eacute;es avec les axes</b></a></font><br>
+         <font size="2">(Objets: cone, cylinder, plane. M&egrave;thods: declare, union, #macro.)</font><br></td></tr>
+ <tr><td width="80" height="60" align="center" valign="top">
+      <a href="math_300f.htm"><img src="im/raster_plate_2cs.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>2.</b></td>
+     <td valign="top"><font size="3">
+         <a href="math_300f.htm">Grillage avec deux niveaux</b></a></font><br>
+         <font size="2">(Objets: cone, cylinder, plane. M&eacute;thods: #macro #declare, union.)</font><br></td></tr>
+ <tr><td width="80" height="80" align="center" valign="top">
+      <a href="math_500f.htm"><img src="im/povfun3s.jpg" border="0" width="80" height="80"></a></td>
+     <td valign="top" align="right"><b>3.</b></td>
+     <td valign="top"><font size="3">
+         <a href="math_500f.htm">Visualisation de Fonctions  math&eacute;matiques<br> dans Syst&egrave;mes de coordonn&eacute;es en 2D</b></a></font><br>
+         <font size="2">(Objets: cone, cylinder, sphere.  M&egrave;thods: declare, union, #macro, #while.)</font><br></td></tr>
+ <tr><td width="80" height="80" align="center" valign="top">
+      <a href="math_600f.htm"><font size="-2"><b>pow(X,Y),sqrt,<br>int,abs,<br>sin,cos,tan, mod .....</b></font></a></td>
+     <td valign="top" align="right"><b>&nbsp;</b></td>
+     <td valign="top"><font size="3">
+         <a href="math_600f.htm">Fonctions math&eacute;matiques en POV-Ray</b></a></font><br>
+         <font size="2"> </font><br></td></tr>
+  </td>
+</tr>
+</table>
+</h3>
+
+
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right"  width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

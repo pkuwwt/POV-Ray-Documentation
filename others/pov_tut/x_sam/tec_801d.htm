@@ -1,0 +1,196 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, POV-Ray Objects, Fertige Objekte f&uuml;r POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=840,height=445");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Beispiele</b></font> -
+      <font size="-1"><b>Die Erstellung von Objekten f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="tec_801e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tec_801e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tec_801i.htm"><font size="2">Italiano</font></a>
+        <a href="tec_801i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_801f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tec_801f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table><a name="start"></a><hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="sam_000d.htm">POV-Ray Beispiele</b></a><br>
+ &nbsp; &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; -  <a href="sam_300d.htm">Geometrie</b></a><br>
+&nbsp; -  <a href="sam_100d.htm">Architektur</b></a><br>
+<!--&nbsp; -  <a href="sam_400d.htm">Pflanzen</b></a><br-->
+&nbsp; -  <a href="tec_000d.htm">Technik</b></a><br>
+<!-- &nbsp; -  <a href="../x_arc/sam_500d.htm">Straßen</b></a><br> -->
+ &nbsp; &nbsp; -  <a href="tec_750d.htm">Leiter</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_700d.htm">Masten</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_710d.htm">Gel&auml;nder</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_720d.htm">Br&uuml;cke</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_730d.htm">R&ouml;hren</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_731d.htm">Rohrabzweigung</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_732d.htm">Rohr-Absperrhahn</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_400d.htm">Kette</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_450d.htm">Drahtspule</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_500d.htm">Torpedo</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_600d.htm">Cruise Missile</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_900d.htm">Rakete</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_190d.htm">Rad</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_100d.htm">Truck</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_850d.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_800d.htm">Flugzeug</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 1. <!--a href="tec_801d.htm"--><b>Rumpf (1)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 2. <a href="tec_802d.htm">Rumpf (2)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 3. <a href="tec_803d.htm">Fenster (1)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 4. <a href="tec_804d.htm">Fenster (2)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 5. <a href="tec_805d.htm">Fl&uuml;gel (1)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 6. <a href="tec_806d.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_550d.htm">Kanu</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_050d.htm">Gitarrenbody</b></a><br>
+ <nobr>&nbsp; &nbsp; -  <a href="tec_010d.htm">7-Segment Display</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="tec_020d.htm">Flachbandkabel</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_030d.htm">Kabelbaum</b></a><br>
+<!--&nbsp; &nbsp; -  <a href="tec_000d.htm">Schiffe</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_000d.htm">Eisenbahn</b></a><br>-->
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2" align="left"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<table cellpadding="4" width="90%">
+<tr>
+ <td align="left" valign="top">
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="javascript:ShowImage('plane/aplane_1im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''">
+         <img src="plane/aplan00s.jpg" border="0" width="160" height="80"></td></tr>
+        </table><br>
+  </td>
+ <td align="left" valign="top">
+  <p align="justify"><font size="6"><b>Flugzeug</b></font><br>
+  <h4 align="justify">Der Bau des Rumpfes (1)</h4>
+  </td> </font></p>
+</tr>
+<tr><td colspan="2">
+   <p align="justify"><b>Zun&auml;chst definieren wir die Dimensionen der Teile des Rumpfes. <br>
+   Vergleiche folgendes Bild: </b></td></p>
+</tr>
+</table>
+
+<table border="0" cellpadding="3" width="600" align="left">
+<tr><td>
+
+ <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><a href="javascript:ShowImage('plane/aplane_00im.htm')"
+          onmouseover="window.status='ShowSingleImage';return true"
+          onmouseout="window.status=''">
+         <img src="plane/aplan04m.jpg" width="600" height="300" border="0"
+          alt="airplane body" title="airplane body"></a><br>Dimensionen des Rumpfes.</td></tr>
+ </table>
+ </h4>
+<table align="center" width="80%"><tr><td>
+<pre><b>#local R1  = 2.00;  // radius of the body outside Radius
+#local R2  = 1.25;  // radius nose top y          Radius_Nose_TopY
+#local R3  = 4.00;  // length nose                Length_Nose
+#local R4  = 2.50;  // length forehead part       Length_Forehead
+#local R5  = 9.50;  // length of tail part        Length_Tail
+//-------------------------------------------------------------------</b></pre>
+</td></tr>
+</table>
+<p><b>Dann definieren wir ein macro f&uuml;r die Form des Rumpfes unter Verwendung von CSG:</b></p>
+<table align="center" width="80%"><tr><td>
+<pre><b>//--------------------------------------------------------------------
+#macro Body(Radius, Radius_Nose_TopY, Length_Nose, Length_Forehead,
+            Length_Tail)
+union{
+intersection{                                 //  nose lower part (1)
+ sphere { &lt;0,0,0&gt;,1  scale &lt;Length_Nose, Radius, Radius&gt;}
+ box    { &lt;0,-1,-1&gt;,&lt;1,0,1&gt; scale &lt;Length_Nose, Radius, Radius&gt;}
+ }// -------------- end of intersection
+
+intersection{                             // nose - forehead part (2)
+ sphere { &lt;0,0,0&gt;,1  scale &lt; Length_Forehead, Radius, Radius&gt;}
+ box    { &lt;0,0,-1&gt;,&lt;1,1,1&gt;  scale &lt; Length_Forehead, Radius, Radius&gt;}
+
+ }// -------------- end of intersection
+intersection{                            // nose front upper part (3)
+ sphere { &lt;0,0,0&gt;,1  scale &lt;Length_Nose, Radius_Nose_TopY, Radius&gt;}
+ box    { &lt;0,0,-1&gt;,&lt;1,1,1&gt; scale &lt;Length_Nose, Radius, Radius&gt;}
+ }// -------------- end of intersection
+
+intersection {                        // the tail of the airplane (4)
+ sphere { &lt;0,0,0&gt;,1    scale &lt; Length_Tail, Radius, Radius&gt; }
+ box    { &lt;-1,-1,-1&gt;,&lt;0,1,1&gt; scale &lt; Length_Tail, Radius, Radius&gt;}
+ }// -------------- end of intersection
+}// end of union
+#end // ---------------------------------- end of macro "Body( ... )"</b></pre></td></tr>
+</table>
+<h5 align="right" valign="bottom">Weiter zu <a href="tec_802d.htm">Teil 2</a></h5>
+
+</td></tr>
+</table>
+
+<!--  <h5><b>Download aller gebrauchsferigen POV-Ray Objekte</b><br>
+   zip-gepackt (Include-Dateien mit Beispieldateien und mit den<br>
+   entsprechenden Insert Menu Add-ons  für komfortable Benutzung)<br>
+  auf der <a href=""><b>Download-Seite</b></a>.-->
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

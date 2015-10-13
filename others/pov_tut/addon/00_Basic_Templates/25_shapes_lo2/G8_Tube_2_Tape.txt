@@ -1,0 +1,42 @@
+// --------------------------------------------------------------------
+#include "shapes_lo2/Tube_2_Tape.inc"   
+// --------------------------------------------------------------------
+#declare R1 = 0.60; 
+#declare R2 = 0.2;
+#declare Len = 1.20; 
+#declare End_Width = 0.70; 
+#declare End_Center_Y = 0.50;
+#declare End_Center_Z = 0.90;
+// --------------------------------------------------------------------
+object{ Tube_2_Tape (     R1, // Radius_1_, 
+                          R2, // Radius_2_, 
+                          Len, // Length_,    [1->1000;2->500]
+                          End_Width, // End_Width_, 
+                          
+                          End_Center_Y, // End_Center_Y
+                          End_Center_Z, // End_Center_Z
+                          
+                          1, // Accuracy, // >= 1  
+                          0, // Merge_On ) 
+                        
+                        ) //-------------------------------------------
+        texture { pigment{ color rgb< 1,1,1>*1.2}// 0.75, 1.0, 0.0> } 
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { diffuse 0.9 phong 1 reflection 0.00}
+                } // end of texture 
+        
+        scale<1,1,1>
+        rotate<0,0,0>
+        translate<0,0,0>
+      } // ------------------------------------------------------------ 
+ cylinder{ <-1,0,0>,<D,0,0>, R1 pigment{ color rgbt< 1,1,1,0.8>*1.0}} 
+ merge{ 
+       box{<-D,R2,-End_Width>,<0.5+D,-R2,End_Width> }
+       cylinder{ <0,0,0>,<0.5,0,0>, R2 translate<0,0, End_Width>} 
+       cylinder{ <0,0,0>,<0.5,0,0>, R2 translate<0,0,-End_Width>} 
+           translate<Len-D,End_Center_Y,End_Center_Z> 
+           pigment{ color rgbt< 1,1,1,0.7>*1.0}} 
+  
+// --------------------------------------------------------------------      
+// --------------------------------------------------------------------      
+      

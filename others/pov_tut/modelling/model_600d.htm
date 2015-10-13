@@ -1,0 +1,370 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Beispiele zur Erstellung von Objekten f&uuml;r POV-Ray in 3D Computergraphik">
+<meta name="keywords" content="Beispiele zu POV-Ray, Beispielobjekte, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="model_600e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="model_600e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="model_600i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="model_600i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="model_600f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="model_600f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="model_000d.htm">Modelleisenbahn u.</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">Eisenbahn-Modelle</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">mit POV-Ray</b></a><br></b>
+ &nbsp;&nbsp;&nbsp; <a href="model_000d.htm"-->Inhaltsverzeichnis</b></a><br>
+<br>
+&nbsp; - <a href="model_300d.htm">Mein Rail Track System</b></a><br>
+&nbsp; &nbsp; <a href="model_300d.htm">f&uuml;r POV-Ray</b></a><br>
+&nbsp; &nbsp;  <a href="model_300d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; - <a href="model_320d.htm">Geraden &amp; Kurven</b></a><br>
+ &nbsp; &nbsp; - <a href="model_330d.htm">Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Y- u. 3Wege-Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Kreuzungen</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_400d.htm">Vereinfachte Anwendung</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_400d.htm">mit RT_System_00.inc</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_420d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="model_420d.htm">mit RT_System_00.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_500d.htm">An Modell-Ma&szlig;st&auml;be</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_500d.htm">angepa&szlig;te Gleiselemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_540d.htm">H0 Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_550d.htm">N Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_560d.htm">Z Scale Gleise</b></a><br>
+<br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="model_600d.htm"--><b>Gleisplan-Design mit</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="model_600d.htm"--><b> skalierten Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="model_610d.htm">Verlegen von Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="model_620d.htm">Gleise rauf u. runter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_700d.htm">Gleisplan-Design Beispiele</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_710d.htm">Einfach zyklisch</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_720d.htm">Einfacher Achter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="dwn/RT_down_d.htm">Download </b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="dwn/RT_down_d.htm">Rail Track System</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<b><font size="+1">Gleisplan-Design mit skalierten Gleisen</b></font><br>
+<br>
+<table><tr>
+<td>Demonstration mit <b>Spur N</b> Gleissystem von Geometrie Typ A</a>:<br>
+Klicken Sie hier zum Download ein Grundszenen-Datei
+<a href="pov/RT_N_A111_BaseScene_0.pov" target="_new">RT_N_A111_BaseScene_0.pov</a> f&uuml;r POV-Ray.<br>
+<b>Vorbereitungen: </b><br>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-----------------------------------------------//
+#include &quot;transforms.inc&quot;
+//-------------------------
+#declare Simulate_On =  0 ;  // -2, -1, 0, 1, 2, 3,
+//  0=real tracks, 1=double rails, 2=symbolic blocks, 3=blocks+text
+// -2=with gravel, -1 with base blocks (h = 0.20)
+#include &quot;RT_System/N_TypeA111/RT_N_TypeA111_Set_00.inc&quot;
+#include &quot;RT_System/N_TypeA111/RT_N_TypeA111_Track_Up_00.inc&quot;
+// #declare N = 160; declared in set!
+//-----------------------------------------------//</td></b></pre>
+            </tr></table>
+<font size="-1"><br>
+Die Platzierung von Kurvengleisen mit dem Makro 'Rotate_Around_Trans' ben&ouml;tigt: #include &quot;transforms.inc&quot; !<br>
+<br>
+Die erste Include-Datei enth&auml;lt alle Makros f&uuml;r ein Gleisset der Spur N.<br>
+Die Gerade der Grundl&auml;nge ist das Gleis <b>object{T_111}</b><br>
+mit der realen L&auml;nge von 111mm, hier dargestellt durch die L&auml;nge <b>L111</b> = 0.111*N.<br>
+Die Weichen haben einen Winkel von 15&deg; und gebogene Gleise mit dem Radius R9 (~0.42887*N).<br>
+Diese Include-Datei deklariert auch die Variable 'N' (=160) und 'Track_Distance' (~ 0.029 m *160) <br>
+<b>Die Simulationstypen sollten deklariert werden bevor das Gleisset eingef&uuml;gt wird!</b><br>
+<b>Alle Gleise starten bei &lt;0,0,0&gt; in positiver x-Richtung.</b><br>
+<br>
+Die zweite Include-Datei enth&auml;lt ein Makro 'Track_Up_00("<i>TRACKNAME</i>", <i>STEP</i>, <i>GRADIENT_TYPE</i>)'.<br>
+Die dient dazu Steigungen von Gleisen herauf und herunter einfach zu simulieren,
+ wie hier sp&auml;ter gezeigt wird <a href="model_620e.htm" target="_new">here</a>.<br>
+</font></font></td>
+<td>
+
+</td>
+</tr>
+</table>
+<hr>
+<table>
+<tr>
+<td valign="top"><font size="+1"><b>Verf&uuml;gbare Gleiselemente</b></font><br>
+<br>
+<b>1) Gerade Gleise<br></b>
+<font size="-1">Die Standard-L&auml;nge ist '<b>L111</b>' (= 0.111 m *160),<br>
+das entsprechende Gleis ist '<b>object{T_111}</b>'.</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-----------------------------------------------//
+object{ T_222 rotate&lt;0,0,0> translate&lt;0*L222,0,0&gt;}
+object{ T_115 rotate&lt;0,0,0> translate&lt;0*L111,0,0&gt;}
+object{ T_111 rotate&lt;0,0,0> translate&lt;0*L111,0,0&gt;}
+object{ T_107 rotate&lt;0,0,0> translate&lt;0*L107,0,0&gt;}
+object{ T_057 rotate&lt;0,0,0> translate&lt;0*L057,0,0&gt;}
+object{ T_055 rotate&lt;0,0,0> translate&lt;0*L055,0,0&gt;}
+object{ T_028 rotate&lt;0,0,0> translate&lt;0*L028,0,0&gt;}
+object{ T_777 rotate&lt;0,0,0> translate&lt;0*L777,0,0&gt;}
+// lenght free:
+object{ T_Straight(0.331*N) translate&lt;0.331*N,0,0&gt;}
+//-----------------------------------------------//</td></b></pre>
+            </tr></table></td>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene_Straight.jpg" border="0" width="400" height="200"
+                   alt="RT_Track_System_Straights" title="RT_Track_System_Straights"></a></td>
+            </tr></table>  <font size="-1"><b>Gerade Gleise</b></a></font>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<b>2) Kurven-Gleise</b><br>
+<font size="-1">Es gibt eine gro&szlig;e Anzahl an Kurven mit den Radien zwischen R1 (~ 0.195 m * N)
+&uuml;ber R9 ( ~ 0.429 m * N = Weichenradius) bis R10 ( ~ 0.468 m * N ) um das Layout so flexibel wie m&ouml;glich zu halten.<br>
+Hersteller von Modellgleisen produzierne nicht alle diese Radien - somit liegt es an Ihnen
+die Gleise mit den entsprechenden Radien auszuw&auml;hlen.
+Andere Radien kann man mit flexiblen Gleisenr realisieren.br>
+Zum einfacheren Arbeiten beim Gleisplanbau gibt es auch definierte Rechtskurven z.B. '<b>object{T_R1_45}</b>'
+und Linkskurven z.B. '<b>object{T_R1_45}</b>'<br>
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-----------------------------------------------//
+object{ T_R1_45
+        Rotate_Around_Trans(&lt;0,0*45,0>,&lt;0,0,-R1>)}
+object{ T_R2_45
+        Rotate_Around_Trans(&lt;0,0*45,0>,&lt;0,0,-R2>)}
+object{ T_R3_45
+        Rotate_Around_Trans(&lt;0,0*45,0>,&lt;0,0,-R3>)}
+ // ... etc, etc, ... //
+object{ T_R9_45
+        Rotate_Around_Trans(&lt;0,0*45,0>,&lt;0,0,-R9>)}
+object{ T_R10_45
+        Rotate_Around_Trans(&lt;0,0*45,0>,&lt;0,0,-R10>)}
+
+object{ T_R1_30
+        Rotate_Around_Trans(&lt;0,0*30,0>,&lt;0,0,-R1>)}
+object{ T_R2_30
+        Rotate_Around_Trans(&lt;0,0*30,0>,&lt;0,0,-R2>)}
+ // ...
+object{ T_R1_15
+        Rotate_Around_Trans(&lt;0,0*15,0>,&lt;0,0,-R1>)}
+ // ...
+object{ T_R1_075
+      Rotate_Around_Trans(&lt;0,0*0.75,0>,&lt;0,0,-R1>)}
+// radius and angle free:
+object{ T_Curve( 0.250*N, 17.5 )
+    Rotate_Around_Trans(&lt;0,17.5,0&gt;,&lt;0,0,-0.250*N&gt;)}
+//-----------------------------------------------//</td></b></pre>
+            </tr></table>
+<font size="-1"><b>Anmerkung:</b> Wegen dem Simulationsmodus mit Gleisbezeichnungen sollte man vermeiden Gleise zu spiegeln.<br>
+Andernfalls erh&auml;lt man mit 'Simulate_On = 3' alle Texte in Spiegelschrift!<br>
+D.h.: <font color="#AA0000"><b>Man verwende nicht 'scale&lt;-1,1,1&gt;', noch 'scale&lt;1,1,-1&gt;</b></font></font>
+            </td>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene_CurveL.jpg" border="0" width="400" height="400"
+                   alt="pacement of a curve for a switch" title="pacement of a curve for a switch"></a></td>
+            </tr></table>  <font size="-1"><b>Kurven-Gleise T_L1_45, T_L2_45, ..., T_L10_45</b></font>
+
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene_CurveR.jpg" border="0" width="400" height="400"
+                   alt="pacement of a curve for a switch" title="pacement of a curve for a switch"></a></td>
+            </tr></table>  <font size="-1"><b>Kurven-Gleise T_R1_45, T_R2_45, ..., T_R10_45</b></font>
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+<br>
+<br>
+<br>
+
+<b>3) Weichen u. Kreuzungen</b><br>
+<font size="-1">F&uuml;r Weichen mu&szlig; man die entsprechenden Weichenrichtungen deklarieren.<br>
+Weichen: Winkel 15&deg;, Radius R9, Gerade L&auml;nge L111<br>
+Kreuzungen:<br>
+asymmetrisch: 15&deg; (X15_RL, X15_LR: Hauptgleis L111, diagonal L115) <br>
+symmetrisch: 30&deg; (XX30: L&auml;nge L115, XX30s: L&auml;nge ~ 0.05 m*N).</font>
+</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//switch directions: ----------------------------//
+#declare SD1= 0;// 0=straight, 2=curved
+#declare SD2= 0;//-1=left, 0=straight, 2=right
+#declare SD3= 0;//-1=left, 1=right
+// turnouts - switches
+object{ SW_R(SD1) rotate&lt;0,0,0&gt; translate&lt;0*L111,0,0&gt;}
+object{ SW_L(SD1) rotate&lt;0,0,0&gt; translate&lt;0*L111,0,0&gt;}
+object{ SW3(SD2)  rotate&lt;0,0,0&gt; translate&lt;0*L111,0,0&gt;}
+object{ SWY(SD3)  rotate&lt;0,0,0&gt; translate&lt;0*L111,0,0&gt;}
+// level junctions - diamond crossings
+object{ X15_RL    rotate&lt;0,0,0&gt; translate&lt;0*L110,0,0&gt;}
+object{ X15_LR    rotate&lt;0,0,0&gt; translate&lt;0*L110,0,0&gt;}
+object{ X30    rotate&lt;0,0*15,0&gt; translate&lt;0*L115,0,0&gt;}
+object{ X30s   rotate&lt;0,0*15,0&gt; translate&lt;0*L115,0,0&gt;}
+//-----------------------------------------------//</td></b></pre>
+            </tr></table>
+</td>
+<td valign="top">
+<br>
+<br>
+<br>
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+               <img src="im/RT_N_A111_BaseScene_SW.jpg" border="0" width="400" height="200"
+                   alt="Turnouts and Level Junctions" title="Turnouts and Level Junctions"></a></td>
+            </tr></table>  <font size="-1"><b>Weichen u. Kreuzungen</b></font>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<br>
+<b>4) Improvisierte Doppelkreuzungsweiche</b><br>
+</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-------------------------------------------//
+object{ XX_RL  rotate&lt;0,0,0&gt; translate&lt;0*L110,0,0&gt;}
+object{ XX_LR  rotate&lt;0,0,0&gt; translate&lt;0*L110,0,0&gt;}
+//-------------------------------------------//</td></b></pre>
+            </tr></table>
+<font size="-1"><b>Anmerkung:</b> Diese Doppelkreuzungsweichen gibt es nur als improvisierte Versionen -
+man kann keine Richtung einstellen!</font></font>
+            </td>
+<td valign="top">
+<br>
+<br>
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene_DS.jpg" border="0" width="400" height="128"
+                   alt="Improvised Double Slip" title="Improvised Double Slip"></a></td>
+            </tr></table>  <font size="-1"><b>Improvisierte Doppelkreuzungsweiche</b></font>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<br>
+<b>5) Improvisierte Bogenweichen-S&auml;tze</b><br>
+</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-------------------------------------------//
+object{ CSW12_R rotate&lt;0,0,0&gt;
+        Rotate_Around_Trans(&lt;0,0*45,0&gt;,&lt;0,0,-R2&gt;)}
+object{ CSW21_R rotate&lt;0,0,0&gt;
+        Rotate_Around_Trans(&lt;0,0*45,0&gt;,&lt;0,0,-R2&gt;)}
+
+object{ CSW12_L rotate&lt;0,0,0&gt;
+        Rotate_Around_Trans(&lt;0,0*45,0&gt;,&lt;0,0,-R2&gt;)}
+object{ CSW21_L rotate&lt;0,0,0&gt;
+        Rotate_Around_Trans(&lt;0,0*45,0&gt;,&lt;0,0,-R2&gt;)}
+
+//-------------------------------------------//</td></b></pre>
+            </tr></table>
+<font size="-1"><b>Note:</b> Diese Bogenweichen gibt es nur als improvisierte Versionen -
+man kann keine Richtung einstellen!</font></font>
+            </td>
+<td valign="top">
+<br>
+<br>
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene_CS.jpg" border="0" width="400" height="160"
+                   alt="Improvised Curve Switch Sets" title="Improvised Curve Switch Sets"></a></td>
+            </tr></table>  <font size="-1"><b>Improvisierte Bogenweichen-S&auml;tze<br>
+                        CSW21_R, CSW12_R, CSW12_L, CSW21_L</b></font>
+</td>
+</tr>
+
+</table>
+<br>
+<br>
+<hr>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

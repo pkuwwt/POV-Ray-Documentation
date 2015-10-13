@@ -1,0 +1,196 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Icosa&egrave;dre r&eacute;gulier, G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray">
+<meta name="keywords" content="icosa&egrave;dre r&eacute;gulier, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafique, infographique, 3D Graphique, g&eacute;om&eacute;trie de base pour Raytracing">
+<title>G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray - Icosa&egrave;dre r&eacute;gulier</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"> &nbsp; &nbsp; &nbsp; <b>G&eacute;om&eacute;trie de Base</b></font> -
+      <font size="-1"><b>pour Raytracing</b</font></div>
+ </td></h6>
+ <td align="right">
+   <a href="geom_700e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="geom_700e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="geom_700i.htm"><font size="2">Italiano</font></a>&nbsp;
+   <a href="geom_700i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="geom_700d.htm"><font size="2">Deutsch</b></a>&nbsp;
+   <a href="geom_700d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000f.htm">G&eacute;om&eacute;trie de Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000f.htm">pour Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050f.htm">Triangle rectangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070f.htm">Th&eacute;or&egrave;me de Pythagore</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080f.htm">Trigonom&eacute;trie de base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090f.htm">Loi des cosinus</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100f.htm">Triangle &eacute;quilat&eacute;ral</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150f.htm">Polygone r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200f.htm"--><i>Poly&egrave;dre</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200f.htm">T&eacute;tra&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250f.htm">Octa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300f.htm">Cube et Cubo&iuml;de</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500f.htm">Dod&eacute;ca&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_700f.htm"--><b>Icosa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260f.htm">Cubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270f.htm">Octa&egrave;dre tronqu&eacute;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280f.htm">Rhombicubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800f.htm">Icosa&egrave;dre tronqu&eacute;</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000f.htm"--><i>Cercles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100f.htm">Cercles touchants</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200f.htm">Tangentes internes</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300f.htm">Tangentes externes</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="50%"><tr>
+   <td><img src="im/Icosahedron_120t.gif" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><h2><b><nobr>Icosa&egrave;dre r&eacute;gulier</nobr></b><br>
+        <font size="-1">Quelques qualit&eacute;s g&eacute;om&eacute;triques</font></h2></td>
+   <td><img src="im/Fold_Icosahedron_120t.gif" width="120" height="120" border="0" hspace="0" vspace="0"></td>
+</tr></table>
+
+<br>
+<font size="-2">Note: En POV-Ray nous utilisons &quot;sqrt(X)&quot; pour la racine carr&eacute;e de X
+et  nous utilisons &quot;X*X&quot;  ou &quot;pow(X,2)&quot; pour X<sup>2</sup>.</font><br>
+<br>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><b>Dimensions du icosa&egrave;dre</b><br>
+ <font size="-1">Longueur d'un c&ocirc;t&eacute; du icosa&egrave;dre : <b>a</b>.</font></td>
+ </tr>
+ <tr>
+  <td  valign="top">
+<font size="-1">Le rayon de la sph&egrave;re circonscrite :</font><br>
+<b> R  =  a / 4 * sqrt( 10 + 2*sqrt(5) );</b><br>
+<br>
+<font size="-1"><nobr>Le rayon del'entresph&egrave;re (ar&ecirc;tes = tangentes) :</nobr></font><br>
+<b> Re =  a / 4 *( 1 + sqrt(5) );</b><br>
+<br>
+<font size="-1">Le rayon de la sph&egrave;re inscrite :</font><br>
+<b> Ri =  a / 12 * sqrt(3)* ( 3 + sqrt(5) );</b><br>
+<br>
+<nobr><font size="-1">L'angle entre deux faces :  ~138.19&deg;</nobr></font><br>
+<nobr><font size="-1">Face_Angle = </font><br><b>degrees(acos(-1/3*sqrt(5)));</nobr></b><br>
+<br>
+<nobr><font size="-1">L'angle entre deux ar&ecirc;tes : 108&deg;</nobr></font><br>
+<nobr><font size="-1">Face_Edge_Angle = </font><br><b>degrees(acos(1/4*(1 - sqrt(5))));</nobr></b><br>
+</td>
+ </tr>
+</table>
+</div>
+
+</td>
+<td valign="top" width="50%">
+  <table border="0" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Fold_Icosahedron_320t.gif" width="320" height="320" border="0" hspace="0" vspace="0"></td>
+    </tr></table> <font size="-1"> &nbsp; &nbsp; Pliage et d&eacute;pliage d'un icosa&egrave;dre r&eacute;gulier</font><br>
+
+
+
+<tr>
+<td valign="top" width="50%">
+  <table border="1" bgcolor="#eeeeee" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Icosahedron_Inside_000.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></td>
+    </tr></table><font size="-1">&Agrave; l'int&eacute;rieur du icosa&egrave;dre r&eacute;gulier</font><br>
+</td>
+<td valign="top" width="50%">
+  <table border="1" bgcolor="#eeeeee" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Icosahedron_Inside_001.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></td>
+    </tr></table><font size="-1">&Agrave; l'int&eacute;rieur du icosa&egrave;dre r&eacute;gulier</font><br>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

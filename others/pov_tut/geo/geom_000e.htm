@@ -1,0 +1,324 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometric Basics for Raytracing with POV-Ray">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, povray tutorial, 3D grafic, geometric basics for raytracing, right-angled Triangle, median theorem, median theorem, Thales' theorem, Pythagorean Theorem, trigonometry basics, equilateral triangle, regular polygon, regular polyhedron, platonic solids, regular tetrahedron, regular octahedron, cube, regular cuboid, dodecahedron, icosahedron">
+<title>Geometric Basics for Raytracing - Geometry with POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Elementary Geometry</b></font>
+      <font size="-1"> for Raytracing</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_000i.htm"><font size="2">Italiano </font></a>
+        <a href="geom_000i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_000f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="geom_000f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="geom_000d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <!--a href="geom_000e.htm"--><b>Geometrical Basics</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="geom_000e.htm"--><b>for Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050e.htm">Right-angled Triangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070e.htm">Pythagorean Theorem</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080e.htm">Trigonometry Basics</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090e.htm">Law of cosines</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100e.htm">Equilateral Triangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150e.htm">Regular Polygon</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200e.htm"--><i>Polyhedron</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200e.htm">Tetrahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250e.htm">Octahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300e.htm">Cube &amp; Cuboid</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500e.htm">Dodecahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700e.htm">Icosahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260e.htm">Cuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270e.htm">Truncated Octahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280e.htm">Rhombicuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800e.htm">Truncated Icosahedron</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_c000e.htm"--><i>Circles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100e.htm">Tangent circles</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200e.htm">Internal Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300e.htm">External Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+ &nbsp; &nbsp;- <a href="../all_shapes/shapes000d.htm">Geometric Shapes</b></a><br>
+ &nbsp; &nbsp; &nbsp;<a href="../all_shapes/shapes000d.htm">in POV-Ray</b></a><br>
+ &nbsp; &nbsp; ___________________<br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ <br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+</td>
+<td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+
+ <table width="100%" border="0" cellpadding="0" cellspacing="0">
+ <tr><td> <h2><!-- &nbsp; &nbsp; <b>Geometrical Basics</b><br-->
+ <font size="-1">This is a small collection of some useful geometrical basics.<br>
+                 This does not intend to be complete!</font></b></td></h2>
+ </tr></table>
+
+ </td>
+</tr>
+
+<tr>
+<td valign="top" width="50%">
+
+<table border="0" cellpadding="3" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td colspan="5"><b>Right-angled Triangle - Pythagoras - Trigonometry</b></td>
+</tr>
+<tr>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="geom_050e.htm">
+           <img src="im/Right_angled_Triangle_000s.jpg" width="80" height="60" border="0" hspace="0" vspace="0"></a></td>
+   </tr></table><font size="-1"><a href="geom_050e.htm">Right-angled Triangle</b></a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_070e.htm">
+            <img src="im/Pythagoras_80xc.jpg" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_070e.htm">Pythagorean Theorem</b></a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_080e.htm">
+            <img src="im/trig_s.jpg" width="80" height="60" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_080e.htm">Trigonometry Basics</b></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_090e.htm">
+            <img src="im/Law_of_Cosin_001s.jpg" width="80" height="60" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_090e.htm"><nobr>Law of Cosines</nobr></a></font>
+  </td>
+ <td colspan="2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+</tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td colspan="5"><b>Regular Polygons</b></td>
+</tr>
+<tr>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_100e.htm">
+            <img src="im/Equilateral_Triangle_1s.jpg" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_100e.htm">Equilateral Triangle</b></a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_150e.htm">
+            <img src="im/Polygon_Angles_001s.jpg" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_150e.htm">Regular Polygon</b></a></font>
+ </td>
+ <td colspan="3">&nbsp; &nbsp; &nbsp; </td>
+</tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td colspan="5"><b>Regular Polyhedron - the five Platonic solids</b></td>
+</tr>
+<tr>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_200e.htm">
+            <img src="im/Regular_Tetrahedron_1s.jpg" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_200e.htm">Tetrahedron</a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_250e.htm">
+            <img src="im/Octahedron_120t.gif" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_250e.htm">Octahedron</a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_300e.htm">
+            <img src="im/Cube_120t.gif" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_300e.htm">Cube+Cuboid</a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_500e.htm">
+            <img src="im/Dodekahedron_120t.gif" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_500e.htm">Dodecahedron</a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_700e.htm">
+            <img src="im/Icosahedron_120t.gif" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_700e.htm">Icosahedron</a></font>
+ </td>
+</tr>
+<tr>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_260e.htm">
+            <img src="im/Rotate_Cuboctahedron_000c_005_60_10s64.gif" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_260e.htm">Cuboctahedron<br>&nbsp;</a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_270e.htm">
+            <img src="im/Rotate_Truncated_Octahedron_000_03_10s64c.gif" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_270e.htm">Truncated<br>Octahedron</a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_280e.htm">
+            <img src="im/RCO_fold_040c_rot04s_8s64ct.gif" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_270e.htm">Rhombicub-<br>octahedron</a></font>
+ </td>
+ <td width="80" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_800e.htm">
+            <img src="im/Buckyball_80ss.gif" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><a href="geom_800e.htm">Truncated<br>Icosahedron</a></font>
+ </td>
+ <td colspan="2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+</tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td colspan="5"><b>Circles</b></td>
+</tr>
+<tr>
+ <td width="90" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_c100e.htm">
+            <img src="im/TwoCircles_01_01ces.jpg" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-2"><a href="geom_c100e.htm">Tangent Circles</a></font>
+ </td>
+ <td width="90" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_c200e.htm">
+            <img src="im/Internal_Tangents_1ecs.jpg" width="80" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-2"><a href="geom_c200e.htm"><nobr>Internal Tangents</a></font>
+ </td>
+ <td width="90" valign="top">
+   <table border="2" bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="geom_c300e.htm">
+            <img src="im/External_Tangents_00s.jpg" width="120" height="80" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-2"><a href="geom_c300e.htm"><nobr>External Tangents</a></font>
+ </td>
+ <td colspan="2">&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</div>
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- global-->
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">
+ </td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

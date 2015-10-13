@@ -1,0 +1,24 @@
+//------------------------------------------------------------------optional textures -//
+#declare Ball_Texture = texture{ Polished_Chrome } ; 
+#declare Cradle_Texture = texture{ Polished_Chrome } ; 
+//-------------------------------------------------------------------------------------//
+#include "Newtons_Cradle_5.inc" 
+//-------------------------------------------------------------------------------------// 
+object{Newtons_Cradle_5 ( 0.25, //  Time, // time for clock from 0 to 1 
+                          50,  // Amplitude, // degrees from vertical 
+
+                          0.025, // Frame_R_min, // R_minor, 
+                          0.15,  // Frame_R_maj, // R_major, 
+                          1.40,  // Frame_Height, //  height in y
+                          1.20,  // Frame_Width, //   width in x
+                          1.90,  // Frame_Length, //  length in z 
+
+                          0.15,  // Ball_Radius, //Ball_R ,  
+                          0.015, // Wire_R , // Filament_R , 
+                          1.00,  // Ball_H , // Ball_H , 
+                        ) // -------------------------------------------
+        // no_shadow 
+        scale<1,1,1>  rotate<0,0,0>  translate<0,0,0>  
+     } // ------------------------------------------------------------- 
+
+//---------------------------------------------------------------------------------------

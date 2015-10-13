@@ -1,0 +1,213 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes110i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes110i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes110f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes110f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes110d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes110d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp; <a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Index<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes110e.htm"--><b>sphere</b></a><br>
+&nbsp; -  <a href="shapes120e.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130e.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140e.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150e.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160e.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170e.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180e.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190e.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350e.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115e.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000e.htm">Shapes in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400e.htm">Other Shapes by macros</b></a></nobr><br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+<a href="shapes000e.htm">other Shapes</b></a><br>
+<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+<nobr><a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900e.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<div align="center">
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4">
+ <tr>
+<td >
+
+<div align="center">
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="660">
+ <tr>
+  <td><table align=left border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/basics2.jpg" border="0" width="320"  height="240"
+                   alt="Sample sphere" title="Sample sphere">
+            </td></tr></table>
+</td><td><h1 align="center">sphere <br><nobr>= ellipsoid, ball</nobr></h1>
+</td></tr></table>
+<br>
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="660">
+ <tr>
+  <td bgcolor"#eee8d0">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/sphere1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/sphere1t.jpg" border="0" width="320"  height="240"
+                   alt="Samples spheres 600x450" title="Samples spheres 600x450"></a>
+            </td></tr></table>
+      </td>
+<td width="300">
+     <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>sphere</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+     general syntax:
+    <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>sphere{ &lt;x<SUB>M</SUB>,y<SUB>M</SUB>,z<SUB>M</SUB>&gt;, r
+        texture{ ... ... }
+      }</b></td></pre></tr></table>
+    In this case &lt;x<SUB>M</SUB>,y<SUB>M</SUB>,z<SUB>M</SUB>&gt;
+    are the coordinates of the center and r is the radius.<br>
+    The examples here:
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>sphere{&lt;&nbsp;0,0,&nbsp;0&gt;,1.0 texture{...}}
+sphere{&lt;-1,2,-3&gt;,1.0 texture{...}}
+sphere{&lt;&nbsp;2,3,&nbsp;5&gt;,1.0 texture{...}}</b></td></pre></tr></table>
+  </td></font>
+ </tr>
+</table>
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="660">
+<tr><td>
+<p align=justify ><font face="Arial, Verdana, Helvetica" size="3">
+If a sphere has to be deformed by &quot;scale&lt;&nbsp;,&nbsp;,&nbsp;&gt;&quot; to a <font size=5>ellipsoid</font>,
+it's recommanded to do this according to the following <br><b>principle of construction</b>:<br>
+</font><b>1st step:</b> Deforming the shape at the origin of the coordinates &quot;&lt;0,0,0&gt;&quot; by &quot;scale&lt; , , &gt;&quot; and then<br>
+<b>2nd step:</b> Moving the shape to it's final position in the world by &quot;translate&lt; , , &gt;&quot;.<br>
+</b>Because the &quot;scale&lt; , , &gt;&quot; works always relative to the center  &quot;&lt;0,0,0&gt;&quot; it's recommanded to do it before translating!.
+</font>
+</p></td></tr></table>
+
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="660">
+ <tr>
+  <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/sphere2im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/sphere2t.jpg" border="0" width="320"  height="240"
+                   alt="Samples spheres 600x450" title="Samples spheres 600x450"></a>
+            </td></tr></table>
+      </td>
+
+  <td width="300">
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>sphere + scale<...> = ellipsoid</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+         general syntax:
+    <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>sphere{ &lt;x<SUB>M</SUB>,y<SUB>M</SUB>,z<SUB>M</SUB>&gt;, r scale&lt;s<SUB>x</SUB>,s<SUB>y</SUB>,s<SUB>z</SUB>&gt;
+        texture{ ... ... }
+      }</b></td></pre></tr></table>
+    Here &lt;x<SUB>M</SUB>,y<SUB>M</SUB>,z<SUB>M</SUB>&gt;
+    are the center coordinates, r is the radius and<br>
+     s<SUB>x</SUB>,s<SUB>y</SUB>,s<SUB>z</SUB>
+
+    are scale factors in x-, y- and z-direction.<br>
+    Examples here:
+
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>sphere{&lt;0,0,0&gt;,1.0 scale&lt;2,0.4,1&gt;
+      translate&lt; 0,0, 0&gt; texture{...}}
+sphere{&lt;0,0,0&gt;,1.0 scale&lt;1,1,2&gt;
+      translate&lt;-1,2,-3&gt; texture{...}}
+sphere{&lt;0,0,0&gt;,1.0 scale&lt;1,1,0.2&gt;
+      translate&lt; 2,3, 5&gt; texture{...}}</b></td></pre></tr></table>
+   </td></font>
+  </tr>
+</table>
+
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

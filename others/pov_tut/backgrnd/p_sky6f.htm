@@ -1,0 +1,198 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="fr">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="ciel r&eacute;aliste, nuages r&eacute;alistes, realistic sky, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, infographie 3D, computer graphics">
+<meta name="Description" content="Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray">
+
+<title>Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray - part 6 -  tutoriels, descriptions et exemples pour le ray tracer de POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <td align="right"><nobr>
+ <a href="p_sky6.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_sky6.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_sky6d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_sky6d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_sky6i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky6i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000f.htm">Ciel r&eacute;aliste</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_sky1f.htm">Ciel d'azur</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky2f.htm">Partiellement couvert</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3f.htm">Couches de nuages</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4f.htm">Liasse de plans</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky5f.htm">Nuages et ombres</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky6f.htm"--><b>Nuages par media</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70f.htm">Coucher du soleil</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7f.htm">Ciel parsem&eacute; d&eacute;toiles</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky8f.htm">Skydomes et skymaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky9f.htm">Skyboxes et cubemaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky10f.htm">Environnement HDRI</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray</h2>
+<p align="center"><font size="-1"><a href="p_sky000f.htm">Contenu</a> |
+<a href="p_sky1f.htm">1</a> | <a href="p_sky2f.htm">2</a> |
+<a href="p_sky3f.htm">3</a> | <a href="p_sky4f.htm">4</a> |
+<a href="p_sky5f.htm">5</a> | <!--a href="p_sky6f.htm"-->6</a> |
+<a href="p_sky70f.htm">7.0</a> | <a href="p_sky7f.htm">7.1</a> | <a href="p_sky8f.htm">8</a> |
+<a href="p_sky9f.htm">9</a>  | <a href="p_sky10f.htm">10</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" cellspacing="10">
+<tr><td valign="top">
+    <h3 align="left"><b>Nuages massifs par &quot;media&quot; :</b></h3>
+    <h5 align="justify">Avec media nous pouvons faire des nuages avec une structure massive
+     aussi bon pour l'effet d'un vol &agrave; travers les nuages !
+     Ici une &quot;density&quot; nuageuse est limit&eacute; mollement par une &quot;density&quot; du type &quot;boxed&quot;.
+     Pour plus de details sur &quot;media&quot; voir mon tutoriel
+        <a href="../interior/interior_000f.htm">Conception du Int&eacute;rieur des Objets transparents avec POV-Ray</a>.
+        </h5>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// clouds by media ---------------------
+box{ &lt;-1,-1,-1&gt;,&lt;1,1,1&gt;
+  texture{
+    pigment{ rgbf 1} // color Clear
+  } // end of texture
+  interior{
+   media{
+    method 3
+    //intervals 2
+    samples 10,10
+    absorption 1
+    emission 0.5
+    scattering{ 0.8,&lt;1,1,1&gt;*0.5}
+    density{ bozo
+             color_map {
+              [0.00 rgb 0]
+              [0.50 rgb 0.01]
+              [0.65 rgb 0.1]
+              [0.75 rgb 0.5]
+              [1.00 rgb 0.2]
+             } // end color_map
+             turbulence 0.85
+             scale  0.75
+             translate&lt;1, 0.75,2&gt;
+           } // end density
+    density{  boxed // or: spherical
+              color_map {
+               [0.0 rgb 0]    // border
+               [0.1 rgb 0.05]
+               [1.0 rgb 1]    // center
+              } // end color_map
+             scale &lt;1,1,1&gt;*1
+           } // end density
+   } // end media
+  } // end interior
+ hollow
+ scale&lt;1,0.5, 1&gt; translate&lt;0,0.5,0&gt;
+ //-------------------------------------
+scale 15 translate&lt;0,02,30&gt;
+}//-------------------------------------</b></td></pre></tr></table></h5>
+
+
+   <td valign="top">
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><a href="javascript:ShowImage('im/sky_6im.htm')"
+             onMouseover="window.status='ShowSingleImage';return true"
+             onMouseOut="window.status=''">
+            <img src="im/Clouds_by_media_01t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="click for higher resolution" titel="click for higher resolution"></a></td>
+     </tr></table>
+    <h5 align="center">Nuages massifs par &quot;media&quot;.<br>
+    <font size="-2">Cliquez sur l'image pour une r&eacute;solution plus 'haut!</font> <br>
+    <font size="-1">Description de cette sc&egrave;ne pour POV-Ray
+     <a href="pov/Clouds_by_media_01.txt">Clouds_by_media_01.txt</a> ou <br>
+     <a href="pov/Clouds_by_media_01.pov">Clouds_by_media_01.pov</a></font></h5>
+     <br>
+   </td></tr>
+<tr><td colspan="2">
+<p align="right"><font size="-1"><a href="p_sky000f.htm">Contenu</a> |
+<a href="p_sky1f.htm">1</a> | <a href="p_sky2f.htm">2</a> |
+<a href="p_sky3f.htm">3</a> | <a href="p_sky4f.htm">4</a> |
+<a href="p_sky5f.htm">5</a> | <!--a href="p_sky6f.htm"-->6</a> |
+<a href="p_sky70f.htm">7.0</a> | <a href="p_sky7f.htm">7.1</a> | <a href="p_sky8f.htm">8</a> |
+<a href="p_sky9f.htm">9</a>  | <a href="p_sky10f.htm">10</a></b></font></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

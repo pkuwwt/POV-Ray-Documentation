@@ -1,0 +1,263 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Objects with POV-Ray 3.6 / 3.7 - objects and macros from my include file shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, POV-Ray, 3d graphics, raytracing descriptions, povray tutorials, beginners, advanced, geometric objects, csg, macros">
+<meta name="description" content="Defining geometric objects by macros for the raytracing program POV-Ray 3.6, povray, pov ">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+ <hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes3_11i.htm"><font size="2">Italiano </font></a>
+        <a href="shapes3_11f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_11f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes3_11f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_11d.htm"><font size="2">Deutsch </font></a>
+        <a href="shapes3_11d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="3">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000e.htm">Overview</a><br>
+<br>
+<nobr><a href="shapes3_0000e.htm">Objects in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<b>&gt;</b><!--a href="shapes3_11e.htm"--><b>Segment_of_CylinderRing</b></a><br>
+-  <a href="shapes3_20e.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21e.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40e.htm">Egg</b></a><br>
+-  <a href="shapes3_40e.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43e.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43e.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42e.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45e.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30e.htm">Column_N</b></a><br>
+-  <a href="shapes3_30e.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30e.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30e.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50e.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50e.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80e.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85e.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85e.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22e.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60e.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65e.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70e.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70e.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="3"><!-- global -->
+
+<div align="center">
+<font size="2">Geometric object definded in my
+                <a href="../down/insert_a.htm" alt="Download" title="Download">include file &quot;shapes3.inc&quot;</a>
+              (formerly &quot;shapes_lo.inc&quot;).</font><br>
+   <font size="5"><b>Segment_of_CylinderRing</b></font><br>
+</div>
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="90%">
+<tr>
+  <td valign="top">
+  <br>
+       <table align="center" border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr11big.jpg" border="0" width="320" height="240" alt="Cylinder_Ring_Segment" title="Cylinder_Ring_Segment"></td>
+       </tr></table>
+</td>
+<td>
+   <font size="2">
+   <i>general syntax:</i>
+   </font>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>object{ Segment_of_CylinderRing(
+                  R_out,
+                  R_in,
+                  Height_in_Y,
+                  Segment_Angle
+               ) //---------------
+        texture{ ... ... }
+        scale &lt;1,1,1&gt;
+        rotate&lt;0,0,0&gt;
+        translate&lt;0,0,0&gt;
+      } // end of object ---------</b></td></pre></tr></table>
+ <font size="2">
+    <b>R_out</b> = the outer radius of the cylindrical ring,<br>
+    <b>R_in </b> = the inner radius of the cylindrical ring,<br>
+    <b>Height</b> = the height of the ring segment,<br>
+    <b>Segment_Angle</b> = the angle in degrees <b>lefthanded orientated</b>!<br>
+    For Segment_Angle = 0 we get a closed ring or a tube.<br>
+</font>
+
+
+</td>
+</tr></table>
+<i>Examples:</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>#include "shapes3.inc"
+// -------------------------------------------------
+object{ Segment_of_CylinderRing( 3.75,2.25,0.2,-300)
+        texture{ Chrome_Metal
+                 finish { phong 1}
+               } // end of texture
+      } // -----------------------------------------
+object{ Segment_of_CylinderRing( 1.75,1.5,2.0,-270)
+        texture{ pigment {color White*1.1}
+                 finish { phong 1 }
+               } // end of texture
+      } // -----------------------------------------
+object{ Segment_of_CylinderRing( 2.5, 3.0, 1.0, -80)
+        texture{ pigment{ color rgb&lt; 0.7, 1, 0.0&gt; }
+                 finish { phong 1 reflection 0.2}
+               } // end of texture
+      } // -----------------------------------------
+object{ Segment_of_CylinderRing( 1.1, 0.8, 1.5,  0)
+        texture{ pigment{ color rgb&lt; 1,0.7, 0.0&gt; }
+                 finish { phong 1 reflection 0.2}
+               } // end of texture
+      } // -----------------------------------------</b></td></pre></tr></table>
+
+<hr width="90%">
+<table align="center" width="95%">
+<tr><td>
+<font size="4"><b>Macro in detail:</b></font><br>
+<font size="2">
+First we subtract from a cylinder with the radius R_out a smaller cylinder with the radius R_in
+by making an intersection of the first cylinder with the inverse of the second cylinder.
+Then 2 boxes rotated against another were used to cut out the wanted segment.<br>
+For this we have to consider two cases: <br>
+1. abs(Segment_Angle) &lt;= 180 degrees (just an intersection of the torus and the two boxes) and <br>
+2. abs(Segment_Angle) &gt; 180 degrees (an intersection of the torus and the union of the two boxes):</font><br>
+<font size="3">The following images show how this macro works<br>
+(the boxes are visualizised in texture glass):</font><br>
+   <table align="center" border="0" >
+   <tr><td colspan="2">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr11a.jpg" border="0" width="320"  height="320"  alt="Cylinder_Ring_Segment 145 degrees" title="Cylinder_Ring_Segment 145 degrees"></td>
+         <td><img src="im/mymcr11b.jpg" border="0" width="320"  height="320"  alt="Cylinder_Ring_Segment 215 degrees" title="Cylinder_Ring_Segment 215 degrees"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr><td><font size="2"><b>abs(Segment_Angle) &lt;= 180 degrees<br>R_out = 1.25, R_in = 0.75, Angle =-145 </b></font></td>
+       <td><font size="2"><b>abs(Segment_Angle) &gt; 180 degrees<br>R_out = 1.25, R_in = 0.75, Angle =-215 </b></font></td>
+  </tr></table>
+
+
+<div align="center">
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>//--------------------------- Segment_of_CylinderRing()
+#macro Segment_of_CylinderRing( R_out, R_in,
+                                Height,
+                                Segment_Angle
+                              ) //------------
+#local D = 0.0001; // just a little bit
+ #if (Height = 0 ) #local  Height = D; #end
+ #if (Height &lt; 0 ) #local  D = -D; #end
+ #if (R_out &lt; R_in)
+     #local X=R_out; #local R_out=R_in; #local R_in=X;
+ #end
+ #if (Segment_Angle &lt; 0)
+      #local Negativ_Flag = 1;
+      #local Segment_Angle = -Segment_Angle;
+ #else
+      #local Negativ_Flag = 0;
+ #end
+ #if (Segment_Angle &gt;= 360)
+      #local Segment_Angle = mod (Segment_Angle, 360);
+ #end
+
+ intersection{
+   cylinder { &lt;0,0,0&gt;,&lt;0,Height,0&gt;, R_out
+            } // end of outer cylinder  ----------
+   cylinder { &lt;0,-D,0&gt;,&lt;0,Height+D,0&gt;, R_in
+              inverse
+            } // end of inner cylinder  ----------
+
+
+  #if (Segment_Angle &gt; 0) // -----------------------
+  #if (Segment_Angle &gt;= 180)
+  union{
+  #end // then use union!
+
+   box { &lt;-R_out+D,-D,0&gt;,&lt; R_out+D, Height+D, R_out+D&gt;
+       }// end of box
+   box { &lt;-R_out+D,-D,-R_out+D&gt;,&lt; R_out+D, Height+D,0&gt;
+         rotate&lt;0,-Segment_Angle,0>
+       }// end of box
+
+  #if (Segment_Angle &gt;= 180)
+   } // end of union
+  #end // end of union, if union is used!
+
+ #if (Negativ_Flag = 0)  rotate&lt;0,-Segment_Angle,0&gt;
+ scale&lt;-1,1,-1&gt;
+  #end // of "#if (Negativ_Flag = 0)" ------------
+
+  #end // of "#if (Segment_Angle > 0)" ------------
+
+  } // end of intersection
+
+#end // --------- end of macro Segment_of_CylinderRing()</b></font></td></pre>
+   </tr></table>
+</div>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

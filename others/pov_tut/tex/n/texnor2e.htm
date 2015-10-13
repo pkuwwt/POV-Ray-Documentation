@@ -1,0 +1,450 @@
+<html>
+<head>
+<title>Textures with POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2003 by Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="textures with povray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, rendering, computergraphics, 3d graphic, textures, desinging surfaces">
+<link rel="stylesheet" type="text/css" href="../../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=645,height=650");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design of Surfaces by &quot;texture&quot; with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="texnor2d.htm"><font size="2">Deutsch </font></a>
+        <a href="texnor2d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a><br>
+        <a href="texnor2i.htm"><font size="2">Italiano</font></a>
+        <a href="texnor2i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="texnor2f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="texnor2f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../../index.htm">Home</b></a><br>
+ - <a href="../../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <a href="../tex_000e.htm">Design of Surfaces</b></a><br>
+ &nbsp;&nbsp;-      <a href="../tex_000e.htm">Colors and Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="../tex_000e.htm">Index</b></a><br>
+<br>
+ &nbsp;&nbsp;-  <a href="../tex_001e.htm">texture syntax</b></a><br>
+ &nbsp; &nbsp; - <a href="../tex_001e.htm">Basic Sample</b></a><br>
+ &nbsp; &nbsp; - <a href="../tex_200e.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="../tex_300e.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; <b>&gt;</b>  <!--a href="n/texnor2e.htm"--><b>normal Samples</b></a><br>
+ &nbsp; &nbsp; - <a href="../tex_400e.htm">finish{ ... } </b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="80%"  align="center"><tr><td><!-- global table-->
+
+<h2 align="justify">Samples for <nobr>&quot;normal {.....}&quot;</nobr><br>
+<font size="-2">Click on the thumbnails to see image in bigger size with the according scenery description!
+ (Only with javascript on!)</font>
+</h2>
+<table width="90%">
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_11i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+  <img src="normal_11t.jpg" border="0" width="150" height="150" alt="normal checker" title="normal checker"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_12i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+  <img src="normal_12t.jpg" border="0" width="150" height="150" alt="normal hexagon" title="normal hexagon"></a></td></tr></table>
+</td><td>
+<table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_13i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+  <img src="normal_13t.jpg" border="0" width="150" height="150" alt="normal brick" title="normal brick"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_14i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_14t.jpg" border="0" width="150" height="150" alt="normal quilted" title="normal quilted"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_15i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_15t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern average pigment_map" title="normal pigment_pattern average pigment_map"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_16i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_16t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern cells" title="normal pigment_pattern cells"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_17i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_17t.jpg" border="0" width="150" height="150" alt="normal facets" title="normal facets"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_18i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_18t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern checker with turbulence" title="normal pigment_pattern checker with turbulence"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_19i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_19t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern brick with turbulence" title="normal pigment_pattern brick with turbulence"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_20i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_20t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern brick with turbulence" title="normal pigment_pattern brick with turbulence"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_21i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_21t.jpg" border="0" width="150" height="150" alt="normal quilted with turbulence" title="normal quilted with turbulence"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_22i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_22t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern crackle" title="normal pigment_pattern crackle"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_23i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_23t.jpg" border="0" width="150" height="150" alt="normal bumps" title="normal bumps"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_24i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_24t.jpg" border="0" width="150" height="150" alt="normal wrinkles" title="normal wrinkles"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_25i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_25t.jpg" border="0" width="150" height="150" alt="normal dents" title="normal dents"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_26i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_26t.jpg" border="0" width="150" height="150" alt="normal spotted" title="normal spotted"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_27i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_27t.jpg" border="0" width="150" height="150" alt="normal bozo" title="normal bozo"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_28i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_28t.jpg" border="0" width="150" height="150" alt="normal agate" title="normal agate"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_29i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_29t.jpg" border="0" width="150" height="150" alt="normal bozo" title="normal bozo"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_30i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_30t.jpg" border="0" width="150" height="150" alt="normal spotted" title="normal spotted"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_31i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_31t.jpg" border="0" width="150" height="150" alt="normal spotted" title="normal spotted"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_32i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_32t.jpg" border="0" width="150" height="150" alt="normal mandel" title="normal mandel"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_33i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_33t.jpg" border="0" width="150" height="150" alt="normal julia" title="normal julia"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_34i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_34t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern onion sine_wave" title="normal pigment_pattern onion sine_wave"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_35i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_35t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern onion ramp_wave" title="normal pigment_pattern onion ramp_wave"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_36i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_36t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern radial sine_wave" title="normal pigment_pattern radial sine_wave"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_37i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_37t.jpg" border="0" width="150" height="150" alt="normal radial poly_wave frequency 18" title="normal radial poly_wave frequency 18"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_38i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_38t.jpg" border="0" width="150" height="150" alt="normal radial poly_wave frequency 32" title="normal radial poly_wave frequency 32"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_39i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_39t.jpg" border="0" width="150" height="150" alt="normal radial poly_wave 3.5 frequency 18" title="normal radial poly_wave 3.5 frequency 18"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_40i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_40t.jpg" border="0" width="150" height="150" alt="normal radial scallop_wave" title="normal radial scallop_wave"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+      <tr><td><a href="normal_c.txt" target="_new">
+  <tr><td><a href="javascript:ShowImage('norml_41i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_41t.jpg" border="0" width="150" height="150" alt="normal radial sine_wave" title="normal radial sine_wave"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_42i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_42t.jpg" border="0" width="150" height="150" alt="normal radial sine_wave" title="normal radial sine_wave"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_43i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_43t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern gradient y sine_wave" title="normal pigment_pattern gradient y sine_wave"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_44i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_44t.jpg" border="0" width="150" height="150" alt="normal ripples" title="normal ripples"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_45i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_45t.jpg" border="0" width="150" height="150" alt="normal wood" title="normal wood"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_46i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_46t.jpg" border="0" width="150" height="150" alt="normal ripples" title="normal ripples"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_47i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_47t.jpg" border="0" width="150" height="150" alt="normal ripples" title="normal ripples"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_48i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_48t.jpg" border="0" width="150" height="150" alt="normal waves" title="normal waves"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_49i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_49t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern spiral2 5 sine_wave" title="normal pigment_pattern spiral2 5 sine_wave"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_50i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_50t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern spiral2 5 sine_wave" title="normal pigment_pattern spiral2 5 sine_wave""></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_51i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_51t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern spiral1 25 sine_wave"" title="normal pigment_pattern spiral1 25 sine_wave""></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_52i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_52t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern spiral1 15 sine_wave" title="normal pigment_pattern spiral1 15 sine_wave"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_53i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_53t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern gradient" title="normal pigment_pattern gradient"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_54i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_54t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern radial" title="normal pigment_pattern radial"></a></td></tr></table>
+</td></tr>
+
+<tr><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_55i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_55t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern radial" title="normal pigment_pattern radial"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_56i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_56t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern radial" title="normal pigment_pattern radial"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_57i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_57t.jpg" border="0" width="150" height="150" alt="normal pigment_pattern wood" title="normal pigment_pattern wood"></a></td></tr></table>
+</td><td>
+ <table align="center" border="1"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><a href="javascript:ShowImage('norml_58i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+ <img src="normal_58t.jpg" border="0" width="150" height="150" alt="hexagon + normal_map" title="hexagon + normal_map"></a></td></tr></table>
+</td></tr>
+</table>
+<p align="justify">
+See also: <a href="../tex_750e.htm" target="_new"><b>List of &quot;pigment and normal patterns&quot;</b></a>
+ </p>
+
+
+</td></tr></table><!-- global table -->
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</body>
+</html>

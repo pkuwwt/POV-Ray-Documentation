@@ -1,0 +1,280 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="keywords" content="Animazione 3D, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg video, avi video, gif animate,  esempi POV-Ray, tutoriale POV-Ray">
+<meta name="Description" content="Animazioni 3D con POV-Ray - Descrizioni ed esempi per il raytracer POV-Ray di Friedrich A. Lohmueller">
+<title>Animazioni 3D con POV-Ray - Descrizioni ed esempi per il raytracer POV-Ray. </title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ita.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="Tutorial POV-Ray" title="Tutorial POV-Ray"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; Animazione 3D con POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Fondamenti ed esempi per l'animazione 3D.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim200e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim200e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim200f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="anim200f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim200d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim200d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+   </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">Galeria Animazione 3D</b></a><br>
+ - <a href="../pov__ita.htm#ani"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anii.htm">Animazione 3D</b></a><br>
+ &nbsp;&nbsp; <i>Indice del contenuto</i><br>
+&nbsp; <!--a href="anim001i.htm"-->  0. Nozioni fondamentali</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001i.htm"-->Esempio di base</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002i.htm">Da Immagini al Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005i.htm">Termini tecnici di base</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008i.htm">Comandi di Animazione</b></a><br>
+&nbsp; <!--a href="anim11i.htm"--> I. Animazioni ciclici </b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11i.htm">Oggetti rotanti</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112i.htm">Pianeti in orbita</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113i.htm">L'Orologio</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12i.htm">Fotocamera rotante</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121i.htm">Fotocamera in volo dritto</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13i.htm">Il Problema di</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13i.htm"> Ruota Western</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131i.htm">Ruote Girante</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14i.htm">Ingranaggi</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141i.htm">Catena di Trasmissione</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142i.htm">Catena della Bicicletta</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15i.htm">Pendolo oscillante</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151i.htm">Pendolo di Newton</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2. <a href="anim152i.htm">Rock il Rocking Chair!</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16i.htm">Molla a spirale</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170i.htm">Biella di accoppiamento</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17i.htm">Biella motrice</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18i.htm">Psychedelico + Op-Art </b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190i.htm">Contatori + Countdown</b></a><br>
+&nbsp; <b>&gt</b>10. <!--a href="anim200i.htm"--><b>Piegatura di un Cubo</b></a><br>
+
+&nbsp; II. Movimenti non-lineari<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220i.htm">Accelerare e Frenare 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222i.htm">Accelerare e Frenare 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240i.htm">Cadere e Saltellare</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260i.htm">Accelerazione secondo</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260i.htm">le formule de la fisica</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280i.htm">Controllo di movimenti</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280i.htm">con funzioni spline</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Sentieri di Animazione<br>&nbsp; &nbsp; &nbsp; con Spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210i.htm">Curve Spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21i.htm">Spline ciuso</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22i.htm">Sentieri di Animazione</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table align="center" width="95%" cellpadding="15">
+<tr><td width="10%"><img src="im/Fold_Cube_1s.gif" border="1" width="80" height="80"></td>
+    <td>
+     <h1>La Piegatura<br>
+      di uno Sviluppo del Cubo<br>
+      <font size="-1">Come si piega un cubo con 6 quadrati POV-Ray.</font></td></h1>
+    <td width="10%"><img src="im/Fold_Cube_22s.gif" border="1" width="80" height="80"></td>
+</tr></table>
+
+<table align="center" width="95%" cellpadding="15">
+<!--tr><td colspan="2"><hr></td></tr-->
+<tr>
+ <td colspan="1" valign="top"><p align="justify"><b><font size="+1">Come si piega un cubo:</font></b><br>
+  Un cubo consiste di 6 quadrati piegati con 90&deg; contro i quadrati adiacenti.<br>
+  Per questo comminciamo con dichiarare un oggetto 'Quadrato'. <br>
+  <font size="-1">(First declare the according textures as you like it!)</font>
+
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// -------------------- dimensions
+#declare D = 0.00001;
+#declare S = 1;
+#declare Rl = 0.02;// "edge" radius
+#declare Rp = 0.04;//"point" radius
+// ------------------------- square
+// Quadrat, quadrato, carré, square
+#declare Quadrato =
+union{
+ // the corners
+ union{
+  sphere{ &lt;0,0,0&gt;, Rp }
+  sphere{ &lt;S,0,0&gt;, Rp }
+  sphere{ &lt;S,0,S&gt;, Rp }
+  sphere{ &lt;0,0,S&gt;, Rp }
+  texture{ Corner_Texture } }
+ // the edges
+ union{
+  cylinder{ &lt;0,0,0&gt;,&lt;S,0,0&gt;, Rl }
+  cylinder{ &lt;S,0,0&gt;,&lt;S,0,S&gt;, Rl }
+  cylinder{ &lt;0,0,S&gt;,&lt;S,0,S&gt;, Rl }
+  cylinder{ &lt;0,0,0&gt;,&lt;0,0,S&gt;, Rl }
+  texture{ Edge_Texture } }
+ // the face
+ box{ &lt;0,-D,0&gt;,&lt;1,D,1&gt;
+  texture{ Face_Texture }}
+} // end of union ------------------</b></td></pre></tr> </table>
+</td></p>
+
+<td colspan="1" valign="top">
+<br>
+<br>
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Folding_a_Cube_001.jpg" width="240" height="180" alt="Folding of a Cube" title="Folding of a Cube"></td></tr>
+   </table>Un quadrato per piegare un cubo<br>
+<br>
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Cube_Net_001.jpg" width="240" height="240" alt="Cube Net" title="Cube Net"></td></tr>
+   </table>Uno sviluppo del cubo</h6>
+</td>
+
+</tr>
+</table>
+
+<table align="center" width="85%" cellpadding="10">
+<!--tr><td colspan="2"><hr></td></tr-->
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b><font size="+1">La costruzione<br>
+  di una catena di quadrati:</font></b><br>
+  Per la piegatura di un sviluppo del cubo
+  <font size="-1">(like here above right)</font><br>
+  dobbiamo fare una catena dei quadrati A,B,C e D con un inscatolamento di 'union'.<br>
+  Dobbiamo non dimenticare che la rotazione con 'rotate' gira sempre intorno agli assi delle coordinate!<br>
+  Di conseguenza dobbiamo <b>primo</b> appliquare la <b>rotazione</b> e <b>poi</b> la <b>traslazione</b>
+  come mostrato per i primi quadrati A e B nell'immagine qui a destra in alto.<br>
+  <font size="-1">Nota: 'rotazione intorno a una asse' e 'traslazione' generalmente  <b>non sono commutativi</b> o
+  non sono intercambiabile, cio&egrave;: Non possiamo cambiare la sequenza arbitrariament!</font>
+<br>
+<br>
+<br>
+<br>
+  <font size="+1"><b>Qui come si fa l'animazione:</b></font><br>
+ Per ottenere un inizio e una fine del moviment piu dolce usiamo la macro seguente:<br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#macro Cos_010( X ) //-----
+  (0.5-0.5*cos(2*pi*X))
+#end //--------------------
+#declare Fold_Angle =
+    -90*Cos_010(clock);
+//---------------------------------
+</b></td></pre></tr> </table>
+
+  <br>
+L'assemblaggio dei componenti di un cubo:
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>union{ // A + B + C
+  object{ Quadrato } // C ------
+  union{ // A + B
+     object{ Quadrato } // B ------
+     object{ Quadrato   // A ------
+             rotate&lt;Fold_Angle,0,0&gt;
+             translate&lt;0,0,S&gt;
+           } //--------------
+     rotate&lt;Fold_Angle,0,0&gt;
+     translate&lt;0,0,S&gt;
+  } // end A + B
+  rotate&lt;Fold_Angle,0,0&gt;
+  translate&lt;0,0,S&gt;
+} // end A + B + C
+
+object{ Quadrato } // D ------
+object{ Quadrato  // E ------
+        translate&lt;-S,0,0>
+        rotate&lt;0,0,Fold_Angle&gt;
+      } //------------------
+object{ Quadrato   // F ------
+        rotate&lt;0,0,-Fold_Angle&gt;
+        translate&lt;S,0,0&gt;
+      } //------------------
+</b></td></pre></tr> </table>
+</td></p>
+
+<td colspan="1" valign="top">
+  <h6 align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Folding_a_Cube_1.gif" width="240" height="240" alt="Folding_a_Cube" title="Folding_a_Cube"></td></tr>
+   </table>Piegare un cubo: ruotare, muovere, aggiungere il prossimo quadrato!</h6>
+<br>
+  <h6 align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Function_cos_010.jpg" width="240" height="240" alt="Cos_010()" title="Cos_010()"></td></tr>
+   </table>La macro 'Cos_010(...)'</h6>
+  <h6 align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Folding_a_Cube_2.gif" width="240" height="240" alt="Folding_a_Cube" title="Folding_a_Cube"></td></tr>
+   </table>Piegare un cubo<br>
+  Descrizione della scena per POV-Ray:<br><a href="pov/Folding_a_Cube_2.ini"> &quot;Folding_a_Cube_2.ini&quot;</a>
+    e <br> <a href="pov/Folding_a_Cube_2.pov">&quot;Folding_a_Cube_2.pov&quot;</a></h6>
+
+
+</td>
+
+</tr><tr>
+<td colspan="2">Per altri esempi su piegare poliedri regolari q.v.:<br>
+                <a href="../geo/geom_000i.htm">Geometria di Base per Raytracing</a>
+                o: <a href="../../pov_anim/ani_3500d.htm">3D-Animations - Geometry</a>
+</td></tr>
+</table>
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

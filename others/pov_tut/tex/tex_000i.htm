@@ -1,0 +1,439 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Testure con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015 by Friedrich A. Lohmueller">
+<meta name="description" content="textures con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, povray, POV-Ray, Raytracing, 3d graphic, rendering, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_000e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_000e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_000d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <!--a href="tex_000i.htm"--><b>Design di Superfici</b></a><br>
+ &nbsp;&nbsp;<b>&gt;</b>     <!--a href="tex_000i.htm"--><b>Colori e Testure</b></a><br>
+ &nbsp;&nbsp; &nbsp; <!--a href="tex_000i.htm"--><b>Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330i.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500i.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560i.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561i.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562i.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570i.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580i.htm">pavement</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con pigment</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650i.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651i.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660i.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_875i.htm">image_map+gif 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_876i.htm">image_map+gif 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_878i.htm">image_map+gamma</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_885i.htm">transparency maps 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_886i.htm">transparency maps 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_887i.htm">transparency maps 3</b></a><br>
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_890i.htm">Layered Textures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_893i.htm">Quadrettatura</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<h1 align="center"><a name="Top"></a>Colori e Testure</h1>
+<div align="center">
+<table border="0" cellspacing="2" cellpadding="4" width="95%">
+<tr><td>
+
+<table border="1" cellpadding="3" width="80%" align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td height="30" valign="top"  colspan="6">
+         &nbsp; <a href="tex_001i.htm"><font size="2">
+          Sintassi di &quot;texture&quot;</b></font></a>
+          <font size="2"> - Regole di base - Esempi di base </font></td></tr>
+
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_200i.htm"><img src="im/col_all_t.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_200i.htm"><img src="im/rgb_1t.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_200i.htm"><img src="im/txtur_pat.jpg" border="0" height="80" width="80"></a></td>
+      <td valign="top" colspan="2"><a href="tex_300e.htm"><font size="2">
+       <a href="tex_200i.htm#start">pigment{ ... }</b></font></td></tr>
+
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_300i.htm"><img src="im/normal00.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_300i.htm"><img src="im/normal01.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_300i.htm"><img src="im/normal02.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top"><a href="tex_300e.htm"><font size="2">
+       <a href="tex_300i.htm#start">normal{ ... }</b></a><br> con <br>
+         <a href="tex_330i.htm">pigment_pattern</b></a><br> e
+          <a href="n/texnor2i.htm">esempi</b></a></font></td>
+     <td valign="top" width="160" height="80" align="center" bgcolor="ffffff"><a href="tex_330i.htm"><img src="im/pigment_pattern_005s.jpg" border="0" height="80" width="160"></a></td></tr>
+
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_400i.htm"><img src="im/txtur_fi1.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_400i.htm"><img src="im/txtur_fi06b.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_400i.htm"><img src="im/txtur_r0.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top"  colspan="2"><a href="tex_400e.htm"><font size="2">
+         <a href="tex_400i.htm#start">finish{ ... }</b></font></td></tr>
+
+  <tr><td height="30" valign="top"  colspan="6">
+        &nbsp; <a href="tex_200i.htm#start"><font size="2">
+         <nobr>Regole per l'uso di colori pronti, pigmenti e textures</b></nobr></a></font></td></tr>
+
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_150i.htm"><img src="im/col_all_t.jpg" border="0" height="80" width="80"></a></td>
+      <td valign="top" colspan="4"><font size="3">
+        &nbsp; <b> Tabella dei<br>
+        <a href="tex_150i.htm">colori predefiniti</b></a><br>
+        di &quot;colors.inc&quot;</font></td></tr>
+</table></td></tr><tr><td>
+<table border="1" cellpadding="3" width="80%" align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td width="100"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_160i.htm"><img src="im/tex3est1t.jpg" border="0" height="80" width="100"></a></td>
+      <td width="100"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_160i.htm"><img src="im/tex3est2t.jpg" border="0" height="80" width="100"></a></td>
+     <td valign="top" colspan="2"><font size="2">
+        &nbsp; <b> Tabella di<br>
+        <a href="tex_160i.htm">pigmenti e textures predefinite</b></a><br>
+        di &quot;textures.inc&quot;<br></font></td></tr>
+
+</table></td></tr><tr><td>
+<table border="1" cellpadding="3" width="80%" align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_110i.htm"><img src="im/rgb_1t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3"><font size="2">
+        &nbsp; <a href="tex_110i.htm#start">Colori RGB con &quot;color_rgb&lt; , , &gt;&quot;</b></a><b>:<br>
+        </b>  colori, pigmenti e textures con fai-da-te</font></td></tr>
+<tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_120i.htm"><img src="im/txtur_fi2.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3"><font size="2">
+        &nbsp; <a href="tex_120i.htm"><nobr>Transparenza con &quot;filter&quot; et &quot;transmit&quot;</nobr></b></a><b>:<br>
+        </b>La transparenza della superficie</font></td></tr>
+<!-- ------------------------------------------------ -->
+</table></td></tr><tr><td>
+<table border="1" cellpadding="3" width="80%" align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td height="30" valign="top"  colspan="6">
+         &nbsp; <nobr><a href="tex_500i.htm"><font size="2">
+          Motivi - &quot;patterns&quot;</b></a>
+          - per colori (&quot;pigment&quot;) e strutture per superfici.(&quot;normal&quot;)</font></nobr></td></tr>
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_700i.htm"><img src="im/pattern_types.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="5" width="100%"><font size="2">
+      &nbsp; <a href="tex_700i.htm">Tipi di Motivi</b></a> (patterns types)<br>
+      &nbsp; Strutture per &quot;pigment{...}&quot; e &quot;normal{...}&quot;.<br>
+      &nbsp; Funzioni di strutture e turbolenza.</font></td></tr>
+
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_500i.htm"><img src="im/txtur_p0.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_500i.htm"><img src="im/txtur_p1.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_500e.htm"><img src="im/square03.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_500e.htm"><img src="im/triangular10.jpg" border="0" height="80" width="80"></a></td>
+      <td valign="top" colspan="2" width="100%"><font size="2">
+         &nbsp;<nobr>Motivi regolari:</nobr><br>
+         <a href="tex_500e.htm">checker,<br>hexagon,<br> square,<br> triangular</b></a></font></td></tr>
+
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_550i.htm"><img src="im/brick1tt.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_570e.htm"><img src="im/tiling1.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_580e.htm"><img src="im/pavement_s.jpg" border="0" height="80" width="80"></a></td>
+      <td valign="top" colspan="3" width="100%"><font size="2">
+        &nbsp; Motivi regolari:<br>
+        &nbsp;  <a href="tex_550i.htm">brick</b></a><br>
+        &nbsp;  <a href="tex_570e.htm">tiling</b></a><br>
+        &nbsp;  <a href="tex_580e.htm">pavement</b></a></font></td></tr>
+  <tr>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_560i.htm"><img src="im/Object_Pattern_1ss.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_561i.htm"><img src="im/Object_Pattern_0ss.jpg" border="0" height="80" width="80"></a></td>
+     <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_562f.htm"><img src="im/Object_Pattern_with_Textures_1s.jpg" border="0" height="80" width="80"></a></td>
+      <td valign="top" colspan="3"><font size="2">
+        &nbsp; Ogetti per motivi:<br>
+        &nbsp;  <a href="tex_560i.htm">object pattern (1)</a><br>
+        &nbsp;  <a href="tex_561i.htm">object pattern (2)</a><br>
+        &nbsp;  <a href="tex_562i.htm">object pattern (3)</a></font></td></tr>
+
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_600i.htm"><img src="im/color_trans3.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="5"><font size="2">
+       &nbsp; Motivi con righe:<br>
+       &nbsp; <a href="tex_600i.htm">color_map{...}</b></a><br>
+       &nbsp;  Di un colore &agrave; l'altro colore - lieve ou forte.</font></td></tr>
+  <tr><td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_650i.htm"><img src="im/pigment_pattern_0ss.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_651i.htm"><img src="im/pigment_pattern_1ss.jpg" border="0" height="80" width="80"></a></td>
+      <td valign="top" colspan="4" width="100%"><font size="2">Motivi di pigment<br>
+        &nbsp; <a href="tex_650i.htm">pigment_pattern (1)</a><br>
+        &nbsp; <a href="tex_651i.htm">pigment_pattern (2)</a></font></td></tr>
+  <tr><td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_660i.htm"><img src="im/Image_pattern_01s.jpg" border="0" height="80" width="80"></a></td>
+      <td valign="top" colspan="5" width="100%"><font size="2">Motivi con imagini<br>
+        &nbsp; <a href="tex_660i.htm">image_pattern</a></font></td></tr>
+
+
+  <tr><td height="30" valign="top" colspan="6"><font size="2">
+        &nbsp;
+        <a href="tex_750i.htm">Lista di motivi regulari</b></a><br>
+        Alcuni funzioni per motivi regulari</font></td></tr>
+  <tr><td height="30" valign="top" colspan="6"><font size="2">
+        &nbsp;
+        <a href="tex_755i.htm">Lista di motivi come per caso</b></a><br>
+        Alcuni funzioni per motivi turbinati come per caso</font></td></tr>
+  <tr><td height="30" valign="top" colspan="6"><font size="2">
+        &nbsp;
+        <a href="tex_760i.htm">Lista di motivi con fratali</b></a><br>
+        Qualche motivo con funzioni di frattali</font></td></tr>
+  <tr><td height="30" valign="top" colspan="6"><font size="2">
+        &nbsp;
+        <a href="tex_765i.htm">Lista di altri motivi</b></a><br>
+        Quelche altri funzioni per motivi</font></td></tr>
+<!-- ------------------------------------------------ -->
+</table></td></tr><tr><td>
+<table border="1" cellpadding="3" width="80%" align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_780i.htm"><img src="im/warp_spherical_1.jpg" border="0" height="80" width="80"></a></td>
+      <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+       <a href="tex_790i.htm"><img src="im/uv_mapping_sphere_08s.jpg" border="0" height="80" width="80"></a></td>
+       <td height="30" valign="top" colspan="3"><font size="2">
+        &nbsp; <a href="tex_780i.htm">Warp Mapping</b></a> e <br>
+       &nbsp; <a href="tex_790i.htm">uv_mapping</b></a>. <br>
+       Il modificatore di motivi warp e il 'uv_mapping'<br>
+        - Mapping adattato alle superfici.</font></td></tr>
+<!-- ------------------------------------------------ -->
+
+</table></td></tr><tr><td>
+<table border="1" cellpadding="3" width="80%" align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+
+  <tr><td height="30" valign="top" colspan="4"><font size="2">
+        &nbsp; <a href="tex_800i.htm">Mapping </b></a>.
+          Metodi per mappare una texture su una superficie.</font></td></tr>
+  <tr><td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_600i.htm"><img src="im/color_map0t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3"><font size="2">
+        &nbsp; <a href="tex_600i.htm">color_map{ ... }</b></a></font></td></tr>
+  <tr><td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_820i.htm"><img src="im/pigment_map0.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3"><font size="2">
+        &nbsp; <a href="tex_820i.htm">pigment_map{ ... }</b></font></td></tr>
+  <tr><td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_830i.htm"><img src="im/texture_map0t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3"><font size="2">
+        &nbsp; <a href="tex_830i.htm">texture_map{ ... }</b></a></font></td></tr>
+ <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_840i.htm"><img src="im/normal_map0t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3"><font size="2">
+        &nbsp; <a href="tex_840i.htm">normal_map{ ... }</b></a>
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </font></td></tr>
+ <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_850i.htm"><img src="im/average2t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3"><font size="2">
+        &nbsp; <a href="tex_850i.htm">average</b></a>
+     - - Media ponderata con &quot;normal&quot;, &quot;pigment&quot; e &quot;texture&quot;.</font></td></tr>
+
+ <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_860i.htm"><img src="im/material_map1t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3" width="100%"><font size="2">
+        &nbsp; <a href="tex_860i.htm">material_map{ ... } </b></a>
+        - Mapping di textures con strutture d'immagini.</font></td></tr>
+ <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_870i.htm"><img src="im/image_mapt.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3" width="100%"><font size="2">
+        &nbsp; <a href="tex_870i.htm">image_map{ ... } </b></a>
+        - Mapping d'immagini su una superficie.</font></td></tr>
+ <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_876i.htm"><img src="im/golf_ball_t.jpg" border="0" height="80" width="80"></a></td>
+     <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_875i.htm"><img src="im/image_map_gif1t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="2" width="100%"><font size="2">
+        &nbsp; Mapping d'immagini gif transparenti su una superficie.<br>
+        &nbsp; <a href="tex_875i.htm">image_map{ ... } + gifs transparenti I</b></a><br>
+        &nbsp; <a href="tex_876i.htm">image_map{ ... } + gifs transparenti II</b></a>
+        </font></td></tr>
+ <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_878i.htm"><img src="im/Image_gamma36_1ss.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3" width="100%"><font size="2">
+        &nbsp; Mapping d'immagini con correttura di gamma.<br>
+        &nbsp; <a href="tex_878i.htm">image_map{...} + gamma</b></a>
+          <br>Mapping von Bildern mit Gamma-Korrektur</font></td></tr>
+
+ <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_880i.htm"><img src="im/bump_map1t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="3" width="100%"><font size="2">
+        &nbsp; <a href="tex_880i.htm">bump_map{ ... }</b></a>
+      - Usare immagini per motivi di normal.
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </font></td></tr>
+
+ <tr><td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_885i.htm"><img src="im/Transparent_Grid_03s.jpg" border="0" height="80" width="80"></a></td>
+     <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_886i.htm"><img src="im/Transparent_Wire_Net_01s.jpg" border="0" height="80" width="80"></a></td>
+     <td width="80"  height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_887i.htm"><img src="im/Acer_Leaf_01s.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="1" width="100%"><font size="2">
+        &nbsp; <a href="tex_885i.htm">transparency mapping 1</b></a><br>
+        &nbsp; <a href="tex_886i.htm">transparency mapping 2</b></a><br>
+        &nbsp; <a href="tex_887i.htm">transparency mapping 3</b></a><br>
+     - Trasparenza con motivi.
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font></td></tr>
+
+</table></td></tr><tr><td>
+
+<table border="1" cellpadding="3" width="80%" align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+   <tr><td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_890i.htm"><img src="im/layered_textures0t.jpg" border="0" height="80" width="80"></a></td>
+     <td valign="top" colspan="4"><font size="2">
+        &nbsp; <a href="tex_890i.htm">
+        Sovrapposizioni - &quot;Layered textures&quot;</b></a><br>
+        - textures sovrapposte a pi&ugrave; strati.
+</font></td></tr>
+
+</table></td></tr><tr><td>
+
+<table border="1" cellpadding="3" width="80%" align="left"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><!--td width="80" height="80" align="center" valign="top" bgcolor="ffffff">
+      <a href="tex_550e.htm"><img src="im/brick1tt.jpg" border="0" height="80" width="80"></a></td-->
+     <td valign="top" colspan="4"><font size="2">
+        &nbsp; <a href="tex_900i.htm">La propria libreria di textures</b></a><br>
+        &nbsp; Come si crea  <b>il proprio include file</b> di textures. </font></td></tr>
+</table>
+</td></tr>
+<tr><td>
+
+
+</td>
+</tr>
+</table>
+</div>
+<h5 align="justify"><h5>
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

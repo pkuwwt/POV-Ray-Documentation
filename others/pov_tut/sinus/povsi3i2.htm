@@ -1,0 +1,221 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="Description" content="Loops, seni e coseni in POV-Ray - parte II - tutorial et esempi per POV-Ray, un programma di raytracing">
+<meta name="keywords" content="mathematica, loops, cicli, while, seno, coseno, pov, povray, POV-Ray, raytracing, 3d grafica, raytracing descrizioni, povray tutorial">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Loops, seni e coseni in POV-Ray - parte II</title>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+   di <nobr>Friedrich A. Lohm&uuml;ller, </nobr>
+ <br>tradotto di Paolo Taraboi<br>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Loops, seni e coseni in POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+
+  <td align="right">
+        <a href="povsi3e2.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povsi3e2.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povsi3f2.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="povsi3f2.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povsi3d2.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="povsi3d2.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3i1.htm"--><b>Loops, </b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3i1.htm"--><b>seni e coseni</b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3i1.htm"--><b>in POV-Ray</b></a><br>
+&nbsp;&nbsp;  1.  <a href="povsi3i1.htm">Onde lineare</b></a><br>
+&nbsp;<b>&gt;</b>2.  <!--a href="povsi3i2.htm"--><b>Gira e rigira...!</b></a><br>
+&nbsp;&nbsp; &nbsp; &nbsp;  <!--a href="povsi3i2.htm"--><b>Onde concentriche</b></a><br>
+&nbsp;&nbsp;  3.  <a href="povsi3i3.htm">Tappeti volanti</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</nobr>
+ &nbsp; - <a href="../down/pov_dwni.htm">Download</b></a><br>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<h2 align="center">Seni e coseni strutturati in onde concentriche </h2>
+
+
+<table width="90%" align="center" cellpadding="5"><tr>
+<td colspan="2">
+<p align="justify">Sino ad ora abbiamo applicato la funzione sin(A) solo lungo l'asse X.
+Si ottiene un notevole effetto se moduliamo una funzione sin(A) ai punti Y
+di una sfera in relazione alla loro distanza dal centro La distanza
+di un punto dall'origine in un sistema di assi cartesiani si calcola
+col teorema di pitagora.</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Ball =
+ sphere{&lt;0,0,0&gt;,0.25
+   texture{
+     pigment{color rgb&lt;1,0.65,0.0&gt;}
+     finish {diffuse 0.9 phong 1}
+    }// end of texture
+ }// end of sphere
+
+#declare Z = -5; // start value Z
+#declare EndZ = 5;//  end value Z
+#declare Step = 0.5;// step value
+//----------- loop start Z :
+#while ( Z &lt; EndZ + Step)
+
+  #declare X = -5;   // start value X
+  #declare EndX = 5; //   end value X
+  //------------ loop start X:
+  #while ( X &lt; EndX + Step)
+
+    // calculazione
+    // della distanza dall'origine:
+    #declare R = sqrt(X*X + Z*Z);
+    // modulato dipendente di R:
+    object{ Ball translate &lt; X, sin(2*R),Z&gt;}
+
+  #declare X = X + Step; //next X  value
+  #end // ------------------- loop end X
+
+#declare Z = Z + Step; //next Z value
+#end // ------------------ loop end Z</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop4.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="1">
+ <p align="justify">Modificando come segue:<br>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare R = sqrt(X*X + Z*Z);
+  #if (R &lt; 5)
+  object{Ball translate&lt; X, cos(2*R), Z&gt;}
+  #end                                     </b></td></pre>
+ </tr>
+</table>
+limitate la distanza tra l'asse Y ed R &lt; 5
+ed usate <nobr><b>cos(A)</b></nobr> invece del seno. Il risultato &egrave; quanto segue:<br>
+</p>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop5.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr></table>
+<br>
+
+<table width="100%" align="center" border="0"><tr>
+<td colspan="2">
+<p align="justify">Riducendo il raggio ed aumentando la densit&agrave; delle sfere si aumenta
+a dismisura il numero delle stesse. Nell'immagine seguente ci sono
+circa 20000 sfere per un'occupazione totale di 14 MB di RAM In pi&ugrave;
+il valore y delle sfere &egrave; stato definito inversamente proporzionale
+alla distanza R dal centro dell'asse delle y.</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Ball =
+ sphere{&lt;0,0,0&gt;,0.25
+   texture{
+     pigment{color rgb&lt;1,0.65,0.0&gt;}
+     finish {diffuse 0.9 phong 1}
+    }// end of texture
+ }// end of sphere
+
+#declare E = 8;
+#declare Z = -E;    // start value Z
+#declare EndZ = E;  //   end value Z
+#declare Step = 0.1;// step value
+//------ loop start Z:
+#while ( Z &lt; EndZ + Step)
+
+  #declare X = -E;    // start value X
+  #declare EndX = E;  //   end value X
+  //------- loop start X:
+  #while ( X &lt; EndX + Step)
+    #declare R = sqrt( X * X + Z * Z);
+    #if (R &lt; E)
+     object{ Ball
+             translate&lt;X,5/(R+1)*cos(2*R),Z&gt;}
+    #end // of &quot;#if (R &lt; E)&quot;
+  #declare X = X + Step; // next X value
+  #end // ------------------- loop end X
+
+#declare Z = Z + Step; // next Z value
+#end // --------------------- loop end Z</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop6.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr></table>
+
+
+<hr size="3">
+<table border="0" align="center">
+<tr>
+ <td><a href="povsi3i1.htm">loops e seni</b></a></td>
+ <td><a href="povsi3i1.htm"><img src="arr_prev.gif" border="0" width="20" height="20"></a></td>
+ <td><a href="povsi3i3.htm"><img src="arr_next.gif" border="0" width="20" height="20"></a></td>
+ <td><a href="povsi3i3.htm">Sui tappeti volanti</b></a></td>
+</tr>
+</table>
+
+
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

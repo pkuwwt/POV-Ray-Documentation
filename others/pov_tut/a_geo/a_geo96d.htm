@@ -1,0 +1,228 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2011 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6 / 3.7, Computergraphik, 3D-Graphik, Computergrafik, Raytracer Beschreibungen, Povray Tutorial, Beispiele, Analytische Geometrie, Schnitt Gerade mit Ebene">
+<meta name="description" content="Analytische Geometrie mit POV-Ray - Beispiel - Berechnungen des Schnitts einer Geraden mit einer Ebene parallel zur yz-Ebene mit POV-Ray">
+<title>Schnitt einer Geraden mit einer Ebene parallel zur yz-Ebene mit POV-Ray - Analytische Geometrie mit POV-Ray - Beispiele</title>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=680,height=550");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo96e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="a_geo96e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="a_geo95i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo95i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo95f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo95f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index_d.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__ger.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__ger.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__d.htm">Analytische Geometrie</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">mit POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">- Inhalts&uuml;bersicht -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insrtd_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -    <a href="a_geo00d.htm">Grunds&auml;tzliches</b></a><br>
+&nbsp; &nbsp; <a href="a_geo00d.htm">zur Arbeitsweise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>Punkte &amp; Linien</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo10d.htm">Punkte in 3D</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo20d.htm">Strecken, Geraden,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20d.htm">Vektoren, Abstandspfeile</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30d.htm">Fl&auml;chen u. Ebenen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40d.htm">Ausgabe Resultate,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40d.htm">Beschriftung</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45d.htm">Schnittpunkte</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50d.htm">Kreise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60d.htm">Tetraeder</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61d.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62d.htm">Parallelflach (Spat)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo65d.htm">Runde K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <a href="a_geo70d.htm">Tabellarischer</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm">&Uuml;berblick</b> &uuml;ber</a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm"> &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80d.htm">Vektorrechnung</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80d.htm">mit POV-Ray</b></a><br>
+&nbsp; -  <a href="a_geo85d.htm">Rechts- u. linksh&auml;ndige</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">Koordinatensysteme</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">und das Vektorprodukt</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Beispiele aus der</b></a><br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Analytischen Geometrie</b></a><br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91d.htm">Seitenmitten-Parallelogramm</b></a></nobr><br>
+&nbsp; &nbsp; - <a href="a_geo92d.htm">Spurpunkte einer Geraden</b></a><br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo93d.htm">Berechnungen am Dreieck</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo94d.htm">Parallelogrammfl&auml;che</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo94d.htm">und Vektorprodukt</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo95d.htm">Schatten einer Pyramide</b></a></nobr><br>
+&nbsp; &nbsp;<b>&gt; <!--a href="a_geo96d.htm"-->Schnitt mit Ebene || zu yz</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97d.htm">Winkel zw. Dreieck yz-Ebene</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+    <table align="center" width="50%"><tr>
+    <td align="center" valign="middle" colspan="2"><h3><nobr>Analytische Geometrie mit POV-Ray</nobr></h3>
+                                                                          <h4><nobr> - Beispiele -</nobr></h4></td>
+    </tr><tr>
+    <td align="center" valign="top">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="im/Straight2Plane_02cs_.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+    </td>
+    <td align="center" valign="middle"><h2 align="center"><nobr> &nbsp; &nbsp; Schnitt einer Geraden mit<br>
+                                                              &nbsp; &nbsp; einer Ebene parallel zur yz-Ebene</h2></td>
+    </tr>
+    </table>
+ </td>
+</tr>
+</table>
+
+<div align="center">
+<table width="95%" align="center" cellpadding="5">
+ <tr>
+  <td colspan="1">
+        <h5 align="justify"><b>Wir suchen den Schnittpunkt S der Gerade durch
+          zwei Punkte A und B mit der Ebene parallel zur yz-Ebene durch Punkt C.
+          </b><br>
+<br>
+
+          Gegebene Punkte A und B:<br>
+          <font size="-1">(<i>Zu Details der Texturen<br>
+          &nbsp;  siehe Szenenbeschreibungstext!</i>)</font>
+          <pre><b>#declare A = &lt;-0.00,1.00,-2.00&gt;;
+#declare B = &lt; 0.75,1.20,-1.50&gt;;
+// und ein Punkt auf der Ebene || zu yz :
+#declare C = &lt; 2.00,0.00,0.00&gt;;
+
+// Darstellen von A und B:
+sphere{ &lt;0,0,0&gt;, 0.075 translate A
+        texture{ T_YellowGreen }
+      }
+sphere{ &lt;0,0,0&gt;, 0.075 translate B
+        texture{ T_Yellow }
+      }</b></pre>
+Und hier eine 'box', welche die Position<br>
+der Ebene x = 2 zeigt:
+
+<pre><b>box { &lt;0.00, 0.00,-2.00&gt;,&lt; 0.025, 5.00, 3.50&gt;
+      texture { pigment{ color rgb&lt;1, 1, 1&gt;}
+                finish { phong 1 }
+              } // end of texture
+
+       translate &lt;C.x,0,0&gt;
+    } // end of box --------------------------</b></pre>
+<b>Berechnung des Schnittpunktes S:</b><br>
+Die Gleichungen der Geraden durch A und B in Komponentenschreibweise:<br>
+<font size="-1">&nbsp; [<i>Die Komponenten eines Vektors:  A=&lt;A.x, A.y, A.z&gt;</i>]<br>
+
+</font>   x<sub>1</sub>  =  A.x  + m ( B.x - A.x )   I    <br>
+   x<sub>2</sub>  =  A.y  + m ( B.y - A.y )   II   <br>
+   x<sub>3</sub>  =  A.z  + m ( B.z - A.z )   III  <br>
+Hier gilt x<sub>1</sub> = 2. (=C.x) <br>
+Also:  2 = A.x + m ( B.x - A.x )   | -A.x  <br>
+&lt;=&gt; 2 - A.x  =  m ( B.x - A.x )   | : (B.x - A.x ) <br>
+&lt;=&gt;        m = ( 2 - A.x )/( B.x - A.x )<br>
+
+<pre><b>#declare  m = ( C.x - A.x )/( B.x - A.x );
+#declare SX =  C.x; // here: = 2
+#declare SY =  A.y +  m *( B.y - A.y );
+#declare SZ =  A.z +  m *( B.z - A.z );
+#declare S = &lt; SX, SY, SZ &gt;;
+// Darstellen von S:
+sphere{ &lt;0,0,0&gt;, 0.1 translate S
+        texture{ T_Red }
+      }</b></pre>
+
+ <td valign="top">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('im/a_geo_Straight2Plane_1im_de.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="im/Straight2Plane_02cm_.jpg"
+                      width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>&nbsp; &nbsp; Schnitt einer Geraden mit<br>
+                        &nbsp; &nbsp; einer Ebene parallel zur yz-Ebene</b><br>
+   <font size="-1">Szenenbeschreibung f&uuml;r <nobr>POV-Ray:</nobr>
+    <a href="pov/Straight2Plane_1.pov">&quot;Straight2Plane_1.pov&quot; file</a></h5>
+</td>
+</tr>
+
+</table>
+</div>
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</body>
+</html>

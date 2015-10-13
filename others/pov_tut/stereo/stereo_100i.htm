@@ -1,0 +1,225 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>Immagini stereo e Animazioni stereo con POV-Ray - Immagini stereo</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="Immagini stereo 3D e animazioni stereo 3D con POV-Ray">
+<meta name="keywords" content="Immagini stereo 3D, animazioni stereo 3D, stereografica, POV, POVRAY, POV-Ray, Raytracing, graphica 3d, animazione 3d">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Immagini stereo e Animazioni stereo <nobr>con POV-Ray</nobr></b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="stereo_100e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="stereo_100e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="stereo_100f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="stereo_100f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_100d.htm"><font size="2">Deutsch </font></a>
+        <a href="stereo_100d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>Tutorial POV-Ray</nobr></b></a><br><br>
+<font size="+1"> &nbsp;       <a href="stereo_000i.htm">Immagini stereo</font> e</b></a><br>
+<font size="+1"> &nbsp;       <a href="stereo_000i.htm">Animazioni stereo</b></font></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="stereo_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="stereo_050i.htm">Occhi incrociati</b></a><br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_100i.htm"--><b>Immagini stereo semplici</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150i.htm">Immagini stereo avanzate</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200i.htm">Combinare immagini</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300i.htm">Animazioni stereo 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310i.htm">Animazioni stereo 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400i.htm">Esempi animazioni stereo</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="95%" align="center"><tr><td colspan="2"><!-- global table-->
+<font size="5"><b>Immagini stereo - metodo semplice</font></b><br>
+<font size="2">(Per gli impazienti qui &egrave; una <a href="stereo_150i.htm">versione pi&ugrave; flessibile</a>.)</font><br>
+<hr>
+<font size="3"><b>Immagini stereo con una fotocamera <br>
+    &nbsp;guardando fisso nella direzione +z.</font></b><br>
+</td>
+</tr>
+<tr>
+<td>
+<font size="2">&nbsp;&nbsp; Primo dobbiamo definiere un valore <b>Eyes_Distance</b>.<br>
+    Questo non deve essere uguale per i "veri" distanza dei occhi.<br>
+    Il valore dipende dalla scala degli oggetti e sul intensit&agrave;<br>
+    del'impressione di profondit&agrave; spaziale che vogliamo vedere.<br>
+    Se l'unit&agrave; di POV-Ray = 1 m, abbiamo una Eyes_Distance di circa ~ 0.065.<br>
+   &nbsp;&nbsp;  Poi dobbiamo fare <b>2 file</b> della nostra scena, <br>
+    una per la vista a destra gli occhi e una per l'occhio sinistro guarda.<br>
+
+  &nbsp;Per un rendering quadratica, abbiamo messo in riga di comando:<br>
+   &quot; <b>+w240 +h240</b> &quot;. <br>
+   Con POV-Ray 3.7 &egrave; possibile utilizzare l'output in jpeg<br>
+   &quot; <b>+w240 +h240 +fj100</b> &quot;.<br>
+<div align="left">
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Command_Line_240x240.jpg" border="0" width="393"  height="116"
+       alt="command line" title="command line"></a>
+      </td></tr></table><font size="2"><b> &nbsp; &nbsp; &nbsp; La riga di comando.</b></font>
+</div>
+<br>
+&nbsp;Per <b><font size="+1">l'immagine di vista dell'occhio destro</font></b><br>
+ dobbiamo creatare un'immagine denominata <br>
+&quot;<font size="3"><b>Stereo_Image_01<font color="#800000">r</font> _.pov</b></font>&quot;
+con la fotocamera come segue:
+</font>
+
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>//--------------------------------------
+// "right eye": -0.20; "left eye": +0.20
+#declare <font color="#800000">Eyes_Distance = +0.4;</font>
+//--------------------------------------
+#declare Camera_Position =
+     &lt; 0+<font color="#800000">Eye_Distance/2</font>, 2, -4>;
+#declare Camera_Look_At  = &lt;0,2,0>;
+#declare Camera_Angle    =  65 ;
+//--------------------------------------
+camera{
+  location Camera_Position
+  right    x*image_width/image_height
+  angle    Camera_Angle
+  look_at  Camera_Look_At
+}
+//--------------------------------------
+// ... rest of the scene .... </b></pre></td>
+  </tr>
+  </table>
+<font size="2">
+&nbsp;Per <b><font size="+1">l'immagine di vista dell'occhio sinistro</font></b>,<br>
+salviamo il file precedente con il nuovo nome<br>
+ &quot;<b><font size="3">Stereo_Image_01<font color="#800000">l</font>_.pov</font></b>&quot;<br>
+e cambiamo la <b>Half_Eyes_Distance</b> da:
+</font>
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>#declare Eyes_Distance = <font color="#800000">-</font>0.4;
+//--------------------------------------</b></pre></td>
+  </tr>
+  </table>
+
+</td>
+
+
+<td valign="top" width="290">
+<div align="center">
+
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Vectors_BasicView_00.jpg" border="0" width="240"  height="180"
+       alt="fixed camera view in +z direction" title="fixed camera view in +z direction"></a>
+      </td></tr></table><font size="2">La situazione con una fotocamera<br>
+                                       guardando fisso in direczione +z.<br>
+                                       Fotocamera non-stereo, positione<br>
+                                       del ochio destra e sinistra.</font><br>
+
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_01_.jpg" border="0" width="240"  height="240"
+       alt="non-stereo image" title="image_map with POV-Ray 3.6"></a>
+      </td></tr></table><font size="2">La scena non-stereo.</font>
+
+</div>
+<br>
+<br>
+<font size="2">POV-Ray 3.7 file di scena: <br>
+               <a href="pov/Stereo_Image_01r_.pov">Stereo_Image_01r_.pov</a><br>
+               <a href="pov/Stereo_Image_01l_.pov">Stereo_Image_01l_.pov</a><br>
+<font size="2">POV-Ray 3.6 file di scena: <br>
+               <a href="pov/Stereo_Image_01r_36.pov">Stereo_Image_01r_36.pov</a><br>
+               <a href="pov/Stereo_Image_01l_36.pov">Stereo_Image_01l_36.pov</a><br>
+
+<br>
+</td>
+</tr>
+
+<tr>
+ <td colspan="2"><hr size="3"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2">
+<table align="center" border="0">
+<tr>
+<td>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_01r_.jpg" border="0" width="240"  height="240"
+       alt="image of the right eye's view" title="image of the right eye's view"></a>
+      </td></tr></table><font size="2">La vista dell'occhio destro</font><br>
+</td>
+<td>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_01l_.jpg" border="0" width="240"  height="240"
+       alt="image of the left eye's view" title="image of the left eye's view"></a>
+      </td></tr></table><font size="2">La vista dell'occhio sinistro</font><br>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table
+</td>
+</tr>
+</td>
+</tr>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

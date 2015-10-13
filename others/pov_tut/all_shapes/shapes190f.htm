@@ -1,0 +1,219 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Objets G&eacute;om&eacute;triques avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Objets G&eacute;om&eacute;triques avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D graphiques, infographie, Objets G&eacute;om&eacute;triques avec POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Objets G&eacute;om&eacute;triques en POV-Ray</font></td></div>
+ </td>
+ <td align="right">
+   <a href="shapes190e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="shapes190e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="shapes190i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>&nbsp;
+   <a href="shapes190i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="shapes190d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</b></a>&nbsp;
+   <a href="shapes190d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+   </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_f.htm">Page d'accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000f.htm">Objets G&eacute;om&eacute;triques</b></a><br>
+ &nbsp;&nbsp; table des mati&egrave;res</a><br>
+<a href="shapes100f.htm">Objets de Base</b></a><br>
+&nbsp; -  <a href="shapes110f.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120f.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130f.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140f.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150f.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160f.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170f.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180f.htm">sor</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes190f.htm"--><b>lathe</b></a><br>
+&nbsp; -  <a href="shapes350f.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115f.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200f.htm">Objets avec macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000f.htm">Objets dans &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400f.htm">D'autres objets comme macros</b></a></nobr><br>
+<a href="shapes600f.htm">Objets 3D text</b></a><br>
+<a href="shapes000f.htm"><b>Autre Objets</b></a><br>
+<a href="shapes666f.htm">Objets Non-CSG</b></a><br>
+<nobr><a href="shapes700f.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900f.htm">Isosurface</b></a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  width="90%" align="center"  cellspacing="5" cellpadding="4"><!-- global -->
+<tr>
+<td>
+
+<div align="center">
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+ <tr>
+  <td><table align="left" border="1" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/lathe.jpg" border="0" width="320" height="240"
+                   alt="Sample lathe" title="Sample lathe"></td></tr></table>
+</td><td><h1 align="center"><b>&quot;lathe&quot; - surface de revolution</b></h1>
+</td></tr></table>
+
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+ <tr>
+  <td>
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>&quot;lathe&quot;</b><br> - surface de revolution</font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+    syntaxe g&eacute;n&eacute;rale :
+    <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>lathe{
+      <i>Spline_Type</i>
+      n,
+      &lt;&nbsp;x<SUB>1, </SUB>y<SUB>1</SUB>&nbsp;&gt;,
+      &lt;&nbsp;x<SUB>2, </SUB>y<SUB>2</SUB>&nbsp;&gt;,
+      &lt;&nbsp;x<SUB>3, </SUB>y<SUB>3</SUB>&nbsp;&gt;,
+               ...
+      &lt;&nbsp;x<SUB>n, </SUB>y<SUB>n</SUB>&nbsp;&gt;
+      texture{ ... }
+      }</b></td></pre></tr></table>
+      </td>
+<td><p align="justify">
+     <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+     <b>Ici on a besoin de &quot;n&quot;  points <nobr>&lt;&nbsp;x<SUB>i, </SUB>y<SUB>i</SUB>&nbsp;&gt;</b>
+     ( i = 1 &agrave; n )<b></nobr>  pour d&eacute;finir le trac&eacute;  du solide dans le plain xy.
+     Ces points sont joints avec une courbe de spline.
+     Le solide est produit par une rotation autour du <nobr>axe y.</nobr></b>
+    <br>Les types de spline permis sont : linear_spline, quadratic_spline, cubic_spline, bezier_spline.
+
+    <br>Par default cet courbe n'est pas serr&eacute;e, quant nous voulons un courbe serr&eacute;e
+    le premier point doit &ecirc;tre le dernier point.<br>
+    Quelque temps on trouve quelques erreur par impr&eacute;cision de calcul.
+    Par ajouter le commande &quot;sturm&quot; on peut &eacute;viter ces erreurs ( Avec ce commande <nobr>POV-Ray</nobr>
+    applique l'algorithme de Sturm pour solver racines carr&eacute;es - plus lent ma plus pr&eacute;cis ). </p>
+ </td></tr>
+<tr><td colspan="2">
+   Pour obtenir une autre position et/ou orientation du surface de revolution on doit utiliser
+   &quot;rotate&lt;&nbsp; , &nbsp; ,&nbsp;&nbsp; &gt;&quot; et &quot;translate&lt;&nbsp;,&nbsp;,&nbsp;&gt;&quot; .<br>
+</td></tr>
+</table>
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+<tr>
+ <td colspan="1">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/lathe.jpg" border="0" width="320"  height="240"
+                   alt="Sample 1 lathe" title="Sample lathe"></a></td></tr></table>
+ </td>
+ <td>
+   <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+   <b>Example a gauche :</b><br>
+    <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>lathe{
+  quadratic_spline // <i>Spline_Type</i>
+  5,      // number of points,
+  &lt;2, 0&gt;, // &lt;x,y&gt; points,
+  &lt;3, 0&gt;,
+  &lt;3, 5&gt;,
+  &lt;2, 5&gt;,
+  &lt;2, 0&gt;
+  // sturm
+  texture{
+    pigment{ color rgb&lt;0.4,0.2,1&gt;}
+    finish { phong 1 reflection 0.2}
+  } // end of texture
+  scale&lt;1,1,1&gt;*1
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.6,0&gt;
+} // end of lathe object
+//-----------------------</b></td></pre></tr></table>
+ </td></font>
+</tr>
+<tr>
+ <td colspan="2">
+   <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+    <p align="justify"><b>Hint:
+    Pourquoi &quot;sor&quot; au lieu de &quot;lathe&quot; ?</b><br>
+    (La derni&egrave;re forme semble souvent plus flexible !)<br>
+    Pour la calculation des intersections avec objects du type &quot;sor&quot; on a besoin des &eacute;quations quadratiques.
+    pendant pour le tests pour intersections avec objects du type &quot;lathe&quot; on a besoin de calculer
+    des &eacute;quations du rang sixi&egrave;me.
+    &Eacute;quations quadratiques sont plus vite et plus m&eacute;ticuleux &agrave; r&eacute;soudre ! <br>
+    Pourquoi ce type des objets ont beaucoup de surfaces cette chose est tr&egrave;s important ! </b></font></p>
+ </font>
+</tr>
+</table>
+
+</td></tr></table><!-- global -->
+</div>
+
+<br>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

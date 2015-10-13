@@ -1,0 +1,46 @@
+//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------- textures
+#declare Brick_Scale     = 0.075; 
+#declare Brick_Translate = <0.0,-0.06,-0.0>;
+#declare Brick_Intensity = 0.35; 
+//------------------------------------------------------------- textures
+#declare Tower_Texture_1 = // sandstone
+         texture { pigment{ color rgb< 0.90, 0.78, 0.60>}
+                   normal { pigment_pattern{ brick 
+                                             color rgb 0.2, 
+                                             color rgb 0.8 
+                                             scale Brick_Scale 
+                                             translate Brick_Translate
+                                             rotate<0,0,0>} Brick_Intensity}
+                   finish { phong 0.1}
+                 } // end of texture 
+#declare Tower_Texture_2 = // sandstone
+         texture { pigment{ color rgb< 0.90, 0.78, 0.60>*0.95}
+                            // color rgb< 0.4,1,0.0>} // test_color
+                   normal { pigment_pattern{ brick 
+                                             color rgb 0.2, 
+                                             color rgb 0.8 
+                                             scale Brick_Scale
+                                             translate Brick_Translate
+                                             rotate<0,0,0>} Brick_Intensity}
+                   finish { phong 0.1}
+                 } // end of texture 
+//---------------------------------------------------------------------------------------
+#include "Tower_Squared_0.inc" 
+//-------------------------------------------------------------------------------------// 
+
+
+object{ Tower_Squared_0( 2.00, // Tower_R, // half tower width in x and z                                
+                         8.00, // Tower_H, // tower heigth in y 
+                         1.50, // Tower_Balustrade_H, // tower balustrade high
+                         0.25, // Tower_Wall_D,       // tower wall deepth 
+                         0.66, // Battlements_H,     // battlements height in y
+                         0.22, // Battlements_R,// half battlements width in x or z 
+                         Tower_Texture_1, // outside texture
+                         Tower_Texture_2  // battlements tween texture
+                       ) //------------------------------------------------------------// 
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.00, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

@@ -1,0 +1,29 @@
+//---------------------------------------------------------------//
+#declare Zebra_Texture = 
+         texture { pigment{ color rgb< 1, 1, 1>*1.1 } 
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { diffuse 0.9 phong 1 reflection 0.00}
+                 } // end of texture 
+//---------------------------------------------------------------//
+#include "Zebra_Stripes_000.inc"
+//---------------------------------------------------------------//
+object{ Zebra_Stripes_000( 0.40, // Zebra_Stipe___Width, 
+                           2.00, // Zebra_Stipe___Length, 
+                           5, // Numbers_of___Stripes,
+                           1  // Symmetric___On
+                         ) //-----------------------------------//
+         texture { Zebra_Texture }  
+         rotate<0,0,0> 
+         scale <1,1,1>
+         translate<0,0,0> 
+      } //------------------
+//---------------------------------------------------------------//
+
+
+
+
+
+
+
+
+

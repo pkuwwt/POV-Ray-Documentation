@@ -1,0 +1,199 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Objekte mit POV-Ray 3.6 / 3.7 - Objekte und Macros aus meiner Include-Datei shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Deutschland">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, 3D-Graphik, Computergrafik, Raytracing Beschreibungen, Povray Anleitungen, Anf&auml;ger, Fortgeschrittene, geometrische Objekte, CSG, Macros">
+<meta name="description" content="Definieren geometrischer Objekte durch Macros f&uuml;r das Freeware-Raytracing-Programm POV-Ray 3.6, povray, pov">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=570,height=585");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+ <hr size="3"><div align="center"><font size="+2">Geometrische K&ouml;rper in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes3_65e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes3_65e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes3_65i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes3_65f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_65f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes3_65f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000d.htm"--><b>Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+&nbsp;<br>
+<br>
+<nobr><a href="shapes3_0000d.htm">Objekte in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11d.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20d.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21d.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40d.htm">Egg</b></a><br>
+-  <a href="shapes3_40d.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42d.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45d.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80d.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22d.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60d.htm">Round_Conic_Torus</b></a><br>
+<b>&gt;</b><!--a href="shapes3_65d.htm"--><b>Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+<div align="center">
+<font size="2">Geometrische K&ouml;rper aus meiner Include-Datei <a href="../down/insrtd_a.htm" alt="Download" title="Download">&quot;shapes3.inc&quot;</a></font>
+:</font><br>
+</div>
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="90%">
+ <tr>
+  <td>
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/Round_Conic_Prism_big.jpg"
+                border="0" width="320" height="240" alt="Round_Conic_Prism" title="Round_Conic_Prism"></td>
+       </tr></table>
+  </td>
+  <td><font size="5"><b>Round_Conic_Prism</b></font><br>
+   <font size="2">
+   <i>Syntax:</i>
+   </font>
+
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td  valign="top" bgcolor="#fefefe">
+     <pre><b>object{ Round_Conic_Prism(
+                         Center_Distance,
+                         R_upper,
+                         R_lower,
+                         Length, // in z-
+                         Border_R,
+                         Merge_On
+                       ) //--------------
+         texture{ ... }
+      } // end of object ----------------</b></td></pre></tr></table>
+ <font size="2">
+    <b>Center_Distance</b> = <br>
+    &nbsp; &nbsp; &nbsp;  vertical center distance of upper + lower torii,<br>
+    <b>R_upper</b> >0, upper radius at &lt;0,C_distance,0&gt;.<br>
+    <b>R_lower</b> >0, lower radius on zero.<br>
+    <b>Length</b> >2*Border_R, length of prism in z-<br>
+    <b>Border_R</b> = border radius, max. = min(R_lower,R_upper)<br>
+    <b>Merge_On</b>: 0 = union, 1 = merge.<br>
+ </font>
+ </td>
+</tr>
+</table>
+<table border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="90%">
+<tr>
+  <td>
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td>
+              <a href="javascript:ShowImage('im/Round_Conic_Prism_1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/Round_Conic_Prism_160.jpg"
+                border="0" width="160" height="160"
+                alt="Round_Conic_Prism_demo" title="Round_Conic_Prism_demo"></td>
+       </tr></table>
+    <div align="center">
+    <font size="2"><i><b>Beispieldatei</b></i><br>
+             <a href="pov/Round_Conic_Prism_demo.txt">&quot;.txt&quot;</a>
+        oder <a href="pov/Round_Conic_Prism_demo.pov">&quot;.pov&quot;</a></font>
+    </div>
+  </td>
+  <td><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></td>
+  <td colspan="1" align="center">
+   <i>Beispiel:</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><pre><b>#include "shapes3.inc"
+object{ Round_Conic_Torus(
+           0.95, // >0, vertical center distance
+           0.90, // >0, upper radius
+           0.40, // >0, lower radius
+           0.80, //>2*border radius, length in z-
+           0.10, // border radius,
+             // max. = min(lower radius, upper radius)!
+           0 // Merge_On: 0 or 1
+        ) // ------------------------------------
+        texture{ pigment{ color rgb &lt;1,1,1&gt;}
+                 finish { phong 0.1}
+               } // end texture
+        scale &lt;1,1,1&gt;
+        rotate &lt;0,0,0&gt;
+        translate &lt; 0, 1, 0&gt;
+      } // end of object --------------------</b></td></pre></font>
+ </tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

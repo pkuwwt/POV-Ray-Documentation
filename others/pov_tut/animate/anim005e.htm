@@ -1,0 +1,230 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller">
+<meta name="keywords" content="animations, 3d animations, mpeg video, avi video, animated gifs, raytracing, PoV, POV-Ray, POVRAY, 3d graphics, raytracing descriptions, povray tutorial">
+<meta name="description" content="Animations with POV-Ray - descriptions, tutorials and examples for the POV-Ray raytracing program">
+<title>Basic Terms for 3D Animations with POV-Ray - Descriptions, tutorials and examples for the POV-Ray raytracing program</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table  border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__eng.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="back to overview" title="back to overview"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animations with POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Some basics and examples on animations.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim005i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="anim005i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim005f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="anim005f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim005d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="anim005d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">3D Animations Gallery</b></a><br>
+ - <a href="../pov__eng.htm#ani"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anie.htm">3D Animation Tutorial</b></a><br>
+ &nbsp;&nbsp; <i>Index of Content</i><br>
+&nbsp; <!--a href="anim001e.htm"-->  0. Basic Knowledge</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001e.htm">Basic Example</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002e.htm">From Images to Video</b></a><br>
+&nbsp; <b>&gt</b> 3. <!--a href="anim005e.htm"--><b>Basic Terms</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008e.htm">Animation Commands</b></a><br>
+&nbsp; <!--a href="anim110e.htm"--> I. Cyclic Animations</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11e.htm">Rotating Objects</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112e.htm">Planets in Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113e.htm">Clock Animation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12e.htm">Rotating Camera</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121e.htm">Straight Moving Camera</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13e.htm">Western Wheel</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13e.htm"> Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131e.htm">Rolling Wheels</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14e.htm">Gears</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141e.htm">Roller Chain</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142e.htm">Bike Chain</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15e.htm">Swinging Pendulum</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151e.htm">Newton's Cradle</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152e.htm">Rock the Rocker</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16e.htm">Spiral Pendulum</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170e.htm">Coupling Rods</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17e.htm">Connecting Rods</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18e.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190e.htm">Counters + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200e.htm">Folding of a Cube</b></a><br>
+
+&nbsp; II. Non-linear Movements<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220e.htm">Speed Up/Slow Down 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222e.htm">Speed Up/Slow Down 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240e.htm">Fall + Bounce</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260e.htm">Acceleration by</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260e.htm">physical Formulas</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280e.htm">Speed Controll by</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280e.htm">Spline Functions</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animation Paths<br>&nbsp; &nbsp; &nbsp; with Spline Curves</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210e.htm">Spline Curves</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21e.htm">Closed Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22e.htm">Animation Paths</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="95%" cellpadding="5">
+<tr><td width="80%" align="center">
+     <h1>Technical Terms and Basic Knowledge&nbsp; </h1>
+     <h5>About frames, fps, bitrate, frame size, animated gifs, avi and mpeg.</td></h5>
+</tr></table>
+<table align="center" width="80%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="2">
+   <p align="justify">
+   <b><font size="+1">Important Terms in Computer Animation:</font></b>
+   <br>
+   <br><b>frame</b> = a single image of a movie, video or an animation. Each movie
+       is a fast sequence of single images with only little changes in these frames,
+       because of the inertia of our optical perception in our eyes this sequence
+       is interpreted by our brain as a continuous motion!
+   <br>
+   <br><b>fps</b> = &quot;frames per second&quot; = the number of single images per second.
+   <br>The human eye needs a sequence of about 25 single slightly changing images per
+     second to give us the illusion of a continuous motion. A slower sequence seems to flicker.
+   <br>In mpeg videos according to the mpeg-1 standard the following frame rates are allowed:
+    </p>
+   <table border="1">
+   <tr><td align="center">frame rate (fps)</td> <td align="center">time for a frame in milliseconds</td></tr>
+   <tr><td align="center"> 23.97 fps</td> <td align="center"> 41,7188 ms</td></tr>
+   <tr><td align="center"> 24.00 fps</td> <td align="center"> 41,6667 ms</td></tr>
+   <tr><td align="center"> 25.00 fps</td> <td align="center"> 40.0000 ms</td></tr>
+   <tr><td align="center"> 29.97 fps</td> <td align="center"> 33,3667 ms</td></tr>
+   <tr><td align="center"> 30.00 fps</td> <td align="center"> 33,3333 ms</td></tr>
+   </table>
+ <br>
+   <br><b>bit rate</b> = the number of bits per second moved from a harddisk or by an internet connection (in Kbit/sec or Kbytes/sec).
+       This value must be considered if a video or an animation
+       is played on a computer from the hard disk or a CD ROM or by an internet connection.
+   <br>An internet connection has a theoretical bit rate of about 20kbit/s to 64kbit/s
+       with ISDN or about 700kbit with DSL connection. In reality we only will see a fraction of this!
+   <br>With small mpeg videos bit rates are usually around 1200 kb/s = 150kBytes/s.
+   <br>DVD-Videos should not have higher bit rates than the maximum of 9,8Mbit/sec.
+   <br>The perfect bit rate depends on one hand by the image size and on the other hand
+       on the quality of compression.
+   <br>How fine a video file will play or come through your internet connection
+       depends very strong on the bit rate we achieve here.
+   <br>If the achieved bit rate is too low, the video will stutter, jumps over some images
+       or the images show flickering squares or the video stops totally!
+   <br>
+   <br><b>frame size</b> = the size of the single images.
+
+
+   <br>As bigger the image size as bigger the file of each single image,
+       as harder and more difficult it is to compress the complete animation.
+   <br>Using animated gif files there are nearly no limits.
+   <br>Using mpeg compression the height and width must be dividable by 16!
+   <br>Here a table of mpeg video sizes and the size of the single image files:
+   <br>
+   <table border="1">
+   <tr><td align="center">&nbsp; </td><td align="center">image size</td><td align="center">number of pixels</td><td align="center">file size single image</td></tr>
+   <tr><td align="center">SIF:   </td><td align="center"> 352 x 288 </td><td align="center">&nbsp; 101 376 pixel</td><td align="center">&nbsp; 297 kB</td></tr>
+   <tr><td align="center">others:</td><td align="center"> 512 x 320 </td><td align="center">&nbsp; 163 840 pixel</td><td align="center">&nbsp; 480 kB</td></tr>
+   <tr><td align="center">DVD:   </td><td align="center"> 720 x 576 </td><td align="center">&nbsp; 414 720 pixel</td><td align="center">1 215 kB</td></tr>
+   <tr><td align="center">16:9 : </td><td align="center">1280 x 720 </td><td align="center">&nbsp; 921 600 pixel</td><td align="center">2 700 kB</td></tr>
+   <tr><td align="center">4:3  : </td><td align="center">1440 x 1080</td><td align="center"> 1 555 200 pixel</td><td align="center">4 557 kB</td></tr>
+   <tr><td align="center">16:9 : </td><td align="center">1920 x 1080</td><td align="center"> 2 073 600 pixel</td><td align="center">6 075 kB</td></tr>
+   </table>
+   <br>
+   <br><b>endless loop</b> = a cyclic animation, playing endless: it starts where it ends!
+   <br>This is a very popular kind of animation for logos and banner on websites.
+       With a small file (animated gifs) we can make a continuous motion.
+   <br>
+   </p>
+   <p align="justify">
+   <b><font size="+1">File Types and Compressions</font></b>
+   <br>
+   <br><b>Gif and animated gif files</b>
+   <br>With this file type images are reduced to 256 colours. A table of the 256 most important
+       colours in an image is produced and the colour pixels were encoded only by their colour
+       number using only one byte per pixel.
+   <br>This file type is good for animated logos and text. This type can be
+       shown by all internet browsers. It can be integrated in websites like any other kind of image.
+   <br>This file type is not very good for videos. The small number of colors
+      (the human eye can percept  about
+       16 Mio. different colours = &quot;true colour&quot 24bit/pixel !)
+       results often in a too rough raster with images with fine colour differences.
+       The compression of a true-colour image file is at least one third
+       of the original length - video sequences fast become very big and hard to transport.
+   <br>
+   <br><b>Avi video</b>
+   <br>This file type can be shown with the &quot;Windows Mediaplayer&quot;,
+       as long as we have installed on our computer the video codec used for this video.
+   <br>It shows images in true-colour. The compression is much better than with animated gif files
+       with a much higher image quality.
+   <br>
+   <br><b>Jpeg and Mpeg</b>
+   <br>
+   <br>The mpeg video file uses the same type of compression like the jpeg type which is used for colour photos.
+       This type shows images in true-colour and has the absolute best behaviour according the compression.
+       The image quality depends on how much we compress the images and also it depends on the video codec
+       which are used to encode the video.
+       How to choose the parameters for compression to get optimal results is a thing of trial and error!
+   <br>Also this video type can be played with the &quot;Windows Mediaplayer&quot;.
+</td>
+
+</tr>
+</table>
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="Camera, Sorgenti di Luce e le Specialit&agrave; in POV-Ray, tutorial POV-Ray, descrizione di scene di POV-Ray, raytracing, povray, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, descrizione raytracing, grafica 3d">
+<meta name="description" content="Camera, Sorgenti di Luce e le Specialit&agrave; in POV-Ray, un tutorial POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Camera, Sorgenti di Luce e le Specialit&agrave; in POV-Ray</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030"
+      link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+  <h6><nobr>Introduzione al linguaggio di descrizione di scene del raytracer POV-Ray</nobr>
+    <nobr> &nbsp; &nbsp; &nbsp; &nbsp;</nobr><br>
+    di Friedrich A. Lohm&uuml;ller <br>
+ <div align="center"><font size="+1">&nbsp; &nbsp; &nbsp; &nbsp;<b>Camera, Sorgenti di Luce e dettagli in POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="camlit_e1.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="camlit_e1.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="camlit_f1.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="camlit_f1.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="camlit_d1.htm"><font size="2">Deutsch</font></a>
+        <a href="camlit_d1.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br></font>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><!--a href="camlit_i1.htm"--><b>Camera + Luce</b></a><font size="2"><br>
+ &nbsp;&nbsp;</font><!--a href="camlit_i1.htm"--><b>in POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<!--a href="camlit_i1.htm"--><b>Indice del contenuto</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_i1.htm">Tipi di sorgenti di luce</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#point_light">puntiforme</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#Spotlight">spotlight</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#cylindrial">cylindrico</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#parallel">parallel</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#area">area_light</b></a>, ombre diffuse</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_i2.htm">Luce - le specialit&agrave;</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#looks_like">light_source visible</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#shadowless">shadowless</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#projected">projected_through</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#fade_out">Fading</b></a>, attenuazione<br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_i1.htm">Tipi di Camera</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#perspective">perspective</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#ultra_wide_angle">ultra_wide_angle</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#orthographic">orthographic</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#cylindrical">cylindrical</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#spherical">spherical</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#fisheye">fisheye</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#panoramic">panoramic</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#omnimax">omnimax</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_i2.htm">Camera - le specialit&agrave;</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#aspect_ratio">Aspect ratio</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#focal_blur">Focal blur</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#perturbated">La camera perturbata</b></a><br>
+<br>
+<nobr>&nbsp;<a href="arc_persp_i1.htm">Prospettiva architettonica</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="no_i1.htm">Mostrare e nascondere</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_shadow">no_shadow</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_reflection">no_reflection</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_image">no_image</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_body">no_body</b></a><br>
+
+
+&nbsp;<br>
+<!--nobr>&nbsp; -  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a></nobr><br-->
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+<tr>
+  <td valign="top" colspan="2">
+     <font size="+1"><a href="light_i1.htm">Tipi di sorgenti di luce:</b></a></font> <br>
+  </td>
+</tr>
+<tr>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i1.htm#point_light"><img src="im/light_far.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>light far</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i1.htm#point_light"><img src="im/light_near.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>light near</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i1.htm#Spotlight"><img src="im/light_spots.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>spotlight</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i1.htm#cylindrial"><img src="im/light_cylinders.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>cylinder spotlight</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i1.htm#parallel"><img src="im/light_parallels.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>parallel light</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i1.htm#area"><img src="im/light_areas.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>area light</b></font></div>
+  </td>
+</tr>
+
+<!--tr><td colspan="6"><hr></td></tr-->
+<tr><td valign="top" colspan="1"></td>
+    <td valign="top" colspan="5">
+     <font size="+1"><a href="light_i2.htm">Luce - le specialit&agrave;:</b></a></font> <br>
+</td></tr>
+<tr>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i1.htm#area"><img src="im/light_area_tubes.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>area light tube</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i2.htm#looks_like"><img src="im/light_looks_likes.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>looks_like</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i2.htm#shadowless"><img src="im/light_shadowlesss.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>shadowlesss light</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i2.htm#projected"><img src="im/light_projected_throughs.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>projected_through</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="light_i2.htm#fade_out"><img src="im/light_fadings.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>light fading</b></font></div>
+  </td>
+  <td><div align="center"><nobr>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<nobr></div></td>
+
+
+</tr>
+
+<tr><td valign="top" colspan="6">
+     <font size="+1"><a href="camera_i1.htm">Tipi di camera:</b></a></font> <br>
+</td></tr>
+<tr>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#perspective"><img src="im/camera_perspectives.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>perspective</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#ultra_wide_angle"><img src="im/camera_ultra_wide_angles.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>ultra_wide_angle</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#ultra_wide_angle"><img src="im/camera_ultra_wide_angle_720s.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>ultra_wide_angle</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#orthographic"><img src="im/camera_orthographics.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>orthographic</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#orthographic"><img src="im/camera_orthographic_45s.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>isometrico</b></font></div>
+  </td>
+  <td><div align="center"><nobr>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<nobr></div></td>
+
+
+</tr>
+<tr>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#cylindrical"><img src="im/camera_cylinder_1s.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>cylindrical</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#spherical"><img src="im/camera_sphericals.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>spherical</b></font></div>
+  </td>
+  <td colspan="2"><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#panoramic"><img src="im/Skybox_Water222x_Panoramic_ab.jpg" border="0" width="120" height="60"></a></td></tr></table>
+        <font size="-2"><b>panoramic camera</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#fisheye"><img src="im/camera_fisheyes.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>fisheye camera</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i1.htm#omnimax"><img src="im/camera_omnimaxs.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>omnimax camera</b></font></div>
+  </td>
+
+</tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+
+<tr><td valign="top" colspan="3"><font size="+1"><a href="camera_i2.htm">Camera - le specialit&agrave;:</b></a></font> <br>
+</td>
+<td valign="top" colspan="2"><font size="+1"><a href="arc_persp_i1.htm"><nobr>Prospettiva architettonica:</nobr></b></a></font> <br>
+</td></tr>
+<tr>
+  <td colspan="1"><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i2.htm#aspect_ratio"><img src="im/aspect_ratio_a1_1oks.jpg" border="0" width="120" height="60"></a></td></tr></table>
+        <font size="-2"><b>aspect ratio</b></font></div>
+  </td>
+  <td colspan="1"><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i2.htm#focal_blur"><img src="im/focal_blur_ons.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>Focal blur</b></font></div>
+  </td>
+  <td colspan="1"><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="camera_i2.htm#perturbated"><img src="im/camera_normals.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>camera+normals</b></font></div>
+  </td>
+  <td colspan="1"><div align="center"> <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="arc_persp_i1.htm"><img src="im/ArcAni.gif" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b><nobr>Prospettiva Architettonica</nobr></b></font></div></td>
+  <td colspan="1"><div align="center"><nobr>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<nobr></div></td>
+
+</tr>
+
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+
+<tr><td valign="top" colspan="6"><font size="+1"><a href="no_i1.htm">Mostrare e nascondere:</b></a></font> <br>
+</td></tr>
+<tr>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="no_i1.htm"><img src="im/no_orginal_2_s.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>originale</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="no_i1.htm"><img src="im/no_shadow_2_s.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>no_shadow</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="no_i1.htm"><img src="im/no_reflection_2_s.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>no_reflection</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="no_i1.htm"><img src="im/no_image_2_s.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>no_image</b></font></div>
+  </td>
+  <td><div align="center">
+      <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="no_i1.htm"><img src="im/no_body_is_perfects.jpg" border="0" width="80" height="60"></a></td></tr></table>
+        <font size="-2"><b>no_body</b> is</font></div>
+  </td>
+  <td><div align="center"><nobr>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<nobr></div></td>
+
+</tr>
+
+
+
+
+
+
+<tr><td colspan="6"><hr></td></tr>
+</div>
+<table border="0" align="center" width="95%"><tr><td>
+<p><font size="-1">
+<b><!--a href="camlit_i1.htm"--><b>Indice</a> |
+   <a href="light_i1.htm" ><b>Luce</a> |
+   <a href="light_i2.htm" ><b>Luce Specialit&agrave;</a> |
+   <a href="camera_i1.htm">Camera</a> |
+   <a href="camera_i2.htm">Camera Specialit&agrave;</a> |
+   <a href="arc_persp_i1.htm"><nobr>Prospettiva architettonica</nobr></a> |
+   <a href="no_i1.htm">Mostrare + nascondere</a></b></font></p>
+</td></tr></table>
+
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ </td>
+ <td align="right"  width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

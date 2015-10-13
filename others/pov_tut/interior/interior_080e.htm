@@ -1,0 +1,272 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Design of the Interior of transparent Shapes with POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content=">Design of the interior of transparent shapes with POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3D computer graphics, textures, transparent shapes, interior, material, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples for the POV-Ray Raytracer </nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Design of the Interior of transparent Shapes</b></font>
+      <font size="-1"><b> in POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_080i.htm"><font size="2">Italiano</font></a>
+        <a href="interior_080i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_080f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_080f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_080d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_080d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp; <a href="interior_000e.htm">Content Overview</b></a><br>
+ &nbsp; <a href="interior_000e.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05e.htm">Syntax material</b></a><br>
+ &nbsp; &nbsp; &nbsp; texture + interior <br>
+&nbsp; -  <a href="interior_03e.htm">Window Glass</b></a><br>
+ &nbsp; &nbsp; &nbsp; + max_trace_level <br>
+&nbsp; -  <a href="interior_001e.htm">Fog, Mist or Haze</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10e.htm">Syntax Media</b></a> <br>
+&nbsp; -  <a href="interior_30e.htm">Media+Density Maps</b></a> <br>
+
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; with/without density map <br>
+&nbsp; -  <a href="interior_20e.htm">Beames in the Fog</b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -   <a href="interior_40e.htm">Light Sword</b></a> <br>
+&nbsp; -   <a href="interior_44e.htm">Candle Flames</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -   <a href="interior_50e.htm">Light through Window</b></a><br>
+&nbsp; -   <a href="interior_70e.htm">Steam, Smoke, Clouds</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -   <a href="interior_60e.htm">Dust Devils</b></a> <br>
+
+<nobr>&nbsp; Special Problems with Media</b></a></nobr><br>
+&nbsp; -  <!--a href="interior_080e.htm"--><b>Scaling of Media</b></a> <br>
+&nbsp; -  <a href="interior_090e.htm">Overlapping Media</b></a> <br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!--table border="0" width="90%" align="center"><tr><td-->        <!-- inner table -->
+
+
+<table border="0" width="90%" align="center" cellpadding="3"><tr><td colspan="2">
+<h1 align="center"><a name="Top"></a><b>Scaling Object Media</b></h1>
+</td></tr>
+
+<tr>
+<td valign="top">
+ <p align="justify"><b>Scaling Object Media</b> <br>
+ <font size="-1">If we increase scale of an object media in POV-Ray scene
+  the media density will not be scaled accordingly!<br>
+  In consequence more rays will pass through more media than before
+  and this gives accordingly stronger effects.<br>
+  I.e. a scattering media scatters more intensively and that's why it looks
+  darker (c.f.: the second image on this page!).<br>
+
+
+
+ </p>
+ <p align="justify"><b>How to scale Object Media correctly:</b> <br>
+ <font size="-1">To keep the effect constant we need to reduce the
+ color (i.e. for scattering) by dividing it by the applied scale!
+
+ <br>
+ </font>
+ </p>
+ </td>
+ <td>
+    <h6 align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/scaling01.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Object media in scale 1. </h6>
+</td>
+</tr><tr>
+ <td> <h6 align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/scaling02.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Object media in scale 4.</h6>
+ </td>
+ <td> <h6 align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/scaling03.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Object media in scale 4 with color divided by 4.</h6>
+ </td>
+</tr></tr>
+<td colspan="2"><hr></td>
+</tr></tr>
+ <td valign="top"> Example: <b>How to scale media</b>
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre><b>#declare <font color="#A00000">Cloud_Scale</font> = 10;// 1, ... 500
+
+#declare Cloud =
+sphere{ &lt;0,0,0&gt;, 1
+  pigment{rgbt 1}
+   hollow
+  interior{ //-----------
+   media{
+    emission &lt;1,1,1&gt;/<font color="#A00000">Cloud_Scale</font>
+    scattering{ 1,&lt;1,1,1&gt;/<font color="#A00000">Cloud_Scale</font>}
+    density{
+     spherical
+     turbulence 0
+     color_map {
+       [0 rgb 0.0]//border
+       [1 rgb 1.0]//center
+     } // end color_map
+    } // end of density
+   } // end of media ---
+  } // end of interior
+scale <font color="#A00000">Cloud_Scale</font>
+} //----- end of sphere
+//--------------------------------------
+object{ Cloud
+  // don't do any additional scaling here!
+  translate&lt;0,1,15&gt;
+} //--------------------------------------
+</b></td></pre></tr></table>
+<h5 align="center">Scene description for <nobr>POV-Ray:</nobr><br>
+ <a href="pov/media_scaling_10.txt">&quot;media_scaling_10.txt&quot;</a> or<br>
+ <a href="pov/media_scaling_10.pov">&quot;media_scaling_10.pov&quot;</a></h5>
+
+And as a macro object:<br>
+<h5 align="center">Scene description for <nobr>POV-Ray:</nobr><br>
+ <a href="pov/media_scaling_macro_10.txt">&quot;media_scaling_macro_10.txt&quot;</a> or<br>
+ <a href="pov/media_scaling_macro_10.pov">&quot;media_scaling_macro_10.pov&quot;</a></h5>
+
+ </td>
+ <td>
+ <h6 align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_scaling_001.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Object media with Cloud_Scale 1 at &lt;0,1,1&gt;<br>
+
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_scaling_010.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Object media with Cloud_Scale 10 at &lt;0,1,15&gt;<br>
+
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_scaling_500.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Object media with Cloud_Scale 500 at &lt;0,50,600&gt;</h6>
+ </td>
+</td></tr>
+<td colspan="2"><hr></td>
+</tr>
+<tr>
+ <td valign="top"> Example: <b>A cloud with media in a macro</b>
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre><b>#macro Cloud_01( <font color="#A00000">Cloud_Scale</font> )
+sphere{ &lt;0,0,0&gt;, 1
+ pigment{rgbt 1}
+ hollow
+ interior{ //-----------
+ media{
+  emission &lt;1,1,1&gt;*0.75/<font color="#A00000">Cloud_Scale</font>
+  scattering{ 1,&lt;1,1,1&gt;*5/<font color="#A00000">Cloud_Scale</font>}
+  samples 20  // increase = more precise
+  intervals 1
+  density{ spherical
+   scale 0.65
+   turbulence 1.00
+   color_map {
+         [0 rgb 0.0] // border
+         [1 rgb 1.0] // center
+   } // end color_map
+  } // end of density
+ } // end of media ---
+} // end of interior
+scale Cloud_Scale
+} //----- end of sphere
+#end // end of macro ---------------------
+
+object{ Cloud_01( 5 )//Cloud(<font color="#A00000">Cloud_Scale</font>)
+ // don't do any additional scaling here!
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,4,5&gt;
+} //--------------------------------------
+</b></td></pre></tr></table>
+ </td>
+ <td valign="top">
+ <h6 align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/media_macro_Cloud_01c.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Object media Cloud_1, scale 5 at &lt;0,4,5&gt;</h6>
+<h5 align="center">Scene description for <nobr>POV-Ray:</nobr><br>
+ <a href="pov/media_macro_Cloud_01.txt">&quot;media_macro_Cloud_01.txt&quot;</a> or<br>
+ <a href="pov/media_macro_Cloud_01.pov">&quot;media_macro_Cloud_01.pov&quot;</a></h5>
+
+</td></tr>
+</table>
+
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

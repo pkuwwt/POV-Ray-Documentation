@@ -1,0 +1,217 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, povray, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, descrizione raytracing, tutorial POV-Ray, descrizione di scene di POV-Ray, grafica 3d">
+<meta name="description" content="POV-Ray corso per principianti - un introduzione alla lingua descrittiva di scene, tutoriale">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>while loop - automatic serial production, POV-Ray corso parte 9</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+  <h6><nobr>Introduzione al linguaggio di descrizione di scene del raytracer POV-Ray</nobr>
+    <nobr> &nbsp; &nbsp; &nbsp; &nbsp; pagina 9</nobr><br>
+    di Friedrich A. Lohm&uuml;ller </td></h6>
+ <td align="right">
+        <a href="povtuto9.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povtuto9.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtutf9.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povtutf9.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs9.htm"><font size="2">Deutsch</font></a>
+        <a href="povkurs9.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br></font>
+ &nbsp;<br>
+ &nbsp;&nbsp; <a href="povtuti0.htm">Introduzione a POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp; <a href="povtuti0.htm">Indice del contenuto</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtuti1.htm">Usare POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtuti2.htm">Principi fondamentali</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comme descrivere una scena?</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtuti2.htm#xyzKoordinaten">Coordinate 3D</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtuti2.htm#ZahlenundVektoren">Numeri e vettori</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtuti3.htm">Struttura di Scena</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Esempio di Base.</b></a></nobr><br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtuti4.htm">Scene file header:</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; #include files</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtuti5.htm">Oggetti geometrici di base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; et altri oggetti</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtuti6.htm">Trasformazioni</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; scala, rotazione, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translazione e altri.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union, </nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtuti7.htm">Colori e superfici</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtuti8.htm">#declare, #local, #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  Variabili e oggetti flessibili</b>.</a></nobr><br>
+ <b>&gt;9.</b> <!--a href="povtuti9.htm"--><b>#while</b></a> - loops, cicli.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Esempi di Base.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutia.htm">#include</b></a>, include files.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Oggetti riutilizzabili.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutib.htm">Efficienza</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; velocit&agrave;, flessibilit&agrave;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; lavorare con moduli.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.1 a 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutia.htm#version37">POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/inserti_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwni.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+
+<table border="0" align="center" width="95%"><tr><td>
+<font size="+2"><b>#<a name="while">while</a></font> - Produzione di Serie Automatica con i loop.</b><br>
+<font size="-1">Con questo meccanismo &egrave; possibile, come in ogni linguaggio di programmazione moderno,<br>
+                   fare le produzioni di serie automatiche in un senso molto semplice.</font><br>
+<font size="-1"><b>Qui &egrave; un esempio: </b></font>
+
+<div align="center">
+<table border="0" cellspacing="5" cellpadding="0">
+ <tr>
+ <td valign="top">
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#declare Nr</b> = 0; // valore di inizio
+<b>#while ( Nr &lt;</b> 30 <b>)</b> // finch&egrave; Nr &lt; 30,
+      // fa i seguenti ordini:
+  sphere{&lt;1,0,0&gt;,0.25
+         rotate&lt;0,<b>Nr</b> * 360/30 ,0&gt;
+         texture{
+              pigment{color rgb&lt;1,0.65,0&gt;}
+              finish {phong 1.0}
+             } // end texture
+        }// end sohere
+<b>#declare Nr = Nr + 1;</b> // next Nr
+<b>#end</b> // of loop</td></pre></tr></table>
+<font size="2">Un cerchio completo di 30 sfere (Nr.0 a Nr.29))!</font>
+</td>
+ <td valign="top">
+    <table border="3"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><img src="im/While_demo1.jpg" width="320" height="240" alt="while demo1" titel="while demo1"></td></tr></table>
+    <div align="center"><font size="2"><b>Cherchio di 30 sfere.</b><br>
+  Descrizione della scena per <nobr>POV-Ray:</nobr><br>
+     <a href="pov/While_demo1.pov">While_demo1.pov</a></font></div>
+
+</td></tr>
+</table>
+<div align="left">
+<font size="2"><b>Anchora un esempio:</b></font></div>
+
+<table border="0" cellspacing="5" cellpadding="0" width="640">
+<tr><td colspan="2" valign="top">
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#declare CH = 3.0; //altezza colonna
+#declare Column =
+union{
+ cone{&lt;0,0,0&gt;,0.40,&lt;0,CH,0&gt;,0.30}
+ torus{0.4,0.05 translate&lt;0,0.05,0&gt;}
+ torus{0.3,0.05 translate&lt;0,CH-0.05,0&gt;}
+ texture{ pigment{ color rgb&lt;1,0.95,0.8&gt;}&nbsp;
+          normal { bumps 0.5 scale 0.01}
+          finish { phong 0.1 }
+        } // end of texture
+ }// end Column
+//--------------------------------------
+union{ //-------------------------------
+ #local Nr = 0;     // start
+ #local EndNr = 10; // end
+ #while (Nr &lt; EndNr)
+  object{ Column translate&lt;-2,0,Nr*2.5&gt;}
+  object{ Column translate&lt; 2,0,Nr*2.5&gt;}
+ #local Nr = Nr + 1;  // next Nr
+ #end // --------------- end of loop
+rotate&lt;0,0,0&gt;
+translate&lt;0,0,0&gt;
+} // end of union -----------------------</b></td></pre></tr></table>
+<br>
+<b><font color="#AA0000">Attenzione:</font> <font size="-1">Il &egrave; nella responsabilit&agrave; del utente evitare un loop infinito!</b></font>
+
+</td>
+<td align="center" valign="top">
+    <table border="3"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td>
+      <img src="im/While_demo2.jpg" width="320" height="240" alt="Columns demo1" titel="Columns demo1"></td>
+    </tr>
+    </table>
+    <div align="center"><font size="2"><b>Columns</b><br>
+     Descrizione della scena per <nobr>POV-Ray:</nobr><br>
+     <a href="pov/While_demo2.pov">While_demo2.pov</a></font></div>
+
+</td>
+</tr>
+</table>
+</p>
+</div>
+<font size="-1">Ulteriori campioni e spiegazioni pi&ugrave; dettagliate: veda sotto &quot;<a href="../loop/povlup1i.htm">I cicli while in POV-Ray </a>&quot;.</font><br>
+</td></tr></table>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtuti0.htm">parte 0</a> |
+<a href="povtuti1.htm">parte 1</a>  | <a href="povtuti2.htm">parte 2</a> |
+<a href="povtuti3.htm">parte 3</a>  | <a href="povtuti4.htm">parte 4</a> |
+<a href="povtuti5.htm">parte 5</a>  | <a href="povtuti6.htm">parte 6</a> |
+<a href="povtuti7.htm">parte 7</a>  | <a href="povtuti8.htm">parte 8</a> |
+<!--a href="povtuti9.htm"-->parte 9</a>  | <a href="povtutia.htm">parte 10</a> |
+                                      <a href="povtutib.htm">parte 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

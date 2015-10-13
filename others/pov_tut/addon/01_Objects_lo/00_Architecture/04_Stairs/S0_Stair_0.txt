@@ -1,0 +1,33 @@
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------- textures
+#declare Railing_Texture = 
+   texture { Chrome_Metal  
+             //pigment{ color rgb<1,1,1> } 
+             finish { phong 0.1} 
+           } // end of texture
+#declare Step_Texture = 
+   texture { pigment{ color rgb<1,1,1>*1.0 } 
+             finish { phong 0.1} 
+           } // end of texture
+//---------------------------------------------------------------------------------------
+#include "Stair_0.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Stair_0(  2.00, // Stair___H, // stair total height
+                  3.50, // Stair___X, // length of stair in x direction    
+                  0.175,// Step___H_, // ca. single step height - adapted to fit the height                           
+                  1.50, // Step___Z, // width  of a step in z direction
+                  3, // Banisters_On 1=right; 2 = left; 3= both ; 0= off;
+                  0.03, // Railing___R, // radius of railing linear tubes
+                  0.02, // Railing___Rv // radius of vertical tubes 
+                  0.75, // Railing___H, // railing heigth 
+                  Railing_Texture, // 
+                  Step_Texture   // 
+                ) //-------------------------------------------------------------------//
+        scale <1,1,1>*1
+        rotate<0, 0,0> 
+        translate<0.00,0.00, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+
+

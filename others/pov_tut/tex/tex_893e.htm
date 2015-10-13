@@ -1,0 +1,210 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures with POV-Ray - layered textures</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="description" content="textures with POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=660,height=520");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design of Surfaces by &quot;texture&quot; with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_893d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_893d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a><br>
+        <a href="tex_893i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_893i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_893f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_893f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000e.htm">Design of Surfaces</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000e.htm">Colors and Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001e.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001e.htm">Basic Sample</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200e.htm">pigment{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300e.htm">normal{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">normal Samples</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400e.htm">finish{...} </b></a><br>
+-->
+ &nbsp; &nbsp;  <a href="tex_210e.htm">Ready-made Textures</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210e.htm">Rules</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150e.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160e.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110e.htm">Do-it-yourself Colors</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110e.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120e.htm">Transparency</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700e.htm">Patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700e.htm">pattern types</b></a><br>
+ &nbsp; &nbsp; &nbsp; Regular patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500e.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550e.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Stripes pattern</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600e.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750e.htm">Patterns Lists</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750e.htm">Regular Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755e.htm">Random Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760e.htm">Fractal Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765e.htm">Other Patterns</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780e.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780e.htm">warp mapping</b></a><br> -->
+ &nbsp; &nbsp; <a href="tex_790e.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800e.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800e.htm">Mapping Methods</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600e.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820e.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830e.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840e.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850e.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860e.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870e.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880e.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <!--a href="tex_890e.htm"--><b>Superpositions</b></a><br>
+ &nbsp; &nbsp; &nbsp;      <a href="tex_890e.htm">Layered Textures</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_893e.htm"--><b>Squared Paper Grid</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_900e.htm">Your own Textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="90%" align="center" cellspacing="5"><tr><td><!-- global table-->
+<font size="6"><b><p align="center">Squared Paper Grid<br>
+</font><h3>Layers of Partly Transparent Patterns for a Grid of Coordinate Systems.</h3>
+</font></b>
+<font size="2"><p>Two lattice grilles, each of them realized by a color_map (thin dark opac + wide clear transparent),  are
+    one of them rotated by 90 degrees, are layered together with a white background.</p>
+<p><br>
+<b>Example: &quot;Squared Paper&quot;</b>:</p></font>
+<div align="center">
+<table align="CENTER" border="0" cellspacing="5" bordercolor="#c0c0c0" cellpadding=2 >
+<tr>
+<td valign="TOP">
+<table border="1" cellspacing="3" cellpadding="4" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>//------------------&lt;&lt;&lt;&lt; grid macro
+#macro Raster(RScale, RLine)
+pigment{gradient x
+        scale RScale
+        color_map{
+        [0.000   color rgbt&lt;0,0,0,0&gt;]
+        [0+RLine color rgbt&lt;0,0,0,0&gt;]
+        [0+RLine color rgbt&lt;1,1,1,1&gt;]
+        [1-RLine color rgbt&lt;1,1,1,1&gt;]
+        [1-RLine color rgbt&lt;0,0,0,0&gt;]
+        [1.000   color rgbt&lt;0,0,0,0&gt;]
+        }}
+#end // of macro
+//-----------------------------------
+box{&lt;0,0,0&gt;,&lt; 2,0.1,2&gt;
+    texture{
+      pigment{color rgb&lt;1,1,1&gt;*1.3}}
+    texture{ Raster( 1.0, 0.045)
+             scale 0.25}
+    texture{ Raster( 1.0, 0.045)
+             scale 0.25
+             rotate&lt;0,90,0&gt;}
+    rotate&lt;0,0,0&gt;
+    scale 2
+    rotate&lt;5,0,0&gt;
+    translate&lt;-1.0,1.5,-1.5&gt;}
+//-------------------------- end ----</b></td></pre>
+</tr>
+</table></td>
+<td valign="top">
+<font size="-1">Demonstration of how to do:</font><br>
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/povgr_0i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/grid_0.jpg" border="0" width="240"  height="180"
+     alt="Sample layered grids 600x450" title="Sample layered grids 600x450"></a></td>
+  </tr>
+ </table>
+<br>
+<font size="-1">The resulting image:</font><br>
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/povgr00i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/grid00t.jpg" border="0" width="240"  height="180"
+     alt="Sample grid 600x450" title="Sample grid 600x450"></a></td>
+  </tr>
+ </table>
+</td>
+</tr>
+<tr><td colspan="2"><div align="center">
+<h5 align="center">Click here for the complete scene description of the demo scene<br> for <nobr>POV-Ray:</nobr>
+ <a href="pov/grid_0.txt">&quot;.txt&quot; file</a> or
+ <a href="pov/grid_0.pov">&quot;.pov&quot; file</a></h5>
+<h5 align="center">Click here for the complete scene description of the scene &quot;rastered box&quot; <br> for <nobr>POV-Ray:</nobr>
+ <a href="pov/grid00.txt">&quot;.txt&quot; file</a> or
+ <a href="pov/grid00.pov">&quot;.pov&quot; file</a></h5>
+<br>
+
+</div></td></tr>
+</table>
+</div>
+
+</td></tr></table><!-- global table -->
+
+
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray - Pronto per l'uso</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_150e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_150e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_150f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_150f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_150d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_150d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300e.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330i.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp;<a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_150i.htm"--><b>colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>    -->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+ <!--&nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<p align="center"><b><i><font size="6">
+  <a name="ColorList">Colori pronto per l'uso </a></i></b></font><br>
+  definiert in der Standard-Include-Datei<b> &quot;colors.inc&quot; </b>
+  dichiarati in <b>&quot;colors.inc&quot;</b>
+
+<table align="center" border="2" cellspacing="4" cellpadding="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td valign="top" bgcolor="#ffffff">
+          <img src="im/col_all.jpg" width="600" height="600"></td>
+     </tr>
+</table>
+
+<fontsize="1"><p>I numeri nella lista seguente
+segnano i posizioni negli esempi in alto! </font>
+
+<table border="1" cellspacing="2"
+       bordercolor="#f8f8f0" bordercolordark="#ffffff"  bordercolorlight="#808080"
+       cellpadding="3" width="80%" align="center">
+<tr><td width="33%" valign="top" bgcolor="#f8f8f0">
+<p><font size="2">
+00 = color Black<br>
+01 = color White<br>
+02 = color Red<br>
+03 = color Green<br>
+04 = color Blue<br>
+05 = color Yellow<br>
+06 = color Cyan<br>
+07 = color Magenta<br>
+08 = color Black<br>
+09 = color Aquamarine<br>
+<br>
+10 = color BlueViolet<br>
+11 = color Brown<br>
+12 = color CadetBlue<br>
+13 = color Coral<br>
+14 = color CornflowerBlue<br>
+15 = color DarkGreen<br>
+16 = color DarkOliveGreen<br>
+17 = color DarkOrchid<br>
+18 = color DarkSlateBlue<br>
+19 = color DarkSlateGray<br>
+<br>
+20 = color DarkTurquoise<br>
+21 = color Firebrick<br>
+22 = color ForestGreen<br>
+23 = color Gold<br>
+24 = color Goldenrod<br>
+25 = color GreenYellow<br>
+26 = color IndianRed<br>
+27 = color Khaki<br>
+28 = color LightBlue<br>
+29 = color LightSteelBlue<br>
+<br>
+30 = color LimeGreen<br>
+31 = color Maroon<br>
+<nobr>32 = color MediumAquamarine</nobr><br>
+33 = color MediumBlue<br>
+</font></td>
+<td width="33%" valign="top" bgcolor="#f8f8f0" >
+<font size="2"><p>
+<nobr>34 = color MediumForestGreen</nobr><br>
+35 = color MediumGoldenrod<br>
+36 = color MediumOrchid<br>
+37 = color MediumSeaGreen<br>
+38 = color MediumSlateBlue<br>
+39 = color MediumSpringGreen<br>
+<br>
+40 = color MediumTurquoise<br>
+41 = color MediumVioletRed<br>
+42 = color MidnightBlue<br>
+43 = color Navy<br>
+44 = color NavyBlue<br>
+45 = color Orange<br>
+46 = color OrangeRed<br>
+47 = color Orchid<br>
+48 = color PaleGreen<br>
+49 = color Pink<br>
+<br>
+50 = color Plum<br>
+51 = color Salmon<br>
+52 = color SeaGreen<br>
+53 = color Sienna<br>
+54 = color SkyBlue<br>
+55 = color SlateBlue<br>
+56 = color SpringGreen<br>
+57 = color SteelBlue<br>
+58 = color Tan<br>
+59 = color Thistle<br>
+<br>
+60 = color Turquoise<br>
+61 = color Violet<br>
+62 = color VioletRed<br>
+63 = color Wheat<br>
+64 = color YellowGreen<br>
+65 = color SummerSky<br>
+66 = color RichBlue<br>
+</font></td>
+<td width="33%" valign="top" bgcolor="#f8f8f0" >
+<font size="2"><p>
+67 = color Brass<br>
+68 = color Copper<br>
+69 = color Bronze<br>
+<br>
+70 = color Bronze2<br>
+71 = color Silver<br>
+72 = color BrightGold<br>
+73 = color OldGold<br>
+74 = color Feldspar<br>
+75 = color Quartz<br>
+76 = color NeonPink<br>
+77 = color DarkPurple<br>
+78 = color NeonBlue<br>
+79 = color CoolCopper<br>
+<br>
+80 = color MandarinOrange<br>
+81 = color LightWood<br>
+82 = color MediumWood<br>
+83 = color DarkWood<br>
+84 = color SpicyPink<br>
+85 = color SemiSweetChoc<br>
+86 = color BakersChoc<br>
+87 = color Flesh<br>
+88 = color NewTan<br>
+89 = color NewMidnightBlue<br>
+<br>
+90 = color MandarinOrange<br>
+91 = color VeryDarkBrown<br>
+92 = color DarkBrown<br>
+93 = color GreenCopper<br>
+94 = color DkGreenCopper<br>
+95 = color DustyRose<br>
+96 = color HuntersGreen<br>
+97 = color Scarlet<br>
+98 = color DarkTan<br>
+99 = color White<br>
+<nobr>// Grey = Gray; // Mica = Black</nobr></font>
+</td>
+</tr>
+</table>
+
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

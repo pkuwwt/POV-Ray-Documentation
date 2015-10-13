@@ -1,0 +1,37 @@
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+/* 
+// alternative declaration of textures
+#declare Street_Texture = 
+      texture{ pigment{ color rgb<1,1,1>*0.4}
+               normal { bumps 0.25 scale 0.005}
+               finish { diffuse 0.9 phong 0.1}
+             } // end of texture
+#declare Stripes_Texture = 
+      texture{ pigment{ color rgb<1,0.75,0>*1.1}
+             //normal { bumps 0.5 scale 0.005}
+               finish { diffuse 0.9 phong 0.5}
+             } // end of texture
+*/
+//-------------------------------------------------------------------------------------// 
+#include "Street_10.inc"  // street with center stripes with continuous border lines
+//-------------------------------------------------------------------------------------// 
+object{ Street_10( 6,     // Street_Widthm, // 
+                   1000 , // Street_Length, //
+                   0.10,  // Stripes_Width, // 
+                   1.00,  // Stripes_Length // = 0 => continuous line!!!                                
+                 ) //------------------------------------------------------------------//
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.00, -5.00>}
+//-------------------------------------------------------------------------------------// 
+//---------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

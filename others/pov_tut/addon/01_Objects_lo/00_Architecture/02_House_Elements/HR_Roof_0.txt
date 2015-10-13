@@ -1,0 +1,48 @@
+//--------------------------------------------------------------------- roof textures <<<<<<<<<<<<<
+#declare RoofTrans = <-1.25,0,0>;// to regulate the start of the roof brics
+#declare Roof_Base_Color = <1,1,1>*1;// = <1,0.34,0.160>*1
+#declare Roof_Color_Factor = 0.4; 
+#declare Roof_Texture1 = texture{
+   pigment{gradient x 
+           color_map{[0.00 color rgb Roof_Base_Color*Roof_Color_Factor ]
+                     [0.90 color rgb Roof_Base_Color*Roof_Color_Factor ]
+                     [0.95 color rgb Roof_Base_Color*0.0 ]
+                     [1.00 color rgb Roof_Base_Color*Roof_Color_Factor ]
+                    }
+           scale < 1, 1, 1>*0.38  quick_color  Scarlet*1.25}
+   normal { bumps 0.5 scale 0.01} 
+   finish { phong 1}
+   translate RoofTrans}
+
+#declare Roof_Texture2 = texture{
+   Roof_Texture1  
+   finish { ambient 0.15 diffuse 0.85 phong 1}}
+//-------------------------------------------------------------------------------------<<<<<<<<<<<<
+
+
+// --------------------------------------------------------------------------------------------
+#declare Wall_Height = 3.00;
+// --------------------------------------------------------------------------------------------
+#include "Roof_0.inc"
+// --------------------------------------------------------------------------------------------
+union{
+box {<0,0,0>,< 5.00, Wall_Height,8.00> 
+     texture{pigment{color White*1.2}
+             finish {ambient 0.45 diffuse 0.55 phong 0.5}}}
+//-------------------------------------------------------------------------------------// 
+object{ Roof_0 (   35,    // Roof___Angle1, // roof angle                              
+                    5.00, // Roof___WideX,  //   base length of the roof part in x-direction
+                    8.00, // Roof___WideZ,  //   base length of the roof part in z-direction  
+                   0.50,  // Roof___Over,     // overhang
+                   0.075, // R_Cyl,          // radius cylinders
+                   0.20,  // Cyl_D,         // distance cylinders
+                   Roof_Texture1, // Roof___Texture1, // cylinder texture
+                   Roof_Texture2  // Roof___Texture2  // base box texture
+                ) //------------------------------------------------------------- 
+        translate<0,Wall_Height,0>}
+//---------------------------------------------------------------------------------------
+translate<0,0,0>
+rotate<0,-35 ,0>
+translate<0,0,0>
+}
+// --------------------------------------------------------------------------------------------

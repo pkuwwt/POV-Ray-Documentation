@@ -1,0 +1,212 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Icosaedro troncato, Geometria di Base per Raytracing con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica, geometria di base per raytracing con POV-Ray, rombicubottaedro">
+<title>Geometria di Base - per Raytracing con POV-Ray - Icosaedro troncato</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Geometria di Base </b></font> -
+      <font size="-1">per Raytracing</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_800e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="geom_800e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="geom_800f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="geom_800f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_800d.htm"><font size="2">Deutsch</font></a>
+        <a href="geom_800d.htm"><img src="../flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#objects"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000i.htm">Geometria di Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000i.htm">per Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050i.htm">Triangolo Rettangolo</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070i.htm">Teorema di Pitagora</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080i.htm">Trigonometria di Base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090i.htm">Teorema del Coseno</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100i.htm">Triangolo Equilatero</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150i.htm">Poligono Regulare</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200i.htm"--><i>Poliedro</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200i.htm">Tetraedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250i.htm">Ottaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300i.htm">Cubo e Cuboide</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500i.htm">Dodecaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700i.htm">Icosaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260i.htm">Cubottaedro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270i.htm">Ottaedro troncato</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280i.htm">Rombicubottaedro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_800i.htm"--><b>Icosaedro troncato</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000i.htm"--><i>Cerchi</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100i.htm">Cerchi tangenti</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200i.htm">Tangenti interne</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300i.htm">Tangenti esterne</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Animazioni Geometriche 3D</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"><!-- global-->
+
+<table width="90%"><tr>
+   <td><img src="im/Buckyball_80st.gif" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><h2><nobr><b>Icosaedro troncato</b></nobr><br>
+                    Buckminsterfullerene<br>
+                    buckyball, C<sub>60</sub>.<br>
+   <font size="-1">Qualche fondamento geometrico molto utile.</font></h2> </td>
+   <td><table border="1" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+       <tr><td>
+       <img src="im/Buckyball_soc_050b_7s256c.gif" width="120" height="120" border="0" hspace="0" vspace="0"></td>
+       </tr></table><font size="-1"><nobr>Icosaedro troncato</nobr></font>
+<td>
+</tr></table>
+
+<p align="justify">
+<font size="-2"><i>Nel seguente si scriva per la radice quadrata di un numero,
+l'espressione inglese &quot;sqrt(</i>Numero<i>)&quot; <br>
+in conformit&agrave; alla sintassi usata con POV-Ray.</i></font><br>
+&nbsp;<br>
+</p>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><b>Dimensioni </b><br>
+ <font size="-1"><nobr>Lunghezza degli spigoli: <b>a</b>.</font></nobr></td>
+ </tr>
+ <tr>
+  <td  valign="top">
+<font size="-1">Il raggio della circumsfera:</font><br>
+<b>Rc =  a / 4 * sqrt( 58 + 18*sqrt(5));</b><br>
+<br>
+<font size="-1"><nobr>Il raggio de la sfera tangente gli spigoli:</nobr></font><br>
+<b>Re =  3/4 * a * ( 1 + sqrt(5) );</b><br>
+<br>
+<nobr><font size="-1">L'angolo entro esagono e esagono: ~138,2&deg;</nobr></font><br>
+<nobr><font size="-1">HH_Angle = <br>
+</font><b>degrees(acos(-1/3*sqrt(5)));</nobr></b><br>
+<br>
+<nobr><font size="-1">L'angolo entro esagono e pentagono: ~142,6&deg;</nobr></font><br>
+<nobr><font size="-1">HP_Angle =  <br>
+</font><b>degrees(acos(-sqrt((5+2*sqrt(5))/15)));</nobr></b><br>
+</td>
+ </tr>
+</table>
+</div>
+<div  align="right">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td>
+    <img src="im/Buckyball_net_.jpg" width="208" height="304" border="0" hspace="0" vspace="0"></td>
+    </tr></table><font size="-1">Uno sviluppo dell'icosaedro troncato</font><br>
+</div>
+
+</td>
+<td valign="top" width="50%">
+  <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td>
+    <img src="im/Buckyball_80_073.jpg" width="400" height="400" border="0" hspace="0" vspace="0"></td>
+    </tr></table><font size="-1">Icosaedro troncato</font><br>
+<font size="-1">
+<br>
+<br>
+<br>
+<br>
+</font>
+    <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td>
+    <img src="im/Buckyball_75_5s256.gif" width="160" height="120" border="0" hspace="0" vspace="0"></td>
+    </tr></table><font size="-1">Uno sviluppo dell'icosaedro troncato</font>
+
+
+
+
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td>&nbsp;
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray, povray, graphique 3d, infographie, info graphique, lancer de rayons, trac&eacute; de rayons, suivi de rayons, images photor&eacute;alistes, raytracing descriptions, POV-Ray instuctions, 3D grafic, csg, Constructive Solid Geometry, Constructive Solide G&eacute;ometrie, Alg&egrave;bre Bool&eacute;enne des Solides, boolean algebra, union, merge, intersection, difference, inverse">
+<meta name="description" content="CSG - Constructive Solid Geometry - Constructive Solide G&eacute;ometrie -  Alg&egrave;bre bool&eacute;enne des Solides instuctions pour POV-Ray - part V">
+<title>CSG - Constructive Solid Geometry - Constructive Solide G&eacute;ometrie -  Alg&egrave;bre bool&eacute;enne des Solides avec POV-Ray - part I, fran&ccedil;ais</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+   <nobr>par Friedrich A. Lohmueller</nobr>,<br>
+   traduit en fran&ccedil;ais par Henri Girard.
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg6e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povcsg6e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg6i.htm"><font size="2">Italiano </font></a>
+        <a href="povcsg6i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg6.htm"><font size="2">Deutsch </font></a>
+        <a href="povcsg6.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+ - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1f.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1f.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1f.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2f.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3f.htm">difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4f.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4f.htm">et invers</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg5f.htm">clipped_by</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg6f.htm"--><b>surfaces</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--a href="povcsg6f.htm"--><b>co&iuml;ncidentes</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg7f.htm">textures et CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Alg&egrave;bre bool&eacute;enne des Solides - part VI</h5>
+<h2 align="center">Le probl&egrave;me des surfaces co&iuml;ncidentes et CSG</h2>
+&nbsp; Comme d&eacute;j&agrave; mentionn&eacute; en rapport avec <a href="povcsg3f.htm">'difference'</a>
+on peut avoir des probl&egrave;mes d'ambigu&iuml;t&eacute; avec des surfaces co&iuml;ncidentes.
+Ce genre de 'erreurs' peut, en principe, se produire dans tous les programmes,
+que calculont des points d'intersection des lignes droites (lignes de vis&eacute;e) avec plusieurs des autres objets g&eacute;om&eacute;triques. <br>
+Cela n'est pas un erreur du programm de POV-Ray!<br>
+&nbsp; Il est <b>la t&acirc;che du concepteur</b>, faire des <b>informations sans ambigu&iuml;t&eacute; </b> et donc de
+<b>&eacute;viter des surfaces co&iuml;ncidentes</b>.<br>
+
+
+<table border="0" width="90%" align="center"><tr><td>
+<div align="center">
+<table border="0" cellpadding="2" cellspacing="2">
+  <tr>
+       <td colspan="2" valign="top"><b>Le probl&egrave;me des surfaces co&iuml;ncidentes</b><br>
+       peut faire des difficult&eacute;s con toute les types di operations CSG.
+       L'erreur appara&icirc;t g&eacute;n&eacute;ralement seulement dans certains directions d'observation, angles et les distances de la cam&eacute;ra.
+       Toutefois, d'autres objets dans la sc&egrave;ne peuvent influencer l'apparition.<br>
+      <br>
+       Les photos suivantes montrent certains de ces sympt&ocirc;mes<br>
+       Ici premi&egrave;rement avec une <b>'union'</b> de deux cube des dimensions &eacute;gales.
+       </td>
+       <td> <table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_000ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>Un cube simple en rouge<br>
+                            box{&lt;0,0,0&gt;,&lt;3,3,3&gt;} </b></font>
+       </td>
+  </tr>
+    <tr>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_001ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>en 'union' avec un 'box' jaune,<br>
+             de la m&ecirc;me dimension,<br>
+             pouss&eacute; &agrave; la hausse par 2 unit&eacute;s.<br>
+             'box' joune enti&egrave;rement visible !</b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_002ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>D'un autre point de vue: <br>
+             'box' rouge enti&egrave;rement visible !<br>
+             &nbsp;  <br>
+             &nbsp; </b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_003ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>Encore d'un autre point de vue:<br>
+             encore plus &eacute;trange!<br>
+             &nbsp; <br> &nbsp; <br>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="2" cellspacing="2">
+    <tr>
+        <td colspan="2" valign="top">E puis, la subtraction del'union du cube rouge e du cube jaune d'un 'box' verte par 'difference'.
+        Ici, la partie m&eacute;diane des surfaces co&iuml;ncidentes est presque compl&egrave;tement transparent!
+        <br>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_union_0s.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>Un cube vert additionnel.<br>
+             &nbsp;<br>
+              </b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_difference_2s.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>La 'difference' de <br>
+             Vert moins moins et rouge. </b></font>
+        </td>
+    </tr>
+</table>
+
+</div>
+<p align="justify">
+<b>L'apparition ou la disparition de ces effets est totalement impr&eacute;visible! </b>
+Par cons&eacute;quent, on ne peut pas garantir que ces effets rester en quelque sorte reproductible.<br>
+(Utilisez ces effets pour un &eacute;l&eacute;ment de design!).
+Il ne faut pas trop esp&eacute;rer que ces effets n'apparaissent pas dans une certaine situation!
+En cons&eacute;quence, la r&egrave;gle simple :<br>
+&nbsp; &nbsp; &nbsp;
+<table align="center" border="2" cellpadding="5" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><font size="+1"><b> &Eacute;viter surfaces co&iuml;ncidentes !</b></font></b></td></tr></table>
+<br>
+Conform&eacute;ment &agrave; cette r&egrave;gle peuvent pr&eacute;venir l'essentiel des frustrations inutiles!<br>
+<font size="-1">Un exemple qui peut &ecirc;tre fait concr&egrave;tement comment on peut trouver ici: <a href="povcsg3f.htm">'difference'</a>.</font>
+</tr></td></table>
+<br>
+</p>
+
+</td></tr></table> <!-- global-->
+
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1f.htm">CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2f.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3f.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5f.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg6f.htm"-->surfaces co&iuml;ncidentes</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7f.htm">textures</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, new items for the 'insert menu'">
+<meta name="description" content="Include files tutorial for POV-Ray - Adding a new item to the 'Insert Menu'">
+<title>Include files with POV-Ray - Adding a new item to the 'Insert Menu'</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Include files with POV-Ray</b></font><br>
+      <font size="-1"><b>How they work and How to make your own include files</b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="inc_700i.htm"><font size="2">Italiano </font></a>
+        <a href="inc_700i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_700f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="inc_700f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="inc_700d.htm"><font size="2">Deutsch </font></a>
+        <a href="inc_700d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000e.htm"--><b>A Short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000e.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_000e.htm">Why Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100e.htm">Self-made Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100e.htm">and how to call them.</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_200e.htm">Special Notations, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_200e.htm">&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300e.htm">Where to store</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp;  <a href="inc_400e.htm">Design of Include Files</b></nobr></a><br>
+ &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_700e.htm"--><b>Adding a new item</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <!--a href="inc_700e.htm"--><b>to the 'Insert Menu'</b></a><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Adding a new item to the 'Insert Menu'</b><br>
+                    <font size="-2">(POV-Ray for Windows version 3.6 or 3.7)</font></h2>
+
+<p align="justify">
+
+   We render the object, we want to add to the 'Insert Menu' in a handy small thumbnail resolution
+   like 160 x 120 pixels in POV-Ray. We should choose a view that shows all esential details
+   of the object. <br>
+   Then we make a small text containing all what's necessary to include this object in a POV-Ray file:
+<br>
+<table border="0" align="center"><tr>
+<td>
+     <div align="center">
+     <table border="1" cellpadding="3" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr>
+    <td><img src="im/Table_01.jpg" width="160" height="120" alt="Table_01.jpg" border="0"></td>
+   </tr>
+   </table><b>Thumbnail of '10 - Table_01.jpg'<br>
+            for the 'insert menu'</b>.</div>
+
+</td><td>
+    <div align="center">
+    <table border="1" cellpadding="3" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr>
+    <td><pre><b>//------------------------------------
+#include "Table_01.inc"
+//------------------------------------
+object{ Table_01
+        scale&lt;1,1,1&gt;
+        rotate&lt;0,0,0&gt;
+        translate&lt;0,0,0&gt;
+      }
+//------------------------------------</b></td></pre></tr>
+     </table><b>The text file '10 - Table_01.txt'<br>
+        for the 'insert menu'</b>
+     </div>
+
+</td></tr>
+</table>
+<br>
+Now we need to create a subdirectory for our own insert menu idems.<br>
+We call it i.e.  '00 - MyInsertMenu'.
+<i>(The part '00 - ' will not be visible in the POV-Ray editor, the numbers determine the sequence in which the
+items will be ordered!)</i><br>
+ <div align="center">
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/InsMen_1.jpg" width="550" height="430" alt="Insert Menu Listing" border="0"></td>
+ </tr></table> </div>
+ <br>
+We have to open this subdirectory and insert both (the image and the short-cut text) with the same name
+and numbering in this subdirectory.
+<i>(In POV-Ray 3.62 the thumbnail image must be a .bmp!)</i><br>
+
+ <div align="center">
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/InsMen_3.jpg" width="550" height="200" alt="Insert Menu Listing" border="0"></td>
+ </tr></table> </div>
+<br>
+If we now open the POV-Ray editor with a scene text, we can use our new object like
+all the other objects in the insert menu:<br>
+
+ <div align="center">
+ <table border="1" cellpadding="3" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td><img src="im/InsMen_5.jpg" width="650" height="620" alt="using Table_01" border="0"></td>
+ </tr>
+ </table><b>Using our 'Table_01' in a scene file
+            via the 'insert menu'</b>.</div>
+
+
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

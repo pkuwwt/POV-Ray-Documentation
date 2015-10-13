@@ -1,0 +1,33 @@
+// ---------------------------------------------------------------------------
+// ------------------------------------------------ optional textures 
+#declare Tube_Body_Texture = 
+  texture{ Polished_Chrome pigment{ color rgb<1,1,1>*0.9}
+           normal { bumps 0.05 scale 0.3005} 
+           finish { phong 0.7 reflection 0.25}}
+#declare Tube_Body_Texture = 
+  texture{ pigment{ color rgb<0.75,1,0>*1}
+           finish { phong 1 reflection 0.10}}
+#declare Tube_Inside_Texture = 
+  texture{ pigment{ color rgb<0.3,0.7,0>*1.1}
+           finish { phong 1}}
+#declare Test_Tube_Texture = 
+           texture { pigment { color rgb<1,0.7,0>}
+                   //normal  { bumps 0.5 scale <0.25, 0.005,0.005>}  
+                     finish  {  phong 0.5 reflection 0.00 }
+                   } // end of texture
+
+// ---------------------------------------------------------------------------
+#include "Tube_Fork_000.inc"
+// ---------------------------------------------------------------------------
+object{ Tube_Fork_000 ( // total container box length =   4*R1 
+                          0.50, // R1, // main tube radius:  1 ~ 0.25
+                          0.35, // R2, // side tube radius:  1.5 ~ 0.20
+                          0.01, // Tube_D, // tube material thickness 
+                          0.15, // Blobfactor; // 0.1~0.002 ; maximum ~ 0.20 !! 
+                          0.06, // radius correction, ~ 0.06
+                          0, // Test_cylinders_ON;  on = 1; off = 0
+                        ) // -------------------------------------------------
+        //rotate <0,0,90>
+         translate <0,0,0>
+      } // -------------------------------------------------------------------
+// ---------------------------------------------------------------------------

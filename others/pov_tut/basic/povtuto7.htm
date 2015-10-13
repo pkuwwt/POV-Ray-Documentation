@@ -1,0 +1,322 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, povray, POV-Ray, POV-Ray 3.6, 3d graphics, raytracing descriptions, POV-Ray tutorials, design of surfaces, textures">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>The Design of Surface Textures- POV-Ray Course part 7</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Introduction to the Scene Description Langage</nobr> of the <nobr> POV-Ray Raytracer</nobr>
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; - page 7 -</nobr>
+ <br><nobr>by Friedrich A. Lohm&uuml;ller</nobr></b></h6>
+  <td align="right">
+        <a href="povtuti7.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="povtuti7.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povtutf7.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="povtutf7.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs7.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="povkurs7.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povtuto0.htm">POV-Ray Introduction</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povtuto0.htm">Content&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtuto1.htm">Working with POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtuto2.htm">Basics on</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; <a href="povtuto2.htm">How To Make a Scene.</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; <a href="povtuto2.htm#xyzKoordinaten">3D Coordinates</b></a>,</nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; <a href="povtuto2.htm#ZahlenundVektoren">Floats and Vectors</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtuto3.htm">Scene Structure</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; Basic example.<br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtuto4.htm">Scene File Header</a></b>,</nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; #include files</b>,<br>
+<nobr>&nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtuto5.htm">Basic Geometric Objects</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; and other shapes</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtuto6.htm">Transformations</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Streching, Turning, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Moving and others.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtuto6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr><b>&gt;7.</b> <!--a href="povtuto7.htm"--><b>Colors on Surfaces</b></nobr><br></a>
+<nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtuto8.htm">#declare, #local, #macro,</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  placeholders + flexible objects</b>.</a></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtuto9.htm">#while</b></a> Loops</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Basic examples.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutoa.htm">#include</b></a>, include files,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; re-usable objects.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutob.htm">Efficiency</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; speed, flexibility,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; modulare working</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; adapting from 3.1 to 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; adapting from 3.5;3.6 to 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+
+
+<font size="+1"> <b>The Designing of <a name="surfaces">the Surfaces</a>
+ &nbsp; - the Texturing of Objects</b></font><br>
+<font size="-1"> ( Coloration, simulated deformation, brightness and shining of the surfaces.)
+</font>
+<table border="0" width="98%" align="center" valign="top"><tr>
+<td>
+<b>texture{ }</b> is a container for the qualities of the surface of an object.<br>
+ A texture basically has the following components:<br>
+ &nbsp; &nbsp; &nbsp;<b>pigment{ }</b> The color and the transparency. <br>
+ &nbsp; &nbsp; &nbsp;<b>normal{ }</b> The roughness of the surface.<br>
+ &nbsp; &nbsp; &nbsp;<b>finish{ }</b>  The brightness and reflection quality.<br>
+<font size="-1">Example:</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ pigment{ color Orange}
+         normal { bumps 0.5 scale 0.05 }
+         finish { phong 1.0 reflection{0.2} }
+       }</b></td></pre></tr></table>
+<font size="-1">The statements &quot;pigment{...}&quot;, &quot;normal{...}&quot; and &quot;finish{...}&quot;
+can be used as stand alone statements (without being inserted in a &quot;texture{...}&quot; statement),
+but for keep the structures clear it's recommended to put these things together a container &quot;texture{...}&quot;! </font><br>
+
+</td><td>
+<img src="im/txtur01.gif" border="0" width="240" height="180"></a>
+</td></tr></table>
+
+<hr>
+<font size="+1"> <b>pigment{color ... }</b> - Color (must!) and Transparency (optional!)</font><br>
+<font size="-1">As long as you have added the line on the top of scene text <b>#include "colors.inc"</b>,
+you may use predefined colour expressions with English color names as an abbreviation:
+e.g.: <b>pigment{color Red}</b><br>
+It's possible to define any kind of color you want by mixing red, green and blue light
+(additive mixing of colours!),<br>
+for this we use the statement for rgb-colors: <b>pigment{color rgb&lt;..,..,..&gt;}</b> (red,green,blue).<br>
+The numbers between the brackets are expressing the intensity of each component by float values
+between 0.000 und 1.000 . Where 1.000 = 100% and 0.000 = 0% of the according colour component.</font><br>
+<font size="-1"><b>Examples for rgb colors:</b></font>
+<br>
+<table border="0" width="95%" align="center"><tr>
+<td><font size="-1">
+    <b>color rgb&lt;0,0,0&gt;</b> = black (you may also write &quot;color Black&quot;), <br>
+    <b>color rgb&lt;0.5,0.5,0.5&gt;</b> = grey (&quot;color Grey&quot;), <br>
+    <b>color rgb&lt;1,1,1&gt;</b> = white (&quot;color White&quot;), <br>
+    <b>color rgb&lt;1,0,0&gt;</b> = red (&quot;color Red&quot;), <br>
+    <b>color rgb&lt;0,1,0&gt;</b> = green (&quot;color Green&quot;), <br>
+    <b>color rgb&lt;0,0,1&gt;</b> = blue,(&quot;color Blue&quot;),<br>
+    <b>color rgb&lt;1,1,0&gt;</b> = yellow, (&quot;color Yellow&quot;),<br>
+    <b>color rgb&lt;0,1,1&gt;</b> = a greenish light blue called cyan,<br>
+    <b>color rgb&lt;1,0,1&gt;</b> = a violetish red called magenta.<br>
+    <b>color rgb&lt;1,0.65,0&gt;</b> = a warm orange yellow,<br>
+    <b>color rgb&lt;0.25,1,0&gt;</b> = a yellowish green  (&quot;color YellowGreen&quot;),<br>
+    <b>color rgb&lt;1,0,0.25&gt;</b> = a violetisch red.</font><br>
+
+<font size="-1">Further more we can <b>dim and brighten</b> colors:<br></font>
+<font size="-1"><b>color rgb&lt;1,0.5,0.5&gt;</b>= light red <br>
+<b>color rgb&lt;0.5,0,0&gt;</b> = dark red,<br>
+</font><br>
+</td><td valign="top">
+   <table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/txtur_col.jpg" border="0" width="160" height="200"></td></tr>
+   </table>
+</td></tr></table>
+It's a good idea to take some simple spheres and to try it out by yourself!<br>
+<font size="-1">Human eyes can see about 16 millions different colors. This needs 24 bit per pixel for a representation in computers! <br>
+Check your monitor settings: it should be at least by 24 bit colors ('true-color'). The factory setting is often less
+(16 bit or 'hight colors') - no problem with most computer games, but with POV-Ray you'll see the difference!</font>
+<hr>
+Behind the statement <b>#include "textures.inc"</b>
+you can use <br> all <b>predefined color patterns</b> (pigments) and <b>predefined textures</b> declared in this file.<br>
+<table width="100%" valign="top"><tr><td>
+<font size="-1">
+Example <b>predefined pigment</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ pigment{ Jade }
+          finish{ phong 1.0 }
+        }</b></td></pre></tr></table>
+
+Other predefined pigments are e.g.: <br>
+Candy_Cane, Red_Marble, Brown_Agate. </font>
+</td><td>
+<font size="-1">
+Example <b>predefined texture</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ Cork
+         finish{ phong 1 }
+       }</b></td></pre></tr></table>
+Other predefined textures are e.g.: <br>
+Polished_Chrome, Polished_Brass.</font>
+</td><td align="center">
+   <table border="2" bgcolor="#efefef" align="center"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+   <tr><td><img src="im/Pigment_Jade.jpg" border="0" width="80" height="80"></td></tr>
+   </table><font size="-1">Jade</font>
+
+
+
+</td></tr>
+<tr><td>
+<b>Transparent materials with refraction:</b> <br>
+For e.g. thick glass we need <b>&quot;interior{ }&quot;</b>: <br>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>material{ texture{ ... }
+          interior{ ior 1.5 }
+        }</b> // end of material</b></td></pre></tr></table>
+</td><td>
+<font size="-1">
+Example <b>predefined material</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>material{ M_Glass3 }</b></td></pre></tr></table>
+<br>
+<br>
+</td><td align="center">
+   <table border="2" bgcolor="#efefef"
+    bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/M_Glass.jpg" border="0" width="80" height="80"></td></tr>
+   </table><font size="-1">Glass</font>
+
+
+</td></tr>
+</table>
+<hr>
+<table width="100%" align="center"><tr>
+<td><font size="+1"><b>normal { ... }</b></font> - The Roughness of the Surface (optional!)<br>
+If the roughness is not defined the surface will appear smooth.<br>
+<font size="-1">Some of interesting effects that can be defined by the normal statement:</font><br>
+<font size="-1"><b>bumps</b>, <b>waves</b>, <b>dents</b>, <b>ripples</b>, <b>wrinkles</b>.</font></td>
+<td align="center"><table border="2" bgcolor="#efefef"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/normal00.jpg" border="0" width="80" height="80"></td></tr>
+   </table>
+</td>
+</tr></table>
+
+<font size="-1">If you try it out and the effect seems to fail (no change to see!) so in most cases this
+will be because e.g. the bumps do only one bump on a square of 1 x 1. If you scale it down e.g.
+by <b>&quot;normal {bumps 1 scale 0.05}&quot;</b> or something like that, this problem mostly
+will be solved.<br>
+It is important to know, that all these deformation defined by &quot;normal { ... } are
+only simulated surface deformations by a more or less rhythmic tilting of the surface normal.
+But because it is only used to calculate the reflections, this does not really deform the
+shape of the geometric object. So the silhouette of these objects will stay totally smooth.
+As a consequence of this, the deformation of the surface by this method is limited to those
+cases, where this not deformed outline of a bumpy object does not spoil.
+In those cases we can design very fascinating realistic surfaces by this simple
+(and mostly very fast) trick.</font><br>
+
+
+<hr>
+<table width="100%" align="center"><tr>
+<td><font size="+1"><b>finish { ... }</b></font> - The brightness and the Reflection (should be defined!). <br>
+<font size="-1">The most important values are:</font> <br>
+<font size="-1">(With POV-Ray 3.6.2: Use the statement &quot;<b>global_settings {assumed_gamma 1.0 }</b>&quot;
+at the top of your text!)</font><br>
+<b>ambient</b> 0.10 <font size="-1">This is the brightness of indirect illuminated surface parts (should be defined!)<br>
+                    (This simulates only the effect of indirect illumination, to calculate it a little bit more correctly
+                    we can simulate it by the so-called &quot:radiosity&quot: - a totally correct calculation of it is nearly
+                    impossible!)</font><br>
+<b>diffuse</b> 0.90 <font size="-1">This is the part of the brightness of the surface which is caused by the directly
+                    hitting illumination!</font><br>
+<b>reflection</b> 0.15 <font size="-1">This is the reflection component of the light we see coming from an
+                       object.</font><br>
+<b>phong</b> 1.0 A <font size="-1">simple form of simulating highlights on a surface.</font><br>
+     </td>
+<td><table border="2" bgcolor="#efefef"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/txtur_r0.jpg" border="0" width="80" height="80"></td></tr>
+   </table>
+</td>
+</tr></table>
+
+<font size="+1"><img src="im/warn.gif" border="0" width="32" height="30"><b>!!! Remarks:</b></font><br>
+<font size="-1">The POV-Ray defaults are: (Version 3.5, 3.6): "finish { ambient 0.1 diffuse 0.6 }".
+On computers with Intel's (486, Pentium etc.) in this way the colors appear much too dark!
+<b>It's recommended on these systems to increase these values up to
+ &quot;finish {ambient 0.10 diffuse 0.9}&quot;. </b>
+<br>
+I can highly recommend to fix the values of diffuse and ambient in general way with the instruction
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#default{ finish{ ambient 0.1 diffuse 0.9 }}</b></td></pre></tr></table>
+at the beginning of a scenery description
+and change these values only for e.g reflecting surfaces.<br>
+
+If you want an object to appear with more contrast between dark parts (deeper shadows) and shining parts
+so you should keep in mind that the sum of ambient, diffuse and reflection should be 1 = 100 % for realistic
+viewing. So while decreasing ambient we should increase diffuse e.g. &quot;finish {ambient 0.05 diffuse 0.95}&quot;.
+</font>
+<hr>
+
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtuto0.htm">part 0</a> |
+<a href="povtuto1.htm">part 1</a>  | <a href="povtuto2.htm">part 2</a> |
+<a href="povtuto3.htm">part 3</a>  | <a href="povtuto4.htm">part 4</a> |
+<a href="povtuto5.htm">part 5</a>  | <a href="povtuto6.htm">part 6</a>  |
+<!--a href="povtuto7.htm"-->part 7</a>  | <a href="povtuto8.htm">part 8</a> |
+<a href="povtuto9.htm">part 9</a>  | <a href="povtutoa.htm">part 10</a> |
+                                     <a href="povtutob.htm">part 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

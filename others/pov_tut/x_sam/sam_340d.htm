@@ -1,0 +1,194 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, POV-Ray Objects, Fertige Objekte f&uuml;r POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=515");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Beispiele</b></font> -
+      <font size="-1"><b>Die Erstellung von Objekten f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="sam_340e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="sam_340e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="sam_340i.htm"><font size="2">Italiano</font></a>
+        <a href="sam_340i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_340f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="sam_340f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table><a name="start"></a><hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="sam_000d.htm">POV-Ray Beispiele</b></a><br>
+ &nbsp; &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; -  <a href="sam_300d.htm">Geometrie</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_360d.htm">Bauern-Figur</a><br>
+ &nbsp; &nbsp; -  <a href="sam_370d.htm">Drahtgitter-W&uuml;rfel</a><br>
+ &nbsp; &nbsp; -  <a href="sam_380d.htm">Oktagon</a><br>
+ &nbsp; &nbsp; -  <a href="sam_390d.htm">Eiform</a><br>
+ &nbsp; &nbsp; -  <a href="sam_400d.htm">Star - Stern</a><br>
+ &nbsp; &nbsp; -  <a href="sam_410d.htm">Optische Linse</a><br>
+ &nbsp; &nbsp; -  <a href="sam_420d.htm">Schachbrett</a><br>
+ &nbsp; &nbsp; -  <a href="sam_450d.htm">Rundkolben-Form</b></a><br>
+<nobr> &nbsp; &nbsp; -  <a href="sam_470d.htm">Erlenmeyerkolben-Form</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="sam_460d.htm">Zwei-Zylinder-Blob</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_440d.htm">Regul&auml;rer Tetraeder</a><br>
+ &nbsp; &nbsp; -  <a href="sam_430d.htm">Penrose-Dreieck</a><br>
+ &nbsp; &nbsp; -  <!--a href="sam_340d.htm"--><b>Yin &amp; Yang</a><br>
+ &nbsp; &nbsp; -  <a href="sam_310d.htm">Fischblase</a><br>
+ &nbsp; &nbsp; -  <a href="sam_320d.htm">3fach Fischblase</a><br>
+ &nbsp; &nbsp; -  <a href="sam_330d.htm">Dreipass</a><br>
+&nbsp; -  <a href="sam_100d.htm">Architektur</b></a><br>
+<!--&nbsp; -  <a href="sam_400d.htm">Pflanzen</b></a><br-->
+&nbsp; -  <a href="tec_000d.htm">Technik</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+<table cellpadding="5" width="90%">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="0"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <!--a href="javascript:ShowImage('geo/yin_yang1_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''"-->
+              <img src="geo/yinyang0.gif" border="0" width="80" height="80"
+                   alt="Yin &amp; Yang" title="Yin &amp; Yang"></a></td>
+            </tr></table><br>
+
+ </td>
+ <td valign="top">
+  <h1 align="left"><b>Yin und Yang.</b></h1>
+  <h6>Die Konstruktion eines 3-dimensionalen Yin und Yang.<br>
+     Objekte:&nbsp;&nbsp;&nbsp; &quot;isosurface&quot;.<br>
+     Methoden: &quot;union&quot; <br>
+   <!--Klicken Sie <a href="javascript:ShowImage('geo/yin_yang1_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">hier f&uuml;r ein Beispiel</a-->
+
+
+
+   <br>
+  <!-- Eine Include-Datei mit der man dieses Objekt als Fertig-Objekt verwenden kann
+   findet man auf meiner <a href="../objects/obj_000d.htm">POV-Ray Objects-Seite</a>.-->
+  </td></h6>
+</tr>
+</table>
+<hr size="3">
+
+
+<div align="center">
+<table width="90%" align="center" cellpadding="20">
+ <tr>
+  <td><h3><b>Die Konstruktion im Detail Schritt f&uuml;r Schritt:</b></h3>
+        <h5 align="justify">Alles was wir f&uuml;r ein &quot;Yin und Yang&quot;
+        ben&ouml;tigen ist ein Iisosurface mit der Funktion &quot;f_comma&quot; .<br>
+       (Dieses Isosurface kann man aus meinen
+        <nobr>&quot;<a href="../addon/insrtd0.htm">Insert Menu Add-on</a>&quot;,</nobr> erhalten:
+        Man klickt dort auf &quot;Isosurfaces by function.inc&quot; und
+        dann auf  &quot;Isosurface f_comma&quot;.)<br>
+        Bitte nicht vergessen: Um die in POV-Ray vordefinierten Funktionen
+        benutzen zu k&ouml;nnen, m&uuml;ssen wir die Include-Datei &quot;functions.inc&quot; einbinden! </h5>
+    <table align="center" border="1"  bgcolor="#f9f9f0" cellpadding="5"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080"><h6>
+  <tr><td>
+  <pre><b>#include "functions.inc"
+isosurface {
+  function{ f_comma( x,y,z, 1)}
+  contained_by {sphere {0,1.5}}
+  rotate&lt;90,0,0&gt;
+  scale 1.2
+} // end of isosurface --------- </td></pre></b></tr></table>
+</td>
+<td>
+      <table border="5"  bgcolor="#EFEFEF" width="210" cellpadding="5"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+       <tr><td><img src="geo/yin00.jpg" width="200" height="200" hspace="0" vspace="0"></td></tr></table>
+</td></tr>
+
+
+<tr><td><h5 align="justify">
+      Nun mu&szlig; man dieses Objekt verdoppeln und es um die z-Achse um 180 Grad drehen.
+      Schlie&szlig;lich schiebt man beide Teile etwas n&auml;her zusammen und skaliert sie in horizontaler Richtung zu einer perfekt runden Form.
+      </h5>
+<h5 align="center">Beschreibung dieser Szene f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <A HREF="geo/yin_yang.txt">&quot;yin_yang.txt&quot;</A> oderr
+ <A HREF="geo/yin_yang.pov">&quot;yin_yang.pov&quot;</A>
+      </td></h5>
+<td>
+       <table border="5"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><img src="geo/yin_yang.jpg" width="200" height="200" hspace="0" vspace="0"></td>
+         </tr></table>
+ </td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+
+</td></tr></table>
+<tr><td>
+  <!--<h5><b>Download aller gebrauchsferigen POV-Ray Objekte</b><br>
+   zip-gepackt (Include-Dateien mit Beispieldateien und mit den<br>
+   entsprechenden Insert Menu Add-ons  für komfortable Benutzung)<br>
+  auf der <a href=""><b>Download-Seite</b></a>.-->
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

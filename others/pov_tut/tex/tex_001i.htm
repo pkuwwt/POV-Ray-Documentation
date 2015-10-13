@@ -1,0 +1,245 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_001e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_001e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_001f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_001f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_001d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_001d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp;<!--a href="tex_001i.htm"--><b>Sintassi di texture</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_001i.htm"--><b>Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330i.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="70%" align="center"><tr><td><!-- global table-->
+<h1 align="center"><a name="Top"></a><b>Sintassi della direttiva &quot;texture&quot;<br></b>
+</h1>
+
+<p> </p><font face="Arial">Texture = propriet&agrave; della superficie<br>
+(coloritura, scabrosit&agrave;, luminosit&agrave;, brillantezza, trasparenza)</p>
+<p align="center">Questo &egrave; un esempio della <b>sintassi di &quot;texture&quot;</b><br>
+ per un oggetto geometrico:</p></font>
+<div align="center">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre>sphere{&lt;0,0,0&gt;, 1 translate&lt;0,1,0&gt;
+      <b>texture{ pigment{</b>color Orange<b>}</b>
+               <b>normal {</b>bumps 0.5 scale 0.05<b>}</b>
+               <b>finish {</b>diffuse 0.9 phong 1.0<b>}</b>
+             <b>}</b> // end of texture
+      } // end of sphere</b></td></pre>
+ </tr>
+</table>
+<br>
+<table border="2" cellspacing="0" cellpadding="0" bgcolor="#f8f8f0"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr><td>
+<img src="im/texamle.jpg" border="0" width="320" height="240" vspace="0" hspace="0"></td>
+</tr>
+</table>
+</div>
+
+<hr size="3">
+
+<b>Una texture viene descritta totalmente attraverso questi 3 componenti:</b>
+<ol>
+
+<li><b>La qualit&agrave; del colore (obbligatorio!):, incluse trasparenze (opzionale!)</b><br>
+     &nbsp; &nbsp; <a href="tex_200i.htm">
+     pigment{ ... }</b></a>&nbsp;&nbsp;&nbsp;
+     // il colore dev'essere definito!</li>
+<li><b>La struttura geometica della superficie</b> (scabrosit&agrave; simulata).<br>
+     &nbsp; &nbsp; <a href="tex_300e.htm">
+     normal&nbsp;&nbsp;{ ... }</b></a>&nbsp;&nbsp;&nbsp;
+     // opzionale!</li>
+<li><b>La qualit&agrave; di luminosit&agrave;, brillantezza e riflessione</b>:<br>
+     &nbsp; &nbsp; <a href="tex_400e.htm">
+     finish&nbsp;&nbsp;&nbsp;&nbsp;{ ... }</b></a>&nbsp;&nbsp;&nbsp;
+     // minimum: &quot;finish{ambient 0.1 diffuse 0.9}&quot;<br>
+     &nbsp; &nbsp; &nbsp; vedere commenti di &quot;finish&quot; </li>
+</ol>
+
+
+<p align="justify">Questa sintassi deve essere applicata il pi&ugrave; formalmente possibile.
+Pu&ograve; succedere che descrizioni meno formali funzionino correttamente
+causando semplicemente dei avvertimenti &quot;warning&quot; durante il rendering.
+<br>
+Ciononostante gli errori dovrebbero essere eliminati perch&eacute; sono la causa
+principale delle inesattezze e possono crescere fino a causare errori fatali.
+Oltre a ci&ograve; non &egrave; sicuro che future versioni di POV-Ray supporteranno cos&igrave;
+tranquillamente questi errori!
+</p>
+<hr>
+
+<p align="justify">Colori, pigmenti e textures possono essere definite "a mano"
+(come descritto di seguito) ma si pu&ograve; anche usare programmi speciali (&quot;texture editors&quot;)
+per creare quelque texture per POV-Ray, ma questi programmi non sono facili da usare -
+bisogna avere un know-how di base su le testure.</p>
+
+<p align="justify">Per provare le testure &egrave; consigliabile utilizzare scenari facili
+(cieli e piani monocromatici, camera e light_source (color White o color rgb&lt;1,1,1&gt;)
+lontani dal &quot;sole&quot;. Usiamo per oggetti di test una sfera, un box o
+un cilindro per analizzare l'effetto sulle diverse superfici. &Egrave; particolarmente importante di
+rispettare questa regola quando si usano effetti d'illuminazione come phong!</p>
+
+<p align="justify">Prima o poi vorr&eacute;mo conservare colori e le proprie texture
+creati per usarli con altri scenari.
+Questo si pu&ograve; fare con copiare le definizioni in un <a href="tex_900i.htm">file personalizzato</a>
+(salvato col nome &quot;mie_colori.inc&quot;)
+ed includere questo file nella descrizione della scena
+con <b>#include &quot;mycolors.inc&quot;</b>.
+Questo file puo essere messo nella directory &quot;C:\povray\INCLUDE&quot;
+o in quella dove tenete i vostri file .pov.
+Questa directory &egrave; il posto dove POV-Ray cerca (di default) gli include file.
+Si faccia attenzione a non modificare i file originali come &quot;colors.inc&quot; o
+&quot;texture.inc&quot; perch&eacute; altrimenti &eacute; possibile che alcuni esempi sviluppati da altri
+non funzionano pi&ugrave; correttamente! </p>
+
+<hr>
+<p align="justify">
+<b>Importante:</b> &quot;scale&quot;, &quot;rotate&quot; e &quot;translate&quot;
+hanno effetto solo sugli oggetti definiti dentro le parentesi correnti.
+E' possibile quindi scalare, ruotare e traslare colori in
+&quot;pigment{ ...}&quot; e strutture in &quot;normal{ ...}&quot;,
+cos&igrave; com'&egrave; possibile farlo in modo del tutto indipendente tra oggetti
+diversi modificati da e sperando l'aspetto geometrico degli oggetti.</p>
+<p>Esempio:</p>
+</td></tr></table><!-- global table-->
+
+<div align="center">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#f8f8f0"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr><td valign="top">
+<pre><b>sphere{&lt;0,0,0&gt;,1
+       scale &lt;1.2,1,1&gt;
+       translate&lt;0,1,0&gt;// effetto solo per la geometria della sfera!
+       texture{
+         pigment{Candy_cane
+                 scale 0.25 }// effetto solo per &quot;pigment&quot;!
+         normal {wrinkles 0.75
+                 scale 0.1} // effetto solo per &quot;normal&quot;!
+         finish {ambient 0.15
+                 diffuse 0.85
+                 phong 0.3}
+         rotate&lt;0,0,45&gt;
+                 // effetto per tutta la testura,
+                 // ma non per la geometria della sfera!
+               } // fine di &quot;texture&quot;
+       scale 0.5 // effetto per sfera e testura!
+                 //Attenzione: effetto anche per
+                 // la traslazione &quot;translate&quot;!
+                 // il centro della sfera
+                 // doppo questo é qui: &lt;0,0.5,0&gt;!
+       } // fine di &quot;sphere&quot;</b></td></pre>
+ </tr>
+</table>
+</div>
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

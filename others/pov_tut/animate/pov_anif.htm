@@ -1,0 +1,472 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015 by Friedrich A. Lohmueller">
+<meta name="keywords" content="animations, 3d animations, mpeg video, avi video, animated gifs, raytracing, PoV, POV-Ray, POVRAY, 3d graphics, infographie, raytracing descriptions, povray tutoriel">
+<meta name="description" content="3D animations avec POV-Ray - descriptions, didacticiels, tutorials et exemples pour le programme de raytracing POV-Ray ">
+<title>3D animations acec POV-Ray -  tutoriels, descriptions et exemples pour le raytracer de POV-Ray<</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+ <table width="70%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__eng.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="back to overview" title="back to overview"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; <b>Animations avec POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Quelques bases et exemples sur les animations.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="pov_anie.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="pov_anie.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="pov_anii.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="pov_anii.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov_anid.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="pov_anid.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">Galerie d'Animations 3D</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<!--a href="pov_anif.htm"--><b>Animation 3D</b></a><br>
+ <b>&gt</b> <b><i>Table des mati&egrave;res</i></b><br>
+&nbsp; <!--a href="anim1d.htm"-->  0. Bases.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001f.htm">Exemple du base.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002f.htm">D'Images &agrave; Vid&eacute;o.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005f.htm">Connaissance de base.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008f.htm">Commandes d'animation.</b></a><br>
+&nbsp; <!--a href="anim2d.htm"--> I. Animations cycliques.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11f.htm">Objets tournants.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112f.htm">Plan&egrave;tes en orbite.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113f.htm">Une horloge</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12f.htm">Cam&eacute;ra tournante.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121f.htm">Cam&eacute;ra deplac&eacute;e lin&eacute;aire</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13f.htm">Le probl&egrave;me </b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13f.htm"> de la roue.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131f.htm">Roues roulantes.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14f.htm">Engrenages.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141f.htm">Cha&icirc;ne &agrave; rouleaux.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142f.htm">Cha&icirc;ne de bicyclette.</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15f.htm">Balancement.</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151f.htm">Pendule de Newton</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2. <a href="anim152f.htm">Rock le rocking chair !</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16f.htm">Oscillation.</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170f.htm">Bielle d'accouplement</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17f.htm">Bielle et manivelle.</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18f.htm">Psych&eacute;d&eacute;lique + Op-Art.</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190f.htm">Compteurs</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim190f.htm"> + Compte &agrave; rebours.</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200f.htm">La pliage d'un cube.</b></a><br>
+&nbsp; II. Mouvements non-lin&eacute;aires<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220f.htm">Acc&eacute;l&eacute;rer et ralentir 1.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222f.htm">Acc&eacute;l&eacute;rer et ralentir 2.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240f.htm">Chuter et bondir.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260f.htm">Acc&eacute;l&eacute;ration selon</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260f.htm">formules physiques.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280f.htm">Mouvements</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280f.htm">avec fonctions spline.</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Chemins pour<br>&nbsp; &nbsp; &nbsp;  des animations avec<br>&nbsp; &nbsp; &nbsp; des courbes spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210f.htm">Courbes spline.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21f.htm">Spline ferm&eacute;.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22f.htm">Animation Paths.</b></a><br>
+<br>
+<br>
+&nbsp; &nbsp; Section sp&eacute;ciale : <br>
+&nbsp; &nbsp; <a href="../stereo/stereo_000f.htm" target="_new">Animations st&eacute;r&eacute;o</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+
+
+ <table border="1" align="center" width="100%" cellpadding="2" bgcolor="#d0d0d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr>
+   <td align="left" colspan="3">
+          <font size="3">
+          <b>&nbsp;0. &nbsp; Bases. </b></font></a>
+          <font size="2">
+          &nbsp;Comment commencer ? Ce que nous devons conna&icirc;tre des animations.</font>
+   </td>
+  </tr>
+ <tr><td width="80" height="60" align="center" valign="top">
+      <a href="anim001f.htm"><img src="im/sphere1s.gif" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b> 1.</b></td>
+     <td valign="top"><font size="3">
+      <a href="anim001f.htm">
+         Bases sur des animations avec POV-Ray.</b></a></font><br>
+         <font  size="2">Animations, gifs anim&eacute;s, vid&eacute;o d'avi, vid&eacute;o de MPEG -  comment faire et les premiers exemples.</font></td></tr>
+ <tr><td width="80" height="60" align="center" valign="top">
+      <a href="anim002f.htm"><img src="im/DTA_Step3_mini.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b> 2.</b></td>
+     <td valign="top"><font size="3">
+      <a href="anim002f.htm">
+        D'une s&eacute;rie des images d'animation de POV-Ray &agrave; un fichier de vid&eacute;o.</b></a></font><br>
+      <font size="2">Comment utiliser le programme <b>Dave's Targa Animator (DTA)</b> - (gratuit!)
+         pour convertir une serie des images en un fichier de vid&eacute;o avi.
+         C'est aussi une base pour cr&eacute;er un fichier mpeg avec des autres programmes vid&eacute;o.</font></td></tr>
+ <tr><td width="80" height="40" align="center" valign="top">
+      <a href="anim005f.htm"><font size="1">&nbsp;frames, fps, bitrate, boucles, gif, vid&eacute;o</font></a></td>
+     <td valign="top" align="right"><b> 3.</b></td>
+     <td valign="top"><font size="3">
+      <a href="anim005f.htm">
+         Les termes et les connaissances de base.</b></a></font><br>
+         <font size="2">
+          Au sujet des images, des tailles de fichier, des tailles d'image,
+         des d&eacute;bits binaires et des compressions d'animation.<br>
+  <tr><td width="80" height="40"  align="center" valign="top">
+       <a href="anim008f.htm"><font size="1">&nbsp;clock, frame_number, ...</font></a></td>
+      <td valign="top" align="right"><b> 4.</b></td>
+      <td valign="top"><font size="3">
+       <a href="anim008f.htm"><font size="3">
+          Commandes d'animation pour fichiers ini et fichiers de sc&egrave;ne en POV-Ray</b></font></a><br>
+          <font size="2">Commandes de fichier ini et valeurs
+          utilisable pour la r&eacute;alisation et le contr&ocirc;le des animations avec fichiers de sc&egrave;ne.</font></td></tr>
+
+        </font>
+  </td></tr>
+ </table><br>
+ <a name="cyclic"> </a>
+ <table border="1" align="center" width="100%" bgcolor="#d0d0d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td align="left" valign="top" colspan="3">
+       <font size="3">
+          <b>&nbsp;I. &nbsp; Animations cycliques.</b></font></a><br>
+          <font size="2">
+          &nbsp;Une m&eacute;thode tr&egrave;s &eacute;conomique pour l'animation des mouvements p&eacute;riodiques et rythmiques.</font>
+  </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim11f.htm"><img src="rotation00s.gif"  border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 1.</b></td>
+      <td valign="top"><a href="anim11f.htm"><font size="3">
+          Les objets tournants.</b></font></a><br>
+          <font size="2">
+          Nous obtenons des animations particuli&egrave;rement courtes pour les gifs anim&eacute;s (pour le web),
+          si nous utilisons les axes de sym&eacute;tries des objets.</font>
+  </td></tr>
+  <tr><td width="80"  height="80" align="center" valign="top">
+       <a href="anim112f.htm"><img src="im/planet_s20ani.gif" border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b> 1.2.</b></td>
+      <td valign="top"><a href="anim112f.htm"><font size="3">
+          Plan&egrave;ts en orbit.</b></font></a><br>
+          <font size="2">
+          Une animation cyclique avec il soleil, la terre et la lune.</font>
+   </td></tr>
+  <tr><td width="80"  height="80" align="center" valign="top">
+       <a href="anim113f.htm"><img src="im/Clockface_002c.gif" border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b> 1.3.</b></td>
+      <td valign="top"><a href="anim113f.htm"><font size="3">
+          Animation d'une horloge</b></font></a><br>
+          <font size="2">
+          Une animation cyclique des aiguilles sur le cadran d'une horloge.</font>
+   </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+       <a href="anim12f.htm"><img src="cam_rot1s.gif" border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 2.</b></td>
+      <td valign="top"><a href="anim12f.htm"><font size="3">
+          Cam&eacute;ra tournante. </b></font></a><br>
+          <font size="2">
+          La cam&eacute;ra anim&eacute;e - nous pouvons animer l'emplacement de la cam&eacute;ra
+          aussi bien que le point regard&eacute;, ou l'angle de la vue ! </font>
+  </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+       <a href="anim121f.htm"><img src="im/Moving_camera_2s.gif" border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 2.1.</b></td>
+      <td valign="top"><a href="anim121f.htm"><font size="3">
+          Cam&eacute;ra deplac&eacute;e lin&eacute;aire.</b></font></a><br>
+          <font size="2">
+         Animations cycliques avec le mouvement lin&eacute;aire continu de la cam&eacute;ra.</font>
+  </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim13f.htm"><img src="im/westernwheel_3s.gif" border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 3.</b></td>
+      <td valign="top"><a href="anim13f.htm"><font size="3">
+          Le probl&egrave;me de la roue.</b></font></a> &nbsp;
+          <font size="2">
+          Au sujet des roues tournant dans la direction oppos&eacute;e -
+          un probl&egrave;me d'animation avec la rotation des roues, des engrenages ou des h&eacute;lices.</font>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim131f.htm"><img src="im/Rolling_150.gif" border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b>3.1</b></td>
+      <td valign="top"><a href="anim131f.htm"><font size="3">
+          Roues Roulantes.</b></font></a> &nbsp;
+          <font size="2">
+          Comment peut on faire des roues que roulent sans patiner et sans d&eacute;raper.</font>
+  </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+       <a href="anim14f.htm"><img src="gear00s.gif"  border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 4.</b></td>
+      <td valign="top"><a href="anim14f.htm"><font size="3">
+          Engrenages.</b></font></a><br>
+          <font size="2">
+          Animation cyclique.</font>
+  </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+       <a href="anim141f.htm"><img src="im/Roller_Chain_015ss.gif"  border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 4.1</b></td>
+      <td valign="top"><a href="anim141f.htm"><font size="3">
+          Cha&icirc;ne &agrave; rouleaux</b></font></a>
+          <font size="2"> pour bicyclettes, motocyclette, chenilles des chars d'assaut et tracteurs, courroies et des autre machines.<br>
+          Animation cyclique.</font>
+  </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+       <a href="anim142f.htm"><img src="im/Bike_Chain_33ss.gif"  border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b> 4.2</b></td>
+      <td valign="top"><a href="anim142f.htm"><font size="3">
+          Cha&icirc;ne de bicyclette</b></font></a>
+          <font size="2"> aussi pour motocyclettes.<br>Cha&icirc;nes avec deux types alternants des maillons de cha&icirc;ne.<br>
+          Animation cyclique.</font>
+  </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim15f.htm"><img src="im/pendulal_s.gif"  border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 5.1</b></td>
+      <td valign="top"><a href="anim15f.htm"><font size="3">
+          Balancement du pendule pesant.</b></font></a><br>
+          <font size="2">
+          Animation cyclique (utilisation de la fonction sinus)</font>
+  </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim151f.htm"><img src="im/NewtonsCradleSmall_20.gif"  border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b> 5.0</b></td>
+      <td valign="top"><a href="anim151f.htm"><font size="3">
+          Le pendule de Newton (Newton's Cradle).</b></font></a><br>
+          <font size="2">
+          Animation cyclique (utilisation de la fonction sinus)</font>
+  </td></tr>
+  <tr><td width="80"  height="60"  align="center" valign="top">
+       <a href="anim152f.htm"><img src="im/Rocker_01ss_80.gif" border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b> 5.2</b></td>
+      <td valign="top"><a href="anim152f.htm"><font size="3">
+          Rock le rocking chair !</b></font></a><br>
+          <font size="2">
+          Animation cyclique d'une chaise ber&ccedil;ante, un fauteuil &agrave; bascule roulant en rythme sinusal (utilisation de la fonction sinus).</font>
+  </td></tr>
+  <tr><td width="80"  height="100" align="center" valign="top">
+       <a href="anim16e.htm"><img src="im/spiral_s.gif"  border="0" width="80" height="100"></a></td>
+      <td valign="top" align="right"><b> 6.</b></td>
+      <td valign="top"><a href="anim16e.htm"><font size="3">
+          Oscillation du pendule spiral.</b></font></a><br>
+          <font size="2">
+          Animation cyclique (utilisation de la fonction sinus)</font>
+  </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+          <a href="anim170f.htm"><img src="im/Coupling_Rod_2r.gif"  border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 7.0.</b></td>
+      <td valign="top"><a href="anim170f.htm"><font size="3">
+          Bielle d'accouplement</b></font></a>
+          <font size="2"> - relient les roues d'entra&icirc;nement.&nbsp;<br>
+          Animation cyclique (utilisation des fonctions sinus et cosinus)</font>
+   </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+          <a href="anim17f.htm"><img src="im/pleuel_s.gif"  border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 7.1.</b></td>
+      <td valign="top"><a href="anim17f.htm"><font size="3">
+          Bielle et manivelle.</b></font></a><br>
+          <font size="2">
+          Animation cyclique (utilisation des fonctions sinus et cosinus)</font>
+   </td></tr>
+  <tr><td width="80"  height="80" align="center" valign="top">
+       <a href="anim18f.htm"><img src="hypno13_s.gif"  border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b> 8.</b></td>
+      <td valign="top"><a href="anim18f.htm"><font size="3">
+          Psych&eacute;d&eacute;lique - Op-Art</b></font></a><br>
+          <font size="2">
+          Animation cyclique avec des textures anim&eacute;es.</font>
+   </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim190f.htm"><img src="im/Seven_Segment_LCD_run02s.gif"  border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b> 9.</b></td>
+      <td valign="top"><a href="anim190f.htm"><font size="3">
+          Compteurs + Compte &agrave; rebours <br>
+          avec un afficheur num&eacute;rique  &agrave; cristaux liquides en sept segments.</b></font></a><br>
+          <font size="2">
+          Animation cyclique avec des nombres.</font>
+   </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim200f.htm"><img src="im/Fold_Cube_1s.gif"  border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b>10.</b></td>
+      <td valign="top"><a href="anim200f.htm"><font size="3">
+          La pliage et la d&eacute;pliage d'un cube.</b></font></a><br>
+          <font size="2">
+           Animation cyclique. Comment plier un cube avec six carr&eacute;s.</font>
+   </td></tr>
+
+ </table><br>
+ <a name="non-linear"> </a>
+ <table border="1" align="center" width="100%" bgcolor="#d0d0d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td align=left valign="top" colspan="3">
+       <font size="3">
+          <b>&nbsp;II. &nbsp; Mouvements non-lin&eacute;aires.</b></font></a><br>
+          <font size="2">
+          &nbsp; M&eacute;thodes pour l'animation des mouvements comme acc&eacute;l&eacute;ration et d&eacute;c&eacute;l&eacute;ration.</font>
+    </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim220f.htm"><img src="im/useful_fun000_80_01s_10s64c.gif"  border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b>&nbsp;1.0</b></td>
+      <td valign="top"><a href="anim220f.htm"><font size="3">
+          Acc&eacute;l&eacute;rer et ralentir - avec des fonctions utiles</b></font></a><br>
+          <font size="2">
+          Mouvements non-lin&eacute;aires en animations pour acc&eacute;l&eacute;rations et d&eacute;c&eacute;l&eacute;rations r&eacute;alistes avec des fonctions de base.<br>
+          Approximation simple avec la fonction de cosinus.</font>
+   </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim222f.htm"><img src="im/smoothy01s.gif"  border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b>&nbsp;1.1</b></td>
+      <td valign="top"><a href="anim222f.htm"><font size="3">
+          Acc&eacute;l&eacute;rer et ralentir - avec des fonctions utiles</b></font></a><br>
+          <font size="2">
+          Mouvements non-lin&eacute;aires en animations pour acc&eacute;l&eacute;rations et d&eacute;c&eacute;l&eacute;rations r&eacute;alistes avec des fonctions de base.<br>
+          Approximation quand l'acc&eacute;l&eacute;ration est z&eacute;ro au d&eacute;but et au fin.</font>
+   </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim240f.htm"><img src="im/Function_Bounce_01_80s_5s64c.gif"  border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b>&nbsp;2.</b></td>
+      <td valign="top"><a href="anim240f.htm"><font size="3">
+          Chuter et bondir - avec des fonctions utiles</b></font></a><br>
+          <font size="2">
+          Mouvements non-lin&eacute;aires en animations pour tomber et bondir r&eacute;aliste avec des fonctions de base.</font>
+   </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim260f.htm"><img src="im/Accelerate_04sss_256.gif" border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b>&nbsp;3.</b></td>
+      <td valign="top"><a href="anim260f.htm"><font size="3">
+          Acc&eacute;l&eacute;ration selon les formules physiques</b></font></a><br>
+          <font size="2">
+          Mouvements non-lin&eacute;aires dans les animations pour la simulation d'une acc&eacute;l&eacute;ration/d&eacute;c&eacute;l&eacute;ration
+          r&eacute;aliste selon les lois de mouvement de la physique avec POV-Ray.</font>
+   </td></tr>
+  <tr><td width="80"  height="60" align="center" valign="top">
+       <a href="anim280f.htm"><img src="im/Spline_move_006ss_256.gif" border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b>&nbsp;4.</b></td>
+      <td valign="top"><a href="anim280f.htm"><font size="3">
+          Conr&ocirc;ler des mouvements avec la fonction spline</b></font></a><br>
+          <font size="2">
+          Mouvements non-lin&eacute;aires dans les animations pour la simulation d'une acc&eacute;l&eacute;ration/d&eacute;c&eacute;l&eacute;ration
+          r&eacute;aliste avec les fonctions spline en POV-Ray.</font>
+   </td></tr>
+
+
+ </table><br>
+ <a name="spline"> </a>
+ <table border="1" align="center" width="100%" bgcolor="#d0d0d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td align=left valign="top" colspan="3">
+       <font size="3">
+          <b>&nbsp;III. &nbsp; Chemins pour des animations avec des courbes spline.</b></font></a><br>
+          <font size="2">
+          &nbsp; Une m&eacute;thode &eacute;l&eacute;gante pour des "vols" et des "parcours".</font>
+    </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+       <a href="anim210f.htm"> <img src="im/spline_demo_small.gif" border="0" width="80" height="60"></a></td>
+      <td valign="top" align="right"><b>&nbsp;1.</b></td>
+      <td valign="top" width="100%"> <a href="anim210f.htm"><font size="3">
+          &nbsp;Le concept des bases de courbes spline.</b></font></a><br>
+          <font size="2">
+          &nbsp;Bases des courbes de spline, &eacute;chelle du temps, points de contr&ocirc;le.<br>
+   </td></tr>
+  <tr><td width="80" height="60" align="center" valign="top">
+       <a href="anim21f.htm"> <img src="im/spline00s.jpg" border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b>&nbsp;2.</b></td>
+      <td valign="top" width="100%"> <a href="anim21f.htm"><font size="3">
+          &nbsp;Le spline ferm&eacute;.</b></font></a><br>
+          <font size="2">
+         &nbsp;Pour la animation de mouvements non-lin&eacute;aires, cycliques et r&eacute;current.<br>
+   </td></tr>
+  <tr><td width="80" height="80" align="center" valign="top">
+       <a href="anim22f.htm"><img src="spline_flys.gif" border="0" width="80" height="80"></a></td>
+      <td valign="top" align="right"><b>&nbsp;3.</b></td>
+      <td valign="top" width="100%"> <a href="anim22f.htm"><font size="3">
+         &nbsp; Animations avec des courbes spline.</b></font></a><br>
+          <font size="2">
+        &nbsp;Comment orienter des objets le long d'une courbe spline.  <br>
+        &nbsp;L'utilisation de la macro Spline_Trans. Macro faite par Rune S. Johansen. <br>
+   </td></tr>
+ </table>
+<br>
+<a name="stereo"> </a>
+ <table border="1" align="center" width="100%" bgcolor="#d0d0d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td width="160" height="80" align="center" valign="top">
+       <a href="../stereo/stereo_000f.htm" target="_new"><img src="../stereo/im/Stereo_Ani_10_small.gif" border="0" width="160" height="80"></a></td>
+      <td valign="top" align="right"><b>&nbsp;</b></td>
+      <td valign="top" width="100%"> <a href="../stereo/stereo_000f.htm" target="_new">
+       <font size="3">
+          &nbsp;Section sp&eacute;ciale :<br>
+          &nbsp;Images st&eacute;r&eacute;o et Animation st&eacute;r&eacute;o avec POV-Ray</b></font></a><br>
+          <font size="2">
+          &nbsp;Une m&eacute;thode pour images et animations st&eacute;r&eacute;o<br>
+          &nbsp;pour la vision crois&eacute;e (&quot;cross-eye view&quot;).</font>
+    </td></tr>
+ </table>
+
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+
+
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">
+&nbsp;
+ </td>
+ <td width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</font>
+</body>
+</html>

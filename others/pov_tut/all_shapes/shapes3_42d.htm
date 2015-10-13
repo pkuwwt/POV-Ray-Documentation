@@ -1,0 +1,251 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Objekte mit POV-Ray 3.6 / 3.7 - Objekte und Macros aus meiner Include-Datei shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Deutschland">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, 3D-Graphik, Computergrafik, Raytracing Beschreibungen, Povray Anleitungen, Anf&auml;ger, Fortgeschrittene, geometrische Objekte, CSG, Macros">
+<meta name="description" content="Definieren geometrischer Objekte durch Macros f&uuml;r das Freeware-Raytracing-Programm POV-Ray 3.6, povray, pov">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+ <hr size="3"><div align="center"><font size="+2">Geometrische K&ouml;rper in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes3_42e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes3_42e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes3_42i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes3_42f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_42f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes3_42f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000d.htm"--><b>Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+&nbsp;<br>
+<br>
+<nobr><a href="shapes3_0000d.htm">Objekte in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11d.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20d.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21d.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40d.htm">Egg</b></a><br>
+-  <a href="shapes3_40d.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg_Shape</b></a><br>
+<b>&gt;</b><!--a href="shapes3_42d.htm"--><b>Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45d.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80d.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22d.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60d.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65d.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+<div align="center">
+<font size="2">Geometrische K&ouml;rper aus meiner Include-Datei <a href="../down/insrtd_a.htm" alt="Download" title="Download">&quot;shapes3.inc&quot;</a></font>
+<font size="2">( ehemals &quot;shapes_lo.inc&quot;):</font><br>
+</div>
+
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td>
+    <table align="center" border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr42b.jpg" border="0" width="320"  height="320"  alt="Facetted_Sphere" title="Facetted_Sphere"></td>
+       </tr></table></td>
+  <td><font size="5"><b>Facetted_Sphere</b></font><br>
+   <font size="2">
+   <i>Syntax:</i>
+   </font>
+
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td  valign="top" bgcolor="#fefefe">
+     <pre><b>object{ Facetted_Sphere( Quarter_Meridian_Segments,
+                         Equatorial_Segments
+                       ) //----------------------
+        scale 1.00
+      } // end of object ------------------------</b></td></pre></tr></table>
+ <font size="2">
+    <b>Quarter_Meridian_Segments</b> = <br>
+    &nbsp; &nbsp; &nbsp;  Anzahl der Segmente in einem Viertel des Meridians,<br>
+    <b>Equatorial_Segments</b> = <br>
+    &nbsp; &nbsp; &nbsp; Anzahl der Segmente l&auml;ngs des &Auml;quators.<br>
+    Der Radius der Umrisslinie ist auf 1 Einheit skaliert.<br>
+</font>    <i>Beispiel:</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><pre><b>#include "shapes3.inc"
+object{ Facetted_Sphere (6, 16 )
+        texture{ pigment{ color rgb &lt;1,1,1&gt;}
+                 finish { phong 0.1}
+               } // end texture
+        scale &lt;1,1,1&gt; rotate &lt;0,0,0&gt;
+        translate &lt; 0, 1, 0&gt;
+      } // end of object --------------------</b></td></pre></font>
+ </tr>
+</table>
+  </td>
+</tr></table>
+
+<font size="3">Hier einige Variationen dieses Makro-Objekts:</font>
+<div align="center">
+   <table align="center" border="0" >
+   <tr><td colspan="2">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr42e.jpg" border="0" width="600"  height="450"  alt="Facetted_Spheres" title="Facetted_Spheres"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr><td> <font size="2">Variationen der &quot;Facetted_Sphere(...)&quot; </font></td>
+  </tr></table>
+</tr>
+</table>
+</div>
+
+<br>
+<hr width="90%">
+
+<table align="center" width="95%">
+<tr><td>
+
+<font size="4"><b>Das Makro im Detail</b></font><br>
+<font size="3">
+Dies wird durch eine Schnittmenge von Prismen mit einer kugelf&ouml;rmig facettierten Umrisslinie an einer Kante erzeugt:</font>
+
+ <div align="center">
+ <table align="center" border="0" >
+   <tr>
+     <td colspan="1">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr42c.jpg" border="0" width="400"  height="300"  alt="Facetted_Sphere" title="Facetted_Sphere"></td>
+     </tr></table>
+     </td>
+     <td colspan="1">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr42d.jpg" border="0" width="400"  height="300"  alt="Facetted_Sphere" title="Facetted_Sphere"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr>
+       <td> <font size="2"><b>Facetted_Sphere - 1 Prismen-Element als Schnittmenge<br></b></font></td>
+       <td> <font size="2"><b>Facetted_Sphere (6, 12 ) = Schnittmenge von 12 Prismen<br></b></font></td>
+
+
+  </tr></table>
+  </div>
+<br>
+
+<div align="center">
+   <table border="2" bgcolor="#EFEFEF"
+          bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><font size="3">
+<pre><b>// ----------------------- macro Facetted_Sphere()
+#macro Facetted_Sphere( Quarter_Meridian_Segments,
+                        Equatorial_Segments
+                      ) //------------------------
+
+#local Facets_Silhouette =
+ prism {
+   -2 ,2 ,
+   2*Quarter_Meridian_Segments+4
+   &lt; -2,-1.00 &gt;,
+
+   #local Nr    = -Quarter_Meridian_Segments;
+   #local EndNr =  Quarter_Meridian_Segments;
+   #while (Nr &lt; EndNr+1)
+     #local Angle_degrees = Nr* 90/EndNr;
+     #local Angle_radians = radians(Angle_degrees);
+   &lt; cos(Angle_radians) , sin(Angle_radians)&gt;,
+
+   #local Nr = Nr + 1 ;
+   #end
+   &lt; -2, 1 &gt;,
+   &lt; -2,-1 &gt;
+ //turns prism in z direction:
+ rotate&lt;-90,0,0&gt; scale&lt;1,1,-1&gt;
+ } // end of prism object -------------------------
+
+intersection{
+ #local Nr = 0;                  // start
+ #local EndNr = Equatorial_Segments; // end
+ #while (Nr &lt; EndNr)
+
+ object{ Facets_Silhouette
+         rotate&lt;0,Nr * 360/EndNr,0&gt;
+       } //------------------------------
+
+ #local Nr = Nr + 1;    // next Nr
+ #end // ---------------  end of loop
+
+} // end of intersection
+
+#end //------------- end of macro Facetted_Sphere()</b></td></pre></tr></table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<tr><td>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

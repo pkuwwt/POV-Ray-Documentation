@@ -1,0 +1,171 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Gestaltung des Inneren von transparenten K&ouml;rpern mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Interior mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Material, Inneres transparenter K&ouml;rpern, interior, material, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Gestaltung des Inneren von transparenten K&ouml;rpern</b></font>
+      <font size="-1"><b> in POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_090e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_090e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_090i.htm"><font size="2">Italiano</font></a>
+        <a href="interior_090i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_090f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_090f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp; <a href="interior_000d.htm">Inhalts&uuml;bersicht</a><br>
+ &nbsp; <a href="interior_000d.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05d.htm">Syntax material</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="interior_05d.htm">texture + interior</b></a> <br>
+&nbsp; -  <a href="interior_03d.htm">Window Glass</b></a><br>
+ &nbsp; &nbsp; &nbsp; + max_trace_level <br>
+&nbsp; -  <a href="interior_001d.htm">Nebel - fog</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10d.htm">Syntax Media</b></a> <br>
+&nbsp; -  <a href="interior_30d.htm">Media + Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp;  mit/ohne density map <br>
+&nbsp; -  <a href="interior_20d.htm">Lichtkegel im Nebel</b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -   <a href="interior_40d.htm">Lichtschwert</b></a> <br>
+&nbsp; -   <a href="interior_44d.htm">Kerzenflammen</b></a> <br>
+&nbsp; Scattering Media</b></a><br>
+&nbsp; -   <a href="interior_50d.htm">Licht durch Fenster</b></a><br>
+&nbsp; -   <a href="interior_70d.htm">Dampf, Rauch, Wolken</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -   <a href="interior_60d.htm">Staubteufel</b></a> <br>
+<nobr>&nbsp; Specialprobleme mit Media</b></a></nobr><br>
+&nbsp; -  <a href="interior_080d.htm">Skalieren von Media</b></a> <br>
+&nbsp; -  <!--a href="interior_090d.htm"--><b>&Uuml;berlappende Media</b></a> <br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<table border="0" width="90%" align="center" cellpadding="3"><tr><td colspan="2">
+<h1 align="center"><a name="Top"></a><b>&Uuml;berlappende &quot;object media&quot;</b></h1>
+</td></tr>
+<tr>
+ <td valign="top"><h6>
+ <p align="justify"><b>Das Problem der &Uuml;berlappung:</b> <br>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/smoke_chain_0.jpg" width="320" height="160" vspace="0" hspace="0"></td>
+    </tr></table>Probleme mit &uuml;berlappenden &quot;object media&quot;. </h6>
+ </td>
+ <td valign="top"><h6>
+ <p align="justify"><b>Die L&ouml;sung:</b> <br>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/smoke_chain_2.gif" width="320" height="160" vspace="0" hspace="0"></td>
+    </tr></table>Korrektes &Uuml;berlappen von &quot;media&quot; in einem Objekt. </h6>
+
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+ <p align="justify"><b>Die &Uuml;berlappung bei &quot;object media&quot;</b> <br>
+ <font size="-1">Wenn man zwei oder mehr &uuml;berlappende &quot;object media&quot; in einer Szene hat, bekommt <nobr>POV-Ray</nobr>
+ ein Problem beide korrekt zu sampeln. Die &uuml;berlappenden Bereiche (Schnittmengen der media-Container)
+ werden teilweise die Konturen der Containerformen zeigen, welche die &quot;media&quot; enthalten.</font>
+ </p>
+ </td>
+ <td align="center"><h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/overlapping01.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Zwei &uuml;berlappende &quot;object media&quot;. </h6>
+ </td>
+</tr>
+
+<tr>
+ <td valign="top">
+ <p align="justify"><b>Wie man &quot;object media&quot; korrekt &uuml;berlappt:</b> <br>
+ <font size="-1">Hierzu definiert man ein kollektives Objekt aus allen Containerfiguren der &uuml;berlappenden media mittels &quot;merge&quot;
+ ( nicht mit &quot;union&quot;! ).
+ Dabei kombinieren wir alle bisherigen Containerfiguren in einem neuen Objekt zun&auml;chst ohne jegliche media.
+ Diesem neuen Objekt mu&szlig; man ein interior geben, welches all die media-Elemente enth&auml;lt, welche
+ derart transformiert werden m&uuml;ssen, wie die ensprechenden Formen der Container zuvor!
+ <br>
+ Anmerkung: ein Objekt kann in seinem &quot;interior{}&quot; Statement soviel &quot;media{}&quot;-Statements
+ enthalten wie man will, sie werden wie in einer CSG-union angewandt!</font>
+ </p>
+ </td>
+ <td align="center"><h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/overlapping02.jpg" width="320" height="240" vspace="0" hspace="0"></td>
+    </tr></table>Zwei &uuml;berlappende &quot;media&quot;<br> in einem gemeinsamen Container-Objekt. </h6>
+ </td>
+</tr>
+
+
+</td></tr>
+ </table>
+
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

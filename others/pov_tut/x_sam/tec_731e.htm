@@ -1,0 +1,556 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=695,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="tec_731i.htm"><font size="2">Italiano </font></a>
+        <a href="tec_731i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_731f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="tec_731f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_731d.htm"><font size="2">Deutsch </font></a>
+        <a href="tec_731d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; &nbsp; <a href="sam_000e.htm">Index of Content</b></a><br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+<!--&nbsp; -  <a href="sam_400e.htm">Plants</b></a><br-->
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_750e.htm">Ladder</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_700e.htm">Pylons</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_710e.htm">Railing</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_720e.htm">Bridge</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_730e.htm">Tubes</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="tec_731e.htm"--><b>Tube Fork</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_732e.htm">Tube Stopcock</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_400e.htm">Chain</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_450e.htm">Coil of Wire</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_500e.htm">Torpedo</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_600e.htm">Cruise Missile</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_900e.htm">Rocket</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_190e.htm">Wheel</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_100e.htm">Truck</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_850e.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_800e.htm">Airplanes</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_550e.htm">Canoe</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_050e.htm">Guitar Body</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_010d.htm">7-Segment Display</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_020e.htm">Ribbon Cable</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_030e.htm">Cable Harness</b></a><br>
+<!-- &nbsp; &nbsp; -  <a href="sam_000e.htm">Ships</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_000e.htm">Railroad</b></a><br>-->
+
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="80%" align="center">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="javascript:ShowImage2('tubes/tube_fork_000_1im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''">
+              <img src="tubes/Tube_Fork_000_6s.jpg" width="160" height="120" border="0"
+                   alt="Tube fork" title="Tube fork"></a></td>
+    </tr></table><br>
+
+  </td>
+ <td align="left" valign="top">
+  <p align="justify"><font size="6"><nobr><b>Tube Fork</b></nobr></font><br>
+   <h6>Objects:  isosurface, cylinder.<br>
+     Methods: #declare, #local, #macro, union, difference.</h6>
+ <h5 align="justify">A tube fork base shape for connecting pipelines, for a faucet or for a stopcocks. <br>
+  </td></h5>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+</table>
+
+
+<table border="0" align="center" cellpadding="4">
+<tr>
+ <td valign="top">
+ We consider two <b>blob-like isosurfaces.</b><br>
+The dimensions for both:
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local R1 = 0.50; // tube radius
+#local R2 = 0.35; // blob sphere radius
+#local Box_L = 4*R1; // size of container box &nbsp; &nbsp;&nbsp;
+#local Bloby = 0.15, // the blob factor</b></td></pre></tr></table>
+First an isosurface tube with spherical blob:
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>isosurface{ //-----------------------------------
+function{ (1+Bloby)
+           - pow( Bloby,(sqrt(x*x+y*y)-(R1)))
+           - pow( Bloby,(sqrt(y*y+z*z+x*x)-(R2)))
+        } // end function
+ contained_by{
+  box{&lt;-Box_L,-Box_L,-Box_L&gt;,&lt;Box_L,Box_L,Box_L&gt;}}
+ accuracy 0.001
+ max_gradient 7
+ texture{ pigment{ color rgb&lt;0.45,1,0&gt;}
+          finish { phong 1 reflection 0.10}}
+} // end of isosurface --------------------------</b></td></pre></tr></table>
+</td>
+
+<td valign="top">
+
+  <table align="center" border="3"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><h6 align="center">
+ <td align="center">
+   <img src="tubes/Tube_Fork_000_1.jpg" border="0" width="320" height="240"
+   alt="nuts" title="nuts"></td>
+  </tr></table>An isosurface tube with a spherical blob.</h6>
+
+
+</td>
+</tr>
+<tr>
+ <td valign="top">
+Then an isosurface of crossed tubes:
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td><pre><b>isosurface{ //-----------------------------------
+ function{ (1+Bloby)
+            - pow( Bloby,(sqrt(x*x+y*y)-(R1)))
+            - pow( Bloby,(sqrt(y*y+z*z)-(R2)))
+         } // end function
+ contained_by{
+  box{&lt;-Box_L,-Box_L,-Box_L&gt;,&lt;Box_L,Box_L,Box_L&gt;}}
+ accuracy 0.001
+ max_gradient 7
+ texture{ pigment{ color rgb&lt;1,0.7,0&gt;}
+          finish { phong 1 reflection 0.10}}
+} // end of isosurface --------------------------</b></td></pre></tr></table>
+</td>
+
+<td valign="top">
+
+  <table align="center" border="3"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><h6 align="center">
+ <td align="center">
+   <img src="tubes/Tube_Fork_000_2.jpg" border="0" width="320" height="240"
+   alt="cross" title="cross"></td>
+  </tr></table>An isosurface of crossed tubes.</h6>
+
+
+</td>
+</tr>
+
+<tr><td colspan="2"><hr size="3"></td></tr>
+
+<tr>
+ <td valign="top">
+How to make a <b>Tube Fork</b>:<br>
+Here we restrict each of the two isosurfaces to a different half of their container box
+and then we add them together by using &quot;union&quot;.
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td><pre><b>union{
+isosurface{ //-----------------------------------
+function{ (1+Bloby)
+           - pow( Bloby,(sqrt(x*x+y*y)-(R1)))
+           - pow( Bloby,(sqrt(y*y+z*z+x*x)-(R2)))
+        } // end function
+ contained_by{
+  box{&lt;-Box_L,-Box_L,-Box_L&gt;,&lt0,Box_L,Box_L&gt;}}
+ accuracy 0.001
+ max_gradient 7
+ texture{ pigment{ color rgb&lt;0.45,1,0&gt;}
+          finish { phong 1 reflection 0.10}}
+} // end of isosurface 1 ------------------------
+
+ function{ (1+Bloby)
+            - pow( Bloby,(sqrt(x*x+y*y)-(R1)))
+            - pow( Bloby,(sqrt(y*y+z*z)-(R2)))
+         } // end function
+ contained_by{
+  box{&lt;0,-Box_L,-Box_L&gt;,&lt;Box_L,Box_L,Box_L&gt;}}
+ accuracy 0.001
+ max_gradient 7
+ texture{ pigment{ color rgb&lt;1,0.7,0&gt;}
+          finish { phong 1 reflection 0.10}}
+} // end of isosurface 2 ------------------------
+
+} // end of union</b></td></pre></tr></table>
+</td>
+<td valign="top">
+
+ <table align="center" border="3"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><h6 align="center">
+ <td align="center">
+   <img src="tubes/Tube_Fork_000_3.jpg" border="0" width="320" height="240"
+   alt="cross" title="cross"></td>
+  </tr></table>Two half isosurface shapes.</h6>
+
+ <table align="center" border="3"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><h6 align="center">
+ <td align="center">
+   <img src="tubes/Tube_Fork_000_4.jpg" border="0" width="320" height="240"
+   alt="cross" title="cross"></td>
+  </tr></table>The isosurface of forked tube.</h6>
+
+
+</tr>
+<tr><td colspan="2"><hr size="3"></td></tr>
+<tr>
+ <td valign="top">
+<b>Adapting the Tube Fork</b> to connect to other tubes: <br>
+Because these kind of isosurfaces do not have exactly the radius R1 resp. R2 at the
+border of their container boxes, we have to add a correcting factor to each according radius.<br>
+<font size="-1">(This is not exactly calculated - just use the &quot;trial and error&quot; method!)</font><br>
+Note: <font size="-1">If you change the radi<br>
+       you'll have to adapt this correcting factor! </font><br>
+<br>
+To help with the adapting of the isosurface radi to other tube radi we add also some test tubes.<br>
+
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td><pre><b>#local Cor = 0.06; isosuface radius correction
+#local Test_Cylinders_ON = 1; // 1 = on; 0 = off
+//-----------------------------------------------
+union{
+isosurface{ //-----------------------------------
+ function{ (1+Bloby)
+       - pow( Bloby,(sqrt(x*x+y*y)-(R1+Cor)))
+       - pow( Bloby,(sqrt(y*y+z*z+x*x)-(R2+Cor)))
+         } // end function
+ contained_by{
+  box{&lt;-Box_L,-Box_L,-Box_L&gt;,&lt0,Box_L,Box_L&gt;}}
+ accuracy 0.001
+ max_gradient 7
+ texture{ pigment{ color rgb&lt;0.45,1,0&gt;}
+          finish { phong 1 reflection 0.10}}
+} // end of isosurface 1 ------------------------
+
+ function{ (1+Bloby)
+           - pow( Bloby,(sqrt(x*x+y*y)-(R1+Cor)))
+           - pow( Bloby,(sqrt(y*y+z*z)-(R2+Cor)))
+         } // end function
+ contained_by{
+  box{&lt;0,-Box_L,-Box_L&gt;,&lt;Box_L,Box_L,Box_L&gt;}}
+ accuracy 0.001
+ max_gradient 7
+ texture{ pigment{ color rgb&lt;1,0.7,0&gt;}
+          finish { phong 1 reflection 0.10}}
+} // end of isosurface 2 ------------------------
+// ----------------------------------------------
+#if(Test_Cylinders_ON=1)
+ union{ // test
+  cylinder{&lt;0,0,Box_L&gt;,&lt;0,0,Box_L+0.5*R1&gt;,R1}
+  cylinder{&lt;0,0,-Box_L-0.5*R1&gt;,&lt;0,0,-Box_L&gt;,R1}
+  cylinder{&lt;Box_L,0,0&gt;,&lt;Box_L+0.5*R1,0,0&gt;,R2}
+  texture{  pigment{ color rgb&lt;1,0.7,0&gt;} }
+ } // end of union 'test'
+#end // of Test_Cylinders_ON
+} // end of union -------------------------------</b></td></pre></tr></table>
+</td>
+<td valign="top">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <table align="center" border="3"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><h6 align="center">
+ <td align="center">
+   <img src="tubes/Tube_Fork_000_5.jpg" border="0" width="320" height="240"
+   alt="tube fork with test cylinders" title="tube fork with test cylinders"></td>
+  </tr></table>The tube fork with test cylinders</h6>
+
+
+</tr>
+<tr><td colspan="2"><hr size="3"></td></tr>
+<tr>
+<td>Caving out the inside and putting all in a macro<br>
+completes the tube fork:<br>
+The macro <b>&quot;Tube_Fork_000&quot;</b>:
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td><pre><b>//---------------------------------------------
+#macro Tube_Fork_000 (
+    R1, // ~0.50,
+    R2, // ~0.35 ~0.65,
+    Tube_D, // ~0.05, tube material thickness
+    Bloby, // blob factor, // 0.1~0.002,
+    Cor, //   radius correction,
+    Test_Cylinders_ON, // on = 1; off = 0,
+  ) // ----------------------------------------
+//---------------------------------------------
+#local D = 0.0001; // just a little bit !!!
+#local Box_L = 4*R1;
+//---------------------------------------------
+//------------- default textures --------------
+#ifndef (Slide_Body_Texture)
+#declare Slide_Body_Texture =
+ texture{ pigment{ color rgb&lt;1,1,1&gt;*0.85}
+          normal { bumps 0.05 scale 0.3005}
+          finish { phong 0.7 reflection 0.05}}
+#end
+#ifndef (Slide_Inside_Texture)
+#declare Slide_Inside_Texture =
+ texture{ pigment{ color rgb&lt;1,1,1&gt;*0.7}}
+#end
+#ifndef (Test_Tube_Texture)
+#declare Test_Tube_Texture =
+  texture { pigment { color rgb&lt;0.7,0.3,1&gt;}}
+#end
+//-----------....----------- main part --------
+union{ // main union
+
+#if(Test_Cylinders_ON=1)
+union{ // 1
+#end
+
+difference{
+ union{
+ isosurface{ //--------------------------------
+  function{
+    (1+Bloby)
+    - pow( Bloby, ( sqrt(x*x+y*y)-(R1+Cor) ) )
+    - pow( Bloby,( sqrt( y*y+z*z)-(R2+Cor) ) )
+  }// end function
+  contained_by{
+   box{&lt;0,-Box_L,-Box_L&gt;,&lt;Box_L,Box_L,Box_L&gt;} }
+  accuracy 0.001
+  max_gradient 7
+ } // end of isosurface -----------------------
+
+ isosurface{ //--------------------------------
+  function{
+    (1+Bloby)
+    - pow( Bloby, ( sqrt(x*x+y*y)-(R1+Cor) ) )
+    - pow( Bloby,( sqrt(y*y+z*z +x*x)-(R2+Cor) ) )
+  }// end function
+  contained_by{
+   box{&lt;-Box_L,-Box_L,-Box_L&gt;,&lt;0,Box_L,Box_L&gt;}}
+  accuracy 0.001
+  max_gradient 7
+ } // end of isosurface -----------------------
+
+ texture{Slide_Body_Texture}
+ }// end of union
+
+ cylinder{ &lt;0,0,-Box_L-D&gt;,&lt;0,0,Box_L+D&gt;,R1-Tube_D
+           texture{ Slide_Inside_Texture }}
+ cylinder{ &lt;0,0,0&gt;,&lt;Box_L+D,0,0&gt;, R2-Tube_D
+           texture{ Slide_Inside_Texture }}
+}//end of difference  //
+
+#if(Test_Cylinders_ON=1)
+ union{ // 'test'
+  cylinder{&lt;0,0, Box_L&gt;,&lt;0,0,Box_L+0.5*R1&gt;, R1}
+  cylinder{&lt;0,0,-Box_L-0.5*R1&gt;,&lt;0,0,-Box_L&gt;,R1}
+  cylinder{&lt;Box_L,0,0&gt;,&lt;Box_L+0.5*R1,0,0&gt;,  R2}
+  texture { Test_Tube_Texture }}
+ }// end union 'test'
+} // end union of '#if(Test_Cylinders_ON = 1)'
+#end // Test_Cylinders_ON=1
+// ---------
+
+} // end union main
+#end // -------------------------- end of macro</b></td></pre></tr></table>
+<br>
+And here is a example for <b>how to use this macro</b>:<br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td><pre><b>// -------------------------- optional textures &nbsp;
+#declare Slide_Body_Texture =
+  texture{ pigment{ color rgb&lt;0.75,1,0&gt;}
+           finish { phong 1 reflection 0.1}}
+#declare Slide_Inside_Texture =
+  texture{ pigment{ color rgb&lt;0.3,0.7,0&gt;*1.1}
+           finish { phong 1}}
+#declare Test_Tube_Texture =
+  texture{ pigment { color rgb&lt;1,0.7,0&gt;}
+         } // end of texture
+// ----------------------------------------------
+object{
+  Tube_Fork_000 (
+  // total container box length = 4*R1
+  0.50, // R1, // main tube radius:  1 ~ 0.25
+  0.35, // R2, // side tube radius:  1.5 ~ 0.20
+  0.05, // Tube_D, // tube material thickness
+  0.15, // Blobfactor; // 0.1~0.002 ; max~0.2!!
+  0.06, // radius correction, ~ 0.06
+  0, // Test_cylinders_ON;  on = 1; off = 0
+  ) // ------------------------------------------
+  // rotate &lt;0,0,90&gt;
+  translate &lt;0,0,0&gt;
+} // --------------------------------------------&nbsp;</b></td></pre></tr></table>
+</td>
+<td valign="top">
+<br>
+<br>
+<br>
+  <table align="center" border="3"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><h6 align="center">
+ <td align="center">
+   <img src="tubes/Tube_Fork_000_6.jpg" border="0" width="320" height="240"
+   alt="tube fork macro" title="tube fork macro"></td>
+  </tr></table>The tube fork macro.</h6>
+
+<br>
+  <h5 align="center">Scene file <br>for POV-Ray<br>
+ <a href="tubes/Tube_Fork_000_6.txt">&quot;Tube_Fork_000_6.txt&quot;</a> or
+ <a href="tubes/Tube_Fork_000_6.pov">&quot;Tube_Fork_000_6.pov&quot;</a></h5>
+<br>
+<br>
+
+  <table align="center" border="3"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><h6 align="center">
+ <td align="center">
+   <img src="tubes/Tube_Fork_000_6b.jpg" border="0" width="320" height="240"
+   alt="tube fork macro" title="tube fork macro"></td>
+  </tr></table>The tube fork macro <br>
+               with R1 = 0.35, R2 = 0.50,<br>
+               and rotate&lt;0,0,90&gt;.</h6>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="javascript:ShowImage2('tubes/tube_fork_000_1im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''">
+              <img src="tubes/Tube_Fork_000_inc.jpg" width="160" height="120" border="0"
+                   alt="Tube Fork" title="Tube Fork"></a></td>
+    </tr></table><br>
+<br>
+ <h5><b>For Download</b> of this shape as a <nobr><b>Ready-made POV-Ray object</b></nobr> <br>  in an
+ include file with macro<br>
+ and for example files look at the<br>
+  <a href="../objects/obj_730e.htm"><nobr>POV-Ray Objects Page - Tubes</b></nobr></a>
+</td></h5>
+
+</td>
+
+</tr></table>
+&nbsp;<br>
+
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2009 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="Analytische Geometrie, Kommandos, raytracing, PoV, POVRAY, POV-Ray 3.6, Computergraphik, 3D-Graphik, Computergrafik, Raytracer Beschreibungen, Povray Tutorial, Beispiele">
+<meta name="description" content="Analytische Geometrie mit POV-Ray - Tabellarischer &Uuml;berblick &uuml;ber die wichtigsten Kommandos">
+<TITLE>Analytische Geometrie mit POV-Ray - Tabellarischer &Uuml;berblick &uuml;ber die wichtigsten Kommandos aus &quot;analytical_g.inc&quot;</TITLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=710,height=530");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</HEAD>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo70e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="a_geo70e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="a_geo70i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo70i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo70f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="ga_geo70f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index_d.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__ger.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__ger.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__d.htm">Analytische Geometrie</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">mit POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">- Inhalts&uuml;bersicht -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insrtd_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -    <a href="a_geo00d.htm">Grunds&auml;tzliches</b></a><br>
+&nbsp; &nbsp; <a href="a_geo00d.htm">zur Arbeitsweise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>Punkte &amp; Linien</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo10d.htm">Punkte in 3D</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo20d.htm">Strecken, Geraden,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20d.htm">Vektoren, Abstandspfeile</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30d.htm">Fl&auml;chen u. Ebenen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40d.htm">Ausgabe Resultate,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40d.htm">Beschriftung</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45d.htm">Schnittpunkte</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50d.htm">Kreise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60d.htm">Tetraeder</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61d.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62d.htm">Parallelflach (Spat)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo65d.htm">Runde K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp;<b>&gt; <!--a href="a_geo70d.htm"--><b>Tabellarischer</b></a><br>
+&nbsp; &nbsp; &nbsp; <b> <!--a href="a_geo70d.htm"--><b>&Uuml;berblick</b> &uuml;ber</a><br>
+&nbsp; &nbsp; &nbsp; <b> <!--a href="a_geo70d.htm"--> &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80d.htm">Vektorrechnung</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80d.htm">mit POV-Ray</b></a> <br>
+&nbsp; -  <a href="a_geo85d.htm">Rechts- u. linksh&auml;ndige</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">Koordinatensysteme</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">und das Vektorprodukt</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Beispiele aus der</b></a> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Analytischen Geometrie</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91d.htm">Seitenmitten-Parallelogramm</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo92d.htm">Spurpunkte einer Geraden</b></a> <br>
+&nbsp; &nbsp; -  <a href="a_geo93d.htm">Berechnungen am Dreieck</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo94d.htm">Parallelogrammfl&auml;che</b></a></nobr> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo94d.htm">und Vektorprodukt</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95d.htm">Schatten einer Pyramide</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96d.htm">Schnitt mit Ebene || zu yz</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97d.htm">Winkel zw. Dreieck yz-Ebene</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+
+  <table align="center" width="95%" cellspacing="10"><tr>
+    <td align="center" valign="top">
+        <h3><nobr>Analytische Geometrie<br>mit POV-Ray</nobr></h3>
+        <h5 align="center"><font size="+1"><b>Tabellarischer &Uuml;berblick</b></font><br><nobr>&uuml;ber die wichtigsten Kommandos</nobr> <nobr>zur schnellen Orientierung</nobr></h5>
+      <hr width ="95%" size="3">
+        <h6 align="left"><font size="+1"><b>Definition der Punkte:</b></font><br>
+        Bereits definiert sind: <br>
+        &nbsp; <b>o = &lt;0,0,0&gt;,</b>(Usprung)<br>
+        &nbsp; <b>x = &lt;1,0,0&gt;, y = &lt;0,1,0&gt;, z = &lt;0,0,1&gt;</b><br>
+        Platzhalter f&uuml;r eigene Punkte und Vektoren definieren, z.B:<br>
+        &nbsp; <b> P1 = &lt; 2, 1.5, -3&gt;; </b><br>
+        &nbsp; <b> V1 = &lt; -3, 1.25, 1&gt;; </b> <br>
+        In der Beispiel-Datei <a href="a_geo_00.pov"><b>&quot;a_geo_00.pov&quot;</b></a>
+        ist vordefiniert: <br>
+        <b>Rp</b> = 0.105 = Radius der Punkte, <br><b>Rl</b> = 0.055 = Radius der Linien.<br>
+        und die nebenstehenden Grundfarben.<br>
+       </h6>
+       <h6 align="left"><font size="+1"><b>Darstellung von Objekten:</b></font>
+              <br>(Die meisten hier verwendeten Makros sind <nobr>&nbsp; iN meiner Include-Datei
+              <a href="../down/analytical_g.inc"><b>analytical_g.inc</b></a></nobr> <nobr>&nbsp; definiert.)</nobr> <br>
+              <br>Alternativ: downloaden Sie <a href="../down/analytical_g.txt"><b>analytical_g.txt</b></a> und speichern sie
+               die Datei unter dem Namen &quot;analytical_g.inc&quot;
+         </td></h6>
+      <td align="center" valign="top">
+           <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="a_geo_textur.jpg" width="360" height="360" hspace="0" vspace="0"></td>
+              </tr></table><font size="-1">Texturen des
+              <a href="a_geo_00.pov"><b>Schablonentextes &quot;a_geo_00.pov&quot;</b></a><br>
+         oder <a href="a_geo_00.txt"><b>Schablonentextes &quot;a_geo_00.txt&quot;</b></a></font>
+      </td>
+ </tr>
+ <tr>
+  <td colspan="2">
+  <h6 align="left"><hr width ="95%" size="3">
+  <font size="+1"><nobr><b> Punkt P<sub>1</sub>:</b></font>
+  ....................... &nbsp;  sphere{ P1, Rp pigment{ color Red } }</b><br>
+  &nbsp;   <nobr><b>Eindeutige Positionsmarkierung:</b></nobr> <br>
+  &nbsp;  1) <b>Wire_box-Methode</b> (Drahtgitter-Quader):
+  &nbsp;object{ Wire_Box( o, P,Rl/2,0) pigment{ color Yellow }}</b>,<br>
+  &nbsp;  2) <b>Unterst&uuml;rzungszylinder</b> in y-Richtung:
+  &nbsp; &nbsp; object{ Show_Y( P, Rl/2) pigment{ color Yellow } }</b>.<br>
+  <br>
+   <font size="+1"><nobr><b>Strecke P<sub>1</sub>P<sub>2</sub>:</b></nobr></font>
+  .............. &nbsp; cylinder{ P1, P2, Rl  pigment{ color Green}}<br>
+   <font size="+1"><nobr><b>Gerade P<sub>1</sub>P<sub>2</sub>:</b></nobr></font>
+  ................&nbsp; cylinder{ P1–10*(P2-P1), P2+10*(P2-P1), Rl  pigment{ color Green}}<br>
+
+   <font size="+1"><nobr><b>Vektor P<sub>1</sub>P<sub>2</sub>:</b></nobr></font>
+  ..................&nbsp; object{ Vector (P1, P2, Rl) pigment{ color Green}}<br>
+   <font size="+1"><nobr><b>Distanz-Marker  P<sub>1</sub>P<sub>2</sub>:</b></nobr></font>
+   &nbsp; object{ Distance_Marker(P1, P2, Rl) pigment{ color Green}}<br>
+<hr width ="95%" size="3">
+
+   <font size="+1"><nobr><b>Dreieck P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>:</b></nobr></font>
+   .............. &nbsp; triangle { P1, P2, P3   pigment{ color Yellow transmit 0.5 }<br>
+  &nbsp; <nobr><b>Normale</b> auf Dreieck P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>:</nobr>
+   ......... &nbsp; object{ Triangle_Normal (P1, P2, P3)   pigment{ color Yellow }<br>
+   &nbsp; <nobr><b>Schwerpunkt</b> des Dreiecks P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>: </nobr>
+   &nbsp; object{ Triangle_Mass_Center (P1, P2, P3)  pigment{ color Yellow }<br>
+   &nbsp; <nobr><b>Fl&auml;che</b> des Dreieck P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>: </nobr>
+   ........... &nbsp; Triangle_Area ( P1, P2, P3 ) <br>
+   &nbsp; <nobr><b>Umfang</b> des Dreieck P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>:</nobr>
+   ......... &nbsp; Triangle_Circum ( P1, P2, P3 ) <br>
+   <font size="+1"><b>Ebene</b></font><br>
+   &nbsp; <b>in Parameterform</b>:
+   ..... &nbsp; object{ Plane_Dir( Start, Dir1, Dir2, Start, End ) pigment{ color Green}}<br>
+   &nbsp; <b> in Normalenform, N=&lt;A,B,C&gt;, D</b>:
+   ..... &nbsp;&nbsp; object{ Plane_Nor( Normale, D, Start, End) pigment{ color Green}}<br>
+   &nbsp; <b> Normalenform, mit N durch P</b>:
+   ...&nbsp;&nbsp; object{ Plane_NoP( Normale, P, Start, End)  pigment{ color Green}}<br>
+<hr width ="95%" size="3">
+   <font size="+1"><b>Schnittpunkt Gerade - Ebene</b> </font><br>
+   &nbsp;  Gerade durch Punkt und Richtung <b>#declare P = &lt;x1,x2,x3&gt; #declare M = &lt;m1,m2,m3&gt;</b><br>
+   &nbsp; Ebene als Objekt deklariert: <b>#declare Ebene = ...;</b> s.o.<br>
+   &nbsp; <b>#declare Schnittpunkt =  trace ( Ebene, A, M )</b> <br>
+   Mit Normalenvektor im Schnittpunkt - Bezeichnung vordeklariert durch: #declare <b>Normale = &lt;0,0,0&gt;</b><br>
+   &nbsp; <b>#declare Schnittpunkt =  trace ( Ebene, A, M, Normale)</b> <br>
+
+<hr width ="95%" size="3">
+   <font size="+1"><nobr><b>Kreis (M,r)</b> um Achse:</nobr></font><br>
+  &nbsp; <b> Kreislinie</b>:   ............... &nbsp; object{ Circle_Line ( Mitte, Radius, Rl, Achse)   pigment{ color Yellow }}<br>
+  &nbsp; <b> Kreisfl&auml;che</b>  ............. &nbsp; object{ Circle_Disc ( Mitte, Radius, Achse)   pigment{ color Yellow transmit 0.5 }}<br>
+ <font size="+1"><nobr><b>Umkreis</b> um Dreieck P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>:</nobr></font> <br>
+   &nbsp; <b> Kreislinie</b>:   ............... &nbsp; object{  Circle_Line_out(  P1, P2, P3, Rl)   pigment{ color Yellow }}<br>
+   &nbsp; <b> Kreisfl&auml;che</b> ............. &nbsp; object{  Circle_Disc_out(  P1, P2, P3 )   pigment{ color Yellow transmit 0.5 }}<br>
+   &nbsp; <b> Umkreis-Mittelpunkt</b>. &nbsp; object{  Triangle_M_out(  P1, P2, P3 )   pigment{ color Green }}<br>
+   &nbsp; <b> Umkreisradius</b> ......... &nbsp; Triangle_R_out(  P1, P2, P3 ) <br>
+ <font size="+1"><nobr><b>Inkreis</b> um Dreieck P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>:</nobr></font> <br>
+   &nbsp; <b> Kreislinie</b>:   ............... &nbsp; object{  Circle_Line_in (  P1, P2, P3, Rl)   pigment{ color Yellow }}<br>
+   &nbsp; <b> Kreisfl&auml;che</b> ............. &nbsp; object{  Circle_Disc_in (  P1, P2, P3 )   pigment{ color Yellow transmit 0.5 }}<br>
+   &nbsp; <b> Inkreis-Mittelpunkt</b> .. &nbsp; object{  Triangle_M_in (  P1, P2, P3 )   pigment{ color Green }}<br>
+   &nbsp; <b> Inkreisradius</b> ........... &nbsp; Triangle_R_in (  P1, P2, P3 ) <br>
+
+<hr width ="95%" size="3">
+   <font size="+1"><b>Tetraeder</b></font><br>
+    &nbsp; <b>mit den Kantenvektoren <nobr><font size="-1">V<sub>1</sub>,V<sub>2</sub>,V<sub>3</sub></font></b>:</nobr></font>
+    object{ Tetrahedron_by_Edges ( V1,V2,V3, Rl,Rp, Filled) pigment{ color Green transmit 0.5}}<br>
+    &nbsp; <b>mit den Eckpunkten  <nobr><font size="-1">P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>P<sub>4</sub></font></b>:</nobr></font>
+   .... object{ Tetrahedron_by_Corners ( P0,P1,P2,P3, Rl,Rp, Filled) pigment{ color Green transmit 0.5}}<br>
+   <br>
+   <font size="+1"><b>Parallelflach, Spat</b></font><br>
+    &nbsp; <b>mit den Kantenvektoren <nobr><font size="-1">V<sub>1</sub>,V<sub>2</sub>,V<sub>3</sub></font></b>:</nobr></font>
+    <nobr>object{ Parallelepiped_by_Edges ( V1,V2,V3, Rl,Rp, Filled) pigment{ color Green transmit 0.5}}</nobr><br>
+    &nbsp; <b>mit den Eckpunkten  <nobr><font size="-1">P<sub>1</sub>P<sub>2</sub>P<sub>3</sub>P<sub>4</sub></font></b>:</nobr></font>
+   .... <nobr>object{ Parallelepiped_by_Corners ( P0,P1,P2,P3, Rl,Rp, Filled) pigment{ color Green transmit 0.5}}</nobr><br>
+  <br>
+   <font size="+1"> <b>Kugel</font> um Mittelpunkt M mit Radius R: </b>
+   ........... &nbsp; sphere { M, R &nbsp; pigment{ color White }<br>
+   <font size="+1"> <b>Ellipsoid</font>, Mittelpunkt M, Radien Rx,Ry,Rz: </b>
+   .. &nbsp; sphere { M, R scale<Rx,Ry,Rz> &nbsp; pigment{ color Green transmit 0.5 }<br>
+   <font size="+1"> <b>Zylinder</font>, Endmittelpunkte M1 und M2<br> und Radius R: </b>
+   ................................................... &nbsp; cylinder { M1,M1, R  &nbsp; pigment{ color Green transmit 0.5 }<br>
+   <font size="+1"> <b>Kegel</font> mit den Basismittelpunkt M1,<br>Basisradius R1 und Spitze M2: </b>
+   ......................... &nbsp; cone { M1,R1, M2, 0  &nbsp; pigment{ color Green transmit 0.5 }<br>
+   <font size="+1"> <b>Kegelstumpf</font>, Endmittelpunkte M1, M2<br> und Radien R1 und R2: </b>
+   ..................................... &nbsp; cone { M1,R1, M2, R2  &nbsp; pigment{ color Green transmit 0.5 }<br>
+<hr width ="95%" size="3">
+<font size="+1"><b>Textobjekt</b></font> zur Bezeichnung von Objekten:<br>
+<table border="1" width="95%" align="center" cellpadding="5">
+<tr>
+ <td width="20%" valign="middle" align="center"><b>Bezeichnung "P":</b></td>
+ <td><pre>text { ttf "ARIAL.TTF", "P",0.1,0
+       scale 0.5 rotate&lt;20,-45,0&gt;
+       translate P + &lt;-0.2,0.3,0&gt;
+       pigment{ color Red } no_shadow} </td></pre>
+</tr>
+<tr>
+ <td width="20%" valign="middle" align="center"><b>Bezeichnung "|PQ|"<br>
+                                 + Wert:</b> </td>
+ <td><pre>text{ ttf "ARIAL.TTF"
+      concat( "|PQ| = " , str(vlength( Q-P),3,4)
+            ), 0.1, 0
+      scale 0.35 rotate&lt;20,-45,0&gt;
+      translate P+&lt;0.4,0.3,0&gt;
+      pigment{ color rgb&lt;1,0,0.25&gt; }  no_shadow } </td></pre>
+</tr>
+<tr>
+ <td width="20%" valign="middle" align="center"><b>Bezeichnung "N"<br>
+                                 + Vektor:</b> </td>
+ <td><pre>text{ ttf "ARIAL.TTF"
+      concat( "M(PQ) = (" , vstr(3,(P+Q)/2,"/",0,1) , ")"
+            ), 0.1, 0
+      scale 0.35 rotate&lt;20,-45,0&gt;
+      translate (P + Q)/2 + &lt;0.4,0.3,0&gt;
+      pigment{ color Violet }  no_shadow }</td></pre>
+</tr>
+</table>
+<hr width ="95%" size="3">
+ </td></h6>
+ </tr>
+ </table>
+ <td>
+</tr>
+</table>
+
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</BODY>
+</HTML>

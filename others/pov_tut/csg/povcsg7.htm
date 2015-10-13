@@ -1,0 +1,192 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="CSG - Constructive Solid Geometry Teil V">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, csg, Constructive Solid Geometry, boolesche Algebra, union, merge, intersection, difference, konstruieren">
+<title>CSG - Constructive Solide Geometry mit POV-Ray - Teil V deutsch</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; <b>CSG - Constructive Solid Geometry</b></font>
+      <font size="-1"><b></b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg7e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povcsg7e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg7i.htm"><font size="2">Italiano</font></a>
+        <a href="povcsg7i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg7f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povcsg7f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg1.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg1.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3.htm">difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4.htm">+ invers</b></a><br>
+ &nbsp; &nbsp; -   <a href="povcsg5.htm">clipped_by</b></a><br>
+ &nbsp; &nbsp; -   <a href="povcsg6.htm">Koinzidenzprobleme</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg7.htm"--><b>Texturen u. CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Boolesche Algebra mit K&ouml;rpern - Teil VII</h5>
+<h2 align="center">&Uuml;ber Texturen bei CSG-Objekten</h2>
+<p align="justify"><b> Probleme, die sich mit strukturierten Texturen bei allen Arten von csg-Objekten ergeben k&ouml;nnen:</b><br>
+&nbsp; Bei durch &quot;union&quot; verbundenen K&ouml;rpern behalten die einzelnene Teilk&ouml;rper ihre urspr&uuml;ngliche Textur bei.
+Bei K&ouml;rpern, die durch Differenz oder Schnittmenge ('intersection') gebildet werden, erh&auml;lt der K&ouml;rper
+an den ab- oder ausgeschnittenen K&ouml;rperparien die Textur des dort jeweils davon subtrahierten K&ouml;rpers. <br>
+&nbsp; Will man ein csg-Objekt mit einer durchg&auml;ngigen  strukturierten Textur versehen, so sollte die Texturierung des Objektes  m&ouml;glichst erst
+am Ende der union, difference oder intersection f&uuml;r den gesamten K&ouml;rper zusammen erfolgen.
+Dies spart nicht nur Schreibarbeit, sondern garantiert auch die Durchg&auml;ngigkeit von strukturierten Mustern.
+Eine andere elegante Methode bietet das Sch&uuml;sselwort &quot;cutaway_textures&quot; (vgl. unterstes Beispiel).
+
+</p>
+<div align="center">
+<table border="0" cellpadding="10" cellspacing="3">
+   <tr>
+       <td>
+<b>Beispiele:</b><br>
+<b>Texturen bei Differenzbildung </b>
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>difference{
+  box   { &lt;0,0,0&gt;,&lt;1,1,1&gt;
+         <b> texture{ My_YellowGreen }</b>
+        }
+  sphere{ &lt;0,0,0&gt;,0.5
+         <b> texture{ My_Yellow } </b>
+          translate&lt;1,1,0&gt;
+        }
+}// end of difference --------------</b></td></pre></tr></table>
+<b>Unterbrochene Maserung </b>
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>difference{
+  box   { &lt;0,0,0&gt;,&lt;1,1,1&gt;
+         <b> texture{ My_Wood } </b>
+        }
+  sphere{ &lt;0,0,0&gt;,0.5
+         <b> texture{ My_Wood } </b>
+          translate&lt;1,1,0&gt;
+        }
+}// end of difference -------------</b></td></pre></tr></table>
+<b>Durchgehende Maserung </b><br>Einzelk&ouml;rper ohne Textur,<br>gemeinsame Textur am Ende definiert.
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>difference{
+  box   { &lt;0,0,0&gt;,&lt;1,1,1&gt;
+        }
+  sphere{ &lt;0,0,0&gt;,0.5
+          translate&lt;1,1,0&gt;
+        }
+ <b> texture{ My_Wood } </b>
+}// end of difference -------------</b></td></pre></tr></table>
+<b>Durchgehende Maserung </b><br>Verwendet &quot;<b>cutaway_textures</b>&quot;, <br>Textur des Grundk&ouml;rpers wird verwendet.
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>difference{
+  box   { &lt;0,0,0&gt;,&lt;1,1,1&gt;
+          <b>texture{ My_Wood }</b>
+        }
+  sphere{ &lt;0,0,0&gt;,0.5
+          translate&lt;1,1,0&gt;
+        }
+<font color="#800000">cutaway_textures</font>
+}// end of difference --------------</b></td></pre></tr></table>
+      </td>
+      <td valign="top">
+<br>
+<br>
+       <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="boole_ds.jpg" width="200" height="200"></td></tr></table>
+              <font size="-1"><b>Texturen bei &quot;difference&quot;</b></font>
+               <br>&nbsp;
+               <br>
+      <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="boole_du.jpg" width="200" height="200"></td></tr></table>
+              <font size="-1"><b>Unterbrochene Maserung</b></font>
+               <br>&nbsp;
+               <br>
+       <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="boole_dt.jpg" width="200" height="200"></td></tr></table>
+             <font size="-1"><b>Durchg&auml;ngige Maserung</b></font>
+        </td>
+    </tr>
+</table>
+</div>
+<br>
+
+
+</td></tr></table> <!-- global-->
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1.htm">CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6.htm">Koinzidenz</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg9.htm"--><b>Texturen</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

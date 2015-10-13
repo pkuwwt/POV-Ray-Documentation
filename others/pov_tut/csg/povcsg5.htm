@@ -1,0 +1,176 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="CSG - Constructive Solid Geometry Teil V">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, csg, Constructive Solid Geometry, boolesche Algebra, union, merge, intersection, difference, konstruieren">
+<title>CSG - Constructive Solide Geometry mit POV-Ray - Teil V deutsch</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg5e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povcsg5e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg5i.htm"><font size="2">Italiano</font></a>
+        <a href="povcsg5i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg5f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povcsg5f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg1.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg1.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3.htm">difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4.htm">+ invers</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg5.htm"--><b>clipped_by</b></a><br>
+ &nbsp; &nbsp; - <a href="povcsg6.htm">Koinzidenzprobleme</b></a><br>
+ &nbsp; &nbsp; - <a href="povcsg7.htm">Texturen u. CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Boolesche Algebra mit K&ouml;rpern - Teil V</h5>
+<h2 align="center">&Uuml;ber "clipped_by{...}"</h2>
+
+<table border="0" width="90%" align="center"><tr><td>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td><img src="boole_cl.gif" width="130" height="100"></td>
+        <td width="150" height="100"><b>&ouml;ffnender Schnitt</b><br><br>
+                                     <b>clipped_by{...}</b></td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_c.jpg" width="130" height="98"></td></tr></table>
+        </td>
+    </tr>
+</table>
+</div>
+<p align="justify">
+<br>
+<b>Der &ouml;ffnende Schitt mit "clipped_by{...}"</b><br>
+&nbsp;  Der Effekt ist &auml;hnlich wie bei der Schnittmengen-Bildung und bei der Differenz.
+&Uuml;brig bleibt, was in beiden K&ouml;rpern enthalten ist.
+Gegen&uuml;ber der Schnittmenge ist der verbleibende K&ouml;rper jedoch an den Stellen
+ge&ouml;ffnet, an denen er von der Oberfl&auml;che des aufschneidenden K&ouml;rpers
+aus "clipped_by{...} geschnitten wird.</p>
+Beispiel:
+<table align="center" border="2" cellpadding="5" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>sphere {&lt;0,0,0&gt;,0.5
+        texture{ pigment{ color rgb&lt;1,0,0.2&gt;}
+                 finish { phong 1}}
+        <font color="#800000">clipped_by{</font> sphere{&lt;0,0,0&gt;,0.5 translate&lt;0.5,0,-0&gt; inverse}<font color="#800000">} </font>
+        rotate &lt;0,25,0&gt;
+        translate &lt;-0.25,0,0&gt;} </b></td></pre></tr></table>
+<p align="justify">&nbsp; Der aufschneidende K&ouml;rper <font size="-1">(innerhalb der Klammern von 'clipped_by')</font> besitzt keine Textur!<br>
+Vom urspr&uuml;nglichen K&ouml;rper bleibt gewissermassen nur die Haut stehen. Eine reine
+Texturangabe (ohne "interior") beschreibt die Farbe und Beschaffenheit allein der Oberfl&auml;che eines K&ouml;rpers,
+diese ist eben dann auch von innen zu sehen. <br>
+&nbsp; Bestand der aufgeschnittene K&ouml;rper aus einer 'union' von
+mehreren K&ouml;rpern, so werden alle Teilk&ouml;rper durch den 'clipped_by'-K&ouml;rper
+aufgeschnitten, die dieser ber&uuml;hrt.<br> </p>
+Beispiel:
+<table align="center" border="2" cellpadding="5" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>union{
+  sphere {&lt;0,0,0&gt;,0.5
+          texture{ pigment{ color rgb&lt;1,0,0.2&gt;}
+                   finish { phong 1 }}}
+  sphere {&lt;0,0,0&gt;,0.4
+          texture{ pigment{ color rgb&lt;1,0.4,0.2&gt;}
+                   finish { phong 1 }}}
+  sphere {&lt;0,0,0&gt;,0.3
+          texture{ pigment{ color rgb&lt;1,0.5,0.1&gt;}
+                   finish { phong 1}}}
+  sphere {&lt;0,0,0&gt;,0.2
+          texture{ pigment{ color rgb&lt;1,0.7,0.1&gt;}
+                   finish { phong 1}}}
+  <font color="#800000">clipped_by{</font>sphere {&lt;0,0,0&gt;,0.5 translate&lt;0.5,0,-0&gt; inverse}<font color="#800000">}</font>
+  rotate &lt;15,55,0&gt; translate &lt;-0.25,0,0&gt;} </b></td></pre></tr></table>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td><table align="center" border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="boole_c2.jpg" width="400" height="380"></td></tr></table>
+  </td>
+ </tr>
+</table>
+</div>
+<br>Auf diese Weise lassen sich z.B. leicht B&uuml;tenbl&auml;tter oder auch ein Schnitt
+durch ein Geb&auml;ude oder eine Maschine anfertigen!
+</tr></td></table>
+<br>
+</p>
+
+</td></tr></table> <!-- global-->
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1.htm">CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg5.htm"-->clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6.htm">Koinzidenz</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7.htm">Texturen</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

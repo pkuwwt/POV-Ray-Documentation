@@ -1,0 +1,267 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2007, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes900i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes900i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes900f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes900f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes900d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes900d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Overview<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000e.htm">Shapes in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400e.htm">Other Shapes by macros</b></a></nobr><br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+<a href="shapes000e.htm">Other Shapes</b></a><br>
+<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+<nobr><a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+<br>
+&gt;<!--a href="shapes900e.htm"--><b>Isosurfaces</b></a><br>
+<nobr>&nbsp; -  <a href="shapes910e.htm">with Basic Surfaces</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes920e.htm">with Sine Functions </b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes930e.htm">by Built-in Functions</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes940e.htm">by Helix Functions</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes950e.htm">by Pattern Functions</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%"><!--global-->
+<tr>
+ <td>
+
+
+<b>isosurface{ ... }</b> <font size="-1">(Built-in shape)</font>
+<br>
+For an intensiv tutorial please see Mike Williams' great
+&quot;<a href="http://www.econym.demon.co.uk/isotut/index.htm" target=_new>Isosurface Tutorial</a>&quot; :<br>
+<br>
+
+
+
+<font size="-1"></font>Samples:  <br>
+
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr>
+ <td valign="top">
+&nbsp;&nbsp;Isosurfaces by basic functions <br>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0000s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0005s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0010s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0015s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0020s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0025s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0030s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ </td>
+ </tr></table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0040s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0035s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0045s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0050s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0055s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0060s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910e.htm"><img src="im/iso_0065s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ </td>
+ </tr></table>
+&nbsp;&nbsp;Isosurfaces with sine functions <br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes920e.htm"><img src="im/iso_0070s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes920e.htm"><img src="im/iso_0080s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes920e.htm"><img src="im/iso_0095s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes920e.htm"><img src="im/iso_0097s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes920e.htm"><img src="im/iso_0090s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes920e.htm"><img src="im/iso_0098s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes920e.htm"><img src="im/iso_0099s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ </td></tr></table>
+&nbsp;&nbsp;Isosurfaces by built-in functions <br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0105s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0100s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0110s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0115s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0120s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0125s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0130s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ </td></tr></table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0135s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0140s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0145s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0150s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0155s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930e.htm"><img src="im/iso_0160s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><td></tr></table>
+&nbsp;&nbsp;Isosurfaces by built-in helix, spiral and mesh1 functions
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes940e.htm"><img src="im/iso_0200s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes940e.htm"><img src="im/iso_0205s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes940e.htm"><img src="im/iso_0210s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes940e.htm"><img src="im/iso_0215s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes940e.htm"><img src="im/iso_0220s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ </td>
+ </tr></table>
+&nbsp;&nbsp;Isosurfaces by built-in noise &amp; pattern functions
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0300s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0305s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0310s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0315s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0320s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0325s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0330s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ </td>
+ </tr></table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0335s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0340s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0345s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0350s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0355s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0360s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0365s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ </td>
+ </tr></table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950e.htm"><img src="im/iso_0370s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ </td>
+ </tr></table>
+</td></tr></table> <!-- list -->
+</td></tr></table> <!-- global -->
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2007 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="Analytische Geometrie, Beschriften von Objekten, Ausgabe von Resultaten, Raytracing, PoV, POVRAY, POV-Ray 3.6, Computergraphik, 3D-Graphik, Computergrafik, Raytracer Beschreibungen, Povray Tutorial, Beispiele">
+<meta name="description" content="Analytische Geometrie mit POV-Ray - Beispiel - Beschriften von Objekten und Ausgabe von Resultaten">
+<title>Beschriften von Objekten und Ausgabe von Resultaten - Analytische Geometrie mit POV-Ray</title>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=645,height=500");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo40e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="a_geo40e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="a_geo40i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo40i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo40f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo40f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index_d.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__ger.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__ger.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__d.htm">Analytische Geometrie</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">mit POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">- Inhalts&uuml;bersicht -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insrtd_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -    <a href="a_geo00d.htm">Grunds&auml;tzliches</b></a><br>
+&nbsp; &nbsp; <a href="a_geo00d.htm">zur Arbeitsweise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>Punkte &amp; Linien</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo10d.htm">Punkte in 3D</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo20d.htm">Strecken, Geraden,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20d.htm">Vektoren, Abstandspfeile</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30d.htm">Fl&auml;chen u. Ebenen</b></a> <br>
+ &nbsp; &nbsp;<b>&gt; <!--a href="a_geo40d.htm"-->Ausgabe Resultate,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <b> <!--a href="a_geo40d.htm"-->Beschriftung</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45d.htm">Schnittpunkte</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50d.htm">Kreise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60d.htm">Tetraeder</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61d.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62d.htm">Parallelflach (Spat)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo65d.htm">Runde K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <a href="a_geo70d.htm">Tabellarischer</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm">&Uuml;berblick</b> &uuml;ber</a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm"> &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80d.htm">Vektorrechnung</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80d.htm">mit POV-Ray</b></a> <br>
+&nbsp; -  <a href="a_geo85d.htm">Rechts- u. linksh&auml;ndige</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">Koordinatensysteme</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">und das Vektorprodukt</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Beispiele aus der</b></a> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Analytischen Geometrie</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91d.htm">Seitenmitten-Parallelogramm</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo92d.htm">Spurpunkte einer Geraden</b></a> <br>
+&nbsp; &nbsp; -  <a href="a_geo93d.htm">Berechnungen am Dreieck</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo94d.htm">Parallelogrammfl&auml;che</b></a></nobr> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo94d.htm">und Vektorprodukt</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95d.htm">Schatten einer Pyramide</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96d.htm">Schnitt mit Ebene || zu yz</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97d.htm">Winkel zw. Dreieck yz-Ebene</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+    <table align="center" width="50%"><tr>
+    <td align="center" valign="middle" colspan="2"><h3><nobr>Analytische Geometrie mit POV-Ray</nobr></h3></td>
+    </tr><tr>
+    <td align="center" valign="middle">
+       <h2 align="center"><nobr>Beschriften von Objekten und &nbsp; &nbsp;</nobr> Ausgabe von Resultaten</h2> </td>
+    <td align="center" valign="top">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="a_geo_calc01s.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+    </table>
+ </td>
+</tr>
+ </table>
+
+<div align="center">
+<table width="95%" align="center" cellpadding="5">
+ <tr>
+  <td colspan="1">
+        <h5 align="justify">
+        Hierzu verwendet man das Text-Objekt von POV-Ray.
+        <br>
+        <br>
+        <b>1. Ausgabe von ASCI-Zeichen und Texten:</b>
+
+        <br>
+        Beispiel: <br>Bezeichnung des Punktes P mit dem Buchstaben &quot;P&quot;
+<pre><b>text { ttf &quot;ARIAL.TTF&quot;, &quot;P&quot;,0.1,0
+  scale 0.5 rotate&lt;20,-45,0&gt;
+  translate P+&lt; 0.2,0.3,0&gt;
+  pigment{color Red } no_shadow }
+</b></pre>
+        <br>
+        <b>2. Ausgabe von Zahlenwerten:</b>
+        <br>
+        Den Wert einer Variablen A als Zeichenfolge (string) erh&auml;lt man
+        durch die Funktion <b><nobr>str( A, L, P).</nobr></b><br>
+        Hierbei ist A der Platzhalter f&uuml;r die Variable, gefolgt von
+        der Zahl der anzuzeigenden Gesamtstellen der Zahl an
+        (Wenn die Zahl weniger als L Stellen hat gilt: Ist L positiv wird davor mit Leerstellen aufgef&uuml;llt, ist L negativ mit f&uuml;hrenden Nullen aufgef&uuml;llt),
+        P gibt die Zahl der Nachkommastellen an, auf die gerundet
+       <br>
+        Beispiel: <br>Ausgabe der L&auml;nge eines Vektors PQ
+<pre><b>text{ ttf &quot;ARIAL.TTF&quot;
+  str(vlength( Q-P),5,4)  , 0.1, 0
+  scale 0.35 rotate&lt;20,-40,0&gt;
+  translate P+&lt; 0.4,0.3,0&gt;
+  pigment{color rgb+&lt;1.0,0.0,0.25&gt} }  no_shadow }</b></pre>
+        <br>
+        <b>2. Ausgabe von Zahlen + Text:</b>
+        <br>
+        Zum Zusammenf&uuml;gen zweier oder mehrer Zeichenketten S1, S2 etc. zu einer
+       neuen Zeichenkette verwendet man die Funktion <b><nobr>concat(S1,S2,...)</nobr> </b>.
+       <br>Ist z.B.  V= 3.5; so ergibt  <nobr>concat("&quot;|V| = &quot;,str(A,4,2)</nobr> den Ausdruck<br>
+       <nobr>&quot;|V| =  3.50&quot;</nobr>.
+       <br><br>
+        Beispiel: <br>Ausgabe der L&auml;nge eines Vektors PQ<br> mit Text <nobr>&quot;|PQ| =&quot;</nobr>
+<pre><b>text{ ttf &quot;ARIAL.TTF&quot;
+  concat( &quot;|PQ| = &quot;,str(vlength( Q-P),3,4) ),0.1,0
+  scale 0.35 rotate&lt;20,-40,0&gt;
+  translate M_PQ+&lt; 0.4,0.0,0&gt;
+  pigment{color rgb+&lt;1.0,0.0,0.25&gt}  no_shadow }</b></pre>
+
+        <b>3. Ausgabe von Vektoren:</b>
+        <br>
+        Hierzu verwendet man die Funktion <b><nobr>vstr(N,V,S,L,P)</nobr></b>.
+        Verwandelt einen Vektor V zu einer formatierten Zeichenkette (string).
+        Der Parameter S gibt das zur Trennung verwendete Zeichen an,
+       N gibt die Dimension (zwischen 2 bis 5) des Vektors V an. L und P werden wie bei str(A) verwendet.
+        <br><br>
+        Beispiel: <br>Koordinaten der Mitte M_PQ von PQ
+<pre><b>#declare M_PQ = (P + Q)/2;
+text{ ttf &quot;ARIAL.TTF&quot;
+concat(&quot;M(PQ) = (&quot;,vstr(3,(P+Q)/2,&quot;/&quot;,0,1),&quot;)&quot;),0.1,0
+  scale 0.35 rotate&lt;20,-40,0&gt;
+  translate M_PQ+&lt; 0.2,0.4,0&gt;
+  pigment{color rgb+&lt;0.5,0.0,1.0&gt}  no_shadow }
+</b></pre>
+        <br>
+
+         Einige f&uuml;r Berechnungen besonders geeignete Befehle: <br>
+         vlength (V), die L&auml;nge eines Vektors<br>
+         vdot (V1, V2), das Skalarprodukt zweier Vektoren,  <br>
+         vcross (V1, V2), das Kreuz- od. Vektorprodukt zweier Vektoren,<br>
+         VAngleD (V1, V2), der Winkel zwischen zwei Vektoren in Grad, <br>
+         oder etwa  pi  &nbsp;  als vordefinierte Konstante.<br>
+        Vgl. hierzu:<br>
+         &quot;<b><a href="a_geo70d.htm">Tabellarische &Uuml;bersicht</a></b>&quot; und <br>
+         &quot;<b><a href="a_geo80d.htm">Vektorrechnung mit POV-Ray</a></b>&quot;<br>
+
+
+ </td></h5>
+ <td valign="top">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_im30_1.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="a_geo_calc01t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+    <h5 align="center"><b>Beschriften und Ausgabe von Berechnungen.</b> <br>
+    Klicken Sie hier f&uuml;r die vollst&auml;ndige Beschreibung<br> dieser Szene f&uuml;r <nobr>POV-Ray:</nobr><br>
+    <a href="a_geo_calc01.txt">&quot;.txt&quot;-Datei</a> oder
+    <a href="a_geo_calc01.pov">&quot;.pov&quot;-Datei</a>
+<br>
+<br>
+<br>
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_im30_2.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="a_geo_calc02t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+    <h5 align="center"><b>Beschriften und Ausgabe von Berechnungen.</b> <br>
+     Klicken Sie hier f&uuml;r die vollst&auml;ndige Beschreibung<br> dieser Szene f&uuml;r <nobr>POV-Ray:</nobr><br>
+    <a href="a_geo_calc02.txt">&quot;.txt&quot;-Datei</a> oder
+    <a href="a_geo_calc02.pov">&quot;.pov&quot;-Datei</a>
+
+</td>
+</tr>
+
+
+</table>
+</div>
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</body>
+</html>

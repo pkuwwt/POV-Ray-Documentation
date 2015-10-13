@@ -1,0 +1,594 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes950e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes950e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes950f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes950f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes950d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes950d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;<br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp;&nbsp; Indice<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+<nobr><a href="shapes200i.htm">Oggetti con macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+<a href="shapes000i.htm">Altri Oggetti</b></a><br>
+<a href="shapes666i.htm">Oggetti Non-CSG</b></a><br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<br>
+<a href="shapes900i.htm">Isosurfaces</b></a><br>
+<nobr>&nbsp; -  <a href="shapes910i.htm">con Superfici di base</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes920i.htm">con Funzione seno</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes930i.htm">con Funzioni Built-in</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes940i.htm">con Funzione Helix</b></a></nobr><br>
+<nobr>&nbsp; -&gt;<!--a href="shapes950i.htm"--><b>con Funzioni di Motivi</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+ &nbsp; &nbsp; &nbsp; &nbsp;<b>isosurface{ ... } </b> - con funzioni di motivi. <b>Esempi:</b><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">Built-in shape</font></font>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0300.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+  <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function{  f_checker( x*1.2,y*1.19,z*1.2)*0.08
+          }
+  contained_by{box{&lt;-2,-3,-2&gt;,&lt;2,3,2&gt;}}
+  threshold 0.05
+  max_gradient 200
+
+  texture{
+    pigment{ color rgb&lt;1,1,1&gt;*1.2}
+            finish { phong 1 }
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.35
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0305.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+  <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function{ f_rounded_box(x,y,z,0.25,1,1,1)
+           -f_leopard(x*11,y*11,z*11)*0.25
+   }
+  threshold 0
+  max_gradient 3.0
+  accuracy 0.0001
+  contained_by {box { -1.35, 1.35 }}
+
+  texture{
+    pigment{ color rgb&lt;0.75,1.0,0.0&gt;}
+    finish { diffuse 0.75 specular 0.3
+             phong 0.3 reflection 0.07}
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.85
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0310.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+  <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function {  f_rounded_box(x,y,z,0.3,1.5,1.5,1.5)
+             -f_leopard(x*6,y*6,z*6)*0.5
+   }
+  threshold 0
+  max_gradient 2.449
+  accuracy 0.0001
+  contained_by {box { -2 , 2 }}
+
+  texture {
+    pigment{ color rgb&lt;1,0.75,0&gt;}
+    finish { diffuse 0.75  specular 0.4
+             phong 0.3 reflection 0.1}
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.55
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0315.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+  <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function { f_rounded_box(x,y,z,0.3,1.9,0.9,0.9)
+            -f_marble(x*3,y*2,z*2)*0.15
+            -f_bumps(x*3,y*2,z*3)*0.75
+  }
+  accuracy 0.003
+  max_gradient 5
+  contained_by{box{ -3.5, 3.5 }}
+
+  texture{
+    pigment{ color rgb&lt;0.85,0.15,0.23&gt;}
+    finish { phong 0.4 reflection 0.2}
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.7
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0320.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+  <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function{ f_rounded_box( x, y, z,
+                  0.3,  // radius of curvature
+                  0.8,0.8,0.8) // scale&lt;x,y,z&gt;
+           -f_crackle(x/0.4,y/0.4,z/0.4)*0.2
+   }
+  threshold 0
+  max_gradient 3.2
+  accuracy 0.0001
+  contained_by{box{ -1.5, 1.5 }}
+
+  texture{
+    pigment{ color rgb&lt;1.0,0.9,0.7&gt;}
+    normal { bumps 0.5 scale 0.05}
+    finish { diffuse 0.75 specular 0.2
+             phong 0.3}
+  } // end of texture
+  scale &lt;1,1,1&gt;*1
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0325.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+  <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function{  f_rounded_box( x*0.7, y, z,
+                  0.3, // radius of curvature
+                  0.8,0.8,0.8)// scale&lt;x,y,z&gt;
+            -f_crackle(x*3,y*5,z*3)*0.85
+   }
+  threshold 0
+  max_gradient 3.2
+  accuracy 0.0001
+  contained_by{box{ -1.5, 1.5 }}
+
+  texture{
+    pigment{ color rgb&lt;1.0,0.75,0.5&gt;}
+            normal { bumps 0.5 scale 0.015}
+            finish { phong 0.3}
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.8
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,1,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0330.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+  <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function { f_rounded_box( x, y, z,
+                  0.3, //  radius of curvature
+                  1.4,0.9,0.9) // scale &lt;x,y,z&gt;
+            -f_agate(x/2,y/4,z/4)*0.35
+   }
+  threshold 0
+  max_gradient 3.2
+  accuracy 0.0001
+  contained_by{ box{&lt;-2,-1,-1>*1.2,&lt;2,1,1&gt;*1.5}}
+
+  texture{ pigment{ color rgb&lt;1,0.75,0.55&gt;*0.7}
+            normal { bumps 0.5 scale 0.05}
+            finish { phong 0.3}
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.7
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0335.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function { f_rounded_box( x, y, z,
+                           0.3, // radius of curvature
+                           0.7,0.7,0.7)// scale &lt;x,y,z&gt;
+            -f_agate( x, y, z)*0.5
+
+          }
+  threshold 0
+  max_gradient 3.2
+ contained_by{ box{-1.2,1.2}}
+
+  texture{ pigment{ color rgb&lt;0.85,0.65,0.55&gt;*0.8}
+           finish { phong 0.3 }
+  } // end of texture
+  scale &lt;1,1,1&gt;*1.0
+  rotate &lt;0, 0, 0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0340.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function { f_noise3d( x*2, y*2, z*2)-0.3
+           }
+  accuracy 0.002
+  max_gradient 4
+  contained_by{box{-2,2} }
+
+  texture{ pigment{ color rgb&lt;1,0.6,0.1&gt;}
+           finish { phong 1 reflection 0.2 }
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.65
+  rotate &lt;90,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+
+
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0345.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>#declare FBozo =  // -------------------------
+ function{ pigment{ bozo scale 0.5
+                    color_map{ [0 rgb 0]
+                               [0.2 rgb 0.4]
+                               [1 rgb 1]
+                             }
+                  }// end of pigment
+          } // end of function "FBozo" -------
+
+isosurface { //-------------------------------
+  function  {
+    FBozo(2*x,2*y,2*z).gray -0.5
+  }
+  accuracy 0.0001
+  max_gradient 5
+  contained_by { box { -1.2, 1.2 } }
+
+  texture{
+    pigment{ color rgb&lt;1,0.3,0.3&gt;}
+    finish {  phong 1}
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.8
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0350.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function{  sqrt( x*x + y*y+ z*z) - 0.5
+            - f_noise3d( x*2, y*2, z*2 )*1.90
+          }
+  accuracy 0.002
+  max_gradient 5
+  contained_by { box { -2.5, 2.5 } }
+
+  texture{
+    pigment{ color rgb&lt;1,0.4,0.0&gt;}
+    finish { phong 1 reflection 0.1 }
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.75
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0355.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function {  sqrt(  0.5*x*x + y*y + z*z) - 0.85
+  - f_noise3d( x*12, y*12, z*12 )
+  }
+  accuracy 0.002
+  max_gradient 4
+  contained_by { box { -2.5, 2.5 } }
+
+  texture{
+    pigment{ color rgb&lt;0.45,0.9,0.1&gt;}
+    finish { phong 1 reflection 0.1 }
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.75
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0360.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>isosurface{ //-------------------------
+  function { f_sphere(x, y, z, 2.2)
+   - ( -f_snoise3d(x*2, y*2, z*2)*0.75 )
+  }
+  contained_by { sphere {&lt;0,0,0&gt;, -3.3 } }
+  accuracy 0.003
+  max_gradient 5
+
+  texture{
+    pigment{ color rgb&lt;0.4,0.3,0.25&gt;}
+    finish { phong 1  }
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.6
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0365.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>#declare fn_Pigm=function {
+    pigment {
+      agate
+      color_map {
+        [0 color rgb 0]
+        [1 color rgb 1]
+      }
+    }
+  } // end of function fn_Pigm
+
+isosurface {
+  function{
+   f_sphere(x, y, z, 2.3)
+   -fn_Pigm(x/2, y/2, z/2).gray*0.65
+  }
+  contained_by { sphere {&lt;0,0,0&gt;, -3.3 } }
+  accuracy 0.003
+  max_gradient 5
+
+  texture{
+    pigment{ color rgb&lt;0.8,0.65,0.45&gt;}
+    finish { phong 1  }
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.5
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/iso_0370.jpg" border="0" width="240"  height="180"
+                   alt="isosurface" title="isosurface"></a></td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>#declare Flower=function { //--------------------------
+   pigment {
+      wood
+      scale 0.5
+      turbulence 0.3
+      octaves 7
+      lambda 0.5
+      omega 0.5
+      color_map {
+          [0, rgb 0]
+          [1, rgb 1]
+       }
+    }
+ } // end of function "Flower(x,y,z)"-------------------
+
+isosurface { //-----------------------------------------
+    function{
+       f_sphere(x*0.75,y,z,1)-(Flower(x,y,z).hf)*0.5
+     }
+    contained_by {sphere {0,2.5}}
+    max_gradient 8.607
+
+  texture{
+    pigment{ color rgb&lt;0.85,1,0&gt;}
+    finish { specular 0.1 roughness 0.5
+             phong 0.5 reflection 0.2 }
+  } // end of texture
+  scale &lt;1,1,1&gt;*0.85
+  rotate &lt;0,0,0&gt;
+  translate &lt;0,0,0&gt;
+} // end of isosurface ----------------</b></td></pre></tr></table>
+</td></tr>
+
+</table>
+
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

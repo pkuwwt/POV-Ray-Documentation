@@ -1,0 +1,189 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafic, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes604e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes604e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes604f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes604f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes604d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes604d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp;Indice  <br>
+&nbsp;<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+<nobr><a href="shapes200i.htm">Forme con macros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+
+<br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+&nbsp; -  <a href="shapes601i.htm">text</b></a><br>
+&nbsp; -  <a href="shapes602i.htm">Bevelled_Text</b></a><br>
+&nbsp; -  <a href="shapes603i.htm">Circle_Text</b></a><br>
+&nbsp; -  <a href="shapes605i.htm">Circle_Text_Valigned</b></a><br>
+&nbsp; -&gt;<!--a href="shapes604i.htm"--><b>Unicode text</b></a><br>
+&nbsp; -  <a href="shapes608i.htm">Unicode Asia</b></a><br>
+<br>
+<a href="shapes000i.htm">Altre Oggetti</b></a><br>
+<a href="shapes666i.htm">Forme Non-CSG</b></a><br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900i.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center" width="95%"><tr><td>
+<table width="95%" align="center"  cellspacing="10"><tr><td>
+<h2><nobr>I caratteri nazionali e l'Unicode</nobr></h2>
+<p align="justify"><font size="-1">I caratteri nazionali normalemente installate (&quot;fonts&quot;)
+                   hanno pi&ugrave; di segni che l'ASCII-code di base.
+                   Un problema si pone con i caratteri nazionali perch&eacute; POV-Ray
+                   non posso lavorare con pi&ugrave; che l'ASCII code di base.</font><br>
+Per fare POV-Ray funzionare anche con i caratteri nazionali nei oggetti di &quot;text&quot;
+dobbiamo usare il comando:<br>
+<b>global_settings { charset utf8 }</b><br>
+
+</td>
+<td valign="top"><img src="im/unicode0s.jpg" border="1" width="160" height="120"
+                   alt="text with unicode" title="text with unicode">
+</td></tr></table>
+<h3 align=justify></h3>
+
+<p align="justify">
+<br>
+<hr>
+<table align="center" border="0" bordercolor="#c0c0c0" cellpadding="0" width="90%" cellspacing="10">
+<tr><td>
+ <h4><b>Oggetti di testo unicode<br>  con i caratteri nazionali</b></h4><br>
+  Unicode con i numeri dei caratteri <b>decimale</b>:
+ <table align="center" border="2" bgcolor="#EFEFEF"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080"
+            cellspacing="1" cellpadding="4">
+ <tr><td valign="middle">
+ <pre><b>global_settings { charset utf8 }
+text{
+  ttf "arial.ttf",
+  concat(
+  chr(196),chr(203),chr(214),chr(220),
+  " ",chr(8364)), 0.01, 0
+  pigment{color rgb&lt;0.5,0,0&gt;}
+  scale 0.4 translate&lt;-0.5,0.5,0&gt; }</td></pre></b>
+</tr>
+</table><br>
+Alternativo con i numeri dei caratteri <b>esadecimale</b><br>
+ (&quot;hex&quot;, &quot;hexdecimal&quot;):
+ <table align="center" border="2" bgcolor="#EFEFEF"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080"
+            cellspacing="1" cellpadding="4">
+ <tr><td valign="middle">
+ <pre><b>global_settings { charset utf8 }
+text{
+  ttf "arial.ttf",
+  "\u00C4\u00CB\u00D6\u00DC \u20AC",
+  0.01, 0
+  pigment{color rgb&lt;0.5,0,0&gt;}
+  scale 0.4 translate&lt;-0.5,0.5,0&gt; }   </td></pre></b>
+</tr>
+</table><br>
+
+</td>
+<td>
+<table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+
+              <img src="im/unicode1.jpg" border="0" width="250" height="200"
+                   alt="unicode sample" title="unicode sample"> </td></tr></table>
+
+<h5 align="center">Descrizione della scena per <nobr>POV-Ray:</nobr><br>
+    <a href="pov/unicode_west.txt">unicode_west.txt</a> o
+    <a href="pov/unicode_west.pov">unicode_west.pov</a></h5>
+
+</td></tr>
+</table>
+
+<table align="center" border="0" bordercolor="#c0c0c0" cellpadding="0" width="90%">
+<tr><td>
+ <h4><b></b></h4>
+<table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/unicodelist.jpg" border="0" width="600" height="900"
+             alt="unicode" title="unicode""></td></tr></table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

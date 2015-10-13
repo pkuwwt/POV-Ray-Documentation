@@ -1,0 +1,198 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="fr">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="eau r&eacute;aliste, , raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, infographie 3D, computer graphics">
+<meta name="Description" content="Comment cr&eacute;er de l'eau r&eacute;aliste avec POV-Ray">
+
+<title>Eau r&eacute;aliste avec POV-Ray - part 5</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <td align="right"><nobr>
+ <a href="p_wat5.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_wat5.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_wat5d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_wat5d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_wat5i.htm"><font size="2">Italiano</font></a>
+ <a href="p_wat5i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr> - <a href="p_wat1f.htm"><font size="+1">Eau r&eacute;aliste</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_wat1f.htm">opaque r&eacute;fl&eacute;chissante</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat2f.htm">la mer agit&eacute;e</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat3f.htm">transparence partielle</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat4f.htm">Un tourbillon</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_wat5f.htm"--><b>Un verre d'eau</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat6f.htm">L'eau par l'isosurface</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat7f.htm">L'eau de mer isosurface</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h1 align="center">Eau r&eacute;aliste avec POV-Ray</h1>
+<p align="center"><b>part
+<a href="p_wat1f.htm"> 1</a> | <a href="p_wat2f.htm"> 2</a> | <a href="p_wat3f.htm"> 3</a> |
+<a href="p_wat4f.htm"> 4</a> | <!--a href="p_wat5f.htm"--></b> 5</a><b> | <a href="p_wat6f.htm"> 6</a>  |
+<a href="p_wat7f.htm"> 7</a></b></p>
+
+<div align="center">
+<table border="0" width="90%" align="center" cellpadding="4">
+<tr><td valign="top">
+    <p align="justify"><font size="+1"><b>L'eau dans un verre</b></font><br>
+    <font size="-1">Pour simuler l'eau dans un verre, nous avons besoins d'un
+                    mati&egrave;re transparent avec un index de r&eacute;fraction ior = 1.33.</font><br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>material{
+  texture{
+    pigment{ rgbf&lt;.93,.95,.98,0.825&gt;*0.99}
+    finish { ambient 0.0 diffuse 0.15
+             reflection{0.1,0.1 fresnel_on}
+             specular 0.6 roughness 0.005
+             conserve_energy
+           } // end finish
+  } // end of texture
+
+  interior{ ior 1.33
+             fade_power 1001
+             fade_distance 0.5
+             fade_color &lt;0.8,0.8,0.8&gt;
+             caustics 0.16
+   } // end of interior
+ } // end of material
+//-----------------------------------------</b></td></pre></tr></table>
+</td>
+<td>
+ <br>
+<table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/Waterglass_001.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Water in a Glass" title="Water in a Glass"></a></td></tr>
+        </table><font size="-1"><b>Un mati&egrave;re transparent pour l'eau.</b></font>
+     </td>
+</tr>
+<tr><td>
+    <font size="-1">Pour recevoir cette forme avec une cot&eacute; sup&eacute;rieur onduleux, nous faisons
+     une 'intersection' de cette forme avec cette forme un peu plus large e un peu plus profond
+     avec ce mati&egrave;re avec un 'normal' come suivante dans la texture:</font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>     normal{ ripples 1.15
+             scale 0.0125
+             turbulence 0.3
+             translate&lt;-0.05,0,0&gt;
+             rotate&lt;0,-20,0&gt;
+           } // end normal
+//-----------------------------------------</b></td></pre></tr></table><br>
+<br>
+<br>
+<br>
+<br>
+</td>
+<td><table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/Waterglass_002.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Water in a Glass" title="Water in a Glass"></a></td></tr>
+        </table><font size="-1"><b>Un mati&egrave;re transparent pour l'eau avec une cot&eacute; sup&eacute;rieur onduleux.</b></font>
+     </td>
+</tr>
+<tr>
+ <td valign="top"><font size="-1">
+     Tous que nous devons faire maintenant : <br>
+      &nbsp; Ajuter un verre simple !<br>
+     ( Mati&egrave;re de verre a un IOR plus grand (~1.5) e une couleur un peu differente ).<br>
+     <br>
+     Pour plus des d&eacute;tails voir le fichier de la sc&egrave;ne suivante.</font><br>
+
+     <font size="+1"><b>L'eau dans un verre :</b></font><br>
+     <font size="-1"><b>Description de cette sc&egrave;ne pour POV-Ray <br>
+      &nbsp; &nbsp; &nbsp;   <a href="povw/Waterglass_01c.pov">Waterglass_01c.pov</a></b></font>
+ </td>
+ <td><table border="3" bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/Waterglass_01.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Water in a Glass" title="Water in a Glass"></a></td></tr>
+        </table><font size="-1"><b>L'eau dans un verre.</b></font>
+<br>
+
+<p align="right"><b>part
+<a href="p_wat1f.htm"> 1</a> | <a href="p_wat2f.htm"> 2</a> | <a href="p_wat3f.htm"> 3</a> |
+<a href="p_wat4f.htm"> 4</a> | <!--a href="p_wat5f.htm"--></b> 5</a><b> | <a href="p_wat6f.htm"> 6</a>  |
+<a href="p_wat7f.htm"> 7</a></b></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

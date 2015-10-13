@@ -1,0 +1,44 @@
+//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------- textures
+#declare Railing_Texture = 
+           texture { pigment { color rgb<0.40,0.25,0.15>*1.2 }
+                     normal  { bumps 0.5 scale <0.015,0.015,0.015>}
+                     finish  { phong 0.5 reflection 0.00 }
+                   } // end of texture
+ 
+#declare Brick_Scale     = <0.09,0.061,0.061>; 
+#declare Brick_Translate = <0.0, 0.035,-0.0>;
+#declare Brick_Intensity = 0.20; 
+//------------------------------------------------------------- textures
+#declare Step_Texture =  // sandstone
+         texture { pigment{ color rgb< 0.90, 0.78, 0.60>}
+                   normal { pigment_pattern{ brick 
+                                             color rgb 0.2, 
+                                             color rgb 0.8 
+                                             scale Brick_Scale 
+                                             translate Brick_Translate
+                                             rotate<0,0,0>} Brick_Intensity}
+                   finish { diffuse 0.9 phong 0.1}
+                 } // end of texture 
+//---------------------------------------------------------------------------------------
+#include "Stair_C.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Stair_C(  2.00, // Stair___H, // stair total height
+                  4.00, // Stair___X, // length of stair in x direction    
+                  0.175,// Step___H_, // ca. single step height - adapted to fit the height                           
+                  1.50, // Step___Z, // width  of a step in z direction
+                  1, // Banisters_On 1=right; 2 = left; 3= both ; 0= off;
+                  0.05, // Railing___R, // radius of railing linear tubes
+                  0.03, // Railing___Rv // radius of vertical tubes 
+                  0.75, // Railing___H, // railing heigth 
+                  Railing_Texture, // 
+                  Step_Texture   // 
+                ) //-------------------------------------------------------------------//
+        scale <1,1,1>*1
+
+        rotate<0,-60,0> 
+        translate<-0.25,0.00, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+
+

@@ -1,0 +1,230 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Ma&szlig;stabgetreues Modellieren mit POV-Ray - Pl&auml;ne auf karierten Hintergrund anpassen</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Ma&szlig;stabgetreues Modellieren mit POV-Ray">
+<meta name="keywords" content="Ma&szlig;stabgetreues Modellieren, Beispiele zu POV-Ray, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=685,height=380");
+ New.focus();  }
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=1065,height=570");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Ma&szlig;stabsgerechtes Modellieren mit POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="s_mod_300e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="s_mod_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="s_mod_300i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="s_mod_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="s_mod_300f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="s_mod_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="s_mod_000d.htm">Ma&szlig;stabsgerechtes </b></a><br>
+ &nbsp; <a href="s_mod_000d.htm">Modellieren mit POV-Ray</b></a><br>
+<br>
+ &nbsp; - <a href="s_mod_100d.htm">Karierter Hintergrund</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_100d.htm">in m und cm</b></a><br>
+ &nbsp; - <a href="s_mod_150d.htm">Orthographische Ansicht</b></a><br>
+ &nbsp;<b>&gt;</b>&nbsp;<!--a href="s_mod_300d.htm"--><b>Pl&auml;ne auf karierten</b></a><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="s_mod_300d.htm"--><b>Hintergrund anpassen</b></a><br>
+
+ &nbsp; -  <a href="s_mod_500d.htm">Rendering von</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="s_mod_500d.htm">Mehrfachansichten</b></a><br>
+<br>
+<br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<font size="+2"><b>Pl&auml;ne auf karierten Hintergrund anpassen</b></font><br><br>
+
+<table >
+<tr>
+ <td valign="top"><b>Wie man eine Planzeichnung an eine Rasterfl&auml;che in POV-Ray anpasst</b><br>
+  <font size="-1">Zum genauen Arbeiten verwenden wir eine <b>'orthographic' Kamera</b>, welche vertical
+   auf die Ebene der Planzeichnung blickt.
+   Wir verwenden einen <b>karierter Hintergrund</b> mit der Rasterweite von 1 m bzw. 0,1 m.<br>
+   (Makro 'Raster_Plate', siehe: <a href="s_mod_100d.htm" target="_new">Karierten Hintergrund</a>)<br>
+   Vor diesen Hintergrund plazieren wir eine d&uuml;nne 'box' mit einer Texture aus
+   einer <b>'image_map'</b> der <b>transparenten Planzeichnung</b> (gif oder png, non-interlaced!).<br>
+   Diese 'box' muss <b>ensprechend dem originalen Seitenverh&auml;ltnis (aspect ratio) des Planes skaliert</b> werden.<br>
+<br>
+   <b>Gr&ouml;&szlig;e der Planzeichnung vor dem karierten Hintergrund:</b><br>
+   <b>1. Methode:</b> Wir verwenden ein Bild des Planes, welches genau auf die L&auml;nge und H&ouml;he des Objektes zugeschnitten ist.
+   Dann m&uuml;ssen wir lediglich die 'box' des Planes auf die L&auml;nge oder H&ouml;he des originalen Objektes vergr&ouml;&szlig;ern.<br>
+   <b>2. Methode:</b> Wir kennen die wirkliche L&auml;nge eines Details aus dem Plan.
+   Wir f&uuml;gen vor der Planzeichnung einen Zylinder dieser L&auml;nge in die Szene ein.
+   Dann vergr&ouml;&szlig;ern wir den Plan soweit bis das Detail im Plan sich mit diesem Zylinder deckt. <br>
+  </font><br>
+<b>Beispiel:</b><br>
+<font size="-1"><b>
+&nbsp; plan image name: E63_Plan_Side1_255.gif,<br>
+&nbsp; plan image size: 640 x 320 pixel,<br>
+&nbsp; background palette number: 255<br>
+&nbsp; original object lenght: 10.26 meter.</b></font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-------------------------------------------//
+#declare Base_Texture =
+  texture{ pigment{ color rgb&lt;1,1,1&gt;*1.2 }}
+//--------------------------------------------
+object{ Raster_Plate(
+   1.0,   0.010, // 1st distance/width,
+   0.1,   0.080, // 2nd distance/width,
+   Base_Texture, // non= pigment{Clear}
+   0.6, // Intensity, // Line gray intensity
+   &lt;-5.13,-0.05,-0.0>, &lt;5.13,0,5.10>, //box
+  ) //----------------------------------------
+ rotate&lt;-90,0,0&gt;
+ translate&lt;0,0.001,0&gt;
+} //------------------------------------------
+
+//#declare Plan_Front =
+box{ &lt;0,0,0&gt;,&lt;1,1,0.00001&gt;
+   texture{
+    pigment{
+     // image on xy plane (aspect ratio 1:1)
+     // from &lt;0,0,0&gt; to &lt;1,1,0&gt;
+     image_map{ gif &quot;E63_Plan_Side1_255.gif&quot;
+     map_type 0 // 0=planar
+     interpolate 2 // 0=none, 1=linear,
+      // 2=bilinear, 4=normalized distance
+     once //
+  // For transpartent palette images:
+  // (&lt;=256 colors)
+  //    gif version 87a, non interlaced,
+  // or png palette, non interlaced.
+     transmit 255, 1 // Palette, Amount
+    } // end of image_map
+   } // end of pigment
+  } // end of texture
+scale&lt;1,320/640,1&gt; // original aspect ratio
+translate&lt;-0.5,0,0&gt;// centered in x
+
+//  Adjusting to raster size  -----------------
+//original loco length:
+scale 10.26 // in meter
+translate&lt;0,0.00,-0.01&gt;  // in front!
+no_shadow
+
+} // end box with image_map
+//------------------------------------------//</td></b></pre></tr></table>
+
+ </td>
+ <td align="center" valign="top">
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/show_plan_gif_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/E63_Plan_Side1_255s.jpg" border="0" width="320" height="160"
+                   alt="The Plan" title="The Plan"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Die Planzeichnung</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Plan_Loco_how_001c.jpg" border="0" width="320" height="240"
+                   alt="Adapting the plan" title="Adapting the plan"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Anpassung des Planes</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage2('im/show_plan_adapted_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Plan_Loco_001n.jpg" border="0" width="320" height="160"
+                   alt="Plan adapted" title="Plan adapted"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Der angepasste Plan</b></a></font>
+<br>
+<br>
+<font size="-1"><b>Diese Szene in POV-Ray: <a href="pov/Plan_Loco_001.pov">Plan_Loco_001.pov</a><br>
+Ben&ouml;tigtes gif-Bild: <a href="im/E63_Plan_Side1_255.gif">E63_Plan_Side1_255.gif</a><b></font><br>
+
+<font size="-2">(Man speichere des Bild entweder in dasselbe Verzeichnis wie die Szenendatei<br>
+ oder in das POV-Ray Include-Dateien-Verzeichnis)</font>
+<br>
+<br>
+<br>
+
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/E63_Plan_Axes_000_1m.jpg" border="0" width="320" height="160"
+                   alt="Continue with the construction" title="Continue with the construction"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Fortsetzung der Konstruktion</b></font>
+
+
+</tr>
+</table>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

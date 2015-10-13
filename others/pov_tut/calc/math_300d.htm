@@ -1,0 +1,218 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="keywords" content="raytracer, PoV, POV-Ray, povray, Koordinatensysteme, Koordinatenachsen, 3D-Grafik">
+<meta name="Description" content="Konstruktion von Koordinatensystemen mit Achsen mit POV-Ray">
+<title>Fence</title>
+<link rel="stylesheet" href="../lo1style.css">
+
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=695,height=550");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#CC6633" vlink="#993300" alink="#6666CC" background="backgrnd.gif">
+
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_300e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="math_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="math_300i.htm"><font size="2">Italiano</font></a>
+        <a href="math_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_300f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="math_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000d.htm"><nobr>Koordinatensysteme</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000d.htm"><nobr>und 2D-Funktionen</nobr></b></a><br>
+<br>
+&nbsp; - <a href="math_100d.htm">Karopapier</b></a><br>
+&nbsp; - <a href="math_200d.htm">Koordinatensysteme</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200d.htm">mit Achsen</b></a><br>
+<nobr>&nbsp; <b>&gt;</b>  <!--a href="math_300d.htm"--><b>Makro f&uuml;r Raster</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="math_300d.htm"--><b>mit 2 Niveaus</b></a><br>
+&nbsp; -  <a href="math_500d.htm">2D-Funktionen</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500d.htm">Beispiele</b></a><br>
+<nobr>&nbsp; -  <a href="math_600d.htm">Mathematische Funktionen</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600d.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<!--- end of header -->
+<a name="top"></a>
+<table align="center">
+<tr>
+ <td nowrap colspan="2">
+ <font size="6">Raster mit 2 Niveaus<br></font><br>
+ Die Konstruktion eines Koordinatennetzes mit Unterteilung<br>
+ <font size="-1">(i.e. 1m and 0.1m)</font>
+  mittels &uuml;berlagerten Raster-Texturen.<br>
+  <font size="-1">Objekte:&nbsp;&nbsp;&nbsp; &quot;plane, cylinder, cone&quot;.<br>
+       Methoden: &quot;color_map, layered textures, #macro&quot;</font>
+ </div>
+ </td>
+ <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </td>
+</tr>
+<tr>
+<td>
+<br>
+<b>Die Konstruktion im Detail:</b><br>
+<font size="-1">Wir verwenden zuerst ein Makro zur Erzeugung von Streifen in einem vorgegebenen Abstand in eine Richtung.<br>
+   In einem zweiten Makro dies zweimal mit dem ersten Abstand zu einer 'box' (z.B. mit 1 Einheit Abstand)
+   dabei drehen wir eine davon um 90&deg; um die y-Achse.
+   Dann f&uuml;gen wir ein zweites, feineres Koordinatennetz (z.B. mit 0.1 Einheiten Abstand) auf dieselbe Weise hinzu.  </font>
+<br>
+<br>
+
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//------------------------------------- ////////////
+#macro Raster_Lines (RScale, LineW, Intensity_)
+ pigment{ gradient x scale RScale
+          color_map{
+           [0.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [1.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           } // end color_map
+         } // end pigment
+ #end// of Raster(RScale, HLine)-macro
+//------------------------------------- ////////////
+//------------------------------------- ////////////
+#macro Raster_Plate(
+    RD1, Width1,//primary raster distance/width,
+    RD2, Width2,//secondary raster distance/width,
+    Base_Texture, //  non = pigment { Clear }
+    Intensity, // Line gray intensity
+    Start_Box, End_Box, // vectors
+  ) //------------------------------------------
+//----------------------------------------------
+box{ Start_Box,End_Box
+     texture{ Base_Texture }
+  #if (RD1 &gt; 0 ) // raster big  RD1, Width1,
+    texture { Raster_Lines(RD1,Width1,Intensity) }
+    texture { Raster_Lines(RD1,Width1,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+  #if (RD2 &gt; 0 ) // raster small RD2, Width2,
+    texture { Raster_Lines(RD2,Width2,Intensity) }
+    texture { Raster_Lines(RD2,Width2,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+} // end box -----------------------------------
+#end // ------------------------------ end of macro
+//------------------------------------- ////////////
+
+// How to use:  ------------------------------------
+#declare B_Tex =
+  texture{ pigment{ color rgb&lt;1,1,1&lt;*1.2}}
+//--------------------------------------------------
+object{ Raster_Plate(
+    1.0, 0.010,// RD1, Width1,// 1st distance/width,
+    0.1, 0.045,// RD2, Width2,// 2nd distance/width,
+    B_Tex, // Base_Texture, // non = pigment{Clear}
+    0.6, // Intensity, // Line gray intensity
+    &lt;-2,-0.05,-2&gt;, &lt;2,0,2&gt;, //Start/End
+  ) //----------------------------------------------
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.001,0&gt;
+} //------------------------------------------------</td></b></pre></tr></table>
+</td>
+<td>
+ <br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_2level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_2ct.jpg" border="0" width="320"  height="240"
+     alt="Raster mit 2 Niveaus" title="Raster mit 2 Niveaus"></a></td>
+  </tr>
+ </table><font size="-1"><b>Raster mit 2 Niveaus.<br>
+Diese Szene in POV-Ray: </b><a href="pov/raster_plate_2.pov">raster_plate_2.pov</a></font>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_3level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_3ct.jpg" border="0" width="320"  height="240"
+     alt="Grid with 2 Levels" title="Grid with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Raster mit 2 Niveaus und Grundniveau.<br>
+ <br>
+<br>
+<br>
+<br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_4level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_4ct.jpg" border="0" width="320"  height="240"
+     alt="Grids with 2 Levels" title="Grids with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Raster 3D mit 2 Niveaus.<br>
+Diese Szene in POV-Ray: </b><a href="pov/raster_plate_4.pov">raster_plate_4.pov</a></font>
+</td>
+</tr>
+</table>
+</center>
+<br>
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

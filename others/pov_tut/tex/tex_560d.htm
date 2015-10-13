@@ -1,0 +1,347 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - Muster mit object pattern (1)</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_560e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_560e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_560i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_560i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_560f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_560f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001d.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_110d.htm">Farben Do-it-Yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>-->
+ &nbsp; &nbsp;<a href="tex_700d.htm">Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp;&nbsp;Regul&auml;re Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500d.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_560d.htm"--><b>object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561d.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562d.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570d.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580d.htm">pavement</b></a><br>
+ &nbsp; &nbsp;&nbsp;Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp;&nbsp;Patterns mit pigment</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650d.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651d.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660d.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750d.htm">Regul&auml;re Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>  -->
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+
+
+<table><tr>
+  <td>
+  <font size="5">&nbsp; <b>Object Pattern (1)</b></font>
+  </td>
+</tr></table>
+
+<table>
+ <tr>
+  <td valign="top">
+<b>Syntax:</b><br>
+    <table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+<pre><font color="#100000"><b>object{
+  OBJECT_IDENTIFIER | OBJECT {}
+  LIST_Outside, LIST_Inside
+  }</b></font></td></pre>
+  </tr>
+  </table>
+ </td>
+ <td valign="top"><font size="1"><b>Diese Muster (pattern) kann nicht color_map, wave types oder slope_map verwenden.</b></font>
+<br><font size="2">
+     <b>OBJECT</b> = Ein <b>'solid object'</b>*) <b>ohne Textur</b>.<br>
+<font size="1">      &nbsp; *) K&ouml;rper mit klar definiertem Innen und Aussen!</font><br>
+     Die folgende Liste enth&auml;lt das, was das Muster kontrolliert.<br>
+     Dieses kann sein: colors, pigments, textures, normals, etc. ...<br>
+     <b>LIST_Outside</b> = zugeordnet zu den Punkten innerhalb des <b>OBJECT</b>s.<br>
+     <b>LIST_Inside</b>  = zugeordnet zu den Punkten au&szlig;erhalb des <b>OBJECT</b>s.<br>
+    </font>
+ </td>
+ </tr>
+</table>
+<table>
+ <tr>
+  <td valign="top">
+<font size="2"><i><b>Beispiel 1:</b></i> Object pattern angewandt auf Farben</font>
+ <table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>// object for object pattern
+#declare Pattern_Object_1=
+union{
+  object{
+   Round_Box(&lt;-10,-.5,-3&gt;,&lt;0,1.3,-.5&gt;,.4,0)}
+  object{
+   Round_Box(&lt;-10,-.5,.5&gt;,&lt;0,1.3,3.0&gt;,.4,0)}
+} // end of union
+//-------------------------------------------
+#declare Object_Pigment_1 =
+pigment{
+  <font color="#800000">object{
+      Pattern_Object_1
+      color rgb&lt;1,0.65,0.2&gt; // outside
+      color rgb&lt;0.6,0.00,0&gt;  // inside
+    }// object</font>
+} // end pigment
+//-------------------------------------------
+#declare Body_Texture =
+   texture{ pigment{ Object_Pigment_1 }
+            finish { phong 1 }
+          } // end of texture
+//-------------------------------------------
+#declare D = 0.00001;
+#declare W = 0.75;// width
+#declare Sz = 3; // z scale
+#declare H  = 3; // height
+union{ // Body
+  object{ Round_Box(&lt;-3,0,-W&gt;,&lt;0,H,W&gt;,W-D,0)
+          matrix&lt;1, 0, 0, // shear_y_to_x
+                 -0.5, 1, 0,
+                    0, 0, 1,
+                    0, 0, 0&gt;} //
+  object{ Round_Box(&lt;-5,0,-W&gt;,&lt;0,H,W&gt;,W-D,0)
+          translate&lt;-2,0,0&gt;} //
+  scale&lt;1,1,Sz&gt;
+  texture{ Body_Texture }
+} //-----------------------------------------</b></td></pre>
+  </tr>
+  </table>
+</td>
+<td>
+<div align="center">
+<br>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Object_Pattern_101.jpg" border="0" width="320"  height="240"
+       alt="Object for Object Pattern" title="Object for Object Pattern"></a>
+      </td></tr></table>
+<font size="2">Man entscheide, welcher Teil des Raumes mit der Inside-Farbe<br>
+ gef&uuml;llt werden soll und pr&uuml;fe, ob das Muster-Objekt<br>
+ die K&ouml;rperoberfl&auml;che an den richtigen Stellen trifft.</b><br>
+</font>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Object_Pattern_100.jpg" border="0" width="320"  height="240"
+       alt="Object Pattern" title="Object Pattern"></a>
+      </td></tr></table>
+<font size="2">Das 'object pattern' angewand auf den K&ouml;rper.</b><br>
+       POV-Ray Szenendatei: <a href="pov/Object_Pattern_100.pov">Object_Pattern_100.pov</a>
+<br>
+</font>
+</div>
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"><hr>
+</td>
+</tr>
+
+<tr>
+<td>
+<font size="2"><i><b>Beispiel 2:</b></i>Das Object-Pattern mit 3 Farben</font>
+ <table align="center" border="1" cellspacing="1" cellpadding="4">
+ <tr><td bgcolor="#f8f8f0">
+<pre><b>//-------------------------------------------
+#declare Body_Texture_1 =
+   texture{ pigment{ Object_Pigment_1 }
+            finish { phong 1 }
+          }
+//-------------------------------------------
+// another object for an object pattern
+#declare Pattern_Object_2=
+  box{&lt;-10,2.25,-3&gt;,&lt;0,3,3&gt;}
+//-------------------------------------------
+#declare Object_Pigment_2 =
+pigment{
+   object {
+    Pattern_Object_2
+    color rgbf&lt;1,1,1,1&gt; // outside
+    color rgb&lt;1,1,1&gt;*0.05// inside
+   }// object
+  } // end pigment
+//-------------------------------------------
+#declare Body_Texture_2 =
+   texture{ pigment{ Object_Pigment_2 }
+            finish { phong 1 }
+          }
+//-------------------------------------------
+// layered texture:
+#declare Body_Texture =
+ texture{ Body_Texture_1 }
+ texture{ Body_Texture_2 }
+//-------------------------------------------</b></td></pre>
+  </tr>
+  </table>
+</td>
+<td valign="top">
+<div align="center">
+<br>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Object_Pattern_150.jpg" border="0" width="320"  height="240"
+       alt="Object Pattern 3 colors" title="Object Pattern 3 colors"></a>
+      </td></tr></table>
+  <font size="2">'object pattern' mit 3 Farben</b><br>
+       POV-Ray Szenendatei: <a href="pov/Object_Pattern_150.pov">Object_Pattern_150.pov</a>
+  </font>
+</div>
+</td>
+</tr>
+
+<tr>
+<td colspan="2"><hr>
+</td>
+</tr>
+
+<tr>
+<td>
+<font size="2"><i><b>Beispiel 3:</b></i>'Object pattern' f&uuml;r pigment und normal </font>
+ <table align="center" border="1" cellspacing="1" cellpadding="4">
+ <tr><td bgcolor="#f8f8f0">
+<pre><b>//-------------------------------------------
+#declare Object_Normal_1 =
+normal{
+   object {
+    Pattern_Object_1
+    normal{ agate 2 scale 0.15  } // outside
+    normal{ bumps 0.35 scale 0.15} // inside
+   }// object
+  } // end normal
+//-------------------------------------------
+//-------------------------------------------
+#declare Body_Texture =
+   texture{ pigment{ Object_Pigment_1 }
+            normal { Object_Normal_1 }
+            finish { phong 1 }
+          }
+//-------------------------------------------</b></td></pre>
+  </tr>
+  </table>
+</td>
+<td valign="top">
+<div align="center">
+<br>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Object_Pattern_200.jpg" border="0" width="320"  height="240"
+       alt="Object for Object Pattern" title="Object for Object Pattern"></a>
+      </td></tr></table>
+  <font size="2">Das 'object pattern' angewandt auf 'pigment' und 'normal'</b><br>
+       POV-Ray Szenendatei: <a href="pov/Object_Pattern_200.pov">Object_Pattern_100.pov</a>
+  </font>
+</div>
+</td>
+</tr>
+</table>
+
+</td></tr></table><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

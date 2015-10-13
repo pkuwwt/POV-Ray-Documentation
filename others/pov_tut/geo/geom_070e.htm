@@ -1,0 +1,216 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Pythagorean Theorem, Geometric Basics for Raytracing with POV-Ray">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, povray tutorial, 3D grafic, geometric basics for raytracing, Pythagorean Theorem">
+<title>Geometric Basics for Raytracing - Geometry with POV-Ray - Pythagorean Theorem</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Elementary Geometry</b></font>
+      <font size="-1"> for Raytracing</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_070i.htm"><font size="2">Italiano </font></a>
+        <a href="geom_070i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_070f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="geom_070f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_070d.htm"><font size="2">Deutsch </font></a>
+        <a href="geom_070d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="geom_000e.htm">Geometrical Basics</b></a><br>
+ &nbsp; &nbsp; <a href="geom_000e.htm">for Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050e.htm">Right-angled Triangle</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_070e.htm"--><b>Pythagorean Theorem</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080e.htm">Trigonometry Basics</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090e.htm">Law of cosines</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100e.htm">Equilateral Triangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150e.htm">Regular Polygon</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200e.htm"--><i>Polyhedron</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200e.htm">Tetrahedron</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250e.htm">Octahedron</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300e.htm">Cube &amp; Cuboid</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500e.htm">Dodecahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700e.htm">Icosahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260e.htm">Cuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270e.htm">Truncated Octahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280e.htm">Rhombicuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800e.htm">Truncated Icosahedron</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_c000e.htm"--><i>Circles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100e.htm">Tangent circles</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200e.htm">Internal Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300e.htm">External Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+ <table width="100%" border="0" cellpadding="0" cellspacing="2">
+ <tr>
+ <td><h2><b>The Pythagorean Theorem</b>
+ <font size="-1">Some useful geometrical properties of right-angled triangles.</font><br>
+
+ <font size="-2">Note: In POV-Ray we use &quot;sqrt(X)&quot; for the square root of X
+ and we use &quot;X*X&quot; or &quot;pow(X,2)&quot; for X<sup>2</sup>.</font><br></td></h2>
+ </tr>
+ </table>
+
+ </td>
+</tr>
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+<table border="1" cellpadding="5" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td>
+ <nobr><font size="-1">In a <b>right-angled triangle</b> with the <b>hypotenuse c</b>,</nobr><br>
+ and the <b>catheti</b> <b>a and b</b>,<br>
+ the <b>Pythagorean theoreme</b> says:</font><br>
+ &nbsp; &nbsp; <font size="+3"><b>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></b></font><br>
+<font size="-2">[In any right triangle, the area of the square whose side is the hypotenuse
+(the side opposite the right angle) is equal to the sum of the areas of
+the squares whose sides are the two legs (the two sides that meet at a right angle).]</font>
+</td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top"> <font size="-1">
+ Calculations of the sides:</font><br>
+ &nbsp;<br>
+ &nbsp;<img src="im/sqrt_c.gif " width="140" height="25"> <br>
+ &nbsp;&nbsp;<b> c =  sqrt( a*a + b*b ) ;</b> or   <br>
+ &nbsp;&nbsp; c =  sqrt( pow( a , 2) + pow( b , 2 ) ) .</b><br>
+ &nbsp;<br>
+ &nbsp;<img src="im/sqrt_a.gif " width="140" height="25"> <br>
+ &nbsp;&nbsp;<b> a =  sqrt( c*c - b*b ) ;</b>  <br>
+ &nbsp;<br>
+ &nbsp;<img src="im/sqrt_b.gif " width="140" height="25"> <br>
+ &nbsp;&nbsp;<b> b =  sqrt( c*c - a*a ) ;</b>   <br>
+ &nbsp;<br>
+  </td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top"> <font size="-1">
+ The <b>catheti</b> a and b of <b>right-angled triangle</b>:<br>
+<font size="+3">&nbsp;<b> a<sup>2</sup> = p*c</b></font> &nbsp; or <br>
+<font size="+3">&nbsp;<b> b<sup>2</sup> = q*c</b></font>
+<br>
+  </td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top"> <font size="-1">
+ The <b>height</b> h<sub>c</sub> of <b>right-angled triangle</b>:<br>
+<font size="+3">&nbsp;<b> h<sup>2</sup> = p * q </b></font>
+  </td>
+ </tr>
+</table>
+
+</div>
+</td>
+
+<td width="50%">
+  <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Pythagoras_400a.jpg" width="400" height="400" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"> &nbsp; &nbsp; The Theorem of Pythagoras at a right-angled triangle</font>
+  <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Euklid_H_4.jpg" width="400" height="265" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">&nbsp; &nbsp; &nbsp;  h<sup>2</sup> = p * q</font>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Pythagoras_144_25.gif" width="256" height="256" border="0" hspace="5" vspace="5"></a></td>
+    </tr></table><font size="-1"> &nbsp; a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup> &nbsp;
+                                   and a<sup>2</sup> = p*c &nbsp; or &nbsp; b<sup>2</sup> = q*c</font>
+</td>
+<td width="50%" valign="top">
+  <table border="1" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Euklid_Hs_4_160.gif" width="256" height="256" border="0" hspace="5" vspace="5"></a></td>
+    </tr></table><font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp;  h<sup>2</sup> = p * q</font>
+
+
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- global-->
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td>
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="Schleifen und POV-Ray - For-Schleife und While-Schleife - Vergleich">
+<meta name="keywords" content="Raytracing, POV, POVRAY, POV-Ray 3.6, 3.7, Rendern, 3D-Graphik, Computergraphik, Grafik, Tutorial, Anleitung, Beschreibungen, Schleifen, For-Schleife und While-Schleife - Vergleich">
+<title>Schleifen und POV-Ray - For-Schleife und While-Schleife - Vergleich</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                 <nobr> von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>&Uuml;ber Schleifen mit POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+
+ <td align="right">
+        <a href="povlup7e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povlup7e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povlup7i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="povlup7i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povlup7f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="povlup7f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0d.htm"><font size="3"><nobr>Schleifen mit POV-Ray</nobr></font></b></a><br>
+<b>&gt;</b>1.  <!--a href="povlup7d.htm"--><b>For + While</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <!--a href="povlup7d.htm"--><b>Vergleich</b></a><br>
+ &nbsp; 2.  <a href="povlup1d.htm">Lineare</b></a><br>
+ &nbsp; &nbsp; &nbsp;<a href="povlup1d.htm">Transformationen</b></a><br>
+ &nbsp; 3.  <a href="povlup2d.htm">Zirkul&auml;re</b></a><br>
+ &nbsp; &nbsp; &nbsp;<a href="povlup2d.htm">Transformationen</b></a><br>
+ &nbsp; 4.  <a href="povlup3d.htm">M&ouml;bius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4d.htm">Schrauben</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup4d.htm">&amp; Spiralen</b></a><br>
+ &nbsp; 6.  <a href="povlup5d.htm">Verdrehte</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5d.htm">Spiralen</b></a><br>
+ &nbsp; 7.  <a href="povlup6d.htm">Schnecken</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6d.htm">&amp; Ammoniten</b></a><br>
+ &nbsp; 8.  <a href="povlup9d.htm">Sph&auml;rische Spiralen1</b></a><br>
+ &nbsp; 9.  <a href="povlup10d.htm">Sph&auml;rische Spiralen2</b></a><br>
+ &nbsp;10.  <a href="povlup8d.htm">Fibonacci Spiralen</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwng.htm">Download</b></a><br>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<a name="start"></a>
+<h2 align="center">For-Schleife und While-Schleife - Vergleich</h2>
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="5" width="95%">
+<tr>
+ <td colspan="2">
+  <p align="justify">Die <b>For-Schleife</b> ist bei <nobr><font color="#9F0000">POV-Ray 3.7</font></nobr>
+  neu implementiert  <font size="2">(seit beta 37)</font>.<br>
+   <font size="2">(Achtung: Die For-Schleife geht nicht mit version 3.6.2 !)</font><br>
+  Hier ein Vergleich dieser &auml;hnlichen Arten von Schleifen:
+  <table border="0" cellpadding="5" cellspacing="5" width="95%"><!--sub table-->
+  <tr>
+  <td colspan="1" width="36">
+  <img src="im/warn.gif" border="0" width="32" height="30">
+  </td>
+  <td colspan="1">
+  <p align="justify"><font size="-2"><b>Um eine Kollision mit fest vordefinierten Bezeichnern und<br>
+  in POV-Ray reservierten W&ouml;rter zu vermeiden,<br>
+  wird dringend empfohlen, als Bezeichner f&uuml;r Variable und Objekte,<br>
+  welche vom Benutzer definiert werden,<br>
+  nur W&ouml;rter zu verwenden, die mit Gro&szlig;buchstaben beginnen.</b><br>
+  D.h. da <b>x = &lt;1,0,0&gt;</b> ein reserviertes W&ouml;rt ist,<br>
+   verwende man statt dessen z.B. &quot;X&quot;.</font>
+  </p>
+  </td>
+  </tr></table> <!--sub table-->
+  </p>
+</td>
+</tr>
+
+<tr>
+ <td valign="top">
+  <p align="justify"><b>Syntax 'While-Schleife' <font size="-1">(while loop)</font>:</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#local Identifier = Start;
+#while (Identifier &lt;= End)
+  //... do something
+  // depending on value of Identifier.
+  #local Identifier = Identifier + Step;
+#end // ------------- end of loop ----</b></td></pre></p>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <p align="justify"><b>Syntax 'For-Schleife' <font size="-1">(for loop)</font>:</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#for (Identifier, Start, End [, Step])
+  //... do something
+  // depending on value of Identifier.
+#end // ------------- end of loop ----</b></td></pre></p>
+</tr>
+</table>
+<font size="-1">Anmerkung: Step (Schrittweite) ist optional! (default Step=1)</font><br>
+ </td>
+</tr>
+
+<tr>
+ <td valign="top">
+  <p align="justify"><b>Beispiel 'While-Schleife':</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>union{ //-------------------------------
+ #local Cntr = 0; // start
+ // while loop
+ #while ( Cntr &lt;= 5 )
+
+   object{ MyObject
+           translate&lt;0,0,Cntr*2&gt;
+         } // end of object
+
+ #local Cntr = Cntr + 1; // next
+ #end // --------<b></b> end of #while loop
+
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0,0&gt;
+} // end of union ----------------------</b></td></pre></p>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <p align="justify"><b>Beispiel 'For-Schleife':</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>union{ //-----------------------------
+
+//<font size="-1">#for (Identifier, Start, End [, Step])</font>
+ #for (Cntr, 0, 5, 1)
+
+   object{ MyObject
+           translate&lt;0,0, Cntr*2 &gt;
+         } // end of object
+
+ #end // ----------- end of #for loop
+
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0,0&gt;
+} // end of union --------------------</b></td></pre></p>
+ </td>
+</tr>
+</table>
+<font size="-2">Anmerkung: 5 Schritte = 6 Fu&szlig;abdr&uuml;cke! </font>
+ </td>
+</tr>
+
+<tr>
+ <td colspan="2"><font size="-2"><i>Zur Deklaration von 'MyObject' siehe Szenedatei! </i></font>
+<br><h5 align="center">
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/for_loop_linear_.jpg" width="320" height="240"></td>
+       </tr></table>
+
+    Szenedatei f&uuml;r <nobr>POV-Ray:</nobr> <a href="pov/for_loop_linear_0.pov">.pov</a> oder:
+    <a href="pov/for_loop_linear_0.txt">.txt</a><br>
+</h5>
+<br>
+ </td>
+</tr>
+<tr>
+ <td colspan="2" valign="top">
+ Die <b>Schrittweite</b> ('step') kann jeder beliebige reelle Zahlenwert sein!<br>
+ Auch negative Werte sind erlaubt.<br>
+ Die obigen Schleifen k&ouml;nnen auch in folgender Art ausgef&uuml;hrt werden:</td></tr>
+<tr>
+ <td colspan="1" valign="top"><font size="-1"><i>While-Schleife:</i></font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+ <pre><b> #local Cntr = 0; // start
+ #while ( Cntr &lt;= 10 )
+   object{ MyObject
+           translate&lt;0,0, Cntr &gt;
+         } // end of object
+ #local Cntr = Cntr + 2; // next
+ #end // --------<b></b> end of #while loop</b></td></pre></p>
+ </td>
+</tr>
+</table>
+
+ </td>
+ <td colspan="1" valign="top"><font size="-1"><i>For-Schleife:</i></font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b> #for (Cntr, 0, 10, 2)//<font size="-1">..,Start,End,Step</font>
+   object{ MyObject
+           translate&lt;0,0, Cntr &gt;
+         } // end of object
+ #end // ----------- end of #for loop</b></td></pre></p>
+ </td>
+</tr>
+</table>
+
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+<hr>
+ <img src="im/warn.gif" border="0" width="32" height="30"> <b>Warnung: &nbsp; </b><br>
+  <font size="+1"><b>Endlos-Schleifen zu vermeiden ist in der Verantwortung des Benutzers!</b></font><br>
+  Man vergewissere sich, dass die Schleife auch wirklich nach einer endlichen Anzahl von Schritten stoppt!
+  Andernfalls startet POV-Ray das Parsen einer endlosen Schleife und f&uuml;llt das RAM endlos mit sinnlosen Daten!<br>
+  Siehe folgendes Beispiel einer Schleife, die kein Ende findet<br>
+  <font size="-1">(wenigstens solange niemand auf den roten 'Stop'-Knopf dr&uuml;ckt!)</font>:
+ </td>
+</tr>
+<tr>
+ <td colspan="1"><font size="-1">Eine While-Schleife mit falscher Schrittweite:</font>
+ <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#local Cntr = 0;  // start
+#local End  = 5;  // end
+#local Step =<u><font color="#F00000"> - </font></u>1; // step <font color="#F00000">!!falsch!!</font>
+ // while loop start
+ #while ( Cntr &lt;= End )
+   object{ MyObject
+           translate&lt;0,0,Cntr*2&gt;}
+ #local Cntr = Cntr + Step; // next
+ #end // -------- end of while loop
+</b></td></pre></p>
+ </td>
+</tr>
+</table><font size="-2">Diese While-Schleife endet nie!</font>
+</td>
+ <td colspan="1">
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+<font size="-1">Mit einer For-Schleife ist dies nicht so dramatisch:</font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b> #for (Cntr, 0, 5, -1)
+    // do something
+ #end // ------ end of #for loop</b></td></pre></p>
+ </td>
+</tr>
+</table><font size="-2">Dies 'Nonsense-For-Schleife' verursacht lediglich Nichtstun!</font>
+
+
+ </td>
+</tr>
+</table>
+</div>
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0d.htm">Inhalt</a> |
+     <!--a href="povlup7d.htm"-->For u. While</a> |
+     <a href="povlup1d.htm">Linear</a> |
+     <a href="povlup2d.htm">Zirkular</a> |
+     <a href="povlup3d.htm">M&ouml;bius</a> |
+     <a href="povlup4d.htm">Spiralen</a> |
+     <a href="povlup5d.htm">Verdrillt</a> |
+     <a href="povlup6d.htm">Schnecken</a> |
+     <a href="povlup9d.htm">Sph&auml;risch1</a> |
+     <a href="povlup10d.htm">Sph&auml;risch2</a> |
+     <a href="povlup8d.htm">Fibonacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+  <td  align="right">&nbsp;</td>
+ <td align="right"  width="25%">&nbsp;</tr></table><!-- end footer -->
+</body>
+</html>

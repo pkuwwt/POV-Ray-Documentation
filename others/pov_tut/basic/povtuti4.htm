@@ -1,0 +1,215 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, povray, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, descrizione raytracing, tutorial POV-Ray, descrizione di scene di POV-Ray, grafica 3d">
+<meta name="description" content="POV-Ray corso per principianti - un introduzione alla lingua descrittiva di scene, tutoriale">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>The scene file header - include files, camera, light_source, POV-Ray corso parte 4</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030"
+      link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+  <h6><nobr>Introduzione al linguaggio di descrizione di scene del raytracer POV-Ray</nobr>
+    <nobr> &nbsp; &nbsp; &nbsp; &nbsp; pagina 4</nobr><br>
+    di Friedrich A. Lohm&uuml;ller </td></h6>
+ <td align="right">
+        <a href="povtuto4.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povtuto4.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtutf4.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povtutf4.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs4.htm"><font size="2">Deutsch</font></a>
+        <a href="povkurs4.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br></font>
+ &nbsp;<br>
+
+ &nbsp;&nbsp; <a href="povtuti0.htm">Introduzione a POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp; <a href="povtuti0.htm">Indice del contenuto</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtuti1.htm">Usare POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtuti2.htm">Principi fondamentali</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comme descrivere una scena?</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtuti2.htm#xyzKoordinaten">Coordinate 3D</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtuti2.htm#ZahlenundVektoren">Numeri e vettori</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtuti3.htm">Struttura di Scena</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Esempio di Base.</b></a></nobr><br>
+ <b>&gt;4.</b> <!--a href="povtuti4.htm"--><b>Scene file header:</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; #include files</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtuti5.htm">Oggetti geometrici di base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; et altri oggetti</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtuti6.htm">Trasformazioni</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; scala, rotazione, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translazione e altri.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union, </nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtuti7.htm">Colori e superfici</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtuti8.htm">#declare, #local, #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  Variabili e oggetti flessibili</b>.</a></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtuti9.htm">#while</b></a> - loops, cicli.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Esempi di Base.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutia.htm">#include</b></a>, include files.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Oggetti riutilizzabili.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutib.htm">Efficienza</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; velocit&agrave;, flessibilit&agrave;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; lavorare con moduli.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.1 a 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutia.htm#version37">POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/inserti_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwni.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" align="center" width="90%"><tr><td>
+<p align="justify">
+<font size="+2"><b><a name="includefiles">#include</a></b></font>   - i include file nel parte di testo (&quot;header&quot;)
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#include &quot;colors.inc&quot;
+#include &quot;textures.inc&quot;
+#include &quot;shapes.inc&quot; </b></td></pre></tr></table>
+Se abbiamo inserito la linea:  <b>#include "colors.inc"</b> possiamo usare circa 100 espressioni inglesi
+differenti di colore come &quot;pigment {color YellowGreen}&quot;.
+<br>
+In queste files testo ci sono definizioni prefabbricate come le espressioni di colore (#include &quot;colors.inc&quot;)
+ed alcune espressioni di struttura (#include &quot;textures.inc&quot; o &quot;glass.inc&quot; ecc.) e le figure degli oggetti
+geometrici speciali (#include &quot;shapes.inc&quot; ecc.). Tali includono le files che potete anche generare da lei
+(salvai queste files di testo con un nome che finisce di tipo &quot;.inc&quot;).
+Sono solo semplicemente parte di ASCII-text e saranno inseriti nella vostra descrizione di scena quando
+il POV-Ray sta a parsing (traducendo le parole chiavi nelle equazioni matematiche) il file di scena per
+la rappresentazione esso. <br>
+<font size="-1">&Egrave; molto raccomandato agli utenti avanzati per prendere uno sguardo in queste file
+per vedere come &egrave; fatto questo!
+Ma fa attenzione: non cambi mai nulla dei questi include file n&eacute; aggiungono qualcosa a loro:
+Se cos&igrave; le files di scena de altre gente possono fallire con queste include files cambiate!
+<br>Come fare il vostri propri include file per accesso veloce ai vostri propri oggetti e strutture &egrave; descritto
+nel capitolo VII -> vedi <a href="povtutia.htm">#include</a>.</font>
+</p>
+
+<hr>
+<font size="+2"><a name="camera"><b>camera</b></a></font> - La macchina fotografica,
+  <br> questa &egrave; la definizione del punto di vista del visore e dove sta guardando.<br>
+
+<table align="center" border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>camera { location&lt;0,1,-3&gt; // posiziona la macchina fotografica
+         look_at &lt;0,1,0&gt; // dove guardare, centro visivo
+         right x*image_width/image_height  // aspect ratio
+         angle 75 // l'angolo della camera
+       } </b></td></pre></tr></table>
+<font size="-2">( aspect ratio = il rapporto d'aspetto! )</font><br>
+
+<font size="-1"><b>Definizioni di parecchie macchine fotografiche per cambiare la posizione veloce e comodo<br>
+possiamo definire nel modo seguente:</b></font><br>
+<table align="center" border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#declare Cam1 = camera { location&lt;0,1,-3&gt;
+                         right x*image_width/image_height
+                         look_at &lt;0,1,0&gt;}
+#declare Cam2 = camera { ultra_wide_angle angle 180 &nbsp;
+                         location&lt;2,4,-2&gt;
+                         right x*image_width/image_height
+                         look_at &lt;0,1,0&gt;} //etc.,
+camera{Cam1} // per cambiare la macchina fotografica veloce
+             // bisogno solo cambiare qui "il 1" "in 2"!      </b></td></pre></tr></table>
+
+</td></tr></table>
+<table border="0" align="center" width="90%"><tr><td>
+<p align="justify"><br>
+Descrizioni pi&ugrave; dettagliate dei tipi di 'camera' e pi&ugrave; dettagli sopra la 'camera' si trovano qui:
+<a href="../camera_light/camlit_i1.htm" target="_new">Camera, Sorgenti di Luce et Dettagli</b></a><br>
+
+<img src="im/warn.gif" border="0" width="32" height="30">
+<b> Attenzione: </b>Per mantenere la pista pi&ugrave; facile anche nelle scene complesse:<br>
+<b>La macchina fotografica dovrebbe guardare sempre dal senso negativo di z su il centro del mondo <0,0,0>.</b>
+<font size="-1">Soltanto se vediamo costantemente di questa direzione espressioni come &quot;nella parte anteriore di&quot;, &quot;indietro di&quot;,
+&quot;sopra/sotto&quot; e &quot;a sinistra di / a destra di&quot; avr&agrave; un senso inequivocabile per l'orientamento nel Cyberspace!</font><br>
+</p>
+
+<hr width="100%">
+<font size="+2"><a name="light_source"><b>light_source</b></a></font> -  La sorgente di luce  -  il sole ed altre luci<br>
+<p align="justify">
+L'pi&ugrave; importante ed inoltre genere pi&ugrave; facile di fonte di luce &egrave; una luce del punto. Per questo tipo dovete aggiungere
+soltanto le coordinate della posizione ed il colore della luce:<br>
+<table align="center" border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>light_source{ &lt;1000,1000,-1500&gt; color White}</b></td></pre></tr></table>
+Altri tipi di sorgenti di luce sono per esempio la luce del punto e la luce di zona (produce le ombre molli).<br>
+Descrizioni pi&ugrave; dettagliate dei tipi di 'light_source' e pi&ugrave; dettagli sopra le sorgenti di luce si trovano qui:
+<a href="../camera_light/camlit_i1.htm" target="_new">Camera, Sorgenti di Luce et Dettagli</b></a><br>
+
+<font size="-1">&Egrave; possibile installare in una scena un numero quasi infinito di fonti di luce, ma il tempo per renderizzare &egrave;
+proporzionale al numero delle fonti di luce! E... renderizzare le scene sopra molti giorni e notti non &egrave; un successo grande
+dell'autore di questa scena!</font>
+</p>
+</td>
+</tr>
+</table></div>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtuti0.htm">parte 0</a> |
+<a href="povtuti1.htm">parte 1</a>  | <a href="povtuti2.htm">parte 2</a> |
+<a href="povtuti3.htm">parte 3</a>  | <!--a href="povtuti4.htm"-->parte 4</a> |
+<a href="povtuti5.htm">parte 5</a>  | <a href="povtuti6.htm">parte 6</a>  |
+<a href="povtuti7.htm">parte 7</a>  | <a href="povtuti8.htm">parte 8</a> |
+<a href="povtuti9.htm">parte 9</a>  | <a href="povtutia.htm">parte 10</a> |
+                                      <a href="povtutib.htm">parte 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>3D Stereo Images and 3D Stereo Animations with POV-Ray - Stereo Images in Cross-Eye View</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="3D Stereo Images and 3D Stereo Animations with POV-Ray - Stereo Images in Cross-Eye View">
+<meta name="keywords" content="Cross-Eye View, 3D Stereo Images, 3D Stereo Animation, POV, POVRAY, POV-Ray, Raytracing, 3d graphic, 3d animations">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Stereo Images and Stereo Animations <nobr>with POV-Ray</nobr></b></font>
+ </td></h6>
+ <td align="right">
+        <a href="stereo_050d.htm"><font size="2">Deutsch </font></a>
+        <a href="stereo_050d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a><br>
+        <a href="stereo_050i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_050i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_050f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="stereo_050f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<font size="+1"> &nbsp;       <a href="stereo_000e.htm">Stereo Images</font> and</b></a><br>
+<font size="+1"> &nbsp;       <a href="stereo_000e.htm">Stereo Animations</b></a></font><br>
+ &nbsp;&nbsp;&nbsp; <a href="stereo_000e.htm">Index</b></a><br>
+<br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_050e.htm"--><b>Cross-Eye View</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100e.htm">Stereo Image simple</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150e.htm">Stereo Image advanced</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200e.htm">Combining Image Pairs</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300e.htm">Stereo Animations 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310e.htm">Stereo Animations 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400e.htm">Examples Stereo Ani</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="95%" align="center">
+  <tr><td colspan="2" valign="top"><!-- global table-->
+<b><font size="5">Cross-Eye View</font><br>
+<font size="2">Viewing stereo images without additional helps, even when wearing glasses.</b></font>
+<hr>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<font size="2">How to view the stereoscopic effect<br>
+in image pairs for cross-eye view :</font><br>
+<font size="1">For this it's important to not tilt the head and to look vertically to the screen.<br>
+</font><br>
+<table border="0" width="256" align="center">
+<tr>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_1.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_2.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+<font size="2">The images here above represent an cross-eye image pair.<br>
+We put a finger right between these two images and our eyes.<br>
+While <b>focusing the tip of our finger</b> we can notice that, in the background, <b>the <br>
+&quot;+&quot; is moving inside the &quot;o&quot;</b>.<br>
+We will perceive three images like the images below. (with 4 image we overdo!)<br>
+We have to <b>concentrate</b> our attention <b>on the middle</b> and<br>
+ignore the other blured images right and left of the center.<br>
+</font></td>
+</tr>
+<tr>
+<td colspan="2">
+
+<table border="0" width="256" align="center">
+<tr>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_1_blur.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_0.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_2_blur.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+<font size="2">We can use our <b>flat hands as blinders</b> to blend out the iritating goast images<br>
+ right and left of the center.</font>
+<br>
+</td>
+</tr>
+</table>
+<table border="0" width="256" align="center">
+<tr>
+
+<td valign="top" colspan="3">
+<br>
+<font size="2">Now we should be able to see the spatial depth in this image:</font><br>
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Acer_Leaf_04a_Combine_.jpg" border="0" width="512"  height="256"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="POV-Ray Anleitungen - Pflanzen mit POV-Ray">
+<meta name="keywords" content=" Raytracing, POV, POVRAY, POV-Ray 3.6, Rendern, 3D-Graphik, Computergraphik, Grafik, Tutorial, Anleitung, Beschreibungen, Beispiele, Pflanzen mit POV-Ray">
+<title>Pflanzen mit POV-Ray - B&auml;ume mit Arbaro</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top">
+     <font size="1"><nobr>POV-Ray Raytracer</nobr> <nobr>Beschreibungen und Beispiele</nobr>
+                    <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font><a name="top"></a>
+ <hr size="3">
+   <div align="center">
+      <font size="5">&nbsp; &nbsp;Pflanzen mit POV-Ray</font>
+   </div>
+ </td>
+ <td align="right">
+        <a href="plants_500e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="plants_500e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="plants_500i.htm"><font size="2">Italiano</font></a>
+        <a href="plants_500i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="plants_500f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="plants_500f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr> -  <a href="plants_00d.htm"><font size="+1">Pflanzen mit POV-Ray</font></b></a></nobr><br>
+<!--&nbsp;&nbsp; -  <a href="plants_200d.htm">Fibonacci + Random</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_300d.htm">Gras-Makros</b></a><br-->
+&nbsp;&nbsp; -  <a href="plants_400d.htm">B&auml;ume mit POV-Tree</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_410d.htm">POV-Tree Baum-Beispiele</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_420d.htm">Texturen f&uuml;r POV-Tree</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="plants_500d.htm"--><b>B&auml;ume mit Arbaro</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_510d.htm">Arbaro Baum-Beispiele</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_520d.htm">Texturen f&uuml;r Arbaro</b></a><br>
+<!--&nbsp;&nbsp; -  <a href="plants_600e.htm">Leaves + Flowers</b></a><br-->
+<br>
+&nbsp;&nbsp; -  <a href="plants_050d.htm">Andere Planzenbeispiele</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../objects/obj_400d.htm">Fertig-Objekte Pflanzen</b></a><br>
+&nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="arbaro/im/sassafras_000s.jpg" width="80" height="80" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="5"><nobr>&nbsp;B&auml;ume mit Arbaro </font> &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="2">
+   <p align="justify"><b>Arbaro</b> ist ein frei erh&auml;ltlicher Baum-Generator geschrieben in Java.<br>
+   <font size="-1">Authoren: Moritz Moeller, Wolfram Diestel (admin).</font><br>
+   <b><i>Exportformate:</i></b> Die B&auml;umne k&ouml;nnen als POV-Ray Include-Dateien
+   <font size="-1">(mesh2 oder POV-Ray primitives)</font>,
+    AutoCAD .dxf-Dateien oder Wavefront .obj-Dateien exportiert werden.<br>
+   Die Baumparameter werden in einer (lesbaren) .xml-Datei gespeichert.<br>
+   Das Programmpaket enth&auml;lt 16 verschieden Beispiele von B&auml;umen (auch einige grasartige Objekte).<br>
+   <b><i>Qualit&auml;t</i></b> Arbaro-B&auml;ume sind gut als Hintergrundb&auml;ume, nicht sehr detailiert, daher weniger geeignet f&uuml;r Nahaufnahmen.
+   Mesh-Dateien f&uuml;r B&auml;ume k&ouml;nnen leicht mal Gr&ouml;&szlig;en von 10 bis 20 MB oder mehr erreichen -
+   daher ben&ouml;tigt man etwas Geduld, wenn man diese Dateien in einen Editor laden m&ouml;chte.<br>
+
+   <b><i>Wo erh&auml;ltlich:</i></b>  <a href="http://sourceforge.net/projects/arbaro/">Arbaro Sourceforge project page</a>.<br>
+   Arbaro l&auml;uft mit Java version 1.4.2 oder neuer.<br>
+   &nbsp; <font size="-1">(Zu Java siehe <a href="http://java.com/en/download/manual.jsp">Sun Microsystems</a>.
+   Linux: es scheint nicht unter GNU Java zu laufen.)</font>
+   <br>
+   <b><i>Installation und Verwendung:</i></b><br>
+   Downloaden Sie die ensprechende Datei (hier: arbaro_1_9_8.zip) von der 'project page' und entzippen Sie diese in ein Verzeichnis Ihrer Wahl.<br>
+   <i>Windows:</i> Doppelklick auf die Datei 'arbaro.jar' startet das Programm.<br>
+   <i>Linux:</i> Kommandozeile vom entpackten Arbaro-Verzeichnis: java -jar arbaro_gui.jar<br>
+   <b>Arbaro Startfenster:</b>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="arbaro/im/Arbaro_01.jpg" width="650" height="522" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+ <b>&Ouml;ffnen eines Beispiel-Baumes:</b>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="arbaro/im/Arbaro_02.jpg" width="510" height="354" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+ <b>Beispiel-Baum &quot;quaking_aspen.xml&quot;</b>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="arbaro/im/Arbaro_03.jpg" width="650" height="435" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <div align="center">
+        <font size="-1"><i>'quaking_aspen' (Zitterpappel)</i></font></div>
+ <br><br>
+
+ Wie erh&auml;lt man die Baum-Includedatei f&uuml;r POV-Ray und ein Vorschau-Rendern:<br>
+
+ <b>Setzen der Pfadnamen f&uuml;r Rendern:</b>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="arbaro/im/Arbaro_04.jpg" width="624" height="297" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+
+ <b>Erzeugen und Exportieren eines Baumes:</b>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="arbaro/im/Arbaro_05.jpg" width="620" height="321" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <div align="center">
+     <font size="-1"><i>Optionale Exportformate:</i> POV-Ray primitives, AutoCAD .dxf, Wavefront .obj.</font></div>
+<br>
+Nun sollte POV-Ray starten und eine Vorschau rendern. <br>
+   <div align="center">
+   <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="arbaro/im_orig/quaking_aspen.jpg" width="400" height="600" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+     <font size="-1">Vorschau von <b>quaking_aspen</b></font></div>
+<br>
+
+Im entsprechenden Verzeichnis sollten nun folgende Dateien abgespeichert sein:<br>
+ &quot;<b>quaking_aspen.pov</b>&quot; - die POV-Ray-Szenendatei f&uuml;r die Vorschau in +w400 +h0600,<br>
+ &nbsp;&nbsp;&nbsp;  <b>Anmerkung:</b>
+  <font size="-1"> Lassen Sie die POV-Ray-Szenendatei <nobr>&quot;quaking_aspen.pov&quot;</nobr>
+                nicht mit einen anderen Seitenverh&auml;ltnis als 400x600 rendern<br>
+  &nbsp;&nbsp;&nbsp; (z.B. mit der Befehlzeile: <b>+w400 +h0600</b> ),
+                      denn <b>diese Datei erh&auml;lt leider nicht<br>
+ &nbsp;&nbsp;&nbsp; die korrekten Seitenverh&auml;ltnisse (aspect ratio), <br>
+  &nbsp;&nbsp;&nbsp;  d.h. bei andern Seitenverh&auml;ltnisse wird alles verzerrt dargestellt!</b></font><br>
+ &quot;<b>quaking_aspen.png</b>&quot; - das Vorschau-Bild.<br>
+ &quot;<b>quaking_aspen.inc</b>&quot; - die Daten f&uuml;r das 'mesh' des Baums. <br>
+ &nbsp;&nbsp;&nbsp; <font size="-1"> Diese Datei deklariert:</font><br>
+ &nbsp;&nbsp;&nbsp;  <b>quaking_aspen_13_height</b> - die H&ouml;he des Baum-Objektes (~ in ft),<br>
+ &nbsp;&nbsp;&nbsp;  <b>quaking_aspen_13_stems</b> - das 'mesh' des Stammes mit &Auml;sten und Zweigen,<br>
+ &nbsp;&nbsp;&nbsp;  <b>quaking_aspen_13_leaves</b> - das 'mesh' der Bl&auml;tter.<br>
+ &nbsp;&nbsp;&nbsp;  <font size="-1">'13' der seed-Wert, gesetzt im Fenster 'Create and export tree' !<br>
+<br>
+ &nbsp;&nbsp;&nbsp;  <font size="-1">In 'quaking_aspen.inc' <b> werden alle 'meshes' ohne irgenwelche Texturen deklariert!</b><br>
+ &nbsp;&nbsp;&nbsp; Wie man den Baumteilen realistische Texturen zuf&uuml;gen kann zeigt meine Seite:
+  <a href="plants_520e.htm">Texturen f&uuml;r Arbaro-B&auml;ume</a>.
+<br>
+<br>
+
+ </td>
+</tr>
+<tr>
+<td>
+<!--div align="center"><b>
+<a href="plants_00d.htm">0</a> |
+<a href="plants_100d.htm">1</a>  | <a href="plants_200d.htm">2</a> | <a href="plants_300d.htm">3</a> |
+<a href="plants_400d.htm">4</a> | <a href="plants_500d.htm">5</a> | <a href="plants_600d.htm">6</a> |
+<a href="plants_700d.htm">7</a> | <a href="plants_800d.htm">8</a></b></div-->
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></h5>
+</tr>
+<tr>
+<td valign="bottom" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,63 @@
+//-----------------------------------------------------------------------------//
+//------------------------------------------------------------------------------ textures
+#local Body_Texture =  
+        texture { pigment{ color rgb< 1.0, 0.65, 0.0> } //  deep yellow 
+               // normal { bumps 0.5 scale 0.05 }
+                  finish { phong 1 reflection 0.00}
+                } // end of texture 
+#local Body_Inside_Texture =  
+        texture { pigment{ color rgb< 1.0, 0.65, 0.0>*0.7 } //  deep yellow 
+               // normal { bumps 0.5 scale 0.05 }
+                  finish { phong 1 reflection 0.00}
+                } // end of texture 
+#local Chassis_Texture =  
+        texture { pigment{ color rgb< 1.0, 1, 1>*0.35 } //  gray
+                  normal { bumps 0.15 scale 0.05 }
+                  finish { phong 1 reflection 0.00}
+                } // end of texture 
+#local Scoop_Texture = 
+        texture{ //Chrome_Metal
+                 pigment{ color rgb< 1.0, 1, 1>*0.35 } //  gray
+                 normal { bumps 0.5 scale 0.025}
+                 finish { phong 1 }
+               } // end of texture  
+#local Cable_Texture = 
+        texture{ //Chrome_Metal
+                 pigment{ color rgb< 1.0, 1, 1>*0.55 } //  gray
+                 normal { bumps 0.5 scale 0.025}
+                 finish { phong 1 }
+               } // end of texture  
+#local Chain_Color =  
+        color rgb< 1, 1, 1>*0.65;     // base color of the chains
+
+#local Wheel_Texture =  
+        texture { pigment{ color rgb< 1, 0.75, 0.50>*0.5 } // brown 
+                  normal { bumps 0.5 scale 0.01 }
+                  finish { phong 1 reflection 0.00}
+                } // end of texture 
+#local Mast_Texture = 
+        texture { pigment{ color rgb<1,1,1>*0.45 } 
+                  finish { phong 0.1} 
+                } // end of texture
+//-----------------------------------------------------------------------------//
+#include "Caterpillar_Crane_01.inc"
+//-----------------------------------------------------------------------------//
+object{ Caterpillar_Crane_01(  38,   // Crane_Head_Rotation in degrees
+                               28,   // Jib_Angle, 0~55 degrees  //   winkel des Auslegers !!!
+                               55,   // Scoop_Open, // 0 ~65 degrees
+                               2.00, // >= 1.20 Vertical_Cable_Length for scoop at jib
+
+                               Body_Texture,  // 
+                               Body_Inside_Texture,  // 
+                               Chassis_Texture,  // 
+                               Scoop_Texture,  // 
+                               Cable_Texture, //
+                               Chain_Color,  // base color of the chains  
+                               Wheel_Texture,  //  texture of the wheels
+                               Mast_Texture  
+                            )  //------------------------------------------
+        scale <1,1,1>  
+        rotate<0,-20,0> 
+        translate<0,0,0> }//---------------------------------------------------//
+//-----------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------//

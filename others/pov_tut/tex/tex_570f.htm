@@ -1,0 +1,263 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures avec POV-Ray - motifs : tiling</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="description" content="Textures avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Conception de Surface en &raquo;texture&laquo; avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_570e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_570e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_570i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_570i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_570d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_570d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+ &nbsp;       <!--a href="tex_000f.htm"--><b>Conception de Surface</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000f.htm">Coleurs et Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001f.htm">Syntaxe de texture</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001f.htm">Exemple de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200f.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300f.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">Exemples normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400f.htm">finish{ ... } </b></a><br>-->
+ <nobr>&nbsp; &nbsp; <a href="tex_210f.htm">Textures pr&ecirc;tes-&agrave;-l'emploi</b></a></nobr><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210f.htm">Rules</a><br>
+ &nbsp; &nbsp; - <a href="tex_150f.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160f.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110f.htm">Couleurs en do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110f.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120f.htm">Transparence</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700f.htm">Motifs - Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700f.htm">types de motifs</b></a><br>
+ &nbsp; &nbsp;&nbsp; Motifs r&eacute;gulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500f.htm">checker, hexagon,</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="tex_500f.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550f.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560f.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561f.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562f.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_570f.htm"--><b>tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580f.htm">pavement</b></a><br>
+ &nbsp; &nbsp;&nbsp; Motifs rayures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs par pigments</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650f.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651f.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660f.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750f.htm">Listes de Motifs</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750f.htm">Motifs r&eacute;gulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755f.htm">Motifs par hasard</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760f.htm">Motifs Fractal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765f.htm">Autres motifs</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780f.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780f.htm">warp mapping</b></a><br> -->
+ &nbsp; &nbsp; <a href="tex_790f.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800f.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800f.htm">méthodes de mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820f.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830f.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840f.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850f.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860f.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870f.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880f.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890f.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890f.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900f.htm">Votre textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="95%" align="center"><tr><td><!-- global table-->
+<font size="5"><b><p>Motifs r&eacute;guliers: tiling</font></b>
+ - <font size="-1"><b>Nouveau avec POV-Ray 3.7</b></font>
+<hr></p>
+
+<table width="85%" align="center"><tr>
+<td colspan="2"><font size="4"><b>tiling</b></font>
+<font size="-1"> = le pavement du plan x-z avec 24 motifs classique.</font><br>
+&nbsp; nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<font size="2">(longueur et largeur: 1 unit&eacute;)</font><br>
+</td></tr>
+<td valign="top">
+    <font size="-1"><i>Exemple:</i></font>
+   <table align="center" border="2"  bgcolor="#f8f8f0"
+          bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>box{ &lt;0,0,0&gt;,&lt;1,1,1&gt;
+     texture {
+        pigment{
+           tiling 5 // 1~24 Pattern_Number
+              color_map{
+                [ 0.0 color rgb&lt;1,1,1&gt;]
+                [ 1.0 color rgb&lt;0,0,0&gt;]
+                } // end color_map
+           scale 0.15
+         } // end pigment
+        finish { phong 1}
+      } // end of texture
+   } // end of box
+</b></td><pre><pre></tr></table>
+</td>
+
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/tiling1.jpg" border="0" width="80" height="80"></td></tr></table>
+</td>
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/tiling0.jpg" border="0" width="80" height="80"></td></tr></table>
+</td>
+</tr></table>
+<p align="center"><hr></p>
+<table width="85%" align="center"><tr>
+<td><font size="4"><b>tiling patterns:</b></font> 24 motifs différentes sont au choix.<br>
+  <table align="center" border="4"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td bgcolor="#ffffff">
+         <img src="im/tiling3.jpg"  border="0" width="608" height="400"></td></tr></table>
+  <table align="center" border="4"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td bgcolor="#ffffff">
+         <img src="im/tiling4.jpg"  border="0" width="608" height="400"></td></tr></table>
+  <table align="center" border="4"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td bgcolor="#ffffff">
+         <img src="im/tiling5.jpg"  border="0" width="608" height="400"></td></tr></table>
+  <table align="center" border="4"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td bgcolor="#ffffff">
+         <img src="im/tiling6.jpg"  border="0" width="608" height="400"></td></tr></table>
+
+  <table align="center" border="4"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td bgcolor="#ffffff"><font size="-1"><b><i>Utilisé avec le dernier exemple :</i> </b></font>
+<pre><b>     color_map{ [ 0.00 color rgb&lt;0.50, 0.80, 0.00&gt; ]
+                [ 0.02 color rgb&lt;1.00, 0.80, 0.00&gt; ]
+                [ 0.05 color rgb&lt;0.00, 0.00, 0.00&gt; ]
+                [ 0.25 color rgb&lt;0.00, 0.00, 0.00&gt; ]
+                [ 0.50 color rgb&lt;1.00, 1.00, 1.00&gt; ]
+                [ 0.52 color rgb&lt;0.00, 0.00, 0.00&gt; ]
+                [ 0.55 color rgb&lt;1.00, 0.50, 0.00&gt; ]
+                [ 0.65 color rgb&lt;1.00, 1.00, 0.00&gt; ]
+                [ 0.67 color rgb&lt;1.00, 1.00, 0.00&gt; ]
+                [ 0.71 color rgb&lt;0.00, 1.00, 0.00&gt; ]
+                [ 0.75 color rgb&lt;0.00, 0.00, 0.00&gt; ]
+                [ 1.00 color rgb&lt;0.00, 1.00, 1.00&gt; ]
+              } // end color_map <b></td></pre></tr></table>
+
+
+
+</td>
+</tr></table>
+<table>
+<tr><td colspan="2">
+<hr>
+<font size="+1"><b>'tiling' et 'frequency'</b></font></td></tr>
+<tr>
+<td> Un <b>effet int&eacute;ressant</b> ensemble avec <b>frequency</b>:<br>
+  <table align="center" border="2"  bgcolor="#f8f8f0"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><pre><b>#declare Pigment_1 =
+   pigment{
+      tiling 6 // 1~24 Pattern_Number
+      color_map{
+         [0.0 color rgb&lt;0,0,0&gt;]
+         [0.4 color rgb&lt;1,0,0&gt;]
+         [1.0 color rgb&lt;0,0,0&gt;]
+       } // end color_map
+      rotate&lt;-90,0,0&gt;
+      <font color="#AA0000">frequency 5</font>
+      scale&lt;0.05,0.25,1&gt;*0.5
+    } // end pigment
+//------------------------------------
+torus{ 1, 0.333
+  texture { uv_mapping
+     pigment{ uv_mapping Pigment_1 }
+     finish { phong 0.1}
+  } // end of texture
+translate&lt;0.5,0.75,0.5&gt;
+} // end of torus --------------------</b></td><pre></tr></table>
+</td>
+
+<td>
+
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping_torus_f0.jpg" border="0" width="320"  height="160"
+       alt="Sample uv_mapping on a torus" title="Sample uv_mapping on a torus"></a>
+      </td></tr></table><font size="-1">uv_mapping avec 'torus' sans  'frequency'</font>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping_torus_f5.jpg" border="0" width="320"  height="160"
+       alt="Sample uv_mapping on a torus" title="Sample uv_mapping on a torus"></a>
+      </td></tr></table><font size="-1">uv_mapping avec 'torus' et 'frequency 5'</font>
+</td>
+</tr>
+</table>
+
+</td>
+</tr></table>
+
+</td>
+</tr></table>
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

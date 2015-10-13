@@ -1,0 +1,187 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2007, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">&nbsp; &nbsp; Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes604i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes604i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes604f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes604f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes604d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes604d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Index<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000e.htm">Shapes in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400e.htm">Other Shapes by macros</b></a></nobr><br>
+
+<br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+&nbsp; -  <a href="shapes601e.htm">text</b></a><br>
+&nbsp; -  <a href="shapes602e.htm">Bevelled_Text</b></a><br>
+&nbsp; -  <a href="shapes603e.htm">Circle_Text</b></a><br>
+&nbsp; -  <a href="shapes605e.htm">Circle_Text_Valigned</b></a><br>
+&nbsp; -&gt;<!--a href="shapes604e.htm"--><b>Unicode text</b></a><br>
+&nbsp; -  <a href="shapes608e.htm">Unicode for Asia</b></a><br>
+<br>
+<a href="shapes000e.htm">other Shapes</b></a><br>
+<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+<nobr><a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900e.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center" width="95%"><tr><td>
+<table width="95%" align="center"  cellspacing="10"><tr><td>
+<h2><nobr>National Character Sets  and Unicode</nobr></h2>
+<p align="justify"><font size="-1"> The character set normally installed (&quot;fonts&quot;)
+                   have much more characters and signs than the normal ASCII set.
+                   We can use all installed character sets.
+                   Problems occure with national characters because POV-Ray
+                   by default know only to handle the basic ASCII set.</font><br>
+To enable POV-Ray to use also national characters in text objects, we use the command:<br>
+<b>global_settings { charset utf8 }</b>
+</td>
+<td valign="top"><img src="im/unicode0s.jpg" border="1" width="160" height="120"
+                   alt="text with unicode" title="text with unicode">
+</td></tr></table>
+<hr>
+<table align="center" border="0" bordercolor="#c0c0c0" cellpadding="0" width="90%" cellspacing="10">
+<tr><td>
+ <h4><b>Unicode text objects<br>with national character sets</b></h4><br>
+  Unicode with <b>decimal</b> character numbers:
+ <table align="center" border="2" bgcolor="#EFEFEF"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080"
+            cellspacing="1" cellpadding="4">
+ <tr><td valign="middle">
+ <pre><b>global_settings { charset utf8 }
+text{
+  ttf "arial.ttf",
+  concat(
+  chr(196),chr(203),chr(214),chr(220),
+  " ",chr(8364)), 0.01, 0
+  pigment{color rgb&lt;0.5,0,0&gt;}
+  scale 0.4 translate&lt;-0.5,0.5,0&gt; }</td></pre></b>
+</tr>
+</table><br>
+Alternatively with <b>hexadecimal</b> character numbers:
+ <table align="center" border="2" bgcolor="#EFEFEF"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080"
+            cellspacing="1" cellpadding="4">
+ <tr><td valign="middle">
+ <pre><b>global_settings { charset utf8 }
+text{
+  ttf "arial.ttf",
+  "\u00C4\u00CB\u00D6\u00DC \u20AC",
+  0.01, 0
+  pigment{color rgb&lt;0.5,0,0&gt;}
+  scale 0.4 translate&lt;-0.5,0.5,0&gt; }   </td></pre></b>
+</tr>
+</table><br>
+
+</td>
+<td>
+<table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+
+              <img src="im/unicode1.jpg" border="0" width="250" height="200"
+                   alt="unicode sample" title="unicode sample"> </td></tr></table>
+<h5 align="center"> Scene file for POV-Ray:<br>
+    <a href="pov/unicode_west.txt">unicode_west.txt</a> or
+    <a href="pov/unicode_west.pov">unicode_west.pov</a></h5>
+
+</td></tr>
+</table>
+
+
+
+
+
+<hr>
+<table align="center" border="0" bordercolor="#c0c0c0" cellpadding="0" width="90%">
+<tr><td>
+ <h4><b>A part of the Unicode (western europe characters)</b></h4>
+<table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/unicodelist.jpg" border="0" width="600" height="900"
+             alt="unicode" title="unicode""></td></tr></table>
+
+</td></tr>
+</table>
+</td></tr>
+</table>
+
+
+</td></tr>
+
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table>
+  <!-- footer -->
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

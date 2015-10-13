@@ -1,0 +1,43 @@
+//------------------------------------------------------------------------------------
+#include "analytical_g.inc"
+//------------------------------------------------------------------------------------
+#declare A  = <-0.20, 0.30,-0.90>;
+#declare B  = < 0.50, 0.60,-0.20>;
+#declare C  = < 0.30, 0.00,-0.50>;
+#declare D  = <-0.40, 0.70,-0.50>;
+//------------------------------------------------------------------------------------
+sphere{ A, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( A, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ B, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( B, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ C, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( C, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ D, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( D, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+text { ttf "arial.ttf", "A",0.1,0 
+       scale 0.15 rotate<20,-45,0> translate A+<-0.2,-0.1,-0.1> pigment{ color Red*0.7 } no_shadow}
+
+text { ttf "arial.ttf", "B",0.1,0 
+       scale 0.15 rotate<20,-45,0> translate B+< 0.0,0.1,-0.0> pigment{ color Red*0.7 } no_shadow }
+
+text { ttf "arial.ttf", "C",0.1,0 
+       scale 0.15 rotate<20,-45,0> translate C+<-0.0,0.2,-0.1> pigment{ color Red*0.7 } no_shadow }
+
+text { ttf "arial.ttf", "D",0.1,0 
+       scale 0.15 rotate<20,-45,0> translate D+<-0.0,0.1,-0.1> pigment{ color Red*0.7 } no_shadow }
+
+//------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+// Parallelepiped - box
+// Parallelepiped by edge vectors V1,V2,V3:
+// object{ Parallelepiped ( P0,V1,V2,V3, 0.015,0.025,Filled) pigment{ color Green transmit 0.65}}
+// object{ Parallelepiped ( A, B-A,C-A,D-A, 0.015,0.025, 1) pigment{ color Green transmit 0.65}}
+// Parallelepiped by corners P1P2P3P4: .... 
+// object{ Parallelepiped_by_Corners ( P0,P1,P2,P3, Rl,Rp, Filled) pigment{ color Green transmit 0.65}}
+object{ Parallelepiped_by_Corners(  A,B,C,D, 0.015, 0.025, 1) pigment{ color Green transmit 0.75}}
+
+

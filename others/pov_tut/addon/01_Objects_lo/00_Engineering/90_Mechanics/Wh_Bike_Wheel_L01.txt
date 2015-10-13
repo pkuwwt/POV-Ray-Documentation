@@ -1,0 +1,22 @@
+//-------------------------------------------------------------------------
+//---------------------------------------------------- optional textures
+#declare Tire_Texture_Base  =  // 
+ texture { pigment{color rgb<1,1,1>*0.1}
+           normal {bumps 0.5 scale 0.05}
+           finish {ambient 0.15 diffuse 0.85 phong 0.1}
+         } // end of texture
+#declare Rim_Texture = //  
+ texture { // pigment{color rgb<1,1,1>*0.25}
+           Polished_Chrome
+           finish { phong 1}
+         } // end of texture
+//-------------------------------------------------------------------------
+#include "Bike_Wheel_L01.inc"
+//-------------------------------------------------------------------------
+//#macro Bike_Wheel_L01(Wheel_R, Wheel_Rotation_Z)
+object{ Bike_Wheel_L01( 0.30, 0)  
+        scale 1  rotate<0,0,0>  translate<0,0,0>  }
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+
+

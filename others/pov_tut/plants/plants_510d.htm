@@ -1,0 +1,308 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="POV-Ray Anleitungen - Pflanzen mit POV-Ray">
+<meta name="keywords" content=" Raytracing, POV, POVRAY, POV-Ray 3.6, Rendern, 3D-Graphik, Computergraphik, Grafik, Tutorial, Anleitung, Beschreibungen, Beispiele, Pflanzen mit POV-Ray">
+<title>Pflanzen mit POV-Ray - Arbaro Baum-Beispiele</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=438,height=670");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top">
+     <font size="1"><nobr>POV-Ray Raytracer</nobr> <nobr>Beschreibungen und Beispiele</nobr>
+                    <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font><a name="top"></a>
+ <hr size="3">
+   <div align="center">
+      <font size="5">&nbsp; &nbsp;Pflanzen mit POV-Ray</font>
+   </div>
+ </td>
+ <td align="right">
+        <a href="plants_510e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="plants_510e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="plants_510i.htm"><font size="2">Italiano</font></a>
+        <a href="plants_510i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="plants_510f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="plants_510f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr> -  <a href="plants_00d.htm"><font size="+1">Pflanzen mit POV-Ray</font></b></a></nobr><br>
+<!--&nbsp;&nbsp; -  <a href="plants_200d.htm">Fibonacci + Random</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_300d.htm">Gras-Makros</b></a><br-->
+&nbsp;&nbsp; -  <a href="plants_400d.htm">B&auml;ume mit POV-Tree</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_410d.htm">POV-Tree Baum-Beispiele</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_420d.htm">Texturen f&uuml;r POV-Tree</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_500d.htm">B&auml;ume mit Arbaro</b></a><br>
+&nbsp;&nbsp;&nbsp; <b>&gt;</b> <!--a href="plants_510d.htm"--><b>Arbaro Baum-Beispiele</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_520d.htm">Texturen f&uuml;r Arbaro</b></a><br>
+<!--&nbsp;&nbsp; -  <a href="plants_600e.htm">Leaves + Flowers</b></a><br-->
+<br>
+&nbsp;&nbsp; -  <a href="plants_050d.htm">Andere Planzenbeispiele</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../objects/obj_400d.htm">Fertig-Objekte Pflanzen</b></a><br>
+&nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="arbaro/im/desert_busht.jpg" width="80" height="100" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="5"><nobr>&nbsp;Arbaro Baum-Beispiele</font> &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="5">
+   <p align="justify">Das <b>Arbaro</b> Baum-Generator Programmpaket enth&auml;lt die folgenden<br>
+
+   Beispiele von B&auml;umen und grasartigen Objekte:<br>
+    <font size="1">Verwendet javascript um die Bilder in h&ouml;herer Aufl&ouml;sung anzuzeigen. - Klicken Sie auf die Vorschaubilder!</font>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/black_tupelo_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/black_tupelot.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>black_tupelo<br>
+                      Tupelobaum</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/quaking_aspen_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/quaking_aspen.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>quaking_aspen<br>
+                     Zitterpappel</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/sassafras_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/sassafras.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>sassafras <br>
+                      Fenchelholzbaum</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/eastern_cottonwood_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/eastern_cottonwood.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <font size="1"><b>eastern_cottonwood<br>
+                  Kanadische Schwarz-Pappel</b></font>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/tamarack_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/tamarack.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>tamarack - ostam. L&auml;rche</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/lombardy_poplar_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/lombardy_poplar.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>lombardy_poplar</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/european_larch_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/european_larch.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>european_larch</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/weeping_willow_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/weeping_willow.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>weeping_willow</b></font>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/ca_black_oak_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/ca_black_oak.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <font size="1"><b>ca_black_oak<br>
+                    kalifornische Schwarz-Eiche</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/desert_bush_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/desert_bush.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>desert_bush<br>&nbsp;</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/palm_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/palm.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>palm - Palme<br>&nbsp;</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/fanpalm_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/fanpalm.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <font size="1"><b>fanpalm - F&auml;cherpalme<br>&nbsp;</b></font>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/asparagus_ornamental_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/asparagus_ornamental.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b><nobr>asparagus_ornamental<br>
+                          Spargel</nobr></b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/shave_grass_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/shave_grass.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <font size="1"><b>shave_grass  <br>
+                    Schachtelhalm</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/rush_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/rush.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>rush - Binse<br>&nbsp;</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('arbaro/im_orig/wheat_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="arbaro/im_orig/wheat.jpg" width="120" height="180" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <font size="1"><b>wheat - Weizen<br>&nbsp;</b></font>
+ </td>
+
+</tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+<td>
+<!--div align="center"><b>
+<a href="plants_00d.htm">0</a> |
+<a href="plants_100d.htm">1</a>  | <a href="plants_200d.htm">2</a> | <a href="plants_300d.htm">3</a> |
+<a href="plants_400d.htm">4</a> | <a href="plants_500d.htm">5</a> | <a href="plants_600d.htm">6</a> |
+<a href="plants_700d.htm">7</a> | <a href="plants_800d.htm">8</a></b></div-->
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></h5>
+</tr>
+<tr>
+<td valign="bottom" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

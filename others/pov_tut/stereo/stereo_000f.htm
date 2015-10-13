@@ -1,0 +1,179 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>Images st&eacute;r&eacute;o 3D et Animation st&eacute;r&eacute;o 3D avec POV-Ray.</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller">
+<meta name="description" content="Images st&eacute;r&eacute;o 3D et Animation st&eacute;r&eacute;o 3D avec POV-Ray">
+<meta name="keywords" content="Images st&eacute;r&eacute;o 3D, Animation st&eacute;r&eacute;o 3D, st&eacute;r&eacute;oscopie, POV, POVRAY, POV-Ray, povray, raytracing, graphique 3d, animation 3d">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Images st&eacute;r&eacute;o et Animation st&eacute;r&eacute;o <nobr>avec POV-Ray</nobr></b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="stereo_000e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="stereo_000e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="stereo_000i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_000i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="stereo_000d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../../pov/g_stereo_00.htm" target="_new">Galerie d'images st&eacute;r&eacute;o</b></a><br>
+ - <a href="../../pov_anim/ani_9000d.htm" target="_new">Galerie d'animations st&eacute;r&eacute;o</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+<font size="+1"> &nbsp;       <!--a href="stereo_000f.htm"--><b>Images st&eacute;r&eacute;o</font> et</b></a><br>
+<font size="+1"> &nbsp;       <!--a href="stereo_000f.htm"--><b>Animation st&eacute;r&eacute;o</b></a></font><br>
+ &nbsp;&nbsp;<b>&gt;</b> <!--a href="stereo_000f.htm"--><b>Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="stereo_050f.htm">Vision crois&eacute;e</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100f.htm">Images st&eacute;r&eacute;o simples</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150f.htm">Images st&eacute;r&eacute;o avanc&eacute;es</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200f.htm">Combiner images</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300f.htm">Animation st&eacute;r&eacute;o 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310f.htm">Animation st&eacute;r&eacute;o 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400f.htm">Exemples d'anims st&eacute;r&eacute;o</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="95%">
+  <tr><td colspan="2" valign="top"><!-- global table-->
+
+<table align="center" border="1" cellspacing="2" cellpadding="2" width="90%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<font size="1">Ce petit tutoriel d&eacute;crit une m&eacute;thode rapide pour faire des paires d'images st&eacute;r&eacute;oscopiques
+&agrave; l'aide de deux cam&eacute;ras avec tronc sym&eacute;trique (aussi appel&eacute; &laquo;toe-in&raquo;).
+Pour en savoir plus sur les images st&eacute;r&eacute;oscopiques <a href="http://www.f-lohmueller.de/links/index_te.htm#stereo">Stereo-Links</a>.</font>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_050f.htm"><img src="im/CrossEyeView.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_050f.htm"><font size="3">
+    &nbsp;La vision crois&eacute;e</font></a><font size="2"><b> (cross-eye view)</font></b>
+    <font size="2"><br>
+    &nbsp;Comment voir images st&eacute;r&eacute;oscopiques avec la vision<br>
+    &nbsp;crois&eacute;e.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_100f.htm"><img src="im/Stereo_simple.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_100f.htm"><font size="3">
+    &nbsp;Images st&eacute;r&eacute;o simples</b></a></font>
+    <font size="2"><br>
+    &nbsp;Images st&eacute;r&eacute;o avec la cam&eacute;ra fixe, en regardant dans <nobr>&nbsp;la direction +z</nobr></font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_150f.htm"><img src="im/VectorsAdvanced.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_150f.htm"><font size="3">
+    &nbsp;Images st&eacute;r&eacute;o avanc&eacute;es- plus flexible.</b></a></font>
+    <font size="2"><br>
+    &nbsp;Images st&eacute;r&eacute;o avec la direction de vis&eacute;e libre de la<br>
+    &nbsp;cam&eacute;ra.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_200f.htm"><img src="im/Stereo_Pairs.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_200f.htm"><font size="3">
+    <nobr>&nbsp;En combinant les paires des images st&eacute;r&eacute;o.</nobr></b></a></font>
+    <font size="2"><br>
+    &nbsp;La jonction des paires des images st&eacute;r&eacute;o on peut faire<br>
+    &nbsp;en utillisant 'image_map' et cam&eacute;ra 'orthographic'. </font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_300f.htm"><img src="im/Stereo_Serie.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_300f.htm"><font size="3">
+    &nbsp;Animation st&eacute;r&eacute;o (1)</b></a></font>
+    <font size="2"><br>
+    &nbsp;Comment faire une s&eacute;rie des images st&eacute;r&eacute;o pour<br>
+    &nbsp;une animation</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_310f.htm"><img src="im/Stereo_Ani_10_small.gif" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_310f.htm"><font size="3">
+    &nbsp;Animation st&eacute;r&eacute;o (2)</b></a></font>
+    <font size="2"><br>
+    &nbsp;Comment combiner une s&eacute;rie des images st&eacute;r&eacute;o pour<br>
+    &nbsp;une animation.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_400f.htm"><img src="im/Stereo_Ani_01s.gif" border="0" width="160" height="80">
+   <img src="im/Stereo_Ani_04as.gif" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_400f.htm"><font size="3">
+    &nbsp;Exemples d'animations st&eacute;r&eacute;o<br>
+    &nbsp;avec POV-Ray</b></a></font><br>
+    <font size="2">
+    &nbsp;Exemples avec sources.</font></td>
+</tr>
+</table>
+
+
+
+</td>
+</tr>
+</table>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

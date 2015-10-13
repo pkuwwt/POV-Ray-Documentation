@@ -1,0 +1,253 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="Didacticiel POV-Ray - Boucles tant que While avec POV-Ray  - Spirales sph&eacute;riques 2">
+<meta name="keywords"content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, tutoriel, didacticiel, boucle while, boucle for, spirales sph&eacute;riques">
+<title>Boucles avec POV-Ray - Spirales sph&eacute;riques 2</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"> <h6>
+   <nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+   <nobr>par Friedrich A. Lohmueller</nobr>.
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Boucles avec POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+     <a href="povlup10e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+     <a href="povlup10e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+     <a href="povlup10i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+     <a href="povlup10i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povlup10d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+     <a href="povlup10d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0f.htm"><font size="3">Boucles en POV-Ray</font></b></a><br>
+ &nbsp; 1.  <a href="povlup7f.htm">'For' et 'While'</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup7f.htm">Comparaison</b></a><br>
+ &nbsp; 2.  <a href="povlup1f.htm">Transformations</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup1f.htm">Lin&eacute;aires</b></a><br>
+ &nbsp; 3.  <a href="povlup2f.htm">Transformations</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup2f.htm">Circulaires</b></a><br>
+ &nbsp; 4.  <a href="povlup3f.htm">Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4f.htm">Vis, H&eacute;lices</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup4f.htm">et Spirales</b></a><br>
+ &nbsp; 6.  <a href="povlup5f.htm">Spirales</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5f.htm">avec Torsion</b></a><br>
+ &nbsp; 7.  <a href="povlup6f.htm">Coquilles</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6f.htm"> d'Escargot</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6f.htm">et Ammonites</b></a><br>
+ &nbsp; 8.  <a href="povlup9f.htm">Spirales sph&eacute;riques 1</b></a><br>
+<b>&gt;</b>9.  <!--a href="povlup10f.htm"--><b>Spirales sph&eacute;riques 2</b></a><br>
+ &nbsp;10.  <a href="povlup8f.htm">Spirales Fibonacci</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+
+<a name="start"></a>
+<h2 align="center"><b>Spirales sph&eacute;riques 2</b></h2>
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="0" width="95%">
+<tr>
+ <td colspan="2">
+<div align="justify"><font size="3">Transformations circulaires sur la surface d'une sph&egrave;re :</b></font></div>
+</td>
+</tr>
+<tr>
+ <td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Element =
+sphere{ &lt;0,0,0&gt;,0.05
+        texture{
+          pigment{ color rgb&lt;0.8,0.4,0&gt;}
+          finish { phong 1
+            reflection{0.3 metallic 0.5}}
+               } // end texture
+} // end sphere -----------------------
+
+#local Drill = 0.45;
+#local Stripes = 8;
+union{ //------------------------------
+
+ // spirals ---------------------------
+ #local NrB =  0;     // start
+ #local EndB = 2000; // end
+ #while (NrB &lt; EndB)
+   #local Nr =  0;     // start
+   #local End = Stripes; // end
+   #while (Nr &lt; End)  // loop
+    object{ Element
+    // * add scale here!
+            translate&lt;1,0,0&gt;
+            rotate&lt;0, 0,-90+NrB *180/EndB&gt;
+            rotate&lt;0,Drill*NrB* 360/EndB,0&gt;
+            rotate&lt;0,Nr*360/End,0&gt;
+          } //----------------------
+   #local Nr = Nr + 1;    // next Nr
+   #end // ---------------  end of loop
+
+ #local NrB = NrB + 1;    // next Nr
+ #end // ---------------  end of loop
+ // end of spirals ---------------------
+
+rotate&lt;0,0,0>
+translate&lt;0,1,0&gt;
+} // end of union ---------------------</b></td></pre>
+ </tr>
+</table>
+<font size="2">Agrandir l'&eacute;chelle des &eacute;l&eacute;ments en spirale dans la direction z :</font>
+
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>  scale 1+&lt;0,0,4&gt;
+     *cos( radians( -90 +NrB * 180/EndB ) )
+</b></td></pre>
+ </tr>
+</table>
+ </td>
+
+ <td valign="top">
+<div align="justify"><font size="2"><b><br>
+</b></font></div>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/SphericalSpiral_3c.jpg" width="320"  height="240" ></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+   Fichier de sc&egrave;ne pour  <nobr>POV-Ray :</nobr> <a href="pov/SphericalSpiral_3.pov">SphericalSpiral_3.pov</a><br>
+                                     ou : <a href="pov/SphericalSpiral_3.txt">SphericalSpiral_3.txt</a></font></div>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/SphericalSpiral_4c.jpg" width="320"  height="240" ></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+   Fichier de sc&egrave;ne pour <nobr>POV-Ray :</nobr> <a href="pov/SphericalSpiral_4.pov">SphericalSpiral_4.pov</a><br>
+                                           ou : <a href="pov/SphericalSpiral_4.txt">SphericalSpiral_4.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+<font size="2">Si nous rempla&ccedil;ons l'&eacute;l&eacute;ment par cela:</font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Element =
+union{
+ sphere{ &lt;0,0,0&gt;,0.05 }
+ sphere{ &lt;0,0,0&gt;,0.05 translate&lt;-0.04,0,0&gt;
+         texture{
+           pigment{ color rgb&lt;1,1,1&gt;*0.95}
+           normal { bumps 0.75 scale 0.01}
+           finish { phong 0.7 }
+                } // end of texture
+        }
+ } // end union -------------------------- </b></td></pre>
+ </tr>
+</table>
+<font size="2"> et enfin ajoutons une texture globale comme ceci :</font>
+
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>
+ texture{ pigment{ color rgb&lt;1,0.4,0&gt;}
+          normal { bumps 0.75 scale 0.02}
+          finish { phong 1
+             reflection{ 0.1 metallic 0.5}}
+          }</b></td></pre>
+ </tr>
+</table>
+<font size="2">.. nous aurons l'image suivante (&agrave; droite) :</font>
+ </td>
+ <td valign="top">
+<br>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/SphericalSpiral_5c.jpg" width="320"  height="240" ></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Fichier de sc&egrave;ne pour  <nobr>POV-Ray :</nobr> <a href="pov/SphericalSpiral_5.pov">SphericalSpiral_5.pov</a><br>
+                                             ou : <a href="pov/SphericalSpiral_5.txt">SphericalSpiral_5.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+</table>
+
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0f.htm">Contenu</a> |
+     <a href="povlup7f.htm">'For' et 'While'</a> |
+     <a href="povlup1f.htm">Lin&eacute;are</a> |
+     <a href="povlup2f.htm">Circulaire</a> |
+     <a href="povlup3f.htm">Moebius</a> |
+     <a href="povlup4f.htm">H&eacute;lices et Spirales</a> |
+     <a href="povlup5f.htm">Torsion</a> |
+     <a href="povlup6f.htm">Coquilles</a> |
+     <a href="povlup9f.htm">Sph&eacute;rique 1</a> |
+     <!--a href="povlup10f.htm"-->Sph&eacute;rique 2</a> |
+     <a href="povlup8f.htm">Fibonacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

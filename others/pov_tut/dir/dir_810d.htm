@@ -1,0 +1,171 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Language Directives">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Language Directives">
+<title>Language Directives mit POV-Ray - Teil I deutsch</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Bedingte Anweisungen</b><font size="-1"> - Anwendungen</font></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="dir_810e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="dir_810e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="dir_810i.htm"><font size="2">Italiano</font></a>
+        <a href="dir_810i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="dir_810f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="dir_810f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <!--a href="dir_000d.htm"--><b>Bedingte</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="dir_000d.htm"--><b> Anweisungen</b></a><br>
+<br>
+ &nbsp; <b>Verzweigungen</b></a> <br>
+ &nbsp; &nbsp;<a href="dir_000d.htm">#if(...) ... #else ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100d.htm">in Schleifen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_200d.htm">in Macros</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_300d.htm">in Animationen</b></a> <br>
+<nobr> &nbsp; &nbsp; -  <a href="dir_400d.htm">Ein-/Ausschalten von Teilen</b></a></nobr><br>
+ &nbsp; &nbsp;<a href="dir_000d.htm">#switch(...) #case(..) ...</b></a> <br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="dir_000d.htm">#range(..) ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_700d.htm">Auswahl-Listen</b></a> <br>
+<br>
+ &nbsp; <b>Existenz-&Uuml;berpr&uuml;fungen</b></a> <br>
+ &nbsp; &nbsp;<a href="dir_800d.htm">#ifdef(...) #ifndef(...)</b></a> <br>
+ &nbsp; &nbsp; &gt;<!--a href="dir_810d.htm"--><b>Check in Include-Dateien</b></a> <br>
+<nobr> &nbsp; &nbsp; -  <a href="dir_820d.htm">Defaults in Include-Dateien</b></nobr></a> <br>
+<br>
+ &nbsp; <b>Schleifen</b></a> <br>
+<nobr> &nbsp; <a href="dir_900d.htm">Prechecked, Postchecked,</b></a></nobr><br>
+<nobr> &nbsp; <a href="dir_900d.htm">Count-controlled, Early-Exit</b></a></nobr><br>
+ &nbsp; &nbsp;<a href="dir_900d.htm">#while(...)... #end</b></a> <br>
+ &nbsp; &nbsp;<a href="dir_900d.htm">#for(...)... #end</b></a> <br>
+ &nbsp; &nbsp; - Beispiele: <br>
+<nobr> &nbsp; &nbsp; - <a href="../loop/povlup1d.htm" target="_new">Schleifen in POV-Ray</a></nobr><br>
+ &nbsp; &nbsp; - <a href="../sinus/povsi3d1.htm" target="_new">Schleifen, Sinus, Kosinus</a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h2 align="center">Existenz-&Uuml;berpr&uuml;fungen<br>
+ zur Verhinderung mehrfachen Lesens einer Include-Datei</h2>
+
+<table align="center" width="95%" border="0">
+     <tr><td>
+<p align="justify">Zwei Beispiele f&uuml;r den Gebrauch von &quot;#ifndef&quot; in Include-Dateien:<br>
+<b>1. Verhindern des mehrfachen Einbindens einer Include-Datei.</b><br>
+Durch das Deklarieren einer globalen Variablen <br>
+(hier: MyIncludeFile_inc_Temp, wenn der Include-Dateiname MyIncludeFile.inc ist.)
+l&auml;&szlig;t sich mit &quot;#ifndef&quot; feststellen, ob diese Include-Datei schon mal gelesen wurde. In diesem
+Fall kann der gesamte Inhalt &uuml;bersprungen werden, da er bereits bekannt ist.</p>
+<p align="justify"><b>2. Sicherstellen, dass eine in einer Include-Datei ben&ouml;tigte
+andere Include-Datei gelesen wurde und dass diese nicht wiederholt eingebunden wird:</b><br>
+Die folgende Technik ist m&ouml;glich bei eingebundenen Include-Dateien, welche ihrerseits eine
+entsprechende global deklarierte Variable (siehe oben) besitzen.<br>
+Es l&auml;&szlig;t sich in Include-Dateien mit der Abfrage der Existenz der entsprechenden globalen Variablen
+der ben&ouml;tigten anderen Include-Datei erreichen, dass eine ben&ouml;tigte Include-Datei
+auch geladen wird, wenn die aufrufende Szenen-Datei diese noch nicht geladen hat.
+Die Abfrage mit &quot;#ifndef&quot; vermeidet man zugleich auch auch, dass die entsprechende Datei ein zweites Mal
+(&uuml;berfl&uuml;ssigerweise) eingebunden wird, wenn sie bereits durch die aufrufende Szenen-Datei
+oder durch andere Include-Dateien gelesen wurde.
+
+
+
+ <br>
+</p></td></tr></table>
+
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%" valign="top" bgcolor="eeeeee">
+  <i>Vermeiden des mehrfachen Lesens einer Include-Datei:</i>
+<pre><b>// include file "MyIncludeFile.inc"
+#ifndef( MyIncludeFile_inc_Temp )
+#declare MyIncludeFile_Inc_Temp = version;
+#version 3.5;
+//----------------------------------------</b></pre>
+<br>
+  <i>Hauptteil der Include-Datei </i><br>
+<br>
+<br>
+
+<pre><b>//----------------------------------------
+#version MyIncludeFile_Inc_Temp;
+#end // end of "#ifndef( ... )"
+//-------------------- end of include file</b></td></pre>
+
+
+  <td width="50%" valign="top" bgcolor="eeeeee">
+ <i>Sicherstellen, dass eine ben&ouml;tigte Include-Datei gelesen wurde und
+ Vermeiden des Mehrfach-Lesens bereits eingebundener Include-Dateien:</i><br>
+&nbsp;<br>
+<pre><b>//---------------------------//
+#ifndef(  Shapes_Inc_Temp)
+#include "shapes.inc"
+#end
+//---------------------------//
+</b></pre>
+
+</td>
+ </tr></table>
+ </td>
+ </tr>
+</table>
+</div>
+<br>
+
+</td></tr></table> <!-- global-->
+
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td>&nbsp;
+ </td>
+ <td></td>
+&nbsp;</tr></table><!-- end footer -->
+</body>
+</html>

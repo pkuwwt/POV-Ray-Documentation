@@ -1,0 +1,177 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font>
+ <hr size="3"><div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes400e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes400e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes400i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes400i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes400f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes400f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+<a href="shapes100d.htm">Grundformen</b></a><br>
+<nobr><a href="shapes200d.htm">K&ouml;rper mit Makros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000d.htm">K&ouml;rper in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<br>
+<nobr><!--a href="shapes400e.htm"--><b>Andere K&ouml;rper als Makros</b></a></nobr><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Tube_2_Tube</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Tube_2_Tape</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Cone_Flatted</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Cone_Flatted_Q</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Star_1</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Erlenmeyer_Shape</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Round_Bottom_Mace</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Round_Mace_Torus</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Round_Mace_Prism</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Two_Cylinder_Blob</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Winding_Wire_1</b></a><br>
+&nbsp; -  <!--a href="shapes400f.htm"--><b>Ring_Torus</b></a><br>
+
+<br>
+<a href="shapes600d.htm">3D-Text-Objekte</b></a><br>
+<a href="shapes000d.htm">Andere Formen</b></a><br>
+<a href="shapes666d.htm">Non CSG K&ouml;rper</b></a><br>
+<nobr><a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900d.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<h3 align="justify"><nobr><a href="../objects/obj_300d.htm">Andere K&ouml;rper</b></a> definiert in Include-Dateien</nobr><br>
+<font size="-1">F&uuml;r mehr Details siehe: <a href="http://www.f-lohmueller.de/pov_tut/objects/obj_300d.htm">
+www.f-lohmueller.de/pov_tut/objects/obj_300d.htm</a></font></h3>
+
+<table border="0" cellspacing="2" cellpadding="1" width="95%">
+<tr>
+</tr>
+<tr>
+<td valign="top"><div align="center">
+    <table border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Tube_2_Tube_s.jpg" border="0" width="80" height="60" alt="Tube_2_Tube" title="Tube_2_Tube"></a></td></tr></table>
+    <font size="1"><b>Tube_2_Tube</b></font></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Tube_2_Tape_s.jpg" border="0" width="80" height="60" alt="Tube_2_Tape" title="Tube_2_Tape"></a></td></tr></table>
+    <font size="1"><b>Tube_2_Tape</b></font></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Cone_Flatted_s.jpg" border="0" width="80" height="60" alt="Cone_Flatted" title="Cone_Flatted"></a></td></tr></table>
+    <font size="1"><b>Cone_Flatted</b></font></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Cone_Flatted_Q_s.jpg" border="0" width="80" height="60" alt="Cone_Flatted_Q" title="Cone_Flatted_Q"></a></td></tr></table>
+    <font size="1"><b>Cone_Flatted_Q</b></font></div></td>
+</tr>
+<tr>
+<td valign="top"><div align="center">
+    <table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Erlenmeyer_Shape_macro_18.jpg" alt="Erlenmeyer_Shape" title="Erlenmeyer_Shape" width="60" height="60" border="0"></a></td></tr></table>
+    <b><font size="1">Erlenmeyer_Shape</font></b></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Round_Bottom_Mace_1ss.jpg"     alt="Round_Bottom_Mace" title="Round_Bottom_Mace" width="60" height="60" border="0"></a></td></tr></table>
+    <b><font size="1">Round_Bottom_Mace</font></b></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Round_Mace_Torus_60.jpg" alt="Round_Conic_Prism" title="Round_Conic_Prism" border="0" width="60" height="60"></a></td></tr></table>
+    <b><font size="1">Round_Mace_Torus</font></b></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Round_Mace_Prism_60.jpg" alt="Round_Conic_Prism" title="Round_Conic_Prism" border="0" width="60" height="60"></a></td></tr></table>
+     <b><font size="1">Round_Mace_Prism</font></b></div></td>
+</tr>
+<tr>
+<td valign="top"><div align="center">
+    <table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Two_Cylinder_Blob_0s.jpg"      alt="Two_Cylinder_Blob" title="Two_Cylinder_Blob" width="80" height="60" border="0"></a></td></tr></table>
+    <b><font size="1">Two_Cylinder_Blob</font></b></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Twisted_Box_X_s.jpg"      alt="Twisted_Box_X" title="Twisted_Box_X" width="80" height="60" border="0"></a></td></tr></table>
+    <b><font size="1">Twisted_Box_X</font></b></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Star_1_ss.jpg" border="0" width="60" height="60" alt="Star_1" title="Star_1"></a></td></tr></table>
+    <b><font size="1">Star_1</font></b></div></td>
+</tr>
+<tr>
+<td valign="top"><div align="center">
+    <table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Winding_Wire_1_s.jpg"  alt="Winding_Wire_1" title="Winding_Wire_1" width="80" height="60" border="0"></a></td></tr></table>
+    <b><font size="1">Winding_Wire_1</font></b></div></td>
+<td valign="top"><div align="center">
+    <table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><a href="../objects/obj_300d.htm"><img src="im/Ring_Torus_s.jpg"      alt="Ring_Torus" title="Ring_Torus" width="80" height="60" border="0"></a></td></tr></table>
+    <b><font size="1">Ring_Torus</font></b></div></td>
+</tr>
+
+</table>
+
+</table>
+
+</td></tr></table>
+</td></tr>
+<br>
+<br>
+<br>
+<br>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+<tr><td colspan="3">
+<!-- footer -->
+<hr>
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

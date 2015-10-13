@@ -1,0 +1,288 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2011 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="Analytische Geometrie, 3D-Darstellung, geometrische Berechnungen, Ausgabe der Resutate, raytracing, PoV, POVRAY, POV-Ray 3.6, Computergraphik, 3D-Graphik, Computergrafik, Raytracer Beschreibungen, Povray Tutorial, Beispiele">
+<meta name="description" content="Analytische Geometrie mit POV-Ray - 3D-Darstellung einschlie&szlig;lich der Berechnungen und Ausgabe der Resutate">
+<title>Analytische Geometrie mit POV-Ray - 3D-Darstellung einschlie&szlig;lich der Berechnungen und Ausgabe der Resutate</title>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=710,height=530");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo00e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="a_geo00e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="a_geo00i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo00i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo00f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo00f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index_d.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__ger.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__ger.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__d.htm">Analytische Geometrie</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">mit POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__d.htm">- Inhalts&uuml;bersicht -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insrtd_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp;<b>&gt; <!--<a href="a_geo00d.htm"--><b>Grunds&auml;tzliches</b></a><br>
+&nbsp; &nbsp; <b> <!--a href="a_geo00d.htm"--><b>zur Arbeitsweise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>Punkte &amp; Linien</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo10d.htm">Punkte in 3D</b></a> <br>
+ &nbsp; &nbsp; -     <a href="a_geo20d.htm">Strecken, Geraden,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20d.htm">Vektoren, Abstandspfeile</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30d.htm">Fl&auml;chen u. Ebenen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40d.htm">Ausgabe Resultate,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40d.htm">Beschriftung</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45d.htm">Schnittpunkte</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50d.htm">Kreise</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00d.htm"--><b>K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60d.htm">Tetraeder</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61d.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62d.htm">Parallelflach (Spat)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo65d.htm">Runde K&ouml;rper</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <a href="a_geo70d.htm">Tabellarischer</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm">&Uuml;berblick</b> &uuml;ber</a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70d.htm"> &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80d.htm">Vektorrechnung</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80d.htm">mit POV-Ray</b></a> <br>
+&nbsp; -  <a href="a_geo85d.htm">Rechts- u. linksh&auml;ndige</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">Koordinatensysteme</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo85d.htm">und das Vektorprodukt</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00d.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Beispiele aus der</b></a> <br>
+&nbsp; -  <!--a href="a_geo00d.htm"--><b>Analytischen Geometrie</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91d.htm">Seitenmitten-Parallelogramm</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo92d.htm">Spurpunkte einer Geraden</b></a> <br>
+&nbsp; &nbsp; -  <a href="a_geo93d.htm">Berechnungen am Dreieck</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo94d.htm">Parallelogrammfl&auml;che</b></a></nobr> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo94d.htm">und Vektorprodukt</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95d.htm">Schatten einer Pyramide</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96d.htm">Schnitt mit Ebene || zu yz</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97d.htm">Winkel zw. Dreieck yz-Ebene</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+    <table align="center" width="50%"><tr>
+    <td align="center" valign="middle" colspan="2"><h3><nobr>Analytische Geometrie mit POV-Ray</nobr></h3>
+              <h4>3D-Darstellung einschlie&szlig;lich der Berechnungen und Ausgabe der Resutate</h4></td>
+    </tr><tr>
+    <td align="center" valign="middle"><h1> &nbsp; <br><nobr>Grunds&auml;tzliches zur Arbeitsweise &nbsp;</nobr></h1></td>
+    <td align="center" valign="top">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="starts.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+     </td>
+
+    </table>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+ <h3 align="center">Eine &Uuml;bersicht &uuml;ber die M&ouml;glichkeiten und die n&ouml;tigen Vorbereitungen.</nobr></h3>
+ <h4>
+<ul><li><a href="#wozu">Wozu taugt das? - Der Zweck und das Ziel</a></li>
+       <li><a href="#wozu">Vom Wert der &auml;thetischen und klaren graphischen Darstellung</a></li>
+       <li><a href="#wozu">Warum keine &quot;Eindeutschung&quot;?</a></li>
+       <li><a href="#vorbereitung">N&ouml;tige Vorbereitungen</a></li>
+</ul>
+ </h4>
+ <td>
+</tr>
+</table>
+
+<div align="center">
+<table width="95%" align="center" cellpadding="10">
+ <tr>
+  <td valign="top" width="50%">
+        <h5 align="justify"><a name="wozu"> </a><b>Der Zweck und das Ziel:</b> <br>
+       <br>
+  &nbsp; <b>Visualizierung Geometrischer Sachverhalte</b> aus der <b>Analytischen Geometrie</b> in 3D-Darstellung sowie
+         <b>Ausgabe der Resultate von Berechnungen.</b><br>
+  &nbsp;  Diese Anleitung und die dazu gelieferten Dateien (Schablonentext und Include-Datei) dienen
+  zum <b>effektiven Arbeiten</b> bei der Darstellung von geometrischen Sachverhalten mit POV-Ray und dabei zur <br>
+       <b>1.  Optisch klare Darstellung von Resultaten</b><br>
+       <b>2.  Berechnung von Resultaten.</b><br>
+    &nbsp; Dies wird auf sehr rationelle Weise erreicht, mit einem Minimum an vorgefertigten Makros,
+    unter weitgehenster Verwendung von in POV-Ray bereits vorhandenen Mitteln. <br>
+    <br>
+    &nbsp; Eine derartige Darstellungsmethode ist auch im Unterricht in der Schule bzw. Universit&auml;t
+    einsetzbar, da die Sch&uuml;ler bzw. Studenten keinesfalls voll die Tiefen von POV-Ray beherrschen
+    m&uuml;ssen, um zu einer befriedigenden, anschaulichen Darstellung zu gelangen.
+    Die Zahl der zu erlernenden Befehle und die Verwendung des Programms im Unterricht
+    der analytischen Geometrie ist im Rahmen von einigen wenigen Stunden auch f&uuml;r
+    schw&auml;chere Sch&uuml;ler einfach erlernbar. <br>
+    <br><a name="grafisch"> </a>
+    <b>&Uuml;ber den Wert der &auml;thetischen<br> und klaren graphischen Darstellung:</b><br>
+    &nbsp;<br>
+    &nbsp; Auf den hohen Wert einer  &auml;sthetischen und klaren graphischen Darstellung kann hier
+    nicht oft genug hingewiesen werden. Die farbliche Gestaltung kann dabei den Inhalt
+    unterst&uuml;tzen und verdeutlichen helfen. <br>
+    &nbsp; Selbst ein nur streng rational denkende Wissenschaftler (sofern es so etwas &uuml;berhaupt gibt!)
+    wird durch eine auch emotional sehr ansprechende Darstellung positiv beeinflu&szlig;t – was wiederum
+    durchaus nichts Negatives ist : -) . <br>
+    &nbsp; Eine &auml;sthetische und klare Darstellung hilft sowohl beim Lernen, als auch beim
+    &uuml;berzeugenden Pr&auml;sentieren von wissenschaftliche Ergebnissen. <br>
+    Der hohe &auml;sthetische Reiz der Darstellungen mit POV-Ray und die klare
+    Verst&auml;ndlichkeit k&ouml;nnen sogar Leute
+    ohne jegliche Affinit&auml;t zu diesem Fach noch f&uuml;r Mathematik begeistern. <br>
+    &nbsp; Letztlich ist Mathematik sehr verwandt mit Kunst und &Auml;sthetik und jede richtige
+    L&ouml;sung eines Problems ist auch eine sch&ouml;ne L&ouml;sung!
+    <br>
+    <br><a name="deutsch"> </a>
+    <b>Warum keine &quot;Eindeutschung&quot;?</b><br>
+    &nbsp; Eine &quot;Eindeutschung&quot; lehne ich aus folgendem Grunde ab:<br>
+    Zum Anwenden des Programms m&uuml;ssen einige Befehle und ihr Syntax gelernt und
+    ge&uuml;bt werden.  Man sollte nicht zus&auml;tzlich noch eingedeutschte Befehle verwenden,
+    wenn bereits voll funktionsf&auml;hige Originalbefehle in POV-Ray vorhanden sind.<br>
+    &nbsp; Ob man nun lernt  <nobr>&quot;sphere{M,r,pigment{color <i>Farbe</i>}}&quot;</nobr>
+    oder <nobr>&quot;Kugel(M,r,pigment{color <i>Farbe</i>})&quot; </nobr>
+    ist kein so gro&szlig;er Unterschied, da&szlig; sich der Aufwand f&uuml;r eine zus&auml;tzliche eingedeutschte
+    &quot;Spezial-Sprache&quot; lohnt! Um zu verstehen, da&szlig; eine &quot;sphere&quot; wohl eine Kugel ist und da&szlig;
+   ein &quot;cylinder&quot; ein Zylinder ist, dazu bedarf es weder tiefsch&uuml;rfender Englischkenntnisse
+   noch einer besonders hohen Intelligenz – soviel Verst&auml;ndnis sollte wohl jedem Sch&uuml;ler,
+   Student oder Erwachsenem abverlangt werden k&ouml;nnen. <br>
+    &nbsp; Wer POV-Ray auf diese Weise zum ersten Mal kennenlernt, wird fr&uuml;her oder sp&auml;ter
+     ohnehin das &uuml;brige von POV-Ray auch verstehen und anwenden wollen (sprich: damit &quot;spielen&quot; wollen!)
+     und lernt die Original-Befehle in englischen Abk&uuml;rzungen dann ohnehin.</h5>
+
+
+    <a name="vorbereitung"> </a><h3><b> N&ouml;tige Vorbereitungen  </b></h3>
+   <h5 align="justify"> Im folgenden werden die Vorbereitungen kurz erl&auml;utert:<br>
+    <b>1) Include-Datei  <a href="../down/analytical_g.inc"><font size="+1">&quot;analytical_g.inc&quot;</font></a> einbinden</b><br>
+       &nbsp; Lo’s Toolbox of Analytical Geometry, meine daf&uuml;r  erstellte Include-Datei  &quot;analytical_g.inc&quot;
+       mu&szlig; dazu einbunden werden, d.h. man mu&szlig; sie in dasselbe Verzeichnis wie die Textdatei
+       (Endung: &quot;.pov&quot;) oder in das Verzeichnis &quot;Include&quot; im POV-Ray Programm-Verzeichnis
+       kopieren.<br>
+    <br>
+    <b>2) Schablonentext mit Koodinatensystem</b><br>
+   &nbsp;Um eigene Szenen zu erstellen verwendet man einen
+    <a href="a_geo_00.pov"><b>Schablonentext als .pov-Datei <font size="+1">&quot;a_geo_00.pov&quot;</font></b></a> oder
+    als <a href="a_geo_00.txt"><b>Textdatei <font size="+1">&quot;a_geo_00.txt&quot;</font></b></a> .<br>
+    Dieser Text enth&auml;lt eine einfache Grundszenerie mit Lichtquelle, Kamera, Koordinatenachsen auf gerastertem Untergrund
+    sowie einige Beispiele f&uuml;r einfache Farben (f&uuml;r pigment) im Farbbefehl &quot; pigment{ color Red }&quot;.<br>
+    <b>Bitte Beachten: <br>Eigene Objekte sollten immer Ende des Schablonentextes angef&uuml;gt werden!</b><br>
+ </td>
+ <td valign="top" width="50%">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><img src="a_geo_00.jpg" width="320" height="240" hspace="0" vspace="0"></td>
+         </tr></table>
+  <h5 align="center"><b>Darstellung von Punkten im 3D-Raum</b> </h5>
+<br>
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_im30_1.htm')"
+                     onmouseover="window.status='ShowSingleImage';return true"
+                     onmouseout="window.status=''">
+                     <img src="a_geo_calc01t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+    <h5 align="center"><b>Resultate von Berechnungen mit POV-Ray.</b> <br>
+</h5>
+<br>
+   <h5 align="justify">
+    Weiterer Hinweis zur Vertiefung: <br>
+     Sowohl die Kamera-Positionen, als auch die Licht-Position k&ouml;nnen ver&auml;ndert werden.
+     Die Achsenl&auml;ge kann ebenfalls ver&auml;ndert werden<br>
+     Zum Wechsel von linksh&auml;ndigen zu rechth&auml;ndigen Koordinaten vgl.
+     <a href="a_geo85d.htm">Rechts- und linksh&auml;ndige Koordinatensysteme</a>.<br>
+     Nach Drehen der Grundebene zu &quot;plane{&lt;0,1,0&gt;,0 ... rotate&lt;-90,0,0&gt;}
+     sowie Setzen der L&auml;nge der z-Achse auf Null, kann diese Datei auch f&uuml;r
+     2D-Geometrie in der xy-Ebene verwendbar! Man mu&szlig; dabei lediglich alle z-Komponenten
+     immer auf Null setzen.!</b><br>
+     <br>
+      <br>
+      <b>3) Texturen, Strichst&auml;rken definieren!</b> <br>
+      &nbsp; Texturen, Strichst&auml;rken sind im Schablonentext bereits definiert!<br>
+      <b>Schattenwurf Ausschalten</b><br>
+       Das Ausschalten des Schattenwurfes erfolgt f&uuml;r einzelne Objekte wie folgt: <br>
+       Hierzu f&uuml;gt man vor der letzten geschweiften Klammer eines Objektes den Befehl &quot;no_shadow&quot;hinzu.
+       Beispiel:  <nobr>cylinder{ P1, P2,  pigment{ color Green} no_shadow}</nobr><br>
+       Zu den Farben vergleiche die Farbtabelle in der <a href="a_geo70d.htm">Tabellarischen &Uuml;bersicht</a>  !!!<br>
+       <br><b> 4) Punkte und Vektoren definieren </b><br>
+      &nbsp;  Zur Einfacheren Verwendung sollte man f&uuml;r alle Punkte und Vektoren Platzhalter definieren. Dies macht den
+       Text f&uuml;r die Objekte &uuml;bersichtlicher.<br>
+        <b>Achtung:<br>
+        In Platzhalternamen bitte keine Umlaute und nationale Sonderzeichen verwenden!!!</b><br>
+        <b>Bitte Beachten: </b><br>
+        POV-Ray bereits definierte Vektoren sind z.B.: <nobr><b>o = &lt;0,0,0&gt;;</b></nobr> der Ursprung!<br>
+       Weitere siehe  in der <a href="a_geo80d.htm">Vektorrechnung mit POV-Ray</a>!!! <br>
+       <br>
+          </h5>
+</td>
+</tr>
+</table>
+</div>
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</body>
+</html>

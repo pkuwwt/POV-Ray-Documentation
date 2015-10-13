@@ -1,0 +1,261 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="keywords" content="rollende Kette, Gleiskette, 3D-Animationen, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg Video, avi Video, animierte Gifs, Raytracing Beschreibungen, POV-Ray Beispiele, POV-Ray Anleitungen">
+<meta name="Description" content="Rollende Kette, Gleiskette, 3D-Animationen mit POV-Ray -  deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik">
+<title>Rollende Kette, Gleiskette, 3D-Animationen mit POV-Ray - deutsche Beschreibungen zum Raytracer POV-RAY mit Beispielen
+       zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ger.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="zur&uuml;ck zur &Uuml;bersicht" title="zur&uuml;ck zur &Uuml;bersicht"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animationen mit POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Grundlagen und Beispiele zu Animationen.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim141e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim141e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim141i.htm"><font size="2">Italiano</font></a>
+        <a href="anim141i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim141f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="anim141f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm"> Animationen Galerie</b></a><br>
+ - <a href="../pov__ger.htm"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anid.htm">3D Animation</b></a><br>
+ &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; <!--a href="anim1d.htm"-->  0. Grundlagen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001d.htm">Beispiel</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002d.htm">Von Bildern zum Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005d.htm">Grundbegriffe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008d.htm">Animationsbefehle</b></a><br>
+&nbsp; <!--a href="anim11d.htm"--> I. Zyklische Animationen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11d.htm">Objekt-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112d.htm">Planeten im Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113d.htm">Animierte Uhr</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12d.htm">Kamera-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121d.htm">Kamera Geradeausflug</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13d.htm">Western-Kutschen</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim13d.htm">-Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131d.htm">Rollende R&auml;der</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14d.htm">Zahnradgetriebe</b></a><br>
+&nbsp; <b>&gt</b> 4.1. <!--a href="anim141d.htm"--><b>Rollende Kette</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142d.htm">Fahrradkette</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15d.htm">Pendelschwingung</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151d.htm">Newtonpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152d.htm">Schaukelstuhl</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16d.htm">Federpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170d.htm">Koppelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17d.htm">Pleuelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18d.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190d.htm">Z&auml;hler + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200d.htm">Faltung eines W&uuml;rfels</b></a><br>
+
+&nbsp; II. Nichtlineare Bewegungen<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim220d.htm"> +Bremsen 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim222d.htm"> + Bremsen 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240d.htm">Fallen + H&uuml;pfen</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260d.htm">Beschleunigung nach</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260d.htm">physikalischen Formeln</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280d.htm">Geschwindigkeitssteuerung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280d.htm">mit Spline-Funktionen</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animationspfade<br>&nbsp; &nbsp; &nbsp;  mit Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210d.htm">Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21d.htm">Geschlossene Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22d.htm">Animationspfade</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="95%" align="center" cellpadding="10"><!--1-->
+<tr><td width="10%"><img src="im/Roller_Chain_014t.gif" border="0" width="160" height="120"></td>
+    <td width="90%" align="center">
+     <h1>Eine abrollende Kette &nbsp; <br>
+      Animation einer Rollenkette &nbsp; &nbsp; <br>
+      <font size="-1">Wie man eine rollende Kette, wie etwa eine Fahrrad- oder Motorradkette, <br>
+      einen Keilriemen, eine Gleiskette oder ein F&ouml;rderband animiert. &nbsp; &nbsp;</font></td></h1>
+</tr></table>
+<table align="center" width="85%" cellpadding="10"><!--1-->
+<tr><td colspan="1" valign="top"><p align="justify"><b><font size="+1"><b>Wie animiert man eine Rollenkette?</b></font></b><br>
+  Zun&auml;chst sollte man die Geometrie zweier Kreise mit ihren externen Tangenten verstehen.<br>
+  <font size="-1">Betreffs genaueren Informationen siehe hier: <br>
+  &nbsp; &nbsp; <a href="../geo/geom_c300d.htm" target="_new">Externe Tangenten zweier Kreise</a></font><br>
+  <font size="-1">Bei gegebenen Radien <b>r<sub>1</sub> > r<sub>2</sub></b> und der Achsentfernung <b>d</b><br>
+    mit <b>r<sub>i</sub> = r<sub>2</sub>-r<sub>1</sub></b> erhalten wir f&uuml;r den Kettenring:<br>
+    Die L&auml;nge der linearen Teile:</font> <b>2&#183;t = 2&#183;sqrt( d<sup>2</sup> - r<sub>i</sub><sup>2</sup>)</b>.<br>
+    <font size="-1">Der Winkel der Kette:</font>  &nbsp; &nbsp;<b> &#945; = asin(r<sub>i</sub>/d).</b> <br>
+    <nobr><font size="-1">Das Segment des Kreises 1:</font> &nbsp;<b>l<sub>1</sub> = 2&#960;&#183;r<sub>1</sub> &#183;(180+2&#183;&#945;)/360</b>.</nobr><br>
+    <font size="-1">Das Segment des Kreises 2:</font> &nbsp;<b>l<sub>2</sub> = 2&#960;&#183;r<sub>2</sub> &#183;(180-2&#183;&#945;)/360</b>.
+<hr><p align="justify">
+    Zur <b>&auml;quidistanten Platzierung der Kettenglieder auf auf der Umfangslinie der Kette</b> m&uuml;ssen wir die
+    L&auml;nge der kompletten Kette durch die Anzahl der Kettenglieder dividieren
+    <font size="-1">(Bei Fahrradketten gibt es 2 verschiedene Arten von Gliedern, daher mu&szlig; hier eine <b>gerade Anzahl</b> verwendet werden!)</font>.
+    <br>
+    <br>
+    Zur <b>Animation einer rollenden Kette</b> m&uuml;ssen wir die Kettenglieder auf 4 unterschiedlichen Teilen des Umfangs
+    auf 4 verschiedene Arten platzieren, abh&auml;ngig von der aktuellen Position des Kettengliedes!
+    Dies k&ouml;nnen wir mittels der bedingten Anweisung mit '#if' erreichen:<br>
+  </font>
+</p>
+
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// -------------- dimensions -----------
+#local R1 = 0.15;  // big wheel radius
+#local R2 = 0.075; // small wheel radius
+#local Dist = 0.30;// axis distance
+#local Link_N = 30;// number of links
+// -------------- calculations ---------
+#local Ri = R1-R2;
+#local C_Angle = degrees(asin(Ri/Dist));
+// chain linear length
+#local LLen=sqrt(pow(Dist,2)-pow(Ri,2));
+// segment angle and length
+#local Ang1 = 180+2*C_Angle;
+#local Ang2 = 180-2*C_Angle;
+#local Len1 = Ang1/360*2*pi*R1;
+#local Len2 = Ang2/360*2*pi*R2;
+// total length
+#local C_Len = 2*LLen+Len1+Len2;
+#local Link_L  = C_Len / Link_N;
+#declare Link =        // the chain link
+sphere{&lt;0,0,0&gt;,0.0075
+       texture{Chrome_Metal}}
+//--------------------------------------
+#local Ani=clock*Link_Len;// animation!
+union{ //-------------------------------
+#local Nr = 0; // start loop
+#while (Nr &lt; Link_N)
+ #local Pos = mod(Nr*Link_L+Ani,C_Len);
+ //-------------------------------------
+ #if(Pos&lt; Len1 ) // front down
+  #local Rot1 = Pos/Len1*Ang1;
+  object{Link translate&lt;0,R1,0&gt;
+         rotate&lt;0,0,-Rot1 +C_Angle&gt;}
+ #end //--------------------------------
+ #if((Pos>Len1) & (Pos&lt;=Len1+LLen))
+  #local LPos = Pos-Len1; // base side
+  object{Link translate&lt;-LPos,-R1,0&gt;
+            rotate&lt;0,0,-C_Angle&gt;}
+ #end //--------------------------------
+ #if((Pos&gt;Len1+LLen )       // back up
+      & (Pos&lt;= Len1+LLen+Len2))
+  #local Rot2 =
+      (Pos-Len1-LLen)/Len2*Ang2;
+  object{Link translate&lt;0,R2,0&gt;
+          rotate&lt;0,0,-Rot2-C_Angle-180&gt;
+              translate&lt;-Dist,0,0&gt;}
+ #end //--------------------------------
+ #if((Pos&gt;Len1+LLen+Len2) // up forward
+      & (Pos &lt;= Len1+LLen+Len2+LLen))
+  #local LPos = Pos-(Len1+LLen+Len2);
+  object{Link translate&lt;LPos,R2,0&gt;
+              rotate&lt;0,0,C_Angle&gt;
+              translate&lt;-Dist,0,0&gt;}
+ #end //--------------------------------
+#local Nr = Nr + 1;  // next Nr
+#end // --------------- end of loop
+} // end of union ----------------------</b></td></pre></tr> </table>
+</td></p>
+
+<td colspan="1" valign="top">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/External_Tangents_00ec.jpg" width="400" height="256" alt="externel tangents" title="externel tangents"></td></tr>
+   </table><font size="-1">Die Geometrie zweier Kreise mit externen Tangenten!</font>
+<br>
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Roller_Chain_001.jpg" width="400" height="256" alt="Roller_Chain" title="Roller_Chain"></td></tr>
+   </table><font size="-1">Die Positionen der Kettenglieder einer Rollenkette.</font>
+<br>
+
+<br>
+<br>
+
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Roller_Chain_005.gif" width="400" height="256" alt="roller chain links ani" title="roller chain links ani"></td></tr>
+   </table><font size="-1">Animierte Positionen f&uuml;r die Glieder einer Rollenkette!</font>
+<br>
+   <h5 align="center">Szenenbeschreibung <br> f&uuml;r POV-Ray:<br>&nbsp; &nbsp; <a href="pov/Roller_Chain_1.ini"> &quot;Roller_Chain_1.ini&quot;</a> und <br>
+   <a href="pov/Roller_Chain_1.pov">&quot;Roller_Chain_1.pov&quot;</a></h5>
+
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Roller_Chain_011.gif" width="400" height="256" alt="Roller_Chain" title="Roller_Chain"></td></tr>
+   </table><font size="-1">Eine andere animierte Rollenkette</font><br>
+</div>
+   <br>
+   <font size="-1">Weiter mit zwei verschiedenen Arten von Kettengliedern hier:<br>&nbsp; &nbsp; <a href="anim142d.htm">Fahrradkette</a>.<br>
+   Betreffs Animationen von rollenden Fahrradketten siehe hier:<br>
+   &nbsp; &nbsp; <a href="../../pov_anim/ani_4000d.htm">3D-Animations - Engineering</a>.</font>
+
+</td>
+
+</tr><tr>
+<td colspan="2">
+</td></tr>
+</table>
+
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

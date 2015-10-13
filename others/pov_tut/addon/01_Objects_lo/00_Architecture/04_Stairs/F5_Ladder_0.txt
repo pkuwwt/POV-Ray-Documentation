@@ -1,0 +1,16 @@
+//-------------------------------------------------------------------- 
+#declare Ladder_Texture =
+ texture{pigment{ color rgb<1,1,1>*1.1 }
+         finish { phong 1}}
+//--------------------------------------------------------------------
+#include "Ladder_0.inc"
+//--------------------------------------------------------------------
+object{ Ladder_0 (   2.300, // ladder heigth,
+                     0.225, // ladder half width in x,
+                     0.030, // ladder side radius, 
+                     0.020, // step radius,
+                     0.250, // step distance, 
+                     Ladder_Texture // ladder texture
+                   ) //-----------------------
+        scale<1,1,1> rotate<10,-30,0> translate<0,0,0>} 
+//-------------------------------------------------------------------- end

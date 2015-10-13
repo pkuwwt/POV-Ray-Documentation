@@ -1,0 +1,271 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - rgb colors</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font>
+ </td></h6>
+ <td align="right">
+        <a href="tex_110e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_110e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_110i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_110i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_110f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_110f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001d.htm">texture Syntax</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330d.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp;<!--a href="tex_110d.htm"--><b>Farben Do-it-Yourself</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_110d.htm"--><b>color_rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700d.htm">Muster</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp; &nbsp; Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+  &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750d.htm">Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="70%" align="center"><tr><td><!-- global table-->
+<table><tr><td>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/rgb_1t.jpg" width="80" height="80" alt="color rgb" border="0"></td></tr></table>
+ </td>
+ <td><font size="5"><b><p>
+     <a name="Da_kommt_Farbe_auf__">&nbsp; Da kommt Farbe auf !</a> "color ... " </p>
+ </td>
+</tr></table>
+<font size="2"><p align="justify">Mit dem Befehl &quot;pigment { color .... }&quot;
+wird die Farbe bzw. das Farbmuster der Textur definiert.</p>
+<p align="justify">Neben der Farbe kann auch die
+<a href="tex_120d.htm">Durchsichtigkeit</a> (transparence) mit oder ohne
+Filtereffekte (filter) angegeben werden! </p>
+<p align="justify">Beispiele: Sofern in einer vorhergehenden Zeile: #include &quot;colors.inc&quot;
+in Text eingef&uuml;gt ist, kann mit vordefinierten Farben mit amerikanisch-englischen Namen
+gearbeitet werden, z.B.: pigment{ color Red } Zu den dadurch zur Verf&uuml;gung stehenden ca.
+100 Farben vgl. gesonderte Liste! Das menschliche Auge kann nahezu 16 Mio Farben (&quot;true color&quot;)
+unterscheiden! Daher ist es &ouml;fters n&ouml;tig sich weitere Farben selbst zu machen.
+( F&uuml;r TrueColor-Farben wie sie POV-Ray verwendet, werden f&uuml;r jede der 3 Grundfarben
+1 Byte reserviert. Auf einem Byte kann man von 0 bis 255 z&auml;hlen, dem entspricht
+eine Farbintensit&auml;t von 0% bis 100 %. Es lassen sich mit 3 Byte pro Punkt somit
+256*256*256 = ca. 16 Millionen verschiedene Farbwerte mischen.</p>
+<p align="justify">Verwendet man bei der Darstellung von feinen Farbschattierungen
+weniger Farben, erscheint der Farb&uuml;bergang an vielen Stellen stufig! )</p>
+
+<p><hr></p>
+<font size="5"><b>Neue Farben selbst machen:<a name="color_rgb"> "color rgb&lt; , , &gt;</a>"</b></font>
+<table border="2" bordercolor="#c0c0c0"  width="400" >
+<tr><td bgcolor="#ffffff"><img src="im/rgbaddit.gif" width="400"  height="200" alt="rgb values" title="rgb values" ></td></tr>
+</table>
+
+<font size="2"><p>Es l&auml;&szlig;t sich jede beliebige Farbe aus Rot, Gr&uuml;n und Blau mischen
+(&quot;Additive Farbmischung&quot;!), dazu verwendet man die Anweisung
+&quot;color rgb&lt; , , &gt;&quot; (red, green, blue). Statt &quot;color rgb&lt; 1, 1, 0&gt;&quot;
+ kann man auch &quot;color red 1 green 1 blue 0&quot;schreiben.<br>
+Die in die Klammern einzusetzenden 3 Zahlen stellen die Leuchtst&auml;rken der
+Anteile der 3 Grundfarben dar. Sie m&uuml;ssen Werte zwischen 0.000 und 1.000 annehmen.
+Wobei 1.00 = 100% und 0.00 = 0% der jeweiligen Farbe bedeutet.<br>
+<b>Achtung:</b> Werte &uuml;ber 1 sind unrealistisch und erzeugen nur &uuml;berbelichtete Objekte mit
+ausgefressenen Schatten und platt wirkenden Lichtpartien!
+</p></font>
+<table border cellspacing="2" bordercolor="#c0c0c0" cellpadding="4">
+<tr><td width="50%" valign="top" bgcolor="#ffffff">
+ <img src="im/rgbaddi3.jpg" width="320" height="240"></td>
+<td width="50%" valign="top" bgcolor="#ffffff">
+<b><font size="4"><p>Additive Farbmischung<br>
+mit dem POV-Ray Raytracer</b></font><font size="2"><br>
+In POV-Ray gerechnet mit einem roten (rgb&lt;1,0,0&gt;),einem gr&uuml;nen (rgb&lt;0,1,0&gt;)
+und einem blauem (rgb&lt;0,0,1&gt;)
+Spotlight,welche auf eine wei&szlig;e Fl&auml;che strahlen!<br>
+Bei softer ausklingenden Lichtkegel-R&auml;ndern erkennt man noch weitere Mischfarben,
+die sich aus verschieden hohen Intensit&auml;ten
+der 3 Grundfarben zusammenmischen.</font></td>
+</tr>
+<tr><td width="50%" valign="top" bgcolor="#ffffff">
+ <img src="im/rgbaddit.jpg" width="320" height="240"></td>
+<td width="50%" valign="TOP" bgcolor="#ffffff">
+ <img src="im/rgbaddi2.jpg" width="320" height="240"></td></tr>
+</table>
+
+<br>
+</font><p><hr></p>
+<fontsize="2"><p>Sofern in einer vorhergehenden Zeile
+<b>#include &quot;colors.inc&quot;</b> steht,<br> dann kann man </font><a href="tex_150d.htm">
+<font size="2">vorgefertigte Farben</b></font></a>
+<font size="2"> mit den englischen Bezeichnungen verwenden! </p>
+</font><font size="4"><p>Hier einige <b>Beispiele f&uuml;r RGB Farben</b>
+</font><font size="2">und ihre englische Bezeichnung, sofern sie in
+"colors.inc" definiert sind.</p></font>
+<table border cellspacing="1" cellpadding="4" width="517">
+<tr><td width="38%" valign="TOP" bgcolor="#f8f8f0">
+<p><font size="2">
+color rgb&lt;0 ,0 ,0&gt;<br>
+<nobr>color rgb&lt;0.5 ,0.5, 0.5&gt;</nobr><br>
+color rgb&lt;1 ,1 ,1&gt;<br>
+<br>
+color rgb&lt;1 ,0 ,0&gt;<br>
+color rgb&lt;0, 1, 0&gt;<br>
+color rgb&lt;0, 0, 1&gt;<br>
+<br>
+color rgb&lt;1 ,1 ,0&gt;<br>
+color rgb&lt;0 ,1 ,1&gt;<br>
+color rgb&lt;1 ,0 ,1&gt;<br>
+<br>
+color rgb&lt;1, 0.65, 0&gt;<br>
+color rgb&lt;0.25, 1, 0&gt;<br>
+color rgb&lt;1, 0,0.25&gt;<br>
+</font></td>
+
+<td width="25%" valign="TOP" bgcolor="#ffffff">
+<font face="Arial" size="2"><p>
+Schwarz<br>
+Grau<br>
+Weiss<br>
+<br>
+Rot<br>
+Gr&uuml;n<br>
+Blau<br>
+<br>
+Gelb<br>
+Cyan<br>
+Rotviolett<br>
+<br>
+Orangegelb*)<br>
+Gelbgr&uuml;n<br>
+Weinrot<br>
+</font></td>
+<td width="25%" valign="top" bgcolor="#ffffff">
+<font face="Arial" size="2"><p>
+color Black<br>
+color Gray50<br>
+color White<br>
+<br>
+color Red<br>
+color Green<br>
+color Blue<br>
+<br>
+color Yellow<br>
+color Cyan<br>
+color Magenta<br>
+<br>
+<br>
+<br>
+<br>
+</font></td>
+<td width="25%" align="center" valign="middle">
+<img src="im/txtur_col.jpg" border="0" width="160" height="200"></a>
+</td></tr>
+</table>
+
+
+<sup><font face="Arial" size="2"><p>*) </sup></font>
+<font face="Arial" size="1">Lohm&uuml;llers Lieblings-Gelb</font><font face="Arial" size="2"><br>
+Es lohnt sich hier selbst weiter zu experimentieren!
+Eigene Farbkreationen lassen sich dauerhaft f&uuml;r alle eigenen Szenen
+mit eigenen Farbnamen zur Verf&uuml;gung stellen, indem man sie in einer
+gemeinsamen Include-Datei ablegt. Mehr dazu siehe unter &quot;Wie legt man
+seine </font><a href="tex_900d.htm"><font size="2">eigene Farben und TexturenSammlung</b></font></a>
+<font size="2"> an?"<br>
+Sofern in einer vorhergehenden Zeile <b>#include &quot;textures.inc&quot;</b> steht,
+kann man fertige Farbmuster (&quot;pigment&quot;) und Texturen (&quot;texture&quot;)
+die in dieser Datei definiert sind verwenden. </p>
+
+
+</td></tr></table><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

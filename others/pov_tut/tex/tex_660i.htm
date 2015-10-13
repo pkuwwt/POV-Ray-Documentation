@@ -1,0 +1,331 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray - Motivi con image_pattern</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013 by Friedrich A. Lohmueller">
+<meta name="description" content="image_pattern, texture con POV-Ray">
+<meta name="keywords" content="image_pattern, POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_660e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_660e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_660f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_660f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_660d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_660d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+ <!--&nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500i.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560i.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561i.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562i.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570i.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580i.htm">pavement</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con pigments</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650i.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651i.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_660i.htm"--><b>image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br>  -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+
+<table border="0" width="85%" align="center"><tr><td><!-- global table-->
+
+<table><tr>
+  <td>
+  <font size="5">&nbsp; <b>Motivi con image_pattern </b></font>
+  </td>
+</tr></table>
+
+<table>
+ <tr>
+  <td valign="top">
+    <table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+<pre><i><b>// Syntax for 'image_pattern':</b></i>
+<font color="#100000"><b>pigment{ //-----------------------------
+ image_pattern{BITMAP_TYPE "bitmap.ext"}
+     color_map{ COLOR_MAP_BODY }
+     | pigment_map{ PIGMENT_MAP_BODY }
+} //------------------------------------</b></font>
+<i><b>// Syntax for 'texture':</b></i>
+<font color="#100000"><b>texture{ //-----------------------------
+ image_pattern{BITMAP_TYPE "bitmap.ext"}
+     texture_map{ TEXTURE_MAP_BODY }
+} //------------------------------------</b></font>
+<i><b>// Syntax for 'normal':</b></i>
+<font color="#100000"><b>normal{ //------------------------------
+ image_pattern{BITMAP_TYPE "bitmap.ext"}
+      [<b>Bump_Size</b>]
+       normal_map { NORMAL_MAP_BODY }
+} //------------------------------------</b></font></td></pre>
+  </tr>
+  </table>
+
+
+
+
+ </td>
+ <td valign="top">
+<br><font size="3">
+<b>&nbsp; Questo motivo riceve i valori grigio 3D<br>
+ di una immagine come un motivo per<br>
+ color_map, pigment_map,<br>
+ textur_map o normal_map.<br>
+&nbsp; I valori grigio del immagine sono<br>
+ interpretati come dichiarato corrispondente il typo di map.<br>
+I valori intermedi sono mediati.</b></font><br>
+<br>
+<br>
+<br>
+<b>Nota:</b> Per l'uso di questi motivi in<br>
+ 'normal', possiamo usare <br>
+ un <b>valore addizionale</b> per <b>Bump_Size</b> !
+
+
+
+    </font>
+ </td>
+ </tr>
+</table>
+
+
+
+<table>
+<tr>
+<td colspan="2"><hr>
+</td>
+</tr>
+ <tr>
+  <td valign="top">
+<font size="2"><i><b>Esempio 1: </b></i> 'image_pattern'</font>
+ <table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>// -----------------------------------
+#declare Texture_1  =
+texture{
+  image_pattern{
+    jpeg "Pattern2D_01.jpg"
+    interpolate 2
+    once
+  } //
+  texture_map{
+  [0.0 pigment{color rgbf&lt;1,1,1,1&gt;}]
+  [0.7 pigment{color rgbf&lt;1,0.6,0.1&gt;}]
+  [1.0 pigment{color rgb&lt;1,0.1,0.3&gt;}]
+  } // end texture_map
+}// end texture
+// -----------------------------------
+// -----------------------------------
+box{ &lt;0,0,0&gt;,&lt;1,1,0.00001&gt;
+     texture{ Texture_1 }
+     scale &lt;1,1,1&gt;
+     translate&lt;0,0,0&gt;
+   } // ------------------------------
+// -----------------------------------</b></td></pre>
+  </tr>
+  </table>
+</td>
+<td>
+<br>
+<div align="center">
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Pattern2D_01tn.jpg" border="0" width="160" height="160"
+       alt="Example image_pattern" title="Example image_pattern"></a>
+       </td>
+  </tr>
+</table>
+<font size="2">L'immagine utilizzata come image_pattern: <br>
+<a href="im/Pattern2D_01.jpg">Pattern2D_01.jpg</a> (512x512 pixels)</font>
+
+<table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Image_pattern_01c.jpg" border="0" width="320"  height="240"
+       alt="image_pattern" title="image_pattern"></a>
+      </td></tr></table>
+<font size="2">POV-Ray file della scena: <a href="pov/Image_pattern_01.pov">Image_pattern_01.pov</a>.<br>
+Ci&ograve; richiede l'immagine dall'alto: <a href="im/Pattern2D_01.jpg">Pattern2D_01.jpg</a> ! <b>*)</b>
+</font>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2"><hr>
+</td>
+</tr>
+
+<tr>
+  <td valign="top">
+<font size="2"><i><b>Esempio 2: </b></i> 'image_pattern'</font>
+ <table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>// -----------------------------------
+#declare Texture_1  =
+texture{
+  image_pattern{
+    jpeg "Spherical_01.jpg"
+    interpolate 2
+    // once
+  } //
+  texture_map{
+  [0.0 pigment{color rgbf&lt;1,1,1,0.8&gt;}]
+  [0.7 pigment{color rgb&lt;0.5,0,0.1&gt;}]
+  [1.0 pigment{color rgb&lt;0.5,0,0.1&gt;}]
+  } // end texture_map
+}// end texture
+// -----------------------------------
+// -----------------------------------
+box{ &lt;0,0,0&gt;,&lt;1,1,0.00001&gt;
+     texture{ Texture_1 }
+     scale &lt;1,1,1&gt;
+     translate&lt;0,0,0&gt;
+   } // ------------------------------
+// -----------------------------------</b></td></pre>
+  </tr>
+  </table>
+</td>
+<td>
+<br>
+<div align="center">
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Spherical_01tn.jpg" border="0" width="160" height="160"
+       alt="Example image_pattern" title="Example image_pattern"></a>
+       </td>
+  </tr>
+</table>
+<font size="2">L'immagine utilizzata qui come transparency map: <br>
+<a href="im/Spherical_01.jpg">Spherical_01.jpg</a> (512x512 pixels)</font>
+
+<table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Image_pattern_02c.jpg" border="0" width="320" height="240"
+       alt="image_pattern" title="image_pattern"></a>
+      </td></tr></table>
+<font size="2">POV-Ray file della scena: <a href="pov/Image_pattern_02.pov">Image_pattern_02.pov</a>.<br>
+Ci&ograve; richiede l'immagine dall'alto: <a href="im/Spherical_01.jpg">Spherical_01.jpg</a> ! <b>*)</b>
+<br>
+<br>
+<b>*) Nota: </b> Salvare i file delle immagini utilizzate allo stesso<br>
+sottodirectory, come i file di scena o in ogni<br>
+sottodirectory altro nei vostri include file paths.
+</font>
+</div>
+
+</td>
+</tr>
+
+</td>
+</tr>
+
+
+</table>
+
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

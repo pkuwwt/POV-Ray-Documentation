@@ -1,0 +1,266 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Transformations with POV-Ray - shearing with matrix</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2008 by Friedrich A. Lohmueller">
+<meta name="Description" content="Basics about geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d grafics, 3d graphics, computer graphics,
+      geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometric Transformations with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_450d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_450d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a><br>
+        <a href="trans_450i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_450i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_450f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_450f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp; <a href="trans_000e.htm">Geometric</b></a><br>
+ &nbsp; <a href="trans_000e.htm">Transformations</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Elementary </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100e.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200e.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">mirror symmetry</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Other</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400e.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <!--a href="trans_450e.htm"--><b>Shearing</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470e.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500e.htm">&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="trans_500e.htm">&nbsp;and &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Vectors and</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Transformations</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+ <tr>
+  <td>
+  <td><h1 align="center"><nobr>Shearing with matrix</nobr>
+      </h1>
+</td></tr></table>
+<table border="5"  bgcolor="#efefef"
+    bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#807540">
+    <tr>
+        <td align="center" bgcolor="#FFFFFF">
+          <img src="shearing.jpg" alt="shearing" title="shearing" border="0" width="240"  height="120"></td>
+    </tr>
+</table>
+
+
+<p align="justify">Simple transformations like moving (translate),
+streching (scale) or truning (rotate) normally should not be descriped by matrices, because
+this way is more difficult to imagine.
+<b>Shearing</b> is another simple transformation we can only descripe by matrix in POV-Ray.<br>
+<a name="shear"></a>
+</h5>
+<div align="center">
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr><td colspan="2">
+     <h4 align="center">Sample: Shearing of y axis in direction x with factor 0.5 (30&deg;):</td></h4></tr>
+    <tr><td><table align="center" valign="middle"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+<pre><b>
+  matrix&lt; 1 , 0, 0,
+         0.5, 1, 0,
+          0 , 0, 1,
+          0 , 0, 0 &gt;</b></pre></td></tr></table>
+        </td>
+        <td valign="top" bgcolor="#FFFFFF">
+        <p align="center"><img src="povmatr3.gif" width="217" height="162"></p>
+        </td>
+    </tr>
+</table>
+</div><br>
+<hr size="3">
+<h4 align="center">
+ Shearing matrices and the Visualisation of the according effect:</h4>
+<div align="center">
+<table border="1" cellpadding="2" cellspacing="1" bordercolor="#FFFFFF">
+<tr>
+  <td valign="top" bgcolor="#FFFFFF">
+  <pre><b>matrix &lt; 1,0.5,  0,
+         0,  1,  0,
+         0,  0,  1,
+         0,  0,  0 &gt; </b></pre></td>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="matrix-shear_x_to_y.jpg" border="0" width="160"  height="120"
+                   alt="" title=""><!--/a-->
+            </td></tr></table>
+  </td>
+  <td>&nbsp;</td>
+  <td valign="top" bgcolor="#FFFFFF">
+  <pre><b>matrix &lt; 1,  0,0.5,
+         0,  1,  0,
+         0,  0,  1,
+         0,  0,  0 &gt; </b></pre></td>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="matrix-shear_x_to_z.jpg" border="0" width="160"  height="120"
+                   alt="" title=""><!--/a-->
+            </td></tr></table>
+  </td>
+</tr>
+
+<tr>
+  <td valign="top" bgcolor="#FFFFFF">
+  <pre><b>matrix &lt; 1,  0,  0,
+       0.5,  1,  0,
+         0,  0,  1,
+         0,  0,  0 &gt; </b></pre></td>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="matrix-shear_y_to_x.jpg" border="0" width="160"  height="120"
+                   alt="" title=""><!--/a-->
+            </td></tr></table>
+  </td>
+  <td>&nbsp;</td>
+  <td valign="top" bgcolor="#FFFFFF">
+  <pre><b>matrix &lt; 1,  0,  0,
+         0,  1,0.5,
+         0,  0,  1,
+         0,  0,  0 &gt; </b></pre></td>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="matrix-shear_y_to_z.jpg" border="0" width="160"  height="120"
+                   alt="" title=""><!--/a-->
+            </td></tr></table>
+  </td>
+</tr>
+
+<tr>
+  <td valign="top" bgcolor="#FFFFFF">
+  <pre><b>matrix &lt; 1,  0,  0,
+         0,  1,  0,
+       0.5,  0,  1,
+         0,  0,  0 &gt; </b></pre></td>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="matrix-shear_z_to_x.jpg" border="0" width="160"  height="120"
+                   alt="" title=""><!--/a-->
+            </td></tr></table>
+  </td>
+  <td>&nbsp;</td>
+  <td valign="top" bgcolor="#FFFFFF">
+  <pre><b>matrix &lt; 1,  0,  0,
+         0,  1,  0,
+         0,0.5,  1,
+         0,  0,  0 &gt; </b></pre></td>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="matrix-shear_z_to_y.jpg" border="0" width="160"  height="120"
+                   alt="" title=""><!--/a-->
+            </td></tr></table>
+  </td>
+</tr>
+</table>
+<h5 align="justify">
+ The transformations shown here are also available as text templates
+ in the section &quot;Shearing &amp; transform&quot;
+ in my <nobr><a href="../down/insrtd_a.htm">&quot;<b>Insert Menu Add-on</b>&quot;</a></nobr>
+ </h5>
+
+<hr>
+ </div>
+<h6 align="justify">
+ <a href="trans_100e.htm">translate</a> |
+ <a href="trans_200e.htm">rotate</a> |
+ <a href="trans_300e.htm">scale</a> |
+ <a href="trans_400e.htm">matrix</a> |
+ <!--a href="trans_450e.htm"-->shearing</a> |
+ <a href="trans_470e.htm">transforms.inc</a> |
+ <a href="trans_500e.htm">transform</a> |
+ <a href="trans_800e.htm">vector transformations</a>
+<h6>
+
+
+
+</td></tr></table></td></tr>
+
+
+<!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

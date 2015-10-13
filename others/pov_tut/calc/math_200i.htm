@@ -1,0 +1,190 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Sistemi di coordinate con gli assi per POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Reticoli per sistemi di coordinate e la visualizzazione di funzioni matematiche con POV-Ray">
+<meta name="keywords" content="Carta quadrettata, reticoli, assi di coordinate, sistemi di coordinate, funzioni matematiche, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=665,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_200e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="math_200e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="math_200f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="math_200f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_200d.htm"><font size="2">Deutsch</font></a>
+        <a href="math_200d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000i.htm"><nobr>Sistemi di coordinate</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000i.htm"><nobr>e funzioni in 2D</nobr></b></a><br>
+<br>
+      &nbsp; - <a href="math_100i.htm">Carta quadrettata</b></a><br>
+<nobr>&nbsp; <b>&gt;</b> <!--a href="math_200i.htm"--><b>Sistemi di coordinate</b></a><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="math_200i.htm"--><b>con gli assi</b></a><br>
+<nobr>&nbsp; -  <a href="math_300i.htm">Macro per un reticolo</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300i.htm">con due livelli</b></a><br>
+&nbsp; -  <a href="math_500i.htm">Funzioni 2D</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500i.htm">Esempio</b></a><br>
+<nobr>&nbsp; -  <a href="math_600i.htm">Funzioni matematiche</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600i.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2" width="80%" align="center"><!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+
+<table align="center" width="75%" cellpadding="3">
+<tr>
+ <td nowrap colspan="2" >
+ <font size="5"><b>Sistemi di coordinate</b></font><br>
+  La Costruzione di una carta di una sistema di coordinate<br>
+  con reticoli et assi.<br>
+ <font size="-1">Oggetti:&nbsp;&nbsp;&nbsp; &quot;plane, cylinder, cone&quot;.<br>
+     Metodi: &quot;color_map, layered textures, macro&quot;</font>
+
+ <td>
+</tr>
+<tr>
+<td>
+<div align="left">
+<br>
+<b>La Costruzione in dettaglio:</b><br>
+Per il piano quadrettato per il reticolo dei coordinati vede: <a href="math_100i.htm">&quot;Carta quadrettata&quot;</b></a>.<br>
+   Una asse si fa di un cilindro con una testura di rige e con un cono alla fine.
+   Tutto &egrave; definito come una macro per ottenere i colori e la lunghezza variabile.
+<br>
+  <table  align="center"  border="3" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr>
+   <td valign="TOP" bgcolor="#ffffff">
+<pre><b>#macro Axis_( AxisLen,
+              RedTexture,
+              WhiteTexture)
+union{
+ cylinder{&lt;0,-AxisLen,0&gt;,&lt;0,AxisLen,0&gt;,0.05
+          texture{checker
+                  texture{RedTexture  }
+                  texture{WhiteTexture}
+                  translate&lt;0.1,0,0.1>}}
+ cone{&lt;0,AxisLen,0&gt;,0.2,&lt;0,AxisLen+0.7,0&gt;,0
+           texture{RedTexture}}
+} // end of union "Axis"
+#end // of macro Axis (AxisLen)
+//-----------------------------------------
+#macro AxisXYZ(AxisLX,AxisLY,AxisLZ,
+               TexRed,TexWhite)
+//-- drawing 3 axes -- 3 Achsen zeichnen --
+union{
+object{Axis_(AxisLX,TexRed,TexWhite)
+       rotate&lt; 0,0,-90&gt;}// x-Axis
+object{Axis_(AxisLY,TexRed,TexWhite)
+       rotate&lt; 0,0,  0&gt;}// y-Axis
+object{Axis_(AxisLZ,TexRed,TexWhite)
+       rotate&lt;90,0,  0&gt;}// z-Axis
+} // end of union
+#end// of macro "AxisXYZ(...)"  -----------
+//-- drawing the axis -- Achsen zeichnen --
+#declare Tex_Dark =
+texture{pigment{color rgb&lt;1,0.3,0&gt;}
+        finish{ phong 1}}
+#declare Tex_White =
+texture{pigment{color rgb&lt;1,1,1&gt;}
+        finish{ phong 1}}
+//-----------------------------------------
+object{AxisXYZ(3.5,3,0.0001,
+               Tex_Dark,Tex_White)}
+//end axes of the system of coordinates ---</td></b></pre></tr></table>
+</td>
+<td>
+<font size="-1"><b>La versione bidimensionale:</b></font><br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/povcoo2i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/axis_n2t.jpg" border="0" width="320"  height="240"
+     alt="Sample grid with axes - 2 dimensional 600x450" title="Sample grid with axes - 2 dimensional 600x450"></a></td>
+  </tr>
+ </table> <font size="-1"><a href="pov/axis_n2.pov">La scena per la versione 2D in POV-Ray</a></font><br>
+
+ <br>
+ <br>
+
+<font size="-1"><b>La versione tridimensionale:</b></font><br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/povcoo3i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/axis_n3t.jpg" border="0" width="320"  height="240"
+     alt="Sample coordinates 3 dimensional 600x450" title="Sample coordinates 3 dimensional 600x450"></a></td>
+  </tr>
+ </table><font size="-1"><a href="axis_n3.pov">La scena per la versione 3D in POV-Ray</a></font>
+</td>
+</tr>
+</table>
+</center>
+
+<br>
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

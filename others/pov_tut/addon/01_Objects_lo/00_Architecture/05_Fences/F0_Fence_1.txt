@@ -1,0 +1,23 @@
+
+//--------------------------------------------------------------------- texture
+
+#declare Fence_Texture = // (wood structures by default in direction z) 
+         texture { pigment{ color rgb< 0.75, 0.5, 0.30>*0.80 } 
+                   normal { bumps 0.25 scale 0.005 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+
+//-----------------------------------------------------------------------------
+#include "Fence_1.inc"
+//-----------------------------------------------------------------------------
+object{ Fence_1 ( 0.80, // Fence_Height, 
+                    2.00, // Fence_Length_x,
+                    15,   // Number_of_Elements_x,
+                    0.10, // Element_Length_x, 
+                    0.03, // Element_Depth_z, 
+                    Fence_Texture) // -------------------------------
+        rotate<0,0,0> 
+        translate<-1.00,0.05,0>} // end of object{ Fence_000(...) ...}
+//-----------------------------------------------------------------------------
+
+

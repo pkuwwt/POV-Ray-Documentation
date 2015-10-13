@@ -1,0 +1,226 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures avec POV-Ray - motifs : object pattern (2)</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="Textures avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Conception de Surface en &raquo;texture&laquo; avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_561e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_561e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_561i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_561i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_561d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_561d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+ &nbsp;       <!--a href="tex_000f.htm"--><b>Conception de Surface</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000f.htm">Coleurs et Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001f.htm">Syntaxe de texture</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001f.htm">Exemple de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200f.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300f.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">Exemples normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400f.htm">finish{ ... } </b></a><br>-->
+ <nobr>&nbsp; &nbsp; <a href="tex_210f.htm">Textures pr&ecirc;tes-&agrave;-l'emploi</b></a></nobr><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210f.htm">Rules</a><br>
+ &nbsp; &nbsp; - <a href="tex_150f.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160f.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110f.htm">Couleurs en do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110f.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120f.htm">Transparence</b></a><br>-->
+ &nbsp; &nbsp; Motifs - Patterns</b><br>
+ &nbsp; &nbsp; &nbsp;Motifs r&eacute;gulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500f.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500f.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550f.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560f.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_561f.htm"--><b>object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562f.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570f.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580f.htm">pavement</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs rayures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs par pigments</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650f.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651f.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660f.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750f.htm">Listes de Motifs</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750f.htm">Motifs r&eacute;gulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755f.htm">Motifs par hasard</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760f.htm">Motifs Fractal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Autres motifs</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780f.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780f.htm">warp mapping</b></a><br> -->
+ &nbsp; &nbsp; <a href="tex_790f.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800f.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800f.htm">méthodes mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820f.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830f.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840f.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850f.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860f.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870f.htm">image_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; Superpositions</b><br>
+ &nbsp; &nbsp; - <a href="tex_890f.htm">layered_textures</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="tex_900f.htm">Votre textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="85%" align="center"><tr><td><!-- global table-->
+
+<table><tr>
+  <td>
+  <font size="5">&nbsp; <b>Object Pattern (2)</b></font>
+  </td>
+</tr></table>
+
+<table>
+ <tr>
+  <td valign="top">
+ <table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>#declare Pattern_Object_1=
+union{
+ box{&lt;-7.00,1.35,-1.50&gt;,&lt; 0.78,1.40,1.5&gt;}
+ box{&lt;-7.00,1.25,-1.50&gt;,&lt; 0.78,1.30,1.5&gt;}
+ text{ ttf "arialbd.ttf","POV-Ray",0.5,0
+        matrix&lt;1, 0, 0, //  shear_y_to_x
+            0.35, 1, 0,
+               0, 0, 1,
+               0, 0, 0&gt;
+        scale&lt;0.83,0.9,1&gt;
+        translate&lt;-5.7,1.6,-1.5&gt;}
+ text{ ttf "arialbd.ttf","POV-Ray",0.5,0
+        matrix&lt;1, 0, 0, // shear_y_to_x
+            0.35, 1, 0,
+               0, 0, 1,
+               0, 0, 0&gt;
+        rotate&lt;0,180,0&gt;
+        scale&lt;0.83,0.9,1&gt;
+        translate&lt;-2.25,1.6,1.5&gt;}
+} // end of union
+//---------------------------------------
+#declare Object_Pigment_1 =
+pigment{
+   <font color="#800000">object {
+       Pattern_Object_1
+       color rgb&lt;1,0.95,0.75&gt; // outside
+       color rgb&lt;0.8,0.15,0&gt;  // inside
+      }// object</font>
+  } // end pigment
+//---------------------------------------
+#declare Truck_Texture =
+   texture{ pigment{ Object_Pigment_1 }
+            finish { phong 1 }
+          }
+//---------------------------------------
+#include "Truck_12.inc"
+//---------------------------------------
+object{ Truck_12(
+           0,// Front wheel angle: ~+/-60
+           Truck_Texture
+         ) //----------------------------
+        scale&lt; 1,1,1&gt;
+      //  rotate&lt;0,180,0&gt;
+      //  translate&lt;-5.00,0,0.00&gt;
+      } //-------------------------------</b></td></pre>
+  </tr>
+  </table>
+ <font size="2">
+  Fichier include POV-Ray :     <a href="../objects/street/Street_10.inc">Street_10.inc</a><br>
+  Fichier include POV-Ray :     <a href="../objects/truck/Truck_12.inc">Truck_12.inc</a><br>
+  Fichier sc&egrave;ne POV-Ray : &nbsp;<a href="pov/Object_Pattern_000.pov">Object_Pattern_000.pov</a></font>
+</td>
+<td>
+<div align="center">
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Object_Pattern_0000.jpg" border="0" width="320"  height="240"
+       alt="Object for Object Pattern" title="Object for Object Pattern"></a>
+      </td></tr></table>
+  <font size="2">Nous d&eacute;cidons ce que pour obtenir<br>
+             la couleur pour l'ext&eacute;rieur et l'int&eacute;rieur.</b><br>
+  </font>
+
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Object_Pattern_0001.jpg" border="0" width="320"  height="240"
+       alt="Object for Object Pattern" title="Object for Object Pattern"></a>
+      </td></tr></table>
+  <font size="2">V&eacute;rifiez si l'objet motif frappe<br>
+            la surface du truck aux bons endroits.</b><br>
+  </font>
+
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/Object_Pattern_0002.jpg" border="0" width="320"  height="240"
+       alt="Object for Object Pattern" title="Object for Object Pattern"></a>
+      </td></tr></table>
+  <font size="2">'object pattern' appliqu&eacute; &agrave; truck</b>
+  </font>
+</div>
+</td></tr></table>
+
+</td></tr></table><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

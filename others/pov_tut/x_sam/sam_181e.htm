@@ -1,0 +1,227 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=515");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="sam_181i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="sam_181i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_181f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="sam_181f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        -->
+        <a href="sam_181d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="sam_181d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_110e.htm">House</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_115e.htm">Roof</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_130e.htm">Tower</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_134e.htm">Castle</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_14_e.htm">Window + Door</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_15_e.htm">Stairs</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_158e.htm">Pyramid</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_510e.htm">Columns</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_18_e.htm">Arch</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="sam_180e.htm">Arch (Door,Bridge)</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <!--a href="sam_181e.htm"-->4 Archs on columns</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_160e.htm">Fences</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_220e.htm">Furnitur</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_250e.htm">Household</b></a><br>
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="90%">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('arc/povarc4_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="arc/povarc4s.jpg" border="0" width="80" height="60"
+                   alt="4 Archs" title="Click for a bigger example: 4 Archs"></a></td>
+            </tr></table><br>
+ </td>
+ <td valign="top">
+  <h1 align="center"><b>4 Arch on columns</b></h1>
+ <h6>
+    Objects: &quot;box&quot;, &quot;cone&quot;<br>
+    Methods: &quot;difference&quot; &quot;#declare&quot;, &quot;union&quot;. <br>
+   Click <a href="javascript:ShowImage('arc/povarc4_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">here for an example</a>!
+
+    </td></h6>
+</tr>
+</table>
+
+<div align="center">
+<table border="5"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+<tr><td><img src="arc/povarc4.gif" border="0" width="465" height="485" hspace="0" vspace="0"></td></tr>
+<tr><td align="center"><h5> frontside view (view in +z direction)</td></h5></tr>
+</table>
+</div>
+
+<table cellpadding="5" width="80%">
+<tr>
+ <td valign="top">
+
+
+<h3><b>Construction of the details:</b></h3>
+<h4><b>1. An arch as a difference of a box and a cylinder:</b><br>
+Avoid coincident surfaces!
+</h4>
+<pre>//-------------------- arch -------------------------
+#declare Arch = difference{
+ box {&lt;-1.1,0,-0.1&gt;,&lt; 1.1,1.1,0.1&gt;}
+ cylinder {&lt;0,0,-0.11&gt;,&lt;0,0,0.11&gt;,0.9 }
+ texture{pigment{color White}
+         normal {bumps 0.4 scale 0.007}
+         finish {diffuse 0.9 phong 1}}
+}//--------------------------------------------------
+</pre>
+<h4><b>2. A pillar with a cone and rings (torus) at both ends:</b></h4>
+<pre>//------------- Pfeiler (pillar) --------------------
+#declare Pillar = union{
+ torus{0.10,0.05 translate&lt;0,1.45,0&gt;}
+ torus{0.12,0.05 translate&lt;0,0.04,0&gt;}
+ cone {&lt;0,0,0&gt;,0.12,&lt;0,1.5,0&gt;,0.1}
+ texture{pigment{color White}
+         normal {bumps 0.4 scale 0.007}
+         finish {diffuse 0.9 phong 1}}
+}//---------------------------------------------------
+</pre>
+<h4><b>3. Four arches placed upon 4 pillars and then raised upon
+a pyramid of stairs.</b><br>
+</h4>
+<pre>
+#declare Arches =
+union{// --------arch upon columns -------------------
+object{Pillar translate&lt;-1,0,-1&gt;}
+object{Pillar translate&lt; 1,0,-1&gt;}
+object{Pillar translate&lt;-1,0, 1&gt;}
+object{Pillar translate&lt; 1,0, 1&gt;}
+object{Arch rotate&lt;0, 0,0&gt; translate&lt; 0,1.5, 1&gt;}
+object{Arch rotate&lt;0, 0,0&gt; translate&lt; 0,1.5,-1&gt;}
+object{Arch rotate&lt;0,90,0&gt; translate&lt; 1,1.5, 0&gt;}
+object{Arch rotate&lt;0,90,0&gt; translate&lt;-1,1.5, 0&gt;}
+} // -------------------------------------------------
+
+#declare Steps =
+union{ // -------------------- stairs ----------------
+box{&lt;-1.20,0.30,-1.20&gt;,&lt;1.20,0.45,1.20&gt;}
+box{&lt;-1.50,0.15,-1.50&gt;,&lt;1.50,0.30,1.50&gt;}
+box{&lt;-1.80,0.00,-1.80&gt;,&lt;1.80,0.15,1.80&gt;}
+ texture{T_Stone8 scale 0.3 pigment{quick_color White}
+         normal {bumps 0.4 scale 0.007}
+         finish {diffuse 0.9 phong 1}}
+ }//--------------------- end of the stairs-----------
+
+</pre>
+<h4>
+And finally:<br>
+<b>4. All together combined in a &quot;union&quot; for being transformed freely:</b>
+</h4>
+<table cellpadding="5"><tr>
+<td>
+<pre>// -------- all together now -----------
+union{object{Arches translate&lt;0,0.45,0&gt;}
+      object{Steps}
+      scale &lt;1,1,1&gt;
+      rotate&lt;0,0,0&gt;
+      translate&lt;0,0,0&gt;
+      }// end of union
+//---------------------------------- end
+</td></pre>
+<td>
+<table  align="center" border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+<tr>
+<td width="240"  height="180" align="center">
+ <a href="javascript:ShowImage('arc/povarc4_im.htm')"
+  onmouseover="window.status='ShowSingleImage';return true"
+  onmouseout="window.status=''">
+  <img src="arc/povarc4t.jpg" border="0" width="240"  height="180"
+  alt="Example 4 Archs 600x450" title="Example 4 Archs 600x450"></a></td>
+</tr>
+</table>
+</td></tr></table>
+<h5 align="center">Click here for the complete scene description for <nobr>POV-Ray:</nobr><br>
+ <a href="arc/povarc4.txt">&quot;povarc4.txt&quot;</a> or
+ <a href="arc/povarc4.pov">&quot;povarc4.pov&quot;</a></h5>
+</td>
+</tr></table>
+
+ <!--h5><b>Download of all ready-made POV-Ray objects</b><br>
+ zipped up (with all include files, example files and with <br>
+ the according Insert Menu Add-ons for comfortable use!)<br>
+ at the <a href=""><b>Download Page</b></a>
+ </h5-->
+ </td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

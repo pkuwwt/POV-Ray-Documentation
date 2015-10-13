@@ -1,0 +1,48 @@
+// fractal pattern typ Julia 
+/*
+JULIA:
+  julia COMPLEX, ITERATIONS [, BUMP_SIZE]
+  [exponent EXPONENT]
+  [exterior EXTERIOR_TYPE, FACTOR]
+  [interior INTERIOR_TYPE, FACTOR]
+ 
+ COMPLEX is a 2D vector denoting a complex number, i.e. <0.360, 0.250>.
+ ITERATIONS = number of times to iterate (up to 2^32-1) the algorithm.
+ EXPONENT is an integer between 2 and 33. Default = 2.
+ interior and exterior specify special coloring algorithms.
+   We can specify one of them or both at the same time. 
+   They only work with the fractal patterns. 
+ EXTERIOR_TYPE and INTERIOR_TYPE are integer values between 0 and 6 (inclusive). 
+   When not specified. Defaults: INTERIOR_TYPE = 0 and EXTERIOR_TYPE = 1. 
+ FACTOR is a float. The return value of the pattern is multiplied by FACTOR before returning it. 
+ It can be used to scale the value range of the pattern when using interior and exterior coloring 
+ (often needed to get the desired effect). Default FACTOR = 1.
+*/ 
+//--------------------------------------------------------------------------
+#declare Pigment_1 = 
+        pigment{ julia <0.150, 0.160>, 20
+                 interior 1, 1 
+                 // exterior 2,1 
+                 scale 0.70
+                 color_map{
+                    [0.0 color rgb <0,0,0>]
+                    [0.2 color rgb <1,0,0>]
+                    [0.4 color rgb <1,1,0>]
+                    [0.5 color rgb <0.5,1,0>]
+                    [0.7 color rgb <0.5,0,1>]
+                    [0.9 color rgb <0,1,1>]
+                    [1.0 color rgb <0,0,0>]
+                  } // end color_map
+               } // end of pigment
+
+sphere{ <0,0,0>, 1 
+        pigment{ Pigment_1  }    
+        normal { pigment_pattern { Pigment_1 }  
+                  3 // BUMP_SIZE
+               } // end normal 
+        finish { phong 1 } 
+         
+        scale<1,1,1>  rotate<0,0,0>  translate<0,0,0>
+      } // end of sphere ----------------------------
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------

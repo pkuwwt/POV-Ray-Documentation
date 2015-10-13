@@ -1,0 +1,21 @@
+// Relational expressions: 
+// (A < B)        A is less than B 
+// (A <= B)       A is less than or equal to B 
+// (A = B)        A is equal to B (actually abs(A-B)<EPSILON) 
+// (A != B)       A is not equal to B (actually abs(A-B)>=EPSILON) 
+// (A >= B)       A is greater than or equal to B 
+// (A > B)        A is greater than B 
+
+
+// Logical expressions:
+// (A & B)        true only if both A and B are true, false otherwise 
+// (A | B)        true if either A or B or both are true 
+
+
+// The conditional expression returns a value depending
+// on whether an expression is true or false.
+// i.e.:
+#declare Value=((X>Y)?A:B);  // if X is larger than Y, A is returned, otherwise B.
+
+// with an boolean value FLAG (0 or 1): 
+#declare value=(FLAG  ? A : B);  // if FLAG = 1 then A, else B.

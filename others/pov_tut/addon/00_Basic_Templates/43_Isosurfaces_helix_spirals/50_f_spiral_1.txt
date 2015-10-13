@@ -1,0 +1,25 @@
+
+
+isosurface{ //-------------------------
+  function {   f_spiral( x,y,z,
+        0.2,   // distance between windings,
+        0.05,  // thickness,
+        0.9,   // outer diameter of the spiral,
+        0,     // not used,
+        0,     // not used,
+        0.45 ) // cross section type
+  }
+  threshold 0
+  max_gradient 5
+  contained_by{sphere{<0,0,0>,1}}
+
+  texture{
+    pigment{ color rgb<0.8,0.75,0.5>*0.8}
+    finish { specular 0.2 phong 0.7 
+             reflection{ 0.3 metallic } 
+           }
+  } // end of texture
+  scale <1,1,1>*1.25
+  rotate <0,0,0>
+  translate <0,0.05,0>
+} // end of isosurface ----------------

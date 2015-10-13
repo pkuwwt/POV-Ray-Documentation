@@ -1,0 +1,395 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7,Infographie, Synth&egrave;se d'image 3D">
+<meta name="subject" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<meta name="keywords" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Tuyaux pour travail efficace con POV-Ray,  POV-Ray Course part 11</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+     <h6><nobr>Introduction au langage de description sc&egrave;nique POV-Ray raytracer</nobr>
+     <nobr> &nbsp; &nbsp; &nbsp; &nbsp; page 11</nobr>
+<br>par Friedrich A. Lohm&uuml;ller </td></h6>
+ <td align="right">
+        <a href="povtutob.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povtutob.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtutib.htm"><font size="2">Italiano</font></a>
+        <a href="povtutib.htm"><img src="flag_ita.gif" alt="Deutsch" title="Deutsch"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkursb.htm"><font size="2">Deutsch</font></a>
+        <a href="povkursb.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+        </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#basic"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povtutf0.htm">Introduction POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povtutf0.htm">Table des mati&egrave;res&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtutf1.htm">Utiliser POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtutf2.htm">Bases</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comment &eacute;crire le texte</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#xyzKoordinaten">xyz – Coordonn&eacute;es</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#ZahlenundVektoren">virgule flotante et vecteurs</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtutf3.htm">Structure d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemple de base.</b></a></nobr><br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtutf4.htm">La t&ecirc;te d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Fichiers #include</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtutf5.htm">Objets g&eacute;om&eacute;triques de base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  cone, torus, plane</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  et autres formes</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtutf6.htm">Transformations</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &eacute;chelle, rotation,</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translation et autres.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtutf7.htm">Couleurs et surfaces</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtutf8.htm">#declare, #local  #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Variables, objets flexibles.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtutf9.htm">#while</b></a> - Boucles</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemples de base.</b></a>,</nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutfa.htm">#include</b></a> - fichiers include</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; objets r&eacute;utilisables.</b></a></nobr><br>
+<b>&gt;11.</b> <!--a href="povtutfb.htm"--><b>Efficacit&eacute;</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; vitesse, flexibilit&eacute;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; travailer modulaire.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adapter de 3.1 &agrave; 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insertf_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table align="center" width="95%"><tr><td>
+<font size="+1"><a name="TipsForEfficientWorking"></a><b>Tuyaux pour travail efficace con POV-Ray</b></font><br>
+
+<p align="justify"><font size="+1"><b>En ce qui concerne la rapidit&eacute; :</b></font> <br>
+<font size="-1">Le Raytracing et le r&eacute;alisme photographique
+de l'infographie seront probablement toujours
+une lutte avec une performance de computer insuffisante.
+En cons&eacute;quence est peu r&eacute;aliste et inutile d'attendre aux ordinateurs &raquo;assez rapide&laquo; -
+ que ne seront jamais assez rapide pour notre id&eacute;es!
+On devrait apprendre et s'entra&icirc;ner aux m&eacute;thodes qui r&eacute;duisent les temps pour rendre des images et
+pour le d&eacute;veloppement des images d&eacute;j&agrave; aujourd'hui et sur les ordinateurs d'aujourd'hui
+trop lents et trop petits.
+Celui qui sait les trucs sera plus rapidement avec de bons r&eacute;sultats que les personnes
+sans de tel savoir-faire aussi demain sur les ordinateurs fantastique de demain.</font>
+&nbsp;<br><br>
+
+<b>R&egrave;glements de base, en vaut la peine :</b><br>
+1. <b>On doit tenir en ordre pour reste toujours ma&icirc;tre de la situation!<br>
+&nbsp; &nbsp; On doit travailler en modules!</b>
+<ul><font size="-1">
+    <li>Faites attention &agrave; une bonne structure du texte! </li>
+    <li>Ins&eacute;rez des lignes de commentaire en mots &agrave; propre et r&eacute;v&eacute;lateur par &raquo; // &laquo;. </li>
+    <li>Pas de texte &agrave; ver solitaire pour listing sur 100 pages, mais aussi
+        no si fait pas trop des choses diff&eacute;rentes in une seule ligne!<br>
+        Trouver le chemin opportun est une chose d'exp&eacute;rience!</li>
+    <li>On doit partager des projets plus grands en partes plus
+        petit que sont bon d&eacute;finis.
+        Pour cela on peut aussi utiliser des fichiers include.</li>
+    <li>Avec &raquo; /* &laquo; et &raquo; */ &laquo; est facile
+        &raquo;commenter dehors&laquo; des partes du texte pour tester une sc&egrave;ne.
+        C'est &agrave; dire, on peut d&eacute;activer un parte du texte par renfermer cette parte
+        avec des signes de commentaire.
+        Avec cela on peut &eacute;conomiser beaucoup de temps pour rendre une sc&egrave;ne
+        durant le d&eacute;veloppement d'une sc&egrave;ne.</li></font></ul>
+2. <b>Restez flexible!</b> <br>
+<ul><font size="-1">
+    <li>Pr&eacute;d&eacute;finissez les &eacute;l&eacute;ments que sont utilis&eacute; plusieurs fois comme
+        des objets, des valeurs, des textures etc. avec
+        &raquo; #declare ... = ... ; &laquo;. Cela rend possible plus de flexibilit&eacute;
+        et cela permet de changer ces &eacute;l&eacute;ments tr&egrave;s faciles.
+        <br>
+        Est tr&egrave;s fondamental d'avoir cette flexibilit&eacute; si on veut projeter une
+        sc&egrave;ne ou un objet et si on a besoin d'ajuster les proportions et/ou
+        la coloration de quelques &eacute;l&eacute;ments dans une sc&egrave;ne.
+        </li></font></ul>
+
+3. <b>Pr&eacute;sentation avec quick_color</b>:<br>
+<ul><font size="-1">
+    <li>Si vous faites des constructions avec une grand nombre des &eacute;l&eacute;ments
+        en textures complexes et tr&egrave;s exigeant, est recommand&eacute; d'ajuter
+        aux d&eacute;clarations de pigment de couleurs une &raquo; <b>quick_color</b> &laquo;
+        auxiliaire.
+        Ce sont couleurs quelles on peut seulement voir en mode &raquo; quick &laquo;.
+        On peut choisir cettes couleurs &raquo; <b>quick_color</b> &laquo; d'une fa&ccedil;on
+        facile &agrave; distinguer pour genre diff&eacute;rente des objets dans la  construction.
+        Avec cela est plus facile d'arranger tous les &eacute;l&eacute;ments aux positions justes.
+       </li></font></ul>
+
+4. <b>Pr&eacute;sentation partielle:<br>
+<ul><font size="-1">
+    </b><li>Si vous voulez voir des partes de votre sc&egrave;ne en &eacute;chelle plus grande
+        (pour adapter les textures ou le formes des objets plus pr&eacute;cis&eacute;ment),
+        est souvent tr&egrave;s inconfortable de rendre toute la sc&egrave;ne sur une grande &eacute;chelle
+        ou de mouvoir la cam&eacute;ra pour trouver une vue plus d&eacute;taill&eacute;.
+
+       <br>
+        En ce cas c'est praticable utiser le &raquo; rendering &laquo; partiel.
+        On peut lancer ce mode par &eacute;diter les options dans &raquo; command line options &laquo;
+        (voyez bouton &raquo; Ini &laquo;).
+        &raquo; +sr100 +er200 +sc300 +ec350 &laquo; p.ex. mette la r&eacute;gion de pr&eacute;sentation
+        un rectangle de ligne (r pour row) 100 &agrave; 200 et
+        de colonne (c pour column) 300 &agrave; 350. </li>
+     <li>Depuis POV-Ray version 3.1 on peut <b>s&eacute;lectionner la r&eacute;gion de pr&eacute;sentation</b>
+         tr&egrave;s confortable avec le mode &eacute;lastique (&raquo; rubber band mode&laquo;).
+     </li></font></ul>
+
+5. <b>Augmenter le niveau du &raquo; max_trace_level &laquo;: <br>
+<ul><font size="-1">
+    </b><li>Utilisant des textures de verre et/ou des surfaces refl&eacute;tant
+    est possible que on peut voir souvent des taches noires dans les structures complexes
+    des objets en verre ou en mat&eacute;riaux refl&eacute;tant.
+    Cela est produit du fait que le &raquo; raytracer &laquo; doit calculer ici trop des
+    niveaux de r&eacute;fractions et/ou de r&eacute;flexions.
+
+    POV-Ray suivit chaque rayon lumineux seulement 5 fois
+    (le valeur de base = &raquo; default value &laquo;) en r&eacute;fraction et/ou r&eacute;flexion.
+    Si le programme ne trouve pas un objet touch&eacute; du rayon lumineux apr&egrave;s 5 r&eacute;fractions
+    ou r&eacute;flexions ce point reste noir.
+    On doit augmenter le niveau du &raquo; max_trace_level &laquo; p.ex. avec les mots cl&eacute;
+    &raquo; <b>global_settings {max_trace_level 20}</b> &laquo;  pour r&eacute;duire les dimensions
+    des ces taches noires.
+    </li>
+    <li>D'autre part est de toute &eacute;vidence que on peut acc&eacute;l&eacute;rer la repr&eacute;sentation de la sc&egrave;ne
+    par r&eacute;duire le &raquo; max_trace_level &laquo; &agrave; 5 pendant des tests ou par appliquer
+    &raquo; quick rendering &laquo; avec &raquo; quick_colors &laquo;.
+    Avec &raquo; quick rendering &laquo; pas de r&eacute;fractions ou r&eacute;flexions
+    sont calcul&eacute;es  - tout les surfaces avec ces effets resteront noirs ou se pr&eacute;sentant
+    en la couleur d&eacute;finie explicitement pour cet objet par &raquo; quick_color &laquo;.
+    </li></font></ul>
+
+6. <b>Attention avec textes de sc&egrave;ne POV-Ray della version 3.0:<br>
+     &raquo; Halos &laquo; et &raquo;atmosphere &laquo; sont du pass&eacute;! </b><br>
+<ul><font size="-1">
+    <li>On ne peut pas utiliser texte de sc&egrave;ne POV-Ray de la version 3.0
+      avec les commands &raquo; halo &laquo; et/ou &raquo;atmosphere &laquo;.
+      Ces effets on a d&eacute;velopp&eacute; avec un design compl&egrave;tement nouveau en version 3.1.
+      &Agrave; cause de cela utiliser des textes avec ces effets est impossible sans
+      faire des changements dramatiques des fichiers de textes!
+      Aujourd'hui ces effets sont r&eacute;alis&eacute;s par &raquo; media &laquo;.</li></font></ul>
+
+7. <b>Comment adapter fichiers de texte pour POV-Ray 3.1 &agrave; la version 3.5/3.6 de POV-Ray: </b> <br>
+&nbsp; &nbsp; &nbsp; Dans POV-Ray version 3.5/3.6 quelques effets critiques
+sont chang&eacute;s, ici quelques-uns :
+<ul><font size="-1">
+    <li><b>Camera: L'angle est chang&eacute; &agrave; valeurs r&eacute;alistes!</b> - En version 3.2 les values pour
+      l'angle della camera ont &eacute;t&eacute; irr&eacute;aliste 'haut - maintenant adapt&eacute; &agrave; valeurs r&eacute;alistes:<br>
+      environ la moiti&eacute; de l'angle utilis&eacute; en fichiers de sc&egrave;ne 3.1 !
+       <br>&nbsp;</li>
+    <li><b>Des commandes nouveaux tr&egrave;s int&eacute;resants:</b><br>
+        Au lieu de changer les proportions de l'image dans la camera
+        par &raquo; right x*4/3 up y &laquo; or quadratique: &raquo; right x up y  &laquo;,
+        avec POV-Ray 3.6/3.6 on peut installer une <b>calcule automatique des proportions de l'image</b>
+        par <br>
+         &raquo; <b> right  x*image_width/image_height</b> &laquo;
+        <br>&nbsp;</li>
+    <li><b>Point-virgule exig&eacute;!</b> - apr&egrave;s la declaration d'un valeur de nombre ou de vecteur
+           maintenant le point-virgul est exig&eacute; :<br>
+      Exemples: <br>
+      <b>#declare R = 0.25;<br>
+      #local Diameter = 2*Radius;</b>
+        <br>&nbsp;</li>
+    <li><b>Changement: &raquo;Noise Generator&laquo; nouveau</b> -
+       Dans la version 3.5/3.6 trois &raquo;noise generators&laquo; diff&eacute;rents sont utilis&eacute;s.
+       &raquo;Default&laquo; pour POV-Ray 3.6 maintenant est le &raquo;noise_generator 2&laquo;.
+       Dans le vieux POV-Ray 3.1 on utilise &raquo;noise_generator 1&laquo;.
+      Pour cette raison quelques textures avec turbulence faits avec
+      POV-Ray 3.1 maintenant ont un air diff&eacute;rent en POV-Ray 3.6/3.6.
+      Dans ce case on peut r&eacute;installer le vieux
+       &raquo;noise generator&laquo;  par l'instuction : <br>
+      <b>global_settings {  noise_generator 1 }</b><br>&nbsp;</li>
+    <li> <b>Gradient est chang&eacute;:</b><br>
+         D'habitude ce motif a invers&eacute; / r&eacute;flect&eacute; pour valeurs n&eacute;gatives
+         le long du vecteur d'orientation.
+         Solution de ce probl&egrave;me :
+         Utilisez la fonction{abs(x)} pour le motif au lieu du gradient x et
+         correspondant pour le gradient y et le gradient z.
+         <br>&nbsp;</li>
+    <li> La fonction <b>log</b> d'habitude utilise le logarithme naturel,
+          <b> dans la version 3.5/3.6 a la base 10.</b><br>
+         Solution: Replacez log par ln.
+         <br>&nbsp;</li>
+    </font></ul>
+</td></tr><a name="adapt36"> </a>
+<table border="0" align="center" width="95%"><tr><td>
+<h5 align="justify">8. <b>Comment adapter fichiers de texte pour POV-Ray 3.5 ou 3.6 &agrave; la version 3.7: </b> <br>
+&nbsp; &nbsp; &nbsp; Nouveau dans POV-Ray version 3.7 :
+<ul><font size="-1">
+    <li><b>L' adaptation de Gamma doit &ecirc;tre faite seulement en dehors de fichier du sc&egrave;ne !</b><br>
+      Un s&eacute;paration logique cons&eacute;quent de &quot;frontend&quot;
+     (user-interface, Parsing et command-line options et fichiers ini etc.)
+      et &quot;backend&quot; (Parsing et calcul de l'image) demande que les paroles
+      &quot;assumed_gamma&quot; sont interdit pour les fichiers de sc&egrave;nes.<br>
+      Cela est une preparation pour une facult&eacute; futur pour calculer images dans un r&eacute;seau.<br>
+      La section du text dans un fichier du sc&eacute;ne:<pre><b>#version 3.5
+    global_settings{ assumed_gamma 1 } // with display_gamma = 2.2</b></pre>
+
+    on doit &eacute;liminer pour POV-Ray 3.7 (ou isoler derri&egrave;re &quot;//&quot; ) .
+         <br>&nbsp;</li>
+    </font></ul>
+
+9.  <b>Le terreur non sanglant des erreurs : Ne perdez pas courage !  :-)</b>,<br>
+<ul><font size="-1">
+    <li>Restez calme et de bonne humeur, m&ecirc;me se ces messages d'erreur magiques tapent sur votres nerfs!
+         <nobr>;-((((</nobr><br>
+        <b>If it doesn't kill you, it will make you stronger!</b> <br>
+        Apprendre chercher syst&eacute;matiquement et avec succ&egrave;s supprimer une cause derreurs
+        est aussi une chose positive que on peut faire avec ce programme (tr&egrave;s facil! :-). </li>
+    <li>Souvent le raison pour un erreur se trouve quelque lignes  au-dessus
+        de la ligne o&ugrave; le &raquo;parsing&laquo; a s'arr&ecirc;t&eacute;.
+        Pendant le &raquo;error-tracing&laquo; dans le texte noubliez pas que le programme
+        a cherch&eacute; de comprendre la s&eacute;quence d'instuctions par traduire le texte de la t&ecirc;te
+        vers le bas. De cette mani&egrave;re, une accolade finale oubli&eacute;e comme dans une instruction de mani&egrave;re
+        <nobr>&raquo; #declare .. = union{ ... } &laquo;</nobr> r&eacute;sutlera dans un
+         erreur de  <nobr>&raquo; undeclared_identifier &laquo;</nobr>
+        (quelque temps beaucoup de lignes plus tard).</li>
+    <li>Et s'il vous pla&icirc;t : Se vous ne pouvez pas &eacute;viter de faire des erreurs
+        (et quand nous sommes des hommes, vous ne pouverez pas &eacute;viter cela!),
+        ne faites pas un erreur additif par penser: ce programme a fait cet erreur -
+        parce que le programme &eacute;tais le seule autre ici, que a particip&eacute; &agrave; cette action! <br>
+
+        Ce programme fut et est d&eacute;velopp&eacute; par les plus grandes sp&eacute;cialistes de l'infographie
+        de tout le monde et durant beaucoup des ann&eacute;es de tests. Par cons&eacute;quent
+        est peut r&eacute;aliste que d&eacute;butant peut d&eacute;couvrir un erreur de ce programme pendant
+        se premier pas.<br>
+        Se vous avez trouv&eacute; un erreur, vous devez cherche dans le texte que vous avez &eacute;crit vous-m&ecirc;me!
+        C'est tr&egrave;s probable (~ 99.999% !), que l'erreur est &quot;votre erreur&quot;! :-)</li>
+    <li>Une liste compl&egrave;te de toutes les mani&egrave;res d'erreurs et des les raisons,
+        ensemble avec tous les erreurs que un d&eacute;butant peut faire? - Non! Non! Je ne ferai jamais
+         - JAMAIS !!! -  cette liste - parce que cette liste sera plus longue que la d&eacute;scrition des toutes les
+        choses postives qu'on peut faire avec ce POV-Ray magnifique!!!
+         </li>
+    </font></ul>
+
+<a name ="vista"> </a>
+10. <b>Utiliser POV-Ray 3.6 et POV-Ray 3.7 avec Windows Vista </b>,<br>
+<ul>
+<li>
+Nous devons installer <b>POV-Ray 3.6.2</b> (10-juin-2009) pour utiliser le programme sous Windows Vista sans probl&egrave;mes
+avec animations!
+Questo &eacute; un update di 3.6.1 adatto per lavorare sotto sisteme Vista e Vista64.
+T&eacute;l&eacute;chargement ici: <nobr><a href="http://www.povray.org/download/">http://www.povray.org/download/</a>.</nobr><br>
+Strutture nuove: <br>
+Les fichiers du logiciel (bin) maintenant sont dans <br> <nobr>&quot;C:\User\AppData\Roaming\POV-Ray\v3.6\bin\&quot;</nobr><br>
+tandis que l'Insert Menu, les fichiers include et les fichiers des examples de sc&egrave;nes maintenant sont dans
+ <nobr>&quot;C:\User\Documents\POV-Ray\v3.6\&quot;</nobr><br>
+<font size="-2"> Puisque POV-Ray 3.6 for Windows est design&eacute; pour Windows98/ME/XP il y a quelques probl&egrave;mes avec Vista.<br>
+  Sp&eacute;cialement durant des animations POV-Ray a besoin d'&eacute;crire dans son registre. Mais le programme
+  est paralys&eacute; et fait une descente tr&egrave;s mal parce que cette action n'est pas permis pour programmes compatible &agrave; Vista.
+  <br>
+  Ici come il marche sur les ordinateurs de moi:
+  </font><br>
+<a name="version37"> </a>
+ Installer POV-Ray 3.6.1 ou 3.5 sous Vista:<br>
+<ol start="1" type="1">
+<li>
+On ne peut pas installer POV-Ray dans le registre &quot;Programmes&quot;! <br>
+   Il faut installer POV-Ray dans quelque autre part comme par ex. &quot;C:\POV-Ray3.6 &quot;.<br>
+  (On ne peut pas move le fichiers manuellement! On doit changer le registre &quot;installation directory&quot;
+   durant le processus d'installation!)
+</li>
+<li>Apr&egrave;s l'installation cherchez pour le fichier binaire de POV-Ray dans le registre <br>
+  &quot;C:\POV-Ray for windows v.36\bin\pvengine.exe&quot;. <br>
+ Cliquez &agrave; droit sur le symbole et choisirez &quot;Properties&quot; .<br>
+   Cliquez le fiche &quot;Compatibility&quot; et
+   Cliquez le bouton &quot;Run this program in compatibility mode for:&quot;,  <br>
+   choisirez ici: &quot;Windows 98/Windows Me&quot; <br>
+   et choisirez ici au-dessous sur &quot;Disable visual themes&quot;
+</li>
+<li>Cliquez le fiche &quot;Security&quot; et permettez que &quot;toute les utilisateurs&quot; ont le
+   &quot;contr&ocirc;le complet&quot; choisirant les correspondants &quot;permissions o&ugrave; autorisations&quot;.
+</li>
+</ol>
+
+
+</li>
+<li><b> Utiliser POV-Ray 3.7 :</b><br>
+<font size="2">
+POV-Ray 3.7 est &quot;de rigueur&quot; pour utilisateurs avec des systems multicore/multiprocesseur.
+Utiliser multicores fait un
+POV-Ray &agrave; un rythme acc&eacute;l&eacute;r&eacute; :
+La vittesse de POV-Ray 3.7 est presque proportionnel au nombre de core de processeur x threads !</font>
+<br></li>
+<li>Pour installer beta version on ne doit pas avoir une installation correct de POV-Ray 3.6 !</li>
+<li> Structure nouveau de POV-Ray 3.7:<br>
+Le fichiers du programme sont maintenant dans &quot;C:\Programs\POV-Ray\v3.7\bin\&quot;.<br>
+Le &quot;Insert Menu&quot; est maintenant dans &quot;C:\Users\Documents\POV-Ray\v3.7\Insert Menu\&quot;<br>
+Aussi le fichier resolutions ini &quot;quickres.ini&quot; et &quot;povray.ini&quot;
+avec toutes les Library_Path settings est dans &quot;...\v3.7\ini\&quot;.<br>
+Et &eacute;galement &agrave; pr&eacute;sent les fichiers avec les examples sont dans &quot;...\v3.7\scenes\&quot;.
+</li>
+<li>Compatibilit&eacute;: Normalement, tous les fichiers cr&eacute;&eacute;s sous la version 3.6 devraient &eacute;galement travailler sous 3.7.
+Seulement avec la fonction de radiosit&eacute; petites adaptations (repaces dire &laquo;&eacute;mission&raquo;: &laquo;ambiantes&raquo;) sont n&eacute;cessaires.<br>
+Vice versa: nouveaux objets dans la version POV-Ray 3.7 sont dire les fichiers include de &raquo; shapes3.inc &laquo; , &raquo; meshmaker.inc &laquo; et &raquo; makegrass.inc &laquo;
+devraient &eacute;galement travailler sous POV-Ray version 3.6, si vous avez les fichiers dans quelque part dans le &raquo; include file path &laquo;
+de la version 3.6.<br>
+</li>
+</ul>
+</h5>
+</td></tr>
+</table>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtutf0.htm">part 0</a> |
+<a href="povtutf1.htm">part 1</a>  | <a href="povtutf2.htm">part 2</a> |
+<a href="povtutf3.htm">part 3</a>  | <a href="povtutf4.htm">part 4</a> |
+<a href="povtutf5.htm">part 5</a>  | <a href="povtutf6.htm">part 6</a> |
+<a href="povtutf7.htm">part 7</a>  | <a href="povtutf8.htm">part 8</a> |
+<a href="povtutf9.htm">part 9</a>  | <a href="povtutfa.htm">part 10</a> |
+                                     <!--a href="povtutfb.htm"-->part 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

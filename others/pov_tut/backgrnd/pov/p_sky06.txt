@@ -1,0 +1,61 @@
+// POV-Ray version 3.6/3.7 scenery file "p_sky06.pov"
+// author: Friedrich A. Lohmueller, 2005, update Dec-2009 / Jan-2011 / Nov-2013
+// homepage: http://www.f-lohmueller.de
+//--------------------------------------------------------------------------
+#version 3.7; // 3.6;
+global_settings{ assumed_gamma 1.0 }
+#default{ finish{ ambient 0.1 diffuse 0.9 }}
+//--------------------------------------------------------------------------
+
+global_settings { noise_generator 2 }
+global_settings { max_trace_level 10 }//(1...20) [default = 5]
+
+
+#include "colors.inc"
+#include "textures.inc"
+// camera -----------------------------------------------------------
+#declare Camera_0 = camera{ angle 80 
+                            location  <0.0 , 10.0 ,-3.0>
+                            look_at   <0.0 , 11.0 , 0.0>}
+camera{Camera_0}
+// sun ---------------------------------------------------------------
+light_source{<2500,5000,-3500> color  rgb<1,1,1>  }
+// sky ---------------------------------------------------------------
+plane{<0,1,0>,10000 hollow  // 
+      
+      texture{ pigment {color rgb< 0.05,0.25,0.6>}
+               finish {ambient 1  diffuse 0}}
+     }
+plane{<0,1,0>,1 hollow  // 
+      texture{pigment { bozo turbulence 0.65
+                        octaves 6  omega 0.7 lambda 2 
+                        color_map { [0.0 color rgb <0.95, 0.95, 0.95>*0.5]
+                                    [0.1 color rgb <0.85, 0.85, 0.85>*1.5]
+                                    [0.5 color rgbt <1, 1, 1, 1> ]
+                                    [1.0 color rgbt <1, 1, 1, 1> ]   }
+                        rotate<20,20,0> translate<0,0,-0.4>
+                        scale <0.3, 0.4, 0.4>*5 }
+               #if (version = 3.7 )  finish {emission 1 diffuse 0}
+               #else                 finish { ambient 1 diffuse 0}
+               #end 
+      }
+      scale 500
+   } //---------------------------------------------------------------
+// fog at the horizon     
+fog{distance 300000 color White}
+
+// ground ------------------------------------------------------------
+plane { <0,1,0>, 0 
+        texture{ pigment{color rgb<0.35,0.65,0.0>*0.8}
+                 normal {bumps 0.75 scale 0.015}
+               } // end of texture
+      } // end of plane
+//--------------------------------------------------------------------------
+//---------------------------- objects in scene ----------------------------
+//--------------------------------------------------------------------------
+ 
+// a mirror sphere !!!!  
+sphere{ <0,0,0>,7.4 scale <1,1,1> rotate<0,0,0> translate<10,28,40>
+        texture{ Polished_Chrome }
+      }
+//---------------------------------------------------------------------- end

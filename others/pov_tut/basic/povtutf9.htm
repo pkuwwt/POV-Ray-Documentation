@@ -1,0 +1,215 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7,Infographie, Synth&egrave;se d'image 3D">
+<meta name="subject" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<meta name="keywords" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>while loop - Production en s&eacute;rie de luxe avec des boucles &raquo; tant que &laquo;, POV-Ray Course part 9</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+     <h6><nobr>Introduction au langage de description sc&egrave;nique POV-Ray raytracer</nobr>
+     <nobr> &nbsp; &nbsp; &nbsp; &nbsp; page 9</nobr>
+<br>par Friedrich A. Lohm&uuml;ller </td></h6>
+ <td align="right">
+        <a href="povtuto9.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povtuto9.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti9.htm"><font size="2">Italiano</font></a>
+        <a href="povtuti9.htm"><img src="flag_ita.gif" alt="Deutsch" title="Deutsch"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs9.htm"><font size="2">Deutsch</font></a>
+        <a href="povkurs9.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+        </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#basic"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povtutf0.htm">Introduction POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povtutf0.htm">Table des mati&egrave;res&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtutf1.htm">Utiliser POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtutf2.htm">Bases</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comment &eacute;crire le texte</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#xyzKoordinaten">xyz – Coordonn&eacute;es</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#ZahlenundVektoren">virgule flotante et vecteurs</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtutf3.htm">Structure d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemple de base.</b></a></nobr><br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtutf4.htm">La t&ecirc;te d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Fichiers #include</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtutf5.htm">Objets g&eacute;om&eacute;triques de base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  cone, torus, plane</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  et autres formes</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtutf6.htm">Transformations</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &eacute;chelle, rotation,</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translation et autres.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtutf7.htm">Couleurs et surfaces</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtutf8.htm">#declare, #local  #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Variables, objets flexibles.</b></nobr><br>
+<b>&gt;9.</b> <!--a href="povtutf9.htm"--><b>#while</b></a> - Boucles</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemples de base.</b></a>,</nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutfa.htm">#include</b></a> - fichiers include</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; objets r&eacute;utilisables.</b></a></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutfb.htm">Efficacit&eacute;</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; vitesse, flexibilit&eacute;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; travailer modulaire.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adapter de 3.1 &agrave; 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insertf_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" width="95%"><tr><td>
+<font size="+2"><b>#<a name="while">while</a></font> -  Production en s&eacute;rie de luxe avec des boucles &raquo;tant que&laquo;</b>.<br>
+<font size="-1">Avec le m&eacute;canisme des boucles, comme en chaque langage de programmation moderne, <br>
+                    on peut r&eacute;aliser une production en s&eacute;rie de luxe d'une mani&egrave;re tr&egrave;s facile.</font><br>
+<font size="-1"><b>Ici un example : </b></font>
+<div align="center">
+<table border="0" cellspacing="5" cellpadding="0" width="640">
+<tr><td valign="top">
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#declare Nr</b> = 0; // début
+<b>#while ( Nr &lt;</b> 30 <b>)</b>// tant que Nr &lt; 30,
+    // fait les instructions suivant :
+ sphere{ &lt;1,0,0&gt;,0.25
+         rotate&lt;0,<b>Nr</b> * 360/30 ,0&gt;
+         texture{
+            pigment{ color rgb&lt;1,0.65,0&gt;}
+            finish { phong 1.0}
+            } // fin de texture
+        } // fin de sphère
+  <b>#declare Nr = Nr + 1;</b> // next
+<b>#end</b> // fin de boucle</td></pre></tr></table>
+</td>
+
+<td valign="top">
+    <table border="3"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td>
+      <img src="im/While_demo1.jpg" width="320" height="240" alt="while demo1" titel="while demo1"></td>
+    </tr>
+    </table>
+    <div align="center"><font size="2"><b>Un cercle complet de 30 sph&egrave;res (Nr.0 &agrave; Nr.29)!</b><br>
+    Description de sc&egrave;ne pour <nobr>POV-Ray :</nobr><br>
+     <a href="pov/While_demo1.pov">While_demo1.pov</a></font></div>
+</td></tr>
+</table></div>
+<font size="2"><b>Un autre exemple:</b></font>
+
+<table border="0" cellspacing="5" cellpadding="0" width="640">
+<tr><td valign="top">
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#declare CH = 3.0; // 'hauteur de colonne
+#declare Column =
+union{
+ cone{&lt;0,0,0&gt;,0.40,&lt;0,CH,0&gt;,0.30}
+ torus{0.4,0.05 translate&lt;0,0.05,0&gt;}
+ torus{0.3,0.05 translate&lt;0,CH-0.05,0&gt;}
+ texture{ pigment{ color rgb&lt;1,0.95,0.8&gt;}&nbsp;
+          normal { bumps 0.5 scale 0.01}
+          finish { phong 0.1 }
+        } // end of texture
+ }// end Column
+//--------------------------------------
+union{ //-------------------------------
+ #local Nr = 0;     // start
+ #local EndNr = 10; // end
+ #while (Nr &lt; EndNr)
+  object{ Column translate&lt;-2,0,Nr*2.5&gt;}
+  object{ Column translate&lt; 2,0,Nr*2.5&gt;}
+ #local Nr = Nr + 1;  // next Nr
+ #end // --------------- end of loop
+rotate&lt;0,0,0&gt;
+translate&lt;0,0,0&gt;
+} // end of union -----------------------</b></td></pre></tr></table>
+<br>
+<b><font color="#AA0000">Attention:</font> <font size="-1">L'utilisateur soii-m&ecirc;me est responsable de eviter un boucle infini !</b></font>
+</td>
+<td align="center" valign="top">
+    <table border="3"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><img src="im/While_demo2.jpg" width="320" height="240" alt="Columns demo1" titel="Columns demo1"></td>
+    </tr></table>
+    <div align="center"><font size="2"><b>Columns</b><br>
+    Description de sc&egrave;ne pour <nobr>POV-Ray :</nobr><br>
+     <a href="pov/While_demo2.pov">While_demo2.pov</a></font></div>
+</td>
+</tr>
+</table>
+</p>
+
+</div>
+
+<font size="-1">Des autres examples et une explication plus d&eacute;taill&eacute;e<br>
+on peut voir ici: &quot;<a href="../loop/povlup1f.htm">Boucles &laquo; tant que &raquo; - While loops avec POV-Ray</a>&quot;</font>.<br>
+</td></tr></table>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtutf0.htm">part 0</a> |
+<a href="povtutf1.htm">part 1</a>  | <a href="povtutf2.htm">part 2</a> |
+<a href="povtutf3.htm">part 3</a>  | <a href="povtutf4.htm">part 4</a> |
+<a href="povtutf5.htm">part 5</a>  | <a href="povtutf6.htm">part 6</a> |
+<a href="povtutf7.htm">part 7</a>  | <a href="povtutf8.htm">part 8</a> |
+<!--a href="povtutf9.htm"-->part 9</a>  | <a href="povtutfa.htm">part 10</a> |
+                                     <a href="povtutfb.htm">part 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

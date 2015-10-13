@@ -1,0 +1,284 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>Stereo-Bilder und Stereo-Animationen mit POV-Ray - Stereo-Bilder</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="3D-Stereo-Bilder und 3D-Stereo-Animationen mit POV-Ray - Stereo-Bilder">
+<meta name="keywords" content="3D-Stereo-Bilder, 3D-Stereo-Animationen mit, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D-Graphik, 3D-Animation">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Stereo-Bilder und Stereo-Animationen <nobr>mit POV-Ray</nobr></b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="stereo_150e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="stereo_150e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="stereo_150i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_150i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_150f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="stereo_150f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<font size="+1"> &nbsp;       <a href="stereo_000d.htm">Stereo-Bilder</font>  und</b></a><br>
+<font size="+1"> &nbsp;       <a href="stereo_000d.htm">Stereo Animationen</b></a><br></font>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="stereo_050d.htm">Kreuzblick <font size="1">(Cross-Eye)</font></b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100d.htm">Stereo-Bilder basic</b></a><br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_150d.htm"--><b>Stereo-Bilder advanced</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200d.htm">Bildpaare kombinieren</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300d.htm">Stereo-Animation 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310d.htm">Stereo-Animation 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400d.htm">Beispiele Stereo-Anims</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="95%" align="center" cellpadding="4"><tr><td colspan="2"><!-- global table-->
+<b><font size="5">Stereo-Bilder - flexiblere Version</font></b><br>
+<hr>
+<font size="2"><b>Stereo mit <font size="3"> Kamerablick in beliebige Richtung</font></b></font>
+</td>
+</tr>
+<tr>
+<td>
+<font size="2">
+    Auch hier defineren wir einen Wert <b>Eyes_Distance</b>.<br>
+    &nbsp; Um eine <b>beliebige Stereokamera-Blickrichtung</b>*) zu<br>
+    erhalten, m&uuml;ssen wir sicherstellen, dass die &quot;Augen&quot;<br>
+    um <b> +/- Eyes_Distance/2</b>, horizontal nach rechts und<br>
+    links zur der Nicht-Stereo-Kameraposition, aber immer<br>
+    senkrecht zur Blickrichtung der Kamera, verschoben<br>
+    werden.<br>
+
+    <b>*) Achtung: </b><br>
+    &nbsp;<b>Man darf nie senkrecht mit der Kamera blicken!</b><br>
+<font size="1">&nbsp;&nbsp;Man darf die 'location' nie genau &uuml;ber oder unter 'look_at' setzen!<br>
+&nbsp;&nbsp;    In diesen Positionen versagen die Berechnungen hier!.<br>
+</font> Wir wollen eine einzige <b>.pov-Datei</b> erstellen, die es erlaubt<br>
+   die Szene so wohl im Nicht-Stereomodus als auch im<br>
+   Stereomodus zu rendern.<br>
+   Wir ben&ouml;tigen eine kurze zu&auml;tzliche <b>Ini-Datei</b> um das<br>
+   Rendern des entsprechenden Stereobildpaares zu starten.<br>
+   <b>Die Nummerierung der Frames</b> durch diese Ini-Datei ist<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>1 f&uuml;r den rechts&auml;ugigen Blick</b><br>
+   &nbsp; &nbsp; und  <b>2 f&uuml;r den links&auml;ugigen Blick</b>.
+<br>
+Die <b>Szenendatei</b> bezeichnen wir: &quot;<b>Stereo_Image_.pov</b>&quot;<br>
+F&uuml;r Stereo-Blick f&uuml;gen wir folgende Zeilen hinzu:<br>
+(Zu Details siehe Szenendateien hier rechts !!!!)
+</font>
+
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>// stereo view:
+<font color="#800000">#declare Eye_Distance =
+   pow( -1, frame_number ) * 0.4;
+</font>// pow( -1, frame_number ) =
+//     "-1" for left eye's view ,
+//     "+1" for right eye's view;
+// stereo starts at frame_number = 1
+// odd frame numbers 1, 3, 5,...= right
+// even frame number 2, 4, 6,...= left
+
+// non-stereo view (frame_number = 0 )
+<font color="#800000">#if( frame_number = 0 )
+#declare Eye_Distance = 0;
+#end //---------------------------------
+</font>//--------------------------------------
+#declare Camera_Position=&lt;2.5,3.5,-1.5&gt;;
+#declare Camera_Look_At  = &lt;0,1.5,0&gt;;
+#declare Camera_Angle    =  65 ;
+//--------------------------------------
+camera{
+  location Camera_Position
+<font color="#800000">    + Eye_Distance/2
+    * vnormalize(
+        vcross(
+         Camera_Look_At-Camera_Position,
+         &lt;0,1,0&gt;
+        )// vcross
+      )// vnormalize
+</font>  right    x*image_width/image_height
+  angle    Camera_Angle
+  look_at  Camera_Look_At
+} // end camera</b></td></pre>
+  </tr>
+  </table>
+<font size="2">
+&nbsp;Die entsprechende Ini-Datei bezeichnen wir mit <b>Stereo_Image_.ini</b>:
+</font>
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>; POV-Ray version 3.6 / 3.7            .
+; Stereo Images ini sample file.
+Antialias=On
+Antialias_Threshold=0.3
+Antialias_Depth=3
+
+Input_File_Name=<font color="#800000">Stereo_Image_.pov</font>
+
+Initial_Frame=<font color="#800000">1</font>
+Final_Frame=<font color="#800000">2</font>
+
+Initial_Clock=0
+Final_Clock=1
+Cyclic_Animation=on
+Pause_when_Done=off</b></td></pre>
+  </tr>
+  </table>
+
+   <font size="2">
+       &nbsp; F&uuml;r ein quadratisches Rendern, verwenden wir
+       die Kommandozeile:
+       &quot; <b>+w240 +h240</b> &quot;. <br>
+       Mit POV-Ray 3.7 und jpeg-Output:<br>
+       &quot; <b>+w240 +h240 +fj100</b> &quot;.</font>
+</td>
+
+
+<td valign="top" width="290">
+<div align="center">
+
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Test_Vectors_00018.jpg" border="0" width="320"  height="240"
+       alt="free camera stereo view" title="free camera stereo view"></a>
+      </td></tr></table><font size="2">Die Situation bei einer frei beweglichen Kamera<br>
+                               Nicht-Stereo Kamera 'location' (violet) and<br>
+                               Positionen des rechten u. linken Auges (orange + red),<br>
+                               horizontal rechtwinklig zur Richtung von der <br>
+                               Kamera 'location' zum 'look_at' Punkt.</font><br>
+</div>
+<br>
+<br>
+<font size="2"><b>Szenen-Datei und zugeh&ouml;rige Ini-Datei:</b></font><br>
+<font size="2">POV-Ray 3.6/3.7 Stereo-Szenendatei: <br>
+               <a href="pov/Stereo_Image_.pov">Stereo_Image_.pov</a><br>
+<font size="2">POV-Ray 3.6/3.7 Stereo-Ini-Datei: <br>
+               <a href="pov/Stereo_Image_.ini">Stereo_Image_.ini</a><br>
+
+<br>
+<br>
+<div align="left">
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Command_Line_480x240.jpg" border="0" width="393"  height="116"
+       alt="command line" title="command line"></a>
+      </td></tr></table><font size="2"><b>Die Kommandozeile.</b></font>
+</div>
+
+<br>
+<br>
+<br>
+ <font size="2"><b>Wenn wir die Szenendatei &quot;Stereo_Image_.pov&quot;<br>
+   im POV-Ray-Editor rendern erhalten wir dies: </b></font>
+<div align="center">
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_.jpg" border="0" width="240"  height="240"
+       alt="non-stereo image" title="image_map with POV-Ray 3.6"></a>
+      </td></tr></table><font size="2">Die Szene in nicht-stereo.</font>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <font size="2"><b>Wenn wir die Ini-Datei &quot;Stereo_Image_.ini&quot;<br>
+  im POV-Ray-Editor starten,<br>
+  so erhalten wir die folgenden zwei Bilder: </b></font>
+ </div>
+</td>
+</tr>
+
+<tr>
+ <td colspan="2"><hr size="3"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2">
+<table align="center" border="0">
+<tr>
+<td>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_1.jpg" border="0" width="240"  height="240"
+       alt="image of the right eye's view" title="image of the right eye's view"></a>
+      </td></tr></table><font size="2">Blick f&uuml;r das rechte Auge.</font><br>
+</td>
+<td>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_2.jpg" border="0" width="240"  height="240"
+       alt="image of the left eye's view" title="image of the left eye's view"></a>
+      </td></tr></table><font size="2">Blick f&uuml;r das linke Auge.</font><br>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</td>
+</tr>
+
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

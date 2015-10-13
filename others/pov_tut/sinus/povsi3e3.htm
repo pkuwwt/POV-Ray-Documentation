@@ -1,0 +1,205 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2011 - all rights reserved">
+<meta name="Description" content="Loops, Sine, Cosine and POV-Ray, part III - tutorials and samples for the POV-Ray raytracing program">
+<meta name="keywords" content="mathematics, loops, while, sine, cosine, pov, povray, POV-Ray, raytracing, 3d graphics, raytracing descriptions, povray tutorial">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Loops, Sine, Cosine and POV-Ray - part III</title>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+ <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Loops, Sine, Cosine and POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+
+  <td align="right">
+     <a href="povsi3i3.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+     <a href="povsi3i3.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povsi3f3.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+     <a href="povsi3f3.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povsi3d3.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+     <a href="povsi3d3.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3e1.htm"--><b>Loops,</b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3e1.htm"--><b>Sine, Cosine</b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3e1.htm"--><b>and POV-Ray</b></a><br>
+&nbsp;&nbsp;  1.  <a href="povsi3e1.htm">Linear Waves</b></a><br>
+&nbsp;&nbsp;  2.  <a href="povsi3e2.htm">Concentric waves</b></a><br>
+&nbsp;<b>&gt;</b>3.  <!--a href="povsi3e3.htm"--><b>Flying Carpets</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</nobr>
+ &nbsp; - <a href="../down/pov_dwng.htm">Download</b></a><br>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<h2 align="center">About flying carpets</h2>
+
+<table width="95%" align="center" cellpadding="5"><tr>
+<td colspan="2">
+<p align="justify">In addition to the possibility of design the y-modulation
+ symmetric to an axis of rotation you can use factors which are depending
+ from the x or z direction as well by sin(A) and cos(A).</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Ball =
+ sphere{&lt;0,0,0&gt;,0.25
+   texture{
+     pigment{color rgb&lt;1,0.65,0.0&gt;}
+     finish {diffuse 0.9 phong 1}
+    }// end of texture
+ }// end of sphere
+
+#declare E = 5;
+#declare Z = -E;    // start value Z
+#declare EndZ = E;  // end value Z
+#declare Step = 0.2;// step value
+//------- loop start Z:
+#while ( Z &lt; EndZ + Step)
+
+  #declare X = -E; // start value X
+  #declare EndX = E; // end value X
+  //------ loop start X:
+  #while ( X &lt; EndX + Step)
+
+  object{ Ball
+  translate&lt;X,0.1*X*sin(Z)
+              +0.1*Z*cos(X),Z&gt;}
+
+  #declare X = X+Step;//next X value
+  #end // --------------- loop end X
+
+#declare Z = Z+Step;//next Z value
+#end // --------------- loop end Z</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop7.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="1">
+ <p align="justify">With a little variation you will get the classic flying carpet:</p>
+
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>object{Ball
+ translate&lt;X,0.05*(X*sin(X-Z)
+             +Z*cos(X*Z)),Z&gt;}</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop8.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="1">
+ <p align="justify">A variation with more parallel waves you will get by this modulation:</p>
+
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b> object{Ball
+  translate&lt;X,0.05*X*sin(X-2*Z)
+           + 0.1*Z*cos(3*X-Z),Z&gt;}</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop9.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="1">
+ <p align="justify">A great chaotic heap of snakes brings the following variation:</p>
+
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>object{Ball
+ translate&lt;X,0.1*X*sin(X-Z)
+  - 0.2*((Z/X)+1)*cos(X*Z),Z&gt;}</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloopa.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr>
+</table>
+
+
+
+<hr size="3">
+<div align="center">
+<table border="0" align="center">
+<tr>
+ <td><a href="povsi3e2.htm">concentric waves</b></a></td>
+ <td><a href="povsi3e2.htm"><img src="arr_prev.gif" border="0" width="20" height="20"></a></td>
+ <td><a href="povsi3e1.htm"><img src="arr_up.gif" alt="start" title="start" border="0" width="20" height="20"></a></td>
+ <td><a href="../pov__eng.htm"><img src="arr_next.gif" border="0" width="20" height="20"></a></td>
+ <td><a href="../pov__eng.htm">Overview</b></a></td>
+</tr>
+</table>
+</div>
+
+
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

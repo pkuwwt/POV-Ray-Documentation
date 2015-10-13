@@ -1,0 +1,199 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2015 - all rights reserved">
+<meta name="Description" content="Loops, seni e coseni in POV-Ray - parte I - tutorial et esempi per POV-Ray, un programma di raytracing">
+<meta name="keywords" content="mathematica, loops, cicli, while, seno, coseno, pov, povray, POV-Ray, raytracing, 3d grafica, raytracing descrizioni, povray tutorial">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Loops, seni e coseni in POV-Ray - parte I</title>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr> di <nobr>Friedrich A. Lohm&uuml;ller,</nobr>
+ <br>tradotto di Paolo Taraboi<br>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Loops, seni e coseni in POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+
+  <td align="right">
+        <a href="povsi3e1.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povsi3e1.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povsi3f1.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="povsi3f1.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povsi3d1.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="povsi3d1.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3i1.htm"--><b>Loops, </b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3i1.htm"--><b>seni e coseni</b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3i1.htm"--><b>in POV-Ray</b></a><br>
+&nbsp;<b>&gt;</b>1.  <!--a href="povsi3i1.htm"--><b>Onde lineare</b></a><br>
+&nbsp;&nbsp;  2.  <a href="povsi3i2.htm">Gira e rigira...!</b></a><br>
+&nbsp;&nbsp; &nbsp; &nbsp;  <a href="povsi3i2.htm">Onde concentriche</b></a><br>
+&nbsp;&nbsp;  3.  <a href="povsi3i3.htm">Tappeti volanti</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</nobr>
+ &nbsp; - <a href="../down/pov_dwni.htm">Download</b></a><br>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<h2 align="center">Seni e coseni in onde lineare</h2>
+
+<table width="90%" align="center" cellpadding="5"><tr>
+<td colspan="2">
+<p align="justify">Questa descrizione mostra alcuni giochi che possono essere fatti con seni e coseni.
+Il seguente esempio illustra anche l'uso di due cicli while nidificati.<br>
+In primo luogo consideriamo un ciclo semplice che posizioni delle piccole sfere lungo
+l'asse X tra i punti<nobr> X = -5 e X = +5</nobr>:</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Ball =
+ sphere{&lt;0,0,0&gt;,0.25
+        texture{
+          pigment{color rgb&lt;1,0.7,0&gt;}
+          finish {ambient 0.1
+                  diffuse 0.9 phong 1}
+               }// end of texture
+       }// end of sphere
+//------------------------------------
+#declare X = -5;    // start value X
+#declare EndX = 5;  //   end value X
+#declare Step = 0.5;// step value
+
+#while ( X &lt; EndX + Step)//loop start
+   object{ Ball translate &lt;X,0,0&gt;}
+
+#declare X = X + Step; // next X-Wert
+#end // ------------------- loop end</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop0.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="2">
+ <p align="justify">Se aggiungete un secondo ciclo che si sposti lungo l'asse delle Z
+tra <nobr>Z = -5 e Z = +5,</nobr> avrete un'area quadrata riempita di sfere:</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Z = -5;  // start value Z
+#declare EndZ = 5;  //   end value Z
+#declare Step = 0.5;// step value
+// loop start Z:
+#while ( Z &lt; EndZ + Step)
+
+  #declare X = -5;   // start value X
+  #declare EndX = 5; //   end value X
+  //loop start X
+  #while ( X &lt; EndX + Step)
+
+    object{ Ball translate &lt;X,0,Z&gt;}
+  #declare X = X + Step;//next X-Wert
+  #end // ---------------- loop end X
+
+#declare Z = Z + Step; //next Z-Wert
+#end // ----------------- loop end Z</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop1.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr></table>
+<br>
+<table width="90%" align="center" border="0"><tr><td>
+<p align="justify">Dopo averla creata con queste prime informazioni sui cicli,
+dobbiamo dare un po' di movimento a quest'area.
+Per farlo dobbiamo utilizzare le funzioni di seno e coseno
+definite rispettivamente da <b>sin(A)</b> e <b>cos(A)</b> dove A sia un
+angolo <b>misurato in radianti</b>. Modifichiamo dunque il programma come segue:<br>
+<font size="2"><b>&nbsp;&nbsp;object{ Ball translate &lt; X, sin(X), Z&gt; } &nbsp;&nbsp;</b></font><br>
+<font size="3">o dimezzando il valore dell'intervallo: Step = 0.25 </font><br>
+<font size="2"><b>&nbsp;object{ Ball translate &lt; X, sin(2*X), Z&gt; }</b></font><br>
+otteniamo queste immagini:</p>
+<div align="center">
+
+<table align="center" border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+    <tr>
+        <td><img src="povloop2.jpg" width="320" height="240"></td>
+        <td><img src="povloop3.jpg" width="320" height="240"></td>
+    </tr>
+</table>
+</div>
+
+
+<hr size="3">
+<table align="center">
+<tr>
+ <td><a href="../pov__ita.htm">Indice generale</b></a></td>
+ <td><a href="../pov__ita.htm"><img src="arr_prev.gif" border="0" width="20" height="20"></a></td>
+ <td><a href="povsi3i2.htm"><img src="arr_next.gif" border="0" width="20" height="20"></a></td>
+ <td><a href="povsi3i2.htm">Gira e rigira...!</b></a></td>
+</tr>
+</table>
+
+
+</td></tr></table>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, include files tutorial, notations for include files">
+<meta name="description" content="Include files tutorial for POV-Ray - Special Notations for Include Files">
+<title>Include files with POV-Ray - Special Notations for Include Files</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Include files with POV-Ray</b></font><br>
+      <font size="-1"><b>How they work and How to make your own include files</b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="inc_200i.htm"><font size="2">Italiano </font></a>
+        <a href="inc_200i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_200f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="inc_200f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="inc_200d.htm"><font size="2">Deutsch </font></a>
+        <a href="inc_200d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000e.htm"--><b>A Short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000e.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_000e.htm">Why Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100e.htm">Self-made Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100e.htm">and how to call them.</b></a><br>
+ &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_200e.htm"--><b>Special Notations, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <!--a href="inc_200e.htm"--><b>&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300e.htm">Where to store</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="inc_400e.htm">Design of Include Files</b></nobr></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="inc_700e.htm">Adding a new item</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_700e.htm">to the 'Insert Menu'</b></a><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Special Notations for Include Files.</b></h2>
+
+
+<p align="justify"><font size="+1"><b>Include file extension:</b></font><br>
+&nbsp; The standard extension for include files is: '<b>.inc</b>'  <br>
+This is just a convention for making clear that this is not a independent text file!<br>
+<font size="-1"> (Basically the file is nothing else than a plain ASCII text, just like the scene file with the extension '.pov'.)</font><br>
+Some POV-Ray users prefer additionally to use the extension '<b>.mcr</b>' for include files containing macros.<br>
+
+<br>
+<font size="+1"><b>Include file name:</b></font><br>
+&nbsp; Don't use any names of include files delivered with POV-Ray.<br>
+Use pithy names, i.e.: 'Table_01.inc' if it contains a declaration for 'Table_01'<br>
+<nobr><img src="im/warn.gif" border="0" width="32" height="30">
+To <b>avoid any collision with built-in identifiers
+or reserved words of POV-Ray</nobr></b>,<br>
+it's strongly recommanded to <b>use only words beginning with capital letters<br>
+for all identifiers of variables declared by the user.</b><br>
+<br>
+<font size="+1"><b>Prefer '#local' rather than '#declare':</b></font><br>
+&nbsp; Use '#local' instead of '#declare' for all declarations inside of
+an include file, that have no meaning outside the include file
+(excepted the object you want to declare by this include file!).<br>
+This prevents variables of the same name used outside (in a scene file or an other include file)
+to be changed by calling this include file.
+<div align="center">
+</div>
+<font size="-1">....</font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

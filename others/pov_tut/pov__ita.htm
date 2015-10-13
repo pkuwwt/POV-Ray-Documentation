@@ -1,0 +1,524 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014 by Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="POV-Ray esempi, POV-Ray tutoriali, povray, POV, pov, raytracing, 3d graphica, grafica di computer photorealistico">
+<meta name="description" content="descrizioni, tutoriali et esempi per il programa">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<title>POV-Ray descrizioni, tutoriali et esempi per il programa di raytracing POV-Ray per i principianti et per i utenti advancati</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+<!-- header -->
+<!---hr size="4" WIDTH="90%" -->
+<center>
+<table border="0" width="90%" align="center">
+<tr>
+ <td>
+<font size="1" face="Arial,Helvetica,sans-serif"><a name="top"></a>
+ <nobr>Tutorial, descrizioni ed esempi </nobr> per <nobr>POV-Ray</nobr> <nobr>di Friedrich A. Lohmueller</nobr>,<br>
+ parzialmente tradotto di Paolo Taraboi</font><br>
+ <font size="2"><a href="../home_ita.htm">Galleria Raytracing</a></font><br>
+ <font size="2"><a href="../index_i.htm">Homepage</a></font></td>
+ <td width="40">&nbsp;</td>
+ <td align="right">
+  <nobr><a href="pov__eng.htm"><font size="2">English</font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="pov__eng.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a></nobr><br>
+        <a href="pov__fra.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="pov__fra.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov__ger.htm"><font size="2">Deutsch</font></a>
+        <a href="pov__ger.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+ </td>
+</tr>
+</table>
+<a name="start"></a>
+<hr size="4" width="90%">
+<!--- end of header -->
+<a name="top"></a>
+<div align="center">
+<font size="5" face="Arial,Helvetica,sans-serif">
+   <nobr>Descrizioni et esempi</nobr> per <nobr>POV-Ray</nobr>
+   </font></div>
+<div align="left">
+      <font size="2">
+      &nbsp; <font color="#CC0000"><b>Aggiornamento: </b> <a href="down/inserti_a.htm#IncludeFiles">shapes3.inc</a>: <b>08 ottobre 2014</b></font><br>
+      &nbsp; <font color="#CC0000"><b>Novit&agrave;:</b></font> 08 novembre 2013: <font color="#aa0000"><b>POV-Ray 3.7.0 pubblicato!</b></font><br>
+      &nbsp; &nbsp; Dettagli qui: <a href="http://www.povray.org/download">http://www.povray.org/download</a>.<br>
+<nobr>&nbsp; <font color="#CC0000"><b>Aggiornamento: 16 novembre 2014</b></font> : <font color="#aa0000"><b>POV-Ray 3.7.0 Unofficial for Mac</b></font></nobr><br>
+      &nbsp; &nbsp; Dettagli qui: <a href="http://megapov.inetart.net/povrayunofficial_mac/">http://megapov.inetart.net/povrayunofficial_mac/</a>.<br>
+      </font>
+   </div>
+<!--div align="center"><font face="Arial,Helvetica,sans-serif" size="5"><b>INDEX</b></font><br>&nbsp;</div-->
+<table align="center" border="1" cellspacing="2" cellpadding="2" width="90%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr><a name="overview"></a>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="down/pov_dwni.htm"><img src="down/downs.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+   <b>&nbsp;0. &nbsp;</b></td>
+ <td valign="top"><a href="down/pov_dwni.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+    DOWNLOAD e concetti di base</b></a></font>, <font face="Arial,Helvetica,sans-serif" size="2">
+    alcune descrizioni (zipped HTML),
+    mio 'Insert Menu Add-on'  per usare anche dai partecipanti di progetti come il
+    <a href="../cg_ag/cindex_e.htm"> Computer Graphics Workshop</a> e il
+    <a href="../cg_ag/cindex_e.htm">Computer Graphics Project</a>
+    della mia scuola.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+    <a href="basic/povtuti0.htm"><img src="basic/im/pov_mins.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+    <b>&nbsp;1. &nbsp;</b></td>
+ <td valign="top"><a href="basic/povtuti0.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     POV-Ray Tutorial di Base</a></font>
+          <font size="2" color="#cc0000"><nobr><b><i> Aggiornamento: 02 agosto 2014</b></i></nobr></font><br>
+     <font size="2">
+     Introduzione al Linguaggio di Descrizione di Scene di <nobr>POV-Ray 3.7.0/3.6.2</nobr><br>
+     Tutorial di base per POV-Ray. Una breve introduzione per principianti -  per i primi passi con POV-Ray.</font>
+     </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+    <a href="down/inserti_a.htm"><img src="addon/00_Basic_Templates/10_Ready_made_scenes/54_Sunset_sky2.jpg" border="0" width="80" height="80"></a></td>
+ <td width="15" align="center" valign="top">
+    <b>&nbsp;2. &nbsp;</b></td>
+ <td valign="top"><a href="down/inserti_a.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Insert Menu Add-on</a><b></font><font size="2"> per <nobr>POV-Ray 3.7 / 3.6.2</nobr></b></font>
+     <font size="2" color="#cc0000"><nobr><i><b> | 24 dicembre 2014</b></i></nobr></font><br>
+     <font size="2"> <b>Anche HTML per tutti i sistemi operativi</b>.
+     Per rendere le cose pi&ugrave; facili ai principianti e pi&ugrave; comode agli utenti advanzati.
+     Scenes prontes, shapes con textures,
+     shapes di &quot;shapes3.inc&quot; (former: shapes_lo.inc), etc..
+
+</font>
+     </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+    <a href="all_shapes/shapes000i.htm"><img src="oggetti.jpg" border="0" width="80" height="100"></a></td>
+ <td width="15" align="center" valign="top">
+    <b>&nbsp;3.</b></td>
+ <td valign="top"><a href="all_shapes/shapes000i.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+    <nobr>Oggetti Geometrici di POV-Ray</nobr></b></font></a>
+    <font size="2" color="#cc0000"><nobr><i><b> | 08 maggio 2014</b></i></nobr> </font><br>
+    <font size="2">Sintassi et Esempi per quasi tutti gli oggetti.</font><br>
+    <font size="1">sphere, cylinder, cone, torus, box, ovus, prisma, sor, plane, text, Bevelled_Text, Circle_Text,
+        Circle_Text_Valign, unicode, height_field, HF-macros, paraboloid, hyperboloid, polygon, cubic,
+        quartic, parametric, isosurface, smooth_triangle, mesh2,
+        Round_Pyramid_N, Segment_of_CylinderRing, Segment_of_Torus, etc..</font></td>
+</tr>
+
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+    <a href="trans/trans_000i.htm"><img src="trans/matrix-shear_y_to_x.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+    <b>&nbsp;4. &nbsp;</b></td>
+ <td valign="top"><a href="trans/trans_000i.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+    <nobr>Trasformazioni Geometriche</nobr></b> </a>
+    <font size="2" color="#cc0000"><nobr><i><b> Aggiornamento: 02 agosto 2014</b></i></nobr></font><br>
+    <font size="2">
+    Trasformazioni di base ('translate', 'rotate',
+    'scale', 'matrix', 'transform') e di 'transforms.inc' e per trasformazioni per vettori.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="csg/povcsg1i.htm"><img src="csg/boole_is.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>&nbsp;5. &nbsp;</b></td>
+ <td valign="top"><a href="csg/povcsg1i.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     CSG - Geometria Solida Costruttiva.</a></font>
+     <font size="1"><nobr><b><i>| 05 luglio 2012</i></b></nobr></font><br>
+     <font size="2"><b>Algebra Booleana con Oggetti Solidi</b>:<br>
+     &nbsp;'union', 'merge', 'difference', 'intersection', 'inverse' e 'clipped_by'</b>.
+  </font>
+  </td>
+</tr>
+<tr>
+ <td width="80" height="80" align="center" valign="middle" bgcolor="ffffff">
+   <a href="tex/tex_000i.htm"><img src="tex/im/color_map0t.jpg" border="0" width="80" height="80"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>&nbsp;6. &nbsp;</b></td>
+ <td valign="top"><a href="tex/tex_000i.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+    Texture e strutturazione delle superfici</b></font></a>
+    <font size="2"><nobr><i><b> | 23 marzo 2013</b></i></nobr></font><br>
+    <font size="2">
+     L'uso delle funzioni &quot;texture&quot;, &quot;pigment&quot;, &quot;normal&quot;,&quot;finished&quot;,
+     &quot;color&quot;, mapping con &quot;color_map&quot;, &quot;image_map&quot; etc. &quot;warp mapping&quot;
+     e  &quot;layered textures&quot;.
+  </font>
+  </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="interior/interior_000i.htm"><img src="interior/im/candle_1ss.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>&nbsp;7. &nbsp;</b></td>
+ <td valign="top"><a href="interior/interior_000i.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Design del Interno dei Oggetti trasparenti con POV-Ray</b></font></a>
+     <font size="2" color="#cc0000"><nobr><b><i> Aggiornamento:  10 settembre 2014</b></i></nobr></font><br>
+     <font size="2">
+     L'uso di &quot;fog&quot;, &quot;material&quot;, &quot;transparency&quot;, &quot;ior&quot;, &quot;caustics&quot;,
+     &quot;interior&quot;, &quot;media&quot; e &quot;density maps&quot;
+     per oggetti trasparenti come vetro, nebbia, fumo, vapore, nuvole, fiamme, fuoco, etc. con media di emission,
+     scattering e absorption.
+     </font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="camera_light/camlit_i1.htm"><img src="camera_light/im/ArcAni.gif" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>&nbsp;8. &nbsp;</b></td>
+ <td valign="top"><a href="camera_light/camlit_i1.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Cameras, Sorgenti di Luce e dettagli in POV-Ray</b></font></a>
+     <font size="2" color="#cc0000"><nobr><b><i> Nuovo:  09 agosto 2013</i></b></nobr></font><br>
+     <font size="2">
+     Sopra <b>sorgenti di luce</b> (p.es. pointlight, spotlight, area_light etc.) e
+     <b>cameras</b> (perspective, ultra_wide_angle, orthographic etc.)
+     disponibile in POV-Ray - le propriet&agrave; e l'uso
+     e <b>mostrare e nascondere</b> d'oggetti.</font>
+     </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="loop/povlup0i.htm"><img src="loop/im/loop_s.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>9. &nbsp;</b></td>
+ <td valign="top"><a href="loop/povlup0i.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Cicli con POV-Ray</b></font></a>
+     <font size="2" color="#cc0000"><nobr><b><i> Aggiornamento: 01 maggio 2014</b></i></nobr></font><br>
+     <font size="2">
+     Come utilizzare il <b>ciclo while</b> ('while loop') et  il <b>ciclo for</b> ('for loop' solo POV-Ray 3.7) per porre oggetti in strutture regulari,
+     un nastro di Moebius, viti, spirali, chiocciole e ammoniti.
+
+  </font>
+  </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="sinus/povsi3e1.htm"><img src="sinus/povloops.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>10. &nbsp;</b></td>
+ <td valign="top"><a href="sinus/povsi3i1.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Loops, Seno, Coseno e POV-Ray</b></font></a>
+     <font size="1"><i><b> Aggiornamento: </b> 05 agosto 2012</i></nobr></font><br>
+     <font size="2">
+     Esempi di utilizzo delle funzione seno o coseno con i "while loops".
+     Come creare onde concentrice e tappeti volanti.
+  </font>
+  </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="dir/dir_000e.htm"><img src="dir/im/If_Else_1s.jpg" border="0" width="80" height="80"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>11. &nbsp;</b></td>
+ <td valign="top"><a href="dir/dir_000e.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Alternative e cicli con POV-Ray - #if, #switch, #while loops e #for loops.</b></font></a>
+     <font size="1"><i><b> Aggiornamento: </b> 29 ottobre 2011</i></nobr></font><br>
+     <font size="2">Sopra strutture di controllo per alternative e cicli avec esempi.
+     <br><font size="2"><b><i>Disponibile solo in inglese e tedesco</i></b></font>
+     </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="pov_inc/inc_000e.htm"><img src="pov_inc/im/InsMen_5t.jpg" border="0" width="80" height="76"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>12. &nbsp;</b></td>
+ <td valign="top"><a href="pov_inc/inc_000e.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Short Include File Tutorial for POV-Ray</b></font></a>
+      <font size="1"><i><b>  Aggiornamento: 07 maggio 2012</i></b></nobr></font><br>
+     <font size="2">Su Include Files - Come si fa, dove memorizzare e come integratare nel'insert menu.<br>
+     Dettagli su la struttura della programma POV-Ray - dov'&egrave; che cosa?</font>
+     <br><font size="2"><b><i>Disponibile solo in inglese e tedesco</i></b></font>
+     </td>
+</tr>
+<tr>
+ <td width="80" height="80" align="center" valign="middle" bgcolor="ffffff">
+   <a href="geo/geom_000i.htm"><img src="geo/im/Icosahedron_120t.gif" border="0" width="80" height="80"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>13. &nbsp;</b></td>
+   <td valign="top" ><a href="geo/geom_000i.htm"><font size="3">
+    Geometria di Base con POV-Ray</b></font></a> &nbsp;
+     <font size="2"><nobr><i><b>  Aggiornamento:  25 giugno 2013</b></i></nobr></font><br>
+     <font size="2">Qualche fondamento geometrico per raytracing. Sopra triangoli rettangoli, la teorema di Pitagora, trigonometria di base,
+      i poligoni regulari, i cinque solidi platonici, il tetraedro regolare, l'ottaedro regolare, il cubo, il dodecaedro regolare e l'icosaedro regolare.</font>
+    </td>
+</tr>
+
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="calc/math_000i.htm"><img src="calc/im/raster_plate_2cs.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>14. &nbsp;</b></td>
+ <td valign="top"><a href="calc/math_000i.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Reticoli e Asse per Sistemi di Coordinate<br>
+     Visualizzazione di funzioni matematiche</b></font></a>
+    <font size="1"><i><b> Aggiornamento: 11 febbraio 2011 </b></i></font>
+    <br><font size="2">
+     Come creare reticoli ed assi per sistemi di coordinate a due ou tre dimensioni.
+    <b>Funzioni matematiche</b>  in POV-Ray.
+
+  </font>
+  </td>
+</tr>
+
+<tr>
+ <td width="80" height="80" align="center" valign="middle" bgcolor="ffffff">
+   <a href="a_geo/a_geo__e.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>15. &nbsp;</b></td>
+ <td valign="top"><a href="a_geo/a_geo__e.htm"><font face="Arial,Helvetica,sans-serif" size="3">
+     Geometria Analytica con POV-Ray<br>
+     Visualizzazione di Oggetti 3D (calcoli ed output dei risultati)</b></font></a>
+     <font size="1"><nobr><b><i>  Aggiornamento: 16 genaio 2014</b></i></nobr></font><br>
+     <font size="2">
+    Come utilizzare POV-Rayper la visualizzazione 3D di oggetti geometrici
+    in un sistema di coordinate tridimensionale.
+    Come utilizzarlo per i calcoli e l'output in geometria analitica.
+
+   <br><b><i>Disponibile solo in inglese e tedesco</i></b>
+
+  </font>
+  </td>
+</tr>
+
+<tr><a name="samples"></a>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="x_sam/sam_000i.htm"><img src="x_sam/plane/plane_00x.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>16. &nbsp;</b></td>
+ <td valign="top"><a href="x_sam/sam_000i.htm"><font size="3">
+     Esempi per POV-Ray  - Come fare Oggetti per POV-Ray
+     <br>Geometria, Architectura, Tecnica</b></font></a>
+     <font size="2" color="#cc0000"><nobr><i><b> Aggiornamento: 16 genaio 2014</b></i></nobr></font><br>
+     <font size="2">
+     Qualche esempio di base et avanzato di come costruire oggetti e scene con POV-Ray.</font>
+     </td>
+</tr>
+<tr><a name="objects"></a>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="objects/obj_000i.htm"><img src="objects/track/Bulldozer_02s.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>17. &nbsp;</b></td>
+ <td valign="top"><a href="objects/obj_000i.htm"><font size="3">
+     <nobr>Oggetti per POV-Ray - Oggetti pronto per l'uso con POV-Ray.</nobr>
+     <br>Geometria, Architectura, Piante, Tecnica</b></font></a>
+     <font size="2" color="#cc0000"><nobr><i><b> Aggiornamento: 16 genaio 2014</b></i></nobr></font><br>
+     <font size="2">
+     Qualche esempio d'oggetti dichiarati come include files, pronto per l'uso con POV-Ray.</font>
+     </td>
+</tr>
+<tr><a name="scale_model"></a>
+ <td width="80" height="80" align="center" valign="middle" bgcolor="ffffff">
+   <a href="scale_model/s_mod_000i.htm"><img src="scale_model/im/Loco_Multiple_001css.jpg" border="0" width="80" height="80"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>18. &nbsp;</b></td>
+ <td valign="top"><a href="scale_model/s_mod_000i.htm"><font size="3">
+     Modellare in Scala con POV-Ray.</b></font></a>
+     <font size="1"><nobr><i><b> Nuovo: 14 febbraio 2011</b></i></nobr></font><br>
+     <font size="2">Modellare <b>secondo piani su sfondo quadrettati</b><br>
+     e con <b>rendering a viste multiple</b> con POV-Ray.</font>
+     </td>
+</tr>
+<tr><a name="modelling"></a>
+ <td width="80" height="53" align="center" valign="middle" bgcolor="ffffff">
+   <a href="modelling/model_000i.htm"><img src="modelling/im/RT_Rails_Stapel01s.jpg" border="0" width="80" height="53"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>19. &nbsp;</b></td>
+ <td valign="top"><font size="3"><a href="modelling/model_000i.htm">
+      Rail Track System</b></a> per
+      <a href="modelling/model_000i.htm">Ferromodellismo - Modellismo ferroviario con POV-Ray.</b></font></a>
+     <font size="2"><nobr><i><b>Aggiornamento: 19 maggio 2012</b></i></nobr></font><br>
+     <font size="2">Una collezione di include files di POV-Ray per modellare binari.</font>
+     </td>
+</tr>
+
+
+<tr><a name="specials"></a>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="backgrnd/p_sky000i.htm"><img src="backgrnd/im/Clouds_by_media_01s.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>20. &nbsp;</b></td>
+ <td valign="top"><font size="3">
+   <a href="backgrnd/p_sky000i.htm">
+   Cieli fotorealistici con POV-Ray</b></a></font>
+     <font size="2" color="#cc0000"><b><nobr><i> Aggiornamento: 24 novembre 2013</b></i></nobr></font>
+   <br><font size="2">
+   Esempi di cieli fotorealistici con nuvole, strati multipli di nuvole e nuvole che fanno ombra,
+   nuvole di media et cieli con Skydome, skymap di foto panoramiche a 360&deg;. HDRI environment mapping.
+   </font>
+   </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="backgrnd/p_wat1.htm"><img src="p_watr4s.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>21. &nbsp;</b></td>
+ <td valign="top"><font size="3">
+   <a href="backgrnd/p_wat1.htm">
+   Acqua fotorealistica con POV-Ray </b></a></font>
+   <font  size="1"><b> <nobr><i> Aggiornamento: 19 aprile 2011  </b></i></nobr></font>
+   <br><font size="2">
+   Superfici dell'acqua riflettenti, simulazioni d'onde e di acqua trasparente, gorgo d'acqua, acqua in un bicchiere,
+   superfice dell'acqua ondulata con una Isosurface.
+   </font>
+  </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="random/random00i.htm"><img src="random/im/VRand_On_Sphere_2s.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>22. &nbsp;</b></td>
+   <td valign="top" ><a href="random/random00i.htm"><font size="3">
+     Casualit&agrave; con POV-Ray</b></a></font>
+     <font size="2"><i><nobr><b> Aggiornamento:  05 aprile 2013</b></nobr></i></font><br>
+     <font size="2">
+     Qualche esempio di base per usare sequenze di numeri casuali per creare
+     irregolarit&agrave;  in disposizione, orientazione, dimensioni e colori
+     que ha un'apparenza naturale.
+    </font>
+    </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="plants/plants_00i.htm"><img src="objects/plants/pov_trees/povtree_330_1.jpg" border="0" width="80" height="80"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>23. &nbsp;</b></td>
+   <td valign="top" ><a href="plants/plants_00i.htm"><font size="3">
+    Piante con POV-Ray</b></font></a>
+   <font size="2" color="#cc0000"><i><nobr><b> Aggiornamento:  08 novembre 2013</b></nobr></i></font><br>
+   <font size="2">Alberi fatto con POV-Tree + TOMTREE-1.5.inc e con Arbaro.<br>
+`  Anche scene dalla mia galleria di raytracing e relative descrizioni.<br>
+   Palmi, canna, fiore - distribuzioni dell'aria naturale, come per caso.
+   </b>
+
+    </font>
+    </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="lego/lg2pov000i.htm#start"><img src="lego/im/LEGO000tt.jpg" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>24. &nbsp;</b></td>
+   <td valign="top" ><a href="lego/lg2pov000i.htm#start"><font face="Arial,Helvetica,sans-serif" size="3">
+     LEGO<sup>&reg;</sup> - CAD e POV-Ray</b></a></font>
+     <font size="1"><i><nobr><b> Nuovo:  15 febbraio 2009</b></nobr></i></font>
+    <font size="2"><br>
+     Come si pu&ograve; usare modelli et elementi virtuali LEGO<sup>&reg;</sup> di programmi CAD come oggetti per POV-Ray.<br>
+   </font>
+    </td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="middle" bgcolor="ffffff">
+   <a href="skyboxer/skyboxer_1i.htm#start"><img src="skyboxer/gif/PalldioPalace_extern_s.gif" border="0" width="80" height="60"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>25. &nbsp;</b></td>
+   <td valign="top" ><a href="skyboxer/skyboxer_1i.htm#start"><font face="Arial,Helvetica,sans-serif" size="3">
+     SkyboxViewer per Scene 3D.</b></a></font>
+     <font size="1"><i><nobr><b> Aggiornamento:  30 maggio 2011</b></nobr></i></font><br>
+    <font size="2">Con download dello SkyboxViewer, un programma freeware OpenGL, e con una galeria d'esempi di Skybox.
+     Come si pu&ograve; creare uno skybox per una vista panoramica a 360&deg; con scene di <nobr>POV-Ray</nobr>.<br>
+   </font>
+    </td>
+</tr>
+<tr>
+ <td width="80" height="100" align="center" valign="middle" bgcolor="ffffff">
+   <a href="animate/pov_anii.htm"><img src="animate/spiral_s.gif" border="0" width="80" height="100"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>26. &nbsp;</b></td>
+   <td valign="top" ><a href="animate/pov_anii.htm"><font size="3">
+     Animazioni con POV-Ray</b></font></a>
+    <font size="2" color="#cc0000"><nobr><i><b>  Aggiornamento: 08 febbraio 2014</b></i></nobr></font><br>
+    <font face="Arial,Helvetica,sans-serif" size="2">
+    - Fondamenti ed esempi di Animazione 3D.<br>
+     Come si crea un'animazione, animazioni cicliche, animazioni con curve
+     di tipo &quot;spline&quot;<br> per flybys e walkthroughs e relative descrizioni.
+
+    </font>
+    </td>
+</tr>
+<tr>
+ <td width="80" height="80" align="center" valign="middle" bgcolor="ffffff">
+   <a href="stereo/stereo_000i.htm"><img src="stereo/im/Stereo_Ani_10_small.gif" border="0" width="80" height="80"></a></td>
+ <td width="15" align="center" valign="top">
+  <b>27. &nbsp;</b></td>
+   <td valign="top" ><a href="stereo/stereo_000i.htm"><font size="3">
+    Immagini Stereo e Animazioni Stereo con POV-Ray</b></font></a>
+    <font size="2"> <nobr><i><b>New: 30 gennaio 2013</b></i></nobr></font><br>
+    <font size="2">
+    - Fondamenti ed esempi di immagini stereo 3D et animazioni stereo con occhi incrociati (cross-eye view).
+    Come fare immagini et animazioni stereo e come si pu&ograve; combinare coppie di immagini stereo  - con source codes.</font>
+    </td>
+</tr>
+</table>
+</h3>
+<a name="anim"> </a>
+
+
+
+
+<!--footer -->
+
+<hr>
+
+<center>
+<table border="0" width="90%" align="center">
+<tr>
+ <td><a href="../home_itahtm"><font size="2">Galleria Raytracing</font></a><br>
+     <a href="../index_i.htm"><font size="2">Homepage</font></a></td>
+ </td>
+
+ <td align="right">
+        <a href="pov__eng.htm"><font face="Arial, Verdana, Helvetica" size="2">English</font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="pov__eng.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="pov__fra.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="pov__fra.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov__ger.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="pov__ger.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+ </td>
+<br>
+</td>
+</tr>
+</table>
+</center>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ </td>
+ <td align="right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</font>
+</body>
+</html>

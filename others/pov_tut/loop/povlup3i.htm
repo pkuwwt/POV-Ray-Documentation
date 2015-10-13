@@ -1,0 +1,238 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="POV-Ray tutorial, cicli while (while loops) e POV-Ray. Trasformazioni circulari - Moebius">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, rendering, 3d graphica, computer graphica, tutorial, descrizioni, while loop, trasformazioni circulari, Moebius">
+<title>Cicli e POV-Ray - Cicli e Moebius e simili</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                            di <nobr>Friedrich A. Lohm&uuml;ller</nobr>
+ ,<br>in parti tradotto di Paolo Taraboi<br>
+
+  <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Cicli in POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+        <a href="povlup3e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povlup3e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povlup3f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="povlup3f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povlup3d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="povlup3d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0i.htm"><font size="3">Cicli con POV-Ray</font></b></a><br>
+ &nbsp; 1.  <a href="povlup7i.htm">For e While</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup7i.htm">Comparazione</b></a><br>
+ &nbsp; 2.  <a href="povlup1i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup1i.htm">lineari</b></a><br>
+ &nbsp; 3.  <a href="povlup2i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup2i.htm">circolari</b></a><br>
+<b>&gt;</b>4.  <!--a href="povlup3i.htm"--><b>Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4i.htm">Viti e spirali</b></a><br>
+ &nbsp; 6.  <a href="povlup5i.htm">Spirali</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5i.htm">intrecciate</b></a><br>
+ &nbsp; 7.  <a href="povlup6i.htm">Chiocciole</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6i.htm">e ammoniti</b></a><br>
+ &nbsp; 8.  <a href="povlup9i.htm" >Spirali sferiche 1</b></a><br>
+ &nbsp; 9.  <a href="povlup10i.htm">Spirali sferiche 2</b></a><br>
+ &nbsp;10.  <a href="povlup8i.htm">Spirali Fibonacci</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwni.htm">Download</b></a><br>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<a name="start"></a>
+<h2 align="center">Cicli e Moebius e simili</h2>
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="0" width="95%">
+<tr>
+ <td colspan="2">
+<p align="justify">Se usiamo per una doppia rotazione un cilindro invece
+ che una sfera e riduciamo il numero delle rotazioni interne a 0.5
+ otteniamo un <b>anello di Moebius</b> - caratterizato dalla avere una faccia sola: </p>
+
+</td>
+</tr>
+<tr>
+ <td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#declare P_R =0.1; #declare P_H =0.75;
+#declare Profile =
+union{
+ sphere  {&lt;0, P_H,0&gt;,P_R }
+ cylinder{&lt;0,-P_H,0&gt;,&lt;0,P_H,0&gt;,P_R}
+ sphere  {&lt;0,-P_H,0&gt;,P_R }
+ texture{
+   pigment{color rgb&lt;0.65,0.35,0.85&gt;}
+   finish {phong 1}}
+} //----------------------------------
+#declare Radius_major = 3.00;
+#declare N_major =  0.5;
+#declare N_minor = 2500;
+//------------------------------------
+#declare Nr=0;               // start
+#declare EndNr=N_major*N_minor;// end
+#while (Nr&lt; EndNr)
+ object{Profile
+         rotate&lt;0,0,Nr*360/N_minor&gt;
+        translate&lt;Radius_major,0,0&gt;
+         rotate&lt;0,Nr*360/EndNr,0&gt;}
+ #declare Nr = Nr + 1; //next Nr_minor
+#end // --------------- end of loop --</b></td></pre>
+ </tr>
+</table>
+ </td>
+
+ <td valign="top">
+    <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloopm.jpg" width="320" height="240"></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Scena per <nobr>POV-Ray:</nobr> <a href="pov/povloopm.pov">povloopm.pov</a><br>
+    o: <a href="pov/povloopm.txt">povloopm.txt</a></font></div>
+  <br>
+ </td>
+</tr>
+<tr>
+ <td>
+<p>Aumentando il numero delle rotazioni interne a 2.5,<br>
+otteniamo quanto segue:
+
+</p>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//----------------------------------
+#declare N_major = 2.5;
+//----------------------------------</b></td></pre>
+ </tr>
+</table>
+
+<p align="justify">Impostando un numero di rotazioni intero si
+ottiene un anello con due facce; impostando un numero decimale
+<nobr>(0.5 , 1.5, 2.5)</nobr> avremo un anello con una faccia sola. </p>
+</td>
+ <td><table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloopn.jpg" width="320" height="240"></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Scena per <nobr>POV-Ray:</nobr> <a href="pov/povloopn.pov">povloopn.pov</a><br>
+    o: <a href="pov/povloopn.txt">povloopn.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+<tr>
+ <td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//---------------------------------
+#declare P_R = 0.2;
+#declare P_H = 0.65;
+#declare Profile =
+union{
+ sphere  {&lt;0, P_H,0&gt;,P_R  }
+ cylinder{&lt;0,-P_H,0&gt;,&lt;0,P_H,0&gt;,P_R}
+ cylinder{&lt;0,-P_H,0&gt;,&lt;0,P_H,0&gt;,P_R
+          translate&lt;0.01,0,0&gt;
+ texture{pigment{color rgb&lt;1,.65,0&gt;}
+         finish {phong 1}}}
+ sphere  {&lt;0,-P_H,0&gt;,P_R }
+ texture{pigment{color
+                 rgb&lt;1,0.3,0.7&gt;}
+         finish {phong 1}}}
+//---------------------------------
+#declare N_major = 4;
+//---------------------------------</b></td></pre>
+ </tr>
+</table>
+ </td>
+
+ <td><table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloopo.jpg" width="320" height="240"></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Scena per <nobr>POV-Ray:</nobr> <a href="pov/povloopo.pov">povloopo.pov</a><br>
+    o: <a href="pov/povloopo.txt">povloopo.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+</table>
+</div>
+
+
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0i.htm">Index</a> |
+     <a href="povlup7i.htm">Cicli for e while</a> |
+     <a href="povlup1i.htm">lineare</a> |
+     <a href="povlup2i.htm">circolare</a> |
+     <!--a href="povlup3i.htm"-->Moebius</a> |
+     <a href="povlup4i.htm">Viti et Spirali</a> |
+     <a href="povlup5i.htm">intrecciato</a> |
+     <a href="povlup6i.htm">Chiocciole</a> |
+     <a href="povlup9i.htm">Sferico 1</a> |
+     <a href="povlup10i.htm">Sferico 2</a> |
+     <a href="povlup8i.htm">Fibonnacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

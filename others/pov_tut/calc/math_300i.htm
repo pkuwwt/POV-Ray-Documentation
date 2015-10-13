@@ -1,0 +1,220 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Sistemi di coordinate con gli assi per POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Reticoli per sistemi di coordinate e la visualizzazione di funzioni matematiche con POV-Ray">
+<meta name="keywords" content="Carta quadrettata, reticoli, assi di coordinate, sistemi di coordinate, funzioni matematiche, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=695,height=550");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_300e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="math_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="math_300f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="math_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_300d.htm"><font size="2">Deutsch</font></a>
+        <a href="math_300d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000i.htm"><nobr>Sistemi di coordinate</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000i.htm"><nobr>e funzioni in 2D</nobr></b></a><br>
+<br>
+      &nbsp; - <a href="math_100i.htm">Carta quadrettata</b></a><br>
+<nobr>&nbsp; - <a href="math_200i.htm">Sistemi di coordinate</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200i.htm">con gli assi</b></a><br>
+<nobr>&nbsp; <b>&gt;</b>  <!--a href="math_300i.htm"--><b>Macro per un reticolo</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="math_300i.htm"--><b>con due livelli</b></a><br>
+&nbsp; -  <a href="math_500i.htm">Funzioni 2D</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500i.htm">Esempio</b></a><br>
+<nobr>&nbsp; -  <a href="math_600i.htm">Funzioni matematiche</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600i.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2" width="80%" align="center"><!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+
+<table align="center" width="75%" cellpadding="3">
+<tr>
+ <td nowrap colspan="2" >
+ <font size="5"><b>Un Reticolo con due Livelli</b></font><br>
+  La Costruzione di una carta reticolata due volte con due livelli <font size="-1">(per es. 1m e 0.1m)</font> <br>
+  con la superposizione di due reticole a differenti scale.<br>
+  <br>
+ <font size="-1">Oggetti:&nbsp;&nbsp;&nbsp; &quot;plane, cylinder, cone&quot;.<br>
+     Metodi: &quot;color_map, layered textures, macro&quot;</font>
+
+ <td>
+</tr>
+<tr>
+<td>
+<div align="left">
+<br>
+<b>La Costruzione in dettaglio:</b><br>
+<font size="-1">Usiamo una prima macro per creare righe in distanze prestabilite in una direzione.<br>
+  In una seconda macro aggiungiamo queste righe due volte con la prima scala (per es. 1 unit&agrave;)
+  una di queste girate di 90&deg; intorno al asse y.
+  Poi aggiungiamo il secondo reticolo  (per es. con 0,1 unit&agrave;) nel stesso modo.  </font>
+<br>
+<br>
+
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//------------------------------------- ////////////
+#macro Raster_Lines (RScale, LineW, Intensity_)
+ pigment{ gradient x scale RScale
+          color_map{
+           [0.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [1.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           } // end color_map
+         } // end pigment
+ #end// of Raster(RScale, HLine)-macro
+//------------------------------------- ////////////
+//------------------------------------- ////////////
+#macro Raster_Plate(
+    RD1, Width1,//primary raster distance/width,
+    RD2, Width2,//secondary raster distance/width,
+    Base_Texture, //  non = pigment { Clear }
+    Intensity, // Line gray intensity
+    Start_Box, End_Box, // vectors
+  ) //------------------------------------------
+//----------------------------------------------
+box{ Start_Box,End_Box
+     texture{ Base_Texture }
+  #if (RD1 &gt; 0 ) // raster big  RD1, Width1,
+    texture { Raster_Lines(RD1,Width1,Intensity) }
+    texture { Raster_Lines(RD1,Width1,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+  #if (RD2 &gt; 0 ) // raster small RD2, Width2,
+    texture { Raster_Lines(RD2,Width2,Intensity) }
+    texture { Raster_Lines(RD2,Width2,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+} // end box -----------------------------------
+#end // ------------------------------ end of macro
+//------------------------------------- ////////////
+
+// How to use:  ------------------------------------
+#declare B_Tex =
+  texture{ pigment{ color rgb&lt;1,1,1&lt;*1.2}}
+//--------------------------------------------------
+object{ Raster_Plate(
+    1.0, 0.010,// RD1, Width1,// 1st distance/width,
+    0.1, 0.045,// RD2, Width2,// 2nd distance/width,
+    B_Tex, // Base_Texture, // non = pigment{Clear}
+    0.6, // Intensity, // Line gray intensity
+    &lt;-2,-0.05,-2&gt;, &lt;2,0,2&gt;, //Start/End
+  ) //----------------------------------------------
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.001,0&gt;
+} //------------------------------------------------</td></b></pre></tr></table>
+</td>
+<td>
+ <br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_2level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_2ct.jpg" border="0" width="320"  height="240"
+     alt="Grid with 2 Levels" title="Grid with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Reticolo con due liveli.<br>
+Questa scena per POV-Ray: </b><a href="pov/raster_plate_2.pov">raster_plate_2.pov</a></font>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_3level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_3ct.jpg" border="0" width="320"  height="240"
+     alt="Grid with 2 Levels" title="Grid with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Reticolo con due liveli con un piano di base.<br>
+ <br>
+<br>
+<br>
+<br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_4level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_4ct.jpg" border="0" width="320"  height="240"
+     alt="Grids with 2 Levels" title="Grids with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Reticolo 3D con due liveli.<br>
+Questa scena per POV-Ray: </b><a href="pov/raster_plate_4.pov">raster_plate_4.pov</a></font>
+</td>
+</tr>
+</table>
+</center>
+<br>
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

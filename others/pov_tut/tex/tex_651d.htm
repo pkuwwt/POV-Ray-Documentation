@@ -1,0 +1,331 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - Muster mit pigment_pattern (2)</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_651e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_651e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_651i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_651i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_651f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_651f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001d.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_110d.htm">Farben Do-it-Yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>-->
+ &nbsp; &nbsp;<a href="tex_700d.htm">Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp;&nbsp;Regul&auml;re Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500d.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560d.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561d.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562d.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570d.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580d.htm">pavement</b></a><br>
+ &nbsp; &nbsp;&nbsp;Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp;&nbsp;Patterns mit pigment</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650d.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_651d.htm"--><b>pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660d.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750d.htm">Regul&auml;re Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>  -->
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+
+
+<table><tr>
+  <td>
+  <font size="5">&nbsp; <b>pigment_pattern (2)</b></font>
+  </td>
+</tr></table>
+
+<table>
+
+<tr>
+<td colspan="2"><hr>
+</td>
+</tr>
+
+ <tr>
+  <td valign="top">
+<font size="2"><i><b>Beispiel 3: </b></i> <b>'pigment_pattern' angewandt in 'normal'</b> <br>
+<b>Anmerkung:</b> Bei Verwendung dieses Patterns in 'normal'<br>
+gibt es einen <b>zus&auml;tzlichen Wert</b> f&uuml;r <b>Bump_Size</b> !<br>
+</font><br>
+<font size="2">'pigment' ohne 'normal':</font>
+ <table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>#declare Pigment_1 =   //------------------
+pigment{ crackle
+         turbulence 0.35 scale 0.45
+         color_map{
+          [0.00 color rgb&lt;1,1,1&gt;*0]
+          [0.08 color rgb&lt;1,1,1&gt;*0]
+          [0.40 color rgb&lt;1,0.55,0&gt;]
+          [1.00 color rgb&lt;1,1,0.8&gt;]
+         } // end of color_map
+} // end of pigment -----------------------
+object{ //---------------------------------
+  Round_Box(&lt;-1,0,-1.25&gt;,&lt;2,2,2&gt;,0.15,0)
+  texture{ pigment{ Pigment_1  }
+           finish { phong 1 }
+         } // end texture
+} // --------------------------------------</b></td></pre>
+  </tr>
+  </table>
+
+<font size="2">'pigment' verwendet als 'pigment_pattern' f&uuml;r 'normal':</font>
+<table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>object{ //---------------------------------
+  Round_Box(&lt;-1,0,-1.25&gt;,&lt;2,2,2&gt;,0.15,0)
+  texture{ pigment{ color rgb&lt1,1,1&gt;*0.8 }
+           normal {
+             pigment_pattern{
+               Pigment_1
+             } // pigment_pattern
+             <font color="#800000">0.5</font> // BUMP_SIZE
+           } // end of normal
+           finish { phong 1 }
+         }
+} // --------------------------------------</b></td></pre>
+  </tr>
+  </table>
+<br>
+<font size="2">'pigment' verwendet f&uuml;r 'pigment' und als 'pigment_pattern':</font>
+
+<table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>object{ //---------------------------------
+  Round_Box(&lt;-1,0,-1.25&gt;,&lt;2,2,2&gt;,0.15,0)
+  texture{ pigment{ Pigment_1 }
+           normal {
+             pigment_pattern{
+               Pigment_1
+             } // pigment_pattern
+             <font color="#800000">1.5</font> // BUMP_SIZE
+           } // end of normal
+           finish { phong 1 }
+         }
+} // --------------------------------------
+</b></td></pre>
+  </tr>
+  </table>
+<br>
+<font size="2">Ein weiteres Beispiel siehe hier: <br>
+<a href="tex_330d.htm" target="_new">'pigment_pattern' und 'normal'</a>.</font>
+</td>
+<td>
+<font size="1">Klicken Sie auf die Bilder f&uuml;r gr&ouml;&szlig;ere Aufl&ouml;sungen (Javascript an!)</font><br>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/pattern_crackle_normal_0i.htm')"
+         onMouseover="window.status='ShowSingleImage';return true"
+         onMouseOut="window.status=''">
+      <img src="im/pattern_crackle_normal_0s.jpg" border="0" width="320"  height="240"
+       alt="pattern crackle" title="pattern crackle"></a>
+      </td></tr></table>
+<font size="2">Das Muster 'crackle' verwendet mit 'pigment'.</b><br>
+       POV-Ray Szenendatei: <a href="pov/pattern_crackle_normal_0.pov">pattern_crackle_normal_0.pov</a>
+</font>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/pattern_crackle_normal_1i.htm')"
+         onMouseover="window.status='ShowSingleImage';return true"
+         onMouseOut="window.status=''">
+      <img src="im/pattern_crackle_normal_1s.jpg" border="0" width="320"  height="240"
+       alt="pigment used as normal pigment_pattern" title="pigment used as normal pigment_pattern"></a>
+      </td></tr></table>
+<font size="2">'pigment' mit 'crackle' als 'normal'-Muster.</b><br>
+       POV-Ray Szenendatei: <a href="pov/pattern_crackle_normal_1.pov">pattern_crackle_normal_1.pov</a>
+<br>
+</font>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/pattern_crackle_normal_2i.htm')"
+         onMouseover="window.status='ShowSingleImage';return true"
+         onMouseOut="window.status=''">
+      <img src="im/pattern_crackle_normal_2s.jpg" border="0" width="320"  height="240"
+       alt="pigment_pattern as pigment and normal" title="pigment_pattern as pigment and normal"></a>
+      </td></tr></table>
+<font size="2">Das 'pigment_pattern' als pigment und normal.</b><br>
+       POV-Ray Szenendatei: <a href="pov/pattern_crackle_normal_2.pov">pattern_crackle_normal_2.pov</a>
+</font>
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"><hr>
+</td>
+</tr>
+
+<tr>
+<td>
+<font size="2"><i><b>Mehr '3D':</b></i> Verwendung einer <br>
+<b>'pigment'-Funktion mit 'isosurface'</b></font>
+ <table align="center" border="1" cellspacing="1" cellpadding="4">
+ <tr><td bgcolor="#f8f8f0">
+<pre><b>#declare <font color="#800000">fn_Pigment_1</font> =
+function {pigment{ Pigment_1} }
+
+isosurface { //----------------------------
+  function{
+    f_rounded_box(
+        x,y,z,
+        0.15, // radius of curvature
+        1.5, 1.0, 1.625  // scale&lt;x,y,z&gt;
+                 ) //
+     <font color="#800000">- fn_Pigment_1(x,y,z).gray*0.1 </font>
+  } // end function
+  threshold 0
+  contained_by {box {&lt;-2,-2,-3&gt;,&lt;2,2,3.5&gt;}}
+  max_gradient 6
+  accuracy 0.0001
+  texture{
+     pigment{ Pigment_1 }
+     normal { crackle 0.5 scale 0.045}
+     finish { phong 1}
+   } // end texture
+  translate &lt;0.5, 1.1, 0.375&gt;
+} // end of isosurface --------------------</b></td></pre>
+  </tr>
+  </table>
+</td>
+<td valign="top">
+<br>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/pattern_crackle_isosurface_3i.htm')"
+         onMouseover="window.status='ShowSingleImage';return true"
+         onMouseOut="window.status=''">
+      <img src="im/pattern_crackle_isosurface_3s.jpg" border="0" width="320"  height="240"
+       alt="pigment_pattern" title="pigment_pattern"></a>
+      </td></tr></table>
+  <font size="2">Pigment-Function mit isosurface</b><br>
+       POV-Ray Szenendatei: <a href="pov/pattern_crackle_isosurface_3.pov">pattern_crackle_isosurface_3.pov</a>
+  </font>
+
+    <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/pattern_crackle_isosurface_4i.htm')"
+         onMouseover="window.status='ShowSingleImage';return true"
+         onMouseOut="window.status=''">
+      <img src="im/pattern_crackle_isosurface_4s.jpg" border="0" width="320"  height="240"
+       alt="pigment_pattern" title="pigment_pattern"></a>
+      </td></tr></table>
+  <font size="2">Eine Variation: 'fn_Pigment_1(x,y,z).gray*0.25'</b>
+  </font>
+</td>
+</tr>
+
+
+</table>
+
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

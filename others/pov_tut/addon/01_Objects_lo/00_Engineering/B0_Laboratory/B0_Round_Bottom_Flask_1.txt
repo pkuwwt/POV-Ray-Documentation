@@ -1,0 +1,28 @@
+//---------------------------------------------------------------------material / texture
+#declare Glass_Material = 
+material{ //---------------------------------------------------------------------  
+          texture{ pigment{ rgbf <0.98, 0.98, 0.98, 0.95> }
+                   finish { diffuse 0.1 reflection 0.1  
+                            specular 0.8 roughness 0.0003 phong 1 phong_size 400}
+                 } // end of texture -------------------------------------------- 
+         interior{ ior 1.45   caustics 0.85
+                 } // end of interior ------------------------------------------- 
+      } // end of material ------------------------------------------------------ 
+//-------------------------------------------------------------------------------------//
+#include "Round_Bottom_Flask_1.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Round_Bottom_Flask_1 (     //  A round-bottom flask  
+                // declares: Total_Height_of_Flask
+                0.004, // Glass_D, //
+                0.050, // Neck_Fillet, // > 0 //radius neck base fillet // Hohlkehle 
+                0.100, // Bowl_Radius, // base bowl radius
+                0.030, // Neck_Radius, // neck radius
+                0.100, // Neck_Length, //  0=non; neck linear length 
+                1, // Merge_On, //  1 for transparent materials, else: 0 
+              ) //---------------------------------------------------------------------//
+        material{ Glass_Material }
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.00, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

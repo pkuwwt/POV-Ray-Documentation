@@ -1,0 +1,42 @@
+//---------------------------------------------------------
+//---------------------------------------------------------
+union{ //--------------------------------------------------
+ #local NrX = 0;     // start x
+ #local EndNrX = 5; // end   x
+ #while (NrX< EndNrX)
+    // inner loop
+    #local NrZ = 0;     // start z
+    #local EndNrZ = 5; // end   z
+    #while (NrZ <= EndNrZ)
+      #local A = <NrX , 0, NrZ >;
+
+      #local B1 = <NrX , 1, NrZ >;
+              //  vturbulence(Lambda,Omega,Octaves, Vector)
+      #local B2 = vturbulence(5,5.5,1,B1*1.2)*0.3;
+      #local Bt = B1+B2;  // a tubulated version of B1
+
+      cylinder{ A, Bt,0.025
+         texture{ pigment{ color rgb<1,0.5,0>}
+                  finish { phong 1 }
+                }
+       } //------
+       sphere{ <0,0,0>,0.1 scale <1,1,1>
+          texture{ pigment{ color rgb<0.9,0.0,0>}
+                   normal { bumps 0.8 scale 0.015 }
+                   finish { phong 1}
+                 }
+       translate Bt
+       } //-------
+
+    #local NrZ = NrZ + 0.25;  // next Nr z
+    #end // --------------- end of loop z
+    // end inner loop
+ #declare NrX = NrX + 0.25;  // next Nr x
+ #end // --------------- end of loop x
+ // end of outer loop
+
+rotate<0,0,0>
+translate<0,0,0>
+} // end of union -----------------------------------------
+//---------------------------------------------------------
+//---------------------------------------------------------

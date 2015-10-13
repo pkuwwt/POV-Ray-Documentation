@@ -1,0 +1,200 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, variables, declare and local">
+<meta name="description" content="tutorial on variables, declare and local with POV-Ray">
+<title>Variables, declare and local with POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+3"> &nbsp; &nbsp; <b>About Variables in POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="var_100i.htm"><font size="2">Italiano </font></a>
+        <a href="var_100i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="var_100f.htm"><font size="2">Français </font></a>
+        <a href="var_100f.htm"><img src="../flag_fra.gif" alt="français" title="français"align="bottom" width="22" height="15" border="0"></a><br-->
+        <a href="var_100d.htm"><font size="2">Deutsch </font></a>
+        <a href="var_100d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_000e.htm">Built-in Identifiers</a></b><br>
+ &nbsp;&nbsp;<b>&gt;</b>  <!--a href="var_100e.htm"--><b>#declare, #local</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_200e.htm">Expressions</b></a><br>
+<!--
+ &nbsp; &nbsp; &nbsp; <a href="var_300e.htm">Float Functions</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_400e.htm">Vectors</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_500e.htm">Arrays</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_600e.htm">Strings</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_700e.htm">#macro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_800e.htm">trace, inside,</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp;<a href="var_900e.htm">max_extent</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="var_950e.htm">#default</b></a><br>
+-->
+<br>
+ &nbsp;&nbsp;- <a href="inc_000e.htm">A short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000e.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>#declare</b> and <b>#local</b><br>
+  <font size="-1">User defined Identifiers and Objects<br>
+How to define our own variables and objects.</font></h2>
+<p align="justify">In the scenery description language (SDL) of POV-Ray there are existing <br>
+two methods to define our own variables and objects: <b>#declare</b> or <b>#local</b>.<br>
+<font size="-1"><b>Note:</b> To <b>avoid any collision with built-in identifiers and reserved words in POV-Ray</b>,<br>
+it's strongly recommanded to <b>use only words beginning with capital letters</b><br>
+for identifiers of variables declared by the user.</font><br>
+<br>
+<font size="+1"><b>What can we declare by  #declare or #local?</b></font><br>
+<font size="-1"><b>Some examples:</b></font><br>
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td ><pre><b><font size="+1" color="#000000">Numbers, floats, vectors</font></b>
+<b>#declare End = 5;</b>     //
+<b>#local D = 0.35;</b>    // distance between ... and ...
+<b>#declare Column_Height = 3.50;</b> // height of a column
+<b>#declare StartPoint = &lt;0, 2.5, 0.5*sqrt(3)&gt;</b>   // start point
+<b>#local Angle_1 = degrees( atan ( 2.5 / sqrt(2));</b> // angle value in degrees
+
+<b><font size="+1" color="#000000">Textures and materials, pigment, color, finish, normal.</font></b>
+<b>#declare My_Orange =  color rgb &lt;1,0.6,0&gt;;</b>
+<b>#declare Orange_Plastic =
+texture{ pigment{ My_Orange }
+         finish { phong 1 reflection{ 0.1 metallic 0.1} }
+       }</b> // end of texture
+<b><font size="+1" color="#000000">Geometrcal Objects.</font></b>
+<b>#declare Column_01 = cone{ &lt;0,0,0&gt;,0.30,&lt;0,4.00,0&gt;, 0.25
+                           texture{ Orange_Plastic }
+                         }</b> // end of Column_01
+</b></td></pre>
+ </tr>
+<tr>
+<td colspan="2">
+<font size="-1"><b>Note:</b><br>
+- All #declare or #local of a float, vector or color <b>require semicolon at the end</b>.<br>
+- Declaring an identifier again overwrites the previous value.</font>
+
+</td>
+ </tr>
+</table>
+</div>
+
+ <br>
+<br>
+<br>
+ - Why is it so helpfull<b> to declare variables instead</b> of using only floats?<br>
+ Arguments: <br>
+      Easier handling, because less to write!<br>
+      It's basic for modular working! Who use it is more sucessful!<br>
+      - Better Overview! (Don't forget to add some explaining comments!)<br>
+       <font size="-1">[Sure! You remember also 8 weeks later the meaning of 'A', ... but, they all say that! :-) ]</font><br>
+<br>
+<b>What should we '#declare'?</b> <br>
+      - <b>Values, which were used at many statement</b> - for easier change/adapting - that gives more indepency in design.<br>
+      If we want to changes a value, which is needed several times in a scene, we need only to change it at one place!<br>
+      (faster + less error sources!)<br>
+       Example:   Height of a column, textures, ... <br>
+<br>
+      - <b>Textures, before using them in an object. </b><br>
+      - Why is it so helpfull to <b>declare textures</b> before using them at an object?<br>
+      - Try to declare all textures used in a scene somewhere before the objects.<br>
+      Doing so allows us very easily to change some textures later.<br>
+
+<br>
+      - <b>Creation of new objects for multible use in a scene</b>  <br>
+      &nbsp;  Erzeugung von neuen Objekten f&uuml;r mehrfachen Gebrauch in einer Szene<br>
+      Why is it so helpfull to <b>declare objects</b> which are used several times?<br>
+   Arguments: <br>
+   - less to write, specially by changing an object!<br>
+   - prefabricated objects allow modulare working which is much clearer than many multiple descriptions of parts.<br>
+
+
+<br>
+<br>
+<font size="+2"><b>'#declare' or '#local'?</b></font> - The difference between '#declare' and #local'.<br>
+Local identifiers are important to <b>avoid Identifier Name Collisions</b>.<br>
+Inside of an include file or inside of a macro (between the word '#macro' and the according '#end')
+declaring an identifier by #local has no effect on identifiers of the same name declared outside of this
+include file or macro. That means it temporary overrides an outside identifier of the same name without
+destroying it's value outside. After the inclusion of the include file or after the end of the macro
+all there declared local identifiers are destroyed.
+A '#local' used in the main scene file is identical to #declare (if it's not in an include file or macro).<br>
+
+As a result: We can use in a macro or in an include file the identifier names that are  already used in the
+main scene file or in other macros or include files without destroying the according identifier values in
+the main scene file.
+<br>
+<font size="+1"><b>Destroying Identifiers</b></font>  <br>
+User defined identifiers can be destroyed with &quot;<b>#undef</b> MyVariable&quot; .<br>
+User defined identifiers can be created dependent on if they were not defined:<br>
+&quot;<b>#ifndef</b> ( MyVariable ) #declare MyVariable = 0.5; <b>#end</b>&quot;<br>
+This is an elegant method to create objects in include files with default values, <br>
+which can be overwritten by the user, if its necessary.<br>
+See also <a href="../dir/dir_800e.htm">Check for Existence</a>
+<br>
+
+<br>
+</p></td></tr></table>
+
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

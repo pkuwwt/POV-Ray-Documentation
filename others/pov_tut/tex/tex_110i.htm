@@ -1,0 +1,268 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray - color</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=645");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_110e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_110e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_110f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_110f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_110d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_110d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330i.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp;<!--a href="tex_110i.htm"--><b>Colori Do-it-yourself</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_110i.htm"--><b>color_rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>    -->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="70%" align="center"><tr><td><!-- global table-->
+
+<table><tr><td>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/rgb_1t.jpg" width="80" height="80" alt="color rgb" border="0"></td></tr></table>
+ </td>
+ <td><font size="5"><b><p>
+     <a name="Da_kommt_Farbe_auf__">Color is live !</a> "color ... " </p>
+ </td>
+</tr></table>
+<font size="2">
+ <p align="justify">Con il comando &quot;pigment { color .... } &quot; si definisce un colore o un motivo di colori
+ di una testura.</p>
+<p align="justify">Oltre al colore si p&ugrave;o anche definire l'intensit&agrave; di transparency e/o di filter! </p>
+<p align="justify">Esempi:
+Se abbiamo aggiunto nel una linea precedente: <b>#include &quot;colors.inc&quot;</b>,
+possiamo usare colori predefiniti, per es.: &quot;pigment{ color Red }&quot;
+Possiamo usare cosi ca. 100 colori predefiniti (vede tabella speciale!).
+L'ochio humano posso distinguere circa 16 millioni di colori (&quot;true color&quot;)!
+Per questa causa dobbiamo spesso creeare qualche colore addizionale!
+( Per colori di tipo &quot;true color&quot; come usato nel POV-Ray, abbiamo bisogno di 1 byte
+per ogni dei tre colori di base (&quot;rgb&quot; = red-green-blue).
+Ogni byte posso avere un valore da 0 a 255, in corrispondenza della intensit&agrave;
+da 0 percento a 100 percento.
+Cosi possiamo creare 256*256*256 = circa 16 millioni di colori differenti.
+Se usiamo meno di questa ciffra (i.e.&quot;high-color&quot;) possiamo vedere
+striscie molto fastidiose nella sfumatura dei colori! </p>
+
+<p><hr></p>
+<font size="5"><b>Nuovi colori fatti a mano:<a name="color_rgb"> &quot;color rgb&lt; , , &gt;&quot;</a></b></font>
+<table border="2" bordercolor="#c0c0c0"  width="400" >
+<tr><td bgcolor="#ffffff"><img src="im/rgbaddit.gif" width="400"  height="200" alt="rgb values" title="rgb values" ></td></tr>
+</table>
+
+<font size="2"><p>Si p&ugrave;o mescolare ogni colore con aggiungere luci rosse, verde e blu
+con intensit&agrave; differente! Per questo usiamo &quot;color
+rgb&lt; , , &gt;&quot; (red, green, blue).
+Invece di &quot;color rgb&lt; 1, 1, 0 &gt;&quot; possiamo anche scrivere
+ &quot; color red 1 green 1 blue 0 &quot;.<br>
+I tre numeri indicano la intensit&agrave; di luce nei tre componenti di colori di base.
+I nummeri possono avere valori entro 0.000 e 1.000.
+Qui 1.00 = 100% e 0.00 = 0% de il colore corrispondente.<br>
+<b>Attenzione:</b> valori sopra 1 sono irrealistici e producono solo oggetti sovraesosti con
+zone d'ombra debole e zone di luce piatte!
+</p></font>
+<table border cellspacing="2" bordercolor="#c0c0c0" cellpadding="4">
+<tr><td width="50%" valign="TOP" bgcolor="#ffffff">
+<img src="im/rgbaddi3.jpg" width="320" height="240"></td>
+<td width="50%" valign="top" bgcolor="#ffffff">
+<b><font size="4"><p>Composizione additiva di colori <br>
+con il raytracer di POV-Ray</b></font><font size="2"><br>
+Rappresentato con POV-Ray con un spot rosso (rgb&lt;1,0,0&gt;),
+ un spot verde (rgb&lt;0,1,0&gt;) e un spot blu (rgb&lt;0,0,1&gt;),
+ sopra una superficie bianca!<br>
+Con fall-out dei coni di luce pi&ugrave; morbidi possiamo vedere pi&ugrave; colori miscolati
+dei colori di base con intensit&agrave; differente.</font></td>
+</tr>
+<tr><td width="50%" valign="top" bgcolor="#ffffff">
+<p><img src="im/rgbaddit.jpg" width="320" height="240"></td>
+<td width="50%" valign="top" bgcolor="#ffffff">
+<p><img src="im/rgbaddi2.jpg" width="320" height="240"></td>
+</tr>
+</table>
+
+<font size="2"><p>&nbsp;</p>
+</font><p><hr></p>
+<font size="2"><p>Se abbiamo inserito al inizio della nostra scena un line con:
+<b>#include &quot;colors.inc&quot;</b> possiamo usare i </font>
+<a href="tex_150i.htm"><font size="2">colori pronto per l'uso</b></font></a>! </p>
+<font size="4"><p>Qui qualche <b>esempio per colori rgb</b>: </font>
+<font size="2"></p></font>
+<table border cellspacing="1" cellpadding="4" width="95%">
+<tr><td width="25%" valign="top" bgcolor="#f8f8f0">
+<p><font size="2">
+color rgb&lt;0 ,0 ,0&gt;<br>
+<nobr>color rgb&lt;0.5 ,0.5, 0.5&gt;</nobr><br>
+color rgb&lt;1 ,1 ,1&gt;<br>
+<br>
+color rgb&lt;1 ,0 ,0&gt;<br>
+color rgb&lt;0, 1, 0&gt;<br>
+color rgb&lt;0, 0, 1&gt;<br>
+<br>
+color rgb&lt;1 ,1 ,0&gt;<br>
+color rgb&lt;0 ,1 ,1&gt;<br>
+color rgb&lt;1 ,0 ,1&gt;<br>
+<br>
+color rgb&lt;1, 0.65, 0&gt;<br>
+color rgb&lt;0.25, 1, 0&gt;<br>
+color rgb&lt;1, 0,0.25&gt;<br>
+</font></td>
+
+<td width="25%" valign="top" bgcolor="#ffffff">
+<font size="2"><p>Black<br>
+Grey<br>
+White<br>
+<br>
+Red<br>
+Green<br>
+Blue<br>
+<br>
+Yellow<br>
+Cyan<br>
+RedViolet = Magenta<br>
+<br>
+an orange Yellow *)<br>
+a yellow Green<br>
+red Wine
+</font></td>
+<td width="25%" valign="top" bgcolor="#ffffff">
+<font size="2"><p>
+color Black<br>
+color Gray50<br>
+color White<br>
+<br>
+color Red<br>
+color Green<br>
+color Blue<br>
+<br>
+color Yellow<br>
+color Cyan<br>
+color Magenta<br>
+<br>
+</font></td>
+<td width="25%" align="center" valign="middle">
+<img src="im/txtur_col.jpg" border="0" width="160" height="200"></a>
+</td></tr>
+</table>
+
+<sup><font size="2"><p>*) </sup></font><font face="Arial" size="1">Amo questo giallo!</font>
+<font size="2"><br>
+valere la pena di continuare sperimentare!<br>
+Nostre creazioni di colori sono a disposizione per tutte scene con propri nomi
+se creamo un include file personale.<br>Vede ache: &quot;</font>
+<a href="tex_900i.htm"><font size="2">
+Come creare una collezione di colori e testure personale</b></font></a><font size="2">&quot;<br>
+
+Se abbiamo inserito al inizio della nostra scena un line con:
+<b>#include &quot;textures.inc&quot;</b>, possiamo anche usare
+motivi di colori pronto per l'uso (&quot;pigment&quot;) e testures pronto per l'uso
+(&quot;texture&quot;) definiti in questo file. </p>
+
+
+</font>
+
+
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

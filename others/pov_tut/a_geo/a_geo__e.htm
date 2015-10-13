@@ -1,0 +1,358 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2015 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="analytical geometry, 3D visualization, photo realistic, POV, povray, POV-Ray, raytracing, 3d graphics,domputer graphics">
+<meta name="description" content="Analytical Geometry with POV-Ray - 3D Visualiations, Calculations  and Output of the Results with the Raytracer POV-RAY with samples in photo realistic computer graphics">
+
+<title>Analytical Geometry with POV-Ray - 3D Visualization  with Calculations and Output of the Results</title>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr> <nobr>by Friedrich A. Lohmueller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo__d.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="a_geo__d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+        <!--a href="a_geo__i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo__i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo__f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo__f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<!--- end of header -->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__eng.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__eng.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;<nobr><b>&gt;</b> <!--a href="a_geo__e.htm"--><b>Analytical Geometry</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <!--a href="a_geo__e.htm"--><b>with POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <!--a href="a_geo__e.htm"-->- Index -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insert_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -      <a href="a_geo00e.htm">Basics </b></a><br>
+&nbsp; &nbsp; <a href="a_geo00e.htm">Possibilities and Needs</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00e.htm"--><b>Points &amp; Lines</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo10e.htm">Points in 3D</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo20e.htm">Line Sections, Straight,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20e.htm">Vectors, Distance Markers</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30e.htm">Surfaces &amp; Planes</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40e.htm">Output of Results,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40e.htm">Captions</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45e.htm">Points of Intersection</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50e.htm">Circles</b></a><br>
+ &nbsp; &nbsp; <!--a href="a_geo60e.htm"--><b>Solids</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60e.htm">Tetrahedron</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61e.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62e.htm">Parallelepiped</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo65e.htm">Round Solids</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00e.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <a href="a_geo70e.htm">Overview by Table</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70e.htm">on &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80e.htm">Vector Analysis</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80e.htm">with POV-Ray</b></a> <br>
+&nbsp; -  <a href="a_geo85e.htm">Righthanded &amp; Lefthanded</b></a> <br>
+ &nbsp; &nbsp; <a href="a_geo85e.htm">Systems of Coordinates</b></a> <br>
+ &nbsp; &nbsp; <a href="a_geo85e.htm">and the Cross Product</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00e.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00e.htm"--><b>Samples from</b></a> <br>
+&nbsp; &nbsp; <!--a href="a_geo00e.htm"--><b>Analytical Geometry</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91e.htm">Parallelogram of the</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo91e.htm">Middles of the Edges</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo92e.htm">Trace Points of a Straight Line</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo93e.htm">Calculations about a Triangle</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo94e.htm">Area of a Parallelogram</b></a></nobr> <br>
+&nbsp; &nbsp; &nbsp; &nbsp;  <a href="a_geo94e.htm">and Cross Product</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95e.htm">Shadow of a Pyramid</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96e.htm">Hit a plane || yz-plane</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97e.htm">Angle triangle  yz-plane</b></a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+<h1><div align="center"><font face="Arial,Helvetica,sans-serif"><font size="5">
+         <nobr>Analytical Geometry with POV-Ray</nobr></font><br>
+    <font size="3">
+    <b> Visualizations and Calculations for the <nobr>Analytical Geometry</nobr><br>
+     in <nobr>3d Systems of Coordinates</nobr> with <nobr>POV-Ray.</nobr></b></font><br>
+     <font size="1">(Uses Javascript for presentation of a higher resolution of most sample images)</font>
+     <font size="-1" color="#ee0022"><i><b> update:</b> 08-Feb-2014</i></font></font><br>
+         </div></h1>
+
+
+<table align="center" border="1" cellspacing="2" cellpadding="0" width="90%" bgcolor="#e8e8e0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr><a name="0"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo00e.htm"><img src="starts.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>0.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo00e.htm">Basics - What's possible and what you need!</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         An overview on what is possible and what it needs.<br>
+         Basic sample files and include file &quot;analytical_g.inc&quot; </font></td></tr>
+ <tr><a name="1"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo10e.htm"><img src="a_geo_01s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>1.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo10e.htm">Points in a 3D System of Coordinates</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         Methods for unequivocal visualization of points in a <nobr>3d system of coordinates.</nobr><br></font></td></tr>
+ <tr><a name="2"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo20e.htm"><img src="a_geo_lin01s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>2.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo20e.htm">Line Sections, Straight Lines, Vectors, Distance Markers</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         The representation of line sections, straight lines, vectors, and distance markers.</font><br></font></td></tr>
+ <tr><a name="3"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo30e.htm"><img src="a_geo_e1s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>3.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo30e.htm">Surfaces and Planes</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         Triangles, parallelograms,<br> planes by parameters and plane by normalvector.</font></td></tr>
+ <tr><a name="4.1"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo40e.htm"><img src="a_geo_calc01s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>4.1</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo40e.htm">Output of Results and Captions</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         How to make an output of the calculated results and how to add a caption to objects.<br></font></td></tr>
+ <tr><a name="4.2"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo45e.htm"><img src="a_geo_hit_1s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>4.2</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo45e.htm">Calculating Points of Intersection</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         How to calculate points of intersections between straight lines and planes or other objects and print the results in the image.<br></font></td></tr>
+ <tr><a name="5"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo50e.htm"><img src="a_geo_cir1s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>5.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo50e.htm">Circles</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         Circle, circle inside a triangle, circumcircle - circle around a triangle.</font><br></td></tr>
+ <tr><a name="6.1"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo60e.htm"><img src="a_geo_tetr2s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>6.1</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo60e.htm">Solids I - Tetrahedron</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         Tetrahedron defined by 4 corners,<br>
+         tetrahedron defined by a starting point and 3 vectors.</font><br></td></tr>
+ <tr><a name="6.2"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo62e.htm"><img src="a_geo_para3s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>6.2</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo62e.htm">Solids II - Parallelepiped</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         Parallelepiped defined by the corners,<br>
+         parallelepiped defined by a starting point and 3 vectors.</font><br></td></tr>
+ <tr><a name="6.3"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo65e.htm"><img src="a_geo_sph1s.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>6.3</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo65e.htm">Solids III - Round Solids</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         Sphere, ellipsoid, cylinder, cone.</font><br></td></tr>
+
+<tr><a name="7"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo70e.htm"><img src="a_geo_texturs.jpg" border="0" width="80" height="80"></a></td>
+     <td valign="top" align="right"><b>7.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo70e.htm">An Overview by Table</b></a></font></font><br>
+
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         The most important commands of POV-Ray and of my include file &quot;analytical_g.pov&quot;
+         and a list of the colors of my template file for a quick orientation.</font><br></td></tr>
+ <tr><a name="8"></a><td width="80" height="60" align="center" valign="top">
+      <a href="a_geo80e.htm"><img src="tabelles.jpg" border="0" width="80" height="60"></a></td>
+     <td valign="top" align="right"><b>8.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo80e.htm">Vector Analysis with POV-Ray</b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         Table of most important spellings, arithmetic rules and expressions of vector analysis
+         and vector functions in POV-Ray.</font><br></td></tr>
+ <tr><a name="9"></a><td width="80" height="80" align="center" valign="top">
+      <a href="a_geo85e.htm"><img src="axes_lefts.jpg" border="0" width="80" height="80"></a></td>
+     <td valign="top" align="right"><b>9.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+      <a href="a_geo85e.htm">Righthanded and Lefthanded Systems of Coordinates<br> and the Cross Product</b></a></font><br>
+      <font face="Arial,Helvetica,sans-serif" size="2">
+        Basics on the handyness of systems of coordinates</font></td></tr>
+
+  <tr><td width="80" align="center" valign="top">
+           &nbsp;</td>
+        <td valign="top" align="right"><b>10.</b> </td>
+        <td valign="top"> <font face="Arial,Helvetica,sans-serif" size="3">
+        <!--a href="a_geo90d.htm"--><b>Samples for the Analytical Geometry</b><!--/a--></font></td></tr>
+
+
+  <tr><a name="10.1"></a><td width="80" height="60" align="center" valign="top">
+        <a href="a_geo91e.htm"><img src="a_geo_s01s.jpg" border="0" width="80" height="60"></a></td>
+        <td valign="top"><b>10.1</b></td>
+        <td valign="top"> <font face="Arial,Helvetica,sans-serif" size="3">
+        <a href="a_geo91e.htm">Parallelogram of the Middles of the Edges</b></a></font><br>
+          <font face="Arial,Helvetica,sans-serif" size="2">
+          The quatrilateral connecting the middles of the edges of a quatrilateral is always a parallelogram.</font>
+         </td></tr>
+
+  <tr><a name="10.2"></a><td width="80" height="60" align="center" valign="top">
+        <a href="a_geo92e.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"></a></td>
+        <td valign="top"><b>10.2</b></td>
+        <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+        <a href="a_geo92e.htm">Representation of the Trace Points of a Straight Line</b></a><br>
+           <font face="Arial,Helvetica,sans-serif" size="2">
+           The coordinate planes were represented by squared sections of planes.</font>
+        </td></tr>
+
+  <tr><a name="10.3"></a></a><td width="80" height="60" align="center" valign="top">
+        <a href="a_geo93e.htm"><img src="a_geo_s10s.jpg" border="0" width="80" height="60"></a></td>
+        <td valign="top"><b>10.3</b></td>
+        <td valign="top"> <font face="Arial,Helvetica,sans-serif" size="3">
+        <a href="a_geo93e.htm">Calculations about a Triangle</b></a></font><br>
+          <font face="Arial,Helvetica,sans-serif" size="2">
+          Calculations of the length of the edges, the normal vector, the area and the angles. </font>
+        </td></tr>
+
+  <tr><a name="10.4"></a><td width="80" height="60" align="center" valign="top">
+        <a href="a_geo94e.htm"><img src="a_geo_vp0s.jpg" border="0" width="80" height="60"></a></td>
+        <td valign="top"><b>10.4</b></td>
+        <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+        <a href="a_geo94e.htm">Area of a Parallelogram and the Cross Product</b></a><br>
+           <font face="Arial,Helvetica,sans-serif" size="2"> </font>
+        </td></tr>
+   <tr><a name="10.5"></a><td width="80" height="60" align="center" valign="top">
+        <a href="a_geo95e.htm"><img src="a_geo_pyramide_shadow01s.jpg" border="0" width="80" height="60"></a></td>
+        <td valign="top"><b>10.5</b></td>
+         <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+         <a href="a_geo95e.htm">Shadow of a Pyramid</b></a><br>
+           <font face="Arial,Helvetica,sans-serif" size="2">
+           Calculation and visualization of the Shadow of a quadratic pyramid.</font>
+        </td></tr>
+   <tr><a name="10.6"></a><td width="80" height="60" align="center" valign="top">
+        <a href="a_geo96e.htm"><img src="im/Straight2Plane_02cs_.jpg" border="0" width="80" height="60"></a></td>
+        <td valign="top"><b>10.6</b></td>
+         <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+         <a href="a_geo96e.htm">Hit a plane || yz-plane</b></a><br>
+           <font face="Arial,Helvetica,sans-serif" size="2">
+           Calculation and visualization of the intersection of a straight line with a plane parallel to the yz-plane.</font>
+        </td></tr>
+   <tr><a name="10.7"></a><td width="80" height="60" align="center" valign="top">
+        <a href="a_geo97e.htm"><img src="im/Angle2Plane_01cs_.jpg" border="0" width="80" height="60"></a></td>
+        <td valign="top"><b>10.7</b></td>
+         <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+         <a href="a_geo97e.htm">Angle, triangle  yz-plane</b></a><br>
+           <font face="Arial,Helvetica,sans-serif" size="2">
+           Calculation and visualization of the angles between a triangle surface and the yz-plane.</font>
+        </td></tr>
+
+
+
+
+
+
+  <!--tr><td width="80" height="60" align="center" valign="top">
+        <a href="a_geo95d.htm"><img src="a_geo_s20s.jpg" border="0" width="80" height="60"></a></td>
+        <td valign="top"><b>10.5</b></td>
+        <td valign="top"> <font face="Arial,Helvetica,sans-serif" size="2">
+    10.3) Seitenmitten-Dreieck <br>
+    10.4) Normalenvektor einer Ebene in Parameterform (Berechnung?)<br>
+    10.5) Spurpunkte einer Gerade, Projektion einer Geraden auf xz-Ebene<br>
+    10.6) Gerade schneidet Ebene Gerade schneidet Ebene<br>
+    10.7) Gerade senkrecht zu Ebene<br>
+    10,8)  Ebene senkrecht zu einer Gerade<br>
+    1010) Tangentialebenen an eine Kugel<br>
+    10.11) Ebene scheidet Kugel<br>
+        </font><br></td></tr>
+
+ <tr><td width="80" height="80" align="center" valign="top">
+      <a href="a_geoa0d.htm"><img src="povfun3s.jpg" border="0" width="80" height="80"></a></td>
+     <td valign="top" align="right"><b>11.</b></td>
+     <td valign="top"><font face="Arial,Helvetica,sans-serif" size="3">
+         <a href="a_geoa0d.htm">Literaturangaben / Quellen / andere Lösungen<br></b></a></font><br>
+         <font face="Arial,Helvetica,sans-serif" size="2">
+         </font><br></td></tr-->
+ <br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+  <br>&nbsp;<br>
+</tr>
+</table>
+</h3>
+
+
+<tr>
+<!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <img src="email.gif" width="15" height="10" border="0" alt="email" title="email"> email:
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align=right  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</font>
+</body>
+</html>

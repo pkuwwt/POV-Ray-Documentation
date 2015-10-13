@@ -1,0 +1,236 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="language" content="en-us">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="skies, realistic, raytracing, PoV, povray, POVRAY, POV-Ray 3.7, 3D-Graphic, computer graphics">
+<meta name="Description" content="Creating realistic skies with POV-Ray">
+<title>How to create realistic skies with POV-Ray - part 5</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#CAC8C0" text="#505030"  link="#CC6633" vlink="#993300" alink="#6666CC">
+
+
+<!-- header -->
+<table border="0" width="95%"><tr>
+ <td><h6><nobr>Descriptions and Examples for the POV-Ray raytracer</nobr><br>
+         <nobr>by Friedrich A. Lohm&uuml;ller</nobr> </td></h6>
+ <td align="right">
+ <a href="p_sky5d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_sky5d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_sky5i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky5i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_sky5f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_sky5f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+</tr>
+</table></div>
+<hr>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000e.htm">Realistic Skies</b></a></font></nobr><br>
+ &nbsp; &nbsp; - <a href="p_sky1.htm">A Realistic Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky2.htm">Partly Cloudy Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3.htm">Layers of Clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4.htm">Stacked planes clouds</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky5.htm"--><b>Shadow Casting</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky6.htm">Massiv media clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70.htm">Sunset Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7.htm">Starry Skies</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky8.htm">Skydomes + skymaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky9.htm">Skyboxes + cubemaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky10.htm">HDRI environment</b></a><br>
+
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">How to create Realistic Skies with POV-Ray</h2>
+<p align="center"><font size="-1"><a href="p_sky000e.htm">Overview</a> |
+<a href="p_sky1.htm">1</a> | <a href="p_sky2.htm">2</a> |
+<a href="p_sky3.htm">3</a> | <a href="p_sky4.htm">4</a></b> |
+<!--a href="p_sky5.htm"-->5</a> | <b><a href="p_sky6.htm">6</a> |
+<a href="p_sky70.htm">7.0</a> | <a href="p_sky7.htm">7.1</a> | <a href="p_sky8.htm">8</a> |
+<a href="p_sky9.htm">9</a> | <a href="p_sky10.htm">10</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" valign="top" cellspacing="10">
+<tr><td valign="top">
+    <h3 align="left"><b>Shadow casting clouds:</b></h3>
+    <h5 align="justify">To get this effect the sun must be placed between the highest
+        transparent cloud level and the plane with the blue sky texture.<br>
+        To make it easier to place the sun precisely in a space between the clouds
+        you can use a sphere with a mirror texture and a phong (to make visible the position of the sun)
+        like i.e. &quot;Polished_Chrome&quot;.
+        </h5>
+   <td>
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><a href="javascript:ShowImage('im/sky_4im.htm')"
+             onMouseover="window.status='ShowSingleImage';return true"
+             onMouseOut="window.status=''">
+            <img src="im/p_sky06t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="click for higher resolution" titel="click for higher resolution"></a></td>
+     </tr></table>
+    <div align="center"><font size="2">Sky with clouds casting shadows on the ground.</font><br>
+    <font size="1">Click on the image for a higher resolution!</font><br>
+    <font size="2"><a href="pov/p_sky06.txt">Description of this scenery for POV-Ray</a></font></div>
+<br>
+   </td></tr>
+
+<tr>
+   <td valign="top">
+   <font size="4"><b>Shadow casting clouds</b></font><br>
+   <font size="3">A solution of the horizon problem without fog.</b></font><br>
+    <font size="2">Here we split the sky into two parts:<br>
+    1: A sky_sphere with a gradient from white to blue.<br>
+    2: A gigantic sphere with a transparent cloud pattern. Because of the
+    big radius it appears nearly as a plane and clouds become smaller near the
+    horizon.<br>
+    With this solution we don't need to keep the light_source for our sun below the clouds level.
+    But we have to move the sun or the clouds if the shadow of the clouds hits parts of our scene
+    which we want to be in full sunlight.<br>
+    Optionally we can add a &quot;no_shadow&quot; to the cloud layer.
+    </font>
+   <table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// sky -----------------------------------
+sky_sphere{
+ pigment{ gradient y
+   color_map{
+   [0.0 color rgb&lt;1,1,1&gt; ]
+   [0.3 color rgb&lt;0.18,0.28,0.75&gt;*0.8]
+   [1.0 color rgb&lt;0.15,0.28,0.75&gt;*0.5]}
+   scale 1.05
+   translate&lt;0,-0.05,0&gt;
+ } // end pigment
+} // end sky_sphere
+
+// spherical cloud layer ----------------
+#declare R_planet = 6000000;
+#declare R_sky    = R_planet + 2000;
+sphere{ &lt;0, -R_planet, 0&gt, R_sky hollow
+  texture{
+     pigment{ bozo turbulence 0.75
+              octaves 6  omega 0.7
+              lambda 2  phase 0.15
+         color_map {
+         [0.00 color rgb &lt;1,1,1&gt;*0.95]
+         [0.05 color rgb &lt;1,1,1&gt;*1.25]
+         [0.15 color rgb &lt;1,1,1&gt;*0.85]
+         [0.55 color rgbt&lt;1,1,1,1&gt;]
+         [1.00 color rgbt&lt;1,1,1,1&gt;]
+       } // end color_map
+       translate&lt; 3, 0,-1&gt;
+       scale&lt;0.3, 0.4, 0.2&gt;*3
+     } // end pigment
+     #if(version = 3.7)
+           finish{emission 1 diffuse 0}
+     #else finish{ ambient 1 diffuse 0}
+     #end
+     scale 3000
+  } // end texture
+   // no_shadow // optional!!
+ } // end of sphere ---------------------</b></td></pre></tr></table>
+
+   </td>
+    <td>
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/p_sky03a_a.gif" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+     </tr></table>
+     <div align="center"><font size="2">Sky with clouds with <b>phase 0.00 to 0.15</b>.</font><br>
+    <font size="2"><a href="pov/p_sky03a.txt">Description of this scenery for POV-Ray</a></font></div>
+
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/p_sky03a_2.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+     </tr></table>
+     <div align="center"><font size="2">Sky with clouds casting shadows on the ground.</font><br>
+
+
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/p_sky03a_3.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+     </tr></table>
+     <div align="center"><font size="2">Sky with clouds view from above.<br>
+          Note: the &quot;cloud layer&quot; does not have any thickness!</font><br>
+
+   </td>
+</tr>
+<tr><td colspan="2">
+<p align="right"><font size="-1"><a href="p_sky000e.htm">Overview</a> |
+<a href="p_sky1.htm">1</a> | <a href="p_sky2.htm">2</a> |
+<a href="p_sky3.htm">3</a> | <a href="p_sky4.htm">4</a></b> |
+<!--a href="p_sky5.htm"-->5</a> | <b><a href="p_sky6.htm">6</a> |
+<a href="p_sky70.htm">7.0</a> | <a href="p_sky7.htm">7.1</a> | <a href="p_sky8.htm">8</a> |
+<a href="p_sky9.htm">9</a> | <a href="p_sky10.htm">10</a></b></font></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

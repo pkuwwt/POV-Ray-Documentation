@@ -1,0 +1,463 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures with POV-Ray - uv_mapping<</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="description" content="warp mapping, textures with POV-Ray">
+<meta name="keywords" content="warp mapping, POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=300,height=390");
+ if(navigator.appName =="Netscape") New.focus();  }
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=540,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+<a name="top"></a>
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design of Surfaces by &quot;texture&quot; with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_790d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_790d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a><br>
+        <a href="tex_790i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_790i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_790f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_790f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000e.htm">Design of Surfaces</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000e.htm">Colors and Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001e.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001e.htm">Basic Sample</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200e.htm">pigment{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300e.htm">normal{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">normal Samples</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400e.htm">finish{...} </b></a><br>
+-->
+ &nbsp; &nbsp;  <a href="tex_210e.htm">Ready-made Textures</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210e.htm">Rules</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150e.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160e.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110e.htm">Do-it-yourself Colors</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110e.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120e.htm">Transparency</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700e.htm">Patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700e.htm">pattern types</b></a><br>
+ &nbsp; &nbsp; &nbsp; Regular patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500e.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550e.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Stripes pattern</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600e.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750e.htm">Patterns Lists</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750e.htm">Regular Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755e.htm">Random Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760e.htm">Fractal Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765e.htm">Other Patterns</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780e.htm">Warps</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_780e.htm"-->warp mapping</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_790e.htm"--><b>uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800e.htm">Mapping</b></a><br>
+<!--  &nbsp; &nbsp; - <a href="tex_800e.htm">Mapping Methods</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600e.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820e.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830e.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840e.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850e.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860e.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870e.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880e.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890e.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890e.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900e.htm">Your own Textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+<table cellpadding="5"><tr><td>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+         <img src="im/uv_mapping001s.jpg" width="160" height="160" border="0"
+          alt="mapping without uv_mapping" title="mapping without uv_mapping">
+          </td></tr></table><br>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+         <img src="im/uv_mapping002s.jpg" width="160" height="160" border="0"
+          alt="Surface mapping with uv_mapping" title="Surface mapping with uv_mapping">
+          </td></tr></table>
+
+ </td>
+ <td><font size="5"><b> Surface Mapping with 'uv_mapping'</b></font><br>
+     <font size="4"><b> &nbsp; Adapting patterns to surfaces</b></font><br>
+ <p align="justify"><font size="2">
+Processural patters are normally defined in the 3D space, but often we have
+patterns for textures, which are only defined in a 2D plane. Such patterns mostly do not fit well to 3D surfaces of rounded shapes.<br>
+
+The patterns of checker, hexagon, square, triangle, tiling and pavement are defined in the xz plane. These patterns
+must be rotated by a 'rotate&lt;-90,0,0&gt; to fit to a slice in the xy plane.
+The patterns of brick and image_map are already defined in the xy plane.<br>
+<b>'uv_mapping'</b> is a method to let such pattern fit bei <b>warping the patterns around an object.</b>
+The points of a 2D pattern are descriped with by 2D vectors, uv-vectors, in so-called <b>uv-coordinates (u,v)</b>.<br>
+The u coordinate goes from 0 to 1 (width of the pattern or image), the v coordinate goes upward from
+0 to 1 (the heigth of the pattern or image).
+<br>
+<br>
+
+<b>Surface mapping by 'uv_mapping'</b> is currently defined in POV-Ray for the following objects: <br>
+<ol>
+<li><a href="#box"><b>box</b></a> :&nbsp;&nbsp; a box mapping or cube mapping like shown with <a href="../backgrnd/p_sky9.htm">'Sky_Box'</a> and cubemaps.</li>
+<li><a href="#sphere"><b>sphere</b></a> : so-called 'spherical mapping' like with <a href="../backgrnd/p_sky9.htm">'Sky_Domes'</a> and skymaps.</li>
+<li><b>lathe, sor</b>: with a modified spherical mapping. Here: u (0...1) wraps around y axis,
+   v coordinate linked to object's control points (0..1).</li>
+<li><b>mesh, mesh2</b>:  UV coordinates are defined for each vertex and interpolated between.</li>
+<li><b>bicubic_patch</b>: UV coordinates based on patch's parametric coordinates, stretching with the control points.</li>
+<li><b>parametric</b>:    map taken by the boundaries of the uv-space, where the parametric surface has to be calculated.</li>
+<li><a href="#torus"><b>torus</b></a> :  map taken from the area &lt;0,0&gt;&lt;1,1&gt;
+    Wrapping u-coordinate around the major radius, v-coordinate around minor radius. </li>
+</ol></font>
+General Syntax for uv_mapping:<br>
+<table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><pre><b>texture {
+ uv_mapping pigment{PIGMENT_BODY} | pigment{uv_mapping PIGMENT_BODY}
+ uv_mapping normal {NORMAL_BODY } | normal {uv_mapping NORMAL_BODY }
+ uv_mapping texture{TEXTURE_BODY} | texture{uv_mapping TEXTURE_BODY)
+}</b></td></pre></tr></table>
+
+</td>
+</tr></table>
+
+<hr>
+
+<font size="2">
+<p align="justify">
+<font size="+1"><a name="box"><b>uv_mapping for box</b></a></font><br>
+<table><tr>
+<td colspan="2">The mapping scheme for a box is shown by the following 2 images:
+</tr>
+<tr>
+<td><table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/CubeMappingSequence_1.jpg" border="0" width="320"  height="240"
+       alt="Sample CubeMapping" title="Sample CubeMapping"></a>
+      </td></tr></table><font size="-1"><b>Cube Mapping scheme in uv-coordinates</b></font>
+</td>
+<td>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/CubeMappingWrapping_1d_64.gif" border="0" width="320"  height="240"
+       alt="Sample CubeMappingWrapping" title="Sample CubeMappingWrapping"></a>
+      </td></tr></table><font size="-1">Wrapping of a pattern with Cube Mapping</font>
+</td>
+</tr><tr>
+
+<td valign="top"><font size="-1">
+<br>
+<br>
+<b>UV_mapping on a box</b> with a pattern in the xz plane<br>
+ tiling with a base length of 1 unit:<br>
+The pattern must be scaled down to 1/4 to have the same size as on a plane.
+<br>
+<i><b>Example:</b></i></font>
+ <table align="center" border="2"  bgcolor="#f8f8f0"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+ <tr><td align="centre">
+ <pre>box{ &lt;0,0,0&gt;,&lt;1.6,0.5,1&gt;
+     texture { <font color="#AA0000">uv_mapping</font>
+        pigment{
+           tiling 6 // 1~24 Pattern_Number
+              color_map{
+                [ 0.0 color rgb&lt;1,1,1&gt;]
+                [ 1.0 color rgb&lt;0,0,0&gt;]
+                } // end color_map
+           scale 0.10/4
+         <font color="#AA0000">rotate&lt;-90,0,0&gt;</font>
+          scale&lt;1/1.6,2,1&gt;
+        } // end pigment
+        finish { phong 1}
+      } // end of texture
+
+     translate&lt;0,0.0,0&gt;
+   } // end of box ------------------------</td></pre></tr></table>
+</td>
+<td align="center">
+<br>
+<br>
+<br>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping002.jpg" border="0" width="240"  height="180"
+       alt="Sample uv_mapping on a box" title="Sample uv_mapping on a box"></a>
+      </td></tr></table><font size="-1">uv_mapping on a box</font>
+
+</td>
+</tr><tr>
+
+
+<td valign="center">
+  <b>UV_mapping on a box</b> with uneven length / height<br>
+ tiling with a base length of 1 unit:<br>
+ The pattern must be scaled inverse to the box sides!<br>
+ <font size="-1"><i><b>Example:</b></i></font>
+ <table align="center" border="2"  bgcolor="#f8f8f0"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+ <tr><td align="centre">
+ <pre>box{ &lt;0,0,0&gt;,<font color="#800040">&lt;1.6,0.5,1&gt</font>;
+     texture { <font color="#AA0000">uv_mapping</font>
+        pigment{
+           tiling 6 // 1~24 Pattern_Number
+              color_map{
+                [ 0.0 color rgb&lt;1,1,1&gt;]
+                [ 1.0 color rgb&lt;0,0,0&gt;]
+                } // end color_map
+           scale 0.10/4
+         <font color="#AA0000">rotate&lt;-90,0,0&gt;</font>
+         <font color="#800040">scale&lt;1/1.6,1/0.5,1&gt;</font>
+        } // end pigment
+        finish { phong 1}
+      } // end of texture
+
+     translate&lt;0,0.0,0&gt;
+   } // end of box ------------------------</td></pre></tr></table>
+</td>
+<td align="center">
+<br>
+<br>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping003.jpg" border="0" width="240"  height="180"
+       alt="Sample uv_mapping on a box" title="Sample uv_mapping on a box"></a>
+      </td></tr></table><font size="-1">uv_mapping on a box</font>
+</td>
+
+</tr><tr>
+<td colspan="2">
+
+<hr>
+
+<font size="+1"><a name="box"><b>uv_mapping for sphere</b></a></font><br>
+<b>A pattern in the xz plane mapped on a sphere:</b><br>
+</td>
+<a name="sphere"></a>
+</tr><tr>
+<td valign="top"><font size="-1"><i><b>Example:</b></i></font>
+  <table align="center" border="2"  bgcolor="#f8f8f0"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+ <tr><td>
+ <pre>sphere{ &lt;0,0,0&gt;, 0.75
+     texture { uv_mapping
+        pigment{
+           tiling 6 // 1~24 Pattern_Number
+              color_map{
+                [ 0.0 color rgb&lt;1,1,1&gt;]
+                [ 1.0 color rgb&lt;0,0,0&gt;]
+                } // end color_map
+           scale 0.025
+         rotate&lt;-90,0,0&gt;
+        } // end pigment
+        finish { phong 0.1}
+      } // end of texture
+translate&lt;0.5,0.5,0.5&gt;
+} // end of sphere -------------------------</td></pre></tr></table>
+<font size="-1"><i><b>And with a more colorful color_map:</b></i></font>
+  <table align="center" border="2"  bgcolor="#f8f8f0"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+ <tr><td>
+ <pre>#declare Pigment_1 =
+   pigment{
+      tiling 3 // 1~24 Pattern_Number
+      color_map{
+                [ 0.0 color rgb&lt;1,1,1&gt;]
+                [ 0.5 color rgb&lt;1,0,0&gt;]
+                [ 1.0 color rgb&lt;0,0,0&gt;]
+               } // end color_map
+      scale 0.075
+      rotate&lt;-90,0,0&gt;
+    } // end pigment
+// -----------------------------------------
+sphere{ &lt;0,0,0&gt;, 0.75
+   texture {
+      pigment{ uv_mapping Pigment_1 }
+      normal { uv_mapping
+         pigment_pattern{ Pigment_1 }
+         0.25} // end normal
+        finish { phong 0.1}
+      } // end of texture
+translate&lt;0.5,0.5,0.5&gt;
+} // end of sphere -------------------------</td></pre></tr></table>
+
+<font size="-1"><i><b>The same effect by a warped tiling:</b></i></font>
+  <table align="center" border="2"  bgcolor="#f8f8f0"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+ <tr><td>
+ <pre>#declare Pigment_1 =
+   pigment{
+      tiling 6 // 1~24 Pattern_Number
+      color_map{
+                [ 0.0 color rgb&lt;1,1,1&gt;]
+                [ 0.5 color rgb&lt;1,0,0&gt;]
+                [ 1.0 color rgb&lt;0,0,0&gt;]
+               } // end color_map
+      scale 0.075
+      rotate&lt;-90,0,0&gt;
+      <font color="#AA0000">warp{ spherical
+            orientation &lt;0,0,1&gt;
+            dist_exp 0
+          } // end of warp</font>
+    } // end pigment
+//------------------------------------------
+sphere{ &lt;0,0,0&gt;, 0.75
+   texture { // no uv_mapping !
+      pigment{ Pigment_1 } // end pigment
+      normal{
+         pigment_pattern{ Pigment_1 }
+         0.5} // end normal
+      finish { phong 0.1}
+   } // end of texture
+translate&lt;0.5,0.5,0.5&gt;
+} // end of sphere -------------------------</td></pre></tr></table>
+
+</td>
+<td align="center" valign="top">
+<br>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping_sphere_02.jpg" border="0" width="240"  height="180"
+       alt="Sample uv_mapping on a sphere" title="Sample uv_mapping on a sphere"></a>
+      </td></tr></table><font size="-1">uv_mapping on a sphere</font>
+<br>
+<br>
+
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping_sphere_05.jpg" border="0" width="240"  height="180"
+       alt="Sample uv_mapping on a sphere" title="Sample uv_mapping on a sphere"></a>
+      </td></tr></table><font size="-1">uv_mapping on a sphere</font>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping_sphere_06.jpg" border="0" width="240"  height="180"
+       alt="Sample uv_mapping on a sphere" title="Sample uv_mapping on a sphere"></a>
+      </td></tr></table><font size="-1">warped tiling on a sphere <br>
+      For more about 'warp' see here:<a href="tex_780e.htm">Mapping with Warps</a> </font>
+</td></tr>
+<tr><td colspan="2">
+
+<hr>
+
+<font size="+1"><a name="torus"><b>uv_mapping for torus</b></a></font><br>
+<b>A tiling pattern in the xz plane mapped on a torus:</b><br>
+</td>
+<a name="sphere"></a>
+</tr><tr>
+<td valign="top"><font size="-1"><i><b>Example:</b></i></font>
+  <table align="center" border="2"  bgcolor="#f8f8f0"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+ <tr><td>
+ <pre>sphere{ &lt;0,0,0&gt;, 0.75
+     texture { uv_mapping
+        pigment{
+           tiling 6 // 1~24 Pattern_Number
+              color_map{
+                [ 0.0 color rgb&lt;1,1,1&gt;]
+                [ 0.5 color rgb&lt;1,0,0&gt;]
+                [ 1.0 color rgb&lt;0,0,0&gt;]
+                } // end color_map
+      rotate&lt;-90,0,0&gt;
+      //frequency 10
+      scale&lt;0.05,0.2,1&gt;*0.25
+        } // end pigment
+        finish { phong 0.1}
+      } // end of texture
+translate&lt;0.5,0.5,0.5&gt;
+} // end of torus -------------------------</td></pre></tr></table>
+</td>
+<td align="center" valign="top">
+<br>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping_torus_08.jpg" border="0" width="240"  height="180"
+       alt="Sample uv_mapping on a torus" title="Sample uv_mapping on a torus"></a>
+      </td></tr></table><font size="-1">uv_mapping on a torus</font>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <img src="im/uv_mapping_torus_09.jpg" border="0" width="240"  height="180"
+       alt="Sample uv_mapping on a torus" title="Sample uv_mapping on a torus"></a>
+      </td></tr></table><font size="-1">uv_mapping on a torus 'frequency 10'</font>
+
+</td>
+</tr></table>
+</td></tr></table>
+
+</td></tr></table><!-- global table -->
+
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

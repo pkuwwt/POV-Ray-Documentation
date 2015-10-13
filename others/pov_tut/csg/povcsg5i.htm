@@ -1,0 +1,176 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray, povray, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, csg, Constructive Solid Geometry, boolean algebra, union, merge, intersection, difference, inverse">
+<meta name="description" content="tutorial on CSG - Constructive Solid Geometry with POV-Ray - part V">
+<title>csg tutorial - Constructive Solid Geometry with POV-Ray - part V</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg5e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povcsg5e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg5f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="povcsg5f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg5.htm"><font size="2">Deutsch </font></a>
+        <a href="povcsg5.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwni.htm">paggina download</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1i.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1i.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1i.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2i.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3i.htm">difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4i.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4i.htm">e invers</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg5i.htm"--><b>clipped_by</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg6i.htm">superfici</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg6i.htm">coincidenti</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg7i.htm">testure e CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Algebra Booleana con Solidi - parte V</h5>
+<h2 align="center">&quot;clipped_by{...}&quot;</h2>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td><img src="boole_cl.gif" width="130" height="100"></td>
+        <td width="150" height="100"><br><br>
+                                     <b>clipped_by{...}</b></td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_c.jpg" width="130" height="98"></td></tr></table>
+        </td>
+    </tr>
+</table>
+</div>
+<p>
+<br>
+<b>Un taglio per aprire con la parola chiave &quot;clipped_by{...}&quot;:</b><br>
+L'effetto &egrave; simile al'&quot;intersection&quot; e alla &quot;difference&quot; .
+Con un oggetto di base (che pu&ograve; essere anche resultato di csg) il resultato consiste
+di queste parti del'oggetto di base che sono nel'interiore del'oggetto clipped_by.
+La superfice del oggetto di base &egrave; tagliato via dove era fuori del'oggetto clipped_by
+e si pu&ograve; vedere nel'interno del'oggetto di base aperto a queste regioni.
+Esempio:
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>sphere {&lt;0,0,0&gt;,0.5
+        texture{pigment{color rgb&lt;1,0,0.2&gt;}
+                finish {phong 1}}
+        <font color="#800000">clipped_by{</font>sphere {&lt;0,0,0&gt;,0.5 translate&lt;0.5,0,-0&gt; inverse}<font color="#800000">}</font>
+        rotate &lt;0,25,0&gt;
+        translate &lt;-0.25,0,0&gt;} </b></td></pre></tr></table>
+La forma nel'istruzione &quot;clipped_by{...}&quot; &egrave; senza testura. La parte
+rimasta del'oggetto di base &egrave; solo la pelle.
+Il commando per la testura destrive la pelle di un oggetto
+(se &quot;interior&quot; non &egrave; definito) e questa si pu&ograve; verdere del'interiore.
+ <br>
+Se l'oggetto di base con &quot;clipped&quot; consiste di una &quot;union&quot;
+di altri oggetti - come nel esempio seguente - tutti gli oggetti sono tagliati
+del'oggetto clipped_by e saranno aperti di questo. <br>
+Esempio:
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>union{
+  sphere{ &lt;0,0,0&gt;,0.5
+          texture{ pigment{ color rgb&lt;1,0,0.2&gt;}
+                   finish { phong 1 }}}
+  sphere{ &lt;0,0,0&gt;,0.4
+          texture{ pigment{ color rgb&lt;1,0.4,0.2&gt;}
+                   finish { phong 1 }}}
+  sphere{ &lt;0,0,0&gt;,0.3
+          texture{ pigment{ color rgb&lt;1,0.5,0.1&gt;}
+                   finish { phong 1 }}}
+  sphere{ &lt;0,0,0&gt;,0.2
+          texture{ pigment{ color rgb&lt;1,0.7,0.1&gt;}
+                   finish { phong 1 }}}
+  <font color="#800000">clipped_by{</font>sphere {&lt;0,0,0&gt;,0.5 translate&lt;0.5,0,-0&gt; inverse}<font color="#800000">}</font>
+  rotate &lt;15,55,0&gt; translate &lt;-0.25,0,0&gt;} </b></td></pre></tr></table>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_c2.jpg" width="400" height="380">
+      </td>
+ </tr>
+</table>
+</div>
+<br>Questa parola chiave permette di creare i petali sottile di una fiore ma anche
+taglio trasversale ou una vista sezionale a traverso di un edificio ou una machina!
+
+<br><br>
+</td></tr></table>
+
+</td></tr></table> <!-- global-->
+
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1i.htm">CSG</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg2i.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3i.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4i.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg5i.htm"-->clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6i.htm">superfici coincidenti</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7i.htm">testure</b></a></font></td>
+</tr>
+</table>
+</td></tr></table>
+</div>
+</td>
+
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

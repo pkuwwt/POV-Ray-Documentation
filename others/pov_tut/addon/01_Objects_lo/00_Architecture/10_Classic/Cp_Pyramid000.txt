@@ -1,0 +1,23 @@
+//----------------------------------------------------------------------------- textures
+#declare Pyramid_Texture_1 = 
+ texture{ pigment{ color rgb <1.00, 0.87, 0.73>} // ~ LightWood
+          finish { phong 1 reflection 0.00}
+        } // end of texture
+#declare Pyramid_Texture_2 = 
+ texture{ pigment{ color rgb <1.00, 0.87, 0.73>} // ~ LightWood light
+          finish { phong 1 reflection 0.00}
+        } // end of texture
+//---------------------------------------------------------------------------------------
+#include "Pyramid_0.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Pyramid_0 ( 1.00, // half width at the top                                  
+                    3.00, // half width at the base
+                    3.00, // total height of the pyramid
+                    8,    // number of steps
+                    Pyramid_Texture_1, // pyramid texture in x and z
+                    Pyramid_Texture_2  // pyramid texture in x and z
+                 ) //------------------------------------------------------------------//
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.00, 0.00>}
+//---------------------------------------------------------------------------------------

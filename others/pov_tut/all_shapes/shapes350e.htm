@@ -1,0 +1,269 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+   <hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes350i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes350i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes350f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes350f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes350d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes350d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp; <a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Index<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+&nbsp; -  <a href="shapes110e.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120e.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130e.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140e.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150e.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160e.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170e.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180e.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190e.htm">lathe</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes350e.htm"--><b>superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115e.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000e.htm">Shapes in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400e.htm">Other Shapes by macros</b></a></nobr><br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+<a href="shapes000e.htm">other Shapes</b></a><br>
+<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+<nobr><a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900e.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+ &nbsp; &nbsp; &nbsp; &nbsp;<b>superellipsoid{ ... } </b> - superquadric ellipsoid object.<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">Built-in shape</font></font>
+
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr>
+ <td colspan="2">
+     <table align="center"  border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/superellipsoid.jpg" border="0" width="320" height="240"
+                   alt="superellipsoid" title="superellipsoid"></a></td></tr></table>
+ </td>
+</tr>
+</table>
+<hr>
+ Examples: <br>
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/superellipsoid03.jpg" border="0" width="240"  height="180"
+                   alt="superellipsoid" title="superellipsoid"></a></td></tr></table>
+ </td>
+ <td valign="top">
+     <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b> // -------------------------------------
+superellipsoid{ &lt;2.50,2.50&gt;
+
+  texture{ pigment{ color rgb&lt;1,0.2,0.35&gt;}
+           finish { phong 1}
+         } // end of texture
+  scale &lt;1,1,1&gt;
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // ----------------- end superellipsoid</b></td></pre></tr></table>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/superellipsoid00.jpg" border="0" width="240"  height="180"
+                   alt="superellipsoid" title="superellipsoid"></a></td></tr></table>
+ </td>
+ <td valign="top">
+     <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b> // -------------------------------------
+superellipsoid{ &lt;1.00,1.00&gt;
+
+  texture{ pigment{ color rgb&lt;0.15,1,0.3&gt;}
+           finish { phong 1}
+         } // end of texture
+  scale &lt;1,1,1&gt;
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // ----------------- end superellipsoid</b></td></pre></tr></table>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/superellipsoid01.jpg" border="0" width="240"  height="180"
+                   alt="superellipsoid" title="superellipsoid"></a></td></tr></table>
+ </td>
+ <td valign="top">
+      <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b> // -------------------------------------
+superellipsoid{ &lt;0.25,0.25&gt;
+
+  texture{ pigment{ color rgb&lt;1,0.75,0.1&gt;}
+           finish { phong 1}
+         } // end of texture
+  scale &lt;1,1,1&gt;
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // ----------------- end superellipsoid</b></td></pre></tr></table>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/superellipsoid02.jpg" border="0" width="240"  height="180"
+                   alt="superellipsoid" title="superellipsoid"></a></td></tr></table>
+ </td>
+ <td valign="top">
+      <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b> // -------------------------------------
+superellipsoid{ &lt;1.00,0.25&gt;
+
+  texture{ pigment{ color rgb&lt;0.65,1,0.1&gt;}
+           finish { phong 1}
+         } // end of texture
+  scale &lt;1,1,1&gt;
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // ----------------- end superellipsoid</b></td></pre></tr></table>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/superellipsoid04.jpg" border="0" width="240"  height="180"
+                   alt="superellipsoid" title="superellipsoid"></a></td></tr></table>
+ </td>
+ <td valign="top">
+      <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b> // -------------------------------------
+superellipsoid{ &lt;3.50,0.25&gt;
+
+  texture{ pigment{ color rgb&lt;0.75,0.3,1&gt;}
+           finish { phong 1}
+         } // end of texture
+  scale &lt;1,1,1&gt;
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // ----------------- end superellipsoid</b></td></pre></tr></table>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+    <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/superellipsoid05.jpg" border="0" width="240"  height="180"
+                   alt="superellipsoid" title="superellipsoid"></a></td></tr></table>
+ </td>
+ <td valign="top">
+      <table align="center" border="2" bgcolor="#efefef" cellpadding="5"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b> // -------------------------------------
+superellipsoid{ &lt;0.50,3.50&gt;
+
+  texture{ pigment{ color rgb&lt;1,0.85,0.1&gt;}
+           finish { phong 1}
+         } // end of texture
+  scale &lt;1,1,1&gt;
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // ----------------- end superellipsoid</b></td></pre></tr></table>
+ </td>
+</tr>
+</tr>
+
+</table>
+
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

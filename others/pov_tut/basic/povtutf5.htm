@@ -1,0 +1,411 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7,Infographie, Synth&egrave;se d'image 3D">
+<meta name="subject" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<meta name="keywords" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Objets G&eacute;om&eacute;triques de Base: sphere, cylinder, cone, torus (ring), box, prism, plan, height_field, isosurface - POV-Ray Course part 5</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+     <h6><nobr>Introduction au langage de description sc&egrave;nique POV-Ray raytracer</nobr>
+     <nobr> &nbsp; &nbsp; &nbsp; &nbsp; page 5</nobr>
+     <br>par Friedrich A. Lohm&uuml;ller </td></h6>
+  <td align="right">
+        <a href="povtuto5.htm"><font size="2">English</font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povtuto5.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti5.htm"><font size="2">Italiano</font></a>
+        <a href="povtuti5.htm"><img src="flag_ita.gif" alt="Deutsch" title="Deutsch"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs5.htm"><font size="2">Deutsch</font></a>
+        <a href="povkurs5.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+        </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5" >  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#basic"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povtutf0.htm">Introduction POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povtutf0.htm">Table des mati&egrave;res&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtutf1.htm">Utiliser POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtutf2.htm">Bases</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comment &eacute;crire le texte</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#xyzKoordinaten">xyz – Coordonn&eacute;es</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#ZahlenundVektoren">virgule flotante et vecteurs</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtutf3.htm">Structure d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemple de base.</b></a></nobr><br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtutf4.htm">La t&ecirc;te d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Fichiers #include</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr><b>&gt;5.</b> <!--a href="povtutf5.htm"--><b>Objets g&eacute;om&eacute;triques de base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  cone, torus, plane</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  et autres formes</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtutf6.htm">Transformations</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &eacute;chelle, rotation,</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translation et autres.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtutf7.htm">Couleurs et surfaces</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtutf8.htm">#declare, #local  #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Variables, objets flexibles.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtutf9.htm">#while</b></a> - Boucles</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemples de base.</b></a>,</nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutfa.htm">#include</b></a> - fichiers include</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; objets r&eacute;utilisables.</b></a></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutfb.htm">Efficacit&eacute;</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; vitesse, flexibilit&eacute;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; travailer modulaire.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adapter de 3.1 &agrave; 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insertf_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+
+<font size="+2"> <b><a name="BasicShapesForObjects">Objets G&eacute;om&eacute;triques de Base :</a></b></font>
+<hr>
+<div align="center">
+<!-- table-->
+<table align="center" border="0" cellspacing="1" bordercolor="#c0c0c0" cellpadding="5" width="100%">
+ <tr>
+  <td valign="top"><a href="../all_shapes/shapes110f.htm#start" target="_new"><b>sphere</b></a> - Sph&egrave;re, boule :<br>
+<table border="2" bgcolor="#efefef" width="300"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>sphere{ &lt;0,1,0&gt;, 0.5&nbsp;
+        texture{ Polished_Chrome }&nbsp;
+        translate&lt;0,1.35,0&gt;
+      } </b></td></pre></tr></table>
+  <font size="-1"><nobr>centre &lt;x<sub>M</sub>.y<sub>M</sub>,z<sub>M</sub>&gt;, rayon.</nobr></font>
+  </td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><img src="im/SphereSize.jpg" border="0" width="160" height="120" alt="sphere" titel="sphere"></a></td></tr>
+    </table>
+  </td>
+  <td align="right" valign="top" width="164">
+    <table border="2" bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><a href="pov/Demo_sphere01.pov" target="_new">
+            <img src="im/Demo_sphere01.jpg" border="0" width="160" height="120" alt="sphere" titel="sphere"></a></td></tr>
+    </table><div align="center"><font size="1"><a href="pov/Demo_sphere01.pov" target="_new">Demo_sphere01.pov</a></font></div>
+<!-- table-->
+ </td>
+ </tr>
+</table>
+<!-- table-->
+<table align="center" border="0" cellspacing="1" bordercolor="#c0c0c0" cellpadding="5" width="100%">
+ <tr><td colspan="3"><hr></td></tr>
+ <tr>
+  <td valign="top"><a href="../all_shapes/shapes120f.htm#start" target="_new"><b>cylinder</b></a> - Cylindre, tuyau, tube :<br>
+<table border="2" bgcolor="#efefef" width="300"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>cylinder{ &lt;0,0,0&gt;,&lt;0,1,0&gt;, 0.25&nbsp;
+         pigment{color rgb&lt;1,0.6,0&gt;}
+        }</b></td></pre></tr></table>
+      <font size="-1"><nobr>&lt;x<sub>M1</sub>,y<sub>M1</sub>,z<sub>M1</sub>&gt; et </nobr>
+      <nobr>&lt;x<sub>M2</sub>,y<sub>M2</sub>,z<sub>M2</sub>&gt;, rayon</nobr></nobr><br>
+      sont les coordonn&eacute;es du centre des deux bouts,<br>
+     le valeur suivant est le rayon.</font></td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><img src="im/CylinderSize.jpg" border="0" width="160" height="120" alt="cylinder" titel="cylinder"></a></td></tr>
+    </table>
+  </td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><a href="pov/Demo_cylinder01.pov" target="_new">
+            <img src="im/Demo_cylinder01.jpg" border="0" width="160" height="120" alt="cylinder" titel="cylinder"></a></td></tr>
+    </table><div align="center"><font size="1"><a href="pov/Demo_cylinder01.pov" target="_new">Demo_cylinder01.pov</a></font></div>
+<!-- table-->
+ </td>
+ </tr>
+</table>
+<!-- table-->
+<table align="center" border="0" cellspacing="1" bordercolor="#c0c0c0" cellpadding="5" width="100%">
+ <tr><td colspan="3"><hr></td></tr>
+ <tr>
+  <td valign="top"><a href="../all_shapes/shapes120f.htm#start" target="_new"><b>cone</b></a> - C&ocirc;ne, tron&ccedil;on de c&ocirc;ne :<br>
+<table border="2" bgcolor="#efefef" width="300"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>cone{ &lt;0,0,0&gt;, 1, &lt;0,1.75,0&gt;, 0.5&nbsp;
+      pigment{color rgb&lt;0.4,0.7,0&gt;}
+      finish {phong 1}
+    }</b></td></pre></tr></table>
+      <font size="-1"><nobr>&lt;x<sub>M1</sub>,y<sub>M1</sub>,z<sub>M1</sub>&gt;, r<sub>M1</sub></nobr> et
+      <nobr> &lt;x<sub>M2</sub>,y<sub>M2</sub>,z<sub>M2</sub>&gt;, r<sub>M2</sub></nobr><br>
+       sont les coordonn&eacute;es du centre des deux bouts, les valeurs suivant sont les rayons.</font></td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><img src="im/Cone truncated.jpg" border="0" width="160" height="120" alt="cone" titel="cone"></a></td></tr>
+    </table>
+  </td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><a href="pov/Demo_cone01.pov" target="_new">
+            <img src="im/Demo_cone01.jpg" border="0" width="160" height="120" alt="cone" titel="cone"></a></td></tr>
+    </table><div align="center"><font size="1"><a href="pov/Demo_cone01.pov" target="_new">Demo_cone01.pov</a></font></div>
+<!-- table-->
+ </td>
+ </tr>
+</table>
+<!-- table-->
+<table align="center" border="0" cellspacing="1" bordercolor="#c0c0c0" cellpadding="5" width="100%">
+ <tr><td colspan="3"><hr></td></tr>
+ <tr>
+  <td valign="top"><a href="../all_shapes/shapes140f.htm#start" target="_new"><b>torus</b></a> - Tore, bague, anneau :<br>
+
+<table border="2" bgcolor="#efefef" width="300"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>torus</a>{ 1.00, 0.25
+       rotate&lt;90,0,0&gt;
+       translate&lt;-0.5, 1+0.25, 0&gt;
+       pigment{ color rgb&lt;1,0.8,0&gt;}&nbsp;
+       finish { phong 1}
+     }</b></td></pre></tr></table>
+      <font size="-1"><nobr> r<sub>major</sub> = le rayon majeur,</nobr><nobr> et  r<sub>minor</sub> = le rayon mineur.</nobr><br>
+      Le tore est plac&eacute; par attitude fondamentale dans le plan <nobr>&raquo; xz &laquo;</nobr>(horizontal)
+      avec l'axe des <nobr>&raquo; y &laquo;</nobr> en qualit&eacute; de l'axe de sym&eacute;trie de rotation.
+       <nobr>xz plane</nobr> et son axe est l'<nobr>axe des y.</nobr><br>
+      <font size="-2">Avec cet exemple on a un bague vertical dans le plan <nobr>&raquo; xy &laquo;</nobr>
+      avec l'axe parall&egrave;le &agrave; l'axe des <nobr>&raquo; z &laquo;.</nobr></font></font></td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><img src="im/Cone truncated.jpg" border="0" width="160" height="120" alt="cone" titel="cone"></a></td></tr>
+    </table>
+  </td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><a href="pov/Demo_cone01.pov" target="_new">
+            <img src="im/Demo_cone01.jpg" border="0" width="160" height="120" alt="cone" titel="cone"></a></td></tr>
+    </table><div align="center"><font size="1"><a href="pov/Demo_cone01.pov" target="_new">Demo_cone01.pov</a></font></div>
+<!-- table-->
+ </td>
+</tr>
+</table>
+<!-- table-->
+<table align="center" border="0" cellspacing="1" bordercolor="#c0c0c0" cellpadding="5" width="100%">
+<tr><td colspan="3"><hr></td></tr>
+<tr>
+ <td valign="top"><a href="../all_shapes/shapes150f.htm#start" target="_new"><b>box</b></a> - Cube ou Cubo&iuml;de, parall&eacute;l&eacute;pip&egrave;de rectangulaire, bo&icirc;te :<br>
+
+
+<table border="2" bgcolor="#efefef" width="300"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>box{ &lt;0,0,0&gt;, &lt;1,2,4&gt;
+     pigment{ checker
+              color rgb&lt;1,1,1&gt;
+              color rgb&lt;1,1,1&gt;*0
+              scale &lt;0.5,0.25,0.5&gt; }
+   }</b></td></pre></tr></table>
+      <font size="-1"><nobr>&lt;x<sub>1</sub>.y<sub>1</sub>,z<sub>1</sub>&gt; et
+                                          &lt;x<sub>2</sub>,y<sub>2</sub>,z<sub>2</sub>&gt; </nobr>
+      sont sont les coordonn&eacute;es de deux points diam&eacute;triquement oppos&eacute;s.</nobr><br>
+      Bo&icirc;te de x<sub>1</sub> jusqu'&agrave; x<sub>2</sub></nobr>,
+       de y<sub>1</sub> jusqu'&agrave; y<sub>2</sub></nobr> et
+      de z<sub>1</sub> jusqu'&agrave; z<sub>2</sub>.</nobr></td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><img src="im/BoxSize.jpg" border="0" width="160" height="120" alt="box" titel="box"></a></td></tr>
+    </table>
+  </td>
+  <td align="right" valign="top" width="164">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><a href="pov/Demo_box01.pov" target="_new">
+            <img src="im/Demo_box01.jpg" border="0" width="160" height="120" alt="box" titel="box"></a></td></tr>
+    </table><div align="center"><font size="1"><a href="pov/Demo_box01.pov" target="_new">Demo_box01.pov</a></font></div>
+<!-- table-->
+ </td>
+</tr>
+</table>
+<!-- table-->
+<table align="center" border="0" cellspacing="1" bordercolor="#c0c0c0" cellpadding="5" width="100%">
+<tr><td colspan="3"><hr></td></tr>
+<tr>
+  <td valign="top"><a href="../all_shapes/shapes160f.htm#start" target="_new"><b>prism</b></a> - Prisme orthogonal :<br>
+<table border="2" bgcolor="#efefef" width="300"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>prism{ 0.00, 1.00, 4,
+       &lt;-1.00,0.00&gt;, &lt;1.00,0.00&gt;, &lt;0.00,-1.30&gt;, &lt;-1.00,0.00&gt&nbsp;
+       pigment{ color White }
+     }</b></td></pre></tr></table>
+      <font size="-1"><nobr>De z<sub>1</sub> =... , &agrave; z<sub>2</sub> = ..., nombre de points de la base,<br>
+      les coordonn&eacute;es &lt;x,z&gt;, s&eacute;par&eacute;s avec des virgules.</nobr><br>
+      <font size="-2">Le prisme est positionn&eacute; avec ses c&ocirc;t&eacute;s parall&egrave;le &agrave; <nobr> l'axe des y</nobr> et
+      est d&eacute;fini par les angles de son profil dans le <nobr>plan &raquo; xz &laquo;</nobr>.
+      Avec des rotations de 90&deg; autour d'un des axes, est possible d'avoir un prisme dans la direction des z,
+      ou dans la direction des x  ou dans chaque autre direction !</font></font></td>
+  <td align="right" valign="top">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><a href="pov/Demo_prism01.pov" target="_new">
+            <img src="im/Demo_prism01.jpg" border="0" width="160" height="120" alt="prism" titel="prism"></a></td></tr>
+    </table><div align="center"><font size="1"><a href="pov/Demo_prism01.pov" target="_new">Demo_prism01.pov</a></font></div>
+<!-- table-->
+ </td>
+</tr>
+</table>
+<!-- table-->
+<table align="center" border="0" cellspacing="1" bordercolor="#c0c0c0" cellpadding="5" width="100%">
+<tr><td colspan="3"><hr></td></tr>
+<tr>
+  <td valign="top"><a href="../all_shapes/shapes170f.htm#start" target="_new"><b>plane</b></a> = Plan infini, <font size="-1"><i>plus exact :</i></font> demi-espace !<br>
+<table border="2" bgcolor="#efefef" width="300"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>plane{ &lt;0,1,0&gt;, 0 &nbsp;
+       texture{ Cork } &nbsp;
+     }</b></td></pre></tr></table>
+      <font size="-1">Le vecteur normal de surface, suiv&eacute; (apr&egrave;s une virgule)
+       della distance de &lt;0,0,0&gt;!<br>
+       Le vecteur normal de surface est un vecteur vertical au plan.<br>
+       <font size="-2">Ici : <nobr>&lt; 0, 1, 0&gt;</nobr> indique &agrave; la direction positive des y,
+       vouloir dire que le plan est horizontal, il est dans le plan <nobr>&raquo; xz &laquo;.</nobr><br>
+       (plus exact : le &raquo; plane &laquo; d&eacute;finit un <nobr>&raquo; demi-espace &laquo;</nobr>,
+       que renferme tout l'espace derri&egrave;re de ce plan, oppos&eacute; &agrave; la direction du
+       <nobr>&raquo; vecteur normal de surface &laquo;</nobr>. <br>
+         Cette chose est important quand on utilise l'objet <nobr>&raquo; plane &laquo;</nobr> dans
+        <nobr>&raquo; union &laquo;</nobr>,
+        <nobr>&raquo; diff&eacute;rence &laquo;</nobr> ou <nobr>&raquo; intersection &laquo;</nobr>
+        <nobr>( voyez: &raquo; CSG &laquo; )</nobr>,
+        parce que ce <nobr>&raquo; demi-espace &laquo;</nobr>
+        est <nobr>l'&raquo; int&eacute;rieur &laquo;</nobr> de ce <nobr>&raquo; plane &laquo;.</font></font></td>
+  <td align="right" valign="middle">
+    <table border="2"  bgcolor="#EFEFEF"
+           bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td><a href="../all_shapes/shapes170f.htm#start" target="_new">
+            <img src="im/pov_pla0.jpg" border="0" width="160" height="120" alt="plane" titel="plane"></a></td></tr>
+    </table>
+<!-- table-->
+  </td>
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr>
+  <td colspan="3"><p align="left"><b><a name="OtherObjects">Une grande multiplicit&eacute; des autres objets g&eacute;om&eacute;triques</a><br>
+    &nbsp; &nbsp; &nbsp; on peut trouver ici : <a href="../all_shapes/shapes000f.htm">Objets G&eacute;om&eacute;triques de POV-Ray </a>.</b>
+  </td>
+</tr>
+<tr>
+ <td colspan="3">
+ <table><tr>
+ <td align="center" valign="top">
+     <table border="1" bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+         <tr><td><a href="../all_shapes/shapes000f.htm">
+                 <img src="im/mount2s.jpg" border="0" width="80" height="60"
+                  alt="mountains by height_field" title="mountains by height_field"></a></td></tr>
+     </table><font size="-2">height_field</font>
+  </td>
+ <td align="center" valign="top">
+     <table border="1" bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+         <tr><td><a href="../all_shapes/shapes000f.htm">
+                 <img src="im/text2ss.jpg" border="0" width="80" height="60"
+                   alt="text object" title="text object"></a></td></tr>
+     </table><font size="-2">text object</font>
+  </td>
+ <td align="center" valign="top">
+     <table border="1" bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+         <tr><td><a href="../all_shapes/shapes000f.htm">
+                 <img src="im/iso_0330s.jpg" border="0" width="80" height="60"
+                   alt="isosurface" title="isosurface"></a></td></tr>
+     </table><font size="-2">isosurface</font>
+  </td>
+ <td align="center" valign="top">
+     <table border="1" bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+         <tr><td><a href="../all_shapes/shapes000f.htm">
+                 <img src="im/iso_0085s.jpg" border="0" width="80" height="60"
+                   alt="isosurface" title="isosurface"></a></td></tr>
+     </table><font size="-2">isosurface</font>
+  </td>
+ <td align="center" valign="top">
+     <table border="1" bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+         <tr><td><a href="../all_shapes/shapes000f.htm">
+                 <img src="im/povshat2s.jpg" border="0" width="80" height="60"
+                   alt="polyhedra" title="polyhedra"></a></td></tr>
+     </table><font size="-2">polyhedra</font>
+  </td>
+ <td align="center" valign="top">
+     <table border="1"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+         <tr><td><a href="../all_shapes/shapes000f.htm">
+                 <img src="im/parametric_04s.jpg" border="0" width="80" height="60"
+                   alt="parametric" title="parametric"></a></td></tr>
+     </table><font size="-2">parametric</font>
+  </td>
+  </tr></table>
+<!-- table-->
+ </td>
+</tr>
+<tr><td colspan="6"><hr></td></tr>
+
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtutf0.htm">part 0</a> |
+<a href="povtutf1.htm">part 1</a>  | <a href="povtutf2.htm">part 2</a> |
+<a href="povtutf3.htm">part 3</a>  | <a href="povtutf4.htm">part 4</a> |
+<!--a href="povtutf5.htm"-->part 5</a>  | <a href="povtutf6.htm">part 6</a> |
+<a href="povtutf7.htm">part 7</a>  | <a href="povtutf8.htm">part 8</a> |
+<a href="povtutf9.htm">part 9</a>  | <a href="povtutfa.htm">part 10</a> |
+                                     <a href="povtutfb.htm">part 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

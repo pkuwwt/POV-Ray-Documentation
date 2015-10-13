@@ -1,0 +1,17 @@
+//---------------------------------------------------------
+//---------------------------------------------------------
+/* vtransform ( V, Transformation ) 
+   vinv_transform( V , Transformation ) // 'Undo'
+      This allows more complex transformations combining translate, scale, rotate, and matrix. 
+      vtransform() macro applies a transformation (rotate, scale, translate, matrix) to a point. 
+      vinv_transform() does the inverse transformations ('undo').
+*/
+//---------------------------------------------------------
+#include "transform.inc"
+//---------------------------------------------------------
+  #declare A = < 1.5, 0.3, 0.25 >;
+  #declare Trans1 = transform{ rotate<0,-50,0> translate<0,0.7,0>; };
+ 
+  #declare B = vtransform ( A, Trans1 );
+//---------------------------------------------------------
+//---------------------------------------------------------

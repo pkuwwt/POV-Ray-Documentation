@@ -1,0 +1,214 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, Language Directives">
+<meta name="description" content="tutorial on Language Directives with POV-Ray - part I">
+<title>Language Directives with POV-Ray - part I, english</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Conditional Statements</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="dir_000i.htm"><font size="2">Italiano </font></a>
+        <a href="dir_000i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="dir_000f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="dir_000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="dir_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="dir_000d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <!--a href="dir_000e.htm"--><b>Conditional</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="dir_000e.htm"--><b>Statements</b></a><br>
+<br>
+ &nbsp; <b>Branching</b></a> <br>
+ &nbsp; &nbsp;&gt;<!--a href="dir_000e.htm"--><b>#if(...)... #else ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100e.htm">in loops</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_200e.htm">in macros</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_300e.htm">in animations</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_400e.htm">turning on/off of parts</b></a><br>
+ &nbsp; &nbsp;&nbsp;<a href="dir_000e.htm">#switch(...) #case(..) ...</b></a> <br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="dir_000e.htm">#range(..) ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_700e.htm">selection by tables</b></a> <br>
+<br>
+ &nbsp; <b>Check for Existence</b></a> <br>
+ &nbsp; &nbsp;&nbsp;<a href="dir_800e.htm">#ifdef(...) #ifndef(...)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_810e.htm">Check in include files</b></a> <br>
+<nobr> &nbsp; &nbsp; -  <a href="dir_820e.htm">Defaults in include files</b></nobr></a> <br>
+<br>
+ &nbsp; <b>Loops</b></a><br>
+<nobr> &nbsp;<a href="dir_900e.htm">Prechecked, Postchecked,</b></a></nobr><br>
+<nobr> &nbsp;<a href="dir_900e.htm">Count-controlled, Early-Exit</b></a></nobr><br>
+ &nbsp; &nbsp;&nbsp;<a href="dir_900e.htm">#while(...)... #end</b></a> <br>
+ &nbsp; &nbsp;&nbsp;<a href="dir_900e.htm">#for(...)... #end</b></a> <br>
+ &nbsp; &nbsp; - Samples: <br>
+<nobr> &nbsp; &nbsp; - <a href="../loop/povlup1e.htm" target="_new">Loops with POV-Ray</a></nobr><br>
+ &nbsp; &nbsp; - <a href="../sinus/povsi3e1.htm" target="_new">Loops, Sine, Cosine</a><br>
+ &nbsp; &nbsp; - <a href="../random/random1e.htm" target="_new">Random with POV-Ray</a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center">Conditional Statements for Branching</h2>
+<p align="justify">In the scenery description language (SDL) of POV-Ray there are 2 different structures,
+which allow us to realizise conditional statements as known from all programming languages:<br>
+<br>
+</p></td></tr></table>
+
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="30%"><b>Simple Branching<br>
+    #if-statement</b> <br>
+  (If ... then ... else ...)</td>
+  <td width="50%"><b>Multible Branching<br>
+   #switch-statement</b> <br>
+  (Branching by different switch values)</td>
+ </tr>
+ <tr>
+  <td width="30%" valign="top"><font size="-2"><i>Syntax in POV-Ray:</i></font>
+<pre><b>#if (<i></b>Condition</i><b>)</b>
+ ... <i>statements1</i><b>
+#else </b>// (optional)
+ ... <i>statements2</i><b>
+#end </b>
+      </b></pre></a></td>
+  <td width="50%"><font size="-2"><i>Syntax in POV-Ray:</i></font>
+<pre><b>#switch (</b><i>Switch_Variable</i><b>)
+#case (</b><i>Switch_Value1</i><b>)</b>
+ ...  <i>statements</i><b>
+#break
+#case (</b><i>Switch_Value2</i><b>)</b>
+ ...  <i>statements</i><b>
+#break
+#range </b>(<i>Switch_Value_Start,Switch_Value_End</i>)
+ ...  <i>statements</i><b>
+#break
+#else </b>// (optional)
+ ...  <i>statements</i><b>
+#break
+#end </b>// end of #switch</td></pre>
+ </tr>
+<tr><td colspan="2">Equivalent structures in other programming languages:
+ </td>
+ </tr>
+<tr><td>
+<pre><b>IF &lt;condition&gt;
+THEN
+   &lt;actions&gt;
+ELSE
+   &lt;alternative actions&gt;
+ENDIF
+ </td></pre>
+  <td>
+<pre><b>SWITCH (someChar) {
+  CASE 'a': &lt;actionOn "a"&gt;;
+    BREAK;
+  CASE 'x': &lt;actionOn "x"&gt;;
+    BREAK;
+  CASE 'y':
+  CASE 'z': &lt;actionOn "y"and"z"&gt;;
+    BREAK;
+  DEFAULT: &lt;actionOnNoMatch&gt;;
+}</td></pre>
+</tr>
+<tr><td valign="top"><pre><i>JavaScript:</i><b>
+if (condition) {
+    (action) ;
+} <br>
+
+if (condition) {
+    (actionOnCondition) ;
+} else {
+    (actionOtherwise) ;
+   return;
+} </td></pre>
+  <td><pre><i>JavaScript:</i><b>
+switch (variable) {
+  case "1":
+     (actionOn1);
+    break;
+  case "2":
+    (actionOn2);
+    break;
+  default:
+    (actionOnDefault);
+    break;
+}</td></pre>
+  </tr>
+</table>
+</div>
+<font size="-1">Note: While using float numbers for the conditions or cases
+ you should be aware of the fact that extremely small values
+ of about 1e-10 are considered zero in case of round off errors.</font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

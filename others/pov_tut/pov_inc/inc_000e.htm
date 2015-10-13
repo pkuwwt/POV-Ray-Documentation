@@ -1,0 +1,143 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, include files tutorial">
+<meta name="description" content="Include files tutorial for POV-Ray - Why are Include Files so helpful?">
+<title>Include files with POV-Ray - Why are Include Files so helpful?</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Include files with POV-Ray</b></font><br>
+      <font size="-1"><b>How they work and How to make your own include files</b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="inc_000i.htm"><font size="2">Italiano </font></a>
+        <a href="inc_000i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_000f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="inc_000f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="inc_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="inc_000d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc<i></i>_000e.htm"--><b>A Short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000e.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_000e.htm"--><b>Why Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100e.htm">Self-made Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100e.htm">and how to call them.</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_200e.htm">Special Notations, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_200e.htm">&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300e.htm">Where to store</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="inc_400e.htm">Design of Include Files</b></nobr></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="inc_700e.htm">Adding a new item</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_700e.htm">to the 'Insert Menu'</b></a><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Why are Include Files so helpful<br>
+                      and what can we do with them?</b></h2>
+
+<p align="justify">&nbsp; The scenery description language (SDL) of POV-Ray has a very strong and useful structure
+of the <b>include files</b>, well-known from all programming languages.<br>
+<b>Include files are an elementary tool of modular programming!</b><br>
+<b>The include file mechanism is a method
+&nbsp; to avoid unneccessary work and speeding up the developping of POV-Ray scenes.</b><br>
+This &quot;Short Include File Tutorial&quot; shows how it works and gives some basic hints on
+<b>what to do and what to avoid</b>.<br>
+<font size="-1">It's a result of my own practice in using this feature,
+my own experience with include files<br>
+[which includes also many
+ great successes :-) as well as many great defeats and disasters :-(.]</font></p>
+
+<p align="justify"><font size="+1"><b>What is an Include File?</b></font><br>
+   &nbsp; Include files (extension: <b>.inc</b>) are <b>simple ASCII text</b> files,
+    which can contain any type of text parts for POV-Ray<font size="-1"> (in a correct POV-Ray syntax!).</font>
+    They can be inserted anywhere<font size="-1"> (where it makes sense!)</font> in a POV-Ray scenery text file (extension:  .pov  ).<br>
+    Original POV-Ray Help:
+    &quot;The include file is read in as if it were inserted at that point in the file.
+    Using include is almost the same as cutting and pasting the entire contents of this file into your scene.&quot;</p>
+<p align="justify"><font size="+1"><b>What can we put in an Include File?</b></font><br>
+    &nbsp; Nearly every part of ASCII text, provided that it makes any sense in POV-Ray.<br>
+    Every thing which we want to use more than one time and which we don't want to rebuild from new.
+    (objects, colors, textures, materials, functions, declarations of useful abbrevations, etc.)<br>
+    Elements and parts of bigger projects, to <b>keep complex structures easier to handle.</b><br>
+<p align="justify"><font size="+1"><b>Can we use other include files in an include file?</b></font><br>
+   &nbsp; <b>Yes, we can!</b> Complex objects often need other include files for their elements!<br>
+   Also recursive self-calling include files are possible!
+</td></tr></table>
+
+<div align="center">
+</div>
+<font size="-1">....</font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Trasformazioni Geometriche con POV-Ray - transforms.inc</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013 by Friedrich A. Lohmueller">
+<meta name="description" content="Trasformazioni Geometriche con POV-Ray,  -  translate, rotate, scale, matrix, transform">
+<meta name="keywords" content="POV, POVRAY, povray, POV-Ray, Raytracing, 3d graphic, trasformazioni geometriche, translate, rotate, scale, matrix, transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Trasformazioni Geometriche con POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_470e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="trans_470e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="trans_470f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_470f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_470d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_470d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp; <a href="trans_000i.htm">Trasformazioni</b></a><br>
+ &nbsp; <a href="trans_000i.htm">Geometriche</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000i.htm">Indice</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001i.htm"-->Trasformazioni</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001i.htm"-->di Base</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100i.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200i.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300i.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300i.htm">Immagine speculare</b></a><br>
+ <br>
+ &nbsp; &nbsp; <!--a href="trans_001i.htm"-->Altre</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001i.htm"-->Trasformazioni</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400i.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450i.htm">scorrimento elastico</b></a><br>
+ &nbsp; &nbsp; - <!--a href="trans_470i.htm"--><b>transforms.inc</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#Shear_Trans">Shear_Trans(...)</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#Matrix_Trans">Matrix_Trans(...)</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#Axial_Scale_Trans">Axial_Scale_Tr.</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#Rotate_Around_Trans">Rotate_Around</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#Axis_Rotate_Trans">Axis_Rotate_Tr.</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#Reorient_Trans">Reorient_Trans</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#Point_At_Trans">Point_At_Trans</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#Center_Trans">Center_Trans</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="trans_470i.htm#MinMaxExtent">min_+max_extent</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500i.htm">&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="trans_500i.htm">&nbsp; e &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800i.htm">Vettori e</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vrotate">vrotate</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vaxis_rotate">vaxis_rotate</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vtransform">vtransform</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vtransform">vinv_transform</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vturbulence">vturbulence</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vnormalize">vnormalize</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vcross">vcross</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vdot">vdot()</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#vlength">vlength()</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#VAngle">VAngle(), VAngleD()</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800i.htm#VProject">VProject_Axis</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/inserti_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwni.htm">download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="80%">
+ <tr>
+  <td align="center">
+   <font size="5"><b>Trasformazioni in &quot;transforms.inc&quot;</b></font>
+<div align="justify"><font size="2">Qualque combinazione addizionale di transformazioni
+molto pratice sono definito come macros nel include file &quot;transforms.inc&quot;.
+Per usare queste macros si deve inserare nel testo (al inizio):<br>
+ <b>#include &quot;transforms.inc&quot;</b></font>
+ <hr size="1" noshade></div>
+</td></tr></table>
+
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="4" width="80%">
+ <tr>
+  <td colspan="2">
+  <a name="Shear_Trans"> </a>
+  <table align="center" border="0" cellpadding="0" cellspacing="3">
+  <tr>
+   <td>
+   <font size="3"><b>Shear_Trans( New_X, New_Y, New_Z)</b></font><br>
+   <font size="2"><b>Uno scorrimento elastico molteplice:</b><br>
+      L'asse x precedente indice verso il vettore New_X, l'asse y verso il vettore New_Y
+      e l'asse z verso il vettore New_Z.</font>
+         <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b> Shear_Trans(&lt; 2, 0.5,   0&gt;,
+             &lt; 0, 0.5,   0&gt;,
+             &lt; 0, 0.5, 0.5&gt;) </b></td></pre></tr></table>
+   </td>
+   <td valign="bottom">
+     <table align="top" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Shear_Trans_sample.jpg" border="0" width="160" height="120"
+                 alt="Shear_Trans example" title="Shear_Trans example"></td></tr></table>
+   </td>
+  </tr>
+  <tr>
+    <td colspan="2"><hr size="1">
+    <a name="Matrix_Trans"> </a>
+    <font size="3"><b>Matrix_Trans( New_X, New_Y, New_Z, D)</b></font><br>
+    </td>
+  </tr>
+  <tr>
+  <td>
+     <font size="2"><b>Scorrimento elastico molteplice + Translazione: </b><br>
+      L'asse x precedente indice verso il vettore New_X, l'asse y verso il vettore New_Y
+      e l'asse z verso il vettore New_Z, con l'aggiunta di una translazione con il vettore D.</font>
+
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b> Matrix_Trans(&lt; 2, 0.5,  0&gt;,
+              &lt; 0, 0.5,  0&gt;,
+              &lt; 0, 0.5,0.5&gt;,
+              &lt;-0.5, 0, 0&gt; ) </b></td></pre></tr></table>
+   </td>
+   <td valign="bottom">
+     <a name="Matrix_Trans"></a>
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Matrix_Trans_sample.jpg" border="0" width="160" height="120"
+                 alt="Matrix_Trans example" title="Matrix_Trans example"></td></tr></table>
+   </td>
+  </tr>
+  <tr>
+    <td colspan="2"><hr size="1"></td>
+  </tr>
+  <tr>
+    <td>
+    <font size="3"><b>Axial_Scale_Trans( Axis, Amount )</b></font><br>
+    <font size="2">Lo stiramento in direzione di un asse &quot;Axis&quot;
+     con il fattore &quot;Amount&quot;</font>
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b> Axial_Scale_Trans(&lt; 2,0,2&gt;, 0.5)
+               </b></td></pre></tr></table>
+   </td>
+   <td valign="bottom">
+    <a name="Axial_Scale_Trans"></a>
+    <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Axial_Scale_Trans.jpg" border="0" width="160" height="120"
+                 alt="Axial_Scale_Trans example" title="Axial_Scale_Trans example"></td></tr></table>
+
+   </td>
+ </tr>
+ <tr>
+    <td colspan="2"><hr size="1"></td>
+ </tr>
+ <tr>
+    <td>
+    <font size="3"><b>Rotate_Around_Trans<br>
+    <nobr>( <font size="2">&lt;Rotate.x,Rotate.y,Rotate.z&gt;, Center_of_Rotation</font>  )</nobr></b></font>
+    <font size="2">Una rotazione con il vettore di rotazionw &lt;Rotate.x,Rotate.y,Rotate.z&gt;
+                   intorno al centro &quot;Center_of_Rotation&quot;.</font>
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>Rotate_Around_Trans(&lt;   0,  0, 20&gt;,
+                    &lt; 1.5,0.5,  1&gt;) </b></td></pre></tr></table>
+   </td>
+   <td valign="bottom">
+     <a name="Rotate_Around_Trans"></a>
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Rotate_Around_Trans.jpg" border="0" width="160" height="120"
+                 alt="Rotate_Around_Trans example" title="Rotate_Around_Trans example"></td></tr></table>
+   </td>
+ </tr>
+ <tr>
+    <td colspan="2"><hr size="1"></td>
+ </tr>
+ <tr>
+    <td>
+    <font size="3"><b> Axis_Rotate_Trans( Axis, Angle )</b></font><br>
+    <font size="2">Rotazione intorno a un asse &quot;Axis&quot; con il angelo di &quot;Angle&quot; (in gradi).</font>
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>Axis_Rotate_Trans(&lt; 1,0,2&gt;, 110) </b></td></pre></tr></table>
+   </td>
+   <td valign="bottom" bgcolor="#FFFFFF">
+     <a name="Axis_Rotate_Trans"></a>
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Axis_Rotate_Trans.jpg" border="0" width="160" height="120"
+                 alt="Axis_Rotate_Trans example" title="Axis_Rotate_Trans example"></td></tr></table>
+   </td>
+ </tr>
+ <tr>
+    <td colspan="2"><hr size="1"></td>
+ </tr>
+ <tr>
+    <td>
+    <font size="3"><b> Reorient_Trans( Axis_1, Axis_2 )</b></font><br>
+    <font size="2">Reorientazione con rotazione
+                  di un asse &quot;Axis_1&quot; verso un asse nouvo &quot;Axis_2&quot;.</font>
+   <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>Reorient_Trans(&lt; 1,0,0&gt;,
+               &lt; 1,0.0,2&gt;) </b></td></pre></tr></table>
+   </td>
+   <td valign="bottom" bgcolor="#FFFFFF">
+     <a name="Reorient_Trans"></a>
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Reorient_Trans.jpg" border="0" width="160" height="120"
+                 alt=" Reorient_Trans example" title=" Reorient_Trans example"></td></tr></table>
+   </td>
+ </tr>
+ <tr>
+    <td colspan="2"><hr size="1"></td>
+ </tr>
+ <tr>
+    <td>
+    <a name="Point_At_Axis"></a>
+    <font size="3"><b> Point_At_Axis( New_Y_Axis )</b></font><br>
+    <font size="2">Reorientazione con rotazione con l'asse di y  verso un asse nouvo &quot;New_Y_Axis&quot;.</font>
+   <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare New_Y_Axis = &lt;0.25,1,0.15&gt;;
+object{ MyObject
+        Point_At_Trans( New_Y_Axis )}</b></td></pre></tr></table>
+   </td>
+   <td valign="bottom" bgcolor="#FFFFFF">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Point_At_Axis.jpg" border="0" width="160" height="120"
+                 alt="Point_At_Axis example" title="Point_At_Axis example"></td></tr></table>
+   </td>
+ </tr>
+ <tr>
+    <td colspan="2"><hr size="1"></td>
+ </tr>
+ <tr>
+    <td>
+     <font size="3"><b>Center_Trans( OBJECT , axis )</b></font><br>
+     <font size="2">a) Centra un oggetto dichiarato 'OBJECT' in direzione y.</font>
+       <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>Center_Trans( OBJECT , y )</b></td></pre></tr></table>
+   </td>
+   <td valign="bottom">
+     <a name="Center_Trans"></a>
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Center_Trans_y.gif" border="0" width="160" height="120"
+                 alt="Center_Trans example" title="Center_Trans example"></td></tr></table>
+    </td>
+   </tr>
+  <tr>
+   <td>
+     <font size="2"> a) Centra un oggetto dichiarato 'OBJECT' in direzione x e y.</font>
+       <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>Center_Trans(OBJECT, x+y )</b></td></pre></tr></table>
+   </td>
+   <td valign="bottom">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Center_Trans_xy.gif" border="0" width="160" height="120"
+                 alt="Center_Trans example" title="Center_Trans example"></td></tr></table>
+    </td>
+   </tr>
+  <tr>
+   <td>
+     <font size="2"> a) Centra un oggetto dichiarato 'OBJECT' in direzione x, y e z.</font>
+       <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>Center_Trans(OBJECT,x+y+z)</b></td></pre></tr></table>
+   </td>
+   <td valign="bottom">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="Center_Trans_xyz.gif" border="0" width="160" height="120"
+                 alt="Center_Trans example" title="Center_Trans example"></td></tr></table>
+   </td>
+ </tr>
+ <tr>
+    <td colspan="2"><hr size="1"></td>
+ </tr>
+ <tr>
+    <td>
+     <font size="2"><i>Nessuna trasformazione, ma spesso disponibile in tutto trasformazioni problemi: (una funzionalit&agrave; built-in!)</i><br>
+     <font size="3"><b>min_extent( OBJECT_IDENTIFIER )<br>
+                       max_extent(OBJECT_IDENTIFIER)</b></font><br>
+     <font size="2">
+ Questo restituisce <b>il minimo e il massimo</b> dei coordinati di un oggetto dichiarato o gli angoli di un <b>bounding box</b> per questo oggetto. <br>
+  <b>Attenzione:</i></b> Per CSG intersezioni e differenze o isosuperfici
+        il bounding box non rappresenta le reali dimensioni dell'oggetto!<br>
+  </font>
+  </td>
+   <td valign="bottom">
+       <a name="MinMaxExtent"></a>
+       <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="min_max_extents.jpg" border="0" width="160" height="120"
+                 alt="Center_Trans example" title="Center_Trans example"></td></tr></table>
+    </td>
+   </tr>
+   <tr>
+   <td colspan="2">
+
+     <font size="2"><i>Demo <b>bounding box</b>:</i></font>
+     <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>object{ Wire_Box(min_extent(OBJECT),max_extent(OBJECT),0.05)
+        pigment{ rgb&lt;1,0.65,0&gt;}
+      } </b></td></pre></tr></table>
+     <font size="2"><i><b>Lunghezza in x</b> della bounding box:</i></font>
+     <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare Length_X =
+                max_extent(OBJECT).x - min_extent(OBJECT).x;</b></td></pre></tr></table>
+     <font size="2"><i><b>Centro</b> dell'OBJECT:</i></font>
+     <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare Center =
+              0.5*( min_extent(OBJECT)+ max_extent(OBJECT));</b></td></pre></tr></table>
+   </td>
+   </tr>
+  </table>
+  <hr size="3">
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+<div align="justify">
+ <font size="2">Per queste trasformazioni si pu&ograve; usare dei modelli di testo
+  della sezione &quot;Shearing &amp; transform&quot;
+  del mio <nobr><a href="../down/insrtd_a.htm">&quot;<b>Insert Menu Add-on</b>&quot;</a></nobr>.</font></div>
+
+
+<hr>
+<h6 align="justify">
+ <a href="trans_100i.htm">translate</a> |
+ <a href="trans_200i.htm">rotate</a> |
+ <a href="trans_300i.htm">scale</a> |
+ <a href="trans_400i.htm">matrix</a> |
+ <a href="trans_450i.htm">scorrimento elastico</a> |
+ <!--a href="trans_470i.htm"-->transforms.inc</a> |
+ <a href="trans_500i.htm">transform</a> |
+ <a href="trans_800i.htm"><nobr>trasformazioni di vettori</nobr></a>
+<h6>
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

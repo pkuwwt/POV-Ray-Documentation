@@ -1,0 +1,23 @@
+//---------------------------------------------------------//
+//---------------------------------------------------------//
+#declare Pool_Ladder_Texture =
+         texture { Polished_Chrome
+                   // pigment{ color rgb<1,0,0>} 
+                   finish { phong 1}
+                 } // end of texture 
+//---------------------------------------------------------//
+#include "Pool_Ladder_0.inc"
+//---------------------------------------------------------//
+object{ Pool_Ladder_0 (  // pool ladder looking in x+ to pool
+                        0.02, // R minor, // ~ 0.02   
+                        0.20, // R major, // ~ 0.20
+                        0.50, // ladder width // 
+                        1.00  // ladder length 
+                      ) 
+        texture {Pool_Ladder_Texture} 
+        scale<1,1,1>
+        rotate<0,0,0> 
+        translate<0,0.1,0>
+      } // end of object "Pool_Ladder_0"
+//---------------------------------------------------------//
+//---------------------------------------------------------//

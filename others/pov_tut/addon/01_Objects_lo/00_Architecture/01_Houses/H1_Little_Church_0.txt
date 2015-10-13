@@ -1,0 +1,46 @@
+//-------------------------------------------------------------------------------------// 
+//--------------------------------------------------------------------- Textures  
+#declare Wall_Texture = 
+ texture { pigment{ color White*1.1}
+           normal { bumps 0.5 scale 0.0025}
+           finish { phong 0.2}
+         } // end of texture
+#declare Window_Hole_Texture = 
+ texture { pigment{color White*0.8}
+           finish { phong 0.2}
+         } // end of texture
+#declare Roof_Texture = 
+// layered texture!!!
+      texture { pigment{ color  rgb<0.8,0.30,0.2>*0.9} 
+                normal { gradient z scallop_wave scale<1,1,0.15>} 
+                finish { phong 1}
+              } // end of texture
+ 
+      texture { pigment{ gradient x 
+                         color_map{[0.00 color Clear]
+                                   [0.90 color Clear]
+                                   [0.95 color White*0.1]
+                                   [1.00 color White*0.1]}
+                          scale 0.25}
+                 finish { phong 1}
+              } // end of texture
+
+#declare Door_Texture = 
+  texture{ pigment{ color rgb< 0.75, 0.5, 0.30>*0.55 }// dark brown  
+           normal { bumps 0.25 scale 0.025 }
+           finish { diffuse 0.9 phong 1 reflection 0.00}
+         } // end of texture 
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------// 
+#include "Little_Church_0.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Little_Church_0( Wall_Texture , // texture of the walls 
+                         Window_Hole_Texture, // texture of window holes and inside
+                         Roof_Texture,        // texture of roof in x direction    
+                         Door_Texture
+                       ) //------------------------------------------------------------// 
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.00, 0.00>}
+//-------------------------------------------------------------------------------------// 
+//---------------------------------------------------------------------------------------

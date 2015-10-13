@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+// optional textures !!!
+#declare Gear_Texture_Blanc = 
+        texture { Polished_Chrome 
+                } // end of texture
+#declare Gear_Texture_Raw = 
+        texture { pigment{ color rgb<1,0.80,0.45>*0.8} 
+                  normal { bumps 0.35 scale 0.005} 
+                  //finish { phong 0.5 reflection{ 0.15 metallic 0.25} }
+                } // end of texture
+//---------------------------------------------------------------------
+#include "Cog_Wheel_In_1.inc"
+// around y axis, symmetric to xz plane
+// declares also macro 'Cog_Wheel_Radius (Cog_Number, Cog_Distance)' 
+//---------------------------------------------------------------------
+#local N_1 = 36; 
+#local CD = 0.15; // cog distance 
+#local CZ = 0.5;  // wheel thickness
+
+#local Time = clock +0.5 ;
+
+#local Turn =  Time*360/N_2;//  smallest
+//---------------------------------------------------------------------
+union{
+
+ object{ Cog_Wheel_In_1 ( N_1, CD, CZ) // Cog_Number, Cog_Distance, Gear_Y , 
+         rotate<90,0,-Turn>
+         translate<0,0,0>
+       } //---------------------- 
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------

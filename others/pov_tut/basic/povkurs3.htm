@@ -1,0 +1,271 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, povray, POV-Ray 3.6.2, POV-Ray 3.7, Raytracing-Beschreibung, POV-Ray-Anleitungen, 3D-Grafik">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Was geh&ouml;rt zu einer Szene? - POV-Ray-Kurs Teil 3</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<!-- header -->
+ <table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a><h6><nobr>Einf&uuml;hrung in die Beschreibungssprache des Raytracers POV-Ray</nobr>
+ &nbsp; <nobr> &nbsp; &nbsp; - Seite 3 -</nobr><br>
+ von Friedrich A. Lohm&uuml;ller</td></h6>
+ <td align="right">
+        <a href="povtuto3.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povtuto3.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti3.htm"><font size="2">Italiano</font></a>
+        <a href="povtuti3.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povtutf3.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povtutf3.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povkurs0.htm">POV-Ray Einf&uuml;hrung</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povkurs0.htm">INHALT&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povkurs1.htm">Arbeiten mit POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povkurs2.htm">Grunds&auml;tzliches zum</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm">Erstellen von Szenentexten.</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#xyzKoordinaten">R&auml;umliche Koordinaten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#ZahlenundVektoren">Zahlen und Vektoren</b></a></nobr><br>
+<nobr><b>&gt;3.</b> <!--a href="povkurs3.htm"--><b>Szenen-Aufbau</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; Ein Grundbeispiel.<br>
+<nobr>&nbsp;<b> 4.</b> <a href="povkurs4.htm">Header einer Szene</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; #include-Dateien<br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povkurs5.htm">Geometrische Grundobjekte</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; und andere K&ouml;rper</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povkurs6.htm">Transformationen</b></a></nobr> <br>
+<nobr> &nbsp; &nbsp; &nbsp; Streckung, Drehung, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Verschiebung u. andere.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povkurs7.htm">Farben und Oberfl&auml;chen</b></nobr></a>
+<nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povkurs8.htm">#declare, #local, #macro</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Platzhalter, flexible Objekte.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povkurs9.htm">#while</b></a> Schleifen</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Grundbeispiele.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povkursa.htm">#include</b></a>, Include-Dateien.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Wiederverwendbare Objekte.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povkursb.htm">Rationelles Arbeiten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Geschwindigkeit, Flexibilit&auml;t,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; modulares Arbeiten</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.1 auf 3.5/3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.5/3.6 auf 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insrtd_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<!--- end of header -->
+
+<font size="+1"><b><a name="WasGehoerZuEinerSzene">Was geh&ouml;rt zu einer Szene</a>?</b></font><br>
+<table border="0" align="center" width="100%"><tr><td>
+<p align="justify">Eine Szenenbeschreibung besteht (mindestens) aus folgenden Bestandteilen:
+<ul>
+<font size="-1"><li><b>0. #include</b> Einbindung von Dateien mit vorgefertigten Definitionen f&uuml;r  Farben, Texturen, etc.</li>
+<li><b>1. camera</b> = Betrachterstandpunkt, Blickpunkt und Blickwinkel.</li>
+<li><b>2. light_source</b> = Lichtquelle - Position und Lichtfarbe.</li>
+<li><b>3. Objekte und deren Eigenschaften</b>, diese werden beschrieben durch:</li>
+<ul>
+<li><b>Form</b> (=shape) (<b>sphere, box, cylinder, cone, torus, plane</b> u.v.a.m.)<br>
+       Diese Form kann eine dieser Grundformen sein oder ein zusammengesetztes Objekt,<br>
+       mittels  <b>CSG</b> (= Constructiv solid Geometry).</li>
+<li><b>Transformationen</b> = Lage- und Formver&auml;nderungen</li>
+ <ul>
+<li> &nbsp; '<b>scale&lt; , , &gt;</b>' - Skalierung - Ma&szlig;stabsver&auml;nderungen</li>
+<li> &nbsp; '<b>rotate&lt; , , &gt;</b>' - Drehung um den Ursprung</li>
+<li> &nbsp; '<b>translate&lt; , , &gt;</b>' - Parallel-Verschiebung</li>
+</ul>
+<li>Textur</b> = Oberfl&auml;chenbeschaffenheit ("texture" ) <br>
+<ul><li> &nbsp; <b>pigment{....}</b>: Farbe (mu&szlig;!) und Durchsichtigkeit (falls n&ouml;tig)</li>
+    <li> &nbsp; <b>normal {.....}</b>: Oberfl&auml;chenrauhheit (kann! sonst glatt)</li>
+    <li> &nbsp; <b>finish {....}</b>: Oberflachen-Helligkeit und -Glanz (sollte!)</li>
+ </ul>
+</li></ul></font>
+</td></p></ul></tr></table>
+<hr width="95%">
+<table border="0" cellspacing="1" bordercolor="#ffffff" cellpadding="4" width="621" align="center">
+<tr><td valign="TOP" colspan="2" height="33">
+     <p><font size="+1"><b><a name="BeispielSzenenbeschreibung"></a>Grundbeispiel einer Szenenbeschreibung</b></font></td>
+</tr>
+<tr><td valign="TOP">
+ <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>// POV-Ray 3.6/3.7 Scene File "Minimal.pov"
+// by Friedrich A. Lohmueller, Jan-2013
+//-------------------------------------------
+#version 3.6; // 3.7
+global_settings{assumed_gamma 1.0}
+#default{ finish{ ambient 0.1 diffuse 0.9 }}
+//------------------------------------------
+#include "colors.inc"
+#include "textures.inc"
+//------------------------------------------
+// camera ----------------------------------
+camera{ location  &lt;0.0 , 1.0 ,-3.0&gt;
+        look_at   &lt;0.0 , 1.0 , 0.0&gt;
+        right x*image_width/image_height
+        angle 75 }
+// sun -------------------------------------
+light_source{&lt;1500,3000,-2500> color White}
+// sky -------------------------------------
+plane{ &lt;0,1,0>,1 hollow
+       texture{
+         pigment{ bozo turbulence 0.92
+           color_map{
+                 [0.00 rgb&lt;0.05,0.15,0.45&gt;]
+                 [0.50 rgb&lt;0.05,0.15,0.45&gt;]
+                 [0.70 rgb&lt;1,1,1&gt;        ]
+                 [0.85 rgb&lt;0.2,0.2,0.2&gt;  ]
+                 [1.00 rgb&lt;0.5,0.5,0.5&gt;  ]
+                       } //
+           scale&lt;1,1,1.5&gt;*2.5
+           translate&lt;0,0,0&gt;
+           } // end of pigment
+         finish {ambient 1 diffuse 0}
+        } // end of texture
+       scale 10000}
+// fog on the ground -----------------------
+fog { fog_type   2
+      distance   50
+      color      rgb&lt;1,1,1&gt;*0.8
+      fog_offset 0.1
+      fog_alt    1.5
+      turbulence 1.8
+    } //
+// ground ----------------------------------
+plane{ &lt;0,1,0>, 0
+       texture{
+          pigment{ color rgb&lt;0.22,0.45,0&gt;}
+          normal { bumps 0.75 scale 0.015 }
+          finish { phong 0.1 }
+       } // end of texture
+     } // end of plane
+//------------------------------------------
+// objects in scene ------------------------
+sphere{ &lt;0,0,0>, 0.75
+        translate&lt;0.85,1.1,0>
+        texture{
+          pigment{ color rgb&lt;0.9,0.55,0&gt;}
+          finish { phong 1 }
+        } // end of texture
+      } // end of sphere
+//------------------------------------- end </b></td></pre></tr></table>
+
+</td>
+<td valign="TOP" >
+<h6>
+<b>&lt;-Kommentare zu Version,<br>
+&nbsp; &nbsp; &nbsp;Titel, Autor, Datum<br>
+&lt;- Versionseinstellung,<br>
+&nbsp; &nbsp;  mit evtl. Kontrastanpassung<br>
+&nbsp;<br>
+&lt;- Voreinstellungen (default)<br>
+&nbsp; &nbsp; &nbsp;f&uuml;r indirekte/direkte Beleuchtung<br>
+&lt;- Einbindung von Dateien mit <br>
+&nbsp; &nbsp; &nbsp;vorgefertigten Farb-<br>
+&nbsp; &nbsp; &nbsp;und Textur-Definitionen<br>
+&nbsp;<br>
+&lt;- Standpunkt des Betrachters<br>
+&lt;- Punkt auf den man schaut<br>
+&lt;- Seitenverh&auml;ltnis (aspect ratio)<br>
+&lt;- Kamerawinkel<br>
+&nbsp;<br>
+&lt;-"Es werde Licht ... "<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&lt;- Es folgen die Objekte, die<br>
+&nbsp; diese Welt ausmachen:<br>
+<br>
+&nbsp; "sky" die Himmelskugel <br>
+<br>
+&nbsp; "ground" der Erdboden<br>
+<br>
+&nbsp; "fog" der Bodennebel<br>
+&nbsp;<br>
+&nbsp; und die Objekte in dieser Welt:<br>
+&nbsp;  ... z.B. eine schwebende<br>
+&nbsp; dottergelbe Kugel<br>
+<br>
+<br>
+<br>
+
+Und so sieht diese Welt aus: </b><br>
+<br>
+ <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><img src="im/Minimal.jpg" width="320" height="240" ></td></tr></table>
+
+ <p align="center">Szenenbeschreibung f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="pov/Minimal.pov">Minimal.pov</a></p>
+
+<br>
+</td></h6>
+</tr>
+</table>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povkurs0.htm">Teil 0</a> |
+<a href="povkurs1.htm">Teil 1</a>  | <b><a href="povkurs2.htm">Teil 2</a> |
+<!--a href="povkurs3.htm"-->Teil 3</a>  | <a href="povkurs4.htm">Teil 4</a> |
+<a href="povkurs5.htm">Teil 5</a>  | <a href="povkurs6.htm">Teil 6</a> |
+<a href="povkurs7.htm">Teil 7</a>  | <a href="povkurs8.htm">Teil 8</a> |
+<a href="povkurs9.htm">Teil 9</a>  | <a href="povkursa.htm">Teil 10</a> |
+                                     <a href="povkursb.htm">Teil 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

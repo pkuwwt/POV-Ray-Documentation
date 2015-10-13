@@ -1,0 +1,37 @@
+//---------------------------------------------------------------------------- 
+//----------------------------------------------------------------------------
+#include "shapes_lo2/Two_Cylinder_Blob_1.inc"
+//----------------------------------------------------------------------------
+object{ Two_Cylinder_Blob_1 ( 0.0127, // Pitch, // distance of the 2 cylinders
+                              0.0009, // SD,    // slice thickness
+                              0.0051, // Cyl_R, // cylinder radius 
+                              0.0081, // Fillet_R , // fillet radius
+                              0.0022, // Axis_R, // < Cyl_R, 0=non
+                              0.0005, // Border_R, //  
+                            ) 
+
+        texture { pigment{ color rgb<1, 1,1>}
+                 // normal { bumps 0.15 scale 0.0005}
+                  finish { phong 1.0 reflection 0.10}
+                } // end of texture
+
+        scale<1,1,1>  rotate<0,0,0>  translate<0,0,0>  
+      } // end of sphere ----------------------------------- 
+ 
+object{ Two_Cylinder_Blob_1 ( 0.0127, // Pitch, // distance of the 2 cylinders
+                              0.0009*5, // SD,    // slice thickness
+                              0.0051, // Cyl_R, // cylinder radius 
+                              0.0081, // Fillet_R , // fillet radius
+                              0.0000, // Axis_R, // < Cyl_R, 0=non
+                              0.0005, // Border_R, //  
+                            ) 
+
+        texture { pigment{ color rgb<1, 1,1>}
+                 // normal { bumps 0.15 scale 0.0005}
+                  finish { phong 1.0 reflection 0.10}
+                } // end of texture
+
+        scale<1,1,1>  rotate<0,0,0>  translate<0,0,0.015>  
+      } // end of sphere ----------------------------------- 
+//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------ 

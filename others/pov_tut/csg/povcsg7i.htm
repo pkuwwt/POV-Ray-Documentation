@@ -1,0 +1,193 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray, povray, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, csg, Constructive Solid Geometry, boolean algebra, union, merge, intersection, difference, inverse">
+<meta name="description" content="tutorial on CSG - Constructive Solid Geometry with POV-Ray - part V">
+<title>csg tutorial - Constructive Solid Geometry with POV-Ray - part V</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg7e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povcsg7e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg7f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="povcsg7f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg7.htm"><font size="2">Deutsch </font></a>
+        <a href="povcsg7.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwni.htm">paggina download</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1i.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1i.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1i.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2i.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3i.htm">difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4i.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4i.htm">e invers</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg5i.htm">clipped_by</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg6i.htm">superfici</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg6i.htm">coincidenti</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg7i.htm"--><b>testure e CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Algebra Booleana con Solidi - parte VII</h5>
+<p align="justify">
+<b>Problemi che posonno comparire con testure strutturati come testure di legno e oggetti csg:</b> <br>
+Quando colleghiamo oggetti con &quot;union&quot;
+le parti differenti del'oggetto tengono le sue testure orginali.<br>
+Quando facciamo degli oggetti con &quot;difference&quot; e/ou &quot;intersection&quot;
+l'oggetto resultando avr&agrave; le testure degli oggetti usato per sottrarre dal'oggetto di base. <br>
+Se vogliamo ottenere una struttura di testura continuosa sulla superficie di un oggetto csg, poi
+appliciamo la testura doppo combinare le parti con &quot;union&quot;, &quot;difference&quot; ou
+&quot;intersection&quot;, per tutte gli elementi insieme.
+Questo non solo e pi&ugrave; facile ma anche garantisce la continuit&agrave; della testura strutturata.
+</p>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="3">
+   <tr>
+       <td>
+<b>Esempi:</b><br>
+<b>Testure di una &quot;difference&quot;</b>
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>difference{
+  box   { &lt;0,0,0&gt;,&lt;1,1,1&gt;
+         <b> texture{ My_YellowGreen } </b>
+        }
+  sphere{ &lt;0,0,0&gt;,0.5
+         <b> texture{ My_Yellow } </b>
+          translate&lt;1,1,0&gt;
+        }
+}// end of difference -------------</b></td></pre></tr></table>
+<b>Marezzatura interrotta </b>
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>difference{
+  box   { &lt;0,0,0&gt;,&lt;1,1,1&gt;
+         <b> texture{ My_Wood } </b>
+        }
+  sphere{ &lt;0,0,0&gt;,0.5
+         <b> texture{ My_Wood } </b>
+          translate&lt;1,1,0&gt;
+        }
+}// end of difference -------------</b></td></pre></tr></table>
+<b>Marezzatura Continuousa</b><br>Elementi senza testura,<br>Usando la testura comune alla fine.
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>difference{
+  box   { &lt;0,0,0&gt;,&lt;1,1,1&gt;
+        }
+  sphere{ &lt;0,0,0&gt;,0.5
+          translate&lt;1,1,0&gt;
+        }
+ <b> texture{ My_Wood } </b>
+}// end of difference -------------</b></td></pre></tr></table>
+<b>Marezzatura Continuousa</b>
+<br>Usando &quot;<b>cutaway_textures</b>&quot;, <br> La testura del oggetto di base e applicata.
+<table align="center" border="2" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><pre><b>difference{
+  box   { &lt;0,0,0&gt;,&lt;1,1,1&gt;
+          <b>texture{ My_Wood }</b>
+        }
+  sphere{ &lt;0,0,0&gt;,0.5
+          translate&lt;1,1,0&gt;
+        }
+<b>cutaway_textures</b>
+}// end of difference -------------</b></td></pre></tr></table>
+      </td>
+        <td valign="top">
+<br>
+<br>
+           <table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_ds.jpg" width="200" height="200"></td></tr></table>
+              Testure di una &quot;difference&quot;
+               <br>&nbsp;
+               <br>
+           <table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_du.jpg" width="200" height="200"></td></tr></table>
+              Marezzatura interrotta
+               <br>&nbsp;
+               <br>
+           <table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_dt.jpg" width="200" height="200"></td></tr></table>
+             Marezzatura continuousa
+        </td>
+    </tr>
+</table>
+</div>
+</p>
+
+</td></tr></table> <!-- global-->
+
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1i.htm">CSG</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg2i.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3i.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4i.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5i.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6i.htm">superfici coincidenti</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg7i.htm"-->testure</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

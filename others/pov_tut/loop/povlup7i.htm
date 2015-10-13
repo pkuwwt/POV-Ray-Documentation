@@ -1,0 +1,323 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="POV-Ray tutorials - While loops and POV-Ray - Il ciclo for et il ciclo while -  una comparazione">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, rendering, 3d graphica, computer graphica, grafica, tutorial, descrizioni, esempi, mathematica, ciclo while, while loop, ciclo for, for loop">
+<title>Cicli e POV-Ray - Il ciclo for et il ciclo while -  una comparazione</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr> di <nobr>Friedrich A. Lohm&uuml;ller,</nobr>
+<br>&nbsp;
+<br>
+  <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Cicli in POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+        <a href="povlup7e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povlup7e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povlup7f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="povlup7f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povlup7d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="povlup7d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0i.htm"><font size="3">Cicli con POV-Ray</font></b></a><br>
+<b>&gt;</b>1.  <!--a href="povlup7i.htm"--><b>For e While</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <!--a href="povlup7i.htm"--><b>Comparazione</b></a><br>
+ &nbsp; 2.  <a href="povlup1i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup1i.htm">lineari</b></a><br>
+ &nbsp; 3.  <a href="povlup2i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup2i.htm">circolari</b></a><br>
+ &nbsp; 4.  <a href="povlup3i.htm">Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4i.htm">Viti e spirali</b></a><br>
+ &nbsp; 6.  <a href="povlup5i.htm">Spirali</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5i.htm">intrecciate</b></a><br>
+ &nbsp; 7.  <a href="povlup6i.htm">Chiocciole</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6i.htm">e ammoniti</b></a><br>
+ &nbsp; 8.  <a href="povlup9i.htm" >Spirali sferiche 1</b></a><br>
+ &nbsp; 9.  <a href="povlup10i.htm">Spirali sferiche 2</b></a><br>
+ &nbsp;10.  <a href="povlup8i.htm">Spirali Fibonacci</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwni.htm">Download</b></a><br>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<a name="start"></a>
+<h2 align="center">Il ciclo et il ciclo while -  una comparazione</h2>
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="5" width="95%">
+<tr>
+ <td colspan="2">
+  <p align="justify">Il <b>ciclo for</b> &egrave; implementato in
+   <nobr><font color="#9F0000">POV-Ray 3.7</font></nobr>
+   <font size="2">(a partire da beta 37)</font>.<br>
+  <font size="-1">(Attenzione: Il ciclo for non funziona con version 3.6.2 !)</font><br>
+  Qui una comparazione di questi tipi simili di cicli:
+  <table border="0" cellpadding="5" cellspacing="5" width="95%"><!--sub table-->
+  <tr>
+  <td colspan="1" width="36">
+  <img src="im/warn.gif" border="0" width="32" height="30">
+  </td>
+  <td colspan="1">
+  <p align="justify"><font size="-2"><b>Per evitare collisioni con denominazioni installate e parole riservate di POV-Ray,<br>
+  si &egrave; racommandato assolutamente di usare solo parole con una maiuscola come lettera iniziale,</b><br>
+  per tutte denominazioni di variabili e oggetti dichiarrate degli utenti.<br>
+  Si deve tenere conto che <b>x = &lt;1,0,0&gt;</b> &egrave; una parola riservata, perci&ograve; invece si usa per es. &quot;X&quot; .</font>
+  </p>
+  </td>
+  </tr></table> <!--sub table-->
+  </p>
+</td>
+</tr>
+
+<tr>
+ <td valign="top">
+  <p align="justify"><b>Sintassi  'Ciclo While' <font size="-1">(while loop)</font>:</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#local Identifier = Start;
+#while (Identifier &lt;= End)
+  //... do something
+  // depending on value of Identifier.
+  #local Identifier = Identifier + Step;
+#end // ------------- end of loop ----</b></td></pre></p>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <p align="justify"><b>Sintassi  'Ciclo For' <font size="-1">(for loop)</font>:</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#for (Identifier, Start, End [, Step])
+  //... do something
+  // depending on value of Identifier.
+#end // ------------- end of loop ----</b></td></pre></p>
+</tr>
+</table>
+<font size="-1">Nota: 'Step' (la distanza dei passi) &egrave; optional!<br>
+ (default Step=1)</font><br>
+ </td>
+</tr>
+
+<tr>
+ <td valign="top">
+  <p align="justify"><b>Esempio 'Ciclo While':</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>union{ //-------------------------------
+ #local Cntr = 0; // start
+ // while loop
+ #while ( Cntr &lt;= 5 )
+
+   object{ MyObject
+           translate&lt;0,0,Cntr*2&gt;
+         } // end of object
+
+ #local Cntr = Cntr + 1; // next
+ #end // --------<b></b> end of #while loop
+
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0,0&gt;
+} // end of union ----------------------</b></td></pre></p>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <p align="justify"><b>Esempio 'Ciclo For':</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>union{ //-----------------------------
+
+ //<font size="-1">#for (Identifier, Start, End [, Step])</font>
+ #for (Cntr, 0, 5, 1)
+
+   object{ MyObject
+           translate&lt;0,0,Cntr*2&gt;
+         } // end of object
+
+ #end // ----------- end of #for loop
+
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0,0&gt;
+} // end of union --------------------</b></td></pre></p>
+ </td>
+</tr>
+</table>
+<font size="-2">Nota: 5 passi = 6 impronte del piede! </font>
+ </td>
+</tr>
+
+<tr>
+ <td colspan="2"><font size="-2"><i>Per la dichiarazione di 'MyObject' q.v. il file della scena! </i></font>
+<br><h5 align="center">
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/for_loop_linear_.jpg" width="320" height="240"></td>
+       </tr></table>
+
+    File della scena per <nobr>POV-Ray:</nobr> <a href="pov/for_loop_linear_0.pov">.pov</a> o:
+    <a href="pov/for_loop_linear_0.txt">.txt</a><br>
+</h5>
+<br>
+ </td>
+</tr>
+<tr>
+ <td colspan="2" valign="top">
+ La <b>lunghezza dei passi</b> ('step') pu&ograve; essere ogni numero reale!<br>
+ Anche valori negativi di 'step' sono permessi.<br>
+ I cicli di qui sopra si pu&ograve; anche fare in questo modo:</td></tr>
+<tr>
+ <td colspan="1" valign="top"><font size="-1"><i>while loop:</i></font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+ <pre><b> #local Cntr = 0; // start
+ #while ( Cntr &lt;= 10 )
+   object{ MyObject
+           translate&lt;0,0, Cntr &gt;
+         } // end of object
+ #local Cntr = Cntr + 2; // next
+ #end // --------<b></b> end of #while loop</b></td></pre></p>
+ </td>
+</tr>
+</table>
+
+ </td>
+ <td colspan="1" valign="top"><font size="-1"><i>for loop:</i></font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b> #for (Cntr, 0, 10, 2)//<font size="-1">..,Start,End,Step</font>
+   object{ MyObject
+           translate&lt;0,0, Cntr &gt;
+         } // end of object
+ #end // ----------- end of #for loop</b></td></pre></p>
+ </td>
+</tr>
+</table>
+
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+<hr>
+ <img src="im/warn.gif" border="0" width="32" height="30"> <b>Attenzione: &nbsp; </b>
+  <font size="+1"><b>Evitare cicli infini &egrave; un problem&agrave; del utente!</b></font><br>
+  Si deve assicurare che il ciclo scritto si ferma effettivamente a un numero reale di passi!<br>
+  Altrimenti POV-Ray fara il parsing del ciclo senza fine con riempire il RAM fino all'orlo con dati inutili!<br>
+  Si vede l'esempio seguente di un ciclo che non si finisce mai<br>
+  <font size="-1">(almeno se non a si preme il bottone rosso di 'Stop')</font>:
+ </td>
+</tr>
+<tr>
+ <td colspan="1"><font size="-1">Un ciclo while con la distanza dei passi falsa:</font>
+ <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#local Cntr = 0;  // start
+#local End  = 5;  // end
+#local Step =<u><font color="#F00000"> - </font></u>1; // step <font color="#F00000">!errore!!</font>
+ // while loop start
+ #while ( Cntr &lt;= End )
+   object{ MyObject
+           translate&lt;0,0,Cntr*2&gt;}
+ #local Cntr = Cntr + Step; // next
+ #end // -------- end of while loop
+</b></td></pre></p>
+ </td>
+</tr>
+</table><font size="-2">Questo ciclo while non si finisce mai!</font>
+</td>
+ <td colspan="1">
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+<font size="-1">Con un ciclo for questa no &egrave; cosi dramatico:</font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b> #for (Cntr, 0, 5, -1)
+    // do something
+ #end // ------ end of #for loop</b></td></pre></p>
+ </td>
+</tr>
+</table><font size="-2">Questo 'nonsense for loop' causa soltanto un dolce fare niente!</font>
+
+
+ </td>
+</tr>
+</table>
+</div>
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0i.htm">Index</a> |
+     <!--a href="povlup7i.htm"-->Cicli for e while</a> |
+     <a href="povlup1i.htm">lineare</a> |
+     <a href="povlup2i.htm">circolare</a> |
+     <a href="povlup3i.htm">Moebius</a> |
+     <a href="povlup4i.htm">Viti et Spirali</a> |
+     <a href="povlup5i.htm">intrecciato</a> |
+     <a href="povlup6i.htm">Chiocciole</a> |
+     <a href="povlup9i.htm">Sferico 1</a> |
+     <a href="povlup10i.htm">Sferico 2</a> |
+     <a href="povlup8i.htm">Fibonnacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+  <td  align="right">&nbsp;</td>
+ <td align="right"  width="25%">&nbsp;</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+//-------------------------------------------------------------------------------------// 
+#declare Glass_D         = 0.002; 
+#declare Base_Height     = 0.25; 
+#declare Base_Half_Width = 0.12; 
+#declare Neck_Length     = 0.05;
+#declare Neck_Radius     = 0.03;
+#declare Fillet_Radius   = 0.10; 
+#declare Base_Border_Radius = 0.025; 
+//-------------------------------------------------------------------------------------// 
+#include "Erlenmeyer_Flask_1.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Erlenmeyer_Flask_1(  Glass_D, // 
+                             Base_Height, // Base_H, // 
+                             Base_Half_Width, // Base_Half_Width, //  
+                             Neck_Length, // Neck_Len, // 
+                             
+                             Neck_Radius, // Neck_R, // 
+                             Fillet_Radius, // Fillet_R, // 
+                             Base_Border_Radius, // Base_Border_R,//  
+                             
+                             1, // Merge_On, // 1 for transparent materials 
+                          ) //-------------------------
+ 
+        material{   //-----------------------------------------------------------
+         texture { pigment{ rgbf <0.98, 0.98, 0.98, 0.9> }
+                   normal { bumps 0.15 scale 0.03} 
+                   finish { diffuse 0.1 reflection 0.2  
+                            specular 0.8 roughness 0.0003 phong 1 phong_size 400}
+                 } // end of texture -------------------------------------------
+         interior{ ior 1.5 caustics 0.5
+                 } // end of interior ------------------------------------------
+        } // end of material ----------------------------------------------------
+
+
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.0001, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

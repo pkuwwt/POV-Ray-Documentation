@@ -1,0 +1,314 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, POV-Ray Objects, Fertige Objekte f&uuml;r POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Beispiele</b></font> -
+      <font size="-1"><b>Die Erstellung von Objekten f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="tec_710e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tec_710e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tec_710i.htm"><font size="2">Italiano</font></a>
+        <a href="tec_710i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_710f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tec_710f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table><a name="start"></a><hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="sam_000d.htm">POV-Ray Beispiele</b></a><br>
+ &nbsp; &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; -  <a href="sam_300d.htm">Geometrie</b></a><br>
+&nbsp; -  <a href="sam_100d.htm">Architektur</b></a><br>
+&nbsp; -  <a href="tec_000d.htm">Technik</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_750d.htm">Leiter</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_700d.htm">Masten</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="tec_710d.htm"--><b>Gel&auml;nder</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_720d.htm">Br&uuml;cke</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_730d.htm">R&ouml;hren</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_731d.htm">Rohrabzweigung</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_732d.htm">Rohr-Absperrhahn</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_400d.htm">Kette</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_450d.htm">Drahtspule</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_500d.htm">Torpedo</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_600d.htm">Cruise Missile</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_900d.htm">Rakete</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_190d.htm">Rad</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_100d.htm">Truck</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_850d.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_800d.htm">Flugzeug</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_550d.htm">Kanu</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_050d.htm">Gitarrenbody</b></a><br>
+ <nobr>&nbsp; &nbsp; -  <a href="tec_010d.htm">7-Segment Display</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="tec_020d.htm">Flachbandkabel</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_030d.htm">Kabelbaum</b></a><br>
+<!--&nbsp; &nbsp; -  <a href="sam_000d.htm">Schiffe</b></a><br>
+    &nbsp; &nbsp; -  <a href="sam_000d.htm">Eisenbahn</b></a><br>-->
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2" align="left"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+<table cellpadding="5" width="80%" align="center">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="javascript:ShowImage('railing/railing_0im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''">
+              <img src="railing/railing_1c_2s.jpg" width="160" height="120" border="0"
+                   alt="Railing_1" title="Railing_1"></a></td>
+    </tr></table><br>
+
+  </td>
+ <td align="left" valign="top">
+  <p align="justify"><font size="6"><b>Gel&auml;nder</b></font><br>
+ <h6>Objekte:&nbsp; cylinder, sphere.<br>
+     Methoden: #local, #declare, union, #macro, #while loops.</h6>
+ <h6 align="justify">This example shows how to make a railing i.e. for bridges declared as a macro.
+   The vertical supports are distributed in an equidistant way.
+   It is possible to use variable sizes for the dimensions of the railing.
+  </td></h6>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+</table>
+
+<table cellpadding="10" width="90%" align="center">
+<tr>
+ <td valign="top">
+<p align="justify">
+<font size="+1"><b>The Construction in details:</b></font></b><br>&nbsp; </font><br>
+  <b>Step 1:</b> <font size="-1">First we declare a macro with <b>the basic variables</b> for the dimensions of the railing
+   and its default texture (To changee this texture, declare it before including the macro!).</font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#macro Railing_1( R_Len,// railing length in x
+                  R_H,  // railing height in y
+                  R_D,  // verticals ~distance
+                  R_R,  // railing main radius
+                  VSD,  // vertical subdivision
+                )//-----------------------------
+// default texture -----------------------------
+#ifndef( Railing_Texture_1 )
+#declare Railing_Texture_1 =
+  texture { pigment{ color rgb&lt;1,1,1&gt;*0.7}
+            normal { bumps 0.25 scale 0.35}
+            finish { phong 0.3 }
+          } // end of texture
+#end // ----------------------------------------
+// horizontal subdivision ----------------------
+#local NumV = int ( R_Len / R_D);
+#local VerticalsDistance = R_Len / NumV;
+// equidistant!
+//----------------------------------------------
+//----------------------------------------------
+union{
+ // horizontals
+ cylinder{ &lt;0,0,0&gt;,&lt;R_Len,0,0&gt;,R_R
+           translate&lt;0,R_H    ,0&gt;}
+ sphere{&lt;0,0,0&gt;,R_R translate&lt;    0,R_H,0&gt;}
+ sphere{&lt;0,0,0&gt;,R_R translate&lt;R_Len,R_H,0&gt;}
+ // vertical subdivision
+ #if (VSD &gt; 0)
+  #local Nr = 0; // start loop
+  #while (Nr &lt; VSD )
+   cylinder{ &lt;0,0,0&gt;,&lt;R_Len,0,0&gt;, R_R*1/2
+             translate&lt;0,Nr*R_H/(VSD),0&gt;}
+  #local Nr = Nr + 1;
+  #end // end of loop
+
+
+ #end
+
+ // verticals
+ #local Nr = 0;
+ #while (Nr &lt;= NumV)
+  cylinder{ &lt;0,0,0&gt;,&lt;0,R_H,0&gt;, R_R
+          translate&lt;Nr*VerticalsDistance,0,0&gt;}
+ #local Nr = Nr +1 ;
+ #end // end of loop
+ texture{ Railing_Texture_1 }
+} // end of union
+// ---------------------------------------------
+#end // ------------------------ // end of macro
+</b></td></pre></tr></table>
+
+  <b>Step 2:</b> <font size="-1">Now we move this railing definition in an <b>include file</b>,
+  than we can use this macro from any scene file as a <br>
+  new <nobr><b>ready-made object</b>.</nobr></font><br>
+  <font size="-2">This file should be saved either in the same directory like the POV-Ray scene file, in the POV-Ray include file directory
+ or in any include file directory with is mentioned as a Library_Path in the povray.ini file like:<br>
+ <b>Library_Path="C:\Users\MyFiles\MyPovrayFiles\My_include_files"</b></font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>// POV-Ray 3.7/3.6 include file "Railing_1.inc"
+// author: Friedrich A, Lohmueller, Jan-2011
+// homepage: http://www.f-lohmueller.de/
+// email: Friedrich.Lohmueller_aT_t-online.de
+//----------------------------------------------
+#ifndef( Railing_1_Inc_Temp)
+#declare Railing_1_Inc_Temp = version;
+#version 3.7; // 3.6;
+//--------------------------///////////////////
+// macro 'Railing_1'
+ //<i>ADD HERE THE MACRO FROM ABOVE !</i>
+
+// end of macro 'Railing_1'
+//--------------------------///////////////////
+/* sample:
+ //<i>ADD HERE A SAMPLE LIKE THE ONE BELOW !</i>
+*/ end sample
+//----------------------------------------------
+#version Railing_1_Inc_Temp;
+#end
+//------------------------- end of include file
+</b></td></pre></tr></table>
+</td>
+<td valign="top" align="center">
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ <table align="center" border="3" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="railing/railing_1c_3.jpg" width="320" height="240" alt="railing" title="railing"></td></tr>
+ </table><font size="-1"><b>The railing with variable subdivisions.</b></font>
+
+
+ <table align="center" border="3" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="railing/railing_1c_4.jpg" width="320" height="240" alt="railing" title="railing"></td></tr>
+ </table><font size="-1"><b>The railing with redeclared textures.</b></font>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ <table align="center" border="3" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="railing/railing_1c_1.jpg" width="320" height="240" alt="railing" title="railing"></td></tr>
+ </table><font size="-1"><b> The macro 'Railing_1'<br>
+                            from the include file 'Railing_1.inc'.</b><br><br>
+
+ Include file for POV-Ray:
+ <a href="railing/Railing_1.inc">&quot;Railing_1.inc&quot;</a><br>
+ and scene file for POV-Ray:
+ <a href="railing/railing_1_1.pov">&quot;railing_1_1.pov&quot;</a></font>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+ <b>Step 3:</b> <font size="-1">Then we call the macro as an object with the according dimensions:</font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>
+//------------------- optional texture -----------------------------------//
+/*
+#declare Railing_Texture_1 =
+  texture { pigment{ color rgb&lt;1,1,1&gt;*0.7}
+            normal { bumps 0.25 scale 0.35}
+            finish { phong 0.3 }
+          } // end of texture
+*/
+//------------------------------------------------------------------------//
+#include "Railing_1.inc"
+//------------------------------------------------------------------------//
+object{ Railing_1( 4.00,  // railing length in x // i.e. 5.00,
+                   0.90,  // railing height in y // i.e. 1.00,
+                   0.80,  // railing vertical ~distance // i.e. 1.00,
+                   0.025, // railing main radius   // i.e. 0.025,
+                   4, // vertical subdivision  // integer, i.e. 0, 1, 2, ...
+                 ) //-----------------------------------------------------//
+        scale &lt;1,1,1&gt;*1
+        rotate&lt;0,0,0&gt;
+        translate&lt;0.00,0.00, 0.00&gt;
+      } // end of object 'Railing_1'
+//------------------------------------------------------------------------//
+</b></td></pre></tr></table>
+
+</td>
+</tr>
+</table>
+
+
+&nbsp;<br>
+ <h5><b>Download of all ready-made POV-Ray objects</b><br>
+ zipped up (with all include files, example files and with <br>
+ the according Insert Menu Add-ons for comfortable use!)<br>
+ at the <a href="../objects/obj_000d.htm">POV-Ray Objects</b></a>
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

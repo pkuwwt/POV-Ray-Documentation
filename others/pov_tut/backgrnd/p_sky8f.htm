@@ -1,0 +1,221 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="fr">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="ciel r&eacute;aliste, nuages r&eacute;alistes, realistic sky, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, infographie 3D, computer graphics">
+<meta name="Description" content="Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray">
+
+<title>Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray - part 7 -  tutoriels, descriptions et exemples pour le ray tracer de POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <td align="right"><nobr>
+ <a href="p_sky8.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_sky8.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_sky8d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_sky8d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_sky8i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky8i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000f.htm">Ciel r&eacute;aliste</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_sky1f.htm">Ciel d'azur</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky2f.htm">Partiellement couvert</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3f.htm">Couches de nuages</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4f.htm">Liasse de plans</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky5f.htm">Nuages et ombres</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky6f.htm">Nuages par media</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70f.htm">Coucher du soleil</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7f.htm">Ciel parsem&eacute; d&eacute;toiles</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky8f.htm"--><b>Skydomes et Skymaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky9f.htm">Skyboxes et cubemaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky10f.htm">Environnement HDRI</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray</h2>
+<p align="center"><font size="-1"><a href="p_sky000f.htm">Contenu</a> |
+<a href="p_sky1f.htm">1</a> | <a href="p_sky2f.htm">2</a> |
+<a href="p_sky3f.htm">3</a> | <a href="p_sky4f.htm">4</a> |
+<a href="p_sky5f.htm">5</a> | <a href="p_sky6f.htm">6</a> |
+<a href="p_sky70f.htm">7.0</a> | <a href="p_sky7f.htm">7.1</a> | <!--a href="p_sky8f.htm"-->8</a> |
+<a href="p_sky9f.htm">9</a> | <a href="p_sky10f.htm">10</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" cellspacing="10">
+<tr><td valign="top">
+    <h3 align="left"><b>Spherical Environment Mapping - <br>
+    La projection sph&eacute;rique de l'environnement</b><br>
+      <font size="-1"><b>Skydomes et Skymaps avec des images de panorama &agrave; 360&deg;.</b></font></h3>
+    <h5 align="justify">Un <b>skydome</b> est une h&eacute;misph&egrave;re ou sph&egrave;re (si nous voulons simuler l'espace)
+     avec une texture d'un image de panorama &agrave; 360&deg; du ciel (&quot;skymap&quot;) projet&eacute;e (&quot;mapped&quot;) sur
+    la face interne de cette h&eacute;misph&egrave;re ou sph&egrave;re.
+    Nous pouvons r&eacute;aliser cela en POV-Ray avec <b>image_map et sky_sphere</b>.<br>
+<br>
+    Pour utiliser un <b>photo de panorama &agrave; 360&deg; </b> pour une skymap dans un skydome
+    <nobr>(avec POV-Ray 3.6/3.7)</nobr> nous avons besoin de corriger le gamma de l'image ou photo
+    avec la macro suivante.
+    </h5>
+<br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// Macro pour corriger les images
+// pour image_map avec assumed_gamma = 1.0 ;
+#macro Correct_Pigment_Gamma(Orig_Pig, New_G)
+  #local Correct_Pig_fn =
+      function{ pigment {Orig_Pig} }
+  pigment{ average pigment_map{
+   [function{ pow(Correct_Pig_fn(x,y,z).x, New_G)}
+               color_map{[0 rgb 0][1 rgb&lt;3,0,0&gt;]}]
+   [function{ pow(Correct_Pig_fn(x,y,z).y, New_G)}
+               color_map{[0 rgb 0][1 rgb&lt;0,3,0&gt;]}]
+   [function{ pow(Correct_Pig_fn(x,y,z).z, New_G)}
+               color_map{[0 rgb 0][1 rgb&lt;0,0,3&gt;]}]
+   }}
+#end //
+// "image_map" avec gamma corrigé:
+//    Correct_Pigment_Gamma(
+//    pigment{ image_map{ jpeg "colors.jpg"}}
+//    , Correct_Gamma)
+//------------------------------------------------
+sky_sphere{
+   Correct_Pigment_Gamma( // gamma correction
+     pigment{
+     image_map{ jpeg "sky_map_p_04_5200x1300.jpg"
+                map_type 2    //  cylindrical
+                interpolate 2 //  bilinear
+                once //
+              } //  end of image_map
+      scale&lt;1,1.02,1&gt; rotate&lt;0,0.00,0&gt;
+    } // end of pigment
+    , 2.2) //, New_Gamma
+} // end of sky_sphere --------------------</b></td></pre></tr></table></h5>
+
+<h5>On peut trouver plus des photos de panorama &agrave; 360&deg; de ciels ici : <br>
+<a href="http://blenderartists.org/forum/showthread?t=24038">Free high res skymaps</a>
+ de M@dcow aux Blender Artists Forums (en).</td>
+   <td>
+    <h6 align="center">
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/Demo_sky_map.jpg" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="Sky_map" titel="Sky_map"></a></td>
+     </tr></table>Un image &agrave; 360&deg; cylindriquement &quot;mapped&quot; sur une sph&egrave;re.<br>
+
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/Test_sky_map_p_04u.jpg" width="320" height="320" border="0" hspace="0" vspace="0"
+             alt="180&deg; look up to the zenit" titel="180&deg; look up to the zenit"></a></td>
+     </tr></table>Une vue &agrave; 180&deg; au z&eacute;nith du ciel.<br>
+
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/Test_sky_map_p_04.jpg" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="Sample scene skymap" title="Sample scene skymap"></a></td>
+     </tr></table>Un sc&egrave;ne d'exemple avec skymap &quot;mapped&quot; sur la sky_sphere.<br>
+     <font size="-1">Description de cette sc&egrave;ne pour POV-Ray<br>
+     <a href="pov/Test_sky_map_p_04_5200x1300.txt">Test_sky_map_p_04_5200x1300.txt</a> ou<br>
+     <a href="pov/Test_sky_map_p_04_5200x1300.pov">Test_sky_map_p_04_5200x1300.pov</a></font>
+
+   </td></h6>
+</tr>
+<tr>
+ <td colspan="2">
+    <h5 align="center">
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><a href="im/sky_map_p_04_5200x1300.jpg" target="_new">
+             <img src="im/sky_map_p_04_700x175.jpg" width="700" height="175" border="0" hspace="0" vspace="0"
+             alt="sky_map_p_04_700x175.jpg" title="Download of this skymap in 5200x1300 pixel (1.1 MB)"></a></td>
+     </tr></table>
+   Un image de panorama &agrave; 360&deg; d'un ciel pour une skymap sur la sky_sphere en POV-Ray.<br>
+    <font size="-1">T&eacute;l&eacute;chargement de cette skymap en 5200x1300 pixel (1.1 MB) ici: </font>
+        <a href="im/sky_map_p_04_5200x1300.jpg" target="_new">sky_map_p_04_5200x1300.jpg</a></font></h5>
+     <br>
+   </td></tr>
+<tr><td colspan="2">
+<p align="right"><font size="-1"><a href="p_sky000f.htm">Contenu</a> |
+<a href="p_sky1f.htm">1</a> | <a href="p_sky2f.htm">2</a> |
+<a href="p_sky3f.htm">3</a> | <a href="p_sky4f.htm">4</a> |
+<a href="p_sky5f.htm">5</a> | <a href="p_sky6f.htm">6</a> |
+<a href="p_sky70f.htm">7.0</a> | <a href="p_sky7f.htm">7.1</a> | <!--a href="p_sky8f.htm"-->8</a> |
+<a href="p_sky9f.htm">9</a> | <a href="p_sky10f.htm">10</a></b></font></p>
+
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, POV-Ray Details">
+<meta name="description" content="tutorial on POV-Ray Details">
+<title>POV-Ray Details</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>POV-Ray Details</b></font><br>
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="pov_000i.htm"><font size="2">Italiano </font></a>
+        <a href="pov_000i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov_000f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="pov_000f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="pov_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="pov_000d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <!--a href="pov_000e.htm"--><b>POV-Ray Details</b></a><br>
+ &nbsp;&nbsp;&nbsp;<b>&gt;</b> <!--a href="pov_000e.htm"--><b>What's Where?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_100e.htm">'povray.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_200e.htm">'quickres.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_300e.htm">Output directives</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_400e.htm">Command Line</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="inc_000e.htm">A short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000e.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center">What's Where?</h2>
+<p align="justify">Some details on the <b>components of</b> the raytracing program <br>
+ <b>'POV-Ray for Windows version 3.6.2 / 3.7' </b> on Windows7 or Windows Vista.<br>
+For exploring the following details it's useful to see in Windows Explorer all file extentions<font size="-1"> (also the extentions of 'known file types').</font><br>
+<font size="-1">(If you don't see all types of files in your Explorer use 'Extras' -&gt; 'File options' -> 'Hide extensions of known file types' and remove the small hook
+at the according item there).</font><br>
+<br>
+<font size="+1"><b>The Program Locations</b></font><br>
+<br>
+<font size="+1"><b>1) Program Files:</b></font><br>
+<font size="-1">Base directory (Win7; Vista): </font><br>
+For POV-Ray 3.6.2:<br>
+ &nbsp; <b>C:\Users\USERNAME\AppData\Local\Programs\POV-Ray\3.6\</b><br>
+For POV-Ray 3.7: <br>
+ &nbsp; <b>C:\Programs\POV-Ray\v3.7 RC6\</b><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>bin\</b><br>
+<nobr>&nbsp; &nbsp; &nbsp; <font size="-1">The program:</font> <b>pvengine64.exe</b> <font size="-1">(for 64 bit systems) or </font> <b>pvengine32.exe</b> <font size="-1">(for 32 bit systems)</font></nobr><br>
+&nbsp; &nbsp; &nbsp; <font size="-1">and some additional components like</font> <b>cmedit64.dll</b>, <b>povcmax64.dll</b> <font size="-1">(resp. 32 bit) etc.</font><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>help\</b>:
+&nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">The files of the POV-Ray Windows help system.</font><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>sounds\</b>:
+&nbsp; <font size="-1">The files for the POV-Ray Editor sounds.</font><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>tiles\</b>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">The files for the POV-Ray Editor backgrounds.</font><br>
+<br>
+
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/ProgramLocations0.jpg" alt="POV-Ray tools" title="POV-Ray tools"
+           border="0" hspace="0" vspace="0" width="470" height="368"></a>
+      </td>
+  </tr></table>
+<font size="-1">Program binary locations for POV-Ray 3.7 (for 3.62 like below!)<br><br>
+
+Include files, ini files, Insert Menu and sample scenes locations for POV-Ray:</font>
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/ProgramLocations1.jpg" alt="POV-Ray tools" title="POV-Ray tools"
+           border="0" hspace="0" vspace="0" width="495" height="605"></a>
+      </td>
+  </tr></table>
+</div>
+
+<font size="+1"><b>2) Include, Ini, Insert Menu and Sample Scene Files:</b></font><br>
+<font size="-1">User directory (Win7; Vista): </font><br>
+For POV-Ray 3.6.2:<br>
+ &nbsp; <b>C:\Users\USERNAME\Documents\POV-Ray\3.6\</b><br>
+For POV-Ray 3.7:<br>
+ &nbsp; <b>C:\Users\USERNAME\Documents\POV-Ray\v3.7\</b><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>include\ :</b>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">Include files delivered with POV-Ray. (colors.inc, shapes.inc, ...) </font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<font size="-1"><b>Don't change any original include file!</b></font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<font size="-1"><b>Keep the original include files alive!</b></font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<font size="-1"><b>Otherwise sample files may not work any more!</b></font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<font size="-1">You may add here your own self-made include files, but there are better solutions.</b></font><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>ini\ :</b>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">Program ini files of POV-Ray. (povray.ini, quickres.ini, ...) </font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">'<a href="pov_100e.htm">povray.ini</a>': contains the Library_Path for include files,</font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">the Output_File_Name (where the image is stored) and others.</font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">'<a href="pov_200e.htm">quickres.ini</a>':  contains the resolutions which can be choosed by </font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">the left upper resolution field in the POV-Ray editor.</font><br>
+
+&nbsp; <font size="-1">subdirecory:</font> <b>Insert Menu\ :</b>
+&nbsp; <font size="-1">Here we can add out own insert Menu items. It's easy to see how!</font><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>scenes\ :</b>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-1">Sample demo scene files delivered with POV-Ray.</font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<font size="-1">Interesting for advanced users! <b>But:</b> </font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<font size="-1">Before playing with them:</font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<font size="-1"><nobr>Don't forget to <b>copy them to your own scene file directory</b>,</nobr></font><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<font size="-1">to <b>keep the original sample files alive!</b></font><br>
+
+<br>
+<font size="+1"><b>3) Your own Scene Files and Include files:</b></font><br>
+Our own POV-Ray scene files are working from any directory in the computer.<br>
+For our own include files we have to tell POV-Ray in '<a href="pov_100e.htm">povray.ini</a>' in which  Library_Path to search for!<br>
+It's recommanded to save the own POV-Ray scene files and include files and images in a special directory like '<b>povray_scenes</b>'
+and not to mix it up with the original POV-Ray user files.
+<br>
+<br>
+
+</div>
+
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

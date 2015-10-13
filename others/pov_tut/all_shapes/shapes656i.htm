@@ -1,0 +1,246 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes656e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes656e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes656f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes656f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes656d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes656d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp;&nbsp; Indice<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+<nobr><a href="shapes200i.htm">Oggetti con macros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+<a href="shapes000i.htm">Altri Oggetti</b></a><br>
+<a href="shapes666i.htm">Forme Non-CSG</b></a><br>
+<br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes650i.htm">height_field con immagini</b></a></nobr><br>
+&nbsp; -  <a href="shapes652i.htm">height_field rastered</b></a><br>
+<nobr>&nbsp; -  <a href="shapes654i.htm">height_field con funzioni</b></a></nobr><br>
+&nbsp; -  <a href="shapes655i.htm">height_field massivo</b></a><br>
+<nobr>&nbsp; &gt;<!--a href="shapes656i.htm"--><b>HF - monti e valli</a></nobr><br>
+&nbsp; -  <a href="shapes710i.htm">HF_Square</b></a><br>
+&nbsp; -  <a href="shapes720i.htm">HF_Sphere</b></a><br>
+&nbsp; -  <a href="shapes730i.htm">HF_Cylinder</b></a><br>
+&nbsp; -  <a href="shapes740i.htm">HF_Torus</b></a><br>
+<br>
+<nobr><a href="shapes900i.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table width="70%" align="center" border="0"><tr><td><!-- global -->
+     <table align="center" border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/HF_by_function_32bim.htm')"
+            <a href="javascript:ShowImage('im/HF_by_function_32bim.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/HF_by_function_32b.jpg" border="0" width="160"  height="120"
+                   alt="Esempio &quot; height_field &quot; con fonzioni" title="Esempio &quot; height_field &quot; con fonzioni"></a></td>
+                   </tr></table>
+</td>
+<td><h2>&quot;height_field&quot; per monti e per valli:</h2>
+<h3 align="center">Comme si crea<br> un paesaggio con monti et valli<br> con un &quot; height_field &quot; con fonzioni</h3>
+</td>
+</tr>
+</table>
+<table width="80%" align="center" border="0" cellpadding="10"><tr><td><!-- global -->
+<tr><td colspan="2">
+<hr>
+</td></tr>
+<tr><td  valign="top" rowspan="4">
+
+ <h4 align="left" ><a name="Raster"></a><b>Un paesaggio con &quot;height_field&quot; con monti et valli:</b></h4>
+ <p align="justify">Se mettiamo una montagne di &quot;height_field&quot; solo su il piano di base,
+  possiamo solo vedere le cime dei monti che si sollevano sopra il terreno paitto, le valli sono assente !!!<br>
+  Sembra che le valli sono ripieno con polvere di sabbia mobile come nel deserto! <br>
+  &nbsp;<br>
+  Se vogliamo vedere anche le valli, dobbiamo essere sicuro che non c'&egrave; tanta di polvere di sabbia mobile qui intorno.
+  Dobbiamo passare l'aspirapolvere attraverso questa scena !-)  <br>
+
+  Abbiamo successo in questa cosa con 3 passi nel seguente spiegati con 3 immagini qui a destra:<br>
+
+     <h6 align="center">
+ <table border="4"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+   <tr><td>
+ <pre><b>#declare HF_Res_X = 1024; // number of points in x
+#declare HF_Res_Z = 1024; // number of points in z
+#declare SF =
+ function {
+   pigment {
+   spherical
+     color_map {
+       [0.0, color 0.0 ]
+       [0.5, color 0.8 ]
+       [1.0, color 1.0 ]
+     } // end color_map
+    scale &lt;0.5,1,0.5&gt;
+    translate&lt;0.5,0,0.5&gt;
+   } // end pigment
+ } // end function
+
+#declare HF_Function   =
+ function(x, y, z)
+  {1+f_snoise3d(x*10,y*10,z*10)*0.3 * SF(x,y,z).gray}
+
+#declare HF_Amplitude    = 0.5;
+#declare D = 0.00001; // just a little bit!
+
+union{ // height_field + ground
+ intersection{
+  height_field{
+   function  HF_Res_X, HF_Res_Z
+   { HF_Function(x,0,y) * HF_Amplitude }
+   //smooth
+    translate&lt;0,D-0.4 ,0&gt;
+   } // end HF
+  box{ &lt;D,-0.10,D>,&lt;1-D,0.2-D,1-D&gt;
+   } // end box
+  translate&lt;0,-0.10,0&gt;
+ } // end intersection
+
+difference{ // ground minus hole for height_field
+ plane { &lt;0,1,0&gt;, 0 }   // plane of the ground
+ box{ &lt;D,-0.10,D&gt;,&lt;1-D,0.2-D,1-D&gt; }
+ } // end difference
+
+ scale &lt;1,1,1&gt;
+ translate&lt;0,0,0&gt;
+ texture { pigment{ color rgb&lt;1,0.95,0.8&gt;}
+           normal { bumps 0.75 scale 0.0025 }
+           finish { phong 0.1 }
+         }// end texture
+
+
+}// end of  height_field + ground ------------- </td></pre></b>
+    </tr></table>
+
+ </td></h6>
+ <td valign="top">
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_33.jpg" border="0" width="320" height="240"></a></td></tr></table>
+            &quot;height_field&quot; solo su piano di base :<br>
+            Non ci sono le valli !!!
+ </td></h6></tr>
+ <tr><td valign="top">
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_30.jpg" border="0" width="320" height="240"></a></td></tr></table>
+             &quot;height_field&quot; massivo con la funzione<br>
+             function{1+f_snoise3d(x*10,y*10,z*10)*0.3 <br>
+             multiplicato con la funzione di motivo &quot;boxed&quot;<br>
+             et &quot;intersection&quot; con &quot;box&quot;
+ </td></h6></tr>
+ <tr><td valign="top">
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_31.jpg" border="0" width="320" height="240"></a></td></tr></table>
+            Dapprima si deve cavare un buco nel piano di base!
+ </td></h6></tr>
+ <tr><td valign="top">
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/HF_by_function_32.jpg" border="0" width="320" height="240"></a></td></tr></table>
+            Poi dobbiamo m&eacute;ttre il &quot;height_field&quot; massivo nel buco!<br>
+            E poi si pu&ograve; vedere non solo i monti, ma anche le valli!<br>
+            &nbsp;<br>
+    Descrizione della scena per <nobr>POV-Ray:</nobr><br>
+     <a href="pov/HF_by_function_32.txt">&quot;HF_by_function_32.txt&quot;</a> o <br>
+     <a href="pov/HF_by_function_32.pov">&quot;HF_by_function_32.pov&quot;</a></h6></td>
+   </td></h6></tr>
+
+
+</table>
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr>
+</table>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

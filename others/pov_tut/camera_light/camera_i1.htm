@@ -1,0 +1,420 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="I Tipi di Sorgenti di Luce in POV-Ray, tutorial POV-Ray, descrizione di scene di POV-Ray, raytracing, povray, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, descrizione raytracing, grafica 3d">
+<meta name="description" content="Camera, Sorgenti di Luce e le Specialit&agrave; in POV-Ray, un tutorial POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Tipi di Camera in POV-Ray</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030"
+      link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+  <h6><nobr>Introduzione al linguaggio di descrizione di scene del raytracer POV-Ray</nobr>
+    <nobr> &nbsp; &nbsp; &nbsp; &nbsp;</nobr><br>
+    di Friedrich A. Lohm&uuml;ller <br>
+ <div align="center"><font size="+1">&nbsp; &nbsp; &nbsp; &nbsp;<b>Camera, Sorgenti di Luce e dettagli in POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="camera_e1.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="camera_e1.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="camera_f1.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="camera_f1.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="camera_d1.htm"><font size="2">Deutsch</font></a>
+        <a href="camera_d1.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br></font>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="camlit_i1.htm">Camera + Luce</b></a><font size="2"><br>
+ &nbsp;&nbsp;</font><a href="camlit_i1.htm">in POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="camlit_i1.htm">Indice del contenuto</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_i1.htm">Tipi di sorgenti di luce</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#point_light">puntiforme</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#Spotlight">spotlight</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#cylindrial">cylindrico</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#parallel">parallel</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#area">area_light</b></a>, ombre diffuse</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_i2.htm">Luce - le specialit&agrave;</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#looks_like">light_source visible</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#shadowless">shadowless</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#projected">projected_through</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#fade_out">Fading</b></a>, attenuazione<br>
+&nbsp;<br>
+<nobr>&nbsp;<!--a href="camera_i1.htm"--><b>Tipi di Camera</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#perspective">perspective</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#ultra_wide_angle">ultra_wide_angle</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#orthographic">orthographic</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#cylindrical">cylindrical</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#spherical">spherical</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#fisheye">fisheye</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#panoramic">panoramic</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#omnimax">omnimax</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_i2.htm">Camera - le specialit&agrave;</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#aspect_ratio">Aspect ratio</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#focal_blur">Focal blur</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#perturbated">La camera perturbata</b></a><br>
+<br>
+<nobr>&nbsp;<a href="arc_persp_i1.htm">Prospettiva architettonica</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="no_i1.htm">Mostrare e nascondere</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_shadow">no_shadow</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_reflection">no_reflection</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_image">no_image</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_body">no_body</b></a><br>
+
+
+&nbsp;<br>
+<!--nobr>&nbsp; -  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a></nobr><br-->
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+<tr>
+  <td valign="top" colspan="2">
+     <font size="+2"><b>Tipi di Camera:</b></font><hr>
+</td>
+</tr>
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="perspective">La camera 'perspectiv'</b></a><b></b></font><br>
+  <font size="-1">Une prospettiva classica con tre punti di fuga, <br>
+     le linee rette restano rettilineo.<br>
+     <b>L'angolo massimo: &lt; 180&deg; !!! </b></font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ // <font color="#aa0000">perspective</font> //optional
+        location &lt; 0.00, 1.60, -3.00&gt;
+        look_at  &lt; 0.00, 1.60,  1.00&gt;
+        right x*image_width/image_height
+        angle  50
+      } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1">Une camera speciale di tipo 'perspective' per eliminare le linee cadenti,
+             usando uno scorrimento elastico:
+           <a href="arc_persp_i1.htm"><b>Prospettiva architettonica</b></a>.</font>
+
+ </td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_perspective.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>View with perspective camera</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="ultra_wide_angle">La camera 'ultra_wide_angle' </b></a><b></b></font><br>
+  <font size="-1">&Egrave; quasi una prospettiva reale dei occhi con un angolo di ~ 45&deg;.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#aa0000">ultra_wide_angle</font> angle 70
+        location &lt; 0.00, 1.60, -3.00&gt;
+        look_at  &lt; 0.00, 1.60,  1.00&gt;
+        right x*image_width/image_height
+      } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1"><b>Senza angolo massimo !!! </b></font>
+
+ </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_ultra_wide_angle.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Una vista con une camera 'ultra_wide_angle'.</b></font>
+</td>
+</tr>
+<tr>
+<td valign="top">
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#440000">ultra_wide_angle</font> <font color="#FF0000">angle 720</font>
+        location &lt; 0.00, 1.60, -3.00&gt;
+        look_at  &lt; 0.00, 5.60,  1.00&gt;
+        right x*image_width/image_height
+      } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1"><b>'Senza angolo massimo !' = Si pu&ograve; esagerare totalemente!<br></b>
+     Con 720&deg; si pu&ograve; vedere completamente due volte intorno a se stesso!</font>
+
+ </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_ultra_wide_angle_720.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Une vue avec une cam&eacute;ra 'ultra_wide_angle' &agrave; 720&deg;.</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="orthographic">La camera 'orthographic'</b></a><b></b></font><br>
+  <font size="-1">Una proiezione senza punti di fuga, le parallele rimanono paralleles,
+  e gli oggetti apparisscono sempre nella stessa misura. Perfetto per sezioni trasversali.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#aa0000">orthographic</font> angle  33
+        location &lt; 0.00, 3.60,-15.00&gt;
+        look_at  &lt; 0.00, 3.60,  1.00&gt;
+        right x*image_width/image_height
+      } </b></td></pre>
+  </tr>
+  </table>
+
+
+ </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_orthographic.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Una vista frontale<br>
+                     con la camera 'orthographic'.</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="orthographic2">La camera 'orthographic' isometrica</b></a><b></b></font><br>
+  <font size="-1">Perfetto per viste isometriche.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#aa0000">orthographic</font> angle 50
+        location &lt;1,1,-1&gt;*15
+        look_at  &lt;0,0,0&gt;
+        right x*image_width/image_height
+        translate &lt;0,2.00,0&gt;
+      } </b></td></pre>
+  </tr>
+  </table>
+
+
+ </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_orthographic_45.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Una vista isometrica con la camera 'orthographic'</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="cylindrical">La camera 'cylinder 1'</b></a><b></b></font><br>
+  <font size="-1">Le verticale restano verticale.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#aa0000">cylinder 1</font> angle 180
+        location &lt; 0.00,2.00, 0.00&gt;
+        look_at  &lt; 0.00,2.00, 1.00&gt; &nbsp;&nbsp;&nbsp;
+        right 1.33
+        up  1
+      } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1">I tipi di cilindri:<br>
+   <b>cylinder 1:</b> vertical cylinder, fixed viewpoint,<br>
+   <b>cylinder 2:</b> horizontal cylinder, fixed viewpoint,<br>
+   <b>cylinder 3:</b> vertical cylinder, viewpoint moves along the cylinder's axis,<br>
+   <b>cylinder 4:</b> horizontal cylinder, viewpoint moves along the cylinder's axis.</font>
+   </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_cylinder_1.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Una vista con la camera'cylinder 1'</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="panoramic">La camera 'panoramic'</b></a><b></b></font><br>
+  <font size="-1">Un semipanorama di 180&deg; con una proiezione cylindrica equirectangulare.</font>
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#aa0000">panoramic // angle 180 constant!  </font>
+        location &lt; 0.00, 2.00, 0.00&gt;
+        look_at  &lt; 0.00, 2.00, 1.00&gt;
+      //look_at  &lt; 0.00, 2.00,-1.00&gt;
+      } </b></td></pre>
+  </tr>
+  </table>
+   <font size="-1">Si deve usare con un immagine quadratico (aspect ratio 1:1)<br>
+    Due viste di 180&deg; fanno un panorama di 360&deg; per una 'SkySphere', p.es. per il PTViewer.</font>
+   </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><nobr><img src="im/Skybox_Water222_Panoramic_a.jpg" width="120" height="120">
+          <img src="im/Skybox_Water222_Panoramic_b.jpg" width="120" height="120"></nobr>
+          </td></tr></table>
+  <font size="-1"><b>Due viste di 180&deg; con  'panoramic'</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="spherical">La camera 'spherical'</b></a><b></b></font><br>
+  <font size="-1">Una proiezione sferica come un planisfero.<br>
+   Per un panorama a 360 &deg;, &egrave; necessario un rapporto di aspetto di 2:1.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#aa0000">spherical
+        angle 360</font>  // horizontal
+        <font color="#aa0000">      180</font>  // vertical(optional)
+        location &lt;  0.00, 2.00, 0.00&gt;
+        look_at  &lt;  0.00, 2.00,1.00&gt;
+        right  x*image_width/image_height
+      } </b></td></pre>
+  </tr>
+  </table>
+
+   </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_spherical.jpg" width="240" height="128" ></td></tr></table>
+  <font size="-1"><b>Una vista con la camera 'spherical'.</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="fisheye">La camera 'fisheye'</b></a><b></b></font><br>
+   <font size="-1">(occhio di pesce)</font>
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#aa0000">fisheye
+        angle 180</font> // horizontal
+        location &lt; 15.00,17.00,-15.00&gt;
+        look_at  &lt;  0.00, 2.00,  1.00&gt;
+        right  x*image_width/image_height
+      } </b></td></pre>
+  </tr>
+  </table>
+  &nbsp;
+</td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_fisheye.jpg" width="240" height="240" ></td></tr></table>
+  <font size="-1"><b>Una vista con la camera 'fisheye'</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="omnimax">La camera 'omnimax'</b></a><b></b></font><br>
+  <font size="-1"> ... .</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ <font color="#aa0000">omnimax</font>
+        location &lt; 0.00,2, 0.00&gt;
+        look_at  &lt;  0.00,2.00,1.00&gt;
+        right  x*image_width/image_height
+      } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1">Una vista di 180&deg; con la verticale un poco ridotto. Senza un 'angle'!
+    Usato per i film per i teatri Omnimax della forma di un duomo.</font>
+   </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_omnimax.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Una vista con la camera 'omnimax'</b></font>
+
+
+</td></tr></table>
+<hr>
+</div>
+<table border="0" align="center" width="95%"><tr><td>
+<p><font size="-1">
+<b><a href="camlit_i1.htm">Indice</a> |
+   <a href="light_i1.htm" ><b>Luce</a> |
+   <a href="light_i2.htm" ><b>Luce Specialit&agrave;</a> |
+   <!--a href="camera_i1.htm"--><b>Camera</a> |
+   <a href="camera_i2.htm">Camera  Specialit&agrave;</a> |
+   <a href="arc_persp_i1.htm"><nobr>Prospettiva architettonica</nobr></a> |
+   <a href="no_i1.htm">Mostrare + nascondere</a></b></font></p>
+</td></tr></table>
+
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+ <td align="right"  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2013 - tous les droits d'auteur r&eacute;serv&eacute; - all rights reserved">
+<meta name="keywords" content="hasard, nombres al&eacute;atoires, seed, rand, Tutoriel POV-Ray, Didacticiel POV-Ray, raytracing, PoV, POVRAY, POV-Ray, povray, graphique 3d, infographie, info graphique, lancer de rayons, trac&eacute; de rayons, suivi de rayons, images photor&eacute;alistes, raytracing descriptions, POV-Ray instuctions, 3D grafic">
+<meta name="Description" content="Didacticiel POV-Ray - Le hasard et nombres al&eacute;atoires : Basculer et incliner avec hazard en POV-Ray.">
+<title>Le hasard et nombres al&eacute;atoires :'color' et 'scale' avec hazard en POV-Ray.</title>
+
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=650,height=500");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+  <td valign="top"><font size="1"><nobr>Descriptions et exemples </nobr> pour le <nobr>raytracer POV-Ray</nobr>
+  <nobr>par Friedrich A. Lohm&uuml;ller</nobr></font>
+  <hr size="3">
+  <div align="center">
+      <font size="5">Le hasard en POV-Ray</font> - part 3&nbsp; &nbsp; &nbsp;</div>
+  </td>
+  <td align="right">
+     <a href="random3e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+     <a href="random3e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+     <a href="random3i.htm"><font size="2">Italiano </font></a>
+     <a href="random3i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="random3d.htm"><font size="2">Deutsch </font></a>
+     <a href="random3d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Home- Page d'accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr> -  <a href="random00f.htm"><font size="+1">Hasard en POV-Ray</font></b></a></nobr><br>
+<nobr>&nbsp;&nbsp; -  <a href="random1f.htm">Nombres al&eacute;atoires</b></a></nobr><br>
+&nbsp;&nbsp; -  <a href="random2f.htm">Quadratique et cubique</b></a><br>
+&nbsp;&nbsp;<b>&gt;</b> <!--a href="random3f.htm"--><b>'color' et 'scale'</b></a><br>
+&nbsp;&nbsp; -  <a href="random4f.htm">Basculer et incliner</b></a><br>
+&nbsp;&nbsp; -  <a href="random5f.htm">Les arbres avec hazard</b></a><br>
+&nbsp;&nbsp; -  <a href="random6f.htm">Le fichier 'rand.inc'</b></a><br>
+&nbsp;&nbsp; -  <a href="random7f.htm">height_field rempli</b></a><br>
+&nbsp;&nbsp; -  <a href="random8f.htm">Fleur al&eacute;atoire</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../down/insertf_a.htm">Insert Menu Add-on</b></a><br>
+&nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/random_cs.jpg" width="80" height="80" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="6"><nobr>&nbsp;'color' et 'scale' al&eacute;atoires.</font> </nobr></font>
+   </td>
+ </tr>
+</table>
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="2">
+   <p align="justify">Ici nous montrons comme on peut colorier
+  et changer l'&eacute;chelle irr&eacute;guli&egrave;rement dans une s&eacute;rie des objets.<br>
+  Pour cela utilissons une s&eacute;rie de sph&egrave;res, lequelles nous arrangeons dans un carr&eacute; ou dans un cube
+  avec un boucle double ou triple avec 'while'.
+   </p>
+ </td>
+</tr>
+<tr>
+ <td><p align="justify"><b>La s&eacute;lection de la couleur par hasard :</b><br>
+ Nous choisissons une s&eacute;rie nouvelle de nombres al&eacute;atoires
+ et remplacons dans les examples ant&eacute;rieur la couleur dans le commande de la texture
+ par ex. comme suivant :
+ <p>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#declare Random_3 = seed (1432);
+#declare Random_4 = seed (7242);
+#declare Random_5 = seed (9912);
+//------------------------------------
+...
+ pigment{ color rgb&lt; rand(Random_3),
+                     rand(Random_4),
+                     rand(Random_5)&gt; }
+... etc.
+</b></td></pre>
+ </tr>
+</table>
+
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/random_9.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+  <div align="center"><font size="2">Fichier de la sc&egrave;ne pour POV-Ray : <a href="pov/random_9.pov">.pov</a>
+  ou <a href="pov/random_9.txt">.txt</a></font></div>
+ </td>
+</tr>
+
+<tr>
+ <td><p align="justify">
+ Seulement les valeurs de rgb entre 0 et 1 sont bon pour des teintes r&eacute;alistes
+ avec contrastes complets &agrave; le ombres.<br>
+ Des teintes fines de couleur nous obtenons si nous ajutons seulement petits parts al&eacute;atoires
+ &agrave; une valeur rgb de base comme suivante :
+ <p>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#declare Random_3 = seed (1432);
+#declare Random_4 = seed (7242);
+#declare Random_5 = seed (9912);
+//------------------------------------
+...
+ pigment{
+   color rgb
+    &lt; 1.00 - 0.35*rand(Random_3),
+      0.65 + 0.2*(-0.5+rand(Random_4)),
+      0.00 + 0.75*(rand(Random_5)&gt; }
+... etc.
+</b></td></pre>
+ </tr>
+</table>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/random_a.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+  <div align="center"><font size="2">Fichier de la sc&egrave;ne pour POV-Ray : <a href="pov/random_a.pov">.pov</a>
+  ou <a href="pov/random_a.txt">.txt</a></font></div>
+ </td>
+</tr>
+<tr>
+ <td><p align="justify">
+  Et maintenant la m&ecirc;me chose &agrave; trois dimensions :
+ <p>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/random_b.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+  <!--h5 align="center">Scene file for POV-Ray: <a href="pov/random_a.pov">.pov</a>
+  oder <a href="pov/random_b.txt">.txt</a></h5-->
+ </td>
+</tr>
+<tr>
+ <td><p align="justify"><b>Changer l'&eacute;chelle par hasard :</b><br>
+ Pour cela nous ajutons le valeur al&eacute;atoire au terme de 'scale' :
+ <p>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>
+   scale &lt; 1, 0.1+2*rand(Random_1), 1 &gt;
+</b></td></pre>
+ </tr>
+</table>
+
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+
+</td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('im/im_random_c_.htm')"
+             onMouseover="window.status='ShowSingleImage';return true"
+             onMouseOut="window.status=''">
+            <img src="im/random_c.jpg" width="320" height="320" border="0" hspace="0" vspace="0"
+             alt="click for higher resolution" alt="click for higher resolution"></a></td>
+    </tr></table><font size="-1">Cliquer sur l'image por une r&eacute;solution plus haut!</font>
+  <div align="center"><font size="2">Fichier de la sc&egrave;ne pour POV-Ray : <a href="pov/random_c.pov">.pov</a>
+  ou <a href="pov/random_c.txt">.txt</a></font></div>
+  </h6>
+<div align="center"><b>
+<a href="random00f.htm">0</a> |
+<a href="random1f.htm">1</a>  | <a href="random2f.htm">2</a> | <!--a href="random3f.htm"-->3</a> |
+<a href="random4f.htm">4</a> | <a href="random5f.htm">5</a> | <a href="random6f.htm">6</a> |
+<a href="random7f.htm">7</a> | <a href="random8f.htm">8</a></b></div>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

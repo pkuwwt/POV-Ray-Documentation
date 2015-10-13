@@ -1,0 +1,207 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Design of the Interior of transparent Shapes with POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content=">Design of the interior of transparent shapes with POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3D computer graphics, textures, transparent shapes, interior, material, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples for the POV-Ray Raytracer </nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Design of the Interior of transparent Shapes</b></font>
+      <font size="-1"><b> in POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_05i.htm"><font size="2">Italiano</font></a>
+        <a href="interior_05i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_05f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_05f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_05d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_05d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp; <a href="interior_000e.htm">Content Overview</b></a><br>
+ &nbsp; <a href="interior_000e.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <!--a href="interior_05e.htm"--><b>Syntax material</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <!--a href="interior_05e.htm"--><b>texture + interior</b> <br>
+&nbsp; -  <a href="interior_03e.htm">Window Glass</b></a><br>
+ &nbsp; &nbsp; &nbsp; + max_trace_level <br>
+&nbsp; -  <a href="interior_001e.htm">Fog, Mist or Haze</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10e.htm">Syntax Media</b></a> <br>
+&nbsp; -  <a href="interior_30e.htm">Media+Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; with/without density map <br>
+&nbsp; -  <a href="interior_20e.htm">Beames in the Fog</b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -   <a href="interior_40e.htm">Light Sword</b></a> <br>
+&nbsp; -   <a href="interior_44e.htm">Candle Flames</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -   <a href="interior_50e.htm">Light through Window</b></a><br>
+&nbsp; -   <a href="interior_70e.htm">Steam, Smoke, Clouds</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -   <a href="interior_60e.htm">Dust Devils</b></a> <br>
+
+<nobr>&nbsp; Special Problems with Media</b></a></nobr><br>
+&nbsp; -  <a href="interior_080e.htm">Scaling of Media</b></a> <br>
+&nbsp; -  <a href="interior_090e.htm">Overlapping Media</b></a> <br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<h1 align="center"><b>Syntax of &quot;material&quot;<br></b>
+</h1>
+
+<p align="center">The <b>Syntax </b>
+ for <b>&quot;material&quot;</b>,<b>&quot;texture&quot;</b>
+ and <b>&quot;interior&quot;</b> by a basic sample:</p>
+
+<div align="center">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<font face="Arial, Verdana, Helvetica">
+<pre>sphere{ &lt;0,0,0&gt;, 1
+        translate&lt;0,1,0&gt;
+        <b>material{</b>
+          <b>texture {</b> pigment{ color rgbt&lt;1,1,1,0.5&gt;</b>}
+                    normal { bumps 0.5 scale 0.025 }
+                    finish { phong 1.0 }
+                  <b>}</b> // end of texture
+          <b>interior{</b> ior 1.5
+                    caustics 0.25
+                  <b>}</b> // end of interior
+          <b>}</b> // end of material
+      } // end of sphere</b></td></pre>
+
+ </tr>
+</table>
+<p align="left">
+ <b>material{...}&quot;</b> is a container for the following properties:<br>
+ <b>texture {...}&quot;</b> is a container for the properties consistance of <b>surface</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <font size="-1">(Coloring, roughness, brightness, brilliance; transparency)</font> and <br>
+<b>interior {...}&quot;</b> is a container for the properties of the <b>inside of a shape</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <font size="-1">(Index of refraction = ior, caustics, light absorption, dispersion)</font> . <br>
+</font>
+  <div align="left">
+  <p align="justify"><font size="-1">Hereby we have to consider <nobr>&quot;texture{...}&quot;</nobr> also as a container of the
+ properties <nobr>&quot;pigment{...}&quot;</nobr> (Coloring) and <nobr>&quot;normal{...}&quot;</nobr> (simulierted surface deformation)
+and <nobr>&quot;finish{...}&quot;</nobr> (Brilliance and transparency property).<br>
+All these properties (pigment, normal, finish and interior) can also be used without the according
+parent container <b><nobr>material{...}</nobr></b> resp. <b><nobr>texture{...}</nobr></b>. <br>
+These containers <nobr>&quot;<b>texture{...}</b>&quot;</nobr> resp. <nobr>&quot;<b>material{...}</b>&quot;</nobr>
+turn out very useful, if we want to transform a material relative to a shape or if we want to declare shortcuts by variables
+for a material or a texture by &quot;#declare&quot;.</font>
+</p></div>
+<div align="center">
+
+<table >
+<tr>
+ <td><h6>
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/interior_01.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table><b>
+    From right to left:  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; without transparency,<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with transparency, without ior,<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with ior (refraction), without caustics, <br>
+    with ior + caustics.</b>
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/interior_02.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+     &nbsp Demonstration of the <b>refraction with ior + castics</b><br>
+     &nbsp;<br>
+     &nbsp;<br>
+     &nbsp;
+</td></h6>
+</tr><tr>
+<td><hr size="3"></td>
+</tr><tr>
+<td colspan="2"><h5>
+<font size="+1"><b>interior</b></font><br>
+Interior default values:<br>
+<pre>
+ior                : 1.0
+caustics           : 0.0 // This > 0 simulates caustics - it's faked because it does not vary with distance and
+                         // it's limited on parts that are shaded by the transparent object!
+                         // 0.25, ~ 1  - 2
+dispersion         : 1.0 // this simulates dispersion caused refraction
+dispersion_samples : 7
+fade_distance      : 0.0 (0=off) = distance with half intensity -
+                         = attenuation of light intensity with the distance
+fade_power         : 0.0 (0=off)  (realistic: 1~2,
+                                  >=1000 ->realistic exponential attenuation function will be used!
+fade_color         : &lt;0,0,&gt;</pre>
+
+</h5>
+</td>
+</tr>
+</table>
+</div>
+
+
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

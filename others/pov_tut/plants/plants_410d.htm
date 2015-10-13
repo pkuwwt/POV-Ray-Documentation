@@ -1,0 +1,265 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="POV-Ray Anleitungen - Pflanzen mit POV-Ray - POV-Tree Baum-Beispiele">
+<meta name="keywords" content=" Raytracing, POV, POVRAY, POV-Ray 3.6, Rendern, 3D-Graphik, Computergraphik, Grafik, Tutorial, Anleitung, Beschreibungen, Beispiele, Pflanzen mit POV-Ray">
+<title>Pflanzen mit POV-Ray - POV-Tree Baum-Beispiele</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=680,height=709");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top">
+     <font size="1"><nobr>POV-Ray Raytracer</nobr> <nobr>Beschreibungen und Beispiele</nobr>
+                    <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font><a name="top"></a>
+ <hr size="3">
+   <div align="center">
+      <font size="5">&nbsp; &nbsp;Pflanzen mit POV-Ray</font>
+   </div>
+ </td>
+ <td align="right">
+        <a href="plants_410e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="plants_410e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="plants_410i.htm"><font size="2">Italiano</font></a>
+        <a href="plants_410i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="plants_410f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="plants_410f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr> -  <a href="plants_00d.htm"><font size="+1">Pflanzen mit POV-Ray</font></b></a></nobr><br>
+<!--&nbsp;&nbsp; -  <a href="plants_200d.htm">Fibonacci + Random</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_300d.htm">Gras-Makros</b></a><br-->
+&nbsp;&nbsp; -  <a href="plants_400d.htm">B&auml;ume mit POV-Tree</b></a><br>
+&nbsp;&nbsp;&nbsp; <b>&gt;</b> <!--a href="plants_410d.htm"--><b>POV-Tree Baum-Beispiele</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_420d.htm">Texturen f&uuml;r POV-Tree</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_500d.htm">B&auml;ume mit Arbaro</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_510d.htm">Arbaro Baum-Beispiele</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_520d.htm">Texturen f&uuml;r Arbaro</b></a><br>
+<!--&nbsp;&nbsp; -  <a href="plants_600e.htm">Leaves + Flowers</b></a><br-->
+<br>
+&nbsp;&nbsp; -  <a href="plants_050d.htm">Andere Planzenbeispiele</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../objects/obj_400d.htm">Fertig-Objekte Pflanzen</b></a><br>
+&nbsp;&nbsp;-  <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="povtree/im/Birch_01cs.jpg" width="80" height="80" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="5"><nobr>&nbsp;POV-Tree Baumformen-Beispiele</font> &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="5">
+   <p align="justify">Dies sind die originalen Beispiele f&uuml;r Baumformen von <b>POV-Tree</b>.<br>
+     Die originalen Texturen sind oft etwas gew&ouml;hnungsbed&uuml;rftig <font size="2">(Sie waren m&ouml;glicherweise gut, mit einer fr&uuml;heren POV-Ray-Version)</font>,
+     aber es gibt vielf&auml;ltige M&ouml;glichkeiten diese zu realistischeren abzu&auml;ndern
+     - siehe meine Seite <font size="-1"><a href="plants_420d.htm">Texturen f&uuml;r POV-Trees</a></font>.<br>
+     <font size="1">Verwendet javascript um die Bilder in h&ouml;herer Aufl&ouml;sung anzuzeigen. - Klicken Sie auf die Vorschaubilder!)</font>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Default_01_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Default_01t.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Default</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Birch_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Birch_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Birch - Birke</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Cherry_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Cherry_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Cherry - Krischbaum</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Eucalyptus_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Eucalyptus_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <font size="1"><b><nobr>Eucalyptus</nobr></b></font>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Linden_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Linden_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Linden - Linde</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Maple_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Maple_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Maple - Ahorn</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Olive_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Olive_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Olive</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Palm_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Palm_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Palm</b></font>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Pine_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Pine_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <font size="1"><b>Pine - Kiefer</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Poplar_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Poplar_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Poplar - Pappel</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Spruce_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Spruce_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    <font size="1"><b>Spruce - Fichte</b></font>
+ </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im_orig/Willow_01c_big.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="povtree/im_orig/Willow_01ct.jpg" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <font size="1"><b>Willow - Weide</b></font>
+ </td>
+</tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+<td>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--div align="center"><b>
+<a href="plants_00d.htm">0</a> |
+<a href="plants_100d.htm">1</a>  | <a href="plants_200d.htm">2</a> | <a href="plants_300d.htm">3</a> |
+<a href="plants_400d.htm">4</a> | <a href="plants_500d.htm">5</a> | <a href="plants_600d.htm">6</a> |
+<a href="plants_700d.htm">7</a> | <a href="plants_800d.htm">8</a></b></div-->
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5>
+</tr>
+<tr>
+<td valign="bottom" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</tr></table><!-- end footer -->
+</body>
+</html>

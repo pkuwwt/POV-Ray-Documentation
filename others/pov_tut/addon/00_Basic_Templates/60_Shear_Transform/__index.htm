@@ -1,0 +1,315 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Insert Menu Add-on for POV-Ray - HTML version">
+<title>Insert Menu Add-on for POV-Ray - by Friedrich A.Lohmueller - HTML version</title>
+<link rel="stylesheet" type="text/css" href="../povray_style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="1"><nobr>Insert Menu Add-on for POV-Ray</nobr> - <nobr>by Friedrich A.Lohmueller</nobr>
+ <hr size="3">
+ <div align="center"><font size="+2"><b>Shearing and Transformations</b></font></div>
+ </td></font>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index - Content - 1st column -->
+<font size="2">
+<br>
+ <font size="+1"><b>Insert Menu Add-on</b></font>
+ <br>
+ &nbsp; <a href="../_index.htm">Basic Templates</b></a><br>
+ &nbsp; &nbsp; <a href="../10_Ready_made_scenes/__index.htm">Ready-made Scenes</b></a><br>
+ &nbsp; &nbsp; <a href="../20_Basic_Shapes_round/__index.htm">Basic Shapes round</b></a><br>
+ &nbsp; &nbsp; <a href="../21_Basic_Shapes_angular/__index.htm">Basic Shapes angular</b></a><br>
+ &nbsp; &nbsp; <a href="../22_Shapes2/__index.htm">Shapes 2</b></a><br>
+ &nbsp; &nbsp; <a href="../23_Shapes3/__index.htm">Shapes 3</b></a><br>
+ &nbsp; &nbsp; <a href="../25_shapes_lo2/__index.htm">shapes_lo2</b></a><br>
+ &nbsp; &nbsp; <a href="../37_blob_fractal/__index.htm">Blob and Fractal</b></a><br>
+ &nbsp; &nbsp; <a href="../36_3D_text_shapes/__index.htm">3D text shapes</b></a><br>
+ &nbsp; &nbsp; <a href="../38_height_field_HF_macros/__index.htm">height_field, HF_macros</b></a><br>
+ &nbsp; &nbsp; <a href="../39_Non_CSG_shapes/__index.htm">Mesh and Non-CSG shapes</b></a><br>
+ &nbsp; &nbsp; <a href="../40_Isosurfaces_basic_functions/__index.htm">Isosurfaces basic functions</b></a><br>
+ &nbsp; &nbsp; <a href="../41_Isosurfaces_function.inc/__index.htm">Isosurfaces function.inc</b></a><br>
+ &nbsp; &nbsp; <a href="../42_Isosurfaces_pattern_functions/__index.htm">Isosurfaces by patterns</b></a><br>
+ &nbsp; &nbsp; <a href="../43_Isosurfaces_helix_spirals/__index.htm">Isosurfaces helix spirals</b></a><br>
+ &nbsp; &nbsp; <a href="../47_Polynomial_Quartic/__index.htm">Polynomial, Cubic, Quartic</b></a><br>
+ &nbsp; &nbsp; <a href="../48_Parametric_Surfaces/__index.htm">Parametric Surfaces</b></a><br>
+ &nbsp; &nbsp; <a href="../49_meshmaker_inc/__index.htm">Meshes by meshmaker.inc</b></a><br>
+ &nbsp; &nbsp; <a href="../70_While_Loops_For_Loops/__index.htm">While Loops, For Loops</b></a><br>
+<nobr> &nbsp; &nbsp; <a href="../75_sphere_sweep_Splines/__index.htm">sphere_sweep, Spline curves</b></a></nobr><br>
+ &nbsp; &nbsp; <a href="../B0_Random/__index.htm">Random</b></a><br>
+ &nbsp; &nbsp; <a href="../50_CSG_Modifiers/__index.htm">CSG, Shape modifiers</b></a><br>
+ &nbsp;<b>&gt;</b> <!--a href="../60_Shear_Transform/__index.htm"--><b>Shearing and transform</b></a><br>
+ &nbsp; &nbsp; <a href="../D0_Colors/__index.htm">Colors in textures</b></a><br>
+ &nbsp; &nbsp; <a href="../E0_Textures_Materials/_index.htm">Textures and Materials</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E1_T_Skies_Clouds/__index.htm">Skies_and_Clouds</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E2_T_Stones_Granits/__index.htm">Stones and Granits</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E3_T_Woods/__index.htm">Woods</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E5_T_Metals/__index.htm">Metals</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E6_T_Mirrors_Glasses/__index.htm">Mirrors and Glasses</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E7_T_Normal_Examples/__index.htm">Normal Examples</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E8_T_tiling/__index.htm">tiling patterns</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E9_T_pavement/__index.htm">pavement patterns</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../EA_T_fractal_patterns/__index.htm">fractal patterns</b></a><br>
+ &nbsp; &nbsp; <a href="../H0_Lights_skies_fogs_rainbow/__index.htm">Lights, skies, fogs, rainbow</b></a><br>
+ &nbsp; &nbsp; <a href="../I0_Cameras/__index.htm">Cameras</b></a><br>
+ &nbsp; &nbsp; <a href="../K0_Radiosity_Photons/__index.htm">Radiosity and Photons</b></a><br>
+ &nbsp; &nbsp; <a href="../A0_Include/__index.htm">Own include files</b></a><br>
+ &nbsp; &nbsp; <a href="../80_Math_functions/__index.htm">Math functions</b></a><br>
+ &nbsp; &nbsp; <a href="../85_Analytical_Geo/__index.htm">Analytical Geometry</b></a><br>
+ &nbsp; &nbsp; <a href="../90_Directives/__index.htm">Directives</b></a><br>
+ &nbsp; &nbsp; <a href="../L0_Expressions/__index.htm">Expressions</b></a><br>
+ &nbsp; &nbsp; <a href="../M0_Statements/__index.htm">General statements</b></a><br>
+ &nbsp; &nbsp; <a href="../C0_Animation/__index.htm">Animation</b></a><br>
+
+ &nbsp; &nbsp; ___________________<br>
+ &nbsp; &nbsp; &nbsp;  <br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<tr>
+<td valign="top" width="50%">
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="10_matrix_shear_x_to_y.txt" target="_new">
+          <img src="10_matrix_shear_x_to_y.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">matrix shear x to y</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="11_matrix_shear_x_to_z.txt" target="_new">
+          <img src="11_matrix_shear_x_to_z.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">matrix shear x to z</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="12_matrix_shear_y_to_x.txt" target="_new">
+          <img src="12_matrix_shear_y_to_x.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">matrix shear y to x</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="13_matrix_shear_y_to_z.txt" target="_new">
+          <img src="13_matrix_shear_y_to_z.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">matrix shear y to z</font>
+ </td>
+</tr></table>
+
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="14_matrix_shear_z_to_x.txt" target="_new">
+          <img src="14_matrix_shear_z_to_x.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">matrix shear z to x</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="15_matrix_shear_z_to_y.txt" target="_new">
+          <img src="15_matrix_shear_z_to_y.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">matrix shear z to y</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="20_Shear_Trans_example.txt" target="_new">
+          <img src="20_Shear_Trans_example.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Shear_Trans example</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="21_Matrix_Trans_example.txt" target="_new">
+          <img src="21_Matrix_Trans_example.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Matrix_Trans example</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="22_Axial_Scale_Trans.txt" target="_new">
+          <img src="22_Axial_Scale_Trans.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Axial_Scale_Trans</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="23_Rotate_Around_Trans.txt" target="_new">
+          <img src="23_Rotate_Around_Trans.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Rotate_Around_Trans</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="24_Axis_Rotate_Trans.txt" target="_new">
+          <img src="24_Axis_Rotate_Trans.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Axis_Rotate_Trans</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="25_Reorient_Trans.txt" target="_new">
+          <img src="25_Reorient_Trans.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Reorient_Trans(Axis1,Axis2)</font></div>
+ </td>
+</tr>
+<tr>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="26_Point_At_Trans.txt" target="_new">
+          <img src="26_Point_At_Trans.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Point_At_Trans(YAxis)</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="30_Center_Trans_xyz.txt" target="_new">
+          <img src="30_Center_Trans_xyz.gif" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Center_Trans(OBJ,x+y+z)</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="31_Center_Trans_xy.txt" target="_new">
+          <img src="31_Center_Trans_xy.gif" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Center_Trans(OBJ,x+y)</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="32_Center_Trans_y.txt" target="_new">
+          <img src="32_Center_Trans_y.gif" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">Center_Trans(OBJ,y)</font></div>
+ </td>
+</tr>
+<tr>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="35_min_max_extents.txt" target="_new">
+          <img src="35_min_max_extents.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">min_/max_extents(OBJ)</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="50_vaxis_rotate.txt" target="_new">
+          <img src="50_vaxis_rotate.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">vaxis_rotate</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="51_vrotate.txt" target="_new">
+          <img src="51_vrotate.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">vrotate</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="52_vtransform.txt" target="_new">
+          <img src="52_vtransform.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">vtransform example</font></div>
+ </td>
+</tr>
+<tr>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="53_vturbulence.txt" target="_new">
+          <img src="53_vturbulence.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">vturbulence example</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="54_vnormalize.txt" target="_new">
+          <img src="54_vnormalize.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">vnormalize</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="55_vcross.txt" target="_new">
+          <img src="55_vcross.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">vcross</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080"
+    width="160" height="130" bgcolor="#FFFFFF">
+   <tr><td><a href="56_vdot.txt" target="_new">
+          <img src="56_vdot.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">vdot</font></div>
+ </td>
+</tr>
+
+<tr>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="57_vlength.txt" target="_new">
+          <img src="57_vlength.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">vlength</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="60_VAngle.txt" target="_new">
+          <img src="60_VAngle.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">VAngle</font></div>
+ </td>
+ <td width="200"><div align="center">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="61_VProject_Axis.txt" target="_new">
+          <img src="61_VProject_Axis.jpg" width="160" height="120" border="0"></a></td>
+   </tr></table><font size="2">VProject_Axis</font></div>
+ </td>
+ <td width="200"><div align="center">&nbsp;</div>
+ </td>
+ <td width="200"><div align="center">&nbsp;</div>
+ </td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+</div>
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center">
+<tr>
+ <td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+ </td>
+ <td>&nbsp;</td>
+ <td>&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

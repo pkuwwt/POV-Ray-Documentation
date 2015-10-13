@@ -1,0 +1,223 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Transformations with POV-Ray - rotate</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013 by Friedrich A. Lohmueller">
+<meta name="Description" content="Basics about geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d grafics, 3d graphics, computer graphics,
+      geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometric Transformations with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_500d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_500d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a><br>
+        <a href="trans_500i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_500i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_500f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_500f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp; <a href="trans_000e.htm">Geometric</b></a><br>
+ &nbsp; <a href="trans_000e.htm">Transformations</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Elementary </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100e.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200e.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">mirror symmetry</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Other</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400e.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450e.htm">Shearing</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470e.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <!--a href="trans_500e.htm"--><b>&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="trans_500e.htm"--><b>&nbsp;and &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Vectors and</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Transformations</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+ <tr>
+  <td>
+     <font size="6"> &quot;transform{ ... }&quot;</font>  <font size="4"><nobr> = bundled transformations</nobr></font><br>
+     <font size="6"> &quot;transform{ ... invers }&quot;</font> <font size="4"><nobr> = inverted transformations</nobr></font>
+</td></tr></table>
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td>
+<p align="justify">With the transform statement it is possible to bundle a group of
+ transformations like &quot;scale&quot;, &quot;rotate&quot;, &quot;translate&quot; and/or &quot;matrix&quot;,
+ in any wanted sequence by one single statement for all these transformations.</p>
+
+<font size="3">Syntax:</font>
+<table border="1" cellpadding="2" cellspacing="2" bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF"><pre><b> #declare <i>My_Trans</i>
+ = transform{ <i>Free sequence of transformations</i>}</b></td></pre>
+  </tr></table>
+<font size="2">&nbsp; (Transformations here: translate, rotate, scale, or matrix.)</font>
+<br>
+<font size="3">We use it like this:</font>
+<table border="1" cellpadding="2" cellspacing="2"  bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF">
+<pre><b> object{ <i>My_Object</i> transform <i>My_Transformation</i> }
+//or by
+ object{ <i>My_Object</i> transform {<i>My_Transformation</i>} }</b></td></pre>
+ </tr></table>
+<font size="2">&nbsp; (with or without inner brackets!)</font> <br>
+<font size="3">and the inverted transformation:</font>
+<table border="1" cellpadding="2" cellspacing="2"  bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF">
+<pre><b> object{ <i>My_Object</i> transform {<i>My_Transformation</i> <font color="#800000">inverse</font>} } </b></td></pre>
+ </tr></table>
+<font size="2">&nbsp; (Needs the inner brackets!)</font>
+<br>
+
+<br>
+Here a example:
+
+<table  border="1" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4">
+ <tr>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="canu7s.jpg" border="0" width="240"  height="180"
+                   alt="Sample canoes" title="Sample canoes">
+            </td></tr></table>
+  </td>
+</tr><tr>
+<td bgcolor="#eee8d0">
+    <p align="justify"><font size="3">
+    An object called &quot;Canoe&quot; as well as the according hole
+    in the surface of the water &quot;Canoe_outside&quot; is wanted to be
+    placed i.e. in  3 different positions with different sizes / positions / orientations:</font><br>
+    </p>
+    <font size="3">
+     For this we first are defining the transformations, which lead to the wanted positions:
+<pre><b>//------------------------------------- Positions:
+#declare Canoe_Position1
+  = transform { rotate&lt; 0,30,0&gt; translate&lt;0.0,0,1&gt;}
+#declare Canoe_Position2
+  = transform { rotate&lt;-6,20,0&gt; translate&lt;1.5,0,5&gt;}
+#declare Canoe_Position3
+  = transform { rotate&lt;5, 0,0&gt; scale 0.55
+                          translate&lt; -0.3,0,-2.00&gt;}
+//-------------------------------------------------
+</b></pre>
+Then the canoes were placed there:
+<pre><b>
+//---------------------- Canoes at their positions:
+object{ Canoe transform Canoe_Position1}
+object{ Canoe transform Canoe_Position2}
+object{ Canoe transform Canoe_Position3}
+//-------------------------------------------------
+</b></pre>
+
+and also the according holes in the water:
+<pre><b>//-------------------------------------------------
+difference{
+plane{&lt;0,1,0&gt;, 0 }
+object{Canoe_outside transform Canoe_Position1 }
+object{Canoe_outside transform Canoe_Position2 }
+object{Canoe_outside transform Canoe_Position3 }
+   texture{Polished_Chrome
+                    normal {crackle 1 scale 5
+                            turbulence 1
+                            translate&lt;0,0,5&gt;}
+                    finish {diffuse 0.9
+                            reflection 0.40}}
+          }// end of difference
+//----------------------------------------------- end</b></td></pre></font>
+</tr></table>
+
+
+
+</p></td></tr></table></div>
+<hr size="3">
+<h6 align="justify">
+ <a href="trans_100e.htm">translate</a> |
+ <a href="trans_200e.htm">rotate</a> |
+ <a href="trans_300e.htm">scale</a> |
+ <a href="trans_400e.htm">matrix</a> |
+ <a href="trans_450e.htm">shearing</a> |
+ <a href="trans_470e.htm">transforms.inc</a> |
+ <!--a href="trans_500e.htm"-->transform</a> |
+ <a href="trans_800e.htm">vector transformations</a>
+<h6>
+
+
+
+</td></tr></table></td></tr>
+
+
+<!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

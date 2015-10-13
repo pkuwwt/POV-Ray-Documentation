@@ -1,0 +1,393 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray - motivo con righe</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_600e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_600e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_600f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_600f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_600d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_600d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+ <!--&nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500i.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560i.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561i.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562i.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570i.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580i.htm">pavement</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; <b>&gt;</b> <!--a href="tex_600i.htm"--><b>color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con pigment</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650i.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651i.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660i.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; <b>&gt;</b> <!--a href="tex_600i.htm"--><b>color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_875i.htm">image_map+gif 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_876i.htm">image_map+gif 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_878i.htm">image_map+gamma</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_885i.htm">transparency maps 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_886i.htm">transparency maps 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_887i.htm">transparency maps 3</b></a><br>
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br>  -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+
+
+<table><tr>
+<td>
+ <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_trans3.jpg" border="0" width="80"  height="80"
+       alt="Sample color_map" title="Sample color_map"></a>
+      </td></tr></table>
+   </td>
+<td>
+<font size="5"><b>&nbsp; &quot;color_map { ... }&quot;</b> - tabelle di colori per motivi<br></font>
+</td></tr></table>
+
+<hr>
+
+<table cellpadding="5">
+<tr>
+ <td colspan="2">
+<font size="2"><b>&quot;color_map { ... }&quot;</b>
+ &eacute; una <b>tabella di colori</b>, che associa i colori a numeri da 0.00 a 1.00.
+Questi tabelli di colori si p&ugrave;o usare con des motivi diversi.<br>
+Il motivo pi&ugrave; facile &eacute; il motivo gradient:
+<pre>pigment{
+gradient &lt;0,1,0&gt;
+<b>color_map {[0.0 color rgb&lt;1,1,1&gt;] // White
+           [0.5 color rgb&lt;1,0,0.2&gt;] // red wine
+           [1.0 color rgb&lt;1,1,1&gt;] // White
+          }</b> // end of color_map
+} // end of pigment</pre></font>
+</font>
+</td>
+<td>
+ <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_map_exp1.jpg" border="0" width="160"  height="160"
+       alt="Sample color_map" title="Sample color_map"></a>
+      </td></tr></table>
+   </td>
+
+</tr>
+<tr>
+ <td colspan="2">
+<font size="2"><p align="justify">Il motivi si ripeta in une altezza di 1 unit&agrave;.
+Se vogliamo fare il motivo <b> pi&ugrave; picolo o pi&ugrave; grande</b>, possiamo aggiungere avanti
+(o doppo!) il comando color_map qualche cosa come &quot;scale 0.25&quot;
+nel commando &quot;pigment&quot;.<br>
+Cosi si p&ugrave;o anche voltare (&quot;rotate&quot;) e spostare (&quot;translate&quot;) un motivo!
+<pre>pigment{
+gradient &lt;0,1,0&gt;
+color_map {[0.0 color rgb&lt;1,1,1&gt;] // White
+           [0.5 color rgb&lt;1,0,0.2&gt;] // red wine
+           [1.0 color rgb&lt;1,1,1&gt;] // White
+          } // end of color_map
+<b> scale 0.25 </b>
+} // end of pigment</pre></font>
+</font>
+</td>
+<td>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_map_exp2.jpg" border="0" width="160"  height="160"
+       alt="Sample color_map" title="Sample color_map"></a>
+  </td></tr></table>
+
+</td>
+</tr>
+<tr>
+<td colspan="3">
+   <font size="2"><p align="justify">Qualche esempio di color_map
+   con motivi (vede anche: Lista di Motivi)
+</td>
+</tr>
+
+<tr>
+<td><p align="center">
+ <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_map_exp4.jpg" border="0" width="160"  height="160"
+       alt="Sample color_map" title="Sample color_map"></a>
+      </td></tr></table><font size="2">gradient &lt;0,1,0&gt; turbulence 1.0</font>
+</td></p>
+<td><p align="center">
+ <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_map_exp3.jpg" border="0" width="160"  height="160"
+       alt="Sample color_map" title="Sample color_map"></a>
+      </td></tr></table><font size="2">bozo</font>
+</td></p>
+<td><p align="center">
+ <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_map_exp5.jpg" border="0" width="160"  height="160"
+       alt="Sample color_map" title="Sample color_map"></a>
+      </td></tr></table><font size="2">crackle</font>
+</td></p>
+</tr>
+</table>
+
+<hr>
+<b><font size="4"><p>Cambiare di un colore verso l'altro<br>
+ - mescolamento morbido o delimitazione chiaro:</b><br>
+</font><font face="Arial" size="2">
+Se si veut un cambiamento di colori delimitato chiaro si doit riprendere i colori
+alla linea di confine:<br>
+<table width="100%" align="center" cellpadding="5">
+<tr><td><font size="2">
+<pre>gradient &lt;0,1,0&gt;
+     color_map {[0.0 color White]
+           [0.5 color White]
+           [0.5 color Red  ]  // <b>preciso</b>
+           [1.0 color Red  ] } </td></pre></font>
+<td>
+ <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_trans1.jpg" border="0" width="80"  height="80"
+       alt="Sample color_map" title="Sample color_map"></a>
+      </td></tr></table>
+</td>
+</tr><tr>
+<td><font size="2">
+<pre>Mescolare la transizione duro e morbido é anche possibile:
+gradient &lt;0,1,0&gt;
+color_map {[0.0 color White]
+           [0.3 color White]   // <b>preciso</b>
+           [0.3 color Red  ]
+           [1.0 color White] } // <b>morbido</b> au bianco à l'inizio</td></pre></font>
+   </td>
+<td>
+ <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_trans2.jpg" border="0" width="80"  height="80"
+       alt="Sample color_map" title="Sample color_map"></a>
+      </td></tr></table>
+</td>
+</tr><tr>
+<td><font size="2">
+<pre>gradient &lt;0,1,0&gt;
+color_map {[0.0 color White] <br>
+           [0.5 color Red  ]   // <b>morbido</b>
+           [1.0 color White] } // <b>morbido</b> au bianco à l'inizio</td></pre></font>
+   </td>
+<td>
+ <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/color_trans3.jpg" border="0" width="80"  height="80"
+       alt="Sample color_map" title="Sample color_map"></a>
+      </td></tr></table>
+   </td>
+</tr></table>
+
+<hr>
+<table align="center" border="0" cellspacing="1" cellpadding="4">
+<tr><td>
+<font face="Arial" size="2"><p>Un esempio di base:  </p></font>
+</td><td>
+<table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#ffffff">
+<img src="im/colormp2.jpg" width="240" height="180"></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<br>
+<table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>
+sphere{&lt;0,0,0&gt;,1
+       texture{pigment{gradient &lt;0,1,0&gt; //
+                       color_map{[0.0 color Blue ]
+                                 [0.2 color Navy ]
+                                 [0.5 color White]
+                                 [0.8 color Navy ]
+                                 [1.0 color Blue ]
+                                }// end of color_map
+                       scale 2 translate&lt;0,-1,0&gt;
+                       }//  end of pigment
+               finish{ diffuse 0.9 phong 1.0 }
+              }// end of texture
+       scale &lt;1.3,0.75,1.3&gt; translate&lt;0,1.2,-0.3&gt;
+      }// end of sphere</b></td></pre>
+</tr>
+</table>
+<br>
+
+<h6 align="justify">Il motivo &agrave; righe di colori si riprende in un'altitudine di 1 unit&agrave;.
+Se nous vogliamo una ripetizione in per esempio 7 unit&eacute;s nous devons aggiungere
+al comando <nobr>&quot; pigment &quot;</nobr> la scala <nobr>&quot; scale 7 &quot;</nobr>.<br>
+Per una sfera di cielo blu con un diametro di 10000 unit&agrave; et un colore bianco al orizzonte
+e blu nel zenit si p&ugrave;o usare una sfera con <nobr>&quot; color_map &quot;</nobr>
+come segue con una scala di <nobr>&quot; scale 10000 &quot;</nobr> ---
+Qui nous aggiungiamo   <nobr>&quot; finish { ambient 1 diffuse 0} &quot;</nobr>
+perche il cielo non riceve nesun ombre. </h6>
+<table align="center" border="1" cellspacing="1" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>sphere{ &lt;0,0,0&gt;, 1
+        texture{
+         pigment{
+           gradient &lt;0,1,0&gt;
+           color_map{[0.0 color White]
+                     [1.0 color Blue ]
+                    }
+           } // end of pigment
+         finish{ ambient 1 diffuse 0 }
+         }// end of texture
+ scale 10000
+ }// end of sphere </b></td></pre>
+</tr>
+</table>
+
+</font>
+
+
+<hr size="3">
+<font size="2"><b>Esempio di &quot;color_map{...}&quot;:</b></font>
+<br>
+<br>
+<div align="center">
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/color_map0im.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/color_map0s.jpg" border="0" width="320"  height="240"
+       alt="Sample normal_map 640x480" title="Sample normal_map 640x480"></a>
+      </td></tr></table>
+
+</div>
+<br>
+<table border="1" cellspacing="2" cellpadding="4" align="center">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>sphere{ &lt;0,0,0&gt; , 1
+        texture{
+          pigment{ crackle
+                   scale 1.5 turbulence 0.35
+                   color_map{
+                     [0.04 color Black]
+                     [0.08 color Black]
+                     [0.32 color rgb&lt;1,0.65,0&gt;]
+                     [1.00 color rgb&lt;1,1.0,0.5&gt;]
+                     } // end of color_map
+                    scale 0.2
+                 } // end of pigment
+          normal { bumps 0.75 scale 0.02}
+          finish { diffuse 0.9 phong 1}
+          rotate&lt;0,-30,0&gt;
+          translate&lt;0.01, 0.04, 0.00&gt;
+        } // end of texture -----------------------
+   scale&lt;1,1,1&gt;  rotate&lt;0,0,0&gt;
+   translate&lt;0.40,1, 0.25&gt;
+ } // end of sphere -------------------------------</b></td></pre>
+</tr>
+</table>
+
+</td></tr></table><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

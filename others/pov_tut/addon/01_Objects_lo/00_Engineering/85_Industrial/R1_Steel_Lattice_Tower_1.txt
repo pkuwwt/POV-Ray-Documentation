@@ -1,0 +1,26 @@
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
+#declare Steel_Lattice_Tower_Texture =   
+         texture { pigment{ color rgb< 0.85, 0.82, 0.79 >*0.45 }
+                   normal { bumps 0.25 scale 0.015 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+//--------------------------------------------------------------------------
+#include "Steel_Lattice_Tower_1.inc"
+//--------------------------------------------------------------------------
+object{Steel_Lattice_Tower_1 ( 
+              7.70, // Tower_Height, // 
+              2.50, // Cross_Beam_H, //  
+              
+              0.85, // BLx, // half width x, // 
+              1.50, // BLz, // half width z, // 
+              0.115, // BR, // main beams radius, // 
+              0.070, // BT, // radius side diagonals, // 
+              0.1, // Sh_X, // shear factor in x, // 
+              0.2, // Sh_Z, // shear factor,in z  // 
+            ) // ------------------------ 
+   texture{ Steel_Lattice_Tower_Texture } 
+   rotate<0,0,0> 
+   translate< 0.00, 0.00, 0.00 >} 
+//-------------------------------------------------------------------------- 
+//-------------------------------------------------------------------------- 

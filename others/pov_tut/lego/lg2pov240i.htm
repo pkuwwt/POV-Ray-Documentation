@@ -1,0 +1,254 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>LEGO&reg; CAD e POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Rendering di modelli LEGO di programmi CAD come LDraw o LEGO Digital Designer con il programma di raytracing POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, Computer grafica 3D, modelli LEGO, LEGO CAD, LDraw, LEGO Digital Designer, LeoGEO, L3PAO">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <table width="100%" border="0"><tr>
+ <td valign="top">
+<table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><img src="im/LEGO000tt.jpg" alt="LEGO in POV-Ray" title="LEGO in POV-Ray" width="80" height="60" border="0"></td></tr></table> </td>
+ <td>
+<p align="center"><font size="5">&nbsp; &nbsp; Modelli &nbsp;LEGO<sup>&reg;</sup> Virtuali di Programmi CAD nel POV-Ray</font>
+<br><font size="2">Rendering di modelli LEGO<sup>&reg;</sup> virtuali di programmi CAD <br>
+come <b>LDraw</b>&trade; e <b>LeoGEO</b> o <b>LEGO Digital Designer</b><sup>&reg;</sup> con POV-Ray</font></p></h6>
+ </td>
+ <td align="right">
+        <a href="lg2pov240e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="lg2pov240e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="lg2pov240f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="lg2pov240f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="lg2pov240d.htm"><font size="2">Deutsch </font></a>
+        <a href="lg2pov240d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="lg2pov000i.htm"--><b>LEGO<sup>&reg;</sup> e POV-Ray</b></a><br>
+ &nbsp;&nbsp; <a href="lg2pov000i.htm">Indice del Contenuto</a><br>
+<a href="lg2pov100i.htm"> <b>CAD per LEGO<sup>&reg;</sup></b></a><br>
+&nbsp; <nobr>-  <a href="lg2pov110i.htm">LEGO Digital Designer<sup>&reg;</sup></b></nobr></a><br>
+&nbsp; -  <a href="lg2pov140i.htm">LDraw  &trade;</b></a><br>
+&nbsp; -  <a href="lg2pov160i.htm">LDraw + LeoCAD</b></a><br>
+&nbsp; -  <a href="lg2pov170i.htm">LDraw + MLCad</b></a><br>
+<br>
+<a href="lg2pov200i.htm">Di CAD a POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov220i.htm">LeoCAD a POV-Ray</b></a><br>
+&nbsp; -&gt;<!--a href="lg2pov240i.htm"--><b>Assi + Scale</b></a><br>
+&nbsp; -  <a href="lg2pov260i.htm">Colori adatti</b></a><br>
+<nobr>&nbsp; -  <a href="lg2pov280i.htm">Oggetti POV-Ray di LGeo</b></nobr></a><br>
+<br>
+&nbsp; <nobr>-  <a href="lg2pov300i.htm">LEGO<sup>&reg;</sup> misure + reticolo</b></a></nobr><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+<h3 align="center"><a name="Top"></a>
+</h3>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+  <td colspan="2"><h2>L'Adattamento degli Assi e della Scala <br>
+    di Oggetti CAD Converti a Oggetti POV-Ray</td></h2></tr>
+
+<tr><td colspan="2"><p align="justify">
+  Modelli LEGO<sup>&reg;</sup> virtuali in LeoGEO usanno una sistema di coordinate a mano sinistra,<br>
+  <font size="-1">(x a destra verso il fondo (red), y a sinistra verso il fondo (green) e z in alto (blue))</font><br>
+  Il file di <b>LeoCAD POV-Ray scene file output</b> usa anche questo <b>sistema a mano sinistra</b>.<br>
+  Con la camera, un fondo (background) e un luce il file per un mattoncini Brick_2x4
+  sembra circa come questo:
+<table border="0">
+<tr>
+<td>
+<br>
+  <pre><b>// File created by LeoCAD --------------//
+#include "Brick_Test1.inc"
+
+camera {
+  sky &lt;0,0,1&gt
+  location &lt;-10, -9, 6&gt
+  look_at &lt; 0.00, 0.00, 0.00&gt
+  angle 30
+}
+
+background{ color rgb &lt;1, 1, 1&gt; }
+
+light_source{&lt;-10,-5,20&gt; White shadowless}
+
+object {
+ lg_3001
+ texture { lg_red }
+ matrix &lt;-1.0000, 0.0000, 0.0000,
+          0.0000,-1.0000, 0.0000,
+          0.0000, 0.0000, 1.0000,
+          0.0000, 0.0000, 0.0000&gt;
+} // ----------------------------------//</b> </pre>
+In questo il file include &quot;Brick_Test1.inc&quot;<br>
+in sostanza contiene i tre righe seguente:<br>
+ <pre><b>#include "lg_color.inc"
+#include "lg_defs.inc"
+#include "lg_3001.inc" </b></pre></td>
+<td valign="top"> <h5>
+<br>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Brick_LeoGEO.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> Il LeoCAD POV-Ray scene file output<br> con qualche asse aggiunto per orientamento.</h5>
+<br>
+ <h5 align="center">LDraw file per <nobr>LeoCAD:</nobr><br>
+  <a href="pov/Brick_Test1.dat">Brick_Test1.dat</a></h5>
+ <h5 align="center">Scene file per <nobr>POV-Ray:</nobr><br>
+  <a href="pov/Brick_Test1.pov">Brick_Test1.pov</a><br>
+  con il file include associato: <br>
+  <a href="pov/Brick_Test1.inc">Brick_Test1.inc</a></h5>
+
+
+  </td>
+
+</tr></table>
+<hr>
+ <font size="+2">Adattamento degli Assi</font>:<br>
+  In POV-Ray si usa normalmente un systema di coordinate
+ a mano sinistra.<br>
+ Per questo ragione no si deve solo adottare la camera et il luce ma anche gli oggetti a il systema
+ a mano sinistra.<br>
+  <br>
+  <font size="+2">Adattamento della Scala</font>: <br>
+
+  In LDraw et LeoGEO si usa una scala di 1 unit&agrave; = 10 mm.<br>
+  In POV-Ray si usa normalmente 1 unit&agrave; = 1m.<br>
+  Se vogliamo integrare i nostri modelli LEGO<sup>&reg;</sup> virtuali in nostra monde virtuale di POV-Ray
+  doppiamo anche adottare la scala dei modelli con &quot;scale 0.01&quot;.
+  <br>
+<table border="0">
+<tr>
+<td>
+<br>
+  <pre><b>
+// LeoCAD POV-Ray Output File ---------//
+// Adapted to left handed system  -----//
+#declare lg_quality = 4; // 0~4
+#include "lg_color.inc"
+#include "lg_defs.inc"
+#include "lg_3001.inc" // brick 2x4
+// no additional include file needed!
+
+#declare L_Transform =
+ transform{ rotate&lt;-90,-90,0&gt; // y&lt;-&gt;z
+            scale 0.01       // 1 = 1m
+            translate&lt;0,0.0094,0&gt; //up
+          } // end L_Transform
+
+camera {
+  right x*image_width/image_height
+  location &lt;-0.04, 0.05, -0.0&gt
+  look_at &lt; 0.004, 0.00, 0.00&gt
+  angle 30
+}
+
+background{ color rgb &lt;1, 1, 1&gt; }
+
+light_source{&lt;-10,15,-20&gt; White}
+
+object {
+ lg_3001
+ texture { lg_red }
+ matrix &lt;-1.0000, 0.0000, 0.0000,
+          0.0000,-1.0000, 0.0000,
+          0.0000, 0.0000, 1.0000,
+          0.0000, 0.0000, 0.0000&gt;
+ transform{ L_Transform }
+} // ----------------------------------//</b> </pre>
+
+</td>
+<td valign="top"> <h5>
+<br>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Brick_adapted01.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table> LeoCAD POV-Ray scene file output adottato<br> con qualche asse aggiunto per orientamento.</h5>
+<br>
+ <h5 align="center">File di scena adottato per <nobr>POV-Ray:</nobr><br>
+  <a href="pov/Brick_Test1_adapted.pov">Brick_Test1_adapted.pov</a><br>
+  </td>
+</tr></table>
+  </p>
+  </td>
+</tr>
+</table>
+
+
+<br>
+
+ </td></tr>
+
+ </div>
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+  <img src="../email.gif" width="15" height="10" border="0" alt="email" title="email"> email:
+  <a href="mailto:Friedrich.Lohmueller_at_t-online.de">Friedrich.Lohmueller_at_t-online.de</a><br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ <table border="1" cellspacing="0" cellpadding="0">
+ <tr><td  width="450"><p align="center">
+     <font size="2">La parola LEGO<sup>&reg;</sup> &egrave; un marchio registrato per le aziende del Gruppo LEGO,<br>
+     che non sponsorizza, autorizza o supporta ufficialmente questo sito.<br>
+      <nobr>&nbsp;La propria homepage di LEGO<sup>&reg;</sup>:
+      <a href="http://www.lego.com"><font size="2">www.lego.com</font></a><font size="2">, e la  propria<br>
+       homepage di LEGO Mindstorms system: </font>
+      <a href="http://www.legomindstorms.com"><font size="2">mindstorms.lego.com</font></a></nobr></td>
+ </tr></table>
+ </td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

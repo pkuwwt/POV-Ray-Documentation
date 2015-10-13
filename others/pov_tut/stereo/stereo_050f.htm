@@ -1,0 +1,179 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>Images st&eacute;r&eacute;o 3D et Animation st&eacute;r&eacute;o 3D avec POV-Ray - La vision crois&eacute;e et Images st&eacute;r&eacute;o</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="La vision crois&eacute;e et Images st&eacute;r&eacute;o 3D et Animation st&eacute;r&eacute;o 3D avec POV-Ray">
+<meta name="keywords" content="vision crois&eacute;e, cross-eye view, images st&eacute;r&eacute;o 3D, Animation st&eacute;r&eacute;o 3D, st&eacute;r&eacute;oscopie, POV, POVRAY, POV-Ray, povray, raytracing, graphique 3d, animation 3d">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Images st&eacute;r&eacute;o et Animation st&eacute;r&eacute;o <nobr>avec POV-Ray</nobr></b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="stereo_050e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="stereo_050e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="stereo_050i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_050i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_050d.htm"><font size="2">Deutsch </font></a>
+        <a href="stereo_050d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+<font size="+1"> &nbsp;       <a href="stereo_000f.htm">Images st&eacute;r&eacute;o</font> et</b></a><br>
+<font size="+1"> &nbsp;       <a href="stereo_000f.htm">Animation st&eacute;r&eacute;o</b></a></font><br>
+ &nbsp;&nbsp;&nbsp; <a href="stereo_000f.htm">Index</b></a><br>
+<br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_050f.htm"--><b>Vision crois&eacute;e</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100f.htm">Images st&eacute;r&eacute;o simples</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150f.htm">Images st&eacute;r&eacute;o avanc&eacute;es</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200f.htm">Combiner images</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300f.htm">Animation st&eacute;r&eacute;o 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310f.htm">Animation st&eacute;r&eacute;o 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400f.htm">Exemples d'anims st&eacute;r&eacute;o</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="95%" align="center"><tr><td colspan="2"><!-- global table-->
+<b><font size="5">La vision crois&eacute;e</font> (cross-eye view) <br>
+<font size="2">Voir images st&eacute;r&eacute;o sans aides suppl&eacute;mentaires, m&ecirc;me avec des lunettes.</b></font>
+<hr>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<font size="2">Comment voir l'effet st&eacute;r&eacute;oscopique<br>
+aves couples des images pour la vision crois&eacute;e :</font><br>
+<font size="1">Pour cela, il est important de ne pas incliner la t&ecirc;te et de regarder verticalement &agrave; l'&eacute;cran.<br>
+</font><br>
+<table border="0" width="256" align="center">
+<tr>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_1.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_2.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+<font size="2">
+
+Les images ci-dessus repr&eacute;sentent ici une paire d'images pour la vision crois&eacute;e.<br>
+Nous avons mis un doigt &agrave; droite entre ces deux images et nos yeux. <br>
+Alors que <b>concentrant au bout de nos doigt</b> on peut remarquer que, dans le fond,<br>
+<b>le &quot;+&quot; se d&eacute;place &agrave; l'int&eacute;rieur du &quot;o&quot;</b>.<br>
+Nous percevons trois images comme les images ci-dessous. (avec 4 images, nous avons exag&eacute;r&eacute;!)<br>
+Nous devons <b>concentr&eacute; notre attention sur l'image au milieu</b> et<br>
+ignorer les autres images floues droite et &agrave; gauche du centre.
+</font>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+
+<table border="0" width="256" align="center">
+<tr>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_1_blur.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_0.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_2_blur.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+<font size="2">Nous pouvons utiliser <b>nos mains comme des œill&egrave;res plat</b><br>
+pour cacher les images fant&ocirc;mes irritants &agrave; droit et &agrave; gauche du centre.</font>
+<br>
+</td>
+</tr>
+</table>
+<table border="0" width="256" align="center">
+<tr>
+
+<td valign="top" colspan="3">
+<br>
+<font size="2">Maintenant, nous devrions &ecirc;tre en mesure<br>
+              de voir la profondeur de l'espace dans cette image :</font><br>
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Acer_Leaf_04a_Combine_.jpg" border="0" width="512"  height="256"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

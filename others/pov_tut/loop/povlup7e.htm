@@ -1,0 +1,321 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="POV-Ray tutorial- While loops and POV-Ray - For Loops and While Loops">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, tutorial, mathematics, while loop, for loop">
+<title>About Loops and POV-Ray - For Loops and While Loops</title>
+
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+ <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>About Loops with POV-Ray</b></b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+     <a href="povlup7i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+     <a href="povlup7i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povlup7f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+     <a href="povlup7f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povlup7d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+     <a href="povlup7d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0e.htm"><font size="3"><nobr>Loops in POV-Ray</nobr></font></b></a><br>
+<b>&gt;</b>1.  <!--a href="povlup7e.htm"--><b>For + While</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <!--a href="povlup7e.htm"--><b>Comparison</b></a><br>
+ &nbsp; 2.  <a href="povlup1e.htm">Linear</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="povlup1e.htm">Transformations</b></a><br>
+ &nbsp; 3.  <a href="povlup2e.htm">Circular</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="povlup2e.htm">Transformations</b></a><br>
+ &nbsp; 4.  <a href="povlup3e.htm">Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4e.htm">Screws</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup4e.htm"> &amp; Spirals</b></a><br>
+ &nbsp; 6.  <a href="povlup5e.htm">Twisting</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5e.htm">Spirals</b></a><br>
+ &nbsp; 7.  <a href="povlup6e.htm">Snails</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6e.htm">&amp; Ammonites</b></a><br>
+ &nbsp; 8.  <a href="povlup9e.htm">Spherical Spirals 1</b></a><br>
+ &nbsp; 9.  <a href="povlup10e.htm">Spherical Spirals 2</b></a><br>
+ &nbsp;10.  <a href="povlup8e.htm">Fibonacci Spirals</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+
+
+<!--h1 align="center">About While-Loops with POV-Ray</h1-->
+<h2 align="center">For Loops and While Loops - Comparison</h2>
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="5" width="95%">
+<tr>
+ <td colspan="2">
+  <p align="justify">The <b>for loop</b> is implemented in <nobr><font color="#9F0000">POV-Ray 3.7</font></nobr>
+  <font size="-1">(since beta 37)</font>.<br>
+  <font size="-1">(Attention: The for loop don't work with version 3.6.2 !)</font><br>
+  Here a comparison of these two similar kind of loops:
+  <table border="0" cellpadding="5" cellspacing="5" width="95%"><!--sub table-->
+  <tr>
+  <td colspan="1" width="36">
+  <img src="im/warn.gif" border="0" width="32" height="30">
+  </td>
+  <td colspan="1">
+  <p align="justify"><font size="-2"><b>To avoid any collision with built-in identifiers and reserved words in POV-Ray</b>,<br>
+                                    <b>it's strongly recommanded to use only words beginning with capital letters<br>
+  for all identifiers of variables declared by the user.</b><br>
+  We have to take into account that <b>x = &lt;1,0,0&gt;</b> is a built-in identifier, we have to use i.e. <b>&quot;X&quot;</b> instead.</font><br>
+  </p>
+  </td>
+  </tr></table> <!--sub table-->
+  </p>
+<tr>
+ <td valign="top">
+  <p align="justify"><b>Syntax 'While Loop':</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#local Identifier = Start;
+#while (Identifier &lt;= End)
+  //... do something
+  // depending on value of Identifier.
+  #local Identifier = Identifier+Step;
+#end // ------------- end of loop ----</b></td></pre></p>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <p align="justify"><b>Syntax 'For Loop':</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//----------------------------------
+#for (Identifier, Start, End [, Step])
+  //... do something
+  // depending on value of Identifier.
+#end // ------------- end of loop --</b></td></pre></p>
+</tr>
+</table>
+<font size="-1">Note: Step is optional! (default Step=1)</font><br>
+ </td>
+</tr>
+
+<tr>
+ <td valign="top">
+  <p align="justify"><b>Example 'While Loop':</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>union{ //-----------------------------
+ #local Cntr = 0; // start
+ // while loop
+ #while ( Cntr &lt;= 5 )
+
+   object{ MyObject
+           translate&lt;0,0, Cntr*2 &gt;
+         } // end of object
+
+ #local Cntr = Cntr + 1; // next
+ #end // --------<b></b> end of #while loop
+
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0,0&gt;
+} // end of union --------------------</b></td></pre></p>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <p align="justify"><b>Example 'For Loop':</b>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>union{ //-----------------------------
+
+//<font size="-1">#for (Identifier, Start, End [, Step])</font>
+ #for (Cntr, 0, 5, 1)
+
+   object{ MyObject
+           translate&lt;0,0, Cntr*2 &gt;
+         } // end of object
+
+ #end // ----------- end of #for loop
+
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0,0&gt;
+} // end of union --------------------</b></td></pre></p>
+ </td>
+</tr>
+</table>
+<font size="-2">Note: 5 steps = 6 footprints! </font>
+ </td>
+</tr>
+
+<tr>
+ <td colspan="2"><font size="-2"><i>For the declaration of 'MyObject' see the scene file text! </i></font>
+<br><h5 align="center">
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/for_loop_linear_.jpg" width="320" height="240"></td>
+       </tr></table>
+
+    Scene file for <nobr>POV-Ray:</nobr> <a href="pov/for_loop_linear_0.pov">.pov</a> or:
+    <a href="pov/for_loop_linear_0.txt">.txt</a><br>
+</h5>
+<br>
+ </td>
+</tr>
+<tr>
+ <td colspan="2" valign="top">
+ The <b>length of the steps</b> can be any real number value! Als negative values are allowed.<br>
+ The above loops can also be done in this way:</td></tr>
+<tr>
+ <td colspan="1" valign="top"><font size="-1"><i>while loop:</i></font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+ <pre><b> #local Cntr = 0; // start
+ #while ( Cntr &lt;= 10 )
+   object{ MyObject
+           translate&lt;0,0, Cntr &gt;
+         } // end of object
+ #local Cntr = Cntr + 2; // next
+ #end // --------<b></b> end of #while loop</b></td></pre></p>
+ </td>
+</tr>
+</table>
+
+ </td>
+ <td colspan="1" valign="top"><font size="-1"><i>for loop:</i></font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b> #for (Cntr, 0, 10, 2)//<font size="-1">..,Start,End,Step</font>
+   object{ MyObject
+           translate&lt;0,0, Cntr &gt;
+         } // end of object
+ #end // ----------- end of #for loop</b></td></pre></p>
+ </td>
+</tr>
+</table>
+
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+<hr>
+ <img src="im/warn.gif" border="0" width="32" height="30"> <b>Warning: &nbsp; </b>
+  <font size="+1"><b>Avoiding infinite loops is at your own risk!</b></font><br>
+  Make sure that your loop really stops at a finite number of steps!<br>
+  Otherwise POV-Ray will parse an endless loop by filling your RAM with useless data!<br>
+  See the following example of a loop which never ends
+  <font size="-1">(at least until you don't hit the red 'Stop' button)</font>:
+ </td>
+</tr>
+<tr>
+ <td colspan="1"><font size="-1">A while loop with a wrong step size:</font>
+ <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#local Cntr = 0;  // start
+#local End  = 5;  // end
+#local Step =<u><font color="#F00000"> - </font></u>1; // step <font color="#F00000">!!wrong!!</font>
+ // while loop start
+ #while ( Cntr &lt;= End )
+   object{ MyObject
+           translate&lt;0,0,Cntr*2&gt;}
+ #local Cntr = Cntr + Step; // next
+ #end // -------- end of while loop
+</b></td></pre></p>
+ </td>
+</tr>
+</table><font size="-2">This while loop never stops!</font>
+</td>
+ <td colspan="1">
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+<font size="-1">With a for loop this is not so dramatic:</font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b> #for (Cntr, 0, 5, -1)
+    // do something
+ #end // ------ end of #for loop</b></td></pre></p>
+ </td>
+</tr>
+</table><font size="-2">This 'nonsense for loop' results in just doing nothing!</font>
+
+
+ </td>
+</tr>
+</table>
+</div>
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0e.htm">Overview</a> |
+     <!--a href="povlup7e.htm"-->For + While</a>
+     <a href="povlup1e.htm">Linear</a> |
+     <a href="povlup2e.htm">Circular</a> |
+     <a href="povlup3e.htm">Moebius</a> |
+     <a href="povlup4e.htm">Screws+Spirals</a> |
+     <a href="povlup5e.htm">Twisted Spirals</a> |
+     <a href="povlup6e.htm">Snails</a> |
+     <a href="povlup9e.htm">Spherical 1</a> |
+     <a href="povlup10e.htm">Spherical 2</a> |
+     <a href="povlup8e.htm">Fibonacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+  <td  align="right">&nbsp;</td>
+ <td align="right"  width="25%">&nbsp;</tr></table><!-- end footer -->
+</body>
+</html>

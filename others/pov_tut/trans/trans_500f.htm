@@ -1,0 +1,218 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Transformations g&eacute;om&eacute;triques avec POV-Ray - transform</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013 by Friedrich A. Lohmueller">
+<meta name="Description" content="Transformations g&eacute;om&eacute;triques avec POV-Ray, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d grafic, 3d graphic, computergraphic,
+      transformations g&eacute;om&eacute;triques, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Transformations g&eacute;om&eacute;triques avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_500e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="trans_500e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="trans_500i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_500i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_500d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_500d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+ &nbsp; <a href="trans_000f.htm">Transformations</b></a><br>
+ &nbsp; <a href="trans_000f.htm">g&eacute;om&eacute;triques</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001f.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001f.htm"-->&eacute;l&eacute;mentaires</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100f.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200f.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300f.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300f.htm">R&eacute;flexion</b></a><br>
+ <br>
+ &nbsp; &nbsp; <!--a href="trans_001f.htm"-->Autres</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001f.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400f.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450f.htm">Cisaillement</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470f.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <!--a href="trans_500f.htm"--><b>&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="trans_500f.htm"--><b>&nbsp;et &quot;inverse&quot;</b></a><br>
+ <br>
+ &nbsp; &nbsp; <a href="trans_800f.htm">Vecteurs et</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800f.htm">Transformations</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/inserti_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">t&eacute;l&eacute;chargement</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table border="0" cellspacing="2" cellpadding="4" width="95%">
+<tr><td>
+  <td>
+     <font size="6"> &quot;transform{ ... }&quot;</font>  <font size="4"><nobr> = Transformations en paquet</nobr></font><br>
+     <font size="6"> &quot;transform{ ... invers }&quot;</font> <font size="4"><nobr> = Transformations invers&eacute;es</nobr></font>
+</td></tr></table>
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td>
+<p align="justify">C'est possible avec cette commande de grouper
+des transformations tels que "scale", "rotate", "translate" et /ou "matrix",
+dans toute sorte de s&eacute;quence en un seul mot pour toutes ces transformations.
+La syntaxe de pov dans ce cas est .</p>
+
+Syntaxe :
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF"><pre><b> #declare <i>Mon_Transformation</i>
+ = transform{ <i>Séquence libre de transformations</i>}</b></td></pre>
+  </tr></table>
+<font size="2">&nbsp; (Transformations ici: translate, rotate, scale, ou matrix.)</font>
+<br>
+
+<font size="3">On l'utilise ainsi :
+<table border="1" cellpadding="4" cellspacing="4"  bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF"><pre><b> object{ <i>Mon_Objet</i> transform <i>Mon_Transformation</i> }
+  //ou avec
+ object{ <i>Mon_Objet</i> transform {<i>Mon_Transformation</i>} }</b></td></pre>
+ </tr></table>
+<font size="2">&nbsp; (avec ou sans les parentesi int&eacute;rieures !)</font> <br>
+<font size="3">et la transformation invers&eacute;e:</font>
+<table border="1" cellpadding="2" cellspacing="2"  bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF">
+<pre><b> object{ <i>Mon_Objet</i> transform {<i>Mon_Transformation</i> <font color="#800000">inverse</font>} } </b></td></pre>
+ </tr></table>
+<font size="2">&nbsp; (Bisogni all'interno delle parentesi int&eacute;rieures !)</font>
+<br>
+<br>
+Voici un exemple :
+
+<table  border="1" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4">
+ <tr>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <!--a href="../samples/canoe.htm"-->
+              <img src="canu7s.jpg" border="0" width="240" height="180"
+                   alt="Sample canoes" title="Sample canoes"><!--/a-->
+            </td></tr></table>
+  </td>
+</tr><tr>
+<td bgcolor="#eee8d0">
+     <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    Un objet appel&eacute; "Canoe" ainsi que son &raquo;trou&laquo; appropri&eacute; &agrave; la surface
+    de l'eau "Canoe_outside" doit &ecirc;tre plac&eacute; dans 3 diff&eacute;rentes positions,
+    de tailles diff&eacute;rentes / positions / orientations: </font><br>
+     <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+    Pour ceci, d&eacute;finir en premier les transformations, qui m&egrave;nent
+    aux positions souhait&eacute;es :
+
+
+<pre><b>//------------------------------------- Positions:
+#declare Canoe_Position1
+  = transform { rotate&lt; 0,30,0&gt; translate&lt;0.0,0,1>}
+#declare Canoe_Position2
+  = transform { rotate&lt;-6,20,0&gt; translate&lt;1.5,0,5&gt;}
+#declare Canoe_Position3
+  = transform { rotate&lt; 5, 0,0&gt; scale 0.55
+                          translate&lt;-0.3,0,-2.00&gt;}
+//-------------------------------------------------
+</b></pre>
+Ici nous avons les canoes :
+<pre><b>
+//---------------------- Canoes at their positions:
+object{ Canoe transform Canoe_Position1}
+object{ Canoe transform Canoe_Position2}
+object{ Canoe transform Canoe_Position3}
+//-------------------------------------------------
+</b></pre>
+
+et ici dans l'eau, les trous appropri&eacute;s :</font>
+<pre><b>//-------------------------------------------------
+difference{
+plane{<0,1,0>, 0 }
+object{Canoe_outside transform Canoe_Position1 }
+object{Canoe_outside transform Canoe_Position2 }
+object{Canoe_outside transform Canoe_Position3 }
+   texture{Polished_Chrome
+                    normal {crackle 1 scale 5
+                            turbulence 1
+                            translate&lt;0,0,5&gt;}
+                    finish {ambient 0.15 diffuse 0.45
+                            reflection 0.40}}
+          }// end of difference
+//----------------------------------------------- end</b></td></pre>
+</tr></table></div>
+<hr>
+<h6 align="justify">
+ <a href="trans_100f.htm">translate</a> |
+ <a href="trans_200f.htm">rotate</a> |
+ <a href="trans_300f.htm">scale</a> |
+ <a href="trans_400f.htm">matrix</a> |
+ <a href="trans_450f.htm">cisaillement</a> |
+ <a href="trans_470f.htm">transforms.inc</a> |
+ <!--a href="trans_500f.htm"-->transform</a> |
+ <a href="trans_800f.htm">transformations de vecteurs</a>
+<h6>
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

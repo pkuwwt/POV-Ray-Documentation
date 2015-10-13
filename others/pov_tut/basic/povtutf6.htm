@@ -1,0 +1,263 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7,Infographie, Synth&egrave;se d'image 3D">
+<meta name="subject" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<meta name="keywords" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Transformations g&eacute;ometrique de base : scale, rotate, translate, matrix and CSG - POV-Ray Course part 6</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+     <h6><nobr>Introduction au langage de description sc&egrave;nique POV-Ray raytracer</nobr>
+     <nobr> &nbsp; &nbsp; &nbsp; &nbsp; page 6</nobr>
+<br>par Friedrich A. Lohm&uuml;ller </td></h6>
+ <td align="right">
+        <a href="povtuto6.htm"><font size="2">English</font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povtuto6.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti6.htm"><font size="2">Italiano</font></a>
+        <a href="povtuti6.htm"><img src="flag_ita.gif" alt="Deutsch" title="Deutsch"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs6.htm"><font size="2">Deutsch</font></a>
+        <a href="povkurs6.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+        </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#basic"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povtutf0.htm">Introduction POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povtutf0.htm">Table des mati&egrave;res&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtutf1.htm">Utiliser POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtutf2.htm">Bases</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comment &eacute;crire le texte</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#xyzKoordinaten">xyz – Coordonn&eacute;es</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#ZahlenundVektoren">virgule flotante et vecteurs</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtutf3.htm">Structure d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemple de base.</b></a></nobr><br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtutf4.htm">La t&ecirc;te d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Fichiers #include</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtutf5.htm">Objets g&eacute;om&eacute;triques de base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  cone, torus, plane</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  et autres formes</b></a></nobr><br>
+<b>&gt;6.</b> <!--a href="povtutf6.htm"--><b>Transformations</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &eacute;chelle, rotation,</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translation et autres.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtutf7.htm">Couleurs et surfaces</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtutf8.htm">#declare, #local  #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Variables, objets flexibles.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtutf9.htm">#while</b></a> - Boucles</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemples de base.</b></a>,</nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutfa.htm">#include</b></a> - fichiers include</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; objets r&eacute;utilisables.</b></a></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutfb.htm">Efficacit&eacute;</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; vitesse, flexibilit&eacute;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; travailer modulaire.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adapter de 3.1 &agrave; 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insertf_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<p align="justify">
+<font size="+2"><b>Transformations</b> :</font><br>
+<font size="+1"><b>Eacute;chelle, R&eacute;flexion, Rotation, Translation</b></font><br>
+<font size="-1">&nbsp; &nbsp; &nbsp; Pour des informations plus d&eacute;taill&eacute;es de ce sujet
+ on peut voir ma description &quot; <a href="../trans/trans_000f.htm">Transformations G&eacute;om&eacute;triques</b></a>&quot;</b>.</font><br>
+<font size="-1">Ces transformations on ne peut pas seulement appliquer &agrave; la g&eacute;om&eacute;trie des objets mais
+par exemple aussi &agrave; la texture ou aux components de la texture.</font>
+<hr><br>
+<font size="+1"><b>'scale'</b></font> = changer l'&eacute;chelle - agrandir ou r&eacute;duire.<br>
+L'allongements sont toujours (!) d&eacute;finis <b>relatif au centre du syst&egrave;me de coordonn&eacute;es</b> &lt;0,0,0&gt;.<br>
+Le changer de l'&eacute;chelle par &raquo; scale &laquo;
+cause un allongement centr&eacute; en la direction respective. <br>
+<font size="-1"><b>Exemples:</b><br> <b>scale 2</b> cause la m&ecirc;me que <b>scale&lt;2,2,2&gt;</b>: L'&eacute;chelle d'objet
+ est doubl&eacute; en toutes les directions.<br>
+<b>scale 0.5</b> en toutes les directions multipli&eacute; par 0.5 - autant dire que tout est r&eacute;duit &agrave; la moiti&eacute;.<br>
+<b>scale&lt;1.0,0.5,3.0&gt;</b> &eacute;chelle diff&eacute;rent en les directions des x, des y et des z.<br>
+Ici: en direction des x l'&eacute;chelle originale - sans changer, en direction des y r&eacute;duit &agrave; la moiti&eacute; et
+en direction des z allong&eacute; 3 fois.</font>
+<br><b>scale&lt;-1,1,1&gt;</b> est une <b>R&eacute;flexion</b>! Cela r&eacute;fl&eacute;te un objet au plane &raquo; yz &laquo;.
+<br>
+<img src="im/warn.gif" border="0" width="32" height="30">
+<font size="3"><b><i>Attention :</i></b></font> <b>scale &lt;2,0,0&gt;</b> par exemple provoque un
+ &quot;<b>Parse Warning: Illegal Value: Scale X by 0.0. Changed to 1.0.</b>&quot;<br>
+Means: Changed to <b>scale &lt;2,1,1&gt;</b> parce que la multiplication d'un &eacute;l&eacute;ment avec la valeur null n'a aucun sens !<br>
+
+<hr><br>
+<font size="+1"><b>'rotate'</b></font> = tourner, pivoter <font size="-1"><i>(toujours!)</i></font>
+sur les axes du syst&egrave;me de coordonn&eacute;es<br>
+Les rotations sont <b>toujours d&eacute;finies relative aux axes du syst&egrave;me de coordonn&eacute;es </b>
+et <b>pas autour des axes de sym&eacute;trie</b> des objets!!</b>
+&raquo; rotate &laquo; cause une rotation conforme &agrave; le r&egrave;gle de &raquo; main gauche &laquo;
+autour les axes du syst&egrave;me de coordonn&eacute;es.<br>
+
+<font size="-1"><b>Exemple : </b><b>rotate&lt;0,45,0&gt;</b> tourne un objet autour l'axe des y par 45 degr&eacute;s.</font><br>
+<img src="im/warn.gif" border="0" width="32" height="30">
+<b><i>Attention :</i></b>> Les rotations <b>ne</b> sont <b>pas</b>
+ appliqu&eacute;s relative aux aucuns axes de sym&eacute;trie &agrave; travers le centre d'un objet
+ mais ils sont toujours appliqu&eacute;es &agrave; un objet relative aux axes du syst&egrave;me de coordonn&eacute;es.<br>
+<img src="im/warn.gif" border="0" width="32" height="30">
+<b><i>Attention :</i></b> Les rotations sont appliqu&eacute;es en l'ordre &eacute;crit!
+Des rotations s&eacute;quentielles autour de axes diff&eacute;rentes on ne peut pas permuter!
+
+<hr><br>
+<b>'translate'</b>
+ =  mouvement de translation -  d&eacute;placement parall&egrave;le relativement &agrave; la position de d&eacute;part.<br>
+'translate'</b> cause une translation (d&eacute;placement parall&egrave;le) sans
+ influence sur la forme de l'objet.<br>
+<font size="-1"><b>Exemple :</b> <b>translate &lt;-2,1,3&gt;</b> d&eacute;place un objet de 2 unit&eacute; &agrave; gauche (direction des x),
+ de 1 unit&eacute; vers le haut (direction des y positive) et de 3 unit&eacute; en avant (direction des z positives).</font>
+<hr>
+<font size="-1"><b>Des autres Transformations: </b>
+Par utiliser la matrice <a href="../trans/trans_400f.htm">transformation matrix</b></a>
+est possible de r&eacute;aliser toutes les transformations susmentionn&eacute;es mais aussi des
+ transformations affines plus complexes, p.ex. le cisaillement (?) (shearing)
+ de un objet parall&egrave;lement &agrave; un plan de coordonn&eacute;es.
+</font>
+<hr><br>
+<font size="+1"><b><a name="CSG">CSG</a></font> G&eacute;om&eacute;trie de Construction de Solides (Constructiv Solid Geometry)</b><br>
+ Alg&egrave;bre bool&eacute;enne avec les Solides<br>
+<font size="-1">&raquo; Cut and paste &laquo;, creuser et fraiser avec des fonctions bool&eacute;ennes:<br>
+<b>&nbsp;&nbsp;&nbsp;1.: union</b> = l'unification des objets =  assembler des objets diff&eacute;rentes &agrave; un objet nouveau.<br>
+ &nbsp; &nbsp; &nbsp; (merge = used instead of union for transparent objects, if the inner borders are not wanted to be visible.<br>
+<b>&nbsp;&nbsp;&nbsp;2.: difference</b> = le reste de l'objet1 moins l'objet2 moins l'objet3 ... etc.<br>
+<b>&nbsp;&nbsp;&nbsp;3.: intersection</b> = autant dire que ces partes de tous les objets, que sont communes
+ avec tous les autres.</font><br>
+
+<div align="center">
+
+<table border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td width="140" height="30"><b>Unification!</b></td>
+  <td width="140" height="30"><b>Soustraction!</b></td>
+  <td width="140" height="30"><b>Les partes communes!</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#eee8d0">
+      <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+      <tr><td><a href="../csg/povcsg2f.htm" target="new">
+              <img src="im/boole_u.gif" border="0" width="130" height="100"></a></td></tr></table>
+      </td>
+  <td bgcolor="#eee8d0">
+       <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+      <tr><td><a href="../csg/povcsg3f.htm" target="new">
+              <img src="im/boole_d.gif" border="0"  width="130" height="100"></a></td></tr></table>
+      </td>
+  <td bgcolor="#eee8d0">
+       <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+      <tr><td><a href="../csg/povcsg4f.htm" target="new">
+              <img src="im/boole_i.gif" border="0"  width="130" height="100"></a></td></tr></table>
+      </td>
+ </tr>
+ <tr>
+  <td width="140" height="50"><b>union{...}</b><br>ou <b>merge{...}</b></td>
+  <td width="140" height="50"><b>difference{...}</b></td>
+  <td width="140" height="50"><b>intersection{...}</b></td>
+ </tr>
+ <tr>
+ <tr>
+  <td><table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="../csg/povcsg2f.htm" target="new">
+                <img src="im/boole_u.jpg"  width="130" border="0" height="98" alt="union and merge" title="union and merge"></a></td></tr></table>
+      </td>
+  <td>
+      <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="../csg/povcsg3f.htm" target="new">
+                <img src="im/boole_d.jpg"  width="130" border="0" height="98"  alt="difference" title="difference"></a></td></tr></table>
+      </td>
+  <td>
+      <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="../csg/povcsg4f.htm" target="new">
+                <img src="im/boole_i.jpg"  width="130" border="0" height="98"  alt="intersection" title="intersection"></a></td></tr></table>
+      </td>
+ </tr>
+</table>
+ </div>
+
+
+
+<img src="im/warn.gif" border="0" width="32" height="30">
+<b>!!! <b>Attention</b> :</b> Il faut que les objets pour une soustraction de objets n'aient pas
+ des surfaces co&iuml;ncidentes.
+Il est n&eacute;cessaire que l'objet &agrave; soustraire s'&eacute;tendre <b>indubitable et sans ambigu&iuml;t&eacute;</b>
+au dehors de l'objet de base.
+  En cas de surfaces co&iuml;ncidentes la pr&eacute;cision de calculer de l'ordinateur est l'emb&ucirc;che:
+   Quelque temps la surface est soustrait, quelque temps n'est pas soustrait -
+et cette chose se produit d'une mani&egrave;re totalement impr&eacute;visible!
+(Cette erreur peut appara&icirc;tre seulement dans quelques positions de la camera -
+mais alors il est tr&egrave;s tr&egrave;s ennuyeux!)
+<br>
+Pour les d&eacute;tails voyez ici: <b><a href="../csg/povcsg1f.htm" target="new">CSG - Constructive Solide G&eacute;ometrie
+ - Alg&egrave;bre bool&eacute;enne des Solides </b></a>.
+
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtutf0.htm">part 0</a> |
+<a href="povtutf1.htm">part 1</a>  | <a href="povtutf2.htm">part 2</a> |
+<a href="povtutf3.htm">part 3</a>  | <a href="povtutf4.htm">part 4</a> |
+<a href="povtutf5.htm">part 5</a>  | <!--a href="povtutf6.htm"-->part 6</a> |
+<a href="povtutf7.htm">part 7</a>  | <a href="povtutf8.htm">part 8</a> |
+<a href="povtutf9.htm">part 9</a>  | <a href="povtutfa.htm">part 10</a> |
+                                     <a href="povtutfb.htm">part 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

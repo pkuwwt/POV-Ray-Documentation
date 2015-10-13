@@ -1,0 +1,279 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti geometrichi per POV-Ray 3.6 / 3.7  del mio include file &quot;shapes3.inc&quot;</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici del include file &quot;shapes_lo.inc&quot;">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica, Oggetti Geometrici di Base include file in POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2">Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+                      <nobr>di  Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+ <hr size="3"><div align="center"><font size="+2">Oggetti Geometrici di POV-Ray </font></div>
+  <td align="right">
+        <a href="shapes3_0000e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes3_0000e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes3_0000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes3_0000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_0000d.htm"><font size="2">Deutsch</font></a>
+        <a href="shapes3_0000d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_1.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp; <a href="../all_shapes/shapes000i.htm">Indice</a><br>
+<br>
+<nobr><b>&gt;</b><!--a href="shapes3_0000i.htm"--><b>Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11i.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20i.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21i.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40i.htm">Egg</b></a><br>
+-  <a href="shapes3_40i.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43i.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43i.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42i.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45i.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30i.htm">Column_N</b></a><br>
+-  <a href="shapes3_30i.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30i.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30i.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50i.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50i.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80i.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85i.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85i.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22i.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60i.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65i.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70i.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70i.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+
+
+<font size="3">Oggetti del mio include file <a href="../down/insert_a.htm" alt="Download" title="Download">&quot;shapes3.inc&quot;</a>
+  <font size="2">(precedentemente &quot;<b>shapes_lo.inc</b>&quot;)</font>:</font><br>
+  <font size="1" color="#aa0000">Aggiornamento: 06 aprile 2013 </font><br>
+  <font size="1"> &nbsp; Clicca sulle miniature per vedere i dettagli, a volte anche con una descrizione su come sono state fatte queste macro!</font>
+ </td>
+</tr>
+<tr>
+<td colspan="2">
+
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="1" cellpadding="1" width="90%">
+<tr>
+ <td align="center" width="20%">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_11i.htm"><img src="im/mymcr11.jpg" border="0" width="160" height="120" alt="Segment_of_CylinderRing" title="Segment_of_CylinderRing"></a></td></tr></table></td>
+ <td align="center" width="20%">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_20i.htm"><img src="im/macro20.jpg" border="0" width="160" height="120" alt="Segment_of_Torus" title="Segment_of_Torus"></a></td></tr></table></td>
+ <td align="center" width="20%">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_21i.htm"><img src="im/mymacr21s.jpg" border="0" width="160" height="120" alt="Segment_of_Object" title="Segment_of_Object"></a></td></tr></table></td>
+ <td>&nbsp;</td>
+</tr>
+<tr>
+ <td align="center"><font size="1"><a href="shapes3_20i.htm">Segment_of_CylinderRing</a></font></td>
+ <td align="center"><font size="1"><a href="shapes3_20i.htm">Segment_of_Torus</a></font></td>
+ <td align="center"><font size="1"><a href="shapes3_20i.htm">Segment_of_Object</a></font></td>
+ <td>&nbsp;</td>
+</tr>
+</table>
+<table  border="0" bordercolor="#c0c0c0" cellspacing="1" cellpadding="1" width="90%">
+<tr>
+ <td align="center" width="100">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_40i.htm"><img src="im/mymcr40a.jpg" border="0" width="90" height="120" alt="Egg" title="Egg"></a></td></tr></table></td>
+ <td align="center" width="100">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_40i.htm"><img src="im/mymcr41a.jpg"border="0" width="90" height="120" alt="Egg_Shape" title="Egg_Shape"></a></td></tr></table></td>
+ <td align="center" width="100">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_43i.htm"><img src="im/mymcr43a.jpg" border="0" width="90" height="120" alt="Facetted_Egg" title="Facetted_Egg"></a></td></tr></table></td>
+ <td align="center" width="100">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_43i.htm"><img src="im/mymcr44a.jpg" border="0" width="90" height="120" alt="Facetted_Egg_Shape" title="Facetted_Egg_Shape"></a></td></tr></table></td>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_42i.htm"><img src="im/mymcr42a.jpg" border="0" width="120" height="120" alt="Facetted_Sphere" title="Facetted_Sphere"></a></td></tr></table></td>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_45i.htm"><img src="im/mymcr45a.jpg" border="0" width="120" height="120" alt="Ring_Sphere" title="Ring_Sphere"></a></td></tr></table></td>
+</tr><tr>
+ <td align="center" width="100"><font size="1"><a href="shapes3_40i.htm">Egg</a></font></td>
+ <td align="center" width="100"><font size="1"><a href="shapes3_40i.htm">Egg_Shape</a></font></td>
+ <td align="center" width="100"><font size="1"><a href="shapes3_43i.htm">Facetted_Egg</a></font></td>
+ <td align="center" width="100"><font size="1"><a href="shapes3_43i.htm">Facetted_Egg_Shape</a></font></td>
+ <td align="center" width="120"><font size="1"><a href="shapes3_42i.htm">Facetted_Sphere</a></font></td>
+ <td align="center" width="120"><font size="1"><a href="shapes3_45i.htm">Ring_Sphere</font></a></td>
+</tr>
+</table>
+<table  border="0" bordercolor="#c0c0c0" cellspacing="1" cellpadding="1" width="90%">
+<tr>
+ <td align="center" width="160">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_30i.htm"><img src="im/Column_N.jpg" border="0" width="160" height="120" alt="Column_N" title="Column_N"></a></td></tr></table></td>
+ <td align="center" width="160">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_30i.htm"><img src="im/Column_N_AB.jpg" border="0" width="160" height="120" alt="Column_N_AB" title="Column_N_AB"></a></td></tr></table></td>
+ <td align="center" width="160">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_30i.htm"><img src="im/Pyramid_N_truncated.jpg" border="0" width="160" height="120" alt="Pyramid_N" title="Pyramid_N"></a></td></tr></table></td>
+ <td align="center" width="160">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td><a href="shapes3_30i.htm"><img src="im/Pyramid_N_AB.jpg" border="0" width="160" height="120" alt="Pyramid_N_AB" title="Pyramid_N_AB"></a></td></tr></table></td>
+</tr><tr>
+ <td align="center" width="160"><font size="1"><a href="shapes3_30i.htm">Column_N /_AB</a></font></td>
+ <td align="center" width="160"><font size="1"><a href="shapes3_30i.htm">Column_N_AB</a></font></td>
+ <td align="center" width="160"><font size="1"><a href="shapes3_30i.htm">Pyramid_N /_AB</a></font></td>
+ <td align="center" width="160"><font size="1"><a href="shapes3_30i.htm">Pyramid_N_AB</a></font></td>
+</tr>
+<tr>
+ <td align="center" width="160">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_50i.htm"><img src="im/macro55.jpg" border="0" width="160" height="120" alt="Round_N_Pyramid" title="Round_N_Pyramid"></a></td></tr></table></td>
+ <td align="center" width="160">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_50i.htm"><img src="im/macro53.jpg" border="0" width="160" height="120" alt="Round_N_Pyramid" title="Round_N_Pyramid"></a></td></tr></table></td>
+ <td align="center" width="160">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_50i.htm"><img src="im/macro50.jpg"border="0" width="160" height="120" alt="Round_N_Pyramid" title="Round_N_Pyramid"></a></td></tr></table></td>
+ <td align="center" width="160">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_50i.htm"><img src="im/Round_Pyramid_N_out_truncated.jpg" border="0" width="160" height="120" alt="Round_N_Pyramid" title="Round_N_Pyramid"></a></td></tr></table></td>
+</tr><tr>
+ <td align="center" width="160"><font size="1"><a href="shapes3_50i.htm">Round_N_Pyramid truncated</a></font></td>
+ <td align="center" width="160"><font size="1"><a href="shapes3_50i.htm">Round_N_Pyramid truncated</a></font></td>
+ <td align="center" width="160"><font size="1"><a href="shapes3_50i.htm">Round_N_Pyramid wireframe</a></font></td>
+ <td align="center" width="160"><font size="1"><a href="shapes3_50i.htm">Round_Pyramid_N_out</a></font></td>
+</tr>
+<tr>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_80i.htm"><img src="im/Round_Cylinder_Tube_open.jpg" border="0" width="160" height="120" alt="Round_Cylinder_Tube" title="Round_Cylinder_Tube"></a></td></tr></table></td>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_80i.htm"><img src="im/Round_Cylinder_Tube_filled.jpg" border="0" width="160" height="120" alt="Round_Cylinder_Tube" title="Round_Cylinder_Tube"></a></td></tr></table></td>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_85i.htm"><img src="im/Rounded_Tube_open.jpg" border="0" width="160" height="120" alt="Rounded_Tube" title="Rounded_Tube"></a></td></tr></table></td>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_85i.htm"><img src="im/Rounded_Tube_AB.jpg" border="0" width="160" height="120" alt="Rounded_Tube" title="Rounded_Tube"></a></td></tr></table></td>
+</tr>
+<tr>
+ <td align="center" width="120"><font size="1"><a href="shapes3_80i.htm">Round_Cylinder_Tube</a></font></td>
+ <td align="center" width="120"><font size="1"><a href="shapes3_80i.htm">Round_Cylinder_Tube</a></font></td>
+ <td align="center" width="120"><font size="1"><a href="shapes3_85i.htm">Rounded_Tube</a></font></td>
+ <td align="center" width="120"><font size="1"><a href="shapes3_85i.htm">Rounded_Tube_AB</a></font></td>
+</tr>
+<tr>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_22i.htm"><img src="im/Round_N_Tube_Polygon_octagonal.jpg" border="0" width="160" height="120" alt="Round_N_Tube_Polygon" title="Round_N_Tube_Polygon"></a></td></tr></table></td>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_22i.htm"><img src="im/Round_N_Tube_Polygon_hexagonal.jpg" border="0" width="160" height="120" alt="Round_N_Tube_Polygon" title="Round_N_Tube_Polygon"></a></td></tr></table></td>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_60i.htm"><img src="im/Round_Conic_Torus.jpg" border="0" width="160" height="120" alt="Round_Conic_Torus" title="Round_Conic_Torus"></a></td></tr></table></td>
+ <td align="center" width="120">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_65i.htm"><img src="im/Round_Conic_Prism.jpg" border="0" width="160" height="120" alt="Round_Conic_Prism" title="Round_Conic_Prism"></a></td></tr></table></td>
+</tr>
+<tr>
+ <td align="center" width="120"><font size="1"><a href="shapes3_22i.htm">Round_N_Tube_Polygon</a></font></td>
+ <td align="center" width="120"><font size="1"><a href="shapes3_22i.htm">Round_N_Tube_Polygon</a></font></td>
+ <td align="center" width="120"><font size="1"><a href="shapes3_60i.htm">Round_Conic_Torus</a></font></td>
+ <td align="center" width="120"><font size="1"><a href="shapes3_65i.htm">Round_Conic_Prism</a></font></td>
+</tr>
+<tr>
+ <td align="center" width="20%">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_70i.htm"><img src="im/Half_Hollowed_Rounded_Cylinder1.jpg" border="0" width="160" height="120" alt="Half_Hollowed_Rounded_Cylinder1" title="Half_Hollowed_Rounded_Cylinder1"></a></td></tr></table></td>
+ <td align="center" width="20%">
+     <table align="center" border="1" bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_70i.htm"><img src="im/Half_Hollowed_Rounded_Cylinder2.jpg" border="0" width="160" height="120" alt="Half_Hollowed_Rounded_Cylinder2" title="Half_Hollowed_Rounded_Cylinder1"></a></td></tr></table></td>
+ <td>&nbsp;</td>
+ <td>&nbsp;</td>
+ <td>&nbsp;</td>
+</tr>
+<tr>
+ <td align="center" width="20%"><font size="1"><a href="shapes3_70i.htm">Half_Hollowed_Rounded_Cylinder1</a></font></td>
+ <td align="center" width="20%"><font size="1"><a href="shapes3_70i.htm">Half_Hollowed_Rounded_Cylinder2</a></font></td>
+ <td>&nbsp;</td>
+ <td>&nbsp;</td>
+ <td>&nbsp;</td>
+</tr>
+</table>
+
+</td></tr></table><!-- global -->
+</div>
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">
+ &nbsp; </td>
+ <td align="right" width=""25%"">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

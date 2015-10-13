@@ -1,0 +1,199 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Cube et cubo&iuml;de r&eacute;gulier, G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafique, infographique, 3D Graphique, g&eacute;om&eacute;trie de base pour Raytracing, cube, cubo&iuml;de r&eacute;gulier">
+<title>G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray - Cube et Cubo&iuml;de</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"> &nbsp; &nbsp; &nbsp; <b>G&eacute;om&eacute;trie de Base</b></font> -
+      <font size="-1"><b>pour Raytracing</b</font></div>
+ </td></h6>
+ <td align="right">
+   <a href="geom_300e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="geom_300e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="geom_300i.htm"><font size="2">Italiano</font></a>&nbsp;
+   <a href="geom_300i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="geom_300d.htm"><font size="2">Deutsch</b></a>&nbsp;
+   <a href="geom_300d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000f.htm">G&eacute;om&eacute;trie de Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000f.htm">pour Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050f.htm">Triangle rectangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070f.htm">Th&eacute;or&egrave;me de Pythagore</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080f.htm">Trigonom&eacute;trie de base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090f.htm">Loi des cosinus</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100f.htm">Triangle &eacute;quilat&eacute;ral</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150f.htm">Polygone r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200f.htm"--><i>Poly&egrave;dre</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200f.htm">T&eacute;tra&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250f.htm">Octa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_300f.htm"--><b>Cube et Cubo&iuml;de</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500f.htm">Dod&eacute;ca&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700f.htm">Icosa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260f.htm">Cubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270f.htm">Octa&egrave;dre tronqu&eacute;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280f.htm">Rhombicubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800f.htm">Icosa&egrave;dre tronqu&eacute;</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000f.htm"--><i>Cercles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100f.htm">Cercles touchants</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200f.htm">Tangentes internes</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300f.htm">Tangentes externes</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="90%"><tr>
+   <td><img src="im/Cube_120t.gif" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><img src="im/Cuboid_120t.gif" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><h2><b><nobr>Cube <font size="-1">et</font> <br>
+  Cubo&iuml;de</nobr></b><br>
+         <font size="-1">Quelques qualit&eacute;s <br>
+ g&eacute;om&eacute;triques</font></h2></td>
+   <td><img src="im/Folding_a_Cube_02ct.gif" width="80" height="80" border="0" hspace="0" vspace="0"></td>
+   <td><img src="im/Fold_Cube_120t.gif" width="120" height="120" border="0" hspace="0" vspace="0"></td>
+</tr></table>
+
+<br>
+<font size="-2"><i>Note: En POV-Ray nous utilisons &quot;sqrt(X)&quot; pour la racine carr&eacute;e de X<br>
+et nous utilisons &quot;X*X&quot; ou &quot;pow(X,2)&quot; pour X<sup>2</sup>.</i></font><br>
+<br>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="5" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><b>Dimensions du cube</b><br>
+ <font size="-1">Longueur d'un c&ocirc;t&eacute; du cube : <b>a</b>.</font></td>
+ </tr>
+ <tr>
+  <td  valign="top">
+<nobr><font size="-1">Longueur d'une diagonale d'un face du cube :</font></nobr><br>
+<b> &nbsp; &nbsp; d =  sqrt (2) * a ;</b><br>
+<nobr><font size="-1">Longueur d'une diagonale &agrave; travers d'un cube :</font></nobr><br>
+<b> &nbsp; &nbsp; d =  sqrt (3) * a ;</b><br>
+<font size="-1">Le rayon de la sph&egrave;re circonscrite :</font><br>
+<b> &nbsp; &nbsp; R =  1/2*sqrt( 3 ) * a ;</b><br>
+</td></tr>
+ <tr>
+  <td width="50%"><b>Dimensions d'un cubo&iuml;de</b><br>
+ <font size="-1">Longueurs des c&ocirc;t&eacute;s d'un cubo&iuml;de : <b>a, b, c</b>.</font></td>
+ </tr>
+<tr><td>
+<font size="-1"><nobr>Longueur d'une diagonale &agrave; travers d'un cubo&iuml;de :</nobr></font><br>
+<b> d = sqrt ( a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> )</b>
+<br>
+<b></b>
+</td>
+ </tr>
+</table>
+</div>
+    <img src="im/Fold_Cube_08rot_60_10s32t.gif" width="256" height="256" border="0" hspace="0" vspace="0"><br>
+    <font size="-1">Pliage et d&eacute;pliage d'un cube</font><br>
+
+</td>
+<td valign="top" width="50%">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Cuboid_001.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Diagonales d'un cubo&iuml;de</font><br>
+
+
+    <img src="im/Fold_Cube_2t.gif" width="256" height="256" border="0" hspace="0" vspace="0"><br>
+    <font size="-1">Pliage et d&eacute;pliage d'un cube</font><br>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2">
+<hr>
+Comment faire : <a href="../animate/anim200f.htm">Pliage et D&eacute;pliage d'un Cube - Animation 3D avec POV-Ray</a>.
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

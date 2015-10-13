@@ -1,0 +1,408 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Insert Menu Addon for POV-Ray for Windows 3.7 / 3.6.2</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015 by Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Insert Menu Addon for POV-Ray for Windows version 3.62 / 3.7 and macro include file free download">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray for windows 3.62, povray for windows 3.7, raytracing, raytraced computer graphics, 3d graphics, download insert menu addon, macro include file">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+ </td>
+ <td align="right">
+        <a href="inserti_a.htm"><font size="2">Italiano </font></a>
+        <a href="inserti_a.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="insertf_a.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="insertf_a.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="insrtd_a.htm"><font size="2">Deutsch </font></a>
+        <a href="insrtd_a.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="../down/pov_dwne.htm">Download Tutorials</b></a><br>
+<br>
+&nbsp;&nbsp; <a href="#down">Download</b></a><br>
+&nbsp;&nbsp; <a href="#down">&nbsp; Insert Menu Add-on</b></a><br>
+&nbsp;&nbsp; <a href="#down">&nbsp; Include Files</b></a><br>
+&nbsp;&nbsp; <a href="#objects">&nbsp; POV-Ray Objects</b></a><br>
+<br>
+&nbsp; - <a href="../addon/00_Basic_Templates/_index.htm" target="_new"><nobr> Preview</nobr></b></a><br>
+<nobr>&nbsp;&nbsp; <a href="../addon/00_Basic_Templates/_index.htm" target="_new">'Insert Menu Add-on'</nobr></b></a><br>
+<nobr>&nbsp;&nbsp; <a href="../addon/00_Basic_Templates/_index.htm" target="_new"> HTML Online Version</nobr></b></a><br>
+<br>
+&nbsp; - <a href="../addon/01_Objects_lo/_index.htm" target="_new"><nobr> Preview</nobr></b></a><br>
+<nobr>&nbsp;&nbsp; <a href="../addon/01_Objects_lo/_index.htm" target="_new">'Ready-made Objects'</nobr></b></a><br>
+<nobr>&nbsp;&nbsp; <a href="../addon/01_Objects_lo/_index.htm" target="_new"> HTML Online Version</nobr></b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"><!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="2" cellpadding="2" width="90%">
+ <tr><td valign="top">
+
+   <font size="6">Insert Menu Add-on</font><font size="-1"> (POV-Ray version 3.6.2/ 3.7)<br>
+
+   <font size="3" color="#aa0000">Update of the templates <a href="#down">Insert Menu Add-on</a>: <b>24-Dec-2014</b><br></font>
+   <font size="3" color="#aa0000">Update of  <a href="#IncludeFiles">shapes3.inc</a>: <b>08-Oct-2014</b></font><br>
+
+    <font size="2"><b>Mac:</b></font> <font size="1"><b>PovRay 3.7 Unofficial for Mac</b> now fully supports the standard insert menu from the Windows version,
+     including the preview images. There is even an option to scale te images down for lower screen resolutions.
+     The insert menu doesn’t have to be in a particular place because you can select the folder in the preferences.
+     See here: <a href="http://megapov.inetart.net/povrayunofficial_mac/">http://megapov.inetart.net/povrayunofficial_mac/</a>. (16 novembre 2013)</font><br>
+    <font size="2"><b>Linux</b>:</font> <font size="1">Also reported working with <b>POV-Ray for Linux</b> and the
+       <b>neXtgen Povray Editor</b> (but without showing my preview thumbnails in bmp?)
+       see here: <a href="http://nextpe.sourceforge.net/">neXtgen Povray Editor</a>.
+       [an older editor: <b>QTPov-Editor</b> [see here: <a href="http://qtpoveditor.sourceforge.net/">
+                http://qtpoveditor.sourceforge.net/</a> ] (21-June-2009).
+       Alternatively it's possible to use POV-Ray for Windows with the Insert Menu Add-on and with its excellent editor,
+       with some small cuts, also under Wine (25.04.2010))</font>
+
+  <p align="justify"><font size="+1"><b>Why this?</b></font> &nbsp;
+             I have made this Insert Menu Add-on for POV-Ray
+             to <b>make creating scenes easier</b><br>   for beginners
+             and also <b>more comfortable</b> for advanced users.<br>
+             There are templates for basic scenes, completely textured shapes with vanilla transformations, etc..<br>
+  <font size="+1"><b>What's in there?</b></font><br>
+
+<font size="2">Preview of the</font> <a href="../addon/00_Basic_Templates/_index.htm" target="_new">'Insert Menu Add-on'</b></a>
+
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="1" cellpadding="1" width="90%">
+<tr><td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/00_Basic_Templates/_index.htm" target="_new">
+            <img src="../addon/00_Basic_Templates/10_Ready_made_scenes/51_Grass_fluffy_clouds.jpg"
+            border="0" width="80" height="60" alt="Ready_made Scenes" title="Ready_made Scenes"></a></td></tr></table>
+   </td>
+   <td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/00_Basic_Templates/_index.htm" target="_new">
+            <img src="../addon/00_Basic_Templates/22_Shapes2/40_Wire_Box.jpg"
+            border="0" width="80" height="60" alt="Ready_made Scenes" title="Ready_made Scenes"></a></td></tr></table>
+   </td>
+   <td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/00_Basic_Templates/_index.htm" target="_new">
+            <img src="../addon/00_Basic_Templates/23_Shapes3/47_Rounded_Tube_AB.jpg"
+            border="0" width="80" height="60" alt="Ready_made Scenes" title="Ready_made Scenes"></a></td></tr></table>
+  </td>
+  <td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/00_Basic_Templates/_index.htm" target="_new">
+            <img src="../addon/00_Basic_Templates/42_Isosurfaces_pattern_functions/97_Iso_Sphere_pigment.jpg"
+            border="0" width="80" height="60" alt="Ready_made Scenes" title="Ready_made Scenes"></a></td></tr></table>
+ </td><td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/00_Basic_Templates/_index.htm" target="_new">
+            <img src="../addon/00_Basic_Templates/60_Shear_Transform/12_matrix_shear_y_to_x.jpg"
+            border="0" width="80" height="60" alt="Ready_made Scenes" title="Ready_made Scenes"></a></td></tr></table>
+ </td><td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/00_Basic_Templates/_index.htm" target="_new">
+            <img src="../addon/00_Basic_Templates/E0_Textures_Materials/16_crackle_with_textures.jpg"
+            border="0" width="80" height="60" alt="Ready_made Scenes" title="Ready_made Scenes"></a></td></tr></table>
+ </td></tr>
+</table>
+ <font size="2">Preview of the </font><a href="../addon/01_Objects_lo/_index.htm" target="_new">'Read-made POV-Ray Objects'</b></a>
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="1" cellpadding="1" width="90%">
+<tr>
+ <td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/01_Objects_lo/_index.htm" target="_new">
+            <img src="../addon/01_Objects_lo/00_Architecture/HM_Chair_s00s.jpg"
+            border="0" width="80" height="60" alt="POV-Ray Objects" title="POV-Ray Objects"></a></td></tr></table>
+ </td><td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/01_Objects_lo/_index.htm" target="_new">
+            <img src="../addon/01_Objects_lo/00_Architecture/H1_House_40_0s.jpg"
+            border="0" width="80" height="60" alt="POV-Ray Objects" title="POV-Ray Objects"></a></td></tr></table>
+ </td><td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/01_Objects_lo/_index.htm" target="_new">
+            <img src="../addon/01_Objects_lo/00_Plants/pov_trees/povtree_330_1.jpg"
+            border="0" width="80" height="60" alt="POV-Ray Objects" title="POV-Ray Objects"></a></td></tr></table>
+ </td><td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/01_Objects_lo/_index.htm" target="_new">
+            <img src="../addon/01_Objects_lo/00_Engineering/Ca_Car_01_0s.jpg"
+            border="0" width="80" height="60" alt="POV-Ray Objects" title="POV-Ray Objects"></a></td></tr></table>
+ </td><td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/01_Objects_lo/_index.htm" target="_new">
+            <img src="../addon/01_Objects_lo/00_Engineering/HE_Helicopter_01s.jpg"
+            border="0" width="80" height="60" alt="POV-Ray Objects" title="POV-Ray Objects"></a></td></tr></table>
+ </td><td>
+     <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="../addon/01_Objects_lo/_index.htm" target="_new">
+            <img src="../addon/01_Objects_lo/00_Engineering/B0_Round_Bottom_Flask_1ts.jpg"
+            border="0" width="80" height="60" alt="POV-Ray Objects" title="POV-Ray Objects"></a></td></tr></table>
+ </td>
+</tr>
+</table>
+  <p align="justify"><font size="+1"><b>How to use?</b></font><br>
+  <font size="-1"><b>Windows Version 'Insert Menu Add-on' for POV-Ray:</b><br>
+  &nbsp;&nbsp; After having installed this add-on, all you have to do for<b> building your own new scene</b> is:
+         <br><b>Step 0:</b> Click on &quot;New&quot; button and you get a new white sheet for a scene text. Click on &quot;Save&quot;
+             choose a good name (without anything than normal ASCII characters!) and save this empty text file like you save any normal text file but
+             ending with &quot;.pov&quot; (The editor used with POV-Ray for Windows will do this automatically!).
+         <br><b>Step 1:</b> Click on &quot;Insert Menu&quot;, &quot;Basic templates&quot;, &quot;Ready_made scenes&quot; and choose one of
+             the scenery backgrounds (Do this <b>only one time</b> in a scene!).
+         <br><b>Step 2:</b> You move your cursor at the end of the text! (Don't forget this - otherwise you ... will see not very much!)
+             Click on &quot;Insert Menu&quot;, &quot;Basic templates&quot; &quot;Shapes with textures&quot; and choose
+             the shape you want to add in your scene.
+         <br><b>Step 3:</b> Click on &quot;Run&quot; button and you will see this scene rendered.
+          <br>All shapes have colors and other surface properties in textures statements.
+           All shapes also have vanilla transformations like scale&lt;1,1,1&gt;, rotate&lt;0,0,0&gt;, translate&lt;0,0,0&gt;.
+           This makes it very easy, to play around with them and gain experience,
+           because you can't make so much errors in spelling and punctuation.</font>
+         </font><p>
+  <font size="-1"><b>HTML-Version / Online-Version for all POV-Ray versions:</b></font><br>
+  <font size="-1">&nbsp;&nbsp; Unzip the compressed file of the HTML-Version and open the file '_index.htm' <br>
+    with any webbrowser parallel to your POV-Ray Scene Editor. <br>
+             No automatic insert available - we have to insert the templates by 'Cut and Paste'. <br>
+            Klick on the thumbnail image of the element you want to insert.
+            A new browser window with the according template text file will open.
+            Pick from this browser window (mark it and hit CTRL-C) the whole text from the browser window
+            by 'Cut (CTRL-C) and Paste(CTRL-V)'
+            and paste it with CTRL-V in your scene file where you want it to be inserted.
+          </font></font>
+</td>
+</tr>
+</table>
+<a name="down"></a>
+<table  border="0" bordercolor="#c0c0c0" cellspacing="2" cellpadding="2" width="90%">
+ <tr><td valign="top">
+         <hr>
+  <p align="justify"><font size="+1"><b>HTML Version of the Insert Menu Add-on:</b></font>
+
+            <br><font size="-1">The HTML Version can be used with all operating systems for inserting templates by 'cut and paste'.</font>
+            <br><b>Download</b> the file <a href="00_Basic_Templates_HTML.zip">&quot;00_Basic_Templates_HTML.zip&quot;</b></a>
+              <font size="-1">(7.614 kB)</font>
+              <font size="2" color="#aa0000">&nbsp;<b> <i>Update: 24-Dec-2014</i></b></font><br>
+             <font size="-1">Unzip it to any directory you want. Start reading by opening '_index.htm' in your webbrowser.<br>
+                          Continue the downloading and installing with the include file collections<br>
+                          by the following steps: <b>'Download my macro include files and height_field images'</b></font>.
+
+   </p>
+         <hr>
+ <p align="justify"><font size="3"><b>How to install the Insert Menu Add-on with POV-Ray for Windows:</b></font><br>
+            <table width="75%" border="1"><tr><td>
+            <font size="2" color="#aa0000"><b>Attention please:</b>
+             If you have installed an older version of the &quot;Basic templates&quot;,
+             you should cancel or rename this version.
+             Otherwise you will get a chaotic mixture of old and new text template files!
+                        </td></tr></table><br></font>
+            <b>Step 1:</b> &nbsp; <b>Download my Insert Menu Add-on for Windows</b> with the file<br>
+<nobr><a href="Basic_templates_37.zip">&quot;Basic_templates_37.zip&quot;</b></a> (7.961 kB)
+      <font size="2" color="#aa0000"><b><i>24-Dec-2014</i></b></font> <b>POV-Ray3.7 only!</b></b> <font size="-1">(images .jpg).</font></nobr><br>
+      <font size="3"><a href="Basic_templates_36.zip">&quot;Basic_templates_36.zip&quot;</b></a> (18.830 kB)</font>
+      <font size="2" color="#aa0000"><b><i>Update: 06-April-2013</i></b></font> <font size="-1">(images .bmp).</font><br></font>
+
+      <font size="2">and copy this file to your Insert Menu directory in your POV-Ray directory, normally<br>
+      POV-Ray 3.62:  Windows XP &quot;C:\Programs\POV-Ray for Windows v3.6\Insert Menu\&quot;<br>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                            Win Vista: &quot;C:\Users\MY_NAME\Documents\POV-Ray\v3.6\Insert Menu\&quot;<br>
+      POV-Ray 3.7: &nbsp; Windows XP/Vista/Winows 7:&quot;..\Documents\POV-Ray\v3.6 or v3.7\Insert Menu\&quot; </font><br>
+
+         <font size="2"><b>Extract</b> this file using &quot;Extract to ... &quot;
+                        in folder &quot;Insert Menu&quot; the subdirectory &quot;00 - Basic templates&quot;.<br>
+                        You will get the following</font><br>
+        <font size="3"><b>structur of subdirectories:</b><br>
+
+<font size="1"><b>..Insert Menue<br>
+            ... \00 - Basic templates<br>
+            ..........\10 - Ready-made scenes<br>
+            ..........\20 - Basic shapes round<br>
+            ..........\21 - Basic shapes angular<br>
+            ...... ...\30 - Shapes2<br>
+            ..........\35 - Shapes3<br>
+            ..........\36 - shapes_lo2</b> &nbsp; &nbsp;  (! 'shapes_lo2.zip')<b><br>
+            ..........\40 - Special shapes<br>
+<!--            ...............\40 - 3D text shapes<br>
+            ...............\41 - blob and fractal<br>
+            ...............\42 - height_field and HF macros<br>
+            ...............\43 - mehs and non-CSG shapes<br>
+            ...............\30 - Isosurfaces by basic functions<br>
+            ...............\31 - Isosurfaces by function.inc<br>
+            ...............\32 - Isosurfaces by pattern functions<br>
+            ...............\35 - Polynomial Quartic<br>
+            ...............\37 - Parametric Surfaces<br-->
+            ..........\50 - CSG operations<br>
+            ..........\55 - Shape modifiers<br>
+            ..........\60 - Transformations<br>
+            ..........\70 - While Loops, For Loops<br>
+            ..........\75 - Spline Curves, sphere_sweep<br>
+            ..........\80 - Math functions<br>
+            ..........\85 - Analytical Geometry</b> (needs: 'analytical_g.inc'!)<b><br>
+            ..........\90 - Directives<br>
+            ..........\A0 - Include files<br>
+            ..........\B0 - Random<br>
+            ..........\C0 - Animation<br>
+            ..........\D0 - Colors<br>
+            ..........\E0 - Textures + Materials<br>
+            ..........\H0 - Lights, skies, fogs, rainbow<br>
+            ..........\I0 - Cameras<br>
+            ..........\K0 - Radiosity and Photons<br>
+            ..........\L0 - Expressions<br>
+            ..........\M0 - Statements<br>
+            </font><br>
+     <b>Step 2:</b> &nbsp;
+</td>
+</tr>
+</table>
+<a name="IncludeFiles"></a>
+<table  border="0" bordercolor="#c0c0c0" cellspacing="2" cellpadding="2" width="90%">
+ <tr><td valign="top">
+            <b>Download my include files and height_field images.</b><br>
+            <font size="2">Copy these files to your include file directory in your POV-Ray program directory <br>
+                        (normally this is your Documents directory &quot;POV-Ray\v3.7\include\&quot;).</font><br>
+            <font size="2">[For download click on the file name with the right mouse button<br>
+                            and choose from context menu &quot;Save Target as ...&quot;. ] </font><br>
+
+   <font size="3" color="#aa0000"><b>Update: &quot;shapes3.inc</font>&quot;</b></a><font size="2"> (57 KB)</font>
+              <font size="2" color="#aa0000">&nbsp;<b>08-Oct-2014</b></font><font size="2"> replaces former 'shapes-lo.inc'.</font><br>
+<font size="2">Also for POV-Ray version 3.7,  <font color="#aa0000">this an updated version!</font></font><br>
+  With IE-Explorer download: <a href="shapes3.inc.txt">shapes3.inc.txt</a> and save it as &quot;shapes3.inc&quot;<br>
+   to preserve the original line breaks, <br>
+  else download <a href="shapes3.zip">shapes3.zip</a> or <a href="shapes3.inc">shapes3.inc</a>.<br>
+
+
+     <font size="2">[ If you have used my former <b>shapes_lo.inc</b>
+             than for backwards<br>
+             &nbsp; compatibility you can use this new version together with &quot;shapes3.inc&quot;:
+           <a href="shapes_lo.inc.txt"><font size="2">&quot;shapes_lo.inc.txt&quot;</font></a> or <a href="shapes_lo.inc"><font size="2">&quot;shapes_lo.inc&quot;</font></a> (6 KB) <font size="2" color="#aa0000"><b>19-May-2013</b></font>,]</font><br>
+
+<br>
+     <a href="shapes_lo2.zip">&quot;shapes_lo2.zip&quot;</b></a><font size="2"> (20 KB macro collection)</font>
+              <font size="2" color="#aa0000">&nbsp;<b>24-Dec-2014</b></font><br>
+     <a href="shapes.inc.txt">&quot;shapes.inc.txt&quot;</b></a> or <a href="shapes.inc">&quot;shapes.inc&quot;</b></a><font size="2"> (32 KB)<font size="2" color="#aa0000">&nbsp; <b>06-April-2013</b></font>
+                 Expanded by Circle_Text_Valigned, this replaces the original shapes.inc of POV-Ray 3.6.2! <b>With POV-Ray 3.7.0, this file is already integrated!</b></font><br>
+     <a href="Mount1.png">&quot;Mount1.png&quot;</b></a> <font size="2"> (15 KB)</font><font size="2" color="#aa0000"> <b>06-April-2013</b></font><br>
+<font size="2">With POV-Ray version 3.7, this file is already integrated!</font><br>
+     <a href="Mount2.png">&quot;Mount2.png&quot;</b></a> <font size="2"> (18 KB)</font><font size="2" color="#aa0000"> <b>06-April-2013</b></font><br>
+<font size="2">With POV-Ray version 3.7, this file is already integrated!</font><br>
+    <a href="MountLo.zip">&quot;MountLo.zip&quot;</b></a><font size="-1">(777 KB) 4 height_field targa images.</font>&nbsp;
+              <font size="2">update: 04-May-2005</font><br>
+      <b>Analytical Geometry with POV-Ray:</b><br>
+      <nobr><b>&quot;<a href="../down/analytical_g.inc.txt">analytical_g.inc.txt</a>&quot;</b>
+       or <b>&quot;<a href="../down/analytical_g.inc">analytical_g.inc</a>&quot;</b></nobr> <br>
+       or <b>&quot;<a href="../down/analytical_g.zip">analytical_g.zip</a>&quot;</b>
+             <font size="2">(22 kB)</font>
+              <font size="2" color="#aa0000"> <b>update: 09-Aug-2014.</b></font> </font><br>
+
+<hr>
+<p align="justify"><a name="objects"></a>
+<font size="5"><nobr> Ready-made Objects for POV-Ray</font><font size="2"><b> -</nobr></b><br>
+   &quot;<a href="pov_objects1.zip">pov_objects1.zip</a>&quot; <font size="-1">(161 kB),
+   <font size="-1" color="#aa0000"><b>&nbsp; Update: 04-May-2014</b></font>.<br>
+   Save the files unzipped in the documents directory
+   <nobr>&quot;<b>/POV-Ray/v3.7/Include/</b>&quot;</nobr><br>
+      or in the directory of your scene files in use (Extension: &quot;.pov&quot;)<br>
+      or in any other directory listed in &quot;POVRAY.INI&quot; as a valid &quot;Library_Path&quot;.</font><br>
+   <font size="-2">Some of these POV-Ray Objects additionally need my include file &quot;shapes_lo.inc&quot;.</font><br>
+
+    <font size="5"> Download POV-Ray objects for railway / railroad</b></font><br>
+   Railtrack elements for my Rail-Track-System:<br>
+   &quot;<a href="../modelling/dwn/RT_System.zip">RT_System.zip</b></a>&quot; <font size="-1">(64 kB),
+   <font size="-1" color="#aa0000">&nbsp; Update: 07-April-2013</font>.<br>
+   Railway / railroad wheels and axes:  &quot;<a href="RW_System.zip">RW_System.zip</b></a>&quot; <font size="-1">(10 kB),
+   <font size="-1" color="#aa0000">&nbsp; New: 24-Aug-2012</font>.<br>
+   Save the files unzipped in the documents directory
+   <nobr>&quot;<b>/POV-Ray/v3.7/Include/</b>&quot;</nobr><br>
+      or in the directory of your scene files in use (Extension: &quot;.pov&quot;)<br>
+      or in any other directory listed in &quot;POVRAY.INI&quot; as a valid &quot;Library_Path&quot;.</font><br>
+   <font size="-2">Some of these POV-Ray Objects additionally need my include file &quot;shapes3.inc&quot;.</font><br>
+
+
+   <font size="5">According Insert Menu Add-ons for POV-Ray Objects</b></font><br>
+  <font size="-1"> with template texts and preview thumbnail images for comfortable use,</font><br>
+For POV-Ray 3.6 (thumbnails in 'bmp'):<br>
+&nbsp; &quot;<a href="Ready_made_Objects_36.zip">Ready_made_Objects_36.zip</b></a>&quot;  <font size="-1">(3 282 kB),
+   <font size="-1" color="#aa0000">&nbsp; Update: 09-Aug-2013</font>.</font><br>
+For POV-Ray 3.7 (thumbnails in 'jpg'):<br>
+ &nbsp; &quot;<a href="Ready_made_Objects_37.zip">Ready_made_Objects_37.zip</b></a>&quot;  <font size="-1">(1 641 kB),
+   <font size="-1" color="#aa0000"><b>&nbsp; Update: 04-Jan-2014</b></font>.<br>
+  Save thes files unzipped in the documents directory<br>
+   <nobr>&quot;<b>POV-Ray/v3.6/Insert Menu/</b>&quot;</nobr>
+  resp. <nobr>&quot;<b>POV-Ray/v3.7/Insert Menu/</b>&quot;</nobr>.</font><br>
+   <br>
+   <font size="+1"><b>HTML version of Insert Menu Add-ons for the POV-Ray Objects</b></font><br>
+     &quot;<a href="01_Objects_lo_HTML.zip">01_Objects_lo_HTML.zip</b></a>&quot;<font size="-1">(1 946 kB)</font>
+      <font size="-1" color="#aa0000">&nbsp; Update: 04-Jan-2014</font>.<br>
+      <font size="-1">Unzip it to the same directory as '00_Basic_Templates_HTML.zip' from here above.
+       Start reading by opening '_index.htm' in your webbrowser.</font><br>
+   &nbsp;<br>
+</td></p>
+</tr>
+</table>
+
+</div>
+</font>
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table>
+</body>
+</html>

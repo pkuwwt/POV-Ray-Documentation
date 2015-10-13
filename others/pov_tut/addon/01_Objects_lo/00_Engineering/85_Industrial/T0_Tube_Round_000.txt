@@ -1,0 +1,57 @@
+//----------------------------------------------------------------------------- textures
+// ------------------------------------------- optional textures
+#declare Tube_Texture =
+          texture { pigment{ color rgb< 1, 1, 1>*0.75 }
+                  //  normal { bumps 0.01 scale <0.005,0.15,0.15> }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Tube_Inside_Texture =
+          texture { pigment{ color rgb< 1, 1, 1>*0.55 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Flange_Texture_1 =
+          texture { pigment{ color rgb< 1, 1, 1>*0.75 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Flange_Texture_2 =
+          texture { pigment{ color rgb< 1, 1, 1>*0.65 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Flange_Hole_Texture =
+          texture { pigment{ color rgb< 1, 1, 1>*0.55 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Nut_Texture_1 =
+          texture { pigment{ color rgb< 1, 1, 1>*0.75 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Nut_Texture_2 =
+          texture { pigment{ color rgb< 1, 1, 1>*0.55 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+//-------------------------------------------------------------------------------
+
+object{ Tube_Round_000 (
+                   50, // Tube_Angle
+                   1.000, // T_Rmaj, // tube  major radius around z (lefthanded!)
+                // 1.500, // T_L, // tube lenght in x
+                   0.015, // T_D, // tube material thickness
+                   0.300, // T_R, // radius
+                   0.450, // F_R, // flange radius
+                   0.050, // F_D, // flange thickness
+                   0.005, // FB_R, // Flange_Border_Radius
+                   1, // Nuts_ON  // 0 = no nuts but holes; 1 = nuts - no holes
+                   0.065, // Nut_Scale
+                   16, // Number_of_Nuts
+                ) // ------------------------------------
+
+        rotate<0,0,0>
+        translate<0,1.000,0>
+      }//-------------------------------------------------------------------------
+//--------------------------------------------------------------------------------

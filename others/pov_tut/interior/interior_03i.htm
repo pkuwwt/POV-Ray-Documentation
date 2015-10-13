@@ -1,0 +1,229 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Design del Interno dei Oggetti trasparenti con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Design del Interno dei Oggetti trasparenti con material, interior e media - une introduzione al linguaggio di descrizione di scene (SDL) del raytracer POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, infographie, 3D computer graphics, oggeti transparenti, material, textures, interior, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr>raytracer POV-Ray </nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Design del Interno dei Oggetti trasparenti</b></font>
+      <font size="-1"><b>con POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_03e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_03e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_03f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_03f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_03d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_03d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+<br>
+<br>
+<nobr> &nbsp; <a href="interior_000i.htm">Indice del contenuto</b></a></nobr><br>
+ &nbsp; <a href="interior_000i.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05i.htm">Sintassi di material,</b></a><br>
+ &nbsp; &nbsp; &nbsp;  texture e interior</b><br>
+&nbsp; -  <!--a href="interior_03i.htm"--><b>Vetro della finestra</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; e max_trace_level </b></a><br>
+&nbsp; -  <a href="interior_001i.htm">fog - Nebia</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10i.htm">Sintassi di media</b></a> <br>
+&nbsp; -  <a href="interior_30i.htm">Media e Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; con/senza density map <br>
+&nbsp; -  <a href="interior_20i.htm">Raggi nella Nebbia </b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -  <a href="interior_40i.htm">Spada di Luce</b></a> <br>
+&nbsp; -  <a href="interior_44i.htm">Fiamme di candele</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -  <a href="interior_50i.htm">Luce della Finestra </b></a><br>
+&nbsp; -  <a href="interior_70i.htm">Vapore, Fumo, Nuvole</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -  <a href="interior_60i.htm">Tromba d'Aria.</b></a> <br>
+
+<nobr>&nbsp; Problemi Speciali con Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_080i.htm">Cambiare la scala di Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_090i.htm">Sovrapposizione di Media</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<h1 align="center"><a name="Top"></a><b>Vetro della Finestra e &quot;max_trace_level&quot;<br></b>
+</h1>
+
+<p align="justify"><b>Vetro della finestra senza IOR:</b> Per une finestra di vetro
+ non dobbiamo usare un materiale di vetro reale definito con un indice di refrazione (&quot;ior&quot;)! <br>
+ Alla refrazione a strate sottili con superficies parallele c'&eacute; solo una traslazione molto difficile da vedere.
+ Questo effetto si pu&ograve; solo vedere a piatte di vetro molto grosse e in angoli prospettivi molto estremi. <br>
+ A vetri normali questo effetto &egrave; quasi invisibile!<br>
+ Per questo raggione per vetri normali &egrave; meglio di usare solo una testura di vetro semplice senza IOR (interior).
+
+</p>
+<table width="80%" align="center">
+<tr>
+ <td align="center">
+   <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/windowglass_a.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table>
+     <font size="-1"><nobr><b>Refrazione a strati grossi</b></nobr></font>
+ </td>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/windowglass_b.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table>
+     <font size="-1"><nobr><b>Refrazione a strato sottili</b></nobr></font>
+</td>
+</tr>
+</table>
+<br>
+ Esempio per una <b>testura di vetro - semplice e rapida:</b><br>&nbsp;
+
+<div align="center">
+<table align="center" border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td align="center">
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/window_00.jpg" width="240"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+ </td>
+ <td>
+  <pre>#declare Window_Glass =
+texture{
+  pigment{ rgbf&lt;0.98,0.98,0.98,0.8&gt;}
+  finish { diffuse 0.1
+           reflection 0.2
+           specular 0.8
+           roughness 0.0003
+           phong 1
+           phong_size 400}
+  } // end of texture --------------</b></td></pre>
+
+  <td align="center">
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/frame_00.jpg" width="240"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+</td>
+</tr></table>
+
+
+
+ <p align="justify"><b>max_trace_level: </b>L'effetto della parola chiave &quot;max_trace_level&quot;
+ si pu&ograve; vedere nel esempio suivante: <br>
+
+ All'applicazione di testure e di materiali trasparenti qualche volta
+ si pu&ograve;  <b>&quot; vedere tutto nero  &quot;</b> molto inaspettato!<br>
+ <br>
+ A un strato di vetro il raytracer deve calculare due passaggi di superficie:
+ la superficie anteriore e la superficie posteriore. <br>
+ Per due strati di vetro ci sono 4 passaggi.<br>
+ Se abbiamo pi&ugrave; di 2 finestra uno dietro l'altro, POV-Ray finir&agrave; le sue calculazioni
+ doppo il quinto (default value) passaggio nel centro del terzo finestra.<br>
+ In generale le superficie pi&ugrave; dietro non possono contribuire in una maniera essenziale alla
+ luminosit&aacute; totale.<br>
+ Questa propriet&agrave; si pu&ograve; anche constatare per le superficie degli specchi.<br>
+ La soglia per terminare l'inseguimento dei raggi en POV-Ray &egrave; definito  con la parola chiave
+ &quot;max_trace_level&quot;. Il valore preimpostato (default value) &eacute; 5, il valore massimo &eacute; 256.
+<br>
+ In molti casi questa soglia non &egrave; sufficente, poi si posso vedere qualche parte in colore grigio ou nero! </p>
+<table width="80%" align="center">
+<tr>
+ <td align="center">
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/windowglass_o.jpg" width="256"  height="256"  vspace="0" hspace="0"></td>
+    </tr></table>
+     <font size="-1"><nobr><b>global_settings{ max_trace_level 5 }</b></nobr></font>
+ </td>
+ <td align="center">
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/windowglass_w.jpg" width="256"  height="256"  vspace="0" hspace="0"></td>
+    </tr></table>
+     <font size="-1"><nobr><b>global_settings{ max_trace_level 17 }</b></nobr></font>
+</td>
+</tr>
+</table>
+<p align="justify"><b>Un mezzo effettivo contre macchie nere: </b> Per evitare queste macchie nere
+ si deve aumentare il &quot;max_trace_level&quot; al inizio del testo di scena con una rige come questa:</font> <br>
+ <nobr><pre><b>global_settings{ max_trace_level 20 }</b></pre></nobr>  <br>
+<p align="justify"><b>Attenzione:</b><font size="-1"> Non bisogna esagerare! <br>
+   Un valore inutile troppo alto ha per conseguenza un tempo di calculazione troppo alto e
+   questo ha per consequenza una reduzione del piacere con POV-Ray - che peccato!<br>
+   (L'immagine a destra ha durata 4 volte il tempo di caculazione per l'immagine a sinistra!)
+ <br></font>&nbsp;<br>
+<b>Calculazione per test nel modo  &quot;QUICK&quot; : </b><br>
+Per test con per es.
+<nobr><font size="-1">&quot;320x240, <b>quick</b>, mosaic&quot; </font></nobr>
+le superficie trasparenti di vetro sono solo visibile in nero!       <br>
+Trasparenza o filtro non sono calculati in questo modo!   <br>
+ </p>
+</div>
+
+
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

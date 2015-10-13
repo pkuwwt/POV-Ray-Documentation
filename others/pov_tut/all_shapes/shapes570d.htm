@@ -1,0 +1,327 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+<hr size="3"><p align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font></td></p></h6>
+ </td>
+ <td align="right">
+        <a href="shapes570e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes570e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes570i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes570i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes570f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes570f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+<a href="shapes100d.htm">Grundformen</b></a><br>
+<nobr><a href="shapes200d.htm">K&ouml;rper mit Makros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000d.htm">K&ouml;rper in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400d.htm">Andere K&ouml;rper als Makros</b></a></nobr><br>
+<a href="shapes600d.htm">3D-Text-Objekte</b></a><br>
+<br>
+<b>Andere Formen</b><br>
+&nbsp; -  <a href="shapes620d.htm">blob</b></a> <br>
+&nbsp; -  <a href="shapes630d.htm">sphere_sweep</b></a> <br>
+&nbsp; -  <a href="shapes640d.htm">julia_fractal</b></a> <br>
+&nbsp; -  <a href="shapes500d.htm">Regulare Polyhedron</b></a><br>
+<nobr>&nbsp; -  <a href="shapes530d.htm">Paraboloid, Hyperboloid</b></a></nobr><br>
+&nbsp; -  <a href="shapes540d.htm">Polynomial equations</b></a><br>
+&nbsp; -  <a href="shapes550d.htm">Cubic &amp; Quartic shapes</b></a><br>
+&nbsp; -&gt;<!--a href="shapes570d.htm"--><b>Parametric shapes</b></a><br>
+<br>
+<a href="shapes666d.htm">Non CSG K&ouml;rper</b></a><br>
+<nobr><a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900d.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<div align="center">
+<table width="80%" align="center" border="0"><tr><td><!-- global -->
+<font size="4"><b>Parametrische Oberfl&auml;chen</b></font><br>
+   <font size="1">built-in object</font><br>
+<br>
+<b>Warnung:</b> <br>
+Mike Williams schrieb in seinem gro&szlig;artigen
+&quot;<a href="http://www.econym.demon.co.uk/isotut/index.htm" target=_new>Isosurface Tutorial</a>&quot; :<br>
+&quot;<i><b>Parametric surfaces render very slowly</b> in POV-Ray ...</i>&quot;  <br>
+&quot;<i><b>Parametriische Oberfl&auml;chen rendern sehr langsam</b> in POV-Ray ...</i>&quot; <br>
+und ungl&uuml;cklicherweise hat er recht!<br>
+<br>
+
+Parametrische Gleichungen sind ein alternativer Weg um Gleichungen f&uuml;r 3D-Oberfl&auml;chen zu erstellen.<br>
+Syntax-Beispiel:
+<table border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+<tr><td><img src="im/parametric_01.jpg" border="0" width="240"  height="320"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>// --- parametric surface ---
+parametric{
+  function{ u }     //x(u,v)  or x
+  function{ u*v }   //y(u,v)  or f(x,z)
+  function{ v }     //z(u,v)  or z
+  &lt;-1,-1&gt;,&lt;1,1&gt; // start, end (u,v)
+  contained_by{box{&lt;-1,-1,-1&gt;,&lt;1,1,1&gt;}}
+  max_gradient 5
+  accuracy 0.0035
+  precompute 18 x,y,z
+
+
+  texture{
+    pigment{ color rgb&lt;1,1,1&gt; *1.2}
+    finish { phong 0.5 }
+  }
+  scale  0.5
+  rotate &lt;0, 0, 0>
+  translate &lt; 0, 0.5, 0&gt;
+} // end of parametric ------</b></td></pre></tr>
+
+<br>
+<div align="center">
+<table border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+<tr><td><img src="im/parametric_55.jpg" border="0" width="320"  height="240"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>parametric{
+  function{ sin(u) }   // x(u,v)  or x
+  function{ cos(u) }   // y(u,v)  or f(x,z)
+  function{ v }        // z(u,v)  or z
+  &lt;0,-2&gt;,&lt;2*pi,2&gt;  // start, end (u,v)
+  contained_by {box {&lt;-2,-2,-2&gt;,&lt;2,2,2&gt;}}
+  max_gradient 7
+  accuracy 0.005
+  precompute 18 x,y,z
+  texture{
+    pigment{ color rgb&lt;1,1,1&gt;}
+    finish { phong 0.5 }}
+  scale 0.5
+} // end of parametric ------</b></td></pre></tr>
+
+<tr><td><img src="im/parametric_58.jpg" border="0" width="320"  height="240"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>parametric{
+  function{ sin(u)+0.25*sin(v*2*pi)}// x(u,v)
+  function{ cos(u) }   // y(u,v)
+  function{ v }        // z(u,v)
+  &lt;0,-2&gt;,&lt;2*pi,2&gt;  // start, end (u,v)
+  contained_by {box {&lt;-2,-2,-2&gt;,&lt;2,2,2&gt;}}
+  max_gradient 7
+  accuracy 0.005
+  precompute 18 x,y,z
+  texture{
+    pigment{ color rgb&lt;1,1,1&gt;*.8}
+    finish { phong 0.1 }}
+  scale 0.5
+} // end of parametric ------</b></td></pre></tr>
+
+<tr><td><img src="im/parametric_05.jpg" border="0" width="320"  height="240"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+parametric{
+  function{ u }     //x(u,v)
+  function{ 0.25*sin(u*2*pi)}//y(u,v)
+  function{ v }     //z(u,v)
+  &lt;-4,-2&gt;,&lt;4,2&gt; // start, end (u,v)
+  contained_by {box {&lt;-1,-1,-1&gt;,&lt;1,1,1&gt;}}
+  max_gradient 2
+  accuracy 0.0035
+  precompute 18 x,y,z
+  texture {
+    pigment{ color rgb&lt;1,1,1&gt;*1.2}
+    finish { phong 0.5 } }
+  scale  0.5
+} // end of parametric ------</b></td></pre></tr>
+
+
+<tr><td><img src="im/parametric_04.jpg" border="0" width="320"  height="240"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+parametric{
+  function{ u }     //x(u,v)
+  function{ 0.5*v*sin(u*2*pi)} //y(u,v)
+  function{ v }     //z(u,v)
+  &lt;-4,-2&gt;,&lt;4,2&gt; // start, end (u,v)
+  contained_by {box {&lt;-1,-1,-1&gt;,&lt;1,1,1&gt;}}
+  max_gradient 5
+  accuracy 0.0035
+  precompute 18 x,y,z
+  texture {
+    pigment{ color rgb&lt;1,1,1&gt;*1.2}
+    finish { phong 0.5 } }
+  scale  0.5
+} // end of parametric -----</b></td></pre></tr>
+<tr><td><img src="im/parametric_08.jpg" border="0" width="320"  height="240"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+parametric{
+  function{ u }     //x(u,v)
+  function{ 0.15*sin(u*4*pi)}//y(u,v)
+  function{ v }     //z(u,v)
+  &lt;-4,-2&gt;,&lt;4,2&gt; // start, end (u,v)
+  contained_by {box {&lt;-1,-1,-1&gt;,&lt;1,1,1&gt;}}
+  max_gradient 3
+  accuracy 0.0035
+  precompute 18 x,y,z
+  texture {
+    pigment{ color rgb&lt;1,1,1&gt;*1.2}
+    finish { phong 0.5 } }
+  scale  0.5
+} // end of parametric -----</b></td></pre></tr>
+<tr><td><img src="im/parametric_07.jpg" border="0" width="320"  height="240"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+parametric{
+  function{ u }     //x(u,v)
+  function{ 0.05*(sin(v*4*pi)+sin(u*4*pi))}//y(u,v)
+    function{ v }     //z(u,v)
+  &lt;-4,-2&gt;,&lt;4,2&gt;  // start, end (u,v)
+  contained_by {box {&lt;-1,-1,-1&gt;,&lt;1,1,1&gt;}}
+  max_gradient 2
+  accuracy 0.0035
+  precompute 18 x,y,z
+  texture {
+    pigment{ color rgb&lt;1,1,1&gt;}
+    finish { phong 0.5 } }
+  scale  0.5
+} // end of parametric -----</b></td></pre></tr>
+<tr><td align="center"><img src="im/parametric_screw.jpg" border="0" width="240"  height="320"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+Conical screw:
+<pre><b>
+parametric{
+  function{ u*v*sin(15*v) } //x(u,v)
+  function{ v }             //y(u,v)
+  function{ u*v*cos(15*v) } //z(u,v)
+  &lt;0,-1&gt;,&lt;1,1&gt; // start, end (u,v)
+  contained_by {box {&lt;-1,-1,-1&gt;,&lt;1,1,1&gt;}}
+  max_gradient 5
+  accuracy 0.0035
+  precompute 18 x,y,z
+  texture {
+    pigment{ color rgb&lt;1,1,1&gt;*1.2}
+    finish { phong 0.5 } }
+  scale  0.5
+} // end of parametric -----</b></td></pre></tr>
+
+<tr><td align="center"><img src="im/parametric_20.jpg" border="0" width="240"  height="320"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+Conical spiral:
+<pre><b>#declare a = 1.0;
+#declare b = 8;
+#declare c = 0.2;
+#declare n = 5;
+parametric{
+ function { a*(1-0.5*v/pi)*sin(n*v+0.5*pi)*(1-cos(u))
+            + c*sin(n*v+0.5*pi) }
+ function { b*0.5*v/pi + a*(1-0.5*v/pi)*sin(u) }
+ function { a*(1-0.5*v/pi)*cos(n*v+0.5*pi)*(1-cos(u))
+            + c*cos(n*v+0.5*pi) }
+  &lt;0,0&gt;,&lt;2*pi,2*pi&gt;  // start, end of (u,v)
+  contained_by {box {&lt;-1,-1,-1&gt;*2*pi,&lt;1,b/3,1&gt;*2*pi}}
+  max_gradient 10
+  accuracy 0.0035
+  precompute 18 x,y,z
+  texture{ pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 0.5}}
+  scale 0.125
+  rotate &lt;0, 90, 0&gt;
+} // end of parametric -----</b></td></pre></tr>
+
+<tr><td align="center"><img src="im/parametric_dini.jpg" border="0" width="240"  height="320"
+         alt="Parametric" title="Parametric"></a></td>
+<td bgcolor="#fafafa" valign="top">
+Dini-Surface: <br>
+
+<pre><b>
+#declare a = 1;
+#declare b = 0.2;
+parametric{
+  function{ a*cos(u)*sin(v) }          //x(u,v)
+  function{ cos(v)+ln(tan(v/2))+b*u }  //y(u,v)
+  function{ a*sin(u)*sin(v) }          //z(u,v)
+  &lt;0,0.0001&gt;,&lt;4*pi,2&gt;  // start, end (u,v)
+  contained_by {box {&lt;-1,-1,-1&gt;*3,&lt;1, 1, 1&gt;*3}}
+  max_gradient 5
+  accuracy 0.0035
+  precompute 18 x,y,z
+  texture{
+    pigment{ color rgb&lt;1,1,1&gt;*1.2}
+    finish { phong 0.5 }}
+  scale  0.5
+} // end of parametric -----</b></td></pre></tr>
+
+
+</table>
+</div>
+
+
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr>
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

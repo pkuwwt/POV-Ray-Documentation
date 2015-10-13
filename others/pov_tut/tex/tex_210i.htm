@@ -1,0 +1,216 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_210e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_210e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_210f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_210f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_210d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_210d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330i.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>
+ <nobr>&nbsp; &nbsp;<!--a href="tex_210i.htm"--><b>Testure pronto per l'uso</b></a></nobr><br>
+ &nbsp; &nbsp; <b>&gt;</b> <!--a href="tex_210i.htm"--><b>Regole</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>    -->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+ <!--&nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">Testure pronto per l'uso</h2>
+
+<table border="0" align="center" width="90%"><tr><td><!-- global -->
+<h3><b><a name="Grundregeln">Regole fondamentali</a> per l'uso<br>
+di <a href="tex_150d.htm"> colori predefiniti</a>, <a href="tex_160d.htm">pigmenti e testure</a>: </b></h3>
+<b>1) Predefinito come &quot;color{ ... }&quot;<br>
+      &nbsp; &nbsp; &nbsp; ----&gt; richiamare come color in "pigment{color...}" !</b><br>
+Se una qualit&agrave; per es. &quot;Scarlet&quot; &eacute; definito come  &quot;color{ ... }&quot;,
+si deve richiamarla<br>
+come &quot;color&quot; nel comando &quot;pigment&quot; :<br>
+
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>texture{ pigment{ color Scarlet}
+         finish { diffuse 0.9 phong 1}
+       } // ------- fino di testura ---</b></td></pre>
+</tr></table>
+Qui &quot;finish{ diffuse  0.9}&quot; &eacute; necessario, altrimenti il colore &eacute; toppo buio!<br>
+<br>
+<b>2) Predefinito come &quot;pigment{ ... }&quot; <br>
+      &nbsp; &nbsp; &nbsp; ---&gt; richiamare come &quot;pigment{ ... }&quot;!</b><br>
+Se una qualit&agrave; per es. &quot;Jade&quot;  &eacute; definito come &quot;pigment{ ... }&quot;, si deve richiamarla
+come &quot;pigment&quot; :<br>
+
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>texture{ pigment{Jade}
+         finish { diffuse 0.9 phong 1 }
+       } // ------- fino di testura ---</b></td></pre>
+</tr></table>
+Qui &quot;phong 1.0&quot; &eacute; un effetto di luce!
+<br>
+<br>
+<b>3) Predefinito come &quot;texture{ ... }&quot; completa<br>
+      &nbsp; &nbsp; &nbsp; ---&gt; richiamare come  &quot;texture{ .. }&quot; !</b><br>
+Se una qualit&agrave; per es. &quot;Polished_Chrome&quot; o &quot;Glass3&quot; contiene
+tutti i componenti di una testura, si deve solo scrivere:<br>
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>texture{ Glass3 } // --- fino di testura </b></td></pre>
+</tr></table>
+<br>
+Di caratteristice aggiuntive come la ruvidezza ("normal") e
+colore d'abbozzo (&quot;quick_color&quot;) certamente si pu&ograve; aggiungere !
+<br>Esempio:
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>texture{ Glass3
+         pigment{ quick_color Cyan}
+         normal { ripples 0.5 scale 0.05 }
+       } // ------- fino di testura ---</b></td></pre>
+</tr></table>
+
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>interior{ I_Glass}
+        // con la rifrazione della luce!
+//----------------------------------------</b></td></pre>
+</tr></table>
+<br>
+<b>Esempi per <i>l'uso di<br>
+a) ready-made texture</b></i></font>
+<table border="1" bgcolor="#f8f8f0" cellspacing="1" cellpadding="4">
+<tr><td>
+<pre>sphere{ &lt;0,0,0&gt;,1
+        <b>texture{Polished_Chrome</b> //       &lt;--- ready-made <b>texture</b>
+                pigment{quick_color White}
+                normal {bumps 0.5 scale 0.05}
+               }  // ------ fino di testura ---
+       }  //-------------- fino di sphera ---------------------</td></pre>
+</tr></table>
+
+<b><i><font face="Arial">b) ready-made pigment </b></i></font>
+<table border="1" bgcolor="#f8f8f0" cellspacing="1" cellpadding="4">
+<tr><td>
+<pre>sphere{ &lt;0,0,0&gt;,1
+        texture{<b>pigment{Bright_Blue_Sky</b> //&lt;-<i> ready-made <b>pigment</b></i>
+                           quick_color Blue }
+                   normal {bumps 0.5 scale 0.05}
+                   finish {ambient 0.1 diffuse 0.9}
+               }  // ------ fino di testura ---
+       }  //-------------- fino di sphera ---------------------</td></pre>
+</tr></table>
+
+<b><i>c) ready-made color</b></i>
+<table border="1" bgcolor="#f8f8f0" cellspacing="1" cellpadding="4">
+<tr><td>
+<pre>sphere{ &lt;0,0,0&gt;,1
+        texture{ pigment{<b>color White</b>} //  &lt;---<i> ready-made <b>color</b></i>
+                 normal {bumps 0.5 scale 0.05}
+                 finish {ambient 0.1 diffuse 0.9}
+               }  // ------ fino di testura ---
+       }  //-------------- fino di sphera ---------------------</td></pre>
+</tr></table>
+</td></tr></table><!-- end of global -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

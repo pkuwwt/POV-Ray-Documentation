@@ -1,0 +1,167 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>LEGO&reg; CAD + POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Darstellung und Verwendung von LEGO-Modellen aus CAD Programme wie LDraw im POV-Ray Raytracing Programm">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, LEGO-Modelle, LEGO CAD, LDraw, LEGO Digital Designer, LeoGEO, L3PAO">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <table width="100%" border="0"><tr>
+ <td valign="top">
+<table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><img src="im/LEGO000tt.jpg" alt="LEGO in POV-Ray" title="LEGO in POV-Ray" width="80" height="60" border="0"></td></tr></table> </td>
+ <td>
+<p align="center"><font size="5">&nbsp; &nbsp; &nbsp;Virtuelle LEGO<sup>&reg;</sup> -Modelle von CAD-Programmen in POV-Ray</font>
+<br><font size="2">Darstellung und Verwendung von virtuellen LEGO<sup>&reg;</sup> -Modellen aus CAD Programmen,<br>
+wie mit <b>LDraw</b>&trade; und <b>LeoGEO</b> oder mit <b>LEGO Digital Designer</b>&reg; in POV-Ray</font></p></h6>
+ </td>
+ <td align="right">
+        <a href="lg2pov170e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="lg2pov170e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="lg2pov170i.htm"><font size="2">Italiano</font></a>
+        <a href="lg2pov170i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="lg2pov170f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="lg2pov170f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="lg2pov000d.htm"--><b>LEGO<sup>&reg;</sup> und POV-Ray</b></a><br>
+ &nbsp;&nbsp; <a href="lg2pov000d.htm">Inhalts&uuml;bersicht</a><br>
+<a href="lg2pov100d.htm"> <b>CAD f&uuml;r LEGO<sup>&reg;</sup></b></a><br>
+&nbsp; -  <a href="lg2pov110d.htm"><nobr>LEGO Digital Designer<sup>&reg;</sup></b></nobr></a><br>
+&nbsp; -  <a href="lg2pov140d.htm">LDraw  &trade;</b></a><br>
+&nbsp; -  <a href="lg2pov160d.htm">LDraw + LeoCAD</b></a><br>
+&nbsp; -&gt;<!--a href="lg2pov170d.htm"--><b>LDraw + MLCad</b></a><br>
+<br>
+<a href="lg2pov200d.htm">CAD zu POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov220d.htm">LeoCAD zu POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov240d.htm">Achsen + Ma&szlig;stab</b></a><br>
+&nbsp; -  <a href="lg2pov260d.htm">Adaptierte Farben</b></a><br>
+&nbsp; -  <a href="lg2pov280d.htm">LGeo POV-Ray Objekte</b></a><br>
+<br>
+&nbsp; <nobr>-  <a href="lg2pov300d.htm">LEGO<sup>&reg;</sup> Gr&ouml;&szlig;en + Raster</b></a></nobr><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+<h3 align="center"><a name="Top"></a>
+</h3>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+  <td colspan="2">
+   <h2>LDraw mit MLcad <font size="-1">(Windows)</font></h2>
+</td></tr>
+<tr><td valign="top"><h5>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('im/mlcad_im1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            <img src="im/MLCad001t.jpg" width="160" height="120" border="0" hspace="0" vspace="0"
+             title="Sample screen shot " alt="Sample screen shot  "></a></td>
+    </tr></table>Beispiel screen shot 1</h5>
+  </td>
+  <td valign="top"><h5>
+     &nbsp;</h5>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+   MLCad erh&auml;lt man mit dem LDraw-Programm-Packet <font size="-1">(Windows)</font>.<br>
+   Die ist auch eine sehr brauchbares CAD-Font-end f&uuml;r LDraw </font><br>
+   Homepage of MLCad (en, de): <a href="http://www.lm-software.com/mlcad/">www.lm-software.com/mlcad/</a>
+ </td>
+
+
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+
+ </td>
+ <td>
+
+ </td>
+</tr></table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ </td></tr>
+
+</div>
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+  <img src="../email.gif" width="15" height="10" border="0" alt="email" title="email"> email:
+  <a href="mailto:Friedrich.Lohmueller_at_t-online.de">Friedrich.Lohmueller_at_t-online.de</a><br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ <table border="1" cellspacing="0" cellpadding="0">
+ <tr><td  width="500"><p align="center">
+     <font size="2">LEGO<sup>&reg;</sup> ist ein eingetragenes Markenzeichen der Firmen der LEGO Group,<br>
+      die diese Seiten weder sponsort, authorisiert noch unterst&uuml;tzt.<br>
+      LEGO<sup>&reg;</sup> hat seine eigene Homepage: </font>
+      <a href="http://www.lego.com"><font size="2">www.lego.com</font></a><font size="2">,<br>
+      und eine Seite &uuml;ber das LEGO Mindstorms<sup>&reg;</sup> System: </font>
+      <a href="http://www.legomindstorms.com"><font size="2">mindstorms.lego.com</font></a><font size="2">.</font></td>
+ </tr></table>
+ </td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

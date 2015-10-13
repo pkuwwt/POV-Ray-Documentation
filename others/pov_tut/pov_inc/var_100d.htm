@@ -1,0 +1,201 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Variable in POV-Ray - &uuml;ber #declare, #local">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Variable in POV-Ray, #declare, #local">
+<title>Variable in POV-Ray - &uuml;ber #declare, #local</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>&Uuml;ber Variable in POV-Ray</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="var_100e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="var_100e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="var_100i.htm"><font size="2">Italiano</font></a>
+        <a href="var_100i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="var_100f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="var_100f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000d.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_000d.htm">Vordefinierte Variable</a></b><br>
+ &nbsp;&nbsp;<b>&gt;</b>  <!--a href="var_100d.htm"--><b>#declare, #local</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_200d.htm">Ausdr&uuml;cke</b></a><br>
+<!--
+ &nbsp; &nbsp; &nbsp; <a href="var_200d.htm">Ausdrücke</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_300d.htm">Funktionen</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_400d.htm">Vektoren</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_500d.htm">Arrays</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_600d.htm">Strings</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_700d.htm">#macro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_800d.htm">trace, inside,</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp;<a href="var_820d.htm">max_extent</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="var_840d.htm">#default</b></a><br>
+-->
+<br>
+ &nbsp;&nbsp;- <a href="inc_000d.htm">Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000d.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>#declare</b> und <b>#local</b><br>
+  <font size="-1">Benutzer-definierte Bezeichner und Objekte<br>
+Wie definiert man eigene Variable und Objekte.</font></h2>
+<p align="justify">In der Szenen Beschreibungssprache (SDL) von POV-Ray gibt es <br>
+zwei Methoden zum Definieren eigener Variablen und Objekte: <b>#declare</b> oder <b>#local</b>.<br>
+<font size="-1"><b>Anmerkung:</b> Um jegliche <b>Kollision vordefinierten Variablen und reservierten W&ouml;rter in POV-Ray<br>
+zu vermeiden, ist es dringend empfohlen</b>, bei durch den Benutzer definierten Variablen <br>
+<b>nur Worte zu verwenden, die mit Gro&szlig;buchstaben beginnen</b>.</font><br>
+<br>
+<font size="+1"><b>Was kann man mittels #declare oder #local deklarieren?</b></font><br>
+<font size="-1"><b>Einige Beispiele:</b></font><br>
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td ><pre><b><font size="+1" color="#000000">Zahlenwerte, Kommawerte, Vektoren</font></b>
+<b>#declare End = 5;</b>     //
+<b>#local D = 0.35;</b>    // distance between ... and ...
+<b>#declare Column_Height = 3.50;</b> // height of a column
+<b>#declare StartPoint = &lt;0, 2.5, 0.5*sqrt(3)&gt;</b>   // start point
+<b>#local Angle_1 = degrees( atan ( 2.5 / sqrt(2));</b> // angle value in degrees
+
+<b><font size="+1" color="#000000"> Texturen, Materialien, pigment, color, finish, normal</font></b>
+<b>#declare My_Orange =  color rgb &lt;1,0.6,0&gt;;</b>
+<b>#declare Orange_Plastic =
+texture{ pigment{ My_Orange }
+         finish { phong 1 reflection{ 0.1 metallic 0.1} }
+       }</b>  // end of texture
+<b><font size="+1" color="#000000">Geometrische Objekte.</font></b>
+<b>#declare Column_01 = cone{ &lt;0,0,0&gt;,0.30,&lt;0,4.00,0&gt;, 0.25
+                           texture{ Orange_Plastic }
+                         }</b> // end of Column_01
+</b></td></pre>
+ </tr>
+<tr>
+<td colspan="2">
+<font size="-1"><b>Achtung:</b><br>
+- Jedes #declare oder #local von Zahlen, Vektoren oder Farben (color) <b>verlangt ein Semicolon am Ende</b>!<br>
+- Ein erneutes declarieren eine Variablen &uuml;berschreibt zuvor declarierte Werte.</font>
+
+</td>
+ </tr>
+</table>
+</div>
+
+ <br>
+<br>
+<br>
+ - Warum ist die Verwendung von <b>deklarierten Variablen</b> anstelle von Zahlen so vorteilhaft?<br>
+ Argumente: <br>
+      Einfachere Handhabung, da weniger zu schreiben!<br>
+      Es ist eine grundlegende Technik &iacute;m modularen Arbeiten! Wer sie nutzt ist erfolgreicher!
+      - Besserer &Uuml;berblick! (Erkl&auml;rende Kommentare nicht vergessen!)
+       <font size="-1">[Klar, Sie wissen auch noch nach 8 Wochen was 'A' bedeutete, ... aber das sagen sie alle! :-) ]</font><br>
+      <br>
+
+      - <b>Werte, welche in mehreren Befehlen verwendet werden</b> - f&uuml;r einfachere &Auml;nderung/Anpassung - gibt mehr Freiheit im Design!<br>
+      Bei &Auml;nderungen m&uuml;ssen mehrfach ben&ouml;tigte Werte nicht an mehreren Stellen ge&auml;ndert werden!
+      (schneller + weniger fehlertr&auml;chtig!)
+       Beispiele: H&ouml;he einer S&auml;ule, Texturen, ... <br>
+<br>
+      - <b>Texturen, bevor sie an einem Objekt verwendet werden. </b><br>
+      Dies erlaubt es sehr einfach einige Texturen sp&auml;ter zu &auml;ndern.<br>
+<br>
+      - <b>Erzeugung von neuen Objekten zur mehrfachen Verwendung in einer Szene.</b> <br>
+
+      Warum ist die Verwendung von <b>deklarierten Objekten</b> die mehrfach verwendet werden wichtig?<br>
+      Argumente: <br>
+      - verringerter Schreibaufwand, besonders bei &Auml;nderung des Objektes!<br>
+      - Vorgefertigte Objekte erm&ouml;glichen eine modulare Bauweise die wesentlich &uuml;bersichtlicher ist <br>
+     &nbsp;&nbsp; als lauter einzelne mehrfache Beschreibungen von Teilen.<br>
+
+
+<br>
+<br>
+<font size="+2"><b>'#declare' or '#local'?</b></font> - Der Unterschied zwischen '#declare' und #local'.<br>
+Locale Bezeichner sind wichtig um eine <b>Identifier Name Collisions</b> (=Kollision der Bezeichnernamen) zu vermeiden.<br>
+Innerhalb einer Include-Datei oder innerhalb eines Makros (wzeischen dem Wort '#macro' und den dazugeh&ouml;renden '#end')
+hat das definieren eines Bezeichners durch '#local' keine Wirkung auf Bezeichner gleichen Namens, die ausserhalb dieser
+Include-Datei oder diesee Makros deklariert wurden.
+Dies bedeutet es &uuml;berschreibt tempor&auml;r die Bezeichner gleichen Namens von ausserhalb ohne seinen Wert
+ausserhalb zu zerst&ouml;ren. Nach dem Einf&uuml;gen einer Include-Datei oder nache dem Ende eines Makros
+werden alle lokal deklarierte Bezeichner zerst&ouml;rt..
+Ein '#local' in der Hauptszenendatei ist identisch mit '#declare' (wenn es nicht in einer Include-Datei oder einem Makro ist).<br>
+
+Daraus resultiert: Man kann in einem Makro oder einer Indlude-Datei Bezeichner mit Namen verwenden die schon in der Hauptszenenedatei
+oder in anderen Makros oder Include-Dateien verwerdet wurden, ohne dadurch
+die entprechenden Bezeichner-Werte der Hauptszenendatei zu zerst&ouml;ren.
+<br>
+<font size="+1"><b>Zerst&ouml;rung von Bezeichnern</b></font>  <br>
+Benutzerdefinierte Bezeichner k&ouml;nnen mittels &quot;<b>#undef</b> MyVariable&quot; zerst&ouml;rt werden.<br>
+Benutzerdefinierte Bezeichner k&ouml;nnen erzeugt werden abh&auml;ngig davon, ob sie bislang noch nicht definiert sind:<br>
+&quot;<b>#ifndef</b> ( MyVariable ) #declare MyVariable = 0.5; <b>#end</b>&quot;<br>
+Dies ist eine elegante Methode um Objekte in Include-Dateien mit Grundeinstellungswerten (dafault values) zu erzeugen, <br>
+welche n&ouml;tigensfalls vom Benutzer &uuml;berschrieben werden k&ouml;nnen.<br>
+Siehe auch <a href="../dir/dir_800d.htm">&uuml;berschreibbaren </a>
+<br>
+<br>
+
+<br>
+</p></td></tr></table>
+
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

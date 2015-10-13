@@ -1,0 +1,268 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray - tipi di motivo (patterns)</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_700e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_700e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_700f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_700f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_700d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_700d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>-->
+ &nbsp; &nbsp; <!--a href="tex_700i.htm"--><b>Motivi - patterns</b></a><br>
+ &nbsp; &nbsp; <b>&gt;</b>  <!--a href="tex_700i.htm"--><b>tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500i.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560i.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561i.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562i.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570i.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580i.htm">pavement</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con pigment</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650i.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651i.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660i.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+<table><tr><td>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/pattern_types.jpg" width="80" height="80" alt="color rgb" border="0"></td></tr></table>
+ </td>
+ <td><b><p><font size="5">&nbsp;Tipi di motivi - Patterns</font><br>
+   <font size="2">&nbsp; &quot;three-dimensional solid texturing&quot; con 3d testure procedurali</font></p>
+ </td>
+</tr></table>
+<font size="2"><p align="justify">Invece di un colore semblice, comme &quot;color Red&quot;,
+si p&ugrave;o usare nel comando &quot;pigment&quot; anche un motivo di colori ou di pigmenti.<br>
+A prescindere i motivi prefabricati come
+Jade, Bright_Blue_Sky, Blood_Sky, Candy_Cane, Red_Marble, Brown_Agate, Cork  si p&ugrave;o anche
+usare moltissimi motivi regulari (p.es.: scacchiera, mattone, spirale etc.)
+e anche  moltissimi motivi irregulari von confini labili con p.es. il
+motivo &quot;gradient&lt;0,1,0&gt;&quot; e la disposizione
+dei colori con una cosi detta &quot;color_map&quot; (=mappa di colori).<br>
+La maggior parte di questi funzioni di motivi si puo anche usare con
+ <nobr>&quot;pigment_map&quot;</nobr>, <nobr>&quot;texture_map&quot;</nobr>
+ o in <nobr>&quot;normal&quot;</nobr> con <nobr>&quot;normal_map&quot;</nobr>.
+ </p>
+
+<p align="justify">
+Questi motivi non sono solo immagini attaccati alla superficie degi oggetti.
+Questi motivi sono tridimensionale come la venatura di una torta marmorizzata
+o come la venatura in legno! Questo metodo si chiama
+ &quot;three-dimensional solid texturing&quot;.
+Un questo motivo (a prescindere da material_map, image_map e bump_map)
+si &eacute; prodotto di una funzione tridimensionale - queste testure si chiamano
+anche testure procedurali. Ogni punto nello spazio tridimensionale ha
+una caratteristica peculiare  di motivo.
+L'oggetto ritaglia un pezzo di questa struttura tridimensionale.<br>
+Si p&ugrave;o anche cambiare la scala (<nobr>&quot;scale&quot;</nobr>),
+spostare(<nobr>&quot;translate&quot;</nobr>) e ruotare (<nobr>&quot; rotate &quot;</nobr>)
+il motivo nelle parentesi quadre di <nobr>&quot;pigment&quot;</nobr>, <nobr>&quot;texture&quot;</nobr> o
+<nobr>&quot;normal&quot;</nobr> per ottenere un'altra parte di un motivo.
+</p>
+
+
+<h3>&quot;turbulence&quot; fa rivivere i colori:
+  </h3>
+
+<h5 align="justify">
+Con il comando additivo turbulence (p.es.: &quot;turbulence 0.2&quot;) con i valori
+entro 0.00 e 1.00 o pi&ugrave;  si p&ugrave;o modificare ogni motivo. Gli attributi di
+<nobr>&quot;pigment&quot;</nobr> o <nobr>&quot;normal&quot;</nobr>
+sono svariati. Con questi si p&ugrave;o ottenere quasi ogni tipo di structure
+naturale di testura, come nuvole, legno o marmo.
+</h5>
+<hr>
+Vede anche qui: </font><a href="tex_750i.htm" target="_new"><b>
+<font size="2" color="#800080">
+ Lista di tipi di motivi</b></font></a>
+<font size="2">
+per  <nobr>&quot;pigment&quot;</nobr>  e  <nobr>&quot;normal&quot;</nobr><br>
+
+<hr>
+Qui un esempio di spiegazzatura con <b><nobr>&quot;crackle&quot;</nobr></b>: </p></font>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/crackl1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/crackl1t.jpg" border="0" width="320" height="240"
+       alt="Sample crackle 640x480" title="Sample crackle 640x480"></a>
+      </td></tr></table>
+<br>
+
+<table align="center" border="1" cellspacing="2" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>// ground ----------------------------------------------------
+plane{&lt;0,1,0&gt;, 0
+      texture{Polished_Chrome
+              pigment{ color rgb&lt;1,0.8,0&gt;}
+              normal { <B>crackle</B> 0.75 turbulence 0.25 scale 0.25}
+              finish { diffuse 0.9}}
+     }// end of plane
+//------------------------------------------------------------</b></td></pre>
+</tr>
+</table>
+
+<font size="2"><p>Per la testura della sfera vede l'esempi nel  </font>
+<a href="tex_900i.htm">
+<font size="2"><nobr>&quot; layered textures &quot;</nobr></b>
+</font></a> </p>
+
+<hr size="3">
+<font size="2"><p><br>
+L'esempio che segue 1 &eacute; anche noto sotto il nome <nobr>&quot; Bright_Blue_Sky &quot;</nobr>  - </p></font>
+<table  align="center" border="1" cellspacing="2" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>sphere{&lt;0,0,0&gt;,1 translate&lt;-1,1,0&gt;
+      texture{
+        pigment{
+           bozo turbulence 0.56
+           color_map {
+             [0.0 color rgb &lt;0.5, 0.5, 1.0&gt;] //LightBlue
+             [0.5 color rgb &lt;0.5, 0.5, 1.0&gt;] //LightBlue
+             [0.6 color rgb &lt;1.0, 1.0, 1.0&gt;] //White
+             [1.0 color rgb &lt;0.5, 0.5, 0.5&gt;] //Grey
+                     } // end of color_map
+               } // end of pigment
+        finish { diffuse 0.9 phong 1}}}
+  // end of finish, end of texture, end of sphere</b></td></pre>
+</tr>
+</table>
+<hr size="3">
+<table  align="center" border="1" cellspacing="2" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>sphere{&lt;0,0,0&gt;,1 translate&lt;1,1,0&gt;
+       texture{
+         pigment{
+           ripples scale 0.5 turbulence 1.5
+           color_map {
+                  [0.0 color NeonPink ]
+                  [0.1 color NeonPink ]
+                  [0.5 color Yellow   ]
+                  [0.6 color White    ]
+                  [1.0 color Gray50   ]
+                 } // end of color_map
+              } // end of pigment
+          normal { wrinkles 0.75 scale 0.1}
+          finish { diffuse 0.9 phong 1}}}  </b></td></pre>
+</tr>
+</table>
+ <table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/colorm1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/colormp1t.jpg" border="0" width="320"  height="240"
+       alt="Sample color_map 640x480" title="Sample 1 crackle 640x480"></a>
+      </td></tr></table>
+
+
+</td></tr></table><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

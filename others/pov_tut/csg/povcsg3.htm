@@ -1,0 +1,189 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="CSG - Constructive Solid Geometry Teil III">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, csg, Constructive Solid Geometry, boolesche Algebra, union, merge, intersection, difference, konstruieren">
+<title>CSG - Constructive Solide Geometry mit POV-Ray - Teil III</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg3e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povcsg3e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg3i.htm"><font size="2">Italiano</font></a>
+        <a href="povcsg3i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg3f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povcsg3f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg1.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg1.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2.htm">union + merge</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg3.htm"--><b>difference</a></b><br>
+ &nbsp; &nbsp; -  <a href="povcsg4.htm">intersection</a></b><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4.htm">+ invers</a></b><br>
+ &nbsp; &nbsp; -  <a href="povcsg5.htm">clipped_by</a></b><br>
+ &nbsp; &nbsp; -  <a href="povcsg6.htm">Koinzidenzprobleme</a></b><br>
+ &nbsp; &nbsp; -  <a href="povcsg7.htm">Texturen u. CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Boolesche Algebra mit K&ouml;rpern - Teil III</h5>
+<h2 align="center">&Uuml;ber &quot;difference&quot;</h2>
+
+<table border="0" width="90%" align="center"><tr><td>
+<div align="center">
+
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td><img src="boole_d.gif" width="130" height="100"></td>
+        <td width="150" height="100"><b>Differenz</b><br><br>
+                                     <b>difference{...}</b></td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+              bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+              <tr><td><img src="boole_d.jpg" width="130" height="98"></td></tr></table>
+        </td>
+    </tr>
+</table>
+
+
+<p align="justify">
+Mittels der Differenz lassen sich aus vorhandenen K&ouml;rpern L&ouml;cher, Ausbuchtungen,
+Abschr&auml;gungen, Einkerbungen und dergleichen herausfr&auml;sen. Die Schnittfl&auml;che erh&auml;lt
+jeweils die Textur des abgezogenen K&ouml;rpers. Soweit die Theorie.<br>
+Eine Quelle tiefsten Frustes - nicht nur f&uuml;r Anf&auml;nger - ist folgende hinterh&auml;ltige <b>Falle</b>:<br>
+Reicht der abzuziehende K&ouml;rper nicht eindeutig &uuml;ber den K&ouml;rper von dem er abgezogen
+wird hinaus, sondern liegen die Grenzfl&auml;chen genau aufeinander d.h. die Fl&auml;chen sind koinzident.
+So kann der Raytracer nicht klar entscheiden, welche Fl&auml;che noch &uuml;brig bleiben soll.
+Als Folge bleibt je nach Blickwinkel eine mehr oder weniger perfekte Trennfl&auml;che stehen,
+d.h. die Differenz scheint nicht richtig zu funktionieren!<br>
+Dies ist <b>kein Fehler des Programms</b>,
+sondern eine prinzipielle Beschr&auml;nkung durch die Rundungsfehler, welche bei Berechnungen mit
+Computern unvermeidlich auftreten, da ein Computer nur mit endlich vielen Nachkommastellen rechnen kann.
+So rechnen wir problemlos z.B. <sup>1</sup>/<sub>3</sub>*3 = 1, ein Computer rechnet jedoch: 0,333333*3 = 0,999999 &lt; 1.<br>
+Es ist daher unerl&auml;sslich solche Uneindeutigkeiten bei Fl&auml;chen bereits bei der Beschreibung der abzuziehenden
+K&ouml;rper klar zu vermeiden.<br>
+<font size="-1">(Siehe auch: &quot;<a href="povcsg6.htm">Koinzidenzprobleme</a>&quot;)</font><br>
+
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="400"  height="240" >
+<b>Das Schadbild:</b>
+ <table align="center" border="2" bgcolor="#EEEEEE"
+  bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>difference{
+box{&lt;-0.5,0.0,-0.1&gt;,&lt; 0.5,1.0,0.1&gt;
+    texture{ pigment{ color rgb&lt;1,0.65,0&gt;}
+             finish { phong 1.0 }}
+   }
+box{&lt;-0.3,0.2,-0.1&gt;,&lt; 0.3,0.8,0.1&gt;
+    texture{ pigment{ color Magenta}
+             finish { phong 1.0 }}
+   }
+rotate&lt;0,-30,0&gt; translate&lt;0,0,0&gt;}</b></td></pre></tr></table>
+        </td>
+        <td><img src="boole_x1s.gif" width="200" height="200">
+        </td>
+    </tr>
+    <tr>
+        <td width="400"  height="240" >
+<b>Die Probleml&ouml;sung:</b>
+
+ <table align="center" border="2" bgcolor="#EEEEEE"
+  bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#declare <b>D = 0.0001;// Ein kleines Bißchen!</b>
+difference{
+box{ &lt;-0.5,0.0,-0.1&gt;,&lt; 0.5,1.0,0.1&gt;
+     texture{ pigment{ color rgb&lt;1,0.65,0&gt;}
+              finish { phong 1.0 }}
+   }
+box{ &lt;-0.3,0.2,-0.1<b>-D</b>&gt;,&lt; 0.3,0.8,0.1<b>+D</b>&gt;
+     texture{ pigment{ color Magenta }
+              finish { phong 1.0 }}
+   }
+rotate&lt;0,-30,0&gt; translate&lt;0,0,0&gt;}</b></td></pre></tr></table>
+  </td>
+  <td><img src="boole_x2s.gif" width="200" height="200">
+  </td>
+ </tr>
+</table>
+</div>
+</tr></td></table>
+</div>
+
+</td></tr></table> <!-- global-->
+
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1.htm">CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg3.htm"-->difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6.htm">Koinzidenz</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7.htm">Texturen</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

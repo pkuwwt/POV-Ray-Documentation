@@ -1,0 +1,54 @@
+//------------------------------------------------------------------------------------
+#include "analytical_g.inc"
+//------------------------------------------------------------------------------------
+#declare A  = < 1, 0,-0.50>;
+#declare B  = < 1, 1, 0.00>;
+#declare C  = < 0, 1, 0.00>;  
+//------------------------------------------------------------------------------------
+sphere{ A, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( A, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ B, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( B, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ C, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( C, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+text { ttf "arialbd.ttf", "A",0.1,0 
+       scale 0.15 rotate<20,-45,0> translate A+<-0.2, 0.1,-0.1> pigment{ color Red*0.7 } no_shadow}
+
+text { ttf "arialbd.ttf", "B",0.1,0 
+       scale 0.15 rotate<20,-45,0> translate B+<-0.1,0.1,-0.1> pigment{ color Red*0.7 } no_shadow }
+
+text { ttf "arialbd.ttf", "C",0.1,0 
+       scale 0.15 rotate<20,-45,0> translate C+<-0.1,0.1,-0.1> pigment{ color Red*0.7 } no_shadow }
+//------------------------------------------------------------------------------------
+// triangle ABC:
+// triangle { A, B, C       pigment{ color Yellow transmit 0.5 }}
+// cylinder{ A, B, 0.01  pigment{ color rgb<0.7,0.0,0> } no_shadow }
+// cylinder{ B, C, 0.01  pigment{ color rgb<0.7,0.0,0> } no_shadow }
+// cylinder{ A, C, 0.01  pigment{ color rgb<0.7,0.0,0> } no_shadow }
+ object{ Vector( A,B, 0.015) pigment{ color Green *0.5}}
+ object{ Vector( A,C, 0.015) pigment{ color Green *0.5}}
+//------------------------------------------------------------------------------------
+
+//#declare  N = <0,-0.5,1>
+//  N = <0,-0.5,1>;
+//  e: 0*x1-0.5*x2 + 1*x3 + D = 0;
+//  A in e:    ->  D = 0.5; 
+//  NF e: 0*x1-0.5*x2 + 1*x3 + 0.5 = 0;
+//#declare D = 0.5;
+//or
+#declare N = vnormalize(vcross (B-A,C-A)); 
+#declare D =  ( N.x*A.x + N.y*A.y + N.z*A.z ); 
+// negativ normal vector ( better to see!)
+object{ Vector( o,-N, 0.015) pigment{ color rgb<1,0,1>*0.5} translate A }
+ 
+// plane by normal representation, N=<A,B,C>, D: .....    
+// object{ Plane_Nor( <0,-0.5,1>,0.5,<-0.00,0,-1.00>,<0.70,1.10,0.00>) pigment{ color Green  transmit 0.5} }
+object{ Plane_Nor( N,D,<-0.00,0,-1.00>,<1.40,1.00,0.00>) pigment{ color Green  transmit 0.5} }
+             
+// for comparision: an infinite plane: 
+plane{  N, D pigment{ color Orange  transmit 0.75} translate<0,0,0.001> }
+//---------------------------------------------------------------------------------------------
+

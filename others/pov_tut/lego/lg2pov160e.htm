@@ -1,0 +1,211 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>LEGO&reg; CAD and POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Rendering of LEGO models from CAD programs like LDraw or LEGO Digital Designer with the POV-Ray raytracing program">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D graphics, computer graphics, LEGO models, LEGO CAD, LDraw, LEGO Digital Designer, LeoGEO, L3PAO">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=930,height=725");
+ New.focus();  }
+//-->
+
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples for the POV-Ray Raytracer </nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <table width="100%" border="0"><tr>
+ <td valign="top">
+<table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><img src="im/LEGO000tt.jpg" alt="LEGO in POV-Ray" title="LEGO in POV-Ray" width="80" height="60" border="0"></td></tr></table> </td>
+ <td>
+<p align="center"><font size="5">&nbsp; &nbsp; &nbsp;Virtual LEGO<sup>&reg;</sup> Models from CAD Programs in POV-Ray</font>
+<br><font size="2">Rendering of virtual LEGO<sup>&reg;</sup> models from CAD programs <br>
+like <b>LDraw</b>&trade; and <b>LeoGEO</b> or <b>LEGO Digital Designer</b>&reg; in POV-Ray</font></p></h6>
+ </td>
+ <td align="right">
+        <a href="lg2pov160f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="lg2pov160f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="lg2pov160i.htm"><font size="2">Italiano</font></a>
+        <a href="lg2pov160i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="lg2pov160d.htm"><font size="2">Deutsch </font></a>
+        <a href="lg2pov160d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="lg2pov000e.htm"--><b>LEGO &reg; and POV-Ray</b></a><br>
+ &nbsp;&nbsp; <a href="lg2pov000e.htm">Content</a><br>
+<a href="lg2pov100e.htm"> <b>CAD for LEGO &reg;</b></a><br>
+&nbsp; <nobr>-  <a href="lg2pov110e.htm">LEGO Digital Designer &reg;</b></nobr></a><br>
+&nbsp; -  <a href="lg2pov140e.htm">LDraw  &trade;</b></a><br>
+&nbsp; -&gt;<!--a href="lg2pov160e.htm"--><b>LDraw + LeoCAD</b></a><br>
+&nbsp; -  <a href="lg2pov170e.htm">LDraw + MLCad</b></a><br>
+<br>
+<a href="lg2pov200e.htm">CAD to POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov220e.htm">LeoCAD to POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov240e.htm">Axes + Scales</b></a><br>
+&nbsp; -  <a href="lg2pov260e.htm">Adapted Colors</b></a><br>
+&nbsp; -  <a href="lg2pov280e.htm">LGeo POV-Ray Objects</b></a><br>
+<br>
+&nbsp; <nobr>-  <a href="lg2pov300e.htm">LEGO Model Sizes + Grid</b></a></nobr><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+<h3 align="center"><a name="Top"></a>
+</h3>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<h2>LDraw and LeoCAD</h2>
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+  <td valign="top"><h5>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('im/leo_im1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            <img src="im/LeoCAD_pyra4t.jpg" width="160" height="120" border="0" hspace="0" vspace="0"
+             title="Sample screen shot 1" alt="Sample screen shot 1"></a></td>
+    </tr></table>Example screen shot 1</h5>
+  </td>
+  <td valign="top"><h5>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('im/leo_im2.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            <img src="im/Castle_1LeoGEOt.jpg" width="160" height="120" border="0" hspace="0" vspace="0"
+             title="Sample screen shot 2" alt="Sample screen shot 2"></a></td>
+    </tr></table>Example screen shot 2</h5>
+  </td>
+</tr>
+
+<tr>
+ <td colspan="2">
+   LeoCAD is a CAD font end for LDraw  <font size="-1">(Windows + Linux)</font>.  <br>
+   Homepage of LeoCAD (en): <a href="http://www.leocad.org/">www.leocad.org</a>
+<br>
+ <br>
+ <b>Import and export file formats</b> (load/save)<b>:</b><br>
+  .lcd - LeoCAD Projects<br>
+  .dat - old LDraw format<br>
+  .ldr - single-part LDraw file ( im-/export also in LEGO Digital Designer <sup>&reg;</sup> ! )<br>
+  .mpd - multi-part LDraw file <br>
+ <b>Export file formats:</b> <br>
+   .3ds  - 3D Studio <br>
+   .html - HTML  <br>
+   .pov + .inc - POV-Ray - scene and include files <br>
+   .obj - Wavefront object file <br>
+
+ </td>
+</tr>
+<tr>
+  <td valign="top"><h5>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('im/lgeo_im1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            <img src="im/Pyra4_test01t.jpg" width="160" height="120" border="0" hspace="0" vspace="0"
+             title="Sample screen shot 1" alt="Sample screen shot 1"></a></td>
+    </tr></table>Example LGEO POV Library</h5>
+  </td>
+  <td valign="top"><h5>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('im/lgeo_im2.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            <img src="im/Pyra4_test02t.jpg" width="160" height="120" border="0" hspace="0" vspace="0"
+             title="Sample screen shot 2" alt="Sample screen shot 2"></a></td>
+    </tr></table>Example LGEO POV Library</h5>
+  </td>
+</tr>
+<tr>
+  <td colspan="2"><p align="justify">  With <b>LeoCAD</b> we have the best way to convert
+  <b>LDraw virtual LEGO<sup>&reg;</sup> models to POV-Ray</b> format and render them in <b>POV-Ray</b> with
+  with using the <b>LGEO POV Library</b>. <br>
+  Be sure to have the newest version of this library (12-2008).<br> (Download at
+  <a href="http://www.digitalbricks.org/lgeo.html">www.digitalbricks.org/lgeo.html</a>).<br>
+  This is a set of include files for POV-Ray which replaces most triangle meshes from LDraw by POV-Ray primitives
+  to achieve perfectly rounded smooth rounded edges at the shapes.<br>
+
+  Load your model in LeoCAD and chose File -> Export -> POV-Ray <br>
+  LeoCAD works also with POV-Ray3.7 beta.<br>
+
+ </td>
+</tr>
+<tr>
+ <td valign="top" colspan="2">
+
+
+ </td>
+</tr></table>
+
+
+<br>
+
+ </td></tr>
+
+</div>
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+  <img src="../email.gif" width="15" height="10" border="0" alt="email" title="email"> email:
+  <a href="mailto:Friedrich.Lohmueller_at_t-online.de">Friedrich.Lohmueller_at_t-online.de</a><br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ <table border="1" cellspacing="0" cellpadding="0">
+ <tr><td  width="675"><p align="center">
+     <nobr>&nbsp;<font size="2">LEGO <sup>&reg;</sup>
+      is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site.</nobr><br>
+      <nobr>LEGO has its own homepage: </font>
+      <a href="http://www.lego.com"><font size="2">www.lego.com</font></a><font size="2">,
+      and a page on the Mindstorms system:
+      <a href="http://www.legomindstorms.com"><font size="2">mindstorms.lego.com</font></a></nobr></td>
+ </tr></table>
+ </td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

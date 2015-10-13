@@ -1,0 +1,197 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Random Numbers and Loops with POV-Ray (7): Filled height_field with 'rand.inc'</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="include file 'rand.inc', random numbers, while loops, raytracing, tutorial, pov, povray, 3d graphics, raytracing descriptions, povray tutorials">
+<meta name="description" content="POV-Ray tutorial - random numbers and loops with POV-Ray part V: The Include File 'rand.inc'">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=650,height=500");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+
+<table width="100%" border="0"><tr>
+ <td valign="top">
+     <font size="1"><nobr>POV-Ray Raytracer</nobr> <nobr>Descriptions and Examples</nobr>
+                    <nobr>by Friedrich A. Lohm&uuml;ller</nobr></font><a name="top"></a>
+ <hr size="3">
+   <div align="center">
+      <font size="5">&nbsp; &nbsp;Random with POV-Ray</font> (Part 7)
+   </div>
+ </td>
+ <td align="right">
+        <a href="random7i.htm"><font size="2">Italiano </font></a>
+        <a href="random7i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="random7f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="random7f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="random7d.htm"><font size="2">Deutsch </font></a>
+        <a href="random7d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr>
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr> &nbsp;<a href="random00e.htm"><font size="+1">Random in POV-Ray</font></b></a></nobr><br>
+<nobr>&nbsp;&nbsp; -  <a href="random1e.htm">RandomNumbers in Loops</b></a></nobr><br>
+&nbsp;&nbsp; -  <a href="random2e.htm">quadratic + cubic</b></a><br>
+&nbsp;&nbsp; -  <a href="random3e.htm">Colors + Scale</b></a><br>
+&nbsp;&nbsp; -  <a href="random4e.htm">Tilting + Bending</b></a><br>
+&nbsp;&nbsp; -  <a href="random5e.htm">Trees by Random</b></a><br>
+&nbsp;&nbsp; -  <a href="random6e.htm">Include File 'rand.inc'</b></a><br>
+&nbsp;&nbsp;<b>&gt;</b> <!--a href="random7e.htm"--><b>Filled height_field</b></a><br>
+&nbsp;&nbsp; -  <a href="random8e.htm">Random Flower</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+&nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a><br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/VRand_in_Object_Hfs.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="6"><nobr>&nbsp; Filled height_field</font> with 'rand.inc' &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="2">
+   <p align="justify">
+   &nbsp; For this scene we are using the following function:<br>
+   &nbsp;<b>VRand_In_Obj(Object, Stream)</b><br>
+   &nbsp;<font size="-1">The vector to a random point inside an arbitrary object.</font><br>
+</td>
+</tr>
+<tr>
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr><td><pre><b>#declare Mountain  =
+height_field{
+  png "Mount1.png"
+  smooth double_illuminate
+  // file types:
+  //gif|tga|pot|png|pgm|ppm|jpeg|tiff|sys
+  //[water_level N]//  (0.0 ... 1.0)
+  translate&lt;-0.5,-0.001,-0.5&gt;
+  rotate&lt;0,-110,0&gt;
+  scale&lt;50,12,40&gt;
+  texture{
+    pigment{ color rgb&lt;1,0.95,0.8&gt; }
+    normal { bumps 0.75 scale 0.025 }
+    finish { phong 0.1 }
+  } // end of texture
+  translate&lt;2,0,30&gt;
+} // end of height_field ----------------
+//---------------------------------------
+#include "rand.inc" // random functions
+#declare Random_1 = seed (12433);
+//---------------------------------------
+//---------------------------------------
+union{
+ #local Nr = 0;     // start
+ #local EndNr = 4000; // end
+ #while (Nr &lt; EndNr)
+
+  sphere{
+    &lt;0,0,0&gt;, 0.80
+    translate
+      VRand_In_Obj( Mountain, Random_1)
+    texture{
+      pigment{ color rgb&lt;0.6,0.05,0.1&gt;}
+      finish{ phong 1 reflection{0.15}}
+    } // end of texture
+  } // end of object
+
+ #local Nr = Nr + 1;  // next Nr
+ #end // ----------- end of loop
+
+rotate&lt;0,-20,0&gt;
+translate&lt;10,0,0&gt;
+} // end of union
+//---------------------------------------</b></td></pre></tr></table>
+    <font size="1"><b>See scene file for more details!<b></font>
+ </td>
+ <td valign="top">
+  <div align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/VRand_in_Object_Hf_mount1.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><b>The height_field 'Mount1'</b><br>
+
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/VRand_in_Object_Hf.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><b>VRand_in_Object with height_field</b><br>
+    <b>Scene file for POV-Ray</b>: &nbsp;<br>
+    <a href="pov/VRand_in_Object_Hf.pov">VRand_in_Object_Hf.pov</a></font>
+  </div>
+ </td>
+</tr>
+<tr><td> &nbsp; &nbsp; </td>
+<td><div align="center"><b>
+<a href="random00e.htm">0</a> |
+<a href="random1e.htm">1</a> | <a href="random2e.htm">2</a> | <a href="random3e.htm">3</a> |
+<a href="random4e.htm">4</a> | <a href="random5e.htm">5</a> | <a href="random6e.htm">6</a> |
+<!--a href="random7e.htm"-->7</a> | <a href="random8e.htm">8</a></b></div>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

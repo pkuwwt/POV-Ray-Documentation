@@ -1,0 +1,365 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes540i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes540i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes540f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes540f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes540d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes540d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Overview<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000e.htm">Shapes in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400e.htm">Other Shapes by macros</b></a></nobr><br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+<br>
+<a href="shapes000e.htm">Other Shapes</b></a><br>
+&nbsp; -  <a href="shapes620e.htm">blob</b></a><br>
+&nbsp; -  <a href="shapes630e.htm">sphere_sweep</b></a><br>
+&nbsp; -  <a href="shapes640e.htm">julia_fractal</b></a><br>
+&nbsp; -  <a href="shapes500e.htm">Regulare Polyhedron</b></a><br>
+<nobr>&nbsp; -  <a href="shapes530e.htm">Paraboloid, Hyperboloid</b></a></nobr><br>
+&nbsp; -&gt;<!--a href="shapes540e.htm"--><b>Polynomial equations</b></a><br>
+&nbsp; -  <a href="shapes550e.htm">Cubic &amp; Quartic shapes</b></a><br>
+&nbsp; -  <a href="shapes570e.htm">Parametric shapes</b></a><br>
+<br>
+<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+<nobr><a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900e.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<div align="center">
+<table width="80%" align="center" border="0"><tr><td><!-- global -->
+<font size="4"><b>Polynomial shapes</b></font> = shapes which are defined by polynomial equations<br>
+   <font size="1">built-in objects</font><br>
+<br>
+Polynomial equations are the base of all shapes in the 3d space. <br>
+Some often used shapes like plane, sphere, cylinder, cone, torus are available in POV-Ray
+also to people which aren's too familiar with mathematics by their own user-friendly statements.<br>
+But with polynomial equations it's possible to descripe much more kind of surfaces like the
+Lemniscate, Devils curve, Monkey saddle, Piriform, Steiner surface.<br>
+POV-Ray provides 3 different objects to create surfaces directly by polynomial equations:<br>
+&quot;cubic{ ... }&quot;,  &quot;quartic{ ... }&quot; and &quot;poly{ ... }&quot;.<br>
+&nbsp;<br>
+
+
+<br>
+<font size="5">A short excursus on polynomial equations</font>
+<br>
+<br>
+<b>First order polynomial shapes</b> <br>
+(each term contains only single powers of x, y or z.) <br>
+Each polynomial shape of first order can be represented by the equation  <br>
+&nbsp; &nbsp; &nbsp; <b>A*x + B*y + C*z - D*sqrt(A<sup>2</sup> + B<sup>2</sup> + C<sup>2</sup>) = 0.</b><br>
+<br>
+Example: <b>0*x + 1*y + 1*z - 2 = 0</b>
+<pre><b>plane { &lt;0, 1, 1&gt;, 2 } </b></pre>
+
+<br>
+<b>Second order polynomial shapes</b> <br>
+
+A second order polynomial shape has a quadric equation which also contains
+terms like x<sup>2</sup>, y<sup>2</sup>, z<sup>2</sup>, xy, xz and yz.<br>
+<br>
+I.e.: spheres can be defined by quadric equations. <br>
+A sphere around center M  = &lt;m<sub>x</sub>, m<sub>y</sub>m, <sub>z</sub>&gt; : <br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      (x - m<sub>x</sub>)<sup>2</sup>
+    + (y - m<sub>y</sub>)<sup>2</sup>
+    + (z - m<sub>z</sub>)<sup>2</sup>
+    - r<sup>2</sup> = 0<br>
+   &lt;=&gt; &nbsp;
+       x<sup>2</sup> - 2*m<sub>x</sub>*x + m<sub>x</sub><sup>2</sup>
+     + y<sup>2</sup> - 2*m<sub>y</sub>*y + m<sub>y</sub><sup>2</sup>
+     + z<sup>2</sup> - 2*m<sub>z</sub>*z + m<sub>z</sub><sup>2</sup>
+     - r<sup>2</sup> = 0  <br>
+   &lt;=&gt; &nbsp;
+       x<sup>2</sup> + (- 2*m<sub>x</sub>)*x
+     + y<sup>2</sup> + (- 2*m<sub>y</sub>)*y
+     + z<sup>2</sup> + (- 2*m<sub>z</sub>)*z
+     + ( m<sub>x</sub><sup>2</sup>
+       + m<sub>y</sub><sup>2</sup>
+       + m<sub>z</sub><sup>2</sup>
+     - r<sup>2</sup>) = 0  <br>
+<br>
+Sample: A sphere around &lt;3, 4, 0&gt; with radius 5  <br>
+can be descriped by the quadric equation <br>
+&nbsp; &nbsp; &nbsp; &nbsp;
+<b>       x<sup>2</sup> + (- 2*3)*x
+     + y<sup>2</sup> + (- 2*4)*y
+     + z<sup>2</sup> + (- 2*0)*z
+     + ( 3<sup>2</sup>
+       + 4<sup>2</sup>
+       + 0<sup>2</sup>
+     - 5<sup>2</sup>) = 0</b>  <br>
+<b> &lt;=&gt;
+       x<sup>2</sup> - 6*x
+     + y<sup>2</sup> - 8*y
+     + z<sup>2</sup>
+    = 0</b>  <br>
+<br>
+A general quadric equation has 10 coefficients A<sub>1</sub>, A<sub>2</sub>, ... A<sub>10</sub>: <br>
+    A<sub>1</sub>*x<sup>2</sup> + A<sub>2</sub>*xy + A<sub>3</sub>*xz + A<sub>4</sub>*x
+  + A<sub>5</sub>*y<sup>2</sup> + A<sub>6</sub>*yz  + A<sub>7</sub>*y  + A<sub>8</sub>*z<sup>2</sup> + A<sub>9</sub>*z + A<sub>10</sub>*1 = 0.
+  <br>
+
+
+
+<br>
+Syntax sample:
+<table border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+<tr><td><img src="im/poly_01.jpg" border="0" width="240"  height="320"
+         alt="polynomial surface" title="polynomial surface"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>// --- polynomial surface ------------
+poly{ 2,
+  &lt;1, 0, 0, -6, 1, 0, -8, 1, 0, 0&gt;
+  // sturm
+  texture{
+    pigment{ color rgbt&lt;0.8,0.6,1,0.7&gt;}
+    finish {  phong 0.2  }
+    }
+  scale 1
+  rotate &lt;0, 0, 0&gt;
+  translate &lt; 0, 0, 0&gt;
+} // end of polynomial surface -------
+
+
+// equivalent sphere object:
+sphere{ &lt;3,4,0&gt;, 5
+        ...
+      } //-------------- </b></td></pre></tr>
+</td></tr>
+<table width="100%" border="0"><tr>
+<td colspan="3">
+Polynomial surfaces are descriped <br>
+by equations of first order(planes) with 4 coefficients,<br>
+by equations of second order (i.e. spheres, ellipsoids, cylinders, cones) with 10 coefficients,<br>
+or by ... <br>
+</td></tr>
+<table border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+<tr><td>
+3<sup>rd</sup> order<br>
+cubic equations<br>
+20 coefficients
+<pre><b>// --- cubic surface ---
+cubic{
+   &lt; A1, A2, A3,... A20>
+   // sturm
+   ... // modifiers
+ } // end of cubic</b></td></pre>
+<td>
+4<sup>th</sup> order<br>
+quartic equations<br>
+35 coefficients
+<pre><b>// --- quartic surface -
+quartic{
+   &lt; A1, A2, A3,... A20>
+   // sturm
+   ... // modifiers
+} // end of quartic</b></td></pre>
+<td>
+5<sup>th</sup> order - 56 coefficients<br>
+or higher order<br>
+see list in POV-Ray help!
+<pre><b>// - polynomial surface
+poly{ Order,
+   &lt; A1, A2, A3,... An>
+   // sturm
+   ... // modifiers
+} // end of polynomial</b></td></pre>
+</tr></td></tr></table>
+<br>
+<hr>
+<br>
+A Quartic Surface Sample:<br>
+A torus with major radius r<sub>0</sub>, minor radius r<sub>1</sub> can be descriped by
+a quartic equation:<br>
+
+  x<sup>4</sup>
++ y<sup>4</sup>
++ z<sup>4</sup>
++ 2*x<sup>2</sup>*y<sup>2</sup>
++ 2*x<sup>2</sup>*z<sup>2</sup>
++ 2*y<sup>2</sup>*z<sup>2</sup>
+- 2*(r<sub>0</sub>+r<sub>1</sub>)*x<sup>2</sup>
++ 2*(r<sub>0</sub>-r<sub>1</sub>)*y<sup>2</sup>
+- 2*(r<sub>0</sub>+r<sub>1</sub>)*z<sup>2</sup>
++ (r<sub>0</sub>-r<sub>1</sub>)<sup>2</sup> = 0
+<br>
+Same equation sorted by x, y, z for POV-Ray syntax of &quot;quatric&quot;:<br>
+  1*x<sup>4</sup>
++ 0*x<sup>3</sup>*y
++ 0*x<sup>3</sup>*z
++ 0*x<sup>3</sup>
+
++ 2*x<sup>2</sup>*y<sup>2</sup>
++ 0*x<sup>2</sup>*y*z
++ 0*x<sup>2</sup>*y
+
++ 2*x<sup>2</sup>*z<sup>2</sup>
++ 0*x<sup>2</sup>*z
+- 2*(r<sub>0</sub>+r<sub>1</sub>)*x<sup>2</sup>
+<br>
++ 0*x*y<sup>3</sup>
++ 0*x*y<sup>2</sup>*z
++ 0*x*y<sup>2</sup>
+
++ 0*x*y*z<sup>2</sup>
++ 0*x*y*z
++ 0*x*y
+
++ 0*x*z<sup>3</sup>
++ 0*x*z<sup>2</sup>
++ 0*x*z
+
++ 0*x
+<br>
+
++ 1*y<sup>4</sup>
++ 0*y<sup>3</sup>*z
++ 0*y<sup>3</sup>
+
++ 2*y<sup>2</sup>*z<sup>2</sup>
++ 0*y<sup>2</sup>*z
++ 2*(r<sub>0</sub>-r<sub>1</sub>)*y<sup>2</sup>
+
++ 0*y*z<sup>3</sup>
++ 0*y*z<sup>2</sup>
++ 0*y*z
++ 0*y
+<br>
++ 1*z<sup>4</sup>
+- 0*z<sup>3</sup>
+- 2*(r<sub>0</sub>+r<sub>1</sub>)*z<sup>2</sup>
+- 0*z
+
+
+
++ (r<sub>0</sub>-r<sub>1</sub>)<sup>2</sup>*1 = 0
+
+
+// Torus with major radius sqrt(40), minor radius sqrt(12)
+ <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>quartic {
+    &lt; 1,   0,   0,   0,   2,   0,   0,   2,   0,  -104,
+      0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+      1,   0,   0,   2,   0,  56,   0,   0,   0,   0,
+      1,   0, -104,  0, 784 >
+    sturm
+  } // -------------------------------------------------</b></td></pre></tr></table>
+  <br>
+// shorter with equivalent torus object:
+ <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>torus{ sqrt(40), sqrt(12)
+       } //------------------  </b></td></pre></tr></table>
+This sample torus is also descriped in the include file &quot;shapesq.inc&quot;:
+
+<table border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+<tr><td><img src="im/quartic_Torus_40_12.jpg" border="0" width="240"  height="180"
+         alt="Torus_40_12" title="Torus_40_12"></a></td>
+<td bgcolor="#fafafa" valign="top">
+ <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>
+object{ Torus_40_12 //---------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        rotate&lt;0,0,0&gt;
+        scale &lt;1,1,1&gt;*0.125
+        translate &lt;0,0,0&gt;
+       } // ----------- end of object</b></td></pre></tr></table>
+</td>
+</tr>
+</table>
+<br>
+More non trival cubic, quartic and other polynomial shapes <br>
+from the include file &quot;shapesq.inc&quot;:
+you can see <a href="shapes550e.htm">here</a>.
+
+</div>
+
+
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

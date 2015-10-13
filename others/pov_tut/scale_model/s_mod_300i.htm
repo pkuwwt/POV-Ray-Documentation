@@ -1,0 +1,233 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Modellare in scala con POV-Ray - Adattare piani allo sfondo quadrettato</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Modellare in scala con POV-Ray">
+<meta name="keywords" content="modellare in scala, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=685,height=380");
+ New.focus();  }
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=1065,height=570");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Modellare in scala con POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="s_mod_300e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="s_mod_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="s_mod_300f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="s_mod_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="s_mod_300d.htm"><font size="2">Deutsch</font></a>
+        <a href="s_mod_300d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#objects"><b><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+<br>
+&nbsp; &nbsp;<a href="s_mod_000i.htm">Modellare in scala</b></a><br>
+ &nbsp; &nbsp; <a href="s_mod_000i.htm">con POV-Ray</b></a><br>
+<br>
+&nbsp; -  <a href="s_mod_100i.htm">Sfondo quadrettato</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_100i.htm">in metri e centimetri</b></a><br>
+ &nbsp; -  <a href="s_mod_150i.htm">Vista ortografica</b></a><br>
+ &nbsp;<b>&gt;</b>  <!--a href="s_mod_300i.htm"--><b>Adattare piani</b></a><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="s_mod_300i.htm"--><b>allo sfondo quadrettato</b></a><br>
+
+ &nbsp; - <a href="s_mod_500i.htm">Rendering a viste multiple</b></a><br>
+
+<br>
+<br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--font size="-1"><b>Scale Modelling of Objects for POV-Ray</b</font-->
+
+<a name="Top"></a>
+<b><font size="+2">Adattare piani allo sfondo quadrettato</font></b><br>
+
+<table >
+<tr>
+ <td valign="top"><b>Come si pu&ograve; adattare un piano a uno sfondo quadrettato con POV-Ray</b><br>
+  <font size="-1">Per lavorar con precisione usiamo un <b>camera 'orthographic'</b> guardando verticalemente
+   sulla immagine del piano.
+   Usiam lo <b>sfondo quadrettato</b> con la ampieza di 1 m e 0,1 m.<br>
+   (La macro 'Raster_Plate', q.v.: <a href="s_mod_100i.htm" target="_new">sfondo quadrettato</a>)<br>
+   Di fronte a questo sfondo disponiamo un 'box' sottile con un testura di
+   <b>image_map</b> di una <b>immagine trasparente del piano</b> (gif or png, non-interlaced!).<br>
+   Questo 'box' dobbiamo <b>ingrandire al aspect ratio originale della immagine del piano</b>.<br>
+<br>
+   <b>Le dimensioni del 'box' del piano:</b><br>
+   <b>1. metodo:</b> Usiamo una immagine del piano tagliare a la lunghezza o/e l'altezza originale del oggetto.
+   Poi dobbiamo solo ingrandirle alla lunghezza o l'altezza del oggetto.<br>
+   <b>2. methodo:</b> Dobbiamo sapere la lunghezza originale di un detaglio del piano.
+   Aggiungiamo un cilindro di questa lunghezza in fronte del piano.
+   Poi dobbiamo ingrandire il 'box' del piano fino a il detaglio nel piano ha la stessa misura come questo cilindro.<br>
+  </font><br>
+<b>Esempio:</b><br>
+<font size="-1"><b>
+&nbsp; Nome della immagine del piano: E63_Plan_Side1_255.gif,<br>
+&nbsp; Dimensioni della immagine del piano: 640 x 320 pixel,<br>
+&nbsp; Numero di palette del sfondo: 255<br>
+&nbsp; Lunghezza originale del oggetto: 10.26 meter.</b></font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-------------------------------------------//
+#declare Base_Texture =
+  texture{ pigment{ color rgb&lt;1,1,1&gt;*1.2 }}
+//--------------------------------------------
+object{ Raster_Plate(
+   1.0,   0.010, // 1st distance/width,
+   0.1,   0.080, // 2nd distance/width,
+   Base_Texture, // non= pigment{Clear}
+   0.6, // Intensity, // Line gray intensity
+   &lt;-5.13,-0.05,-0.0>, &lt;5.13,0,5.10>, //box
+  ) //----------------------------------------
+ rotate&lt;-90,0,0&gt;
+ translate&lt;0,0.001,0&gt;
+} //------------------------------------------
+
+//#declare Plan_Front =
+box{ &lt;0,0,0&gt;,&lt;1,1,0.00001&gt;
+   texture{
+    pigment{
+     // image on xy plane (aspect ratio 1:1)
+     // from &lt;0,0,0&gt; to &lt;1,1,0&gt;
+     image_map{ gif &quot;E63_Plan_Side1_255.gif&quot;
+     map_type 0 // 0=planar
+     interpolate 2 // 0=none, 1=linear,
+      // 2=bilinear, 4=normalized distance
+     once //
+  // For transpartent palette images:
+  // (&lt;=256 colors)
+  //    gif version 87a, non interlaced,
+  // or png palette, non interlaced.
+     transmit 255, 1 // Palette, Amount
+    } // end of image_map
+   } // end of pigment
+  } // end of texture
+scale&lt;1,320/640,1&gt; // original aspect ratio
+translate&lt;-0.5,0,0&gt;// centered in x
+
+//  Adjusting to raster size  -----------------
+//original loco length:
+scale 10.26 // in meter
+translate&lt;0,0.00,-0.01&gt;  // in front!
+no_shadow
+
+} // end box with image_map
+//------------------------------------------//</td></b></pre></tr></table>
+
+ </td>
+ <td align="center" valign="top">
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/show_plan_gif_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/E63_Plan_Side1_255s.jpg" border="0" width="320" height="160"
+                   alt="The Plan" title="The Plan"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>L'immagine del piano</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Plan_Loco_how_001c.jpg" border="0" width="320" height="240"
+                   alt="Adapting the plan" title="Adapting the plan"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Adattare il piano</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage2('im/show_plan_adapted_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Plan_Loco_001n.jpg" border="0" width="320" height="160"
+                   alt="Plan adapted" title="Plan adapted"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Il piano adattato</b></a></font>
+<br>
+<br>
+<font size="-1"><b>Questa scena in POV-Ray: <a href="pov/Plan_Loco_001.pov">Plan_Loco_001.pov</a><br>
+Immagini gif necessari: <a href="im/E63_Plan_Side1_255.gif">E63_Plan_Side1_255.gif</a><b></font><br>
+
+<font size="-2">(Si deve memorizzare questo immagine nello stesso directory<br> come il file della scena
+ o nel include file directory di POV-Ray)</font>
+<br>
+<br>
+<br>
+
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/E63_Plan_Axes_000_1m.jpg" border="0" width="320" height="160"
+                   alt="Continue with the construction" title="Continue with the construction"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Continuazione della costruzione.</b></font>
+
+
+</tr>
+</table>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

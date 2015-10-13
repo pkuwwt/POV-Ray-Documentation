@@ -1,0 +1,198 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Objects with POV-Ray 3.6 / 3.7 - objects and macros from my include file shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, POV-Ray, 3d graphics, raytracing descriptions, povray tutorials, beginners, advanced, geometric objects, csg, macros">
+<meta name="description" content="Defining geometric objects by macros for the raytracing program POV-Ray 3.6, povray, pov ">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=665,height=515");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+  <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+  <hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+  </td>
+  <td align="right">
+        <a href="shapes3_80i.htm"><font size="2">Italiano </font></a>
+        <a href="shapes3_80f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_80f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes3_80f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_80d.htm"><font size="2">Deutsch </font></a>
+        <a href="shapes3_80d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="3">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000e.htm">Overview</a><br>
+<br>
+<nobr><a href="shapes3_0000e.htm">Objects in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11e.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20e.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21e.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40e.htm">Egg</b></a><br>
+-  <a href="shapes3_40e.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43e.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43e.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42e.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45e.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30e.htm">Column_N</b></a><br>
+-  <a href="shapes3_30e.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30e.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30e.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50e.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50e.htm">Round_Pyramid_N_in</b></a><br>
+<b>&gt;</b><!--a href="shapes3_80e.htm"--><b>Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85e.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85e.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22e.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60e.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65e.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70e.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70e.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+<div align="center">
+<font size="2">Geometric object definded in my
+                <a href="../down/insert_a.htm" alt="Download" title="Download">include file &quot;shapes3.inc&quot;</a>
+                .</font><br>
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="90%">
+ <tr>
+  <td valign="top">
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/Round_Cylinder_Tube filled_big.jpg"
+                border="0" width="320" height="240"
+                alt="Round_Cylinder_Tube filled" title="Round_Cylinder_Tube filled"></td>
+       </tr></table>
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/Round_Cylinder_Tube_open_big.jpg"
+                border="0" width="320" height="240"
+                alt="Round_Cylinder_Tube open" title="Round_Cylinder_Tube open"></td>
+       </tr></table>
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td>
+              <a href="javascript:ShowImage('im/Round_Cylinder_Tube_1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/Round_Cylinder_Tube_t.jpg"
+                border="0" width="200" height="150"
+                alt="Round_Cylinder_Tube_demo" title="Round_Cylinder_Tube_demo"></td>
+       </tr></table>
+    <div align="center">
+    <font size="2"><i><b>Example scene file</b></i>
+           <a href="pov/Round_Cylinder_Tube_demo.txt">&quot;.txt&quot;</a>
+        or <a href="pov/Round_Cylinder_Tube_demo.pov">&quot;.pov&quot;</a></font>
+    </div>
+  </td>
+  <td valign="top">
+   <font size="5"><b>Round_Cylinder_Tube</b></font><br>
+      <font size="2">A cylinder with rounded ends, filled or open!</font> <br>
+   <font size="2">
+   <i>general syntax:</i>
+   </font>
+
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td  valign="top" bgcolor="#fefefe">
+     <pre><b>object{ Round_Cylinder_Tube(
+                       Point_A,
+                       Point_B,
+                       R_major,
+                       R_minor,
+                       Filled,
+                       Merge_On
+                    ) //----------------
+         texture{ ... }
+      } // end of object ---------------</b></td></pre></tr></table>
+ <font size="2">
+    <b>Point_A</b> = start point,<br>
+    <b>Point_B</b> = end point,<br>
+    <b>R_major</b> = major radius (cylinder),<br>
+    <b>R_minor</b> = minor radius (border),<br>
+    <b>Filled</b>: 1 = filled; 0 = open tube<br>
+    <b>Merge_On</b>   0 = union, 1 = merge.<br>
+ </font>
+<br>
+   <i>Example:</i>
+   <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><pre><b>#include "shapes3.inc"
+object { Round_Cylinder_Tube(
+            &lt;-1,-0.2,-0.2&gt;, // start
+            &lt;1.0,0.9,-0.3&gt;, // end
+            0.95, // major radius
+            0.12, // border radius
+            0, //  1 = filled; 0 = open
+            0  //  Merge_On,
+        ) // ------------------------------
+        texture{ pigment{ color rgb&lt;1,1,1&gt;}
+                 finish { phong 0.1}
+               } // end texture
+        scale &lt;1,1,1&gt;
+        rotate &lt;0,0,0&gt;
+        translate &lt; 0, 0.9, 0&gt;
+      } // end of object ------------------
+</b></td></pre></font>
+ </tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<tr><td>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

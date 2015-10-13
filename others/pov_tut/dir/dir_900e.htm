@@ -1,0 +1,238 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, Language Directives">
+<meta name="description" content="tutorial on Language Directives with POV-Ray - part I">
+<title>Language Directives with POV-Ray - part I, english</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Conditional Statements</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="dir_900i.htm"><font size="2">Italiano </font></a>
+        <a href="dir_900i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="dir_900f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="dir_900f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="dir_900d.htm"><font size="2">Deutsch </font></a>
+        <a href="dir_900d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <!--a href="pdir_000e.htm"--><b>Conditional</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="dir_000e.htm"--><b>Statements</b></a><br>
+<br>
+ &nbsp; <b>Branching</b></a> <br>
+ &nbsp; &nbsp;&nbsp;<a href="dir_000e.htm">#if(...)... #else ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100e.htm">in loops</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100d.htm">in macros</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100d.htm">in animations</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100d.htm">turning on/off of parts</b></a><br>
+<nobr>&nbsp; &nbsp;&nbsp;<a href="dir_700e.htm">#switch(...) #case .. #end</b></nobr></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_700e.htm">selection by tables</b></a> <br>
+<br>
+ &nbsp; <b>Check for Existence</b></a> <br>
+ &nbsp; &nbsp;&nbsp;<a href="dir_800e.htm">#ifdef(...) #ifndef(...)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_810e.htm">Check in include files</b></a> <br>
+<br>
+ &nbsp; <b>Loops</b></a><br>
+<nobr> &nbsp;<a href="dir_900e.htm">Prechecked, Postchecked,</b></a></nobr><br>
+<nobr> &nbsp;<a href="dir_900e.htm">Count-controlled, Early-Exit</b></a></nobr><br>
+ &nbsp; &nbsp;&nbsp;<!--a href="dir_900e.htm"--><b>#while(...)... #end</b></a> <br>
+ &nbsp; &nbsp;&nbsp;<!--a href="dir_900e.htm"--><b>#for(...)... #end</b></a> <br>
+ &nbsp; &nbsp; - Examples: <br>
+<nobr> &nbsp; &nbsp; - <a href="../loop/povlup1e.htm" target="_new">Loops with POV-Ray</a></nobr><br>
+ &nbsp; &nbsp; - <a href="../sinus/povsi3e1.htm" target="_new">Loops, Sine, Cosine</a><br>
+ &nbsp; &nbsp; - <a href="../random/random1e.htm" target="_new">Random with POV-Ray</a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h2 align="center">Conditional Statements for Loops</h2>
+<p align="justify">In the scenery description language (SDL) of POV-Ray there is a loop structure,
+which allow us to realizise all loop types known from programming languages:<br>
+<br>
+
+
+ <br>
+</p></td></tr></table>
+
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><b>Realization in POV-Ray</b><br>
+  </td>
+  <td width="50%"><b>Types of Loops</b><br>
+  </td>
+  <td width="50%"><font size="-2"><b>Other<br>Programming Languages</b> </font>
+  </td>
+ </tr>
+ <tr>
+  <td width="50%"><pre>
+<b>#while (<i></b>condition</i><b>)</b>
+ ... <i>statements</i><b>
+#end </b></pre></a></td>
+</td>
+  <td width="50%"><b>Prechecked Loop</b><br>
+    <font size="-1">&quot;While Loop&quot;</font><b><br>
+<br>
+   WHILE (<i></b>condition</i><b>)<br>
+   DO </b>&nbsp; <i>statements</i><b><br>
+   END</b>
+   </td>
+ <td width="50%" valign="top"><font size="-1"><b><i>JavaScript:</i></b></font><br>
+    <font size="-1"></font><b><br>
+<pre>
+while (condition) {
+  (action);
+}
+   </td></pre>
+ </tr>
+
+ <tr>
+  <td width="50%" valign="top">
+<br>
+<pre> ... <i><i>statement1</i> </i><b>
+#while (</b><i>Inverted condition</i><b>)</b>
+ ... <i>statements</i><b>
+#end </b></pre></a></td>
+  <td width="50%" valign="top"><b>Postchecked Loop</b><br>
+    <font size="-1">&quot;Repeat Loop&quot;</font><b><br>
+<br>
+   REPEAT </b>
+    &nbsp; <i>statements</i> <b><br>
+   UNTIL (<i></b>condition</i><b>)<br>
+   END</b></td></pre>
+ <td width="50%" valign="top"><font size="-1"><b><i>JavaScript: &quot;do-while&quot;</i></b></font><br>
+    <font size="-1"></font><b><br>
+<pre>
+do {
+  (action);
+} while (condition);
+   </td></pre>
+ </tr>
+<tr><td><b>With #for loop:</b><font size="-2">(since POV-Ray 3.7 beta37)</font>
+<pre><b>#for (Variable, Start, End[, Step])</b>
+   // step optional, default = 1
+ ... <i>statements</i>
+<b>#end </b></pre>
+<b>With #while loop:</b>
+<pre><b>#local Nr =</b> <i>start value</i><b>;</b>
+<b>#local NrEnd =</b> <i>end value</i><b>;</b>
+<b>#local Step =</b> <i>stepsize</i><b>;</b>
+<b>#while (Nr &lt; NrEnd +Step)</b>
+ ... <i>statements</i>
+<b>#local Nr = Nr + Step;
+<b>#end </b></td></pre>
+  <td width="50%" valign="top"><b>Count-controlled loop</b><br>
+    <font size="-1">&quot;For Loop&quot;</font><br>
+<br>
+<nobr><b>FOR</b> (<i>variable</i>)<b>=</b>(<i>start value</i>) <b>TO</b> (<i>end value</i>)</nobr><b><br>
+   STEP </b> <i>stepsize</i><b><br>
+   DO </b> &nbsp; <i>statements</i><b><br>
+   NEXT</b></td></pre>
+ <td width="50%" valign="top"><font size="-1"><b><i>JavaScript: </i></b></font><br>
+    <font size="-1"></font><b><br>
+<pre>
+for (init; test; continue)
+   (action);
+   </td></pre>
+
+</tr>
+<tr><td><b>With #for loop:</b><font size="-2">(since POV-Ray 3.7 beta37)</font>
+<pre><b>#for (Identifier, Start, End[, Step])</b>
+   // step optional, default = 1
+   #if(condition)
+      #break // terminate loop early
+   #end
+   ... <i>statements</i>
+<b>#end </b></pre><b>With #while loop:</b>
+<pre><b>#local Identifier =</b> <i>start value</i><b>;</b>
+<b>#local End =</b> <i>end value</i><b>;</b>
+<b>#local Step =</b> <i>stepsize</i><b>;</b>
+<b>#while (Identifier &lt; End +Step)</b>
+ ... <i>statements</i>
+<b>&nbsp; #if </b> (condition)
+<b>&nbsp; #local Identifier = NrEnd </b>
+<b>&nbsp; #end </b>
+<b>#local Identifier = Identifier + Step;</b>
+<b>#end </b></td></pre>
+  <td width="50%" valign="top"><b>Early exit from a for loop</b><br>
+    <font size="-1">&quot;Early Exit Loop&quot;</font><br>
+<br>
+<nobr><b>FOR</b> (<i>variable</i>)<b>=</b>(<i>start value</i>) <b>TO</b> (<i>end value</i>)</nobr><b><br>
+   STEP </b> <i>stepsize</i><b><br>
+   DO </b> &nbsp; <i>statements</i><b><br>
+ &nbsp;  IF (</b> <i>condition</i><b>)</b><br>
+ &nbsp;    <i>variable</i><b> : = </b><i>end value</i> <b>;<br>
+ &nbsp;  END IF <br>
+   NEXT</b></td></pre>
+ <td width="50%" valign="top"><font size="-1"><b><i>JavaScript: </i></b></font><br>
+    <font size="-1"></font><b><br>
+<pre>
+while (condition) {
+  if (condition)
+    break;
+  (action);
+}
+   </td></pre>
+</tr>
+
+</table>
+</div>
+<br>
+<font size="-1">Note: While using float numbers for the conditions
+ you should be aware of the fact that extremely small values
+ of about 1e-10 are considered zero in case of round off errors.</font>
+<br>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align=right  width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

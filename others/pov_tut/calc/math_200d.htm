@@ -1,0 +1,181 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="keywords" content="raytracer, PoV, POV-Ray, povray, Koordinatensysteme, Koordinatenachsen, 3D-Grafik">
+<meta name="Description" content="Konstruktion von Koordinatensystemen mit Achsen mit POV-Ray">
+<title>Fence</title>
+<link rel="stylesheet" href="../lo1style.css">
+
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=665,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#CC6633" vlink="#993300" alink="#6666CC" background="backgrnd.gif">
+
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_200e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="math_200e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="math_200i.htm"><font size="2">Italiano</font></a>
+        <a href="math_200i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_200f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="math_200f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000d.htm"><nobr>Koordinatensysteme</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000d.htm"><nobr>und 2D-Funktionen</nobr></b></a><br>
+<br>
+&nbsp; - <a href="math_100d.htm">Karopapier</b></a><br>
+&nbsp;<b>&gt;</b> <!--a href="math_200d.htm"--><b>Koordinatensysteme</b></a><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="math_200d.htm"--><b>mit Achsen</b></a><br>
+<nobr>&nbsp; -  <a href="math_300d.htm">Makro f&uuml;r Raster</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300d.htm">mit 2 Niveaus</b></a><br>
+&nbsp; -  <a href="math_500d.htm">2D-Funktionen</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500d.htm">Beispiele</b></a><br>
+<nobr>&nbsp; -  <a href="math_600d.htm">Mathematische Funktionen</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600d.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<!--- end of header -->
+<a name="top"></a>
+<table align="center">
+<tr>
+ <td nowrap colspan="2">
+ <font size="6">Koordinatensysteme mit Achsen<br> in POV-Ray</font><br>
+ Die Konstruktion von Koordinatensystemen mit Achsen<br>
+  mit einer gerasterten Ebene aus drei &uuml;berlagerten Texturen.<br>
+  <font size="-1">Objekte:&nbsp;&nbsp;&nbsp; &quot;plane, cylinder, cone&quot;.<br>
+       Methoden: &quot;color_map, layered textures, macro&quot;</font>
+ <td>
+</tr>
+<tr>
+<td>
+<b>Die Konstruktion im Detail:</b><br>
+Bzgl. Details &uuml;ber die Koordinatenebene siehe bei <a href="povgripd.htm">&quot;Raster Ebene&quot;</b></a>.<br>
+   Die Achsen bestehen aus gestreiften Zylindern mit Kegeln an einem Ende.
+   Sie wurden als &quot;macro&quot; definiert, um die Faben und die L&auml;ngen variabel zu halten.
+<br>
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>#macro Axis_( AxisLen,
+              RedTexture,
+              WhiteTexture)
+union{
+ cylinder{&lt;0,-AxisLen,0&gt;,&lt;0,AxisLen,0&gt;,0.05
+          texture{checker
+                  texture{RedTexture  }
+                  texture{WhiteTexture}
+                  translate&lt;0.1,0,0.1>}}
+ cone{&lt;0,AxisLen,0&gt;,0.2,&lt;0,AxisLen+0.7,0&gt;,0
+           texture{RedTexture}}
+} // end of union "Axis"
+#end // of macro Axis (AxisLen)
+//-----------------------------------------
+#macro AxisXYZ(AxisLX,AxisLY,AxisLZ,
+               TexRed,TexWhite)
+//-- drawing 3 axes -- 3 Achsen zeichnen --
+union{
+object{Axis_(AxisLX,TexRed,TexWhite)
+       rotate&lt; 0,0,-90&gt;}// x-Axis
+object{Axis_(AxisLY,TexRed,TexWhite)
+       rotate&lt; 0,0,  0&gt;}// y-Axis
+object{Axis_(AxisLZ,TexRed,TexWhite)
+       rotate&lt;90,0,  0&gt;}// z-Axis
+} // end of union
+#end// of macro "AxisXYZ(...)"  -----------
+//-- drawing the axis -- Achsen zeichnen --
+#declare Tex_Dark =
+texture{pigment{color rgb&lt;1,0.3,0&gt;}
+        finish{ phong 1}}
+#declare Tex_White =
+texture{pigment{color rgb&lt;1,1,1&gt;}
+        finish{ phong 1}}
+//-----------------------------------------
+object{AxisXYZ(3.5,3,0.0001,
+               Tex_Dark,Tex_White)}
+//------- Ende der Koordinatenachsen</td></b></pre></tr></table>
+</td>
+<td>
+Die 2-dimensionale Version:<br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/povcoo2i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/axis_n2t.jpg" border="0" width="320"  height="240"
+     alt="Beispiel Raster mit Achsen - 2-dimensional 600x450" title="Beispiel Raster mit Achsen - 2-dimensional 600x450"></a></td>
+  </tr>
+ </table><font size="-1"><b>Szene 2D f&uuml;r <nobr>POV-Ray: </nobr><a href="pov/axis_n2.pov">axis_n2.pov</a></b></font><br>
+<br>
+<br>
+
+Die 3-dimensionale Version:<br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/povcoo3i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/axis_n3t.jpg" border="0" width="320"  height="240"
+     alt="Beispiel Koordinatenachsen 3-dimensional 600x450" title="Beispiel Koordinatenachsen 3-dimensional 600x450"></a></td>
+  </tr>
+ </table><font size="-1"><b>Szene 3D f&uuml;r <nobr>POV-Ray: </nobr><a href="pov/axis_n3.pov">axis_n3.pov</a></b></font><br>
+</td>
+</tr>
+</table>
+</center>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

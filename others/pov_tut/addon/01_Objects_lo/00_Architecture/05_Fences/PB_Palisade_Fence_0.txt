@@ -1,0 +1,29 @@
+//--------------------------------------------------------------------------------
+//---------------------------------------------------------------------- textures
+#declare Pile_Body_Texture = 
+         texture { pigment { color rgb<0.40,0.28,0.20>*1.0 }
+                   normal  { bumps 0.5 scale <0.005,0.25,0.005>*0.5}
+                   finish  { phong 0.5 reflection 0.00 }
+                 } // end of texture
+
+#declare Pile_Tip_Texture = 
+         texture { pigment { color rgb< 0.75, 0.5, 0.30> }
+                   normal  { bumps 0.15 scale <0.005,0.25,0.005>}
+                   finish  { phong 0.5 reflection 0.00 }
+                 } // end of texture
+//--------------------------------------------------------------------------------
+#include "Palisade_Fence_0.inc"
+//--------------------------------------------------------------------------------
+object{ Palisade_Fence_0( 4.00, // fence length
+                          2.50, // pile height,               
+                          0.40, // pile tip height,   
+                          0.15, // Pile radius,  
+                          0.9, //~0.9 relative pile distance in percent of radius
+                          Pile_Body_Texture, // dark wooden
+                          Pile_Tip_Texture   // tip 
+                        ) //-------------------------
+          scale<1,1,1>  rotate<0,-40,0>  translate<-1.00,0,0.00>  
+      }  // end of object ------------------------------------------------------- 
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+

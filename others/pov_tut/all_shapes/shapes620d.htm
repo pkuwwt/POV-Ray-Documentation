@@ -1,0 +1,284 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+<hr size="3"><p align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font></td></p></h6>
+ </td>
+ <td align="right">
+        <a href="shapes620e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes620e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes620i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes620i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes620f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes620f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+<a href="shapes100d.htm">Grundformen</b></a><br>
+<nobr><a href="shapes200d.htm">K&ouml;rper mit Makros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000d.htm">K&ouml;rper in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400d.htm">Andere K&ouml;rper als Makros</b></a></nobr><br>
+<a href="shapes600d.htm">3D-Text-Objekte</b></a><br>
+<br>
+<b>Andere Formen</b><br>
+&nbsp; -&gt;<!--a href="shapes620d.htm"--><b>blob</b></a> <br>
+&nbsp; -  <a href="shapes630d.htm">sphere_sweep</b></a> <br>
+&nbsp; -  <a href="shapes640d.htm">julia_fractal</b></a> <br>
+&nbsp; -  <a href="shapes500d.htm">Regulare Polyhedron</b></a><br>
+<nobr>&nbsp; -  <a href="shapes530d.htm">Paraboloid, Hyperboloid</b></a></nobr><br>
+&nbsp; -  <a href="shapes540d.htm">Polynomial equations</b></a><br>
+&nbsp; -  <a href="shapes550d.htm">Cubic &amp; Quartic shapes</b></a><br>
+&nbsp; -  <a href="shapes570d.htm">Parametric shapes</b></a><br>
+<br>
+<a href="shapes666d.htm">Non CSG K&ouml;rper</b></a><br>
+<nobr><a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900d.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<div align="center">
+<table width="90%" align="center" border="0" cellpadding="10">
+<tr>
+ <td colspan="2"><!-- global -->
+<p><font size="5">&quot;blob{ ... }&quot;</font> -
+ Metaballs, &Auml;quipotenzialfl&auml;chen (isosurface) skalarer Felder</p>
+
+</td></tr>
+ <tr>
+  <td>
+<h5>F&uuml;r diese Art von Formen sind <br>
+<b> nur 2 Typen als Komponenten erlaubt:</b><br>
+&nbsp; &nbsp; <b>&quot;sphere&quot; und &quot;cylinder&quot;</b> ! <br>
+(beide mit einen zus&auml;tzlichen Wert f&uuml;r &quot;strength&quot;!)</h5>
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/blob_00.jpg" border="0" width="320"  height="240"
+                   alt="blob" title="blob"></td></tr></table>
+      </td>
+<td>
+    <font size="2">
+     Allgemeines Syntax-Beispiel:
+  <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>#declare Strength = 1.00;
+// +/- strength of component's radiating density
+#declare Radius  = 1.00;
+//(0 &lt; Radius) outer sphere of influence
+// on other components
+blob{
+  threshold 0.6
+  // threshold (0.0 &lt; threshold &lt;= Strength)
+  // surface falloff threshold number
+  cylinder{&lt;-1,0,0&gt;,&lt; 1,0,0&gt;,Radius,Strength}
+  sphere{  &lt; 0,1.25,0&gt;,Radius,Strength}
+  sphere{  &lt; 0,0,-1.25&gt;,Radius,Strength}
+  //  a negative component:
+  sphere{  &lt; 0,1.50,0&gt;,Radius/2,-Strength}
+  // sturm
+  scale 1
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.5,0&gt;
+  texture{ pigment{ color rgb&lt;0.7,1,0.0&gt;}
+           finish { phong 1}}
+ } //---------- end of blob object</b></td></pre></tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="2"><hr></td></tr>
+</table>
+<table width="90%" align="center" border="0" cellpadding="10">
+<tr>
+ <td valign="top">
+      Samples: <br>&nbsp;<br>
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/blob002.jpg" border="0" width="320"  height="240"
+                   alt="blob" title="blob"></a></td></tr></table>
+ </td>
+ <td>
+  <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>#declare Stren = 1.00;
+#declare R = 1.00;
+blob{
+  threshold 0.6
+  cylinder{&lt;-2,0.00, 0&gt;,&lt;2,0.00,0&gt;, R, Stren}
+  cylinder{&lt; 0,0.75,-2&gt;,&lt;0,0.75,2&gt;, R, Stren}
+  // sturm
+  scale 1
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.5,0&gt;
+  texture{ pigment{ color rgb&lt;1,0,0&gt;*0.8}
+           finish { phong 1}}
+ } //------------- end of blob object</b></td></pre></tr></table>
+</td>
+</tr>
+<tr>
+ <td>
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/blob003.jpg" border="0" width="320"  height="240"
+                   alt="blob" title="blob"></a></td></tr></table>
+ </td>
+ <td>
+  <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>#declare Stren = 1.0;
+#declare R = 1.00;
+blob{
+  threshold 0.65
+  cylinder{&lt;-1.00,0,0&gt;,&lt;1.00,0,0&gt;, R, Stren}
+  sphere{  &lt; 2.25,0,0&gt;, R, Stren}
+  // sturm
+  scale 1
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.5,0&gt;
+  texture{ pigment{ color rgb&lt;1,0.7,0&gt;}
+           finish { phong 1}}
+ } //------------- end of blob object</b></td></pre></tr></table>
+</td>
+</tr>
+<tr>
+ <td>
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/blob004.jpg" border="0" width="320"  height="240"
+                   alt="blob" title="blob"></a></td></tr></table>
+ </td>
+ <td>
+  <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>#declare Stren = 1.0;
+#declare R1  = 2.00;
+#declare R2  = 1.00;
+blob{
+  threshold 0.65
+  cylinder{&lt;-1,0,0&gt;,&lt;1,0,0&gt;, R1, Stren}
+  sphere{&lt; 1.35,0, 0.00&gt;, R2,-Stren}
+  sphere{&lt; 0.00,0,-0.65&gt;, R2,-Stren}
+  sphere{&lt; 0.00,0, 0.65&gt;, R2,-Stren}
+  // sturm
+  scale 1
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,1,0&gt;
+  texture{ pigment{ color rgb&lt;0.7,0.3,1&gt;}
+           finish { phong 1}}
+ } //------------- end of blob object</b></td></pre></tr></table>
+</td>
+</tr>
+</table>
+<hr>
+<table width="90%" align="center" border="0" cellpadding="10">
+<tr>
+ <td valign="top">
+      Blobs in While-Schleifen:<br>&nbsp;<br>
+
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/blob006.jpg" border="0" width="320"  height="240"
+                   alt="blob" title="blob"></a></td></tr></table><br>
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/blob009.jpg" border="0" width="320"  height="240"
+                   alt="blob" title="blob"></a></td></tr></table><br>
+ </td>
+ <td>
+  <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>#declare Stren = 1.00;
+#declare R1 = 1.00;
+blob{
+ threshold 0.65
+ // center
+ sphere{ &lt;0,0,0&gt;, R1, Stren scale&lt;1,2,1&gt;}
+ // wings
+ #local Nr = 0;    // start
+ #local EndNr = 7; // end
+ #while (Nr&lt; EndNr)
+  cylinder{&lt;0,0,0&gt;,&lt; 1,0,0&gt;, R1, Stren
+            scale&lt;1,0.3,1&gt;
+            rotate&lt;-30,0,0&gt;
+            translate&lt;1.25,0,0&gt;
+            rotate&lt;0,Nr * 360/EndNr,0&gt;}
+ #local Nr = Nr + 1; // next number Nr
+ #end // ---------------  end of loop
+ scale 1
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0.5,0&gt;
+  texture{ pigment{ color rgb&lt;0.7,1,0&gt;*0.8}
+           finish { phong 1}}
+ } //------------- end of blob object</b></td></pre></tr></table>
+</td>
+</tr>
+</table>
+</td></tr></table><!-- global -->
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr>
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

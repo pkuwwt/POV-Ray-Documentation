@@ -1,0 +1,91 @@
+//--------------------------------------------------------------------------
+// ------------------------------------------- optional textures
+#declare Tube_Texture =
+          texture { pigment{ color rgb< 1, 1, 1>*0.75 }
+                    normal { pigment_pattern{radial frequency 120 ramp_wave
+                                         color_map {[0.0, rgb 0]
+                                                    [0.5, rgb 0.05]
+                                                    [1.0, rgb 0]}
+                                         rotate<90,0,0> scale 0.5} 0.05}
+                  //  normal { bumps 0.01 scale <0.005,0.15,0.15> }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Tube_Inside_Texture =
+          texture { pigment{ color rgb< 1, 1, 1>*0.55 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Flange_Texture_1 =
+          texture { pigment{ color rgb< 1, 1, 1>*0.75 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Flange_Texture_2 =
+          texture { pigment{ color rgb< 1, 1, 1>*0.65 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Flange_Hole_Texture =
+          texture { pigment{ color rgb< 1, 1, 1>*0.55 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Nut_Texture_1 =
+          texture { pigment{ color rgb< 1, 1, 1>*0.75 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Nut_Texture_2 =
+          texture { pigment{ color rgb< 1, 1, 1>*0.55 }
+                    normal { bumps 0.015 scale 0.005 }
+                    finish { phong 1 reflection 0.00}
+                 } // end of texture
+#declare Test_Tube_Texture = 
+           texture { pigment { color rgb<1,0.7,0>}
+                   //normal  { bumps 0.5 scale <0.25, 0.005,0.005>}  
+                     finish  {  phong 0.5 reflection 0.00 }
+                   } // end of texture
+
+//-------------------------------------------------------------------------------
+#declare Tube_Rmaj1 = 1.20;
+#declare Tube_R1   = 0.500;
+#declare Tube_R2   = 0.400;
+#declare T_D       = 0.015;
+#declare Flange_R1 = 0.650;
+#declare Flange_D = 0.050;
+#declare Flange_Border_Radius = 0.01;
+//-------------------------------------------------------------------------------
+#include "Tube_Stopcock_000.inc"
+//--------------------------------------------------------------------------------
+object{ Tube_Stopcock_000( // total length in z: 4*R1 / in x+: 2*R1 
+                           Tube_R1, // R1, // main tube radius:  1 ~ 0.25
+                           Tube_R2, // R2, // side tube radius:  1.5 ~ 0.20
+                           T_D, // Tube_D, // tube material thickness 
+                           0.15, // Blobfactor; // 0.1~0.002 ; maximum = 0.20 !! 
+                           0.05, //R_Correction, //   ~  Blobfactor/5
+                           0, // Test_End_Cylinders_ON=1; off=0
+
+                           Flange_R1-Tube_R1, // flange radius add
+                           Flange_D, // F_D,  // flange thickness
+                           Flange_Border_Radius, // FB_R, // Flange_Border_Radius
+                           1, // Nuts_ON, // 0 = no nuts but holes; 1 = nuts - no holes
+                           0.085, // Nut_Scale, // ~0.035
+                           12, // Number_of_Nuts, // ~ 16,   
+                          
+                           1,// Side_End_Cover_ON,
+
+                           1,// Stopcock_wheel_ON 
+                           20,// Stopcock_wheel_Rotation_Angle 
+                           // wheel sitzes
+                           0.05, //  Wheel_Rmin, 
+                           0.55, //  Wheel_Rmaj, 
+                           0.35, //  Wheel_Axis_Len,   
+
+                        ) // -----------------------------------------------
+         rotate <0,0,90>  rotate <0,90,0>
+      } // -----------------------------------------------------------------
+//--------------------------------------------------------------------------
+
+
+
+ 

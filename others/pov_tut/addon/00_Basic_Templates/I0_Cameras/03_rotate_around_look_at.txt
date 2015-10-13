@@ -1,0 +1,11 @@
+//  camera rotated around look_at point ----------------------------------
+#declare Camera_Location  = < 3.00,  3.50,-5.00>;
+#declare Camera_Look_At   = < 0.00,  1.00, 0.00>; 
+#declare Camera_Angle = 40; 
+camera{ location Camera_Location
+        angle    Camera_Angle
+        right    x*image_width/image_height
+        look_at  Camera_Look_At 
+        translate -Camera_Look_At rotate<0,110,0> translate Camera_Look_At
+     } // ----------------------------------------------------------------
+//------------------------------------------------------------------------

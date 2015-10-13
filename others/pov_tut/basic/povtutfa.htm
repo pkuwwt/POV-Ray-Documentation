@@ -1,0 +1,314 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7,Infographie, Synth&egrave;se d'image 3D">
+<meta name="subject" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<meta name="keywords" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>'#include' - fichiers include, objets r&eacute;utilisables,  POV-Ray Course part 10</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+     <h6><nobr>Introduction au langage de description sc&egrave;nique POV-Ray raytracer</nobr>
+     <nobr> &nbsp; &nbsp; &nbsp; &nbsp; page 10</nobr>
+<br>par Friedrich A. Lohm&uuml;ller </td></h6>
+ <td align="right">
+        <a href="povtutoa.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povtutoa.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtutia.htm"><font size="2">Italiano</font></a>
+        <a href="povtutia.htm"><img src="flag_ita.gif" alt="Deutsch" title="Deutsch"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkursa.htm"><font size="2">Deutsch</font></a>
+        <a href="povkursa.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+        </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#basic"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povtutf0.htm">Introduction POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povtutf0.htm">Table des mati&egrave;res&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtutf1.htm">Utiliser POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtutf2.htm">Bases</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comment &eacute;crire le texte</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#xyzKoordinaten">xyz – Coordonn&eacute;es</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#ZahlenundVektoren">virgule flotante et vecteurs</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtutf3.htm">Structure d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemple de base.</b></a></nobr><br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtutf4.htm">La t&ecirc;te d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Fichiers #include</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtutf5.htm">Objets g&eacute;om&eacute;triques de base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  cone, torus, plane</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  et autres formes</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtutf6.htm">Transformations</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &eacute;chelle, rotation,</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translation et autres.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povtutf7.htm">Couleurs et surfaces</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtutf8.htm">#declare, #local  #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Variables, objets flexibles.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtutf9.htm">#while</b></a> - Boucles</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemples de base.</b></a>,</nobr><br>
+<b>&gt;10.</b> <!--a href="povtutfa.htm"--><b>#include</b></a> - fichiers include</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; objets r&eacute;utilisables.</b></a></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutfb.htm">Efficacit&eacute;</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; vitesse, flexibilit&eacute;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; travailer modulaire.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adapter de 3.1 &agrave; 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insertf_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" align="center" width="95%" cellspacing="5"><tr><td colspan="2">
+<p align="justify">
+<nobr><font size="+2"><b>#<a name="include">include &quot;MyObject.inc&quot;</a></font>
+- Ready Made Objects for Multiple Usage!</b></nobr>
+<div align="justify"><font size="2">
+&nbsp;&nbsp;&nbsp;Objets, une fois d&eacute;j&agrave; construits, on peut d&eacute;finer comme un objet pr&ecirc;t &agrave; l'usage
+ dans un fichier include personnel.
+Avec cette m&eacute;thode on peut utiliser objets dans chaque autre sc&egrave;ne plus tarde sans &eacute;crire ou copier
+toute la d&eacute;finition !</font><br>
+<font size="-1"> &nbsp; &nbsp; Diviser une sc&egrave;ne grande en composantes plus petites par fichiers include est <b>une m&eacute;thode &eacute;l&eacute;mentaire de travailer modulairement</b> -
+sans cela il est presque impossible de venir &agrave; bout d'un projet vraiment grand et complexe.
+</font></div></td></tr>
+<tr><td valign="top">
+<font size="-1"><b>Objet d'exemple :</b><br>
+Nous d&eacute;finissons premi&egrave;rement un objet 'Column_1'<br>
+comme une macro:<br>
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>//----------------- macro Column_1(...)
+#macro Column_1( H_C,  // column height
+                 R_B,  // base radius
+                 R_min,// border radius
+                 T_S,  // top scale
+               ) //---------------------
+union{
+ cone{ &lt;0,0,0&gt;,R_B,&lt;0,H_C,0&gt;,R_B*T_S}
+ torus{ R_B,R_min translate&lt;0,R_min,0&gt;}
+ torus{ R_B*T_S,R_min*T_S
+        translate&lt;0,H_C-R_min*T_S,0&gt;}
+ }// end Column
+#end //------------------- end of macro </b></td></pre></tr></table>
+
+<br>
+<p align="justify">
+<font size="+1"><b>Cr&eacute;er un fichier include :</b></font><br>
+<b>Pour un fichier d'un objet individuel est<br>
+recommand&eacute;  de choisir le nome du fichier include<br>
+conforme au nome du objet !</b><br>
+&nbsp; <font size="-1">Pour le choix de nomes voir mes notes &agrave; &quot;#declare&quot;!<br>
+<b>Ici nous faissons un fichier 'Column_1.inc' :</b><br>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>// POV-Ray include file &quot;Column_1.inc&quot;
+//-------------------------------------<font color="#aa0000">
+#ifndef( Column_1_Inc_Temp)
+#declare Column_1_Inc_Temp = version;
+#version 3.6;</font>
+//-------------------------------------
+#macro Column_1( H_C,  // column height
+                 R_B,  // base radius
+                 R_min,// border radius
+                 T_S,  // top scale
+               ) //--------------------
+//-------------------------------------
+union{
+ cone{ &lt;0,0,0&gt;,R_B,&lt;0,H_C,0&gt;,R_B*T_S}
+ torus{ R_B,R_min translate&lt;0,R_min,0&gt;}
+ torus{ R_B*T_S,R_min*T_S
+        translate&lt;0,H_C-R_min*T_S,0&gt;}
+ }// end Column
+#end// ------------------- end of macro
+//-------------------------------------<font color="#aa0000">
+#version Column_1_Inc_Temp;
+#end </font>
+// ---------------- end of include file&nbsp;</b></td></pre></tr></table>
+Ce fichier on doit &ecirc;tre sauvegard&eacute; dans la m&ecirc;me registre come le fichier de la sc&egrave;ne ou
+dans un registre de fichiers include disponible in the dans le chemin de fichiers include (Library_Path) de <nobr>POV-Ray</nobr>.
+<br>
+<br>
+
+</td>
+<td align="center" valign="top">
+<br>
+     <table border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Column_1_0.jpg" border="0" width="240" height="180"
+                   alt="Column_1 macro" title="Column_1 macro"></td>
+            </tr></table>
+<font size="-1">La macro Column_1( ... ) appel&eacute;e par :</font>
+  <table border="2" bgcolor="#dfdfdf"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>object{Column_1(3.5, // height
+                0.5, // base r
+                0.06,// border r
+                0.75,// top scale
+              ) //---------------
+  texture{
+    pigment{color rgb&lt;1,0.9,0.8&gt;}
+    normal{ bumps 0.5 scale 0.01}
+    finish{ phong 0.1 }
+  } // end texture
+  translate&lt;0,0,0&gt;
+} //-------------------------- </b></td></pre></tr></table>
+<div align="center"><font size="2">Fichier de la sc&egrave;ne test macro :
+<a href="pov/Column_1_macro_test.pov">Column_1_macro_test.pov</a><br></font></div>
+<br>
+
+<table align="center" width="300">
+<tr><td><p align="justify">
+<font size="-1"><b>Note:</b> Les <font color="#aa0000">parties en rouge</font> du texte de fichier include sont ajut&eacute;es pour &eacute;viter
+que l'objet est d&eacute;clar&eacute; plusieurs reprises si le texte est d&eacute;ja ins&eacute;r&eacute;.<br>
+Et ce texte change la version de
+ <nobr>POV-Ray</nobr> utilis&eacute;e retour &agrave; la version dans laquelle le text fu &eacute;crit, aussi si nous avons in jour
+une version plus nouvelle.</font></td></p></tr>
+</table>
+
+<table align="center" width="300">
+<tr><td><p align="justify">
+<font size="-1"><b>Note:</b> Si nous ins&eacute;rons un fichier include avec la commande <b>#include &quot;MyObject.inc&quot;</b>,
+le texte de ce fichier sera ins&eacute;r&eacute; par <nobr>POV-Ray</nobr> mot pour mot
+justement au lieu de la commande pendant le parsing du fichier.
+Cela doit &ecirc;tre toujours avant le lieu o&ugrave; nous utilisons le objet de ce fichier include.<br>
+
+Si le texte de un fichier include defini un objet complet, que nous voulons <b>utiliser plusieurs fois dans une sc&egrave;ne</b>,
+nous devons <b>ins&eacute;rer le fichier include seulement une fois!</b></font></td></p></tr>
+</table>
+</p>
+
+
+
+
+</td></tr></table>
+<table border="0" align="center" width="95%" cellspacing="5"><tr><td>
+<p align="justify"><font size="+1"><b>Appeler un objet d'un fichier include :</b></font><br>
+
+<font size="-1"><b>Ici nous ins&eacute;rons '<b>Column_1.inc</b>': &nbsp;&nbsp;<font size="-2">( seulement une fois ! )</font></b></font><br>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>//---------------------------------------
+#declare Column_Texture =
+ texture{ pigment{ color rgb&lt;1,0.95,0.8&gt;}
+          normal { bumps 0.5 scale 0.01}
+          finish { phong 0.1 }
+        } // end of texture
+//-------------------------------------//&nbsp;<font color="#008800">
+#include &quot;Column_1.inc&quot;</font>
+//-------------------------------------//
+union{ //--------------------------------
+ #local Nr = 0;     // start
+ #local EndNr = 10; // end
+ #while (Nr&lt; EndNr)
+ union{ // inner union
+   <font color="#008800">object{ Column_1</font>(3.5, 0.5, 0.06, 0.75)
+           translate&lt;-2,0,0&gt;}
+   <font color="#008800">object{ Column_1</font>(3.5, 0.5, 0.06, 0.75)
+           translate&lt; 2,0,0&gt;}
+   translate&lt;0,0,Nr*2.5>
+ } // end inner union
+ #local Nr = Nr + 1;  // next Nr
+ #end // --------------- end of loop
+texture{  Column_Texture }
+rotate&lt;0,0,0&gt;
+translate&lt;0,0,0&gt;
+} // end of union -----------------------</b></td></pre></tr></table>
+
+</td>
+<td align="center" valign="top">
+<br>
+<br>
+
+     <table border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Column_1_rows.jpg" border="0" width="240" height="180"
+                   alt="Column_1_rows" title="Column_1_rows"></td>
+            </tr></table>
+<font size="-1">Files de colonnes<br>
+<p align="center">Description de cette sc&egrave;ne pour <nobr>POV-Ray :</nobr><br>
+ Fichier de la sc&egrave;ne: <a href="pov/Column_1_Row.pov">Column_1_Row.pov</a><br>
+ Fichier include: <a href="pov/Column_1.inc">Column_1.inc</a>
+ </p>
+<br>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+<p align="justify"><font size="-1">
+Avec ce m&eacute;canisme on peut aussi utiliser pour sauvegarder
+les textures et les couleurs sp&eacute;ciales et personnelles dans un fichier nomm&eacute; "Mes_texures.inc"!
+Un d&eacute;p&ocirc;t de meubles ou / et une collection des avions ou des  vaisseau spatial
+on peut sauvegarder aussi en cette mani&egrave;re !!!</b></font>
+</p></td></tr></table>
+</div>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtutf0.htm">part 0</a> |
+<a href="povtutf1.htm">part 1</a>  | <a href="povtutf2.htm">part 2</a> |
+<a href="povtutf3.htm">part 3</a>  | <a href="povtutf4.htm">part 4</a> |
+<a href="povtutf5.htm">part 5</a>  | <a href="povtutf6.htm">part 6</a>  |
+<a href="povtutf7.htm">part 7</a>  | <a href="povtutf8.htm">part 8</a> |
+<a href="povtutf9.htm">part 9</a>  | <!--a href="povtutfa.htm"-->part 10</a> |
+                                     <a href="povtutfb.htm">part 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

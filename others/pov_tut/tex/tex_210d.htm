@@ -1,0 +1,218 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - Ready-made Textures</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font>
+ </td></h6>
+ <td align="right">
+        <a href="tex_210e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_210e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_210i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_210i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_210f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_210f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp;&nbsp;-  <a href="tex_100d.htm">texture Syntax</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330e.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_210d.htm"--><b>Regeln</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110d.htm">Farben Do-it-Yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700d.htm">Muster</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp; &nbsp; Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+  &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750d.htm">Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<h2 align="center">Ready-made Textures</h2>
+
+<table border="0" align="center" width="90%"><tr><td><!-- global -->
+<h3><b><a name="Grundregeln">Grundregeln</a> f&uuml;r das Verwenden<br>
+von <a href="tex_150d.htm"> vorgefertigten Farben</a>, <a href="tex_160d.htm">Pigmenten und Texturen</a>: </b></h3>
+<b>1) Als "color ..." definiert ----&gt; als &quot;color&quot; in "pigment{color...}" aufzurufen!</b><br>
+Wenn eine Eigenschaft z.B. &quot;Scarlet&quot; als &quot;color{ ... }&quot; definiert ist, so mu&szlig; sie auch<br>
+als &quot;color&quot; im &quot;pigment&quot;-Befehl aufgerufen werden:<br>
+
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>texture{ pigment{ color Scarlet}
+         finish { diffuse 0.9 phong 1}
+       } // Ende der Textur-Beschreibung </b></td></pre>
+</tr></table>
+Dabei sollte hier wie immer mind. &quot;finish{ diffuse  0.9}&quot; angegeben werden, da das Farbmuster sonst
+zu dunkel erscheint!<br>
+<br>
+<b>2) Als &quot;pigment{ ... }&quot; definiert ---&gt; als &quot;pigment{ ... }&quot; aufzurufen!</b><br>
+Wenn eine Eigenschaft z.B. &quot;Jade&quot; als &quot;pigment{ ... }&quot; definiert ist, so mu&szlig; sie auch
+als &quot;pigment&quot; aufgerufen werden:<br>
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>texture{ pigment{Jade}
+         finish { diffuse 0.9 phong 1 }
+       } // Ende der Textur-Beschreibung</b></td></pre>
+</tr></table>
+Dabei erzeugt hier &quot;phong 1.0&quot; ein Glanzlicht, was besonders runde K&ouml;rper wie poliert
+erscheinen l&auml;&szlig;t !<br>
+<br>
+<b>3) Als fertige &quot;texture{ ... }&quot; definiert ---&gt; als &quot;texture{ .. }&quot; aufzurufen!</b><br>
+Wenn eine Eigenschaft wie &quot;Polished_Chrome&quot; oder &quot;Glass3&quot; bereits alle Textur-Eigenschaften
+enth&auml;lt, dann mu&szlig; nur noch schreiben:<br>
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>texture{ Glass3 } // Ende der Textur ---</b></td></pre>
+</tr></table>
+<br>
+Eventuelle zus&auml;tzliche Eigenschaften wie Rauhigkeit(&quot;normal&quot;) und
+SchnellzeichenFarbe (&quot;quick_color&quot;) k&ouml;nnen nat&uuml;rlich angef&uuml;gt
+werden; - aber bitte mit den korrekten Befehlsfolgen (<b>richtige Klammerung
+beachten !!!</b>), sonst kommt es m&ouml;glicherweise zu ungewollten Effekten!<br>
+Beispiel:
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>texture{ Glass3
+         pigment{ quick_color Cyan}
+         normal { ripples 0.5 scale 0.05 }
+       } // ----Ende der Textur-Beschreibung</b></td></pre>
+</tr></table>
+Lichtbrechung erh&auml;lt man durch:
+<table border="1" bgcolor="#f8f8f0">
+<tr><td>
+<pre><b>interior{ I_Glass}
+        //  Dies schaltet Lichtbrechung ein!
+//------------------------------------------</b></td></pre>
+</tr></table>
+<br>
+<b>Beispiele <i>zur Anwendung von<br>
+a) ready-made texture</b></i></font>
+<table border="1" bgcolor="#f8f8f0" cellspacing="1" cellpadding="4">
+<tr><td>
+<pre>sphere{ &lt;0,0,0&gt;,1
+        <b>texture{Polished_Chrome</b> //       &lt;--- ready-made <b>texture</b>
+                pigment{quick_color White}
+                normal {bumps 0.5 scale 0.05}
+               }  // --- Ende der TexturBeschreibung
+       } //---------------- Ende der Kugel ---------------------</td></pre>
+</tr></table>
+
+<b><i><font face="Arial">b) ready-made pigment </b></i></font>
+<table border="1" bgcolor="#f8f8f0" cellspacing="1" cellpadding="4">
+<tr><td>
+<pre>sphere{ &lt;0,0,0&gt;,1
+        texture{<b>pigment{Bright_Blue_Sky</b> //&lt;-<i> ready-made <b>pigment</b></i>
+                           quick_color Blue }
+                   normal {bumps 0.5 scale 0.05}
+                   finish {ambient 0.1 diffuse 0.9}
+                }// ------- Ende der TexturBeschreibung
+       } //---------------- Ende der Kugel ---------------------</td></pre>
+</tr></table>
+
+<b><i>c) ready-made color</b></i>
+<table border="1" bgcolor="#f8f8f0" cellspacing="1" cellpadding="4">
+<tr><td>
+<pre>sphere{ &lt;0,0,0&gt;,1
+        texture{ pigment{<b>color White</b>} //  &lt;---<i> ready-made <b>color</b></i>
+                 normal {bumps 0.5 scale 0.05}
+                 finish {ambient 0.1 diffuse 0.9}
+               }// ----Ende der TexturBeschreibung
+       } //---------------- Ende der Kugel ---------------------</td></pre>
+</tr></table>
+</td></tr></table><!-- end of global -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

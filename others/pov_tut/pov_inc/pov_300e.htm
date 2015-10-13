@@ -1,0 +1,202 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, Output directives">
+<meta name="description" content="tutorial on POV-Ray Details - Output directives">
+<title>POV-Ray Details - Output directives</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>POV-Ray Details</b></font><br>
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="pov_300i.htm"><font size="2">Italiano </font></a>
+        <a href="pov_300i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov_300f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="pov_300f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="pov_300d.htm"><font size="2">Deutsch </font></a>
+        <a href="pov_300d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_000e.htm">What's Where?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_100e.htm">'povray.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_200e.htm">'quickres.ini'</b></a><br>
+&nbsp;&nbsp;&nbsp;<b>&gt;</b> <!--a href="pov_300e.htm"--><b>Output directives</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_400e.htm">Command Line</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="inc_000e.htm">A short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000e.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center">The output directives for rendered images<b></b></h2>
+<br>
+
+<font size="+1"><b>Output file types of the rendered images</b></font><br>
+<font size="-1">The default output file type for the rendered images in Windows is<br>
+&nbsp;  with POV-Ray 3.7  : portable network graphics, extension: '.png'<br>
+&nbsp;  with POV-Ray 3.6.2: Windows bit map format, extension: '.bmp'<br>
+</font><br>
+<b>Other output file types:</b><br>
+<table width="100%" border="1" cellpadding="0" cellspacing="2">
+
+ <tr>
+  <td align="center">&nbsp;Format</td>
+  <td>&nbsp;Extension</td>
+  <td>&nbsp;Command line<br>
+      &nbsp;shortcut</td>
+  <td>&nbsp;Ini file command<br>
+      &nbsp;long version</td>
+ </tr>
+ <tr>
+  <td><font size="-1">&nbsp;Jpeg format *)</font></td>
+  <td>&nbsp;<b>.jpg</b></td>
+  <td>&nbsp;<b>+fj</b></td>
+  <td><font size="-1">&nbsp;Output_File_Type=J</font></td>
+ </tr>
+ <tr>
+  <td><font size="-1">&nbsp;Targa, uncompressed Targa-24 format</font></td>
+  <td>&nbsp;.tga</td>
+  <td>&nbsp;+ft</td>
+  <td><font size="-1">&nbsp;Output_File_Type=T</font></td>
+ </tr>
+ <tr>
+  <td><font size="-1">&nbsp;png, portable network graphics</font></td>
+  <td>&nbsp;.png</td>
+  <td>&nbsp;+fn</td>
+  <td><font size="-1">&nbsp;Output_File_Type=N</font></td>
+
+ </tr>
+ <tr>
+  <td><font size="-1">&nbsp;ppm, Unix PPM format</font></td>
+  <td>&nbsp;.ppm</td>
+  <td>&nbsp;+fp</td>
+  <td><font size="-1">&nbsp;Output_File_Type=P</font></td>
+ </tr>
+ <tr>
+  <td><font size="-1">&nbsp;bmp, Windows bit map format</font></td>
+  <td>&nbsp;.bmp</td>
+  <td>&nbsp;+fb</td>
+  <td><font size="-1">&nbsp;Output_File_Type=B</font></td>
+ </tr>
+ <tr>
+  <td><font size="-1">&nbsp;HDRI, OpenEXR, High Dynamic-Range format *)</font></td>
+  <td>&nbsp;.exr</td>
+  <td>&nbsp;+fe</td>
+  <td><font size="-1">&nbsp;Output_File_Type=E</font></td>
+ </tr>
+ <tr>
+  <td><font size="-1">&nbsp;HDRI , Radiance high dynamic-range format *)</font></td>
+  <td>&nbsp;.hdr</td>
+  <td>&nbsp;+fh</td>
+  <td><font size="-1">&nbsp;Output_File_Type=H</font></td>
+ </tr>
+ <tr>
+  <td colspan="4"><font size="-1">*)<b>Note:</b> Output in <b>Jpeg and HDRI format, </b> is now available with POV-Ray 3.7 (not with 3.6.2)!<br>
+&nbsp; For more information about Jpeg compression factors, HDRI images, bits per pixel and alpha transparency data<br>
+&nbsp; see POV-Ray Help (search for 'output')</font></td>
+ </tr>
+</table>
+<br>
+<b>Example output file type:  jpeg '+fj' in the command line</b><font size="-1"> (or 'Output_file_type=J' in 'povray.ini')</font>:<br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_test_fj.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="563" height="222"></a>
+      </td>
+  </tr></table>
+</div>
+<br>
+<br>
+
+
+
+<b>Output path - How to tell <nobr>POV-Ray</nobr> where to store the rendered images:</b></font><br>
+<font size="-1">See here '<a href="pov_100e.htm">povray.ini</a>'.<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<br>
+<br>
+<br>
+<br>
+<img src="im/warn.gif" border="0" width="32" height="30">POV-Ray reads 'povray.ini' and 'quickres.ini' only once while starting.<br>
+Any change in these files need a <b>shut down and restart</b> of the <nobr>POV-Ray</nobr> program to take effect!
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

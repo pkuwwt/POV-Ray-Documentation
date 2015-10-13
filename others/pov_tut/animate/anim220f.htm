@@ -1,0 +1,315 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="keywords" content="Acc&eacute;l&eacute;rer, ralentir, nimation, animation 3D, mpeg video, avi video, gif anim&eacute;, ray tracing, PoV, POV-Ray, POVRAY, graphique 3D, descriptions ray tracing, povray tutoriel">
+<meta name="description" content="Acc&eacute;l&eacute;rer et ralentir, Animations 3D avec POV-Ray - descriptions, didacticiels,tutoriel et exemples pour POV-Ray logiciel rayt racing">
+<title>Acc&eacute;l&eacute;rer et ralentir - Animation 3D acec POV-Ray -  tutoriels, descriptions et exemples pour le ray tracer de POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><br>
+                      <!--traduction en français par <nobr>Dominique Saussereau</nobr--> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table  border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__eng.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="back to overview" title="back to overview"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp;  Animation 3D avec POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Quelques bases et exemples sur les animations.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim220e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim220e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim220i.htm"><font size="2">Italiano </font></a>
+        <a href="anim220i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim220d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim220d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">Galerie d'Animations 3D</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anif.htm">Animation 3D</b></a><br>
+ &nbsp;&nbsp; <i>Table des mati&egrave;res</i><br>
+&nbsp; <!--a href="anim001f.htm"-->  0. Bases.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001f.htm">Exemple du base.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002f.htm">D'Images &agrave; Vid&eacute;o.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005f.htm">Connaissance de base.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008f.htm">Commandes d'animation.</b></a><br>
+&nbsp; <!--a href="anim11f.htm"--> I. Animations cycliques.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11f.htm">Objets tournants.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112f.htm">Plan&egrave;tes en orbite.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113f.htm">Une horloge</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12f.htm">Cam&eacute;ra tournante.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121f.htm">Cam&eacute;ra deplac&eacute;e lin&eacute;aire</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13f.htm">Le probl&egrave;me </b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13f.htm"> de la roue.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131f.htm">Roues roulantes.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14f.htm">Engrenages.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141f.htm">Cha&icirc;ne &agrave; rouleaux.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142f.htm">Cha&icirc;ne de bicyclette.</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15f.htm">Balancement.</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151f.htm">Pendule de Newton</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2. <a href="anim152f.htm">Rock le rocking chair !</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16f.htm">Oscillation.</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170f.htm">Bielle d'accouplement</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17f.htm">Bielle et manivelle.</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18f.htm">Psych&eacute;d&eacute;lique + Op-Art.</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190f.htm">Compteurs</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim190f.htm"> + Compte &agrave; rebours</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200f.htm">La pliage d'un cube.</b></a><br>
+
+&nbsp; II. Mouvements non-lin&eacute;aires<br>
+&nbsp; <b>&gt</b> 1.0 <!--a href="anim220f.htm"--><b>Acc&eacute;l&eacute;rer et ralentir 1.</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222f.htm">Acc&eacute;l&eacute;rer et ralentir 2.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240f.htm">Chuter et bondir.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260f.htm">Acc&eacute;l&eacute;ration selon</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260f.htm">formules physiques.</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280f.htm">Mouvements</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280f.htm">avec fonctions spline.</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Chemins pour<br>&nbsp; &nbsp; &nbsp;  des animations avec<br>&nbsp; &nbsp; &nbsp; des courbes spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210f.htm">Courbes spline.</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21f.htm">Spline ferm&eacute;.</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22f.htm">Animation Paths.</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+</font>
+
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+
+<table align="center" width="90%"  cellpadding="10">
+<tr><td width="10%"><img src="im/useful_fun000_80_01s_10s64c.gif" border="1" width="80" height="80"></td>
+    <td width="80%">
+     <h1>Acc&eacute;l&eacute;rer et ralentir (1).<br>
+      <font size="-1">Mouvements non-lin&eacute;aires en animations pour acc&eacute;l&eacute;rations et d&eacute;c&eacute;l&eacute;rations r&eacute;alistes avec des fonctions de base en POV-Ray.</font></td></h1>
+</tr></table>
+<table width="85%" align="center" cellpadding="10"><!--1-->
+<!--tr><td colspan="2"><hr></td></tr-->
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><font size="+1"><b>La simulation realiste de<br>
+   <nobr>acc&eacute;l&eacute;ration et d&eacute;c&eacute;l&eacute;ration</font></b></nobr><br>
+  <font size="-1">4 macro tr&egrave;s utiles :</font>
+
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>//---------------------------
+#macro Cos_01( X )
+  (0.5-0.5*cos(  pi*X))
+#end
+//---------------------------
+#macro Cos_010( X )
+  (0.5-0.5*cos(2*pi*X))
+#end
+//---------------------------
+#macro Cos_10( X )
+  (1-(0.5-0.5*cos(  pi*X)))
+#end
+//---------------------------
+#macro Cos_101( X )
+  (1-(0.5-0.5*cos( 2*pi*X)))
+#end
+//---------------------------
+</b></td></pre></tr> </table>
+
+<td colspan="1" valign="top">
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/useful_fun000_160_01b_5s64c.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>macro 'Cos_01( TIME )'<br><b>D&eacute;part doux, arriv&eacute;e douce.</b>
+
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/useful_fun000_160_010b_5s64c.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>macro 'Cos_010( TIME )'<br>
+   <b>D&eacute;part doux,  retour doux,<br>
+          et arriv&eacute;e douce.</b>
+
+</td>
+<td colspan="1" valign="top">
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/useful_fun000_160_10b_5s64c.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>macro 'Cos_10( TIME )'<br><b>D&eacute;part doux, arriv&eacute;e douce.</b>
+
+<br>
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/useful_fun000_160_101b_5s64c.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>macro 'Cos_101( TIME )'<br>
+   <b>D&eacute;part doux,  retour doux,<br>
+          et arriv&eacute;e douce.</b>
+</td>
+
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+</table>
+
+<table width="85%" align="center" cellpadding="10"><!--1-->
+<tr>
+ <td colspan="3" valign="top">
+   <font size="+1"><b>Ici quelques examples comment utiliser :</b></font>
+</td>
+</tr>
+<tr>
+<td colspan="1" valign="top">
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#macro Cos_010( X ) //------------
+  (0.5-0.5*cos(2*pi*X))
+#end //---------------------------
+// hard
+#object{ Tower // left
+  translate&lt;2,0,1+3*clock&gt;}
+// smooth
+#object{ Tower // right
+  translate&lt;3,0,1+3*<font color="#AA0000">Cos_01(</font>clock<font color="#AA0000">)</font>&gt;}
+//--------------------------------
+</b></td></pre></tr> </table>
+
+ </td>
+ <td colspan="2">
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Move_hard_n_smooth_1_30.gif" width="240" height="180" alt="Move smooth" title="Move smooth"></td></tr>
+   </table>Mouvoir abrupt (&agrave; gauche) et doucement (&agrave; droite)<br>
+ Le fichier della sc&egrave;ne pour POV-Ray:<br><a href="pov/Move_hard_n_smooth_1.ini"> &quot;Move_hard_n_smooth_1.ini&quot;</a>
+    and <br> <a href="pov/Move_hard_n_smooth_1.pov">&quot;Move_hard_n_smooth_1.pov&quot;</a></h6>
+ </td>
+</tr>
+<tr>
+<td>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#macro Cos_010( X ) //-----
+  (0.5-0.5*cos(2*pi*X))
+#end //--------------------
+#declare Fold_Angle =
+    -90*Cos_010(clock);
+//-------------------------
+</b></td></pre></tr> </table>
+
+<br>Pour un fichier della sc&egrave;ne complet&egrave;te et plus des d&eacute;tails:
+<a href="anim200f.htm">D&eacute;veloppement de Cube</a>.
+
+</td>
+<td>
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Fold_Cube_22s.gif" width="80" height="80" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>macro 'Cos_101( TIME )'<br>
+   <b><nobr>D&eacute;part doux,  retour doux,<br>
+          et arriv&eacute;e douce.</b>
+
+
+</td>
+<td>
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Folding_a_Cube_0_30s.gif" width="80" height="80" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>D&eacute;veloppement de Cube sans<br>
+    acc&eacute;l&eacute;ration<br>&nbsp;</b>
+
+
+</td>
+
+
+
+
+
+
+</tr>
+</table>
+<table width="85%" align="center" cellpadding="10"><!--1-->
+
+<tr><td colspan="3"><hr></td></tr>
+
+<tr>
+<td colspan="3">
+<b><font size="-1">Note</b>:  <br>
+   Utiliser des fonctions exponentielles comme
+   <nobr>1/(1+exp(-X*A+A/2)), avec A >=10,</nobr>
+   est une approximation mathematicalment plus correcte, mais  le problem ici :
+   le valeurs de d&eacute;but et de fin ne sont pas exactement y=0 et y=1 !<br>
+   C'est (0.5-0.5*cos(2*pi*X)) est l'approximation meilleure ! <br>
+   Aussi f(X)= 3*X*X - 2*X*X*X ha f(0)= 0, f(1)= 1 et f'(0)=f'(1)=0.<br>
+   Pour movements avec d&eacute;but et fin &agrave; v=0 et a=0, une fonction avec la d&eacute;rivation second = 0 au debut &agrave; la fin,
+   comme <nobr>f(X)= 6*X<sup>5</sup> -15*X<sup>4</sup> +10*X<sup>3</sup></b> = X*X*X*(10+X*(6*X-15))</nobr>
+   est une approximation plus parfait !<br>
+   </font>
+
+</b>
+</td>
+</tr>
+<tr>
+<td colspan="1" valign="top">
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Function_Exp_01b_.jpg" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>1/(1+exp(-X*10+10/2))<br>
+</td>
+<td colspan="1" valign="top">
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/useful_fun000_160_01b_5s64c.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>0.5-0.5*cos(2*pi*X)<br>
+<td colspan="1" valign="top">
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy01.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table>X*X*X*(10+X*(6*X-15))<br>
+
+
+</td>
+</tr>
+</table>
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

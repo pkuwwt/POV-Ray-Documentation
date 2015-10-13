@@ -1,0 +1,260 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Gestaltung des Inneren von transparenten K&ouml;rpern mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Interior mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Material, Inneres transparenter K&ouml;rpern, interior, material, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Gestaltung des Inneren von transparenten K&ouml;rpern</b></font>
+      <font size="-1"><b> in POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_20e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_20e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_20i.htm"><font size="2">Italiano</font></a>
+        <a href="interior_20i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_20f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_20f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp; <a href="interior_000d.htm">Inhalts&uuml;bersicht</a><br>
+ &nbsp; <a href="interior_000d.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05d.htm">Syntax material</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="interior_05d.htm">texture + interior</b></a> <br>
+&nbsp; -  <a href="interior_03d.htm">Window Glass</b></a><br>
+ &nbsp; &nbsp; &nbsp; + max_trace_level <br>
+&nbsp; -  <a href="interior_001d.htm">Nebel - fog</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10d.htm">Syntax Media</b></a> <br>
+&nbsp; -  <a href="interior_30d.htm">Media + Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp;  mit/ohne density map <br>
+&nbsp; -  <!--a href="interior_20d.htm"--><b>Lichtkegel im Nebel</b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -   <a href="interior_40d.htm">Lichtschwert</b></a> <br>
+&nbsp; -   <a href="interior_44d.htm">Kerzenflammen</b></a> <br>
+&nbsp; Scattering Media</b></a><br>
+&nbsp; -   <a href="interior_50d.htm">Licht durch Fenster</b></a><br>
+&nbsp; -   <a href="interior_70d.htm">Dampf, Rauch, Wolken</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -   <a href="interior_60d.htm">Staubteufel</b></a> <br>
+
+<nobr>&nbsp; Spezialprobleme mit Media</b></a></nobr><br>
+&nbsp; -  <a href="interior_080d.htm">Skalieren von Media</b></a> <br>
+&nbsp; -  <a href="interior_090d.htm">&Uuml;berlappende Media</b></a> <br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<h2 align="center"><a name="Top"></a><b>Lichtkegel im Nebel<br> mit Atmospheric Media</b>
+      <br><font size="-1">Verwendung des &quot;media&quot;-Befehls<br>
+                          f&uuml;r atmosph&auml;rische Effekte<br>
+                           au&szlig;erhalb von Objekten </font><br>
+</h2>
+<td>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/atmospheric_near_distance.gif" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table><font size="-2">Fernlicht und Abblend mit Nebel</font>
+
+</td></tr></table><hr>
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<tr>
+ <td valign="top">
+ <p align="justify">Um die Interaktion von Nebel mit Licht zu simulieren verwendet POV-Ray
+ das sogenannte <nobr>&quot;volume sampling&quot;</nobr>
+ (Dabei berechnet und addiert das Programm den Effekt auf einer begrenzten Anzahl von Schichten von Ebenen
+ zwischen der Kamera und den Objekten), dies funktioniert nur f&uuml;r endliche Strahlen die ein Objekt treffen.<br>
+<font size="-2">
+<b> Anmerkung:</b> POV-Ray kann kein 'media' l&auml;ngs eines unendlich langen Sehstrahls sampeln.
+ Der Strahl mu&szlig; endlich sein damit ein Sampeln m&ouml;glich ist.
+ D.h. das Sampeln eines 'media' ist nur dann m&ouml;glich wenn der Strahl ein Objekt in endlicher Entfernung trifft!
+ Deshalb ist kein atmospheric media vor &quot;background&quot; oder &quot;sky_sphere&quot; sichtbar,
+ denn diese Objekte sind per Definition in einer unendlichen Entfernung. <br>
+ Die verwendung von Spotlights mit 'media' ist normalerweise problemlos, da auch in diesem Fall der Strahl endlich ist
+ (es wird nur innerhalb des Lichtkegels gesampelt).<br>
+ Man kann erreichen, dass Lightquellen nicht mit atmosph&auml;rischen media interagieren indem man
+ das Schl&uuml;sselwort &quot;media_interaction off&quot; dem light_source-Befehl hinzuf&uuml;gt. <br>
+ Dadurch kann man das Grundlevel der Beleuchtung einer Szene erh&ouml;hen um mehr Realismus zu erreichen. <br>
+ F&uuml;r media-Effekte, die sich auf begrenzte Bereiche beschr&auml;nken sollen, ist es
+ besser (schneller und pr&auml;ziser) wenn man <nobr>&quot;object media&quot;</nobr> statt media mit pattern_maps verwendet.
+
+ </font></p>
+ <br>
+
+
+ </td>
+ <td align="center"><h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/atmospheric_media_t0.jpg" width="240"  height="180"  vspace="0" hspace="0"></td>
+    </tr></table>  Spotlight ohne media-Nebel.</h6>
+    &nbsp;</b>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+ <b>Nebel mit scattering media:</b><br>
+  ( scattering = lichtstreuend )<br>
+  Um ein globales lichtstreuendes atmosph&auml;risches Medium
+  f&uuml;r Nebel zu erzeugen, setzt man &quot;media&quot; ohne
+  einen begrenzenden Container ein:
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre>media{
+  scattering{
+    1,  // scattering media type 1,2,3,4,5
+    0.1 // Farbe des media (kein Komma!)
+    extinction 0.25//optional 0~1
+// = wie schnell es Licht absorbiert
+}//----------------------------------------
+</b></td></pre></tr></table>
+Dies sieht noch ziemlich grob aus!
+ </td>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/atmospheric_media_t1.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+ </td>
+</tr>
+
+
+<tr>
+ <td valign="top">
+ <b>Nochmal, aber etwas genauer:</b><br>
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre>media{
+  scattering{
+    1,  // scattering media type 1,2,3,4,5
+    0.1 // color of the media (no comma!)
+    extinction 0.25//optional 0~1
+            }// end of scattering
+  intervals 20 // default 10 //
+// = how many samples are tooken into
+// consideration.
+// The intervals span the entire length
+// of the ray from camera to where it
+// hits an object
+}//----------------------------------------
+</b></td></pre></tr></table>
+ </td>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/atmospheric_media_t2.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+ </td>
+</tr>
+
+<tr>
+ <td valign="top">
+ <b>Ungleichm&auml;&szlig;iger, wolkiger mit density map:</b><br>
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre>media{
+  scattering{
+    1,  // scattering media type 1,2,3,4,5
+    0.3 // color of the media (no comma!)
+    extinction 0.25 //optional 0~1
+            }// end of scattering
+  intervals 20 //
+    density {granite scale 10
+      color_map {
+        [0.0 rgb &lt;1,1,1&gt;*0.1]
+        [0.5 rgb &lt;1,1,1&gt;*0.3]
+        [1.0 rgb &lt;1,1,1&gt;*1  ]
+        } // end of color_map
+      }// end of density
+}//----------------------------------------
+</b></td></pre></tr></table>
+ </td>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/atmospheric_media_t3.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+<h5 align="center">Szenenbeschreibung f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="pov/atmospheric_media_t3.txt">&quot;atmospheric_media_t3.txt&quot;</a> oder
+ <a href="pov/atmospheric_media_t3.pov">&quot;atmospheric_media_t3.pov&quot;</a></h5>
+<br>
+
+ </td>
+</tr>
+
+
+</table>
+
+</td>
+</tr>
+</table>
+</div>
+<hr size="3">
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

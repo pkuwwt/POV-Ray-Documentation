@@ -1,0 +1,357 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7,Infographie, Synth&egrave;se d'image 3D">
+<meta name="subject" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<meta name="keywords" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Le design delles textures de surfaces - POV-Ray Course part 7</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+     <h6><nobr>Introduction au langage de description sc&egrave;nique POV-Ray raytracer</nobr>
+     <nobr> &nbsp; &nbsp; &nbsp; &nbsp; page 7</nobr>
+<br>par Friedrich A. Lohm&uuml;ller </td></h6>
+ <td align="right">
+        <a href="povtuto7.htm"><font size="2">English</font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povtuto7.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti7.htm"><font size="2">Italiano</font></a>
+        <a href="povtuti7.htm"><img src="flag_ita.gif" alt="Deutsch" title="Deutsch"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povkurs7.htm"><font size="2">Deutsch</font></a>
+        <a href="povkurs7.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+        </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#basic"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povtutf0.htm">Introduction POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povtutf0.htm">Table des mati&egrave;res&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povtutf1.htm">Utiliser POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povtutf2.htm">Bases</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Comment &eacute;crire le texte</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#xyzKoordinaten">xyz – Coordonn&eacute;es</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf2.htm#ZahlenundVektoren">virgule flotante et vecteurs</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povtutf3.htm">Structure d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemple de base.</b></a></nobr><br>
+<nobr>&nbsp;<b> 4.</b> <a href="povtutf4.htm">La t&ecirc;te d'une sc&egrave;ne</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Fichiers #include</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povtutf5.htm">Objets g&eacute;om&eacute;triques de base</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  cone, torus, plane</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp;  et autres formes</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povtutf6.htm">Transformations</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &eacute;chelle, rotation,</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; translation et autres.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povtutf6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<b>&gt;7.</b> <!--a href="povtutf7.htm"--><b>Couleurs et surfaces</b></nobr><br></a>
+<nobr><nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povtutf8.htm">#declare, #local  #macro</b></a>.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Variables, objets flexibles.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povtutf9.htm">#while</b></a> - Boucles</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Exemples de base.</b></a>,</nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povtutfa.htm">#include</b></a> - fichiers include</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; objets r&eacute;utilisables.</b></a></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povtutfb.htm">Efficacit&eacute;</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; vitesse, flexibilit&eacute;,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; travailer modulaire.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adapter de 3.1 &agrave; 3.5;3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Adattare di 3.5;3.6 a 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insertf_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+  <a name="surfaces"> </a>
+<font size="+2"><b>Le Design des Textures de Surfaces</font>  - les Textures des Objets</b><br>
+<font size="-1">(Les couleurs  - la d&eacute;formation (simul&eacute;e) - la luminosit&eacute; et la brillance de surfaces)</font>
+
+<table border="0" width="100%" align="center"><tr>
+<td><b>texture{ }</b> est un container pur les qualit&eacute; de la surface d'un objet g&eacute;om&eacute;trique.<br>
+Une texture est compos&eacute;e de principe de les composants suivantes:<br>
+ &nbsp; &nbsp; &nbsp; <b>pigment{ }</b> La couleur et la transparence </b><br>
+ &nbsp; &nbsp; &nbsp; <b>normal { }</b> La rugosit&eacute; de la surface</b>><br>
+ &nbsp; &nbsp; &nbsp; <b>finish { }</b> La luminosit&eacute; et la qualit&eacute; de la r&eacute;flexion </b><br>
+<font size="-1">Exemple :</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ pigment{ color Orange}
+         normal { bumps 0.5 scale 0.05 }
+         finish { phong 1.0 reflection{0.2} }
+       }</b></td></pre></tr></table>
+<font size="-1">Les instruction s &quot;pigment{...}&quot;, &quot;normal{...}&quot; et &quot;finish{...}&quot;
+ on peut aussi utiliser seulement  (sans ins&eacute;rer dans une instruction &raquo;texture{...}&laquo;), mais:
+ pour obtenir une structure claire il est recommand&eacute; mettere insieme toutes ces choses dans
+ un container  &quot;texture{...}&quot;! </font><br>
+
+</td><td>
+<img src="im/txtur01.gif" border="0" width="240" height="180"></a>
+</td></tr></table>
+
+<hr>
+<font size="+1"><b>pigment{ color ... }</b></font> - la couleur (obligatoire!) et <b>transpareny</b> (optionnel!)<br>
+<font size="-1">
+Se vous avez ins&eacute;r&eacute;e la ligne <nobr> <b>#include "colors.inc"</b></nobr> au d&eacute;but du texte
+de sc&egrave;ne, vous pouvez utiliser des expressions pr&eacute;d&eacute;finis de noms de couleurs en anglais
+pour une abr&eacute;viation:
+p.ex.: <b>pigment{color Red}</b><br>
+Est possible de d&eacute;finir chaque mani&egrave;re de couleur compos&eacute;e
+ d&eacute;sir&eacute;e par m&eacute;langer des lumi&egrave;res
+   rouge (<b>r</b>ed), vert (<b>g</b>reen) et bleu (<b>b</b>lue)
+(composition additive de couleurs!),<br>
+pour cela utilisons l'instruction pour couleurs par d&eacute;fini avec rgb:
+<nobr><b>pigment{color rgb&lt;..,..,..&gt;}</b></nobr> (<b>r</b>ed,<b>g</b>reen,<b>b</b>lue).<br>
+Les nombres entre les accolades sont les valeurs de l'intensit&eacute; des
+composants entre 0.000 et 1.000. Ici 1.000 = 100% et 0.000 = 0%
+de la couleur relative.</font><br>
+<font size="-1"><b>Exemples pour des couleurs rgb :</b></font>
+<br>
+<table border="0" width="95%" align="center"><tr>
+<td>
+<font size="-1"><b>color rgb&lt;0,0,0&gt;</b> = noir (on peut aussi &eacute;crire &raquo;color Black&laquo;), <br>
+<b>color rgb&lt;0.5,0.5,0.5&gt;</b> = gris (&raquo;color Grey&laquo;), <br>
+<b>color rgb&lt;1,1,1&gt;</b> = blanc (&raquo;color White&laquo;), <br>
+<b>color rgb&lt;1,0,0&gt;</b> = rouge (&raquo;color Red&laquo;), <br>
+<b>color rgb&lt;0,1,0&gt;</b> = vert (&raquo;color Green&laquo;), <br>
+<b>color rgb&lt;0,0,1&gt;</b> = bleu,(&raquo;color Blue&laquo;),<br>
+<b>color rgb&lt;1,1,0&gt;</b> = jaune, (&raquo;color Yellow&laquo;),<br>
+<b>color rgb&lt;0,1,1&gt;</b> = un bleu verd&acirc;tre clair nom&eacute; cyan,<br>
+<b>color rgb&lt;1,0,1&gt;</b> = un rouge violed&acirc;tre nom&eacute; magenta.<br>
+<b>color rgb&lt;1,0.65,0&gt;</b> = un jaune orange chaud,<br>
+<b>color rgb&lt;0.25,1,0&gt;</b> = un jaune-vert  (&raquo;color YellowGreen&laquo;),<br>
+<b>color rgb&lt;1,0,0.25&gt;</b> = un rouge violed&acirc;tre.<br>
+
+ De plus, on peut<b> tamiser et &eacute;claircir</b> les couleurs:<br>
+<b>color rgb&lt;1,0.5,0.5&gt;</b> = rouge clair <br>
+<b>color rgb&lt;0.5,0,0&gt;</b> = rouge fonc&eacute;,<br>
+etc. etc. ..... </font><br>
+
+</td><td valign="top">
+   <table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/txtur_col.jpg" border="0" width="160" height="200"></td></tr>
+   </table>
+</td></tr></table>
+Est une bonne id&eacute;e prendre quelques sph&egrave;res simples et
+ essayer cela par vous-m&ecirc;me !<br>
+<font size="-1">Les yeux de l'homme peuvent voir environ 16 millions de couleurs diff&eacute;rentes!!</font> <br>
+<hr>
+Derri&egrave;re de l'instruction <b>#include &quot;textures.inc&quot;, </b>
+on peut utiliser toutes les motifs de couleur pr&eacute;d&eacute;finies (pigments) et les textures
+ pr&eacute;fabriqu&eacute;es.<br>
+<br>
+<table width="100%" valign="top"><tr><td>
+<font size="-1">
+Exemple <b>pigment pr&eacute;d&eacute;fini</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ pigment{ Jade }
+          finish{ phong 1.0 }
+        }</b></td></pre></tr></table>
+
+Autres colorants (pigment) pr&eacute;d&eacute;finies sont p.ex.:  <br>
+Candy_Cane, Red_Marble, Brown_Agate. </font>
+</td><td>
+<font size="-1">
+Exemple <b>texture pr&eacute;d&eacute;finie</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>texture{ Cork
+         finish{ phong 1 }
+       }</b></td></pre></tr></table>
+Autres textures pr&eacute;d&eacute;finies sont p.ex.:  <br>
+Polished_Chrome, Polished_Brass.</font>
+</td><td align="center">
+   <table border="2" bgcolor="#efefef" align="center"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+   <tr><td><img src="im/Pigment_Jade.jpg" border="0" width="80" height="80"></td></tr>
+   </table><font size="-1">Jade</font>
+
+
+
+</td></tr>
+<tr><td>
+<b>Mati&egrave;re transparent avec r&eacute;fraction:</b> <br>
+<font size="-1">Par ex. verre &eacute;pais ha besoin de <b>&quot;interior{ }&quot;</b>:</font><br>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>material{ texture{ ... }
+          interior{ ior 1.5 }
+        }</b> // end of material</b></td></pre></tr></table>
+</td><td>
+<font size="-1">
+Exemple <b>Mati&egrave;re pr&eacute;d&eacute;fini</b>:
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>material{ M_Glass }</b></td></pre></tr></table>
+<br>
+<br>
+</td><td align="center">
+   <table border="2" bgcolor="#efefef"
+    bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/M_Glass.jpg" border="0" width="80" height="80"></td></tr>
+   </table><font size="-1">Glass</font>
+
+
+</td></tr>
+</table>
+
+
+<hr>
+<table width="100%" align="center"><tr>
+<td><font size="+1"><b>normal { ... }</b></font> - La rugosit&eacute; de la surface</b> (optionell!)<br>
+Se la rugosit&eacute; n'est pas d&eacute;finie la surface est lisse.<br>
+Ici quelques effets int&eacute;ressants que on peut d&eacute;finir avec l'instruction
+&raquo;normal&laquo;: <br>
+<font size="-1"><b>bumps</b>, <b>waves</b>, <b>dents</b>, <b>ripples</b>, <b>wrinkles</b></font>.<br>
+</td>
+
+<td align="center"><table border="2" bgcolor="#efefef"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/normal00.jpg" border="0" width="80" height="80"></td></tr>
+   </table>
+</td>
+</tr></table>
+
+<br>
+<font size="-1">Se vous faites un test et l'effet n'est pas visible
+ la plupart du temps c'est pourquoi p.ex.
+ les &raquo; bumps &laquo; montrent seulement un &raquo; bump &laquo; sur un
+ carr&eacute; de 1 x 1. Se vous diminuez l'&eacute;chelle p.ex. par
+  <nobr><b>&raquo; normal {bumps 1 scale 0.05} &laquo;</b> </nobr>
+ou quelque chose comme &ccedil;a ce probleme est souvent pass&eacute;.<br>
+C'est tr&egrave;s important de savoir que toutes ces d&eacute;formations d&eacute;finies par &quot;normal { ... }
+sont seulement des d&eacute;formations de surface simul&eacute;es par un incliner plus ou moins
+rythmique des le vecteur normal du surface.
+Mais parce que c'est seulement utilis&eacute; pour le calcule des r&eacute;fections
+ne fait pas une d&eacute;formation effective de la forme de un objet g&eacute;om&eacute;trique.
+Par cons&eacute;quent la silhouette de ces objets reste totalement lisse.
+Et la d&eacute;formation de la surface avec cette m&eacute;thode est limit&eacute;e &agrave; ces cases
+o&ugrave; un contour pas d&eacute;form&eacute; ne d&eacute;range pas.
+Dans ces cases on peut designer des surfaces tr&egrave;s fascinantes et r&eacute;alistes avec ce truc simple
+(et souvent tr&egrave;s vite!).</font><br>
+</h5>
+
+<hr>
+<table width="100%" align="center"><tr>
+<td><font size="+1"><b>finish {....}</b></font> - La luminosit&eacute;
+ et la qualit&eacute; de la r&eacute;flexion</b> (il est indiqu&eacute;!) <br>
+
+ <font size="-1">Les valeurs plus importants sont:</font> <br>
+<font size="-1">(Avec POV-Ray 3.6.2: supposant que vous avez l'instruction
+<nobr>&raquo; <b>global_settings {assumed_gamma 1.0 }</b>&laquo; </nobr>
+au d&eacute;but de votre texte!)</font><br>
+<b>ambient 0.10</b> <font size="-1">Ici la luminosit&eacute; de les partes de la surface
+                       caus&eacute;e de les environs par la lumi&egrave;re indirect
+                    (il est indiqu&eacute;!)</font><br>
+<font size="-1">(C'est seulement une simulation de cet effet de l'illumination
+ indirecte, une calcule un peu plus correct on peut simuler avec
+ la radiosit&eacute; (radiosity) - un calcule totalement correcte de l'illumination
+ est presque impossible!)</font><br>
+<b>diffuse 0.90</b> <font size="-1">Dans cette parte la luminosit&eacute; de la surface
+                     est caus&eacute;e de la lumi&egrave;re directe!</font><br>
+<b>reflection</b> 0.15 <font size="-1">C'est le composant del'illumination
+                       caus&eacute; de la r&eacute;flexion des autres objets.</font><br>
+<b>phong</b> 1.0 <font size="-1">Une forme tr&egrave;s simple pour la simulation
+                  des rehauts sur un surface</font><br>
+
+  </td>
+<td><table border="2" bgcolor="#efefef"
+     bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/txtur_r0.jpg" border="0" width="80" height="80"></td></tr>
+   </table>
+</td>
+</tr></table>
+
+<p align="justify">
+<font size="+1"><b>!!! Remarque:</b></font>
+<font size="-1">Les valeurs pr&eacute;r&eacute;gl&eacute;s (default values) sont: (POV-Ray version 3.0, 3.1, 3.5):
+<nobr>&raquo; finish { ambient 0.1 diffuse 0.6 } &laquo;.</nobr>
+Sur ordinateurs avec Intel's (486, Pentium etc.) cette mani&egrave;re
+de repr&eacute;senter les couleurs est trop fonc&eacute;e!
+<b>Il est indiqu&eacute; sur ces syst&egrave;mes d'augmenter ces valeurs &agrave;
+<nobr>&raquo; finish {ambient 0.10 diffuse 0.90} &laquo;.</nobr> </b>
+Il est indiqu&eacute; de fixer les valeurs pour diffuse et ambient en g&eacute;n&eacute;ral
+par l'instruction
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#default{ finish{ ambient 0.1 diffuse 0.9 }}</b></td></pre></tr></table>
+
+ au d&eacute;but de la description
+et changer ces valeurs seulement par ex. pour surfaces r&eacute;fl&eacute;chissant.<br>
+
+
+Si vous voulez que un objet appara&icirc;t avec plus de contraste entre les partes fonc&eacute;e
+et les partes brillantes vous devez penser &agrave; ce que
+la somme de ambient, diffuse et
+reflection doit &ecirc;tre 1 = 100 % pour une apparences r&eacute;aliste.
+Pour cette raison se nous augmentons l'ambient nous devons diminuer conform&eacute;ment le diffuse,
+ p.ex. <nobr>&raquo; finish {ambient 0.05 diffuse 0.95} &laquo;.</nobr>
+</font>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povtutf0.htm">part 0</a> |
+<a href="povtutf1.htm">part 1</a>  | <a href="povtutf2.htm">part 2</a> |
+<a href="povtutf3.htm">part 3</a>  | <a href="povtutf4.htm">part 4</a> |
+<a href="povtutf5.htm">part 5</a>  | <a href="povtutf6.htm">part 6</a> |
+<!--a href="povtutf7.htm"-->part 7</a>  | <a href="povtutf8.htm">part 8</a> |
+<a href="povtutf9.htm">part 9</a>  | <a href="povtutfa.htm">part 10</a> |
+                                     <a href="povtutfb.htm">part 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

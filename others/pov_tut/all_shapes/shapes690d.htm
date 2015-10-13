@@ -1,0 +1,268 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+<hr size="3"><p align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font></td></p></h6>
+ </td>
+ <td align="right">
+        <a href="shapes690e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes690e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes690i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="shapes690i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes690f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes690f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;<br>
+<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; Inhalts&uuml;bersicht<br>
+<a href="shapes100d.htm">Grundk&ouml;rper</b></a><br>
+<nobr><a href="shapes200d.htm">Shapes by macro + CSG</b></a></nobr><br>
+<a href="shapes600d.htm">3D-Text-Formen</b></a><br>
+<a href="shapes000d.htm">Andere K&ouml;rper</b><br>
+<br>
+&nbsp;<a href="shapes666d.htm">Non-CSG Objekte</b></a><br>
+&nbsp; -  <a href="shapes660d.htm">disc</b></a><br>
+&nbsp; -  <a href="shapes665d.htm">polygon</b></a><br>
+&nbsp; -  <a href="shapes670d.htm">triangle</b></a><br>
+&nbsp; -  <a href="shapes672d.htm">smooth_triangle</b></a><br>
+&nbsp; -  <a href="shapes675d.htm">bicubic_patch</b></a><br>
+&nbsp; -  <a href="shapes680d.htm">mesh</b></a><br>
+&nbsp; -&gt;<!--a href="shapes690d.htm"--><b>mesh2</b></a><br>
+<br>
+<nobr>&nbsp;<a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+&nbsp;<a href="shapes900d.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<table><tr>
+<td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><img src="im/mesh2_01s.jpg" alt="mesh" title="mesh" width="80" height="60" border="0"></td></tr></table>
+</td>
+<td valign="top">
+<b>mesh2{  }</b> <font size="-1">- Dreiecksnetz (mesh) <br>
+built-in shape, non-CSG</font></td>
+</tr></table>
+&nbsp;<br>
+Einfaches mesh2: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ Erweiterte Optionen:
+<table border="0" cellspacing="1" cellpadding="2" width="90%">
+<tr><td bgcolor="#eeeeee" colspan="2" valign="top"><pre>
+//Syntax: --------------------
+// obligatory order:
+//  Vectors,
+//  Lists,
+//  Indices
+// --------------------
+
+<b>mesh2{
+  vertex_vectors
+  { number_of_vertices,
+    vertex_00,
+    vertex_01,
+      //...
+    vertex_nn
+  }
+// optional normal_vectors -&gt;
+// optional uv_vectors  -&gt;
+// optional texture lists -&gt;
+
+  face_indices
+  { number_of_faces,
+    &lt;<i>index_1, index_2, index_3</i>&gt;,
+ // here optional with texture list:
+ //[,texture_index
+ //[,texture_index2,texture_index3]]
+    &lt;<i>index_4, index_5, index_7</i>&gt;,
+      // ...
+    &lt;<i>index_p, index_q, index_r</i>&gt;
+  } // ------------------
+ // optional for
+ // completely closed meshes:
+ // making solid mesh:
+    <b>inside_vector</b> &lt;<i>direction</i>&gt;
+} //-------------------------
+
+</b></td></pre>
+<td><nobr>&nbsp; &nbsp; &nbsp; &nbsp;</nobr></td>
+<td bgcolor="#eeeeee" colspan="1" valign="top"><pre>
+// Option für smooth surface:
+  <b>normal_vectors</b>
+  { number_of_normal_vectors,
+    &lt;<i>normal_vector_00</i>&gt;,
+    &lt;<i>normal_vector_01</i>&gt;,
+    // ...
+    &lt;<i>normal_vector_nn</i>&gt;
+  }
+// ---------
+// Option für uv_mapped texture:
+  <b>uv_vectors</b>
+  { number_of_uv_vectors,
+    &lt;<i>uv_vector_00</i>&gt;,
+    &lt;<i>uv_vector_01</i>&gt;,
+    // ...
+    &lt;<i>uv_vector_nn</i>&gt;
+  } //------------------------------
+ // Lists --------------------------
+ // optional texture lists:
+  <b>texture_list</b>
+  { number_of_textures,
+    texture { <i>Texture0</i> },
+    texture { <i>Texture1</i> },// ...
+  }// ---------
+// optional indices:
+  <b>normal_indices</b>
+  { number_of_faces,
+    &lt;<i>index_1, index_2, index_3</i>&gt;,
+    &lt;<i>index_4, index_5, index_7</i>&gt;,
+      // ...
+    &lt;<i>index_p, index_q, index_r</i>&gt;
+  } // ------------------
+// optional for uv_mapped texture:
+  <b>uv_indices</b>
+  { number_of_faces,
+    &lt;<i>index_1, index_2, index_3</i>&gt;,
+    &lt;<i>index_4, index_5, index_6</i>&gt;,
+      // ...
+    &lt;<i>index_p, index_q, index_r</i>&gt;
+      }
+ // --------------------------------</b></td></pre>
+</tr></table>
+Sample mesh2:
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td colspan="2">
+  <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>mesh2 { // ----------------------- size: 5x5 points -----------------
+vertex_vectors {25,
+&lt;0,1.88,0&gt; &lt;0,1.97,0.5&gt; &lt;0,2.06,1&gt; &lt;0,1.96,1.5&gt; &lt;0,2.05,2&gt;
+&lt;0.5,1.93,0&gt; &lt;0.5,1.84,0.5&gt; &lt;0.5,1.94,1&gt; &lt;0.5,2.04,1.5&gt; &lt;0.5,2.00,2&gt;
+&lt;1,2.00,0&gt; &lt;1,1.94,0.5&gt; &lt;1,1.96,1&gt; &lt;1,2.20,1.5&gt; &lt;1,2.00,2&gt;
+&lt;1.5,1.92,0&gt; &lt;1.5,1.98,0.5&gt; &lt;1.5,2.21,1&gt; &lt;1.5,1.93,1.5&gt; &lt;1.5,2.03,2&gt;
+&lt;2,2.10,0&gt; &lt;2,1.94,0.5&gt; &lt;2,2.15,1&gt; &lt;2,1.90,1.5&gt; &lt;2,2.04,2&gt; }
+uv_vectors {25,
+&lt;0,0&gt; &lt;0,0.25&gt; &lt;0,0.5&gt; &lt;0,0.75&gt; &lt;0,1&gt;
+&lt;0.25,0&gt; &lt;0.25,0.25&gt; &lt;0.25,0.5&gt; &lt;0.25,0.75&gt; &lt;0.25,1&gt;
+&lt;0.5,0&gt; &lt;0.5,0.25&gt; &lt;0.5,0.5&gt; &lt;0.5,0.75&gt; &lt;0.5,1&gt;
+&lt;0.75,0&gt; &lt;0.75,0.25&gt; &lt;0.75,0.5&gt; &lt;0.75,0.75&gt; &lt;0.75,1&gt;
+&lt;1,0&gt; &lt;1,0.25&gt; &lt;1,0.5&gt; &lt;1,0.75&gt; &lt;1,1&gt; }
+face_indices {32,
+&lt;0,5,6&gt; &lt;0,6,1&gt; &lt;1,6,7&gt; &lt;1,7,2&gt;
+&lt;2,7,8&gt; &lt;2,8,3&gt; &lt;3,8,9&gt; &lt;3,9,4&gt;
+&lt;5,10,11&gt; &lt;5,11,6&gt; &lt;6,11,12&gt; &lt;6,12,7&gt;
+&lt;7,12,13&gt; &lt;7,13,8&gt; &lt;8,13,14&gt; &lt;8,14,9&gt;
+&lt;10,15,16&gt; &lt;10,16,11&gt; &lt;11,16,17&gt; &lt;11,17,12&gt;
+&lt;12,17,18&gt; &lt;12,18,13&gt; &lt;13,18,19&gt; &lt;13,19,14&gt;
+&lt;15,20,21&gt; &lt;15,21,16&gt; &lt;16,21,22&gt; &lt;16,22,17&gt;
+&lt;17,22,23&gt; &lt;17,23,18&gt; &lt;18,23,24&gt; &lt;18,24,19&gt;}
+uv_mapping
+
+texture{ pigment{ checker
+                  color rgb&lt;1,1,1&gt;*1.0
+                  color rgb&lt;1,1,1&gt;*0.1 }
+         finish { phong 0.1 }
+         scale 0.2
+       } // end texture
+} //-----------------------------------------------------------------</b></td></pre></tr></table>
+</td>
+</tr>
+
+<tr>
+<td>
+
+    <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <!--a href="javascript:ShowImage('prism1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''"-->
+              <img src="im/mesh2_00.jpg" border="0" width="320"  height="240"
+                   alt="Sample Mesh2" title="Sample Mesh2"></a>
+            </td></tr></table>
+ </td>
+</tr>
+<tr>
+<td> Dasselbe mesh2 unterteilt in 15x15 Punkte, mit Normalenvektoren und smooth:
+ </td>
+</tr>
+<tr>
+<td>
+
+    <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/mesh2_01.jpg" border="0" width="320"  height="240"
+                   alt="Sample Mesh2" title="Sample Mesh2"></a>
+            </td></tr></table>
+ </td>
+</tr></table>
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+
+
+
+<!--b>Notes:</b><br-->
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>
+ </tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

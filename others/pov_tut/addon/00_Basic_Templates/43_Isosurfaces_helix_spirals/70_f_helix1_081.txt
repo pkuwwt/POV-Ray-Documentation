@@ -1,0 +1,27 @@
+
+isosurface { //-------------------------------------------------------------
+  function{
+     f_helix1(
+        x,y,z,
+        1,    // number of helixes, (1 = single helix, 2 = double helix etc.)
+        8*2*pi, // period. For N number of turns pro heigth y = 1 unit use: N* 2*pi) 
+        0.07, // minor radius,
+        0.25, // major radius,
+        1,    // shape parameter, 
+        0.1,  // cross section type, (0.0 to 1.0 = square ... rounded to circle
+              //                 over 2.0 to 3.0 = rounded to diamond and concave diamond
+        45     // cross section rotation angle
+      ) //-------------------------------------------
+  }          
+ contained_by {box {<-1,0,-1>,<1,1,1>}}
+ max_gradient 1.1
+
+ texture{ pigment{ color rgb <0.8,0.5,0.25>*0.85} 
+          finish { specular 0.1 roughness 0.005  phong 1 phong_size 20 reflection {0.45 metallic } }
+        }
+ rotate<0,0,0>
+ scale <1,1,1>
+ translate< 0,0.00, 0>
+} // end of isosurface -------------------------------------------------------
+
+  

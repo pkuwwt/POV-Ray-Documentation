@@ -1,0 +1,27 @@
+//------------------------------------------------------------------------------
+//----------------------------------------------------------- optional textures
+#declare Cheese_Texture =  
+         texture { pigment{ color rgb< 1.0, 0.85, 0.35> } //  light orange
+                   normal { bumps 0.15 scale 0.025 }
+                   finish { phong 1 reflection 0.05}
+                 } // end of texture 
+#declare Cheese_Skin_Texture =  
+         texture { pigment{ color rgb< 1.0, 0.55, 0.3> } //  red orange
+                   normal { bumps 0.25 scale 0.025 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+//--------------------------------------- optional random seed number 0~32000
+#declare Rnd_ = seed( 18426);  // 18426
+//------------------------------------------------------------------------------
+#include "Cheese_1.inc"
+//------------------------------------------------------------------------------
+object{ Cheese_1( 30,   // Cut_Angle_, 
+                  0.30, // Cheese_R_, 
+                  0.15, // Cheese_H_,     
+                  0.05, // Cheese_Border_R_, 
+                 )// --------------------------
+// rotate<0,180,0>
+
+ translate<0.0,0, 0.0>  // rotate<0,-30,0>
+} // ---------------------------------------------------------
+//------------------------------------------------------------------------------

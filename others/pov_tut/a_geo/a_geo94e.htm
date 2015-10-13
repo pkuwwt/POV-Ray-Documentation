@@ -1,0 +1,202 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="copyright 2007 by Friedrich A. Lohmueller">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<meta name="keywords" content="Analytical Geometry with POV-Ray, Area of a Parallelogram, Cross Product, raytracing, PoV, POVRAY, POV-Ray 3.6, computer graphics, 3d graphics, raytracing tutorials, POV-Ray Samples">
+<meta name="description" content="Analytical Geometry with POV-Ray - Samples - The area of a parallelogram and the cross product">
+<TITLE>Area of a Parallelogram and the Cross Product - Analytical Geometry with POV-Ray - Samples</TITLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=645,height=500");
+ New.focus();  }
+//-->
+</SCRIPT>
+</HEAD>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr> <nobr>by Friedrich A. Lohmueller</nobr></td></h6>
+ <td align="right">
+        <a href="a_geo94d.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="a_geo94d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+        <!--a href="a_geo94.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="a_geo94i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="a_geo94f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="a_geo94f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a-->
+  </td>
+</tr></table>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<!--- end of header -->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<div align="center">
+ <a href="../../index.htm">Home</b></a>
+<table border="1"><tr>
+ <td width="80" height="80" align="center" valign="top">
+   <a href="../pov__eng.htm"><img src="a_geo_trace0s.jpg" border="0" width="80" height="80"
+    alt="back to overview" title="back to overview"></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</div>
+<font size="2">
+ - <a href="../pov__eng.htm#overview"><b><nobr>POV-Ray Tutorials</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<nobr>- <a href="a_geo__e.htm">Analytical Geometry</b></a></nobr><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__e.htm">with POV-Ray </b></a><br>
+ &nbsp;&nbsp;&nbsp;  <a href="a_geo__e.htm">- Index -</b></a><br>
+ &nbsp;&nbsp;-  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/insert_a.htm">Download</b></a><br>
+ &nbsp;<br>
+&nbsp; -      <a href="a_geo00e.htm">Basics </b></a><br>
+&nbsp; &nbsp; <a href="a_geo00e.htm">Possibilities and Needs</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="a_geo00e.htm"--><b>Points &amp; Lines</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo10e.htm">Points in 3D</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo20e.htm">Line Sections, Straight,</b></a> <br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="a_geo20e.htm">Vectors, Distance Markers</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="a_geo30e.htm">Surfaces &amp; Planes</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo40e.htm">Output of Results,</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo40e.htm">Captions</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo45e.htm">Points of Intersection</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo50e.htm">Circles</b></a><br>
+ &nbsp; &nbsp; <!--a href="a_geo60e.htm"--><b>Solids</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo60e.htm">Tetrahedron</b></a> <br>
+ <!--&nbsp; &nbsp; -  <a href="a_geo61e.htm">Pyramide</b></a> <br-->
+ &nbsp; &nbsp; -  <a href="a_geo62e.htm">Parallelepiped</b></a> <br>
+ &nbsp; &nbsp; -  <a href="a_geo65e.htm">Round Solids</b></a> <br>
+ &nbsp; &nbsp; -  <!--a href="a_geo00e.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <a href="a_geo70e.htm">Overview by Table</b></a><br>
+&nbsp; &nbsp; &nbsp; <a href="a_geo70e.htm">on &quot;analytical_g.inc&quot;</b></a><br>
+&nbsp; -  <a href="a_geo80e.htm">Vector Analysis</b></a> <br>
+ &nbsp; &nbsp; &nbsp; <a href="a_geo80e.htm">with POV-Ray</b></a> <br>
+&nbsp; -  <a href="a_geo85e.htm">Righthanded &amp; Lefthanded</b></a> <br>
+ &nbsp; &nbsp; <a href="a_geo85e.htm">Systems of Coordinates</b></a> <br>
+ &nbsp; &nbsp; <a href="a_geo85e.htm">and the Cross Product</b></a> <br>
+<!-- &nbsp; &nbsp; -  <a href="a_geo00e.htm">&nbsp;</b></a--> <br>
+&nbsp; -  <!--a href="a_geo00e.htm"--><b>Samples from</b></a> <br>
+&nbsp; &nbsp; <!--a href="a_geo00e.htm"--><b>Analytical Geometry</b></a> <br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo91e.htm">Parallelogram of the</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; &nbsp; <a href="a_geo91e.htm">Middles of the Edges</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; -  <a href="a_geo92e.htm">Trace Points of a Straight Line</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo93e.htm">Calculations about a Triangle</b></a> <br>
+<nobr>&nbsp; &nbsp;<b>&gt; <!--a href="a_geo94e.htm"-->Area of a Parallelogram</b></a></nobr> <br>
+&nbsp; &nbsp; &nbsp; &nbsp;  <!--a href="a_geo94e.htm"-->and Cross Product</b></a> <br>
+<nobr>&nbsp; &nbsp; - <a href="a_geo95e.htm">Shadow of a Pyramid</b></a></nobr><br>
+&nbsp; &nbsp; -  <a href="a_geo96e.htm">Hit a plane || yz-plane</b></a><br>
+&nbsp; &nbsp; -  <a href="a_geo97e.htm">Angle of triangle &amp; yz-plane</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="top"></a>
+
+<table align="center">
+<tr>
+ <td nowrap>
+    <table align="center" width="50%"><tr>
+    <td align="center" valign="middle" colspan="2"><h3><nobr>Analytical Geometry with POV-Ray</nobr></h3>
+                                                                          <h4><nobr> - Samples -</nobr></h4></td>
+    </tr><tr>
+    <td align="center" valign="middle">
+       <h2 align="center"><nobr>Area of a Parallelogram &nbsp; &nbsp;<br> and the Cross Product</h2> </td>
+    <td align="center" valign="top">
+           <table border="1"  bgcolor="#EFEFEF" cellpadding="0"
+                     bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+              <tr><td><img src="a_geo_vp0s.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+              </tr></table>
+    </table>
+ </td>
+</tr>
+ </table>
+
+<div align="center">
+<table width="95%" align="center" cellpadding="10">
+ <tr>
+  <td colspan="1">
+        <h5 align="justify"><b>The Area of a Parallelogram  </b><br>
+        &nbsp;<br>
+        We have 3 points A, B and C:
+<pre><b>#declare A  = &lt; 2.0, 2.5,-4.0&gt;;
+#declare B  = &lt; 1.0, 4.0,-4.0&gt;;
+#declare C  = &lt; 1.0, 3.0,-1.5&gt;;</b></pre>
+
+        The edge vectors AB and AC of a parallelogram are caculated by
+<pre><b>#declare AB = B-A;
+#declare AC = C-A; </b></pre>
+        The 4th corner D of a parallelogram with the edges AB and AC we get by
+
+<pre><b>#declare D = A + AB + AC;</b></pre>
+        The area of the parallelogram can be represented by two triangles:
+
+<pre><b>triangle{ A, B, C pigment{color Green transmit 0.5}}
+triangle{ B, C, C+(B-A) pigment{color Green transmit 0.5}}</b></pre>
+
+        <br>
+        <br><b>The size of the area of the parallelogram</b><br>
+        &nbsp;<br>
+        The size of the area of the parallelogram is the length of
+        the cross product AB x AC :
+
+<pre><b>#declare N = vcross(AB, AC);
+#declare Area_ABCD = vlength(N)</b></pre>
+In a lefthanded system of coordinates the cross product is defined lefthanded!
+(For more about this see here: <a href="a_geo85e.htm">Righthanded and Lefthanded Systems of Coordinates
+and the Cross Product</a>.)
+ </td></h5>
+ <td valign="top">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><a href="javascript:ShowImage('a_geo_im99_0.htm')"
+                     onMouseover="window.status='ShowSingleImage';return true"
+                     onMouseOut="window.status=''">
+                     <img src="a_geo_vp0t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+         </tr></table>
+  <h5 align="center"><b>Area of a Parallelogram and Cross Product</b><br>
+   <font size="-1">This scene for <nobr>POV-Ray:</nobr>
+    <a href="a_geo_vp0.txt">&quot;.txt&quot; file</a> or
+    <a href="a_geo_vp0.pov">&quot;.pov&quot; file</a> </h5>
+</td>
+</tr>
+</table>
+</div>
+
+</td><tr><!-- end 2nd column -->
+<td valign="middle" align="center"><a href="#top">top</a>
+  </td>
+</tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</BODY>
+</HTML>

@@ -1,0 +1,251 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Objekte mit POV-Ray 3.6 / 3.7 - Objekte und Macros aus meiner Include-Datei shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Deutschland">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, 3D-Graphik, Computergrafik, Raytracing Beschreibungen, Povray Anleitungen, Anf&auml;ger, Fortgeschrittene, geometrische Objekte, CSG, Macros">
+<meta name="description" content="Definieren geometrischer Objekte durch Macros f&uuml;r das Freeware-Raytracing-Programm POV-Ray 3.6, povray, pov">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td></h6>
+ <td align="right">
+        <a href="shapes3_45e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes3_45e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes3_45i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes3_45f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_45f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes3_45f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000d.htm"--><b>Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+&nbsp;<br>
+<br>
+<nobr><a href="shapes3_0000d.htm">Objekte in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11d.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20d.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21d.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40d.htm">Egg</b></a><br>
+-  <a href="shapes3_40d.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42d.htm">Facetted_Sphere</b></a><br>
+<b>&gt;</b><!--a href="shapes3_45d.htm"--><b>Ring_Sphere</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80d.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22d.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60d.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65d.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+<div align="center">
+<font size="2">Geometrische K&ouml;rper aus meiner Include-Datei <a href="../down/insrtd_a.htm" alt="Download" title="Download">&quot;shapes3.inc&quot;</a></font>
+<font size="2">( ehemals &quot;shapes_lo.inc&quot;):</font><br>
+</div>
+
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td><table align="center" border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr45b.jpg" border="0" width="320" height="320" alt="Ring_Sphere" title="Ring_Sphere"></td>
+       </tr></table>
+       <font size="2">Here some variations of that macro:</font>
+       <table align="center" border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/Ring_Sphere_red.jpg" border="0" width="320" height="240" alt="Ring_Sphere" title="Ring_Sphere"></td>
+       </tr></table>
+  </td>
+  <td valign="top">
+   <font size="5"><b>Ring_Sphere</b></font>, Kugel aus Ringen<br>
+   <font size="2">
+   <i>Syntax:</i>
+   </font>
+
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td  valign="top" bgcolor="#fefefe">
+     <pre><b>object{ Ring_Sphere(
+          Rmaj_H, Rmaj_V,
+          Rmin_H, Rmin_V,
+          Number_of_Rings_horizontal,
+          Number_of_Rings_vertical
+        ) //------------------------
+        texture{ ... ... }
+      } // end of object -----------</b></td></pre></tr></table>
+
+ <font size="2">
+    <b>Rmaj_H, Rmaj_V</b><br>
+    = Hauptradius der horizontalen und vertikalen Ringe,<br>
+    <b>Rmin_H, Rmin_V</b><br>
+    = Nebenradius der horizontalen und vertikalen Ringe,<br>
+    <b>Number_of_Rings_horizontal</b><br>
+    = Anzahl der horizontalen Ringe,<br>
+    <b>Number_of_Rings_vertical</b><br>
+    = Anzahl der vertikalen Ringe.<br>
+</font>
+ <i>Beispiel: </i>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td  valign="top" bgcolor="#fefefe">
+     <pre><b>#include "shapes3.inc"
+object{Ring_Sphere
+        (1.00,1.02, 0.025,0.025, 12, 16)
+        texture{ pigment{color&lt;1,1,1&gt;}
+                 finish{phong 1
+                        reflection 0.25}
+               } // end of texture
+        scale &lt;1,1,1&gt;
+        rotate &lt;-20,0,-7&gt;
+        translate &lt;0,1.00,0&gt;
+      } // end of object ---------------</b></td></pre></tr></table>
+  </td>
+</tr></table>
+
+<div align="center">
+   <table align="center" border="0" >
+   <tr>
+   <td colspan="1">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+       <td><img src="im/mymcr45c.jpg" border="0" width="320"  height="320"  alt="Ring_Sphere" title="Ring_Sphere"></td>
+     </tr></table>
+   </td>
+   <td colspan="1">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+       <td><img src="im/mymcr45d.jpg" border="0" width="320"  height="320"  alt="Ring_Sphere" title="Ring_Sphere"></td>
+     </tr></table>
+   </td>
+   </tr>
+   <tr>
+       <td> <font size="2">&quot;Ring_Sphere(1.00, 1.02, 0.005, 0.005, 32, 46)&quot; </font></td>
+       <td> <font size="2">&quot;Ring_Sphere(1.03, 1.00, 0.015, 0.005, 30, 15)&quot; </font></td>
+  </tr>
+  </table>
+  </div>
+
+<hr width="90%">
+
+<table align="center" width="95%">
+<tr><td>
+
+<font size="4"><b>Das Makro im Detail:</b></font><br>
+<font size="3">
+Zwei while-Schleifen von Ringen, deren Radien mittels der Kosinus-Funktion berechnet werden:</font>
+<div align="center">
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>//----------------------------  macro Ring_Sphere()
+#macro Ring_Sphere (Rmaj_H, Rmaj_V,
+                    Rmin_H, Rmin_V,
+                    Number_of_Rings_horizontal,
+                    Number_of_Rings_vertical
+                  ) //----------------------------
+#if((Rmin_H&gt;0)&(Number_of_Rings_horizontal&gt;0))
+#declare RingsH1 =
+union{
+#local AngleD = 180/(Number_of_Rings_horizontal+1);
+#local Nr = -90+AngleD; #local EndNr = 90;
+
+#while (Nr &lt; EndNr)
+ #local RingR = Rmaj_H*cos(radians(Nr));
+ #local RingH = Rmaj_H*sin(radians(Nr));
+ torus{RingR,Rmin_H
+       translate&lt;0, RingH,0&gt;}
+#local Nr = Nr + AngleD;
+#end // --------------- end of loop
+}// end union
+#end // of "#if((Rmin_H&gt;0)&(Number_of_Rings_horizontal&gt;0))"
+
+#if((Rmin_V &gt; 0) & (Number_of_Rings_vertical &gt; 0))
+#local RingsV1 =          // vertical
+union{
+#local Nr = 0;
+#declare EndNr = Number_of_Rings_vertical
+#while (Nr &lt; EndNr)
+ torus{Rmaj_V-Rmin_V,Rmin_V
+       rotate&lt;90,0,0&gt;
+       rotate&lt;0, Nr*360/EndNr,0&gt;}
+#local Nr = Nr + 1;
+#end // --------------- end of loop
+}//---------------------------------
+#end // of "#if((Rmin_V&gt;0)&(Number_of_Rings_vertical&gt;0))"
+
+union{
+  #if (Rmin_H &gt; 0) object{ RingsH1} #end
+  #if (Rmin_V &gt; 0) object{ RingsV1} #end
+  sphere{&lt;0, Rmaj_H,0&gt;,Rmin_H}
+  sphere{&lt;0,-Rmaj_H,0&gt;,Rmin_H}
+} // end of union
+#end //---------- end of macro Ring_Sphere()</b></font></td></pre>
+   </tr></table>
+</div>
+
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

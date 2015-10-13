@@ -1,0 +1,57 @@
+//------------------------------------------------------------------------------------
+#include "analytical_g.inc"
+//------------------------------------------------------------------------------------
+
+#declare A  = <-0.80, 0.40,-0.90>; // change point sequence of triangle ABC->ACB if it does not work 
+#declare B  = < 0.80, 1.10, 0.70>;
+#declare C  = < 1.00, 0.20,-0.50>;
+//------------------------------------------------------------------------------------
+sphere{ A, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( A, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ B, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( B, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+sphere{ C, 0.035 pigment{ color rgb<1,0.2,0> } no_shadow }
+object{ Show_Yxz( C, 0.01) pigment{ color rgb<1,1,1>*0.7}  no_shadow }
+
+text { ttf "arial.ttf", "A",0.2,0 
+       scale 0.25 rotate<20,-45,0> translate A+<-0.2,-0.1,-0.1> pigment{ color Red*0.7 } no_shadow}
+
+text { ttf "arial.ttf", "B",0.2,0 
+       scale 0.25 rotate<20,-45,0> translate B+< 0.1,0.1,-0.0> pigment{ color Red*0.7 } no_shadow }
+
+text { ttf "arial.ttf", "C",0.2,0 
+       scale 0.25 rotate<20,-45,0> translate C+< 0.4,0.2,-0.1> pigment{ color Red*0.7 } no_shadow }
+
+
+//------------------------------------------------------------------------------------
+// triangle ABC
+// triangle { A, B, C       pigment{ color Yellow transmit 0.5 }}
+cylinder{ A, B, 0.02  pigment{ color rgb<0.7,0.0,0> } no_shadow }
+cylinder{ B, C, 0.02  pigment{ color rgb<0.7,0.0,0> } no_shadow }
+cylinder{ A, C, 0.02  pigment{ color rgb<0.7,0.0,0> } no_shadow }
+
+//------------------------------------------------------------------------------------
+
+// Incircle of triangle ABC
+// Incircle center.   
+sphere{ Triangle_M_in ( A, B, C ), 0.035 pigment{ color rgb<0.3,1,0> }}
+
+// Incircle line: ...............   
+object{ Circle_Line_in ( A, B, C,  0.025) pigment{ color  rgb<1,0.6,0> }}
+
+
+// Incircle area .............   
+object{ Circle_Disc_in ( A, B, C ) pigment{ color rgb<1,0.6,0> transmit 0.5 }}
+
+
+ // Incircle radius   
+ // = Triangle_R_in( A, B, C ) 
+text{ ttf "Arial.ttf"  concat( "Triangle_R_in= ",str( Triangle_R_in( A, B, C ), 6, 3 )," ") , 0.1, 0       
+       scale 0.15 rotate<20,-44,0> translate <0.35,0.1,-1.50>  pigment{ color Green*0.50} no_shadow
+     }
+ 
+
+//------------------------------------------------------------------------------------
+

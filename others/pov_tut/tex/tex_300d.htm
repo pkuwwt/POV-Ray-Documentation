@@ -1,0 +1,210 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=645");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_300e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_300i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_300f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_100d.htm">texture Syntax</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_300d.htm"--><b>normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330d.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110d.htm">Farben Do-it-Yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700d.htm">Muster</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp; &nbsp; Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+  &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750d.htm">Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+
+<table><tr>
+ <td>
+ <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/pattern_ripples2n.jpg" width="80" height="80" alt="color rgb" border="0"></td></tr></table>
+ </td>
+ <td align="left"><h3><b> &nbsp; Zur Syntax von &quot;texture&quot;</b></h3>
+   <font size="5"><b><p> &nbsp; &quot;normal {.....}&quot; </p>
+ </td>
+</tr></table>
+<hr>
+
+<table align="middle" width="90%">
+<tr>
+ <td>
+ <h2><nobr></nobr></h2>
+ </td>
+ <td>
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/normal1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/normal1t.jpg" border="0" width="320"  height="240"
+       alt="Sample normal 640x480" title="Samples normal 640x480"></a>
+      </td></tr></table>
+ </td>
+</tr>
+<tr>
+ <td colspan="2"><font size="2">
+<p align="justify">
+<b>&quot;normal {.....}&quot;</b> beschreibt die scheinbare Oberfl&auml;chen-Rauhheit<br>
+(Sie kann angegeben werden, falls nicht erscheint die K&ouml;rperoberfl&auml;che
+v&ouml;llig glatt) <br>
+Wesentlich ist es zu wissen, da&szlig; diese Effekte nur ein mehr oder weniger rhythmisches
+Kippen des Normalenvektors (&quot;Lot auf die Fl&auml;che&quot;) auf der Oberfl&auml;che hervorrufen. Nach
+diesem &quot;Lot&quot; (mathematisch: Normalenvektor auf die Oberfl&auml;chenstelle) werden die Reflexion
+des Lichts und eventueller Schattenfall auf der Oberfl&auml;che berechnet (Reflexionswinkel =
+Einfallswinkel, jeweils zum Lot hin gemessen). Die Siluettenlinie (K&ouml;rperumri&szlig;) der
+K&ouml;rper bleibt davon (leider!) unber&uuml;hrt! Es handelt sich nur um eine scheinbare Verbeulung
+der K&ouml;rperoberfl&auml;che, die nur durch ein rechnerisch verf&auml;lschtes Reflexionsverhalten
+vorget&auml;uscht wird! Eine echt deformierte Oberfl&auml;che erh&auml;lt man nur wenn man &quot;Isosurface&quot;-Objekte
+(sogenannte &Auml;quipotentialfl&auml;chen) verwendet - dies dauert jedoch wesentlich l&auml;nger!<br></p>
+<table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr>
+  <td><img src="n/normal_31t.jpg" border="0" width="150" height="150" alt="Sample normal" title="Samples normal 2"></td>
+  <td><img src="n/normal_36t.jpg" border="0" width="150" height="150" alt="Sample normal" title="Samples normal 2"></td>
+  <td><img src="n/normal_55t.jpg" border="0" width="150" height="150" alt="Sample normal" title="Samples normal 2"></td>
+  </tr></table>
+<p align="justify"><font size="2">Sollte sich beim Ausprobieren eines Musters, sei es als Muster f&uuml;r &quot;color_map&quot; oder als
+&quot;normal&quot;-Muster kein nennenswerter Effekt zeigen, so hilft oft eine Ma&szlig;stabsver&auml;nderung innerhalb der
+Klammern von &quot;normal{ ... }&quot; weiter:
+z.B. &quot;scale 0.1&quot; oder &quot;scale 0.01&quot;! Oft sind die Muster so dimensioniert, da&szlig; sie
+auf einer L&auml;nge von einer Einheit eben nur eine einzige Welle oder Beule zeigen!  </font></p>
+</td></tr>
+<tr>
+ <td>
+  <p align="justify"><font size="2">
+  Ein anderes Problem kann durch einige Muster, die konzentrisch um den Ursprung &lt;0,0,0&gt;
+  mit Kugelsymmetrie definiert sind, verursacht werden. Auf einer Kugel um &lt;0,0,0&gt; ist kein Effekt zu sehen.
+  Bewegt man das Muster etwas mit translate&lt;0,1,0&gt;,
+  so ist der Mustereffekt erkennbar ohne dass man einen Quader von der Kugel abziehen mu&szlig;. </font>  </p>
+ </td>
+ <td>
+  <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('n/norml_59i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="n/normal_59t.jpg" border="0" width="150" height="150"
+       alt="Beispiel normal 600x600" title="Bespiel normal 600x600"></a>
+      </td></tr></table>
+
+ </td>
+</tr></table>
+<p align="justify"><font size="-1">
+
+
+Vgl. auch <a href="tex_750d.htm" target="_new">
+  Liste der Musterfunktionen f&uuml;r &quot;normal&quot;</b></a>
+ (&quot;pigment and normal patterns&quot;)</font></p>
+</td></tr></table></div><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

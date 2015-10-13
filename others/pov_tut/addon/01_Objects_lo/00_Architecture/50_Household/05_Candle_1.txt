@@ -1,0 +1,25 @@
+//----------------------------------------------------------------------------- textures
+// optional texture declarations -------------------------------------------------------
+#declare Candle_Texture = 
+  texture{ pigment{ rgb<1,1,0.95>*1.3}
+           normal { bumps 0.15 scale <0.05,0.1,0.05>*2} 
+           finish { reflection {0.02}}
+         } // end texture
+#declare Candle_Wax_Liquid_Texture = 
+  texture{ pigment{ rgbf<1,0.9,0.6,0.05>*1.3}
+           normal { bumps 0.15 scale <0.05,0.1,0.05>*2} 
+           finish { reflection {0.15}}
+         } // end texture
+// -------------------------------------------------------------------------------------
+#include "Candle_1.inc"
+// -------------------------------------------------------------------------------------
+object{ Candle_1( 0.5,  // Shining_On, 0= off, >0 = intensity of candle light 
+                  1.0,  // Candle_Height, relative to diameter (d=1) 
+                  1.2,  // Candle_Intensity,  
+                  0.7   // Candle_Flame_Scale
+                ) // -------------------------
+        scale 1
+        rotate<0,0,0>
+        translate<0.55,0,0> 
+      } // ------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

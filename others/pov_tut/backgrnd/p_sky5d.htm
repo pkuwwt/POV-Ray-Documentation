@@ -1,0 +1,232 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="language" content="de">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="realistische Himmel, Raytracing, PoV, povray, POVRAY, POV-Ray 3.6, 3D-Graphik, 3D-Grafik, Computergrafik, Computergraphik">
+<meta name="Description" content="Realistische Himmel mit POV-Ray">
+<title>Realistische Himmel mit POV-Ray - Teil 2</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#CAC8C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<table border="0" cellspacing="5" width="100%">
+<tr>
+ <td align="left"><h6 align="left"><a name="top"></a><nobr>Beschreibungen und Beispiele
+     zum Raytracer POV-Ray</nobr> <br> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td>
+ <td align="right">
+ <a href="p_sky5.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_sky5.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_sky5i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky5i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_sky5f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_sky5f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+</tr>
+</table></div>
+<hr>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000d.htm">Realistische Himmel</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_sky1d.htm">Realistische Himmel</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky2d.htm">Teilweise bew&ouml;lkt</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3d.htm">Wolkenschichten</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4d.htm">Gestapelte Ebenen</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky5d.htm"--><b>Schatten werfend</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky6d.htm">Wolken aus media</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70d.htm">Sonnenuntergang</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7d.htm">Sternenhimmel</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky8d.htm">Skydomes + Skymaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky9d.htm">Skyboxes + Cubemaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky10d.htm">HDRI Umgebungen</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">Realistische Himmel mit POV-Ray</h2>
+<p align="center"><font size="-1"><a href="p_sky000d.htm">Inhalt</a> |
+<a href="p_sky1d.htm">1</a> | <a href="p_sky2d.htm">2</a> |
+<a href="p_sky3d.htm">3</a> | <a href="p_sky4d.htm">4</a> |
+<!--a href="p_sky5d.htm"-->5</a> | <a href="p_sky6d.htm">6</a> |
+<a href="p_sky70d.htm">7.0</a> | <a href="p_sky7d.htm">7.1</a> | <a href="p_sky8d.htm">8</a> |
+<a href="p_sky9d.htm">9</a> | <a href="p_sky10d.htm">10</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" cellspacing="10">
+<tr><td valign="top">
+    <h3 align="left"><b>Schatten werfende Wolken:</b></h3>
+    <h5 align="justify">Um diesen Effekt zu erhalten muss die Sonne zwischen der h&ouml;chsten
+        teilweise transparenten Wolkenschicht und der Ebene mit dem Himmelsblau plaziert werden.<br>
+        Um eine genaue Positionierung der Sonne in einer Wolkenl&uuml;cke zu erleichtern,
+        kann man eine spiegelnde Kugel mit einem Phong-Glanzlicht (damit die Sonnenposition sichtbar wird!) verwenden.
+        z.B. ein Kugel mit &quot;Polished_Chrome&quot;-Texture.
+        </h5>
+    </td>
+
+
+   <td>
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><a href="javascript:ShowImage('im/sky_4im.htm')"
+             onMouseover="window.status='ShowSingleImage';return true"
+             onMouseOut="window.status=''">
+            <img src="im/p_sky06t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="F&uuml;r gr&ouml;&szlig;ere Aufl&ouml;sung auf Bild klicken!" titel="F&uuml;r gr&ouml;&szlig;ere Aufl&ouml;sung auf Bild klicken!"></a></td>
+     </tr></table>
+    <h5 align="center">Wolken, die auf dem Untergrund Schatten werfen.<br>
+    <font size="-1">F&uuml;r gr&ouml;&szlig;ere Aufl&ouml;sung auf Bild klicken!</font> <br>
+    <font size="-1"><a href="pov/p_sky06.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font></h5>
+
+   </td>
+</tr>
+<tr>
+   <td valign="top">
+   <font size="4"><b>Schatten werfende Wolken</b></font><br>
+   <font size="3">Eine L&ouml;sung des Horizont-Problems ohne &quot;fog&quot;.</b></font><br>
+    <font size="2">Hierzu teilen wir den Himmel in 2 Teile auf:<br>
+    1: Eine sky_sphere mit Farb&uuml;bergang von Wei&szlig; zu Blau.<br>
+    2: Eine riesige Kugel mit einem transparenten Wolkenmuster. Wegen des gro&szlig;en Radius
+    erschein diese nahezu als eine Ebene und die Wolken werden zum Horizont hin kleiner.<br>
+    Mit dieser L&ouml;sung m&uuml;ssen wir die light_source f&uuml;r unsere Sonne jetzt nicht mehr unter dem Wolkenlevel halten.
+    Aber wir m&uuml;ssen die Sonne oder die Wolken verschieben, sollen die Wolkenschatten Bereiche unserer Szene treffen, die wir
+    voll im Sonnenlicht haben wollen.<br>
+    Optional l&auml;&szlig;t sich ein &quot;no_shadow&quot; der Wolkenschicht hinzuf&uuml;gen.
+    </font>
+   <table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// sky -----------------------------------
+sky_sphere{
+ pigment{ gradient y
+   color_map{
+   [0.0 color rgb&lt;1,1,1&gt; ]
+   [0.3 color rgb&lt;0.18,0.28,0.75&gt;*0.8]
+   [1.0 color rgb&lt;0.15,0.28,0.75&gt;*0.5]}
+   scale 1.05
+   translate&lt;0,-0.05,0&gt;
+ } // end pigment
+} // end sky_sphere
+
+// spherical cloud layer ----------------
+#declare R_planet = 6000000;
+#declare R_sky    = R_planet + 2000;
+sphere{ &lt;0, -R_planet, 0&gt, R_sky hollow
+  texture{
+     pigment{ bozo turbulence 0.75
+              octaves 6  omega 0.7
+              lambda 2  phase 0.15
+         color_map {
+         [0.00 color rgb &lt;1,1,1&gt;*0.95]
+         [0.05 color rgb &lt;1,1,1&gt;*1.25]
+         [0.15 color rgb &lt;1,1,1&gt;*0.85]
+         [0.55 color rgbt&lt;1,1,1,1&gt;]
+         [1.00 color rgbt&lt;1,1,1,1&gt;]
+       } // end color_map
+       translate&lt; 3, 0,-1&gt;
+       scale&lt;0.3, 0.4, 0.2&gt;*3
+     } // end pigment
+     #if(version = 3.7)
+           finish{emission 1 diffuse 0}
+     #else finish{ ambient 1 diffuse 0}
+     #end
+     scale 3000
+  } // end texture
+   // no_shadow // optional!!
+ } // end of sphere ---------------------</b></td></pre></tr></table>
+
+   </td>
+    <td>
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/p_sky03a_a.gif" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+     </tr></table>
+     <div align="center"><font size="2">Wolkenhimmel mit <b>phase 0.00 bis 0.15</b>.</font><br>
+    <font size="2"><a href="pov/p_sky03a.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font></div>
+
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/p_sky03a_2.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+     </tr></table>
+     <div align="center"><font size="2">Wolken, die Schatten werfen.</font><br>
+
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/p_sky03a_3.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+     </tr></table>
+     <div align="center"><font size="2">Die Wolken von oberhalb.<br>
+          Anmerkung: Die &quot;Wolkenschicht&quot; besitzt keinerlei Dicke!</font><br>
+
+   </td>
+</tr>
+<tr><td colspan="2">
+<p align="right"><font size="-1"><a href="p_sky000d.htm">Inhalt</a> |
+<a href="p_sky1d.htm">1</a> | <a href="p_sky2d.htm">2</a> |
+<a href="p_sky3d.htm">3</a> | <a href="p_sky4d.htm">4</a> |
+<!--a href="p_sky5d.htm"-->5</a> | <a href="p_sky6d.htm">6</a> |
+<a href="p_sky70d.htm">7.0</a> | <a href="p_sky7d.htm">7.1</a> | <a href="p_sky8d.htm">8</a> |
+<a href="p_sky9d.htm">9</a> | <a href="p_sky10d.htm">10</a></b></font></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,16 @@
+//----------------------------------------------------------------------------- textures
+#declare Window_2_Texture = 
+   texture { // pigment{ color rgb< 0.75, 0.5, 0.30>*0.5 } // brown  
+             pigment{ color rgb<1,1,1>*1.2 } 
+             finish { phong 0.1} 
+           } // end of texture
+//---------------------------------------------------------------------------------------
+#include "Window_2.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Window_2 ( 0.60 ) // Window_Open: 0= down closed; 1 = up opened  
+        texture { Window_2_Texture } 
+        scale <1,1,1>*1
+        translate<0.00, 0.00, 0.00>}
+
+// #declare Window_Hole = object { Window_2_Hole scale <1,1,1>*1}
+//---------------------------------------------------------------------------------------

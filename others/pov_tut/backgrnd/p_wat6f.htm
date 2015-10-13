@@ -1,0 +1,256 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="fr">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="eau r&eacute;aliste, , raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, infographie 3D, computer graphics">
+<meta name="Description" content="Comment cr&eacute;er de l'eau r&eacute;aliste avec POV-Ray">
+
+<title>Eau r&eacute;aliste avec POV-Ray - part 6</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=550");
+ New.focus();  }
+-->
+</SCRIPT>
+
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <td align="right"><nobr>
+ <a href="p_wat6.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_wat6.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_wat6d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_wat6d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_wat6i.htm"><font size="2">Italiano</font></a>
+ <a href="p_wat6i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr> - <a href="p_wat1f.htm"><font size="+1">Eau r&eacute;aliste</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_wat1f.htm">opaque r&eacute;fl&eacute;chissante</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat2f.htm">la mer agit&eacute;e</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat3f.htm">transparence partielle</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat4f.htm">Un tourbillon</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat5f.htm">Un verre d'eau</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_wat6f.htm"--><b>L'eau par l'isosurface</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat7f.htm">L'eau de mer isosurface</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h1 align="center">Eau r&eacute;aliste avec POV-Ray</h1>
+<p align="center"><b>part
+<a href="p_wat1f.htm"> 1</a> | <a href="p_wat2f.htm"> 2</a> | <a href="p_wat3f.htm"> 3</a> |
+<a href="p_wat4f.htm"> 4</a> | <a href="p_wat5f.htm"> 5</a> | <!--a href="p_wat6f.htm"--></b> 6</a><b> |
+<a href="p_wat7f.htm"> 7</a></b></p>
+
+<div align="center">
+<table border="0" width="90%" align="center" cellpadding="4">
+<tr><td valign="top">
+    <p align="justify"><font size="+1"><b>L'eau pour une piscine par l'isosurface</b></font><br>
+    <font size="-1">Nous commencons avec d&eacute;clarer une form de piscine<br>  sans l'eau
+  et nous d&eacute;finissons la position de la piscine. <br>
+ <font size="-2">(Nous utilisons ici des variables pour les dimensions et une transformation par 'transform'. <br>
+ C'est parce que nous avons besoin de ces choses aussi pour l'eau dans la piscine.
+ Pour les d&eacute;finitions de la texture de piscine et la mati&egrave;re de l'eau voir le fichier de la sc&egrave;ne.)</font></font><br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>//---------------------- Pool dimensions
+#declare Pool_X = 5.00;
+#declare Pool_Y = 2.00;
+#declare Pool_Z = 8.00;
+#declare Border = 0.50;
+//------------------ Pool transformation
+#declare Pool_Trans =
+  transform{ rotate&lt;0,0,0&gt;
+             translate&lt;-2.5,0.10,-6&gt;
+           } // end of transforme
+//---------------------------------------</b></td></pre></tr></table>
+<font size="-1">Alors nous faisons un trou &agrave; la position de la piscine :</front>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>//---------------------------------------
+#declare Pool_Inner =
+box{&lt;0,-Pool_Y,0&gt;,&lt;Pool_X,Pool_Y,Pool_Z&gt;
+   } //----------------------------------
+#declare Pool_Outer =
+  box{&lt;-Border, -Pool_Y-0.01, -Border&gt; ,
+      &lt;Pool_X+Border,0.001,Pool_Z+Border&gt;
+     } //--------------------------------
+//---------------------------------------
+#declare Pool =
+difference{
+ object{ Pool_Outer texture{Pool_Tex}}
+ object{ Pool_Inner texture{Pool_Tex}}
+} // end of Difference
+//---------------------------------------
+// grass ground
+difference{
+ plane{ &lt;0,1,0&gt;, 0
+        texture{
+         pigment{color rgb&lt;.35,.65,0&gt;*.7}
+         normal { bumps 0.75 scale 0.015}
+         finish { phong 0.1 }
+        } // end of texture
+      }// end plane
+ object{ Pool_Outer
+         texture{ Pool_Tex }
+         transform Pool_Trans
+       } // end of hole for the pool
+} // end of ground
+//---------------------------------------
+// placing of the pool:
+object{ Pool transform Pool_Trans }
+//---------------------------------------</b></td></pre></tr></table>
+</td>
+<td valign="top">
+   <br>
+   <br>
+    <table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/IsoWaterPool_01_hole.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Hole for the pool" title="Hole for the pool"></a></td></tr>
+        </table><font size="-1"><b>Un trou pour la piscine.</b></font>
+
+    <br>
+   <br>
+   <br>
+    <table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/IsoWaterPool_01_pool.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Pool without water" title="Pool without water"></a></td></tr>
+        </table><font size="-1"><b>Une piscine sans l'eau</b></font>
+     </td>
+</tr>
+<tr><td valign="top">
+    <font size="-1">Puis nous d&eacute;clarons une fonction 3d par un motif <br>
+     pour la modulation d'une isosurface:</font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// pigment pattern for modulation
+#declare Pigment_01 =
+ pigment{ bumps
+          turbulence 0.20
+          scale &lt;3,1,3>*0.12
+          translate&lt;1,0,0>
+ } // end pigment
+//---------------------------------------
+#declare Pigment_Function_01 =
+function {
+  pigment { Pigment_01 }
+} // end of pigment function
+//---------------------------------------
+isosurface {
+ function{
+   y
+   +Pigment_Function_01(x,y,z).gray*0.2
+ } // end of function
+ contained_by{
+   box{&lt;-Border,-Pool_Y-1.01,-Border>,
+       &lt; Pool_X+Border,1, Pool_Z+Border>
+      } //
+    } // end contained_by
+ accuracy 0.01
+ max_gradient 2
+ material{ Water_Material }
+ // dont scale this isosurface!
+ // scale the Pigment_01 if necessary!
+ transform  Pool_Transformation
+} // end of isosurface ------------------
+//---------------------------------------</b></td></pre></tr></table>
+<br>
+   <font size="-1"><b>Pour plus des d&eacute;tails voir le fichier de la sc&egrave;ne.<br>
+   Description de cette sc&egrave;ne pour POV-Ray <br>
+   &nbsp; &nbsp; &nbsp;   <a href="povw/IsoWaterPool_01.pov">IsoWaterPool_01.pov</a></b></font>
+<br>
+<br>
+</td>
+<td valign="top">
+   <table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/IsoWaterPool_00s.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Water in a Pool" title="Water in a Pool"></a></td></tr>
+        </table><font size="-1"><b>Une isosurface pour l'eau de piscine</b></font>
+    <br>
+    <br>
+    <table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_isowatpool_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/IsoWaterPool_01s.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Isosurface Pool Water" title="Isosurface Pool Water"></a></td></tr>
+        </table><font size="-1"><b>L'eau de piscine par isosurface</b></font>
+<br>
+<br>
+<p align="right"><b>part
+<a href="p_wat1f.htm"> 1</a> | <a href="p_wat2f.htm"> 2</a> | <a href="p_wat3f.htm"> 3</a> |
+<a href="p_wat4f.htm"> 4</a> | <a href="p_wat5f.htm"> 5</a> | <!--a href="p_wat6f.htm"--></b> 6</a><b> |
+<a href="p_wat7f.htm"> 7</a></b></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

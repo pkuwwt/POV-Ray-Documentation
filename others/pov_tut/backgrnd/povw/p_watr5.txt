@@ -1,0 +1,83 @@
+// POV-Ray 3.6 Scene File "p_watr5.pov"
+// created by  Friedrich A. Lohmueller, 2004
+// homepage:  http://www.f-lohmueller.de
+// email:  Friedrich.Lohmueller_at_t-online.de
+#include "colors.inc"
+#include "textures.inc"
+#include "glass.inc"
+
+global_settings { assumed_gamma 1.0 }
+
+// camera -----------------------------------------------------------
+#declare Cam0 = camera {/*ultra_wide_angle*/ angle 45 
+                        location  <0.0 , 1.0 ,-3.0>
+                        look_at   <-0.5 , 1 , 0.0>}
+camera{Cam0}
+// sun ---------------------------------------------------------------
+light_source{<1500,2500,-2500> color White}
+// sky ---------------------------------------------------------------------
+plane{<0,1,0>,1 hollow  
+       texture{ pigment{ bozo turbulence 0.76
+                         color_map { [0.5 rgb <0.20, 0.20, 0.9>]
+                                     [0.6 rgb <1,1,1>]
+                                     [1.0 rgb <0.1,0.1,0.1>]}
+                         scale 3.5 translate<8,0,11>
+                       }
+                finish {ambient 1 diffuse 0} }      
+       scale 10000}
+//--------------------------------------------------------------------------
+   
+// fog ---------------------------------------------------------------
+fog{fog_type   2   distance 85  color rgb<1,0.99,0.9>
+    fog_offset 0.1 fog_alt  2 turbulence 0.2}
+//--------------------------------------------------------------------
+plane{ <0,1,0>, 0  translate<0,-1.5,0>
+       texture{pigment{color LightWood*0.7}
+               normal {bumps 0.25 scale 0.05}
+               finish {ambient 0.15 diffuse 0.85}}}
+
+
+
+plane{ <0,1,0>, 0 
+       texture{ Green_Glass // pigment { rgb <0.5, 0.6, 0.5> } 
+                normal { ripples 0.7 scale 1.25
+                         turbulence 1.5 translate< 1.5,0,2>}
+                finish { ambient 0.05 diffuse 0.55 
+                         brilliance 3.0 phong 0.8 phong_size 120
+                         reflection 0.3 }
+              }
+      interior{ I_Glass }
+     }
+//--------------------------------------------------------------------
+#declare Stake_H = 1.75;
+#declare Stake_R = 0.10;
+#declare Stake =   // Pfahl       
+union{
+ 
+ cylinder {<0,-Stake_H,0>,<0,Stake_H,0>,Stake_R translate<0,0,0>
+          texture{pigment{spiral1 2 
+                          color_map{[0.0 White*1.1]
+                                    [0.5 White*1.1]
+                                    [0.5 rgb<1,0,0>]
+                                    [1.0 rgb<1,0,0>]}
+                                    rotate<90,0,0>
+                                    scale<1,0.3,1>}
+                  normal {bumps 0.3 scale 0.025}
+                  finish {ambient 0.05 diffuse 0.95 
+                          phong 1 reflection 0.05}
+                  }
+           }
+ union{
+   cylinder{<0,-0.05,0>,<0,0.05,0>,Stake_R+0.02 translate<0,Stake_H.0>}
+   sphere {<0,0,0>,Stake_R+0.02 translate<0,Stake_H+0.1,0> }
+   torus {1.0,0.1 scale 0.12  translate<0,Stake_H+0.01,0>}
+       
+   texture{pigment{color White}
+           normal {bumps 0.3 scale 0.025}
+           finish {ambient 0.15 diffuse 0.85 phong 1 reflection 0.05}}}
+}// end of Stake --------
+//---------------------------------------------------------------------
+object{Stake scale 1 rotate<0,0,5> translate <-1.5,0,3>}      
+           
+//----------------------------------------------------------------- end
+

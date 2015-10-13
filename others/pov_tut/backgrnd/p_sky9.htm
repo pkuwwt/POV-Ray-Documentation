@@ -1,0 +1,269 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="language" content="en-us">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="Cubic Environment Mapping, skyboxes, cubemaps, skies, realistic, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, 3D-Graphic, computer graphics">
+<meta name="Description" content="Cubic Environment Mapping with skyboxes and cubemaps, Creating realistic skies with POV-Ray">
+<title>How to create realistic skies with POV-Ray - part 9 - Cubic Environment Mapping: skyboxes and cubemaps</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#CAC8C0" text="#505030"  link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<!-- header -->
+<table border="0" width="95%"><tr>
+ <td><h6><nobr>Descriptions and Examples for the POV-Ray raytracer</nobr><br>
+         <nobr>by Friedrich A. Lohm&uuml;ller</nobr> </td></h6>
+ <td align="right">
+ <a href="p_sky9d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_sky9d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_sky9i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky9i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_sky9f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_sky9f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+</tr>
+</table></div>
+<hr>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000e.htm">Realistic Skies</b></a></font></nobr><br>
+ &nbsp; &nbsp; - <a href="p_sky1.htm">A Realistic Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky2.htm">Partly Cloudy Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3.htm">Layers of Clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4.htm">Stacked planes clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky5.htm">Shadow Casting</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky6.htm">Massiv media clouds</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70.htm">Sunset Sky</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7.htm">Starry Skies</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky8.htm">Skydomes + skymaps</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky9.htm"--><b>Skyboxes + cubemaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky10.htm">HDRI environment</b></a><br>
+
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">How to create Realistic Skies with POV-Ray</h2>
+<p align="center"><font size="-1"><a href="p_sky000e.htm">Overview</a> |
+<a href="p_sky1.htm">1</a> | <a href="p_sky2.htm">2</a> |
+<a href="p_sky3.htm">3</a> | <a href="p_sky4.htm">4</a> |
+<a href="p_sky5.htm">5</a> | <a href="p_sky6.htm">6</a> |
+<a href="p_sky70.htm">7.0</a> | <a href="p_sky7.htm">7.1</a> | <a href="p_sky8.htm">8</a> |
+</b> <!--a href="p_sky9.htm"-->9</a><b> | <a href="p_sky10.htm">10</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" valign="top" cellspacing="10">
+<tr><td valign="top">
+    <h3 align="left"><b>Cubic Environment Mapping</b><br>
+                     <b>A Skybox with cube mapping:</b></h3>
+    <h5 align="justify">This is another method of the environment mapping technique,
+     also called cubic environment mapping or panorama cube mapping.<br>
+     It's a common method used often in 3D games.<br>
+     A <b>skybox</b> is a big cube
+     with an 360&deg; image of a sky and a ground (&quot;skymap&quot;) mapped on the inside of this cube,
+     with a 90&deg;x90&deg; view on each face of the cube.
+     This method of environment mapping avoids the problem of the extrem distortions
+     at the poles of a sphere with spherical mapping.<br>
+     A freeware program to display and examine the Skybox Environment
+     is the <a href="../skyboxer/skyboxer_1.htm" target="_new">SkyboxViewer</b></a> by Gerd Platl. <br>
+     <br>
+
+     A Skyboy can be realizised in POV-Ray by <b>uv_mapping of an image_map on a box</b>.<br>
+     We can use uv_mapping for mapping a texture in the XY plane  from &lt;0,0&gt; to &lt;1,1&gt;
+     to the surface of a box. The image is wrapped around the box, as shown in opposite images.
+<br>
+     For using a <b>360&deg; panoramic photo</b> or image as a skymap with a skybox
+    <nobr>(with POV-Ray 3.6/3.7)</nobr>  we need to correct the gamma of the image/photo
+    with the following macro:<br>
+
+
+<br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// Macro for the adjustment of images
+// for image_map with assumed_gamma = 1.0 ;
+#macro Correct_Pigment_Gamma(Orig_Pig, New_G)
+  #local Correct_Pig_fn =
+      function{ pigment {Orig_Pig} }
+  pigment{ average pigment_map{
+   [function{ pow(Correct_Pig_fn(x,y,z).x, New_G)}
+               color_map{[0 rgb 0][1 rgb&lt;3,0,0&gt;]}]
+   [function{ pow(Correct_Pig_fn(x,y,z).y, New_G)}
+               color_map{[0 rgb 0][1 rgb&lt;0,3,0&gt;]}]
+   [function{ pow(Correct_Pig_fn(x,y,z).z, New_G)}
+               color_map{[0 rgb 0][1 rgb&lt;0,0,3&gt;]}]
+   }}
+#end //
+// "image_map" gamma corrected:
+//    Correct_Pigment_Gamma(
+//    pigment{ image_map{ jpeg "colors.jpg"}}
+//    , Correct_Gamma)
+//------------------------------------------------
+
+box{ &lt;-1, -1, -1&gt;,&lt; 1, 1, 1&gt;
+ texture{ uv_mapping
+   Correct_Pigment_Gamma( // gamma correction
+     pigment{
+     image_map{ jpeg "Cubemap_2_2048x1536.jpg"
+                map_type 0    // planar
+                interpolate 2 // bilinear
+                once //
+              } //  end of image_map
+    } // end of pigment
+    , 2.2) //, New_Gamma
+    finish { ambient 1 diffuse 0 }
+ } // end of texture
+scale 10000
+} // end of skybox --------------------</b></td></pre></tr></table><br>
+
+
+</h5>
+
+</td>
+<td>
+    <h6 align="center">
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/Cubemap_2_320x240.jpg" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="Sky_map" titel="Sky_map"></a></td>
+     </tr></table>A 360&deg; <b>panorama cube map</b><br>
+                  for cubic mapping on a POV-Ray box.<br>
+
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/CubeMappingSequence_1.jpg" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="box uv_mapping sequence" titel="box uv_mapping sequence"></a></td>
+     </tr></table> <b>Sequence of how</b> <b>a texture</b> <br>
+                   in the XY plane  from &lt;0,0&gt; to &lt;1,1&gt;<br>
+                   <b>is wrapped around the box</b> in POV-Ray.<br>
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/CubeMappingWrapping_1d_64.gif" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="Sample scene skymap" title="Sample scene skymap"></a></td>
+     </tr></table>Cube map wrapping around a box.<br>
+
+     <table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// uv_mapping for box - POV-Ray syntax
+box{ &lt;-1,-1,1&gt;,&lt;1,1,1&gt;
+     texture{ uv_mapping  pigment{ ... }
+              uv_mapping  normal { ... }
+              uv_mapping  finish { ... }
+            } // end texture
+     scale 1
+     rotate&lt;0,0,0&gt;
+}//--------------------</b></td></pre></tr></table>
+ <b>uv_mapping syntay</b> for a box in POV-Ray
+
+
+   </td></h6>
+</tr>
+<tr>
+ <td colspan="2">
+ <table align="center" width="600"><tr><td>
+    <h6 align="center">
+     <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/Cubemap_2_inside_1.jpg" width="240" height="180"
+              border="0" hspace="0" vspace="0"
+             alt="Cubemap_2_inside_1.jpg" title="Cubemap_2_inside_1.jpg"></a></td>
+     </tr></table>Skymap mapped on a box in POV-Ray
+
+ </td></h6>
+ <td><h6 align="center">
+   <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/Cubemap_2_inside.gif" width="240" height="180"
+              border="0" hspace="0" vspace="0"
+             alt="Cubemap_2_inside.gif 499kB" title="Cubemap_2_inside.gif 499kB"></a></td>
+     </tr></table>Animated 360&deg; panorama with a skybox.
+ </td></h6>
+ </tr>
+ <tr><td colspan="2"><h5 align="center">
+     <font size="-1">Description of this scenery for POV-Ray (not animated)<br>
+     <a href="pov/Cubemap_2_inside_1.txt">Cubemap_2_inside_1.txt</a> or
+     <a href="pov/Cubemap_2_inside_1.pov">Cubemap_2_inside_1.pov</a></font><br>
+
+    <font size="-1">Download of the according cubic map in 2048x1536 pixel (768 kB)<br>
+    here: <a href="im/Cubemap_2_2048x1536.jpg" target="_new">Cubemap_2_2048x1536.jpg</a></font>
+ </td></h5></tr>
+ </table>
+
+ </td>
+</tr>
+<tr><td colspan="2">
+<p align="right"><font size="-1"><a href="p_sky000e.htm">Overview</a> |
+<a href="p_sky1.htm">1</a> | <a href="p_sky2.htm">2</a> |
+<a href="p_sky3.htm">3</a> | <a href="p_sky4.htm">4</a> |
+<a href="p_sky5.htm">5</a> | <a href="p_sky6.htm">6</a> |
+<a href="p_sky70.htm">7.0</a> | <a href="p_sky7.htm">7.1</a> | <a href="p_sky8.htm">8</a> |
+</b> <!--a href="p_sky9.htm"-->9</a><b> | <a href="p_sky10.htm">10</a></b></font></p>
+
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+  <table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

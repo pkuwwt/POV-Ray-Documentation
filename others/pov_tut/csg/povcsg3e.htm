@@ -1,0 +1,183 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray, povray, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, csg, Constructive Solid Geometry, boolean algebra, union, merge, intersection, difference, inverse">
+<meta name="description" content="tutorial on CSG - Constructive Solid Geometry with POV-Ray - part 3">
+<title>csg tutorial - Constructive Solid Geometry with POV-Ray - part 3</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1">b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg3i.htm"><font size="2">Italiano </font></a>
+        <a href="povcsg3i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg3f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="povcsg3f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg3.htm"><font size="2">Deutsch </font></a>
+        <a href="povcsg3.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1e.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1e.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1e.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2e.htm">union + merge</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg3e.htm"--><b>difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4e.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4e.htm">+ invers</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg5e.htm">clipped_by</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg6e.htm">coincident surfaces</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg7e.htm">textures in CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Boolean Algebra with solids - part III</h5>
+<h2 align="center">About &quot;difference&quot;</h2>
+
+<table border="0" width="90%" align="center"><tr><td>
+<div align="center">
+
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td><img src="boole_d.gif" width="130" height="100"></td>
+        <td width="150" height="100"><br><br>
+                                     <b>difference{...}</b></td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_d.jpg" width="130" height="98"></td></tr></table>
+        </td>
+    </tr>
+</table>
+</div>
+
+<p align="justify">
+With the &quot;difference&quot; statement you can subtract from a basic object all subsequent
+objects from the first one. With this statement it is possible to drill out holes and shape out
+any kind of notches or beveling you want. This statement is like a milling machine the used
+milling head has the shape of the objects which are following the base object.
+The &quot;hole&quot; gets the texture from the subtracted object. That's the theory.<br>
+The following <b>insidious trap</b> - not only for beginners - is a pitfall which produces many
+frustrations:<br>
+This is <b>the problem of the &quot;coincident surfaces&quot;</b>. If the object to subtract does not
+has surfaces which are not unambigious outside the object from which to subtract, then the program
+is not able to decide wether a point of this surface is subtracted or not. And most times some
+strange colored speckles appear where the hole is supposed to be. This is no error of the program.
+This effect has his origine in numerical problems because of inavoidable rounding by computers.<br>
+Therefore it is essential to <b>avoid coincident surfaces</b>!<br>
+<font size="-1">(See also: &quot;<a href="povcsg6e.htm">Coincident Surface Problems</a>&quot;)</font><br>
+<br>
+</p>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+<b>The Defect:</b>
+ <table align="center" border="2" bgcolor="#EEEEEE"
+  bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><pre><b>difference{
+box {&lt;-0.5,0.0,-0.1&gt;,&lt; 0.5,1.0,0.1&gt;
+     texture{ pigment{ color rgb&lt;1,0.65,0&gt;}
+              finish { phong 1.0 }}
+    }
+box {&lt;-0.3,0.2,-0.1&gt;,&lt; 0.3,0.8,0.1&gt;
+     texture{ pigment{ color Magenta}
+              finish { phong 1.0 }}
+    }
+rotate&lt;0,-30,0&gt; translate&lt;0,0,0&gt;}</b></td></pre></tr></table>
+        </td>
+        <td><img src="boole_x1s.gif" width="200" height="200">
+        </td>
+    </tr>
+    <tr>
+        <td>
+<b>The Solution:</b>
+ <table align="center" border="2" bgcolor="#EEEEEE"
+  bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><pre><b>#declare <b>D = 0.001; // just a little bit!</b>
+difference{
+box{ &lt;-0.5,0.0,-0.1&gt;,&lt; 0.5,1.0,0.1&gt;
+     texture{ pigment{ color rgb&lt;1,0.65,0&gt;}
+              finish { phong 1.0 }}
+   }
+box{ &lt;-0.3,0.2,-0.1<b>-D</b>&gt;,&lt; 0.3,0.8,0.1<b>+D</b>&gt;
+     texture{ pigment{ color Magenta }
+              finish { phong 1.0 }}
+   }
+rotate&lt;0,-30,0&gt; translate&lt;0,0,0&gt;}</b></td></pre></tr></table>
+        </td>
+        <td><img src="boole_x2s.gif" width="200" height="200">
+        </td>
+    </tr>
+</table>
+
+</tr></td></table>
+</div>
+<p>
+
+</td></tr></table> <!-- global-->
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1e.htm">CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2e.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg3e.htm"-->difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4e.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5e.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6e.htm">coincident surfaces</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7e.htm">textures</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

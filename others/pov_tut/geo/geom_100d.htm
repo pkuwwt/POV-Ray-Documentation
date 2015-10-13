@@ -1,0 +1,184 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Elementare Geometrie f&uuml;r Raytracing mit POV-Ray, Gleichseitiges Dreieck">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Elementare Geometrie f&uuml;r Raytracing mit POV-Ray, Gleichseitiges Dreieck">
+<title>Elementare Geometrie f&uuml;r Raytracing mit POV-Ray - Gleichseitiges Dreieck</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Elementare Geometrie</b></font>
+      <font size="-1"> f&uuml;r Raytracing</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_100e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="geom_100e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="geom_100i.htm"><font size="2">Italiano</font></a>
+        <a href="geom_100i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_100f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="geom_100f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="geom_000d.htm">Geometrie Grundlagen</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000d.htm">f&uuml;r Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050d.htm">Rechtwinkliges Dreieck</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070d.htm">Pythagoras</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080d.htm">Trigonometrie Basis</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090d.htm">Kosinussatz</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_100d.htm"--><b>Gleichseitiges Dreieck</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150d.htm">Regul&auml;res Polygon</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200d.htm"--><i>Polyeder</i></b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200d.htm">Regul&auml;rer Tetraeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250d.htm">Regul&auml;rer Oktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300d.htm">W&uuml;rfel &amp; Quader</b></b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500d.htm">Regul&auml;rer Dodekaheder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700d.htm">Regul&auml;rer Ikosaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260d.htm">Kuboktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270d.htm">Oktaederstumpf</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280d.htm">Rhombenkuboktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800d.htm">Ikosaederstumpf</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000d.htm"--><i>Kreise</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100d.htm">Tangierende Kreise</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200d.htm">Interne Tangenten</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300d.htm">Externe Tangenten</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%"><tr>
+   <!--td><img src="im/" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><img src="im/" width="120" height="120" border="0" hspace="10" vspace="0"></td-->
+   <td><h2><b>Das gleichseitige Dreieck</b></td></h2>
+</tr></table>
+<font size="-1"><i>Im folgenden wird f&uuml;r die Quadratwurzel einer Zahl, der englische Ausdruck &quot;sqrt(</i>ZAHL<i>)&quot; <br>
+gem&auml;&szlig; dem von POV-Ray verwendeten Syntax geschrieben.</i></font><br>
+<font size="-2">Anmerkung: Um eine <b>Kollision mit fest vordefinierten Bezeichnern und in POV-Ray reservierten W&ouml;rter</b> zu vermeiden,<br>
+wird dringend empfohlen als Bezeichner f&uuml;r Variable und Objekte, welche vom Benutzer definiert werden, <br>
+<b> nur W&ouml;rter zu verwenden, die mit einem Gro&szlig;buchstaben beginnen.</b><br>
+D.h. man verwende &quot;Ri&quot; anstatt &quot;r&quot;
+und man verwende &quot;H&quot; anstelle von &quot;h&quot;.</font><br>
+&nbsp;<br>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="90%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td><b>Dimensionen</b><br>
+ <font size="-1">L&auml;nge der Dreiecksgrundseite: <b>a</b>.<br>
+ Alle Innenwinkel: <b>60&deg;</b></font></td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top">
+ <font size="-1">Die H&ouml;he
+ eines gleichseitigen Dreiecks:</font><br>
+
+ <b>h =  1/2 * sqrt(3) * a ;</b>  <font size="-1">oder</font> <br>
+ <nobr><b>h =  sin (radians(60)) * a ;</b></nobr><br>
+ <br>
+ <font size="-1"><nobr>Die H&ouml;he des Inkreismittelpunktes O oder</nobr><br>
+ der Radius des Inkreises
+ eines gleichseitigen Dreiecks:</font><br>
+ <b> r =  1/6 * sqrt(3) * a ;</b><br>
+ <br>
+ <font size="-1">Der Radius des Umkreises
+ eines gleichseitigen Dreiecks:</font><br>
+ <b> R =  1/3 * sqrt(3) * a ;</b>
+ </td>
+ </tr>
+</table>
+
+</div>
+
+</td>
+<td width="50%">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Equilateral_Triangle_1.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Ein gleichseitiges Dreieck</font>
+
+
+
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

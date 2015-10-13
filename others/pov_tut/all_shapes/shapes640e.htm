@@ -1,0 +1,198 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes640i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes640i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes640f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes640f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes640d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes640d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Overview<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000e.htm">Shapes in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400e.htm">Other Shapes by macros</b></a></nobr><br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+<br>
+<a href="shapes000e.htm">Other Shapes</b></a><br>
+&nbsp; -  <a href="shapes620e.htm">blob</b></a><br>
+&nbsp; -  <a href="shapes630e.htm">sphere_sweep</b></a><br>
+&nbsp; -&gt;<!--a href="shapes640e.htm"--><b>julia_fractal</b></a><br>
+&nbsp; -  <a href="shapes500e.htm">Regulare Polyhedron</b></a><br>
+<nobr>&nbsp; -  <a href="shapes530e.htm">Paraboloid, Hyperboloid</b></a></nobr><br>
+&nbsp; -  <a href="shapes540e.htm">Polynomial equations</b></a><br>
+&nbsp; -  <a href="shapes550e.htm">Cubic &amp; Quartic shapes</b></a><br>
+&nbsp; -  <a href="shapes570e.htm">Parametric shapes</b></a><br>
+<br>
+<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+<nobr><a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900e.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<div align="center">
+<table width="90%" align="center" border="0" cellpadding="10">
+<tr>
+ <td colspan="2"><!-- global -->
+<p><font size="5">&quot;julia_fractal{ ... }&quot;</font> -
+  creates a 3D slice of a 4D julia fractal object</p>
+
+</td></tr>
+<tr>
+ <td valign="top">
+      julia_fractal{ ... quaternion ... } <br>&nbsp;<br>
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/julia_fractal01.jpg" border="0" width="320"  height="240"
+                   alt="julia_fractal" title="julia_fractal"></a></td></tr></table>
+ </td>
+ <td>
+ <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>julia_fractal{ &lt;-0.083,0.0,-0.83,-0.025&gt;
+   quaternion // quaternion hypercomplex
+   cube             // Types: sqr  cube
+   max_iteration 8
+   precision 20     // 10...500
+
+   texture{
+     pigment{ color rgb&lt;0.85,1,0.1&gt;}
+     finish { phong 1}
+   } // end of texture
+   scale&lt;1,1,1&gt;
+   rotate&lt;0,0,0&gt;
+   translate&lt;0,0,0&gt;
+} // end of julia_fractal ----------</b></td></pre></tr></table>
+</td>
+</tr>
+<tr>
+ <td valign="top">
+      julia_fractal{ ... quaternion ... } <br>&nbsp;<br>
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/julia_fractal02.jpg" border="0" width="320"  height="240"
+                   alt="julia_fractal" title="julia_fractal"></a></td></tr></table>
+ </td>
+ <td>
+ <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>julia_fractal{ &lt;-0.083,0.0,-0.83,-0.025&gt;
+   quaternion  // quaternion hypercomplex
+   sqr         // types: sqr cube
+   max_iteration 8
+   precision 20       // 10...500
+
+   texture{
+     pigment{ color rgb&lt;0.85,0.1,0.3&gt;}
+     finish { phong 1}
+   } // end of texture
+   scale&lt;1,1,1&gt;
+   rotate&lt;0,0,0&gt;
+   translate&lt;0,0,0&gt;
+} // end of julia_fractal ----------</b></td></pre></tr></table>
+</td>
+</tr>
+<tr>
+ <td valign="top">
+      julia_fractal{ ... hypercomplex ... } <br>&nbsp;<br>
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/julia_fractal03.jpg" border="0" width="320"  height="240"
+                   alt="julia_fractal" title="julia_fractal"></a></td></tr></table>
+ </td>
+ <td>
+ <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>julia_fractal{ &lt;-0.083,0.0,-0.83,-0.025&gt;
+   hypercomplex // quaternion, hypercomplex
+   sqr              // Types: sqr  cube
+   max_iteration 8
+   precision 20     // 10...500
+
+   texture{
+     pigment{ color rgb&lt;1,0.8,0.1&gt;}
+     finish { phong 1}
+   } // end of texture
+   scale&lt;1,1,1&gt;
+   rotate&lt;0,0,0&gt;
+   translate&lt;0,0,0&gt;
+} // end of julia_fractal ----------</b></td></pre></tr></table>
+</td>
+</tr>
+</table>
+
+</td></tr></table><!-- global -->
+
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

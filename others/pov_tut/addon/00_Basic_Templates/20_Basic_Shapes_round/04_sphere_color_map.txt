@@ -1,0 +1,19 @@
+
+sphere { <0,0,0>, 1.00 
+         texture { pigment{ gradient <0,1,0> turbulence 3.5
+                            color_map{
+                                       [0.0 color rgb<0.2,0.8,0.0>]
+                                       [0.2 color rgb<0.6,0.8,0.0>]
+                                       [0.4 color rgb<0.0,0.3,0.0>]
+                                       [0.5 color rgb<0.0,0.5,0.0>]
+                                       [0.6 color Clear           ]
+                                       [0.9 color Clear           ]
+                                       [1.0 color rgb<0.2,0.8,0.0>]
+                                      } // end of color_map                            
+                            scale 2 
+                          } // end of pigment                                     
+                   normal { bumps 0.5 scale 0.015} 
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture
+          scale<1,1,1>  rotate<0,0,0>  translate<0,1,0>  
+       }  // end of sphere ----------------------------------- 

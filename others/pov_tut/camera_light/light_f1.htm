@@ -1,0 +1,373 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Types de cam&eacute;ra avec POV-Ra, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7,Infographie, Synth&egrave;se d'image 3D">
+<meta name="keywords" content="Raytracing, povray, POV-Ray tutoriel, POV-Ray 3.6.2, POV-Ray 3.7, Infographie, Synth&egrave;se d'image 3D">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Types de Cam&eacute;ra avec POV-Ray</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+     <h6><nobr>Introduction au langage de description sc&egrave;nique POV-Ray raytracer</nobr>
+     <nobr> &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+<br>par Friedrich A. Lohm&uuml;ller <br>
+ <div align="center"><font size="+1">&nbsp; &nbsp; &nbsp; &nbsp;<b>Cam&eacute;ras, sources de lumi&egrave;re et d&eacute;tails avec POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="light_e1.htm"><font size="2">English</font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="light_e1.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="light_i1.htm"><font size="2">Italiano</font></a>
+        <a href="light_i1.htm"><img src="flag_ita.gif" alt="Deutsch" title="Deutsch"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="light_d1.htm"><font size="2">Deutsch</font></a>
+        <a href="light_d1.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+        </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#basic"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="camlit_f1.htm">Cam&eacute;ra et Lumi&egrave;re</b></a><font size="2"><br>
+ &nbsp;&nbsp;</font><a href="camlit_f1.htm">avec POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="camlit_f1.htm">Table des mati&egrave;res</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<!--a href="light_f1.htm"--><b>Types de Lumi&egrave;re</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f1.htm#point_light">point light</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f1.htm#Spotlight">spotlight</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f1.htm#cylindrial">cylindrical spotlight</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f1.htm#parallel">lumi&egrave;re parall&egrave;le</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f1.htm#area">area light</b></a>, ombres douces</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_f2.htm">Lumi&egrave;re - Sp&eacute;cialit&eacute;s</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f2.htm#looks_like">Sources visibles</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f2.htm#shadowless">shadowless light_source</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f2.htm#projected">projected_through</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_f2.htm#fade_out">Fading</b> - lumi&egrave;re att&eacute;nu&eacute;e</a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_f1.htm">Types de Cam&eacute;ra</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f1.htm#perspective">Perspective cam&eacute;ra</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f1.htm#ultra_wide_angle">Ultra_wide_angle</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f1.htm#orthographic">Orthographic cam&eacute;ra</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f1.htm#cylindrical">Cylindrical cam&eacute;ra</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f1.htm#spherical">Spherical cam&eacute;ra</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f1.htm#fisheye">Fisheye cam&eacute;ra</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f1.htm#panoramic">Panoramic cam&eacute;ra</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f1.htm#omnimax">Omnimax cam&eacute;ra</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_f2.htm">Cam&eacute;ra - Sp&eacute;cialit&eacute;s</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f2.htm#aspect_ratio">Aspect ratio</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f2.htm#focal_blur">Focal blur</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_f2.htm#perturbated">Cam&eacute;ra et normal</b></a><br>
+<br>
+<nobr>&nbsp;<a href="arc_persp_f1.htm">Perspective architecturale</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="no_f1.htm">Faire voir et cacher</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_f1.htm#no_shadow">no_shadow</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_f1.htm#no_reflection">no_reflection</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_f1.htm#no_image">no_image</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_f1.htm#no_body">no_body</b></a><br>
+
+
+&nbsp;<br>
+<!--nobr>&nbsp; -  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a></nobr><br-->
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" align="center" width="95%">
+<tr>
+<td valign="top" colspan="2">
+  <font size="+2"><b>Types de sources de lumi&egrave;re</b></font><hr>
+<img src="warn.gif" border="0" width="32" height="30">
+<font size="-1"> <b>Attention :</b> Il est possible de installer un nombre &agrave; peu pr&egrave;s infinit de sources de lumi&egrave;re
+dans une sc&egrave;ne, mais nous devons contr&ocirc;ler nous m&ecirc;me particuli&egrave;rement avec des sc&egrave;nes volumineuses !
+Pourquoi ? Le temps pour rendre un image est presque proportionnel &agrave; le nombre des of sources de lumi&egrave;re
+et le plaisir avec POV-Ray est inversement proportionnel antiproportional &agrave; le temps
+ n&eacute;cessaire pour rendre un image !</font><br>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+   <font size="+1"><a name="point_light">
+   <b>La lumi&egrave;re ponctuelle omnidirectionnel :</b></a></font> <br>
+    <font size="-1"> &nbsp; ( tr&egrave;s loin comme il solei )</font>
+
+  <table align="center" border="2"  bgcolor="#efefef"  cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>light_source{ &lt;2000,2000,  0&gt; color White}</b>
+   // Position &lt;x,y,z&gt;, color of the light</td></pre></tr>
+    </table>
+<font size="-1">Cette lumi&egrave;re se disperse dans tous les sens. D'une grande distance le rayons semblent parall&egrave;les
+comme les rayons du solei. Le horizon est &eacute;clair&eacute; bon.</font>
+</td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_far.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Une lumi&egrave;re ponctuelle simple de loin</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+   <font size="+1"><a name="point_light">
+   <b>La lumi&egrave;re ponctuelle :</b></a></font><font size="-1"> &nbsp; ( pr&egrave;s comme une lampe )</font>
+
+   <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+          bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>light_source{ &lt;1.4, 1, 0&gt;  color rgb&lt;1,1,1&gt;
+              // fade_distance 0.75
+            } </b></td></pre></tr>
+    </table>
+<font size="-1">Cette lumi&egrave;re se disperse dans tous les sens comme une ampoule nue.
+&Agrave;ux objets pr&egrave;s cette lumi&egrave;re fai une ombre grand de forme conique.<br>
+L'horizon semble plus sombre  que avec une lumi&egrave;re plus loin.<br>
+Ajouter quelque peu de fade_distance pour att&eacute;nuer ('fading') la lumi&egrave;re plus realiste est une bonne id&eacute;e! ( voir: 'Fading' )</font>
+</td>
+<td align="center">
+  <br>
+   <table align="center" border="2"  bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_near.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Une lumi&egrave;re ponctuelle simple de pr&egrave;s</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+   <font size="+1"><a name="Spotlight"><b>Le spot conique :</b></a></font><font size="-1"> - une lumi&egrave;re conique d&eacute;croissant vers les bords.</font>
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>light_source{ &lt;0,0,0&gt; color rgb &lt;1,1,1&gt; &nbsp;&nbsp;
+              <font color="#aa0000">spotlight</b>
+              point_at&lt;1,0,0&gt;
+              radius 20  // hotspot
+              tightness 100
+              falloff 60
+              translate&lt; 1.3, 3, 0&gt;</font>
+            }</b></td></pre>
+         </tr>
+    </table> <font size="-1">
+ <b>radius</b> :  hotspot, fully lighten center, degrees<br>
+ <b>tightness</b> : falloff (~1 to 100), lower=softer, higher=sharper. <br>
+ <b>falloff</b> : outer light circle, degrees  </font>
+</td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_spot.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Un spot avec un c&ocirc;ne<br>
+    d&eacute;croissant vers les bords</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+ <font size="+1"><a name="cylindrial"><b>Le spot 'cylindrical' :</b></a></font><br>
+ <font size="-1">Un faisceau de lumi&egrave;re parall&egrave;le avec bords coupant ou
+  d&eacute;croissant vers les bords<nobr> ('laser beam').</nobr></font><br>
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>light_source{ &lt;0,0,0&gt; color rgb &lt;1,1,1&gt;
+              <font color="#aa0000">cylinder
+              point_at&lt;0, 0, 0&gt;
+              radius 20
+              tightness 100
+              falloff 40</font>
+              translate&lt; 1.3, 3, 0 &gt;
+            } </b></td></pre>
+ </tr>
+  </table><font size="-1">
+ <b>radius</b> :  centre hotspot, fully lighten center, degrees<br>
+ <b>tightness</b> : falloff (~1 to 100), lower=softer, higher=sharper. <br>
+ <b>falloff</b> : outer light circle, degrees  </font>
+</td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_cylinder.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Un spot cylindrique<br>
+     d&eacute;croissant vers les bords.</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+<td valign="top">
+ <font size="+1"><a name="parallel"><b>Une lumi&egrave;re avec des rayons parall&egrave;les:</b></a></font><br>
+ <font size="-1">Une lumi&egrave;re avec des rayons parall&egrave;les comme la lumi&egrave;re du solei.</nobr></font><br>
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>light_source{ &lt;2,1,0&gt; color rgb &lt;1,1,1&gt;
+              <font color="#aa0000">parallel
+              point_at&lt;1, 0, 0&gt; </font>
+            } </b></td></pre>
+ </tr>
+  </table><font size="-1">Le mot cl&eacute; 'parallel' peut &ecirc;tre utilis&eacute; avec tout type de source de lumi&egrave;re.
+  <b>Note:</b> Pour les lumi&egrave;res ponctuelles,  le mot cl&eacute; 'point_at' doit venir apr&egrave;s le mot 'parallel'.
+</td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_parallel.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Une lumi&egrave;re avec des rayons parall&egrave;les</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+<td valign="top">
+ <font size="+1"><a name="area"><b>L'aire lumineuse: 'area_light'</b></a></font><br>
+  <font size="-1">Un 'area_light' cr&eacute;e des ombres douces comme d'une source de lumi&egrave;re &eacute;tendue.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre>
+<b>light_source{ &lt;0,0,0&gt;
+              color rgb&lt;1,1,1&gt;
+              <font color="#aa0000">area_light</b>
+              &lt;5, 0, 0&gt; &lt;0, 0, 5&gt;
+              4,4 // numbers in directions
+              adaptive 0  // 0,1,2,3...
+              jitter // random softening</font>
+              translate&lt;10, 10,  0&gt;
+             }//---- end of area_light</b></td>
+    </tr>
+    </table><font size="-1">
+  Cette source de lumi&egrave;re s'&eacute;tende entre <br>
+ l'axe 1 =&lt;5,0,0&gt; et l'axe 2 = &lt;0,0,5&gt;,<br>
+ avec 4 x 4 = 16 lumi&egrave;res.<br>
+ <img src="warn.gif" border="0" width="32" height="30">
+ <b>Attention</b>: Cette lumi&egrave;re sp&eacute;ciale peut dilater consid&eacute;rablement le temps de rendering!
+ (Ce le temps est proportionnel au nombre des lumi&egrave;res !)</font></br>
+</td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_area.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Une lumi&egrave;re du type 'area_light'<br>
+                      avec les ombres douces.</b></font>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_area_4x4.jpg" width="240" height="128" ></td></tr></table>
+  <font size="-2">Une lumi&egrave;re du type 'area_light'<br>
+                  &lt;5, 0, 0&gt; &lt;0, 0, 5&gt;, 4x4</font>
+</td>
+</tr>
+
+<tr>
+<td valign="top">
+<br>
+ <font size="+1"><a name="area"><b>L'aire lumineuse: 'area_light' pour un tube fluorescent</b>: </a></font><br>
+  <font size="-1">Une lumi&egrave;re avec 'area_light' que cr&eacute;e les ombres douces comme d'une source extendue lin&eacute;airement.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre>
+<b>light_source{ &lt;0,0,0&gt;
+              color rgb&lt;1,1,1&gt;
+              <font color="#aa0000">area_light</b>
+              &lt;0.03, 0, 0&gt; &lt;1.47, 0, 0&gt;
+              1,10 // numbers in directions
+              adaptive 0  // 0,1,2,3...
+              jitter // random softening</font>
+              <font color="#800000">looks_like{
+                          object{ Tube }
+                        }</font>
+              translate&lt;0, 1.50,  0&gt;
+             }//---- end of area_light</b></td>
+    </tr>
+    </table><font size="-1">
+Cette source de lumi&egrave;re s'&eacute;tende<br>
+le long de l'axe des x &lt;0.03, 0, 0&gt; &lt;1.47, 0, 0&gt;,<br>
+une dimension de l'array mis &agrave; 1 .<br>
+<br>
+ <b>T&eacute;l&eacute;chargement du fichier de la sc&egrave;ne pour POV-Ray</b><br>
+ <a href="pov/light_area_tube.pov">'light_area_tube.pov'</a>.<br>
+ Cette sc&egrave;ne a besoin du fichier include '<b>chair_s00.inc</b>',<br>
+ cela on peut t&eacute;l&eacute;charger ici:<br>
+ <a href="../objects/obj_220e.htm">Objets pr&ecirc;t &agrave; l'usage pour POV-Ray - Meubles</a>
+
+</td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_area_tube_C.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Une lumi&egrave;re du type 'area_light' <br>
+                     pour un tube fluorescent.</b></font>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_area_tube_1x10.jpg" width="240" height="128" ></td></tr></table>
+  <font size="-2">Une lumi&egrave;re du type 'area_light', <br>
+                  &lt;0.03, 0, 0&gt; &lt;1.47, 0, 0&gt;, 1x10</font>
+</td>
+</tr>
+
+
+</table>
+<hr>
+</div>
+<table border="0" align="center" width="95%"><tr><td>
+<p><font size="-1">
+<b><a href="camlit_f1.htm">Index</a> |
+   <!--a href="light_f1.htm" --><b>Lumi&egrave;res</a> |
+   <a href="light_f2.htm" ><b>Sp&eacute;cialit&eacute;s lumi&egrave;re</a> |
+   <a href="camera_f1.htm">Cam&eacute;ras</a> |
+   <a href="camera_f2.htm">Sp&eacute;cialit&eacute;s cam&eacute;ra</a> |
+   <a href="arc_persp_f1.htm"><nobr>Perspective architecturale</nobr></a> |
+   <a href="no_e1.htm">Voir et cacher</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+ <td align="right"  width="25%">
+&nbsp;
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="Textures avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=645");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Conception de Surface en &raquo;texture&laquo; avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_300e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_300i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_300d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_300d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+ &nbsp;  <b>Conception de Surface</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000f.htm">Coleurs et Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp;<a href="tex_001f.htm">Syntaxe de texture</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001f.htm">Exemple de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200f.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; <b>&gt;</b> <!--a href="tex_300f.htm"--><b>normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330f.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2f.htm">Exemples normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400f.htm">finish{ ... } </b></a><br>
+ <nobr>&nbsp; &nbsp; <a href="tex_210f.htm">Textures pr&ecirc;tes-&agrave;-l'emploi</b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="tex_210f.htm">R&egrave;gles de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150f.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160f.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110f.htm">Couleurs en do-it-yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110f.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120f.htm">Transparence</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700f.htm">Motifs - Patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700f.htm">types de motifs</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500f.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550f.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs rayures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750f.htm">Listes de Motifs</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750f.htm">Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755f.htm">Motifs par hasard</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760f.htm">Motifs Fractal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Autres motifs</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780f.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780f.htm">warp mapping</b></a><br> -->
+ &nbsp; &nbsp; <a href="tex_790f.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800f.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800f.htm">méthodes de mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820f.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830f.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840f.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850f.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860f.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870f.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880f.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890f.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890f.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900f.htm">Votre textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+
+<table><tr>
+ <td>
+ <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/pattern_ripples2n.jpg" width="80" height="80" alt="color rgb" border="0"></td></tr></table>
+ </td>
+ <td align="left"><h3><b> &nbsp; Sur la syntaxe des composantes de &raquo;texture&laquo; :</b></h3>
+   <font size="5"><b><p> &nbsp; &quot;normal {.....}&quot; </p>
+ </td>
+</tr></table>
+<hr>
+
+
+<table align="middle" width="90%">
+<tr><td>
+</td><td>
+ <table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/normal1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/normal1t.jpg" border="0" width="320"  height="240"
+       alt="Sample normal 640x480" title="Samples normal 640x480"></a>
+      </td></tr></table>
+</td>
+</tr>
+<tr><td colspan="2">
+<p align="justify"><font size="2">
+<b>&quot;normal {.....}&quot;</b> &eacute;crit la rugosit&eacute; de la surface
+(Une optione! Si n'est pas defini la surface de l'objet para&icirc;t totalment lisse!)
+Est important de savoir que cet effet est seulement caus&eacute; par une inclinasion
+plus ou moins rythmique de vecteur normale
+utilis&eacute; pour le calcul de les r&eacute;flexions de la lumi&egrave;re &agrave; la surface.
+Cet effet ne deforme pas la g&eacute;om&eacute;trie du trac&eacute; d'un objet. Par cons&eacute;quent aussi
+avec des bosses (&raquo;bumps&laquo;)
+il trac&eacute; d'une sph&egrave;re reste une balle parfaitment sph&eacute;rique !
+L'effet &raquo;normal&laquo; est seulement une simulation (tr&egrave;s effetive!)
+que (malheureusement!) ne modifie pas
+la forme g&eacute;om&eacute;trique d'un objet. Pour recevoir une surface vraiment deform&eacute;e
+on a besoin d'un objet &raquo;isosurface&laquo;,
+mais cet objet est plus plus lent.
+</font>
+<br></p>
+<table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr>
+  <td><img src="n/normal_31t.jpg" border="0" width="150" height="150" alt="Sample normal" title="Samples normal 2"></td>
+  <td><img src="n/normal_36t.jpg" border="0" width="150" height="150" alt="Sample normal" title="Samples normal 2"></td>
+  <td><img src="n/normal_55t.jpg" border="0" width="150" height="150" alt="Sample normal" title="Samples normal 2"></td>
+  </tr></table>
+<p align="justify"><font size="2">&nbsp; &nbsp; Si pendant faire passer des tests &agrave; ces effets de motifs pour
+&quot;color_map&quot ou &quot;normal&quot; et on ne peut voir aucun resultat visible, il peut &ecirc;tre secourable
+utiliser une &eacute;chelle r&eacute;duite dans les accolades de l'instruction.
+ Par ex.: &quot;normal{ ...   scale 0.01 }&quot;.<br>
+Souvent l'&eacute;chelle des motifs sont &agrave; tel point que l'effet para&icirc;t
+</font></p>
+<tr>
+ <td width="60%">
+  <p align="justify"><font size="2"> &nbsp; &nbsp;Un autre probl&egrave;me
+  peut e &ecirc;tre caus&eacute; par le fait que quelques motifs
+  sont concentrique autour de  &lt;0,0,0&gt;. Sur la surface d'une sph&eacute;re &agrave; &lt;0,0,0&gt;
+  on ne peut voir aucun effet visible.
+  Dans ce case on doit mouvoir le motif un peu par ex. translate&lt;0,1,0&gt; pour obtenir un effet visible.
+  </font></p>
+ </td>
+ <td width="40%">
+  <table align="center" border="4" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('n/norml_59i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="n/normal_59t.jpg" border="0" width="150" height="150"
+       alt="Sample normal 600x600" title="Samples normal 600x600"></a>
+      </td></tr></table>
+
+</td></tr></table>
+<p align="justify">
+<font size="-1">Voyez aussi :  <a href="tex_750f.htm" target="_new">
+<b>Liste des functions pour motifs (&raquo;pattern&laquo;) dans &raquo;normal&laquo;</b></a>
+ (&quot;pigment and normal patterns&quot;)</font></p>
+</td></tr></table><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

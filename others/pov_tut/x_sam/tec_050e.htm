@@ -1,0 +1,270 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=665,height=515");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="tec_050i.htm"><font size="2">Italiano </font></a>
+        <a href="tec_050i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <!--a href="tec_050f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="tec_050f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        -->
+        <a href="tec_050d.htm"><font size="2">Deutsch </font></a>
+        <a href="tec_050d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+<!--&nbsp; -  <a href="sam_400e.htm">Plants</b></a><br-->
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_750e.htm">Ladder</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_700e.htm">Pylons</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_710e.htm">Railing</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_720e.htm">Bridge</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_730e.htm">Tubes</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_731e.htm">Tube Fork</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_732e.htm">Tube Stopcock</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_400e.htm">Chain</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_450e.htm">Coil of Wire</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_500e.htm">Torpedo</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_600e.htm">Cruise Missile</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_900e.htm">Rocket</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_190e.htm">Wheel</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_100e.htm">Truck</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_850e.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_800e.htm">Airplanes</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_550e.htm">Canoe</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="tec_050e.htm"--><b>Guitar Body</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_010d.htm">7-Segment Display</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_020e.htm">Ribbon Cable</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_030e.htm">Cable Harness</b></a><br>
+<!-- &nbsp; &nbsp; -  <a href="sam_000e.htm">Ships</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_000e.htm">Railroad</b></a><br>-->
+
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="80%" align="center">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="0"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><!--a href="javascript:ShowImage('guitar/guitar_im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''"-->
+              <img src="guitar/guitar.gif" width="80" height="100" border="0"
+                   alt="guitar" title="guitar"></a></td>
+    </tr></table><br>
+
+  </td>
+ <td align="left" valign="top">
+  <h1 align="left"><b>Guitar</b><br>
+       <font size="-1">The Construction of a Guitar Body.<br>
+ <h6>Objects: &nbsp;&nbsp; prism.<br>
+     Methods: cubic_spline.
+ </td></h6>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+</table>
+
+
+<div align="center">
+<table width="90%" align="center" cellpadding="10">
+ <tr>
+  <td colspan="2"><h3><b>The Construction in Details:</b></h3>
+        <h5 align=justify>We can acchieve the basic shape of a guitar body  by a prism
+        (generalized also with a curved line at the base surface!)
+        if we use a cubic spline curve for the mantle.
+        <br>
+        For the definition of an appropriate prism we need a row of
+        base points to model the outline of the guitar body.
+        The placing of these base point is a matter of sensibility -
+        this means: we have to us the method of &quot;trial and error&quot;.<br>
+        If we design the body of the guitar in the xy plane, then it's
+        shape is symmetric to the yz plane.
+        The easiest way to define the points symmetric to the yz plane
+        by declaring them as variable depending form their mirror image.
+   </td></h5>
+ </tr>
+ <tr><td><h5 align="justify"><pre><b>// ----------- Dimensions
+#declare G_z = 0.15;// -z value
+// Silhuette right side:
+// ---- <x,y> values -----
+#local S0 = &lt; 0.00, 0.00&gt;;
+#local S1 = &lt; 0.16, 0.05&gt;;
+#local S2 = &lt; 0.22, 0.20&gt;;
+#local S3 = &lt; 0.15, 0.35&gt;;
+#local S4 = &lt; 0.17, 0.48&gt;;
+#local S5 = &lt; 0.12, 0.56&gt;;
+#local S6 = &lt; 0.00, 0.60&gt;;
+// vectors of 2 dim. S(u,v).
+// If S= S(Xs,Yx),
+// then S.u=Xs u. X.v=Ys.
+
+// automatic mirror image
+// Silhuette left side:
+#local S7 = &lt;-S5.u, S5.v&gt;;
+#local S8 = &lt;-S4.u, S4.v&gt;;
+#local S9 = &lt;-S3.u, S3.v&gt;;
+#local S10 = &lt;-S2.u, S2.v&gt;;
+#local S11 = &lt;-S1.u, S1.v&gt;;
+//--------------------------
+// linear prism in y direction:
+prism {
+   linear_sweep
+   cubic_spline
+   G_z, 0.00, 15
+
+   S0, S1, S2, S3, S4,
+   S5, S6, S7, S8, S9,
+   S10, S11,
+   S0, // last = first
+   S1, // 2 more !!!
+   S2
+   texture { /*as you like it!*/}
+   rotate&lt;-90,0,0&gt;
+   //roatates the prism in in plane xy!!!
+   translate&lt;0.0,0,0&gt;
+} // end of prism ------------</pre></td>
+<td valign="top">
+      <table border="3"  bgcolor="#EFEFEF" cellpadding="0"
+                bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><img src="guitar/guitar0.jpg" width="300" height="420" hspace="0" vspace="0"></td>
+         </tr></table>
+  <h5 align="center"><b>The Body of the Guitar:</b>
+     The base points of the silhuette line are marked by little spheres.
+     The points from S7 to S11 in symmetric positions are marked green.</h5>
+  <h5 align="center">Click here for the complete scene file for <nobr>POV-Ray:</nobr><br>
+   <a href="guitar/guitar0.txt">&quot;guitar.txt&quot;</a> or
+   <a href="guitar/guitar0.pov">&quot;guitar.pov&quot;</a>
+   </h5>
+</td></tr>
+
+
+<tr><td colspan="2">
+      <h5 align="justify"> If we define the prism from above to be an object called &quot;Body_Shape&quot; then
+      we can model the body of the guitar with this basic shape.<br>
+      Different textures on front/backside and on the sides, we can get, if we scale this basic shape in different scales
+      and add them together by &quot;union&quot;. For this the first shape has to show its surface the frontside only and the other shape
+      has to show its surface only at the lateral parts of the outside of this &quot;union&quot;.<br>
+      After adding the shapes in such a way, we can subtract a smaller sized basic shape and a cylinder
+      to cave out the inside and to get the hole in the body of the guitar.
+ </td></h5>
+</tr>
+<tr>
+ <td valign="top">
+   <h5 align="justify">This want to show the following example:
+<pre><b>//-------- The Guitar_Body
+difference{
+union { //the positiv parts
+ object{Body_Shape
+  scale&lt; 1.010,1.010,  0.95&gt;
+  translate&lt;0,-0.005*G_y, -0.05*G_z/2&gt;
+  texture{G_Texture_outside1} }
+ object{Body_Shape
+  texture{G_Texture_outside  } }
+}// end of the union of
+ //the positiv parts of the body
+
+// caving out the inside
+object{Body_Shape
+  scale&lt;0.99,0.99,1-0.01*(1/G_z)&gt;
+  translate&lt;0,0.005,-0.005>
+  texture{G_Texture_inside}}
+// the hole - das Loch
+cylinder{&lt;0,0,-0.1&gt;,&lt;0,0,0.1&gt;,G_Hole_R
+  translate&lt;0,G_Hole_y,-G_z>
+  texture{G_Texture_outside}
+  } // end of cylinder  ----------
+}// end of difference  -----------
+// ------------ end of Guitar_Body
+</b></pre>
+      </td></h5>
+<td>
+       <table border="5"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+         <tr><td><img src="guitar/guitar1.jpg" width="300" height="420" hspace="0" vspace="0"></td>
+         </tr></table>
+    <h5 align="center">Scene file for <nobr>POV-Ray:</nobr><br>
+    <a href="guitar/guitar1.txt">&quot;guitar.txt&quot;</a> or
+    <a href="guitar/guitar1.pov">&quot;guitar.pov&quot;</a>
+    </h5>
+ </td>
+</tr>
+</table>
+</div>
+
+&nbsp;<br>
+
+<!-- <h5><b>Download of all ready-made POV-Ray objects</b><br>
+ zipped up (with all include files, example files and with <br>
+ the according Insert Menu Add-ons for comfortable use!)<br>
+ at the <a href=""><b>Download Page</b></a>-->
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

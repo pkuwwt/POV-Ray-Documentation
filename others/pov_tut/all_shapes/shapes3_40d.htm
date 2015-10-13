@@ -1,0 +1,284 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Objekte mit POV-Ray 3.6 / 3.7 - Objekte und Macros aus meiner Include-Datei shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Deutschland">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, 3D-Graphik, Computergrafik, Raytracing Beschreibungen, Povray Anleitungen, Anf&auml;ger, Fortgeschrittene, geometrische Objekte, CSG, Macros">
+<meta name="description" content="Definieren geometrischer Objekte durch Macros f&uuml;r das Freeware-Raytracing-Programm POV-Ray 3.6, povray, pov">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+ <hr size="3"><div align="center"><font size="+2">Geometrische K&ouml;rper in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes3_40e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes3_40e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes3_40i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes3_40f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_40f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes3_40f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000d.htm"--><b>Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+&nbsp;<br>
+<br>
+<nobr><a href="shapes3_0000d.htm">Objekte in &quot;shapes3.inc&quot;</b></a></nobr><br>
+-  <a href="shapes3_11d.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20d.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21d.htm">Segment_of_Object</b></a><br>
+<b>&gt;</b><!--a href="shapes3_40d.htm"--><b>Egg</b></a><br>
+<b>&gt;</b><!--a href="shapes3_40d.htm"--><b>Egg_Shape</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42d.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45d.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80d.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22d.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60d.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65d.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+<div align="center">
+<font size="2">Geometrische K&ouml;rper aus meiner Include-Datei <a href="../down/insrtd_a.htm" alt="Download" title="Download">&quot;shapes3.inc&quot;</a></font>
+<font size="2">( ehemals &quot;shapes_lo.inc&quot;):</font><br>
+</div>
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td valign="top">
+       <table border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr40b.jpg" border="0" width="300" height="400" alt="Egg" title="Egg"></td>
+       </tr></table>
+       <font size="5"><b>Egg</b</font>>, Ei-Objekt<br>
+  </td>
+  <td valign="top">
+       <table border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr41b.jpg" border="0" width="300" height="400" alt="Egg_Shape" title="Egg_Shape"></td>
+       </tr></table>
+       <font size="5"><b>Egg_Shape</b></font>, eif&ouml;rmiges Objekt<br>
+
+
+  </td>
+</tr>
+ <tr>
+  <td valign="top">
+       <font size="2" >
+       <i>Syntax:</i> </font>
+       <table border="2" bgcolor="#ffffff"
+              bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+       <tr>
+        <td valign="top" bgcolor="#ffffff">
+<pre><b>object{ Egg
+        texture{ ... }
+        scale 1
+        rotate &lt;0,0,0&gt;
+        translate &lt; 0, 0, 0&gt;
+      } // end of object ----</b></td></pre></tr></table>
+
+      </font>
+  </td>
+  <td valign="top">
+
+       <font size="2" >
+       <i>Syntax:</i></font>
+       <table border="2" bgcolor="#ffffff"
+              bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+       <tr>
+        <td valign="top" bgcolor="#ffffff">
+<pre><b>object{ Egg_Shape( Lower_Scale,
+                   Upper_Scale
+                 ) //----------
+        texture{ ... ... }
+      } // end of object ------</b></td></pre></tr></table>
+    <font size="2" >
+    <b>Lower_Scale</b> = <br>
+    &nbsp; &nbsp; y-Ma&szlig;stab der unteren Objekth&auml;lfte,<br>
+    <b>Upper_Scale</b> = <br>
+    &nbsp; &nbsp;  y-Ma&szlig;stab der oberen Objekth&auml;lfte.<br>
+    Die Gesamth&ouml;he des Objekts ist auf 2 Einheiten skaliert.</font>
+
+
+  </td>
+</tr>
+</tr>
+ <tr>
+  <td valign="top">
+  <i>Beispiel:</i></font>
+  <table border="2" bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td><pre><b>#include "shapes3.inc"
+object{ Egg  // = Egg_Shape(1.15,1.55)
+        texture{
+          pigment{ color rgb&lt;1,1,1&gt;}
+          normal { bumps 0.5 scale .002}
+          finish { phong 0.5 }
+        } // end of texture
+        rotate &lt; 0, 0, 0&gt;
+        translate &lt; 0, 0, 0&gt;
+} // end of object --------------------</b></td></pre></tr></table>
+
+  </td>
+  <td valign="top">
+  <i>Beispiel:</i></font>
+  <table border="2" bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td><pre><b>#include "shapes3.inc"
+object{ Egg_Shape( 2.05, 0.65 )
+        texture{
+          pigment{ color rgb&lt;1,1,1&gt;}
+          normal { bumps 0.5 scale .002}
+          finish { phong 1 }
+        } // end of texture
+        rotate &lt; 0, 0, 0&gt;
+        translate &lt; 0, 0, 0&gt;
+} // end of object ---------------------</b></td></pre></tr></table>
+
+  </td>
+</tr>
+</table>
+<div align="center"><font size="3"><i>Einige Variationen dieses Makro-Objektes:</i><br>
+</font>
+   <table align="center" border="0" >
+   <tr>
+   <td colspan="1">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+       <td><img src="im/mymcr40c.jpg" border="0" width="300" height="400" alt="Egg" title="Egg"></td>
+     </tr></table>
+   </td>
+   <td colspan="1">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+       <td><img src="im/mymcr40d.jpg" border="0" width="300" height="400" alt="Edd" title="Egg"></td>
+     </tr></table>
+   </td>
+   </tr>
+   <tr>
+       <td> <font size="2">&quot;Egg object&quot; </font>
+       </td>
+       <td> <font size="2">&quot;Egg object&quot; </font>
+       </td>
+  </tr></table>
+</div>
+
+<hr width="90%">
+
+<table align="center" width="95%">
+<tr><td>
+
+<div align="center">
+ <font size="4"><b>Das Makro im Detail:</b></font><br>
+ <font size="3">Dieses Makro verwendet eine Vereinigungsmenge (union) von zwei<br>
+ durch Schnitt von geeignet skalierten Kugeln und Quadern erzeugte Ellipsoid-H&auml;lften:</font>
+
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>// -------------------------------------- macro Egg_Shape (...)
+#macro Egg_Shape (Lower_Scale, Upper_Scale)                  //
+// ------------------------------------------------------------
+#local Egg_Lower_Part =
+         difference {
+                      sphere{&lt;0,0,0&gt;,1 scale&lt;1,Lower_Scale,1&gt;}
+                      box{&lt;-1,0,-1&gt;,&lt;1,Lower_Scale,1&gt;}
+                    } //---------------------------------------
+#local Egg_Upper_Part =
+         difference {
+                      sphere {&lt;0,0,0&gt;,1 scale&lt;1,Upper_Scale,1&gt;}
+                      box {&lt;-1,-Upper_Scale,-1&gt;,&lt;1,0,1&gt;}
+                     }//---------------------------------------
+//-------------------------------------------------------------
+  union {
+          object {Egg_Upper_Part}
+          object {Egg_Lower_Part}
+          translate&lt;0,Lower_Scale,0&gt;
+          scale 2/(Lower_Scale+Upper_Scale)
+
+        } // end of union -------------------------------------
+#end //---------------------------------- end of the egg macro</b></font></td></pre>
+   </tr></table>
+</div>
+
+<font size="2">
+Das Ei-Objekt wird durch feste Skalierung mit demselben Makro erzeugt, wobei Lower_Scale = 1.15 und Upper_Scale = 1.55: </font>
+
+<div align="center">
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>// ---------------------------- shape of a simple egg
+#declare Egg = object { Egg_Shape (1.15,1.55)}
+// ------------------------------------- end of the egg object</b></font></td></pre>
+   </tr></table>
+</div>
+
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

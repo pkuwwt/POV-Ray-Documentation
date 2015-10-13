@@ -1,0 +1,288 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="keywords" content=" Animation der Uhrzeiger - 3D-Animationen, Planetenbewegungen, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg Video, avi Video, animierte Gifs, Raytracing Beschreibungen, POV-Ray Beispiele, POV-Ray Anleitungen">
+<meta name="Description" content=" Animation der Uhrzeiger - 3D-Animationen mit POV-Ray -  deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik">
+<title>Animation der Uhrzeiger - 3D-Animationen mit POV-Ray - deutsche Beschreibungen zum Raytracer POV-RAY mit Beispielen
+       zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ger.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="zur&uuml;ck zur &Uuml;bersicht" title="zur&uuml;ck zur &Uuml;bersicht"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animationen mit POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Grundlagen und Beispiele zu Animationen.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim113e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim113e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim113i.htm"><font size="2">Italiano</font></a>
+        <a href="anim113i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim113f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="anim113f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm"> Animationen Galerie</b></a><br>
+ - <a href="../pov__ger.htm"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anid.htm">3D Animation</b></a><br>
+ &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; <!--a href="anim001d.htm"-->  0. Grundlagen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001d.htm">Beispiel</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002d.htm">Von Bildern zum Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005d.htm">Grundbegriffe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008d.htm">Animationsbefehle</b></a><br>
+&nbsp; <!--a href="anim11d.htm"--> I. Zyklische Animationen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11d.htm">Objekt-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112d.htm">Planeten im Orbit</b></a><br>
+&nbsp; <b>&gt</b> 1.3. <!--a href="anim113d.htm"--><b>Animierte Uhr</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12d.htm">Kamera-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121d.htm">Kamera Geradeausflug</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13d.htm">Western-Kutschen</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim13d.htm">-Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131d.htm">Rollende R&auml;der</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14d.htm">Zahnradgetriebe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141d.htm">Rollende Kette</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142d.htm">Fahrradkette</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15d.htm">Pendelschwingung</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151d.htm">Newtonpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152d.htm">Schaukelstuhl</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16d.htm">Federpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170d.htm">Koppelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17d.htm">Pleuelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18d.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190d.htm">Z&auml;hler + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200d.htm">Faltung eines W&uuml;rfels</b></a><br>
+
+&nbsp; II. Nichtlineare Bewegungen<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim220d.htm"> +Bremsen 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim222d.htm"> + Bremsen 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240d.htm">Fallen + H&uuml;pfen</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260d.htm">Beschleunigung nach</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260d.htm">physikalischen Formeln</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280d.htm">Geschwindigkeitssteuerung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280d.htm">mit Spline-Funktionen</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animationspfade<br>&nbsp; &nbsp; &nbsp;  mit Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210d.htm">Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21d.htm">Geschlossene Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22d.htm">Animationspfade</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="85%" cellpadding="10">
+<tr><td width="100">
+   <table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+    <tr><td><img src="im/Clockface_002c.gif" border="0" width="80" height="80"></td></tr></table>
+    </td>
+    <td width="80%" align="center">
+     <h1>Die Animation der Uhrzeiger &nbsp;<br>
+     <font size="-1">Die Zeiger einer Uhr drehen sich mit verschieden Geschwindigkeiten.<br>
+           Zyklische Animation der Zeiger auf einem Ziffernblatt.</font></td></h1>
+</tr></table>
+
+
+<table align="center" width="85%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top">
+ <p align="justify"><font size="+1"><b>Die Rotationen der Zeiger einer Uhr:</b></font><br>
+W&auml;hrend der Stundenzeiger sich um 360 Grad innerhalb von gerade 12 Stunden dreht,
+muss sich der Minutenzeiger 12 mal mehr drehen = 360*12 Grad.
+Und der Sekundenzeiger wiederum muss sich weitere 60 mal drehen = 360*12*60 Grad.<br>
+<font size="-1">Wir deklarieren eine Variable f&uuml;r die Basiszeit Clock_Time zu der wir
+Testwerte zwischen 0 und 1 hinzuf&uuml;gen k&ouml;nnen.</font>
+
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare Clock_Time = clock+0.00;
+// rotation angles in degrees -------------
+#declare Rotate_H   = Clock_Time*360;
+#declare Rotate_Min = Clock_Time*360*12;
+#declare Rotate_Sec = Clock_Time*360*12*60</b></td></pre></tr></table>
+Entsprechend m&uuml;ssen wir um eine bestimmte Zeiteinstellung wie etwa <br>
+&nbsp; <b>'2h 20min 30sec'</b> zu testen folgendes deklarieren:
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#declare Clock_Time =
+ clock + 2/12 + 20/(720) + 30/(43200);</b></td></pre></tr></table>
+<font size="-1">F&uuml;r eine zyklische Animation einer 12-Stunden-Drehung einer Uhr
+sollen wir in Betracht nehmen, dass  12 h = 720 min = 43200 sec !<br>
+F&uuml;r eine kleine zyklische Animation <br>
+ ist es daher besser keine Sekundenzeiger zu verwenden!<br>
+Zum den korrekten Lauf des Sekundenzeigers w&auml;hrend 12h zu sehen ben&ouml;tigt man eine Animation von 43200 Einzelbildern ('frames')!</font><br>
+<b>Der Minutensprung und der Sekundensprung:</b><br>
+Wenn wir wollen, dass der Minutenzeiger und der Sekundenzeiger nur auf ganze Minuten bzw. Sekunden
+springt (jede 6 Grad) we should add:
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#declare Rotate_Min=int(Rotate_Min/6+0.01)*6;
+#declare Rotate_Sec=int(Rotate_Sec/6+0.01)*6;</b></td></pre></tr></table>
+
+<p align="justify"><font size="+1"><b>Die Zeiger einer Uhr:</b></font><br>
+<font size="-1">Um das Aussehen des Zifferblattes gr&ouml;&szlig;enunabh&auml;ngig zu machen
+beziehen wir alle Gr&ouml;&szlig;en der Bestandteile auf den Radius des Zifferblattes:</font>
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare CR = 0.400; // Zifferblattradius
+// flatten cylinders we use here;
+#declare Flat = &l;1,1,0.025&gt;;
+//-----------------------------------
+#declare Face_D = 0.001;
+// length of hands -------------
+#declare Hd_H_Len   = CR*0.60;
+#declare Hd_Min_Len = CR*0.85;
+#declare Hd_Sec_Len = CR*0.95;
+// radii of the hands ---------
+#declare Hd_H_D   = CR*0.055;
+#declare Hd_Min_D = CR*0.035;
+#declare Hd_Sec_D = CR*0.020;
+// position z of hands --------
+#declare Hd_H_Z   = CR*0.05;
+#declare Hd_Min_Z = CR*0.04;
+#declare Hd_Sec_Z = CR*0.03;
+//-----------------------------------------</b></td></pre></tr></table>
+F&uuml;r die Zeiger und Marken verwenden wir flache Zylinder.
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>// Stundenzeiger -----------------------
+cylinder{ &lt;0,0,0&gt;,&lt;0,Hd_H_Len,0&gt;,Hd_H_D
+          scale Flat
+          rotate &lt;0,0,-Rotate_H&gt;
+          translate&lt;0,0,-Hd_H_Z&gt;
+          texture{ Hands_Texture } }
+// Minutenzeiger ------------------
+cylinder{ &lt;0,0,0&gt;,&lt;0,Hd_Min_Len,0&gt;,Hd_Min_D
+          scale Flat
+          rotate &lt;0,0,-Rotate_Min&gt;
+          translate&lt;0,0,-Hd_Min_Z&gt;
+          texture{ Hands_Texture }  }
+// body center ----------------------------
+cylinder{ &lt;0,0,-Hd_H_Z&gt;,&lt;0,0,0&gt;,Hd_H_D*1.5
+          texture{ Hands_Texture } }
+// face base ------------------------------
+cylinder{ &lt;0,0,0&gt;,&lt;0,0, Face_D&gt;,CR
+          texture{ Face_Texture } }
+//-----------------------------------------</b></td></pre></tr></table>
+Zu mehr Details &uuml;ber das Zifferblatt, den Sekundenzeiger und die Texturen
+siehe die ensprechende Szenendatei.
+</p>
+</td>
+ <td colspan="1" valign="top">
+ <div align="center">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Clockface_003c.jpg" width="240" height="240" alt="Clockface" title="Clockface"></td></tr>
+  </table><font size="-1">Zifferblatt: die Zeiger.</font>
+
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Clockface_004c.jpg" width="240" height="240" alt="Clockface" title="Clockface"></td></tr>
+  </table><font size="-1">Zifferblatt: Die Marken f&uuml;r Stunden u. Minuten.</font>
+
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Clockface_005c.jpg" width="240" height="240" alt="Clockface" title="Clockface"></td></tr>
+  </table><font size="-1">Das Zifferblatt komplett.</font>
+<br>
+
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#909090"  bordercolorlight="#ffffff">
+  <tr><td><nobr>
+          <img src="im/Clockface_001c_720.gif"  width="120" height="120" alt="Clockface animation" title="Clockface animation">
+          <img src="im/Clockface_00_00cs16.gif" width="120" height="120" alt="Clockface animation" title="Clockface animation">
+          </nobr></td></tr>
+  </table><font size="-1">Zifferblatt Animationen.</font>
+   <h5 align="center">Szenenbeschreibung f&uuml;r POV-Ray:<br>
+   <a href="pov/Clockface_00.ini">&quot;Clockface_00.ini&quot;</a> und <br>
+   <a href="pov/Clockface_00.pov">&quot;Clockface_00.pov&quot;</a>
+ </td></h5> </div>
+</tr>
+</table>
+
+<table align="center" width="85%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top"><div align="center">
+  <table align="center" border="3" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Clock_c.jpg" width="240" height="320" alt="station clock" title="station clock"></td></tr>
+  </table><font size="-1">Eine Bahnhofsuhr</font></div>
+  </td>
+ <td colspan="1" valign="bottom">
+ Einige Anwendungsbeispiele:<br>
+<br>
+<br>
+<br>
+  <div align="center">
+  <table align="center" border="3" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Alarm_Clock_c.jpg" width="240" height="240" alt="Alarm clock" title="Alarm clock"></td></tr>
+  </table><font size="-1">Ein Wecker</font></div>
+  </td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+
+</table>
+
+
+
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

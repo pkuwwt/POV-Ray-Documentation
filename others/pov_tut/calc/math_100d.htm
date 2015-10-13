@@ -1,0 +1,172 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="keywords" content="raytracer, PoV, POV-Ray, povray, 3D-Grafik">
+<meta name="Description" content="Konstruktion eines gerasterten Ebene als Koordinatennetz mittels &uuml;berlagerter Texturen in POV-Ray.">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Raster, Grid</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=530,height=680");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_100e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="math_100e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="math_100i.htm"><font size="2">Italiano</font></a>
+        <a href="math_100i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_100f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="math_100f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+  </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000d.htm"><nobr>Koordinatensysteme</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000d.htm"><nobr>und 2D-Funktionen</nobr></b></a><br>
+<br>
+&nbsp;<b>&gt;</b> <!--a href="math_100.htm"--><b>Karopapier</b></a><br>
+&nbsp; -  <a href="math_200d.htm">Koordinatensysteme</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200d.htm">mit Achsen</b></a><br>
+<nobr>&nbsp; -  <a href="math_300d.htm">Makro f&uuml;r Raster</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300d.htm">mit 2 Niveaus</b></a><br>
+&nbsp; -  <a href="math_500d.htm">2D-Funktionen</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500d.htm">Beispiele</b></a><br>
+<nobr>&nbsp; -  <a href="math_600d.htm">Mathematische Funktionen</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600d.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<!--- end of header -->
+<a name="top"></a>
+
+<table align="center" cellpadding="3">
+<tr>
+ <td nowrap colspan="2">
+ <font size="6"><b>Koordinaten-Netz - Gerasterte Ebene</b></font><br>
+  Die Konstruktion eines gerasterten Ebene als Koordinatennetz<br>
+     mittels &uuml;berlagerter Texturen in POV-Ray.<br>
+ <font size="-1">Objekte:&nbsp;&nbsp;&nbsp; &quot;plane&quot;.<br>
+     Methoden: &quot;color_map, layered textures, macro&quot;</font>
+ <td>
+</tr>
+<tr><td>
+<b>Die Konstruktion im Detail:</b><br>
+Wie bei der &quot;Raster-Box&quot; werden zwei Streifengitter,<br>
+  jedes von ihnen durch eine &quot;color_map &quot; (d&uuml;nn dunkel undurchsichtig + breit klar transparent) realisiert,<br>
+ und eines davon um 90 Grad rotiert, werden auf einer wei&szlig;en Grundschicht  auf einer Ebene &uuml;berlagert.
+
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//-------------&lt;&lt;&lt; Raster macro
+#macro Raster(RScale, RLine)
+pigment{
+ gradient x scale RScale
+ color_map{
+     [0.000   color rgb&lt;1,1,1&gt;*0.5]
+     [0+RLine color rgb&lt;1,1,1&gt;*0.5]
+     [0+RLine color rgbt&lt;1,1,1,1&gt;]
+     [1-RLine color rgbt&lt;1,1,1,1&gt;]
+     [1-RLine color rgb&lt;1,1,1&gt;*0.5]
+     [1.000   color rgb&lt;1,1,1&gt;*0.5]
+    }}
+#end// of "Raster(RScale, RLine)"
+//---------------&lt;&lt;&lt;&lt; Grid macro
+#macro Grid(RasterScale,
+            RasterHalfLine,
+            Background_pigment)
+plane{&lt;0,1,0&gt;,0
+ //layered textures!
+ texture{Background_pigment}
+      // 1st layer - base color
+ texture{
+  Raster( RasterScale,
+          RasterHalfLine)}
+ texture{
+  Raster( RasterScale,
+          RasterHalfLine)
+          rotate&lt;0,90,0&gt;}
+  }// end of plane
+#end // end of &quot;Grid(...)&quot;-macro
+// use it:
+object{ Grid(0.50,0.035,
+        pigment{
+           color rgb&lt;1,1,1&gt;*1.1})}
+//------------------------ end ---</td></b></pre></tr></table>
+</td>
+<td>
+<br>
+<br>
+<br>
+<br>
+<br>
+<font size="-1"><b>'layered textures':</b></font><br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <img src="im/grid2.jpg" border="0" width="320"  height="240"
+     alt="Sample layered grids 320x240" title="Sample layered grids 320x240"></a></td>
+  </tr>
+ </table>
+Dasselbe aus einem anderen Blickwinkel:<br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="320"  height="240"  align="center">
+     <img src="im/grid1.jpg" border="0" width="320"  height="240"
+     alt="Sample grid 320x240" title="Sample grid 320x240"></a></td>
+  </tr>
+ </table>
+  <font size="-1"><b>Szenenbeshreibung f&uuml;r POV-Ray <a href="pov/grid01.pov">grid01.pov</a></b></font>
+ <br>
+</td>
+</tr>
+</table>
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

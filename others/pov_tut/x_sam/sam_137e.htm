@@ -1,0 +1,261 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=500,height=650");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="sam_137i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="sam_137i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_137f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="sam_137f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_137d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="sam_137d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_110e.htm">House</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_115e.htm">Roof</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_130e.htm">Tower</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_134e.htm">Castle</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="sam_135e.htm">1. Tower</a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="sam_136e.htm">2. Door</a><br>
+ &nbsp; &nbsp; &nbsp; -  <!--a href="sam_137e.htm"-->3. Moat</a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="sam_138e.htm">4. Windows</a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="sam_139e.htm">5. Extended</a><br>
+ &nbsp; &nbsp; -  <a href="sam_14_e.htm">Window + Door</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_15_e.htm">Stairs</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_158e.htm">Pyramid</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_510e.htm">Columns</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_18_e.htm">Arch</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_160e.htm">Fences</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_220e.htm">Furnitur</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_250e.htm">Household</b></a><br>
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="90%">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="castle/povca2s.jpg" border="0" width="80" height="60"
+                   alt="castle with moat" title="castle with moat"></a></td>
+            </tr></table><br>
+
+ </td>
+ <td valign="top">
+  <h1 align="center"><b>Castle - 3. The Moat</b></h1>
+  <h6 align="justify">How To buildt a castle with towers, door, windows, moat and drawbridge</h6>
+ <h6>Objects: &quot;cylinder&quot;, &quot;cone&quot;, &quot;box&quot;.<br>
+     Methods: &quot;#declare&quot;, &quot;union&quot;, &quot;difference&quot;.</h6>
+   <h6 align="justify">
+
+   <!--An include file to use this object as a read-made object you can find
+   at my <a href="../objects/obj_000e.htm">POV-Ray Objects page</a>.-->
+  </td></h6>
+</tr>
+</table>
+<table cellpadding="5" width="80%">
+<tr>
+ <td align="center" colspan="2">
+     <table align="center" border="5"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="castle/povca2e.gif" border="0" width="513" height="443"
+                   alt="Castle front" title="castle front"></td>
+            </tr></table> Castle with moat in frontview.
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+<h6 align="justify"><b>The Construction in Details:</b>
+    The moat is formed by subtraction of a box from the ground plane. Then this hole is
+    filled by a plane with the texture of water situated in a deeper level. </h6>
+
+</h4>
+<table align="CENTER" border cellspacing="1" bordercolor="#c0c0c0" cellpadding=4 >
+<tr>
+<td valign="TOP" bgcolor="#ffffff">
+<pre><B>// ground -----------------------------
+difference{
+  plane{&lt;0,1,0&gt;, 0}
+  box{  &lt;-15,-5,-15&gt;,&lt;15,1,15&gt;}
+   texture{
+    pigment{ color rgb&lt;0.82,0.57,0.35&gt;}
+    normal { bumps 0.75 scale 0.025 }
+    finish { phong 0.1 }
+   } // end of texture
+  }// end of difference  --------------
+// water ------------------------------
+ box{&lt;-15,-5,-15&gt;,&lt;15,-0.80,15&gt;
+   texture{
+    T_Green_Glass
+    normal {ripples 0.5 scale 0.25}}}
+//-------------------------------------</b></td></pre>
+</tr>
+</table>
+
+ </td>
+ <td>
+
+
+ <table align="center" border="5" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+ <tr><td><img src="castle/povca2.jpg" alt="tower" title="tower" width="320"  height="240"></td></tr>
+ </table>
+
+<h5 align="center">Click here for the scene description for <nobr> POV-Ray:</nobr><br>
+ <a href="castle/povca2.txt">&quot;.txt&quot; file</a> or
+ <a href="castle/povca2.pov">&quot;.pov&quot; file</a></h5>
+<br>
+
+ </td>
+</tr>
+<tr>
+ <td valign="top" colspan="2">
+<h6 align="justify"><b>The moat</b> is dressed inside by flat boxes as retaining walls<br> and
+    the towers were shored up by cones under zero level:
+
+</h6>
+<table align="center" border cellspacing="1" bordercolor="#c0c0c0" cellpadding="4" >
+<tr>
+<td valign="top" bgcolor="#ffffff">
+<pre><b>//------------------------------------------------------
+#declare Walltex =
+  texture{pigment{color White}
+          finish {diffuse 0.9 phong 1}}
+#declare Rooftex =
+  texture{pigment{color rgb&lt;0.4,0,0&gt;}
+          finish {diffuse 0.9 phong 1}}
+// Moat Wall -----------------------------------------
+#declare M_Wall =
+box {&lt;-15.3,-6,-0.3 &gt;,&lt; 15.3,  0.2,0.3&gt; rotate&lt;-5,0,0&gt;
+     texture{Walltex}}
+// zeichne 4 GrabenWalln ------------------------------
+object{M_Wall rotate&lt;0,  0,0&gt; translate&lt;  0,-0.25,-15&gt;}
+object{M_Wall rotate&lt;0,180,0&gt; translate&lt;  0,-0.25, 15&gt;}
+object{M_Wall rotate&lt;0, 90,0&gt; translate&lt;-15,-0.25,  0&gt;}
+object{M_Wall rotate&lt;0,-90,0&gt; translate&lt; 15,-0.25,  0&gt;}
+//----------------------- Tower  ------------------------
+#declare TR =  2.0;   //TowerRadius
+#declare TH =  5.0;   //TowerHeight
+//------------------------------------------------------
+#declare Tower =  union{     //definiert Objekt "Tower"
+cone{&lt;0,-TH,0&gt;,TR+1.0,&lt;0,0,0&gt;,TR   texture{Walltex}}
+cylinder {&lt;0,0.0,0&gt;,&lt;0, TH,0&gt;,TR   texture{Walltex}}
+cylinder {&lt;0,0.0,0&gt;,&lt;0,0.1,0>,2.05 texture{Walltex}}
+cylinder {&lt;0,2.5,0&gt;,&lt;0,2.6,0>,2.05 texture{Walltex}}
+cone{&lt;0,0,0&gt;,TR+0.5,&lt;0,TR+0.5,0&gt;,0
+                    translate&lt;0,TH,0&gt; texture{Rooftex}}
+cone{&lt;0,0,0&gt;,TR -0.2,&lt;0,2*TR+0.5,0&gt;,0
+                    translate&lt;0,TH,0&gt; texture{Rooftex}}
+}// ------------ end of tower - Ende Turm --------------
+//------------------ the walls ------------------------
+#declare Wall = union{
+  box {&lt;-4  , 0,-0.3&gt;,&lt;  4,3.5,0.3&gt; }
+  box {&lt;-4.5,-6,-0.3&gt;,&lt;4.5,  0,0.3&gt; rotate&lt;-5,0,0&gt;}
+  texture{Walltex}}
+// --------------- All together now -------------------
+// ---------------- draw "Tower" at 4 corners:---------
+object{ Tower translate&lt;-6, 0,-6&gt;}
+object{ Tower translate&lt; 6, 0,-6&gt;}
+object{ Tower translate&lt; 6, 0, 6&gt;}
+object{ Tower translate&lt;-6, 0, 6&gt;}
+// ---------------- zeichne 4 Walln -------------------
+difference{
+    object{Wall} // Wall with door hole  --------------
+    box{&lt;-1,0,-0.4&gt;,&lt;1,2,0.4&gt;       texture{Walltex}}
+    cylinder{&lt;0,2,-0.5&gt;,&lt;0,2,0.5&gt;,1 texture{Walltex}}
+                              translate&lt; 0, 0,-6&gt;}
+object{Wall rotate&lt;0,  0, 0&gt; translate&lt; 0, 0, 6&gt;}
+object{Wall rotate&lt;0, 90, 0&gt; translate&lt;-6, 0, 0&gt;}
+object{Wall rotate&lt;0,-90, 0&gt; translate&lt; 6, 0, 0&gt;}
+// ------------------- ground inside -------------------
+box {&lt;-6,-4,-6&gt;,&lt; 6,0.01,6&gt;
+    texture{pigment{color Gray90}
+            finish {diffuse 0.9 phong 1}}}
+//-------------------------------------------------end--</b></td></pre>
+</tr>
+</table>
+
+ </td>
+</tr>
+</table>
+ <h5 align="right">     back to <a href="sam_136e.htm">part 2</a><br>
+                   continued at <a href="sam_138e.htm">part 4</a></h5>
+
+<!-- <h5><b>Download of all ready-made POV-Ray objects</b><br>
+ zipped up (with all include files, example files and with <br>
+ the according Insert Menu Add-ons for comfortable use!)<br>
+ at the <a href=""><b>Download Page</b></a>-->
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+<!-- counter extremtracker -->
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

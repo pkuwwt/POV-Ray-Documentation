@@ -1,0 +1,305 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, povray, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, Raytracing-Beschreibung, POV-Ray-Anleitungen, Einf&uuml;hrung, Anf&auml;nger, POV-Ray Programm, 3D-Grafik, 3D-Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=910,height=590");
+ New.focus();  }
+//-->
+</SCRIPT>
+<title>Die Verwendung des Programmes - Erstellung von Szenen mit POV-Ray, POV-Ray Kurs Teil 1</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<!-- header -->
+ <table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a><h6><nobr>Einf&uuml;hrung in die Beschreibungssprache des Raytracers POV-Ray</nobr>
+  &nbsp; <nobr> &nbsp; &nbsp; - Seite 1 -</nobr><br>
+ von Friedrich A. Lohm&uuml;ller</td></h6>
+ <td align="right">
+        <a href="povtuto1.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povtuto1.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti1.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="povtuti1.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povtutf1.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="povtutf1.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="4" width="95%" align="center">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povkurs0.htm">POV-Ray Einf&uuml;hrung</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povkurs0.htm">INHALT&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr><b>&gt;1.</b> <!--a href="povkurs1.htm"--><b>Arbeiten mit POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povkurs2.htm">Grunds&auml;tzliches zum</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm">Erstellen von Szenentexten.</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#xyzKoordinaten">R&auml;umliche Koordinaten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#ZahlenundVektoren">Zahlen und Vektoren</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povkurs3.htm">Szenen-Aufbau</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; Ein Grundbeispiel.<br>
+<nobr>&nbsp;<b> 4.</b> <a href="povkurs4.htm">Header einer Szene</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; #include-Dateien<br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povkurs5.htm">Geometrische Grundobjekte</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; sphere, box, cylinder,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cone, torus, plane.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; und andere K&ouml;rper</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povkurs6.htm">Transformationen</b></a></nobr> <br>
+<nobr> &nbsp; &nbsp; &nbsp; Streckung, Drehung, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Verschiebung u. andere.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs6.htm#CSG">CSG</b></a>: </b>union,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povkurs7.htm">Farben und Oberfl&auml;chen</b></nobr></a>
+<nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr><br>
+<nobr>&nbsp;<b> 8.</b> <a href="povkurs8.htm">#declare, #local, #macro</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Platzhalter, flexible Objekte.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povkurs9.htm">#while</b></a> Schleifen</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Grundbeispiele.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povkursa.htm">#include</b></a>, Include-Dateien.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Wiederverwendbare Objekte.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povkursb.htm">Rationelles Arbeiten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Geschwindigkeit, Flexibilit&auml;t,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; modulares Arbeiten</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.1 auf 3.5/3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.5/3.6 auf 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insrtd_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<font size="+1"><a name="top"><b>Erstellung von Szenen mit POV-Ray</a>:</b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify">
+<font size="-1">Das Erstellen von Szenenbeschreibungen l&auml;&szlig;t sich in der Windows Version von POV-Ray mit
+<b>minimalstem Schreibaufwand</b> erstellen.<br>
+Hierzu verwendet man die Textschablonen (templates) aus dem sogenannte <nobr><b>&quot;Insert Menu&quot;</b> von <a href="http://www.povray.org/download">POV-Ray 3.7</a>.</nobr><br>
+<b>POV-Ray 3.6.2: </b></font><font size="-2">F&uuml;r Benutzer, die noch POV-Ray 3.6.2. verwenden, ist es dringend empfohlen mein
+&quot;<a href="../down/insrtd_a.htm" target="_new"><nobr><b>Insert Menu Add-on</b></nobr></a>&quot; zu verwenden.
+Dadurch wird die Erstellung von POV-Ray Szenen wesentlich komfortabler und schneller.</font><br>
+<font size="-1">Es gibt auch eine <b>HTML-Version</b> zur Verwendung mit 'cut and paste'
+ auch f&uuml;r POV-Ray unter non-windows Betriebsystemen - siehe 'C:/Users/Documents/POV-Ray/v3.7/scenes/templates/_index.htm'.<br><br>
+&nbsp; &nbsp; Das &quot;Insert Menu Add-on&quot; (auch als HTML zum Download und als Online-Version) und weitere Zus&auml;tze erhalten Sie von der Turorial-Seite unserer Homepage <nobr>
+<a href="http://www.f-lohmueller.de/pov_tut/pov__ger.htm">
+<b>http://www.f-lohmueller.de/pov_tut/pov__ger.htm</b></a></nobr>
+ - dort siehe &quot;Download&quot;.</font>
+</p>
+</td></tr></table>
+<hr>
+<font size="+1"><b>I &nbsp;&nbsp;<a name="start1">Aufbau</a> einer Grundszene</b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify">
+<font size="-1">Wir erzeugen eine neue Szene zun&auml;chst mit einem neuen leeren Textblatt,
+indem wir auf den &quot;<b>New</b>&quot;-Knopf dr&uuml;cken.
+Dann w&auml;hlen wir &uuml;ber &quot;<b>Insert</b>&quot; -
+&quot;<b>Basic templetes</b>&quot; -  &quot;<b>Ready_made scenes</b>&quot; eine Grundszenerie
+mit Kamera, Lichtquellen und Hintergrund (Boden u. Himmel) aus:</font>
+</td></p></tr></table>
+
+<div align="center">
+ <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/start01_37s.jpg" border="0" width="600" height="469"
+                   alt="start01" titel="start01"></a></td>
+            </tr></table>
+            <font size="-2">Klicken Sie hier f&uuml;r dies in
+                        <a href="javascript:ShowImage('im/start01_im.htm')"
+                                onMouseover="window.status='ShowSingleImage';return true"
+                                onMouseOut="window.status=''">
+                        POV-Ray 3.6.2
+                        </a></font>
+      </div>
+<br>
+<font size="+1"><b>II &nbsp;&nbsp;<a name="start1">Render-Test</a> der Grundszene</b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify">
+<font size="-1">Um die noch leere B&uuml;hne unserer Szene begutachten zu k&ouml;nnen
+stellen wir im Feld oben links, direkt unter dem &quot;<b>New</b>&quot;-Knopf eine geeignete
+Aufl&ouml;sung ein.<br>
+Anschlie&szlig;end speichern wir die Szenenbeschreibung mit dem &quot;<b>Save</b>&quot;-Knopf
+ab - verwenden Sie im Dateinamen (hier: &quot;demo1&quot;) keine Umlaute, Leertasten oder
+Sonderzeichen au&szlig;er &quot;_&quot;. Die Endung &quot.pov&quot; wird automatisch angeh&auml;ngt.<br>
+Ein Klick auf den &quot;<b>Run</b>&quot;-Knopf zeigt uns die Szene in einem vorgelagerten Fenster,
+dem sogenannten <nobr>&quot;<b>Render Window</b>&quot;</nobr>:</font>
+</td></p></tr></table>
+<div align="center">
+ <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/start02_37s.jpg" border="0" width="600" height="473"
+                   alt="start02" titel="start02"></a></td>
+            </tr></table>
+            <font size="-2">Klicken Sie hier f&uuml;r dies in
+            <a href="javascript:ShowImage('im/start02_im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            POV-Ray 3.6.2</a></font>
+
+</div>
+<br>
+<font size="+1"><b>III &nbsp;&nbsp;<a name="start1">Einf&uuml;gen</a> von K&ouml;rpern</b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify"><img src="im/warn.gif" border="0" width="32" height="30">
+<font size="-1">Vor dem folgenden Einbau weiterer Objekte ist unbedingt zu beachten:<br>
+<b>Wir setzen den Cursor unbedingt ganz an das Ende des bisherigen Textes!</b><br>
+Dann w&auml;hlen wir &uuml;ber &quot;<b>Insert</b>&quot; - &quot;<b>Basic shapes</b>&quot;
+einen einfachen K&ouml;rper zum Einbau in unsere Szenerie aus:</font>
+</td></p></tr></table>
+
+<div align="center">
+ <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/start03_37s.jpg" border="0" width="600" height="472"
+                   alt="start03" titel="start03"></a></td>
+            </tr></table>
+            <font size="-2">Klicken Sie hier f&uuml;r dies in
+            <a href="javascript:ShowImage('im/start03_im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            POV-Ray 3.6.2</a></font>
+</div>
+<br>
+<font size="+1"><b>IV &nbsp;&nbsp;<a name="start1">Render-Test</a> der gesamten Szene</b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify" width="95%">
+<font size="-1">Um die von uns nun mit &quot;Leben&quot; gef&uuml;lte Szene zu begutachten, klicken wir
+wieder auf den &quot;<b>Run</b>&quot;-Knopf. Dies zeigt uns die ver&auml;nderte Szene
+wieder im <nobr>&quot;<b>Render Window</b>&quot;</nobr>:</font>
+</td></p></tr></table>
+
+<div align="center">
+ <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/start04_37s.jpg" border="0" width="600" height="474"
+                   alt="start04" titel="start04"></a></td>
+            </tr></table>
+            <font size="-2">Klicken Sie hier f&uuml;r dies in
+            <a href="javascript:ShowImage('im/start04_im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            POV-Ray 3.6.2</a></font>
+</div>
+<br>
+<br>
+<font size="+1"><b>V &nbsp;&nbsp;<a name="start1">Editier-M&ouml;glichkeiten</a> im Szenentext</b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify" width="95%">
+<font size="-1">Um den Szenentext zu ver&auml;ndern besitzen wir neben dem Einf&uuml;gen &uuml;ber das
+&quot;Insert Menu&quot; auch alle M&ouml;glichkeiten eines modernen Texteditors wie z.B. bei &quot;Word&quot;.<br>
+Einige wichtige Funktionen seien hier aufgef&uuml;rt:<br>
+<b>Strg + c</b> (Ctrl c) kopiert einen zuvor markierten Textabschnitt in den Kopierspeicher.<br>
+Mit <b>Strg + v</b> (Ctrl v) wird er an der Stelle des Cursors wieder eingef&uuml;gt.<br>
+Das Letztere erreicht man auch mit der Kombination <b>Strg + Einfg</b>(Ctrl return).<br>
+<br>
+Eine <b>Falle</b>, die bei allen Texteditoren vorhanden ist, sei hier besonders erw&auml;hnt:<br>
+&quot;<b>Mein Cursor fri&szlig;t die Zeichen!</b>&quot; - (statt sie einzuf&uuml;gen!)<br>
+Im Normalzustand (dies erkennt man am Zeichen &quot;Ins&quot; im 4. unteren grauen Feld) f&uuml;gt das Editier-Programm
+beim Tippen die Zeichen an der Stelle ein, an der der Cursors steht. Wenn man die Einf&uuml;gen-Taste einmal dr&uuml;ckt schaltet der
+Editor in den &Uuml;berschreib-Modus (dies erkennt man am Zeichen &quot;Ovr&quot; im 4. unteren grauen Feld). Jetzt fri&szlig;t der
+Cursor die bereits geschriebenen Zeichen! <br>
+Abhilfe: Einfach die Einf&uuml;gen-Taste noch einmal dr&uuml;cken!<br>
+<br>
+Die <b>wichtige &quot;undo-Funktion&quot;</b> (r&uuml;ckg&auml;ngig machen) ist wie in den meisten
+Programmen <b>Strg + z</b> (Ctrl z):
+Dies erlaubt es alle vorherigen Schritte Schritt f&uuml;r Schritt wieder r&uuml;ckg&auml;ngig zu machen.<br>
+Das entsprechende Gegenst&uuml;ck lautet <b>Strg + y</b> (Ctrl y): <b>redo</b> (Wiederholen)<br>
+Diese Befehle sind auch per &quot;Mausklick rechte Taste&quot;
+oder &uuml;ber das obere Men&uuml; &quot;Edit&quot; zu erreichen!</font>
+</td></p></tr></table>
+<br>
+<font size="+1"><b>VI &nbsp;&nbsp; Wo ist das Bild?</b></font></br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify" width="95%">
+<font size="-1">Wenn Sie nicht wissen, wo das fertig gerechnete Bild wieder zu finden ist:
+In der Grundeinstellung wird es als bmp-Bilddatei in dasselbe Verzeichnis wie der Szenentext (.pov) geschrieben. <br>
+Wie kann man dies &auml;ndern?
+Klicken Sie im POV-Ray-Editor auf &quot;Tools&quot;,
+&quot;Edit master POV-Ray.INI&quot;.<br>
+Dort f&uuml;gen Sie ganz unten eine neue Zeile ein, &auml;hnlich der folgenden:<br>
+<b>&quot;Output_File_Name=C:\User\POV-Ray_images\</b>.<br>
+Sie k&ouml;nnen das hier angegebene Ziel in jedes beliebige andere existierende Verzeichnis &auml;ndern. <br>
+<img src="im/warn.gif" border="0" width="32" height="30">
+ Vergessen Sie aber bitte nicht
+den &quot;backslash&quot; am Ende! Anderenfalls werden alle Bilder nur unter dem immer gleichen Dateinamen &quot;images.bmp&quot;
+abgespeichert - und Ihre &auml;lteren Bilder werden dabei immer &uuml;berschrieben.</font>
+</td></p></tr></table>
+<br>
+<font size="+1"><b>VII &nbsp;&nbsp; Das Render-Fenster ist nicht zu sehen bzw. verschwindet sofort!</b></font><br>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="justify" width="95%">
+<font size="-1">Sie finden eine L&ouml;sung des Problems in folgendem Bild:</font><br>
+</td></p></tr></table>
+<div align="center">
+ <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/start05_im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/start05s.jpg" border="0" width="600" height="300"
+                   alt="Klicken Sie f&uuml;r ein gr&ouml;&szlig;eres Beispiel des POV-Ray Demos" titel="Klicken Sie f&uuml;r ein gr&ouml;&szlig;eres Beispiel des POV-Ray Demos"></a></td>
+            </tr></table>
+</div>
+
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povkurs0.htm">Teil 0</a> |
+<!--a href="povkurs1.htm"-->Teil 1</a>  | <b><a href="povkurs2.htm">Teil 2</a> |
+<a href="povkurs3.htm">Teil 3</a>  | <a href="povkurs4.htm">Teil 4</a> |
+<a href="povkurs5.htm">Teil 5</a>  | <a href="povkurs6.htm">Teil 6</a> |
+<a href="povkurs7.htm">Teil 7</a>  | <a href="povkurs8.htm">Teil 8</a> |
+<a href="povkurs9.htm">Teil 9</a>  | <a href="povkursa.htm">Teil 10</a> |
+                                     <a href="povkursb.htm">Teil 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

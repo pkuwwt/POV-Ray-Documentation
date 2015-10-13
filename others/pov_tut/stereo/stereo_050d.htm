@@ -1,0 +1,180 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>Stereo-Bilder und Stereo-Animationen mit POV-Ray - Stereo-Bilder</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="3D-Stereo-Bilder und 3D-Stereo-Animationen mit POV-Ray - Stereo-Bilder">
+<meta name="keywords" content="3D-Stereo-Bilder, 3D-Stereo-Animationen mit, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D-Graphik, 3D-Animation">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Stereo-Bilder und Stereo-Animationen <nobr>mit POV-Ray</nobr></b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="stereo_050e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="stereo_050e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="stereo_050i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_050i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_050f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="stereo_050f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<font size="+1"> &nbsp;       <a href="stereo_000d.htm">Stereo-Bilder</font>  und</b></a><br>
+<font size="+1"> &nbsp;       <a href="stereo_000d.htm">Stereo Animationen</b></a><br></font>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_050d.htm"--><b>Kreuzblick <font size="1">(Cross-Eye)</font></b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100d.htm">Stereo-Bilder basic</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150d.htm">Stereo-Bilder advanced</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200d.htm">Bildpaare kombinieren</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300d.htm">Stereo-Animation 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310d.htm">Stereo-Animation 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400d.htm">Beispiele Stereo-Anims</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="95%" align="center"><tr><td colspan="2"><!-- global table-->
+<b><font size="5">Kreuzblick <font size="1">(Cross-Eye)</font></font></b><br>
+<font size="2">Betrachtung von Stereobildern ohne weitere Hilfsmittel, auch wenn man Brille tr&auml;gt.</b></font>
+<hr>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<font size="2">
+Wie kann man den stereoskopischen Effekt <br>
+bei Bildpaaren f&uuml;r die cross-eye Technik sehen:</font><br>
+<font size="1">Hierzu ist es wichtig den Kopf nicht zu neigen und senkrecht auf die Szene zu blicken.<br>
+</font><br>
+<table border="0" width="256" align="center">
+<tr>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_1.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_2.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+<font size="2">Die obigen zwei Bilder repr&auml;sentieren ein cross-eye-Bildpaar.<br>
+Wir halten einen Finger genau zwischen die beiden Bildern und unsere Augen.<br>
+Indem wir <b>auf die Spitze unseres Fingers fokusieren</b> k&ouml;nnen wir bemerken,<br>
+ dass im Hintergrund, <b>das &quot;+&quot; sich in das &quot;o&quot; hinein bewegt</b>.<br>
+Wir erhalten 3 Bilder &auml;hnlich den Bildern hier unterhalb. (bei 4 Bildern haben wir's &uuml;bertrieben!)<br>
+Nun m&uuml;ssen wir unsere Aufmerksamkeit <b>auf das mittlere Bild konzentrieren</b> und<br>
+die beiden verschwommenen Bilder rechts und links der Mitte ignorieren.</font><br>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+
+<table border="0" width="256" align="center">
+<tr>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_1_blur.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_0.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+<td valign="top" colspan="3">
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Cross_2_blur.jpg" border="0" width="128"  height="128"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+<font size="2">Man kann <b>mit den flachen H&auml;nden als Scheuklappen</b> kann man<br>
+ die irritierenden Geisterbilder rechts und links der Mitte ausblenden.</font>
+<br>
+</td>
+</tr>
+</table>
+<table border="0" width="256" align="center">
+<tr>
+
+<td valign="top" colspan="3">
+<br>
+<font size="2">Nun sollten wir in der Lage sein, die r&auml;umliche Tiefe diese Bildes zu erkennen:</font><br>
+  <table align="center" border="1" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Acer_Leaf_04a_Combine_.jpg" border="0" width="512"  height="256"
+       alt="image for Cross-Eye View" title="image for Cross-Eye View"></a>
+      </td></tr></table>
+</td>
+</tr>
+</table>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

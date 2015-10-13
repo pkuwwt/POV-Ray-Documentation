@@ -1,0 +1,346 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>Images st&eacute;r&eacute;o 3D et Animation st&eacute;r&eacute;o 3D avec POV-Ray - Images st&eacute;r&eacute;o</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="Images st&eacute;r&eacute;o 3D et Animation st&eacute;r&eacute;o 3D avec POV-Ray">
+<meta name="keywords" content="Images st&eacute;r&eacute;o 3D, Animation st&eacute;r&eacute;o 3D, st&eacute;r&eacute;oscopie, POV, POVRAY, POV-Ray, povray, raytracing, graphique 3d, animation 3d">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Images st&eacute;r&eacute;o et Animation st&eacute;r&eacute;o <nobr>avec POV-Ray</nobr></b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="stereo_300e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="stereo_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="stereo_300i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_300d.htm"><font size="2">Deutsch </font></a>
+        <a href="stereo_300d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+<font size="+1"> &nbsp;       <a href="stereo_000f.htm">Images st&eacute;r&eacute;o</font> et</b></a><br>
+<font size="+1"> &nbsp;       <a href="stereo_000f.htm">Animation st&eacute;r&eacute;o</b></a></font><br>
+ &nbsp;&nbsp;&nbsp; <a href="stereo_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="stereo_050f.htm">Vision crois&eacute;e</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100f.htm">Images st&eacute;r&eacute;o simples</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150f.htm">Images st&eacute;r&eacute;o avanc&eacute;es</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200f.htm">Combiner images</b></a><br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_300f.htm"--><b>Animation st&eacute;r&eacute;o 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310f.htm">Animation st&eacute;r&eacute;o 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400f.htm">Exemples d'anims st&eacute;r&eacute;o</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="95%" align="center"><tr><td colspan="2"><!-- global table-->
+<font size="5"><b>Animation st&eacute;r&eacute;o</b> (1)</font><br>
+<hr>
+</td>
+</tr><!-- global -->
+<tr>
+<td>
+<font size="2"><b>Comment faire une s&eacute;rie</font></b><br>
+  <b><font size="3"> des images st&eacute;r&eacute;o pour une animation</font></b>.</font><br>
+<br>
+<font size="2"><font size="3"><b>1.1:</b></font> <font size="3"><b>Faire un fichier de la sc&egrave;ne st&eacute;r&eacute;o</b></font><br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+   comme indiqu&eacute; &agrave; ' <a href="stereo_150f.htm" target="_new">Images st&eacute;r&eacute;o avanc&eacute;es</a> '.<br>
+   There we use 'frame_number' to control right/left eye view: <br>
+   <font size="1"><b>(' frame ' = une image dans une animation )</b></font><br>
+   &nbsp; &nbsp; <b>nombre frame impair  1, 3, 5, ... = vue de droit,</b><br>
+   &nbsp; &nbsp; <b>nombre frame pair &nbsp; 2, 4, 6, ... =  vue de gauche,</b><br>
+   frame_number 0 = vue non-st&eacute;r&eacute;o pour tester la sc&egrave;ne.<br>
+   Pour une animation de par ex. 30 frames, <br>
+   nous devon faire 2*30=60 frames!<br>
+<br>
+<font size="3"><b>Animation avec 'clock' et 'frame_number':</b></font><br>
+   &nbsp;&nbsp;<b>1. Contr&ocirc;le d'animation bas&eacute; sur frame_number</b>:<br>
+   Ici nous devons utiliser un nombre de frame nouveau<br>
+   nomm&eacute; 'Frame'.<br>
+   Pour nombres de frame impair :<br>
+   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <b>#declare Frame = int( frame_number/2 );</b>  <br>
+   autrement : <b>#declare Frame = int((frame_number+1)/2);</b>  <br>
+   et comme un nombre de frames nouveau :<br>
+   &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <b>#declare EndFrame =  final_frame/2;</b><br>
+
+   &nbsp;&nbsp;<b>2. Contr&ocirc;le d'animation bas&eacute; sur clock</b>:<br>
+   Ici nous devons utiliser <b>clock_delta</b><br>
+   per adapter il temps interne aux valeurs de 'clock' !<br>
+ <font size="1">(built-in <b>clock_delta</b> = la difference entre les valeurs de 'clock')</font><br>
+   Avec par ex. Initial_Clock=0, Final_Clock=1,<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Initial_Frame=1 et Final_Frame=60,<br>
+   nous avons  pour <b>frame_numbers impair :  <br>
+   &nbsp; &nbsp; &nbsp;&nbsp; #declare Time = clock  ;</b><br>
+   &nbsp; &nbsp; &nbsp;et pour <b>frame_numbers pair :<br>
+   &nbsp; &nbsp; &nbsp;&nbsp; #declare Time = clock -  clock_delta;</b><br>
+<br>
+Dans un fichier de la sc&egrave;ne POV-Ray <font size="3"><b>Stereo_Ani_00_.pov</b></font><br>
+nous d&eacute;clarons une cam&eacute;ra st&eacute;r&eacute;o come suivante : <br>
+(Pour plus des d&eacute;tails voir le fichiers de la scene &agrave; gauche !!! )
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>// -------------------- // stereo view:
+#declare Stereo_On = 1;
+#if( Stereo_On = 1 )
+ <font color="#800000">#declare Eye_Distance = 0.4;</font>
+ // Stereo Animations frame counting:
+ // stereo starts at frame_number = 1
+ // odd frame numbers 1,3,5,... = right
+ // even frame number 2,4,6,... = left
+ // stereo: frame 1~60 -> frame pair = 1~30!
+ #if((frame_number/2)!=int(frame_number/2))
+      // <font color="#800000">odd frame_number</font>
+  <font color="#800000">#declare Eye_Distance =-Eye_Distance;</font>
+  #declare Time  = clock  ;
+  #declare Frame = (frame_number+1)/2 ;
+ #else // <font color="#800000">even frame_number</font>
+  <font color="#800000">#declare Eye_Distance = Eye_Distance;</font>
+  #declare Time  = clock - clock_delta ;
+  #declare Frame = (frame_number  )/2 ;
+ #end
+ #declare EndFrame =  final_frame/2;
+
+#else // Stereo_On = 0
+ #declare Eye_Distance = 0;
+ #declare Time     = clock +0.0 ;
+ #declare Frame    = frame_number  ;
+ #declare EndFrame = final_frame ;
+#end // of "#if( Stereo_On = 1 ) "
+//------------------------------------------
+#declare Camera_Position= &lt; 0.0, 2.0,-4.0&gt;;
+#declare Camera_Look_At = &lt; 0.0, 2.0, 0.0&gt;;
+#declare Camera_Angle   = 65 ;
+//------------------------------------------
+camera{
+  location Camera_Position
+<font color="#800000">    + Eye_Distance/2
+    * vnormalize(
+        vcross(
+         Camera_Look_At-Camera_Position,
+         &lt;0,1,0&gt;
+        )// vcross
+      )// vnormalize
+</font>  right    x*image_width/image_height
+  angle    Camera_Angle
+  look_at  Camera_Look_At
+} // end camera
+// .... lights and background ...
+// .... and an object in scene:
+object{
+  Wire_Box(&lt;-1,-1,-1&gt;,&lt;1,1,1&gt;,0.1,0)
+  texture{pigment{color rgb&lt;1,1,1&gt;*1.2}}
+  #if(frame_number != 0)// stereo
+       rotate&lt;0, Time*90 ,0&gt;
+     // or optional:
+    // rotate&lt;0,(Frame-1)/EndFrame*90,0&gt;
+  #end
+  translate&lt;0,2.0,0&gt;
+} // ---------------------------------------</b></td></pre>
+  </tr>
+  </table>
+   &nbsp; Pour un rendu quadratique, nous avons mis en
+    ligne de commande:<br>
+   &quot; <b>+w240 +h240</b> &quot;. <br>
+   Avec POV-Ray 3.7, nous pouvons utiliser la sortie jpeg par<br>
+   &quot; <b>+w240 +h240 +fj100</b> &quot;.<br>
+<br>
+<div align="center">
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Command_Line_240x240.jpg" border="0" width="393"  height="116"
+       alt="command line" title="command line"></a>
+      </td></tr></table><font size="2"><b> La ligne de commande.</b></font>
+</div>
+<br>
+</td>
+
+<!-- 2.column -->
+<td valign="top" width="320" align="left">
+  <div align="center">
+
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Test_Vectors_0c.gif" border="0" width="320"  height="240"
+       alt="image for image_map" title="image for image_map"></a>
+      </td></tr></table><font size="2">La situation d'une cam&eacute;ra en mouvement libre:<br>
+                                emplacement de la cam&eacute;ra non-st&eacute;r&eacute;o (violet),<br>
+                                positions de l'oeil droit et gauche (jaune / rouge),<br>
+                                avec point look_at mobile (jaune vert).</font><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <table align="center" border="0">
+ <tr>
+ <td>
+<font size="2"><b>POV-Ray 3.6 / 3.7</b><br>
+           Fichier de la sc&egrave;ne st&eacute;r&eacute;o : <a href="pov/Stereo_Ani_00_.pov">Stereo_Ani_00_.pov</a><br>
+           Fichier ini de l'animation st&eacute;r&eacute;o : <a href="pov/Stereo_Ani_00_.ini">Stereo_Ani_00_.ini</a><br>
+  </td>
+  </tr>
+  </table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_01_.jpg" border="0" width="240"  height="240"
+       alt="non-stereo image" title="image_map with POV-Ray 3.6"></a>
+      </td></tr></table><font size="2">La sc&egrave;ne en non-stereo, rendue avec le fichier de<br>
+                                       la sc&egrave;ne (sans fichier ini !).
+                                      frame_number default est 0.<br>  D'o&ugrave; la
+                                      Half_Eye_Distance est 0 et le rendering<br>
+                                      de la sc&egrave;ne fait une vue non-st&eacute;r&eacute;o.
+                                  </font>
+
+  </div>
+
+</td>
+</tr>
+</table>
+
+
+<!-- general table 2 -->
+<table border="0" width="90%" align="center">
+<tr>
+<td colspan="2">
+  <font size="3"><b>1.2:</b> <font size="3"><b>Le fichier ini pour une animation st&eacute;r&eacute;o</b></font><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="2">Le nome : <font size="3"><b>Stereo_Ani_00_.ini</b></font>:</font>
+</td>
+</tr>
+<tr>
+ <td valign="top">
+
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>Antialias=On
+Antialias_Threshold=0.3
+Antialias_Depth=3
+Input_File_Name=<font color="#800000">Stereo_Ani_00_.pov</font>
+Initial_Frame=1
+Final_Frame=60
+; 1~60 for 30 images
+Initial_Clock=0
+Final_Clock=1
+Cyclic_Animation=on
+Pause_when_Done=off</b></td></pre>
+  </tr>
+  </table>
+<font size="1"><b>Remarque: <br>
+&nbsp; &nbsp; &nbsp; frame_number 0 est r&eacute;serv&eacute; aux non-st&eacute;r&eacute;o vue!</b></font><br>
+<font size="2">L'ex&eacute;cution de ce fichier <br>
+fait une s&eacute;rie de 30 paires d'images st&eacute;r&eacute;o: <br>
+30 vues œil droit: num&eacute;rot&eacute;s 01,03,05,...,29 et<br>
+30 vues œil gauche. num&eacute;rot&eacute;s: 02,04,06,...,30.<br>
+
+
+<br>
+<font size="2"><b>POV-Ray 3.6 / 3.7</b><br>
+           Fichier de la sc&egrave;ne st&eacute;r&eacute;o : <br>
+<a href="pov/Stereo_Ani_00_.pov">Stereo_Ani_00_.pov</a><br>
+           Fichier ini de l'animation st&eacute;r&eacute;o : <br>
+<a href="pov/Stereo_Ani_00_.ini">Stereo_Ani_00_.ini</a><br>
+</font>
+</td>
+<td valign="top">
+
+<div align="center">
+ <table align="center" border="0">
+ <tr>
+ <td>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_01r_.jpg" border="0" width="240"  height="240"
+       alt="image of the right eye's view" title="image of the right eye's view"></a>
+      </td></tr></table><font size="2">Le point de vue de l'œil droit.<br>
+              Stereo_Ani_00_01.jpg</font>
+ </td>
+ <td>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_01l_.jpg" border="0" width="240"  height="240"
+       alt="image of the left eye's view" title="image of the left eye's view"></a>
+      </td></tr></table><font size="2">Le point de vue de l'œil gauche.<br>
+              Stereo_Ani_00_02.jpg</font>
+  </td>
+  </tr>
+  </table>
+</div>
+  <br>
+
+
+<b>Continue with 2.1: </b><a href="stereo_310f.htm">Combiner une s&eacute;rie des images st&eacute;r&eacute;o.</a>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</td>
+</tr>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

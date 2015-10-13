@@ -1,0 +1,368 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Beispiele zur Erstellung von Objekten f&uuml;r POV-Ray in 3D Computergraphik">
+<meta name="keywords" content="Beispiele zu POV-Ray, Beispielobjekte, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=650,height=507");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="model_720e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="model_720e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="model_720i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="model_720i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="model_720f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="model_720f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="model_000d.htm">Modelleisenbahn u.</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">Eisenbahn-Modelle</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">mit POV-Ray</b></a><br></b>
+ &nbsp;&nbsp;&nbsp; <a href="model_000d.htm"-->Inhaltsverzeichnis</b></a><br>
+<br>
+&nbsp; - <a href="model_300d.htm">Mein Rail Track System</b></a><br>
+&nbsp; &nbsp; <a href="model_300d.htm">f&uuml;r POV-Ray</b></a><br>
+&nbsp; &nbsp;  <a href="model_300d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; - <a href="model_320d.htm">Geraden &amp; Kurven</b></a><br>
+ &nbsp; &nbsp; - <a href="model_330d.htm">Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Y- u. 3Wege-Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Kreuzungen</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_400d.htm">Vereinfachte Anwendung</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_400d.htm">mit RT_System_00.inc</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_420d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="model_420d.htm">mit RT_System_00.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_500d.htm">An Modell-Ma&szlig;st&auml;be</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_500d.htm">angepa&szlig;te Gleiselemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_540d.htm">H0 Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_550d.htm">N Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_560d.htm">Z Scale Gleise</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_600d.htm">Gleisplan-Design mit</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_600d.htm"> skalierten Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="model_610d.htm">Verlegen von Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="model_620d.htm">Gleise rauf u. runter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_700d.htm">Gleisplan-Design Beispiele</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_710d.htm">Einfach zyklisch</b></a><br>
+ &nbsp; &nbsp; &nbsp;<b>&gt;</b> <!--a href="model_720d.htm"--><b>Einfacher Achter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="dwn/RT_down_d.htm">Download </b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="dwn/RT_down_d.htm">Rail Track System</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<b><font size="+1">Gleisplan-Design Beispiele</b></font><br>
+<b>Beispiel 2 : Einfacher Achter<br></b>
+<font size="-2">(<b>Spur N</b> Gleissystem, Geometrie Typ A</a>)</font>
+<br>
+<br>
+<table><tr>
+<td valign="top"><font size="-1"> F&uuml;r gebogene Gleise ben&ouml;tigt man oft eine Drehung des Gleises um einem Winkel um ein Rotationszentrum
+                 unter Verwendung des Makros 'Rotate_Around_Trans( RotationVector, Center_of_Rotation )' aus der
+                 Include-Datei '<b>transforms.inc</b>'.<br>
+                 Man kann den langen Befehl <br>
+                 'Rotate_Around_Trans(&lt;0, 1*15,0&gt;,&lt;0,0,-R1&gt;)' <br>
+                 durch den k&uuml;rzeren Ausdruck ersetzen, <br>
+                 wie etwa 'RTyz( 1*15, -R1 )' <br>
+                indem man das folgende Makro deklariert:</font>
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//------------------------------------------------//
+#include "transforms.inc"
+#macro RTyz( Y_Angle, Z_Distance )
+ Rotate_Around_Trans(&lt;0,Y_Angle,0&gt;,&lt;0,0,Z_Distance&gt;)
+#end
+//------------------------------------------------//</td></b></pre>
+            </tr></table>
+</td>
+</td>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/im_model_720_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/RT_N_A111_BasicSample_032_1pur_s.jpg" border="0" width="320" height="240"
+                   alt="Simple cyclic" title="Simple cyclic"></a></td>
+            </tr></table>  <font size="-1"><b>
+            <a href="javascript:ShowImage('im/im_model_720_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+             Ein einfacher Achter mit Gleise auf und ab </a></b></a></font>
+  <h5 align="center">Download: <a href="pov/RT_N_A111_BasicSample_032pur.pov">Szenen-Datei f&uuml;r POV-Ray</a></h5>
+</td>
+</tr></table>
+
+<b>Verlegen der Gleise: </b>
+<table><tr>
+<td valign="top">
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-----------------------------------------------------------------------------------------//
+union{ //  western curve
+ object{ Track_Up_00 ("T_R1_15", Step_1/2,1) RTyz( 0*15,-R1) translate&lt;0, 0.0*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 1*15,-R1) translate&lt;0, 0.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 2*15,-R1) translate&lt;0, 1.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 3*15,-R1) translate&lt;0, 2.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 4*15,-R1) translate&lt;0, 3.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 5*15,-R1) translate&lt;0, 4.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 6*15,-R1) translate&lt;0, 5.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 7*15,-R1) translate&lt;0, 6.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 8*15,-R1) translate&lt;0, 7.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz( 9*15,-R1) translate&lt;0, 8.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz(10*15,-R1) translate&lt;0, 9.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz(11*15,-R1) translate&lt;0,10.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz(12*15,-R1) translate&lt;0,11.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz(13*15,-R1) translate&lt;0,12.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz(14*15,-R1) translate&lt;0,13.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz(15*15,-R1) translate&lt;0,14.5*Step_1*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_1,  0) RTyz(16*15,-R1) translate&lt;0,15.5*Step_1*N,0&gt; }
+ rotate&lt;0,180,0&gt;
+ RTyz(-2*15, R1 )
+ } // end  western curve
+
+union{ // simple  station // starting at western end:
+ object{ SW_L( SD_1)  translate&lt; 0*L111 ,0,0&gt;}
+ object{ T_R9_15  Rotate_Around_Trans(&lt;0,-1*15,0&gt;,&lt;0,0, R9&gt;)
+                      translate&lt; 0*L111 ,0,0&gt;}
+ object{ T_111        translate&lt; 1*L111 ,0,0&gt;}
+
+ object{ T_111        translate&lt;2*L111 ,0, 1*Track_Distance&gt; }
+ object{ T_111        translate&lt;2*L111 ,0, 0&gt; }
+
+ object{ SW_R( SD_2)  translate&lt;3*L111 ,0, 1*Track_Distance&gt;}
+ object{ T_111        translate&lt;3*L111 ,0, 0&gt; }
+
+ object{ T_111        translate&lt;4*L111 ,0, 1*Track_Distance&gt; }
+ object{ SW_R( SD_2)  rotate&lt;0,180,0&gt;
+                      translate&lt;5*L111 ,0, 0&gt; }
+ RTyz(-2*15, R1 )
+} // ----- end station
+
+union{ // eastern curve
+ object{ Track_Up_00 ("T_R1_15", Step_2/2,1) RTyz( 0*15,-R1) translate&lt;0, 0.0*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 1*15,-R1) translate&lt;0, 0.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 2*15,-R1) translate&lt;0, 1.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 3*15,-R1) translate&lt;0, 2.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 4*15,-R1) translate&lt;0, 3.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 5*15,-R1) translate&lt;0, 4.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 6*15,-R1) translate&lt;0, 5.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 7*15,-R1) translate&lt;0, 6.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 8*15,-R1) translate&lt;0, 7.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz( 9*15,-R1) translate&lt;0, 8.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz(10*15,-R1) translate&lt;0, 9.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz(11*15,-R1) translate&lt;0,10.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz(12*15,-R1) translate&lt;0,11.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz(13*15,-R1) translate&lt;0,12.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz(14*15,-R1) translate&lt;0,13.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz(15*15,-R1) translate&lt;0,14.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_R1_15", Step_2,  0) RTyz(16*15,-R1) translate&lt;0,15.5*Step_2*N,0&gt; }
+ translate&lt;4.5*L111,0,0&gt;
+ RTyz(-2*15, R1 )
+} // end  eastern curve
+
+union{ // cross line southeast to northwest
+ object{ Track_Up_00 ("T_111", Step_1  , 0)  translate&lt; 0*L111, 0.0*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_111", Step_1/2, 2)  translate&lt; 1*L111, 1.0*Step_2*N,0&gt; }
+ object{ T_Straight( 0.062*N )               translate&lt; 2*L111 ,1.5*Step_2*N,0&gt; }
+
+ object{ Track_Up_00 ("T_111",-Step_1/2, 1)  translate&lt; 2*L111+0.062*N ,1.5*Step_2*N,0&gt; }
+ object{ Track_Up_00 ("T_111",-Step_1  , 0)  translate&lt; 3*L111+0.062*N, 1.0*Step_2*N,0&gt; }
+
+ rotate&lt;0,180+1.0,0&gt;
+ translate&lt;0, 16.5*Step_1*N,0&gt;
+ RTyz( 15*15, R1 )
+} // end  cross line southeast to northwest
+//-----------------------------------------------//</td></b></pre>
+            </tr></table>
+</td>
+</tr></table>
+
+
+<table><tr>
+<td valign="top" colspan="2">
+Und hier derselbe Achter mit provisorische Br&uuml;ckenpfeilern:<br>
+</td>
+</tr>
+<tr>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/im_model_720_2.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/RT_N_A111_BasicSample_031m.jpg" border="0" width="320" height="240"
+                   alt="Simple cyclic" title="Simple cyclic"></a></td>
+            </tr></table>  <font size="-1"><b>
+            <a href="javascript:ShowImage('im/im_model_720_2.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            Einfacher Achter.</a></b>
+  <h5 align="center">Download: <a href="pov/RT_N_A111_BasicSample_032pur.pov">Szenen-Datei f&uuml;r POV-Ray</a></h5>
+</font>
+</td>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/im_model_720_3.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/RT_N_A111_BasicSample_032_am.jpg" border="0" width="320" height="240"
+                   alt="Simple cyclic" title="Simple cyclic"></a></td>
+            </tr></table>  <font size="-1"><b>
+            <a href="javascript:ShowImage('im/im_model_720_3.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            Einfacher Achter</a></b>
+</font>
+</td>
+</tr></table>
+
+<b>Erweiterung mit Dreifach-Weiche und Nebengleis: </b><br>
+ <font size="-1"><font color="#D3164A"><b>Ben&ouml;tigte &Auml;nderungen in rot!</b></font></font>
+<table><tr>
+<td valign="top">
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-----------------------------------------------------------------------------------------//
+union{ // simple  station
+ // starting at western end:
+ object{ <font color="#D3164A">SW3</font>( SD_1)  rotate<0,0,0>                            translate< 0*L111 ,0,0> }
+ object{ T_R9_15  Rotate_Around_Trans(<0,-1*15,0>,<0,0, R9>)  translate< 0*L111 ,0,0>}
+ object{ T_111        rotate<0,0,0>                           translate< 1*L111 ,0,0> }
+<font color="#D3164A">// side line
+ union{ object{ T_111  translate< 0*L111 ,0,0>  }
+        object{ T_111  translate< 1*L111 ,0,0>  }
+        object{ T_111  translate< 2*L111 ,0,0>  }
+        object{ T_111  translate< 3*L111 ,0,0>  }
+                  Rotate_Around_Trans(<0, 1*15,0>,<0,0,-R9>) translate< 0*L111 ,0,0>
+      }
+ // end side line</font>
+ object{ T_055       rotate<0,0,0>   translate< 2*L111 ,0, 1*Track_Distance> }
+ object{ T_055       rotate<0,0,0>   translate< 2*L111 ,0, 0> }
+
+ object{ SW_R( SD_2)  rotate<0,0,0>   translate< 2*L111+1*L055 ,0, 1*Track_Distance> }
+ object{ T_111        rotate<0,0,0>   translate< 2*L111+1*L055 ,0, 0> }
+
+ object{ T_111        rotate<0,0,0>   translate< 3*L111+1*L055 ,0, 1*Track_Distance> }
+ object{ SW_R( SD_2)  rotate<0,180,0> translate< 4*L111+1*L055 ,0, 0> }
+
+ RTyz(-2*15, R1 )
+} //
+//-----------------------------------------------//</td></b></pre>
+            </tr></table>
+</td>
+</tr></table>
+
+<table><tr>
+<td valign="top" colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/im_model_720_4.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/RT_N_A111_BasicSample_033t.jpg" border="0" width="320" height="240"
+                   alt="Simple cyclic" title="Simple cyclic"></a></td>
+            </tr></table>  <font size="-1"><b>
+            <a href="javascript:ShowImage('im/im_model_720_4.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            Einfacher Achter + Nebengleis.</a></b>
+  <h5 align="center">Download: <a href="pov/RT_N_A111_BasicSample_033.pov">Szenen-Datei f&uuml;r POV-Ray</a></h5>
+</font>
+</td>
+<td valign="top">
+    &nbsp;
+</font>
+</td>
+</tr></table>
+
+<br>
+<br>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

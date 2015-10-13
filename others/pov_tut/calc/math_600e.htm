@@ -1,0 +1,254 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="keywords" content="systems of coordinates, pov, povray, POV-Ray, raytracing, mathematical functions, 3d graphics, raytracing descriptions, povray tutorial">
+<meta name="description" content="systems of coordinates, tutorials and samples for the POV-Ray raytracing program">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<title>Mathematical Functions in POV-Ray</title>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=695,height=550");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_600i.htm"><font size="2">Italiano </font></a>
+        <a href="math_600i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_600f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="math_600f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_600d.htm"><font size="2">Deutsch </font></a>
+        <a href="math_600d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000e.htm"><nobr>Coordinate Systems</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000e.htm"><nobr>and 2D Functions</nobr></b></a><br>
+<br>
+&nbsp; - <a href="math_100e.htm">Squared Paper</b></a><br>
+<nobr>&nbsp; -  <a href="math_200e.htm">Coordinate Systems</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200e.htm">with Axes</b></a><br>
+<nobr>&nbsp; -  <a href="math_300e.htm">Macro for Grids</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300e.htm">with 2 Levels</b></a><br>
+&nbsp; -  <a href="math_500e.htm">2D Functions</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500e.htm">Samples</b></a><br>
+<nobr>&nbsp; <b>&gt;</b>  <!--a href="math_600e.htm"--><b>Math Functions</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="math_600e.htm"--><b>in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+<!--- end of header -->
+
+<table align="center">
+<tr>
+ <td nowrap colspan="2">
+ <h1 align="center">Mathematical Functions in POV-Ray</h1>
+ <td>
+</tr></table>
+
+
+<table border="0" table align="center" cellspacing="5"  cellpadding="15">
+<tr>
+
+ <td valign="top" width="66%">
+ <!-- sub -->
+ <table cellpadding="10"><tr><td colspan="1" valign="TOP" >
+<b>Attention: <br>
+<font size="-1">Write &quot;X&quot; (capital letter!), not &quot;x&quot;, also &quot;Y&quot; instead of &quot;y&quot; and &quot;Z&quot; instead of &quot;z&quot;</b><br>
+               The many lowercase letters are reserved keywords in POV-Ray:<br>
+               &nbsp;&nbsp;  <b>x = &lt;1,0,0;&gt;, y = &lt;0,1,0;&gt;, z = &lt;0,0,1;&gt;</b> !!!! <br>
+               Write &quot;<b>X*X</b>&quot; for &quot;<b>x<sup>2</sup></b>&quot;, and &quot;<b>(X-2)*(X-2)*(X-2)</b>&quot; for &quot;<b>(x-2)<sup>3</sup></b>&quot;.</font>
+
+
+
+<br>
+
+<table width="95%" align="center"><tr><td colspan="2">
+<br>
+<nobr><b>List of Mathematical Functions in POV-Ray</b>: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</nobr>
+<h6>
+<b>abs(X)</b> = absolute value of X.<br>
+<b>pow(X,Y)</b> = exponentiation:  X raised to the power Y <br>
+<b>sqrt(X)</b> = square root of X <br>
+&nbsp;<br>
+<b>int(X)</b> = integer part of X<br>
+<b>mod(X,Y)</b> &nbsp; =  X modulo Y  =((X/Y)-int(X/Y))*Y <br>
+<b>div(X,Y)</b> = integer part of (X/Y)<br>
+<b>max(X,Y,...)</b>  = maximum of two or more float values <br>
+<b>min(X,Y,...)</b>  = minimum of two or more float values <br>
+<b>ceil(A)</b> smallest integer value above A<br>
+<b>floor(A)</b> biggest integer value below A<br>
+<b>select(A, B, C)</b> If (A &lt; 0) = B, if (A &gt;= 0) = C.<br>
+<b>select(A, B, C ,D)</b> <br>
+ &nbsp; &nbsp; &nbsp; If (A &lt; 0) = B, if (A = 0) = C, and if (A &gt; 0) = D.<br>
+&nbsp;<br>
+<b>degrees(X)</b> = converts radians to degrees.<br>
+<b>radians(X)</b> = converts degrees to radians = X*pi/180.0. <br>
+&nbsp;<br>
+<font size="-2">(In the following: all arguments X are in radians!)</font><br>
+<b>sin(X)</b> = sine of X<br>
+<b>cos(X)</b> = cosine of X<br>
+<b>tan(X)</b> = tangent of X<br>
+&nbsp;<br>
+<font size="-2">(In the following: the results are angles in radians!)</font><br>
+<b>asin(X)</b> = arc-sine of X<br>
+<b>acos(X)</b> = arc-cosine of X<br>
+<b>atan2(X,Y)</b> = arc-tangent of (X/Y)<br>
+&nbsp;<br>
+<b>sinh(X)</b> = hyperbolic sine of X<br>
+<b>cosh(X)</b> = hyperbolic cosine of X<br>
+<b>tanh(X)</b> = hyperbolic tangent of X<br>
+&nbsp;<br>
+<b>asinh(X)</b> = invers hyperbolic sine of X<br>
+<b>acosh(X)</b> = inverse hyperbolic cosine of X<br>
+<b>atanh(X)</b> = invers hyperbolic tangent of X <br>
+&nbsp;<br>
+<b>exp(X)</b> = exponential of X.<br>
+<b>log(X)</b> = logarithm of X<br>
+<b>ln(X)</b>&nbsp;  = natural logarithm of X
+&nbsp;<br></h6>
+</td> </tr></table>
+<!--sub-->
+With the standard include file '<b>math.inc</b>'<br>
+(we have to include this by ' #include&quot;math.inc&quot; !)<br>
+among others there are available these other functions:
+<table width="90%"></table><tr><td>
+<font size="-1">The trigonometric functions with the arguments in degrees:<br>
+<b>sind(X)</b><br>
+<b>cosd(X)</b><br>
+<b>tand(X)</b><br>
+<br>
+<b>asind(X)</b><br>
+<b>acosd(X)</b><br>
+<b>atand(X)</b><br>
+<b>atan2d(X,Y)</b> = atan( X/Y ) <br>
+<br>
+<b>sgn(X)</b> = -1 if (X &lt; 0), +1 if (X &gt;= 0)<br>
+</font></td></tr></table>
+
+   <!--sub2 -->
+
+
+
+</td></h5>
+
+<td rowspan="3" valign="top">
+<div align="center">Examples</div><br>
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/fun01i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/fun01.jpg" border="0" width="320" height="240"
+     alt="mathematical functions" title="mathematical functions"></a></td>
+  </tr>
+ </table>
+ <div align="center"><font size="-1">Download scene file for POV-Ray:
+ <a href="pov/fun01.pov"><i>fun01.pov</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/fun02i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/fun02.jpg" border="0" width="320" height="240"
+     alt="mathematical functions" title="mathematical functions"></a></td>
+  </tr>
+ </table>
+  <div align="center"><font size="-1">Download scene file for POV-Ray:
+ <a href="pov/fun02.pov"><i>fun02.pov</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/fun03i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/fun03.jpg" border="0" width="320" height="240"
+     alt="mathematical functions" title="mathematical functions"></a></td>
+  </tr>
+ </table>
+ <div align="center"><font size="-1">Download scene file for POV-Ray:
+ <a href="pov/fun03.pov"><i>fun03.pov</i></a>.</font></div>
+ <br> &nbsp;
+ <br>
+
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="200" height="200" align="center">
+     <a href="javascript:ShowImage('im/fun04i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/fun04.jpg" border="0" width="320" height="240"
+     alt="mathematical functions" title="mathematical functions"></a></td>
+  </tr>
+ </table>
+ <div align="center"><font size="-1">Download scene file for POV-Ray:
+ <a href="pov/fun04.pov"><i>fun04.pov</i></a>.</font></div>
+ <br> &nbsp;
+
+
+ </td></tr></table>  <!--inner>
+
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

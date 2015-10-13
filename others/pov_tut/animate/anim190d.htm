@@ -1,0 +1,316 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller">
+<meta name="keywords" content="3D-Animationen, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg Video, avi Video, animierte Gifs, Raytracing Beschreibungen, POV-Ray Beispiele, POV-Ray Anleitungen">
+<meta name="Description" content="3D-Animationen mit POV-Ray -  deutsche Beschreibungen zum Raytracer POV-Ray
+       mit Beispielen zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik">
+<title>3D-Animationen mit POV-Ray - deutsche Beschreibungen zum Raytracer POVRAY mit Beispielen
+       zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ger.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="zur&uuml;ck zur &Uuml;bersicht" title="zur&uuml;ck zur &Uuml;bersicht"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animationen mit POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Grundlagen und Beispiele zu Animationen.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim190e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim190e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim190i.htm"><font size="2">Italiano</font></a>
+        <a href="anim190i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim190f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="anim190f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm"> Animationen Galerie</b></a><br>
+ - <a href="../pov__ger.htm"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anid.htm">3D Animation</b></a><br>
+ &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; <!--a href="anim001d.htm"-->  0. Grundlagen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001d.htm">Beispiel</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002d.htm">Von Bildern zum Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005d.htm">Grundbegriffe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008d.htm">Animationsbefehle</b></a><br>
+&nbsp; <!--a href="anim11d.htm"--> I. Zyklische Animationen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11d.htm">Objekt-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112d.htm">Planeten im Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113d.htm">Animierte Uhr</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12d.htm">Kamera-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121d.htm">Kamera Geradeausflug</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13d.htm">Western-Kutschen</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim13d.htm">-Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131d.htm">Rollende R&auml;der</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14d.htm">Zahnradgetriebe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141d.htm">Rollende Kette</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142d.htm">Fahrradkette</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15d.htm">Pendelschwingung</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151d.htm">Newtonpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152d.htm">Schaukelstuhl</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16d.htm">Federpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170d.htm">Koppelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17d.htm">Pleuelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18d.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; <b>&gt</b> 9. <!--a href="anim190d.htm"--><b>Z&auml;hler + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200d.htm">Faltung eines W&uuml;rfels</b></a><br>
+
+&nbsp; II. Nichtlineare Bewegungen<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim220d.htm"> +Bremsen 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim222d.htm"> + Bremsen 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240d.htm">Fallen + H&uuml;pfen</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260d.htm">Beschleunigung nach</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260d.htm">physikalischen Formeln</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280d.htm">Geschwindigkeitssteuerung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280d.htm">mit Spline-Funktionen</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animationspfade<br>&nbsp; &nbsp; &nbsp;  mit Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210d.htm">Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21d.htm">Geschlossene Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22d.htm">Animationspfade</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table align="center" width="85%" cellpadding="10">
+<tr><td width="100"><img src="im/Seven_Segment_LCD_run02s.gif" border="1" width="80" height="60"></td>
+    <td>
+     <h1>Counter und Countdowns<br>
+      <font size="-1">Z&auml;hler mit Zahlen als Text-Objekte f&uuml;r POV-Ray <br>
+     und Z&auml;hler mit 7-Segment-Display.</font></td></h1>
+     <td width="10%">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr></td>
+</tr>
+</table>
+<table align="center" width="85%" cellpadding="10"><!--1-->
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b><font size="+1">Countdown<br>
+   als Text-Objekte f&uuml;r POV-Ray:</font></b><br>
+  Bei dieser Art von Z&auml;hlern benutzt man die Variable &quot;frame_number&quot;
+  direkt zum Z&auml;hlen.
+ Hierbei konvertiert man die aktuelle &quot;frame_number&quot; in einen Zeichenketten-Wert
+ (string) f&uuml;r das Text-Objekt von POV-Ray durch <br>
+  <b>str( Number , </b>&nbsp;                       // (die zu konvertierende Zahl)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> 0 , </b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // (kein Auff&uuml;llen links),<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>0 )</b>
+   // (Keine Ziffern nach dem Dezimalpunkt)</nobr><br>
+  Wegen der unterschiedlichen Breite der Ziffern bei normalen Schriften in truetype-fonts
+  mu&szlig; man die Zahl in zwei Ziffern aufspalten um ein horizontales Wackeln zu vermeiden.
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>//-----------------------------------
+#declare Number = 99-frame_number;
+// splitting it in two parts:
+#declare Number_10 =
+         int(Number/10);
+#declare Number_1 =
+        (Number-Number_10*10 );
+//-----------------------------------
+#declare Text_10 =
+text { ttf "arial.ttf",
+     str(Number_10,0,0),0.001,0
+     pigment{ color rgb&lt;1,1,1&gt;}
+     translate&lt;0,0,-0.001&gt;
+   } // end of text object ----------
+#declare Text_1 =
+text { ttf "arial.ttf",
+     str(Number_1,0,0),0.001,0
+     pigment{ color rgb&lt;1,1,&gt;}
+     translate&lt;0,0,-0.001&gt;
+   } // end of text object ----------
+//-----------------------------------
+union{
+ // don't write things like "08" !
+ #if(Number>9)// --------------------
+ object{ Text_10
+         texture{ Number_Texture }
+         translate&lt;0.125,0.2,0&gt;
+       } // -------------------------
+ #end //-----------------------------
+ object{ Text_1
+         texture{ Number_Texture }
+         translate&lt;0.675,0.2,0&gt;
+       } // -------------------------
+scale &lt;1,0.65,1&gt;
+} // end union ----------------------   </b></td></pre></tr> </table>
+</td></p>
+
+<td colspan="1" valign="top">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><nobr>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</nobr>
+<br>
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Running_Counter_10.gif" width="240" height="120" alt="Running_Counter" title="Running_Counter"></td></tr>
+   </table>Contdown</h6>
+<h6 align="center">
+ Szenenbeschreibungen f&uuml;r POV-Ray:<br><a href="pov/Running_Counter_10.ini"> &quot;Running_Counter_10.ini&quot;</a>
+    and <br> <a href="pov/Running_Counter_10.pov">&quot;Running_Counter_10.pov&quot;</a></h6>
+    <nobr>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</nobr>
+</td>
+
+</tr>
+</table>
+
+<table align="center" width="85%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b><font size="+1">Z&auml;hler mit 7-Segment-Display:</font></b><br>
+  Hier kann man ein bereits als Makro vorgefertigtes Objekt verwenden. <br>
+  Wie dieses 7-Segment-Display erstellt wurde kann man hier sehen:  <br>
+   &nbsp;  &nbsp; <a href="../x_sam/tec_010d.htm">7-Segment Display</a><br>
+  Beispieldateien zu diesem Makro und die M&ouml;glichkeit zum Download<br>
+  der Include-Datei &quot;Seven_Segment_LCD.inc&quot; findet man hier:
+  &nbsp; &nbsp; <a href="../objects/obj_890d.htm">POV-Ray Objekte - Elektronik</a><br>
+  <br>
+  <b>Wie man diese Objekt animieren kann:</b><br>
+  Die Ziffern der beiden Stellen werden mit der <br>
+  Variablen &quot;frame_number&quot; wie folgt berechnet:
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#declare Number = frame_number*3; //0~99
+
+#declare Num_10 = int ( Number/10);
+#declare Num_1  = int ((Num_10*10)/1);
+
+#if(Num_10=0) #declare Num_10=99; #end
+
+//----------------------------------
+#include "Seven_Segment_LCD.inc"
+//----------------------------------
+union{
+ object{ Seven_Segment_LCD(
+         Num_10, // 0~9, integer!
+         10, // shearing angle
+         &lt; 1.75, 10, 1.40&gt;, //
+         Active_Texture,
+         Inactive_Texture,
+         Background_Texture,
+         1, // SS_Point_On,
+         0, // SS_Point_Active,
+         ) //-----------------------
+         scale 0.09
+         translate&gt; 0.51,0.05,0&gt;
+       } // ------------------------
+ object{ Seven_Segment_LCD(
+         Num_1,// 0~9, integer!
+         10, // shearing angle
+         &gt; 1.75, 10, 1.40&gt;, //
+         Active_Texture,
+         Inactive_Texture,
+         Background_Texture,
+         1, // SS_Point_On,
+         0, // SS_Point_Active,
+         ) //------------------------
+         scale 0.09
+         translate&gt; 3*0.51,0.05,0&gt;
+       } // -------------------------
+ scale 0.5
+ rotate&gt;-90,0,0&gt;
+ translate&lt; 0, 0.4, 0&gt;
+} // end union ----------------------</b></td></pre></tr> </table>
+</td></p>
+
+<td colspan="1" valign="top">
+<br>
+  <h6 align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Seven_Segment_LCD_run02.gif" width="160" height="120" alt="Seven_Segment_LCD" title="Seven_Segment_LCD"></td></tr>
+   </table>2-stelliges 7-Segment-Display</h6>
+<h6 align="center">
+ Szenenbeschreibungen f&uuml;r POV-Ray:<br><a href="pov/Seven_Segment_LCD_run02.ini"> &quot;Seven_Segment_LCD_run02.ini&quot;</a>,
+        <a href="pov/Seven_Segment_LCD_run02.pov">&quot;Seven_Segment_LCD_run02.pov&quot;</a><br>
+    und  <a href="../objects/electronic/Seven_Segment_LCD.inc">&quot;Seven_Segment_LCD.inc&quot;</a></h6>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<img src="im/Seven_Segment_Ani1.gif" width="200" height="150" alt="Seven_Segment_LCD_Display" title="Seven_Segment_LCD_Display"><br>
+ein &quot;Seven_Segment_LCD_Display&quot;<br>
+das etwas weiter entwickelt ist<br>
+kann man auf dieser Seite finden: <br>
+<a href="../objects/obj_890d.htm">Seven_Segment_LCD_Display</a>
+</td>
+
+
+</tr>
+</table>
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

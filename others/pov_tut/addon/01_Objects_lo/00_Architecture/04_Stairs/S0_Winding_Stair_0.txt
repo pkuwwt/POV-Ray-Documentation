@@ -1,0 +1,30 @@
+//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------- textures
+#declare Railing_Texture = 
+   texture { Chrome_Metal  
+             //pigment{ color rgb<1,1,1> } 
+             finish { phong 0.1} 
+           } // end of texture
+#declare Step_Texture = 
+   texture { pigment{ color rgb<1,1,1>*1.20 } 
+             finish { phong 0.1} 
+           } // end of texture
+//---------------------------------------------------------------------------------------
+#include "Winding_Stair_0.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Winding_Stair_0(   0.10, //Step___H, // step height                            
+                           0.50, //Step___D, // deepth of a step - maximum at the outline
+                           1.30, //Step___Ra, // outer radius of the steps
+                           21, // N_o_Steps, // total number of steps per revolution
+                           2, // N_o_Rev,  //  Number_of_Revolutions
+                           0.03, // Railing___R, // radius of Railing tubes
+                           0.02, // Railing___Rv // radius of vertical tubes
+                           0.75, // Railing___H, // heigth of spiral Railing 
+                           Railing_Texture,  
+                           Step_Texture   // horizontal texture of steps
+                        ) //-----------------------------------------------------------//
+        scale <1,1,1>*1
+        rotate< 0, 0, 0>
+        translate<0.00,0.00, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

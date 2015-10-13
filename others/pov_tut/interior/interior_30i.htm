@@ -1,0 +1,450 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Design del Interno dei Oggetti trasparenti con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Design del Interno dei Oggetti trasparenti con material, interior e media - une introduzione al linguaggio di descrizione di scene (SDL) del raytracer POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, infographie, 3D computer graphics, oggeti transparenti, material, textures, interior, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr>raytracer POV-Ray </nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Design del Interno dei Oggetti trasparenti</b></font>
+      <font size="-1"><b>con POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_30e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_30e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_30f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_30f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_30d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_30d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+<br>
+<br>
+<nobr> &nbsp; <a href="interior_000i.htm">Indice del contenuto</b></a></nobr><br>
+ &nbsp; <a href="interior_000i.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05i.htm">Sintassi di material,</b></a><br>
+ &nbsp; &nbsp; &nbsp;  texture e interior</b><br>
+&nbsp; -  <a href="interior_03i.htm">Vetro della finestra</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; e max_trace_level </b></a><br>
+&nbsp; -  <a href="interior_001i.htm">fog - Nebia</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10i.htm">Sintassi di media</b></a> <br>
+&nbsp; -  <!--a href="interior_30i.htm"--><b>Media e Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; con/senza density map <br>
+&nbsp; -  <a href="interior_20i.htm">Raggi nella Nebbia </b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -  <a href="interior_40i.htm">Spada di Luce</b></a> <br>
+&nbsp; -  <a href="interior_44i.htm">Fiamme di candele</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -  <a href="interior_50i.htm">Luce della Finestra </b></a><br>
+&nbsp; -  <a href="interior_70i.htm">Vapore, Fumo, Nuvole</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -  <a href="interior_60i.htm">Tromba d'Aria.</b></a> <br>
+
+<nobr>&nbsp; Problemi Speciali con Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_080i.htm">Cambiare la scala di Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_090i.htm">Sovrapposizione di Media</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="50%" align="center"><tr><td>           <!-- inner table -->
+
+<h1 align="center"><b>&quot;media&quot; e &quot;density maps&quot; &nbsp; &nbsp; &nbsp;<br></b>
+</h1>
+Ci sono 4 typi di modelli (pattern) che sono specialmente interessante con media density maps:
+<table width="90%"><!--  A   -->
+<tr>
+ <td><h6>
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_patterns_00.jpg" width="200"  height="150"  vspace="0" hspace="0"></td>
+    </tr></table><b>spherical</b> <br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>sphere{
+    &lt;0,0,0&gt;, 1
+    pigment{rgbt 1}
+    hollow
+ interior{ //-----------
+ media{
+  emission &lt;1,1,1&gt;
+  scattering{1,&lt;1,1,1&gt;}
+  density{ <b>spherical</b>
+    turbulence 0
+    color_map {
+     [0 rgb 0.0]//border
+     [1 rgb 1.0]//center
+     } // fin color_map
+   } // fin density
+  } // fin media ---
+ } // fin interior
+ translate &lt;0,1.00,0&gt;
+} //----- end of sphere</b></td></pre>
+   </tr></table>
+
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_patterns_01.jpg" width="200"  height="150"  vspace="0" hspace="0"></td>
+    </tr></table> <b>cylindrical</b><br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>cylinder{
+   &lt;0,-0.5,01&gt;,&lt;0,1,0&gt;,1
+   pigment{rgbt 1}
+   hollow
+ interior{ //-----------
+ media{
+  emission&lt;-.5,-.5,1&gt;*.6
+  scattering{1,&lt;1,1,1&gt;}
+  density{ <b>cylindrical</b>
+    turbulence 0
+    color_map {
+     [0 rgb 0.0]//border
+     [1 rgb 1.0]//center
+     } // fin color_map
+   } // fin density
+  } // fin media ----
+ } // fin interior
+ translate &lt;0,1,0>
+} //---- end of cylinder</b></td></pre>
+    </tr></table>
+
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_patterns_02.jpg" width="200"  height="150"  vspace="0" hspace="0"></td>
+    </tr></table> <b>boxed</b><br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>box{
+    &lt;-1,-.5,-1&gt;,&lt;1,1,1&gt;
+    pigment{rgbt 1}
+    hollow
+ interior{ //-----------
+ media{
+  emission&lt;-.2,1,-.5&gt;*.6
+  scattering{1,&lt;1,1,1&gt;}
+  density{ <b>boxed</b>
+    turbulence 0
+    color_map {
+     [0 rgb 0.0]//border
+     [1 rgb 1.0]//center
+     } // fin color_map
+   } // fin density
+  } // fin media ----
+ } // fin interior
+ translate &lt;0,1,0>
+} //------- end of box</b></td></pre>
+     </tr></table>
+
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_patterns_03a.jpg" width="200"  height="150"  vspace="0" hspace="0"></td>
+    </tr></table> <b>planar</b><br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>box{
+    &lt;-1,-.25,-1&gt;,&lt;1,1,1&gt;
+    pigment{rgbt 1}
+    hollow
+ interior{ //-----------
+ media{
+  emission&lt;1,-.25,1&gt;*.6
+  scattering{1,&lt;1,1,1&gt;}
+  density{ <b>planar</b>
+    frequency 5
+    color_map {
+     [0 rgb 0.0]//border
+     [1 rgb 1.0]//center
+     } // end color_map
+   } // end of density
+  } // end of media ----
+ } // end of interior
+ translate &lt;0,1,0>
+} //------- end of box</b></td></pre>
+     </tr></table>
+
+</td></h6>
+</tr><tr>
+
+<td colspan="4"><hr size="3"></td>
+</tr><tr>
+
+<td colspan="4">Certament possono anche usare tutti i modelli con modificzioni che sapiamo delle testure.,
+ Qui 3 altri esempi:</td>
+</tr><tr>
+<td><h6>
+</tr>
+</table>
+
+<table width="90%">
+ <tr>
+ <td><h6>
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_patterns_04.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table><b>bozo</b> <br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>box{ &lt;-1,-0.5,-1&gt;,&lt;1,1,1&gt;
+    pigment{ rgbt 1 }
+    hollow
+ interior{ //-----------
+ media{
+  emission &lt;-0.4,0.7,1&gt;*0.6
+  scattering{ 1, &lt;1,1,1&gt;
+              extinction  1.2 }
+  density{ bozo
+    turbulence 0
+    frequency 20
+    color_map {
+     [0.0 rgb 0.0]//border
+     [0.5 rgb 0.1]
+     [1.0 rgb 1.0]//center
+     } // end color_map
+   } // end of density
+  } // end of media ----
+ } // end of interior
+ translate &lt;0,1,0>
+} //------- end of box</b></td></pre>
+ </tr>
+ </table>
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_patterns_05.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table> <b>gradient x</b><br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>box{ &lt;-1,-0.5,-1&gt;,&lt;1,1,1&gt;
+    pigment{ rgbt 1 }
+    hollow
+ interior{ //-----------
+ media{
+  emission &lt;1,0.2,-0.6&gt;*0.9
+  scattering{ 1, &lt;1,1,1&gt;
+              extinction  2.0 }
+  density{ gradient x
+    turbulence 0.5
+    frequency 4
+    color_map {
+     [0.0 rgb 0.0]//border
+     [0.5 rgb 0.1]
+     [1.0 rgb 1.0]//center
+     } // end color_map
+   } // end of density
+  } // end of media ----
+ } // end of interior
+ translate &lt;0,1,0>
+} //------- end of box</b></td></pre>
+ </tr>
+ </table>
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_patterns_06.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table> <b>quilted</b><br>
+    <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><pre>box{ &lt;-1,-0.5,-1&gt;,&lt;1,1,1&gt;
+    pigment{ rgbt 1 }
+    hollow
+ interior{ //-----------
+ media{
+  emission &lt;1,-0.8,-0.6&gt;*1.0
+  scattering{ 1, &lt;1,1,1&gt;
+              extinction  2.5 }
+  density{ quilted
+    turbulence 0.0
+    frequency 6
+    color_map {
+     [0.0 rgb 0.0]//border
+     [0.5 rgb 0.1]
+     [1.0 rgb 1.0]//center
+     } // end color_map
+   } // end of density
+  } // end of media ----
+ } // end of interior
+ translate &lt;0,1,0>
+} //------- end of box</b></td></pre>
+</tr></table>
+
+</td></h6>
+</tr>
+</table>
+</div>
+<hr size="3">
+<div align="center">
+<p align="left">
+ <b>Sopra Density Maps e Oggetti di Container.</b> .<br>
+ Se usiamo &quot; density &quot; con &quot;turbulence&quot;, sarrebbe buono ingrandire l'oggetto di container! </p>
+<table width="90%">
+<tr>
+ <td>  <h6>
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_maps_00.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table>Una sfera con raggio 1.<br>
+    &quot;Density map&quot; senza &quot;turbulence&quot;.<br>&nbsp;
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_maps_02a.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table>Una sfera con raggio 1.<br>
+    &quot;Density map&quot; con &quot;turbulence 1.3&quot;.<br>
+    Sfera container taglia &quot;density&quot;!
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_maps_02.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table>Una sfera con raggio 1.5.<br>
+    &quot;Density map&quot; con &quot;turbulence 1.3&quot;.<br>
+    &quot;Density&quot; nella sfera di container !
+ </td></h6>
+</tr></table>
+
+
+
+<hr size="3">
+<p align="left">
+ Possiamo anche tenere &quot;density&quot; con &quot;turbulence&quot; nel interno di una sfera con la periferia tenue<br>
+ con &quot;intersection&quot; di una &quot;density&quot; con una altra!
+ </p>
+<table width="90%">
+<tr>
+ <td>  <h6>
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_maps_1.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table>Una sfera con raggio 1.<br>
+    &quot;Density map&quot; senza &quot;turbulence&quot;.<br>&nbsp;
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_maps_2.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table>Una sfera con raggio 1.5.<br>
+    &quot;Density map&quot; con &quot;turbulence 1.3&quot;.<br>
+    Container ingrandito per &quot;density&quot;!
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/density_maps_3.jpg" width="200"  height="200"  vspace="0" hspace="0"></td>
+    </tr></table>Una sfera con raggio 1.<br>
+    &quot;Density map&quot; con &quot;turbulence 1.3&quot; <br>
+    Aggiunto &quot;density&quot; senza turbulence.<br>
+    La periferia tenue nel container!
+ </td></h6>
+</tr></table>
+ </td>
+</tr><tr>
+<td>
+<hr size="3">
+<p align="left">
+ <b>Algebra Booleana con media - operazioni logici con &quot;media&quot; e &quot;density maps&quot; </b><br>
+ &Egrave; possibile di usare pi&ugrave; che una &quot;density map&quot; ma anche usare pi&ugrave; che una &quot;media&quot;.
+ Le regole e i resultati sono lo stesse come con la CSG con solidi.
+ </p>
+<table align="center"   border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td><nobr><b>intersection  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b></nobr>
+ </td>
+ <td><nobr><b>union &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b></nobr>
+ </td>
+</tr><tr>
+ <td>
+ <pre><b> media{ ...
+   density{ ... } //1
+   density{ ... }//2
+ } // end media</b>
+
+
+ </td></pre>
+ <td>
+ <pre><b> media{ ...  //1
+   density{ ... }
+ } // end media 1
+ media{ ...  //2
+   density{ ... }
+ }// end media 2</b>
+ </td></pre>
+</tr></table>
+
+</td>
+</tr>
+</table>
+</div>
+
+
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

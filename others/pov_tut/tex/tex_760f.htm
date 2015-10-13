@@ -1,0 +1,283 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures with POV-Ray - types de motifs<</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="Textures avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=850,height=665");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Conception de Surface en &raquo;texture&laquo; avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_760e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_760e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_760i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_760i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_760d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_760d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top" width="20%"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+ &nbsp;       <!--a href="tex_000f.htm"--><b>Conception de Surface</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000f.htm">Coleurs et Textures</b></a><br>
+ &nbsp;&nbsp; &nbsp; <!--a href="tex_000f.htm"--><b>Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001f.htm">Syntaxe de texture</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001f.htm">Exemple de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200f.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300f.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">Exemples normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400f.htm">finish{ ... } </b></a><br>-->
+ <nobr>&nbsp; &nbsp; <a href="tex_210f.htm">Textures pr&ecirc;tes-&agrave;-l'emploi</b></a></nobr><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210f.htm">Rules</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150f.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160f.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110f.htm">Couleurs do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110f.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120f.htm">Transparence</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700f.htm">Motifs - Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700f.htm">types de motifs</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs r&eacute;gulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500f.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500f.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550f.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560f.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561f.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562f.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570f.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580f.htm">pavement</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs rayures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs par pigments</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650f.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651f.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660f.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750f.htm">Listes de Motifs</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750f.htm">Motifs r&eacute;gulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755f.htm">Motifs par hasard</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_760f.htm"--><b>Motifs Fractal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765f.htm">Autres motifs</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780f.htm">Warps</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_780f.htm">warp mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_790f.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800f.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800f.htm">méthodes de mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820f.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830f.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840f.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850f.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860f.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870f.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880f.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890f.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890f.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900f.htm">Votre textures</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+<h2 align="center">Motifs (patterns) pour pigment et normal
+</h2>
+
+<!-- --------------------------------------------------- -->
+<table border="1" cellspacing="4" bordercolor="#ffffff" cellpadding="4" width="80%" align="center">
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" colspan="3"><p><b>Motifs avec Fractals</b></td></p>
+<!-- --------------------------------------------------- -->
+</tr>
+<tr>
+ <td width="15%" valign="top" bgcolor="#f8f8f0">
+ <b><font size="2"><p>Nom</b></font>
+ </td>
+ <td width="85%" valign="top" bgcolor="#f8f8f0" colspan="2">
+ <b><font size="2"><p>Exemple</b></font>
+ </td>
+</tr>
+
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="3"><p><b>mandel</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_mandel1.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>
+pigment{ <b>mandel</b> 50 exponent 2 //2...33
+         scale 0.60 translate&lt;0.15,0,0&gt;
+         color_map{[0.00 color rgb &lt;0.5,0,0.25&gt;]
+                   [0.08 color rgb &lt;0.8,0,0.10&gt;]
+                   [0.20 color rgb &lt;1,0.4,0&gt;]
+                   [0.30 color rgb &lt;1,0.7,0&gt;]
+                   [1.0 color rgb &lt;1,1,1&gt;]}
+        } // end of pigment</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_ mandel1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;1,1,1&gt;}
+normal { <b>mandel</b> 125
+         scale 0.50 translate&lt;0.15,0,0&gt;
+       } // end of normal</td></pre></font>
+
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_mandel_pn.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>#declare Pigment_1 =
+pigment{ <b>mandel</b> 50 exponent 2 //2...33
+         // interior 1,2 exterior 1,2
+         scale 0.50 translate&lt;0.15,0,0&gt;
+         color_map{[0.00 color rgb &lt;0.5,0,0.25&gt;]
+                   [0.08 color rgb &lt;0.8,0,0.10&gt;]
+                   [0.20 color rgb &lt;1,0.4,0.05&gt;]
+                   [0.30 color rgb &lt;1,0.7,0&gt;]
+                   [0.60 color rgb &lt;0.0,0,0&gt;]
+                   [0.80 color rgb &lt;0,0,0&gt;]
+                   [1.00 color rgb &lt;1,1,1&gt;]}
+         } // end of pigment -------------------
+sphere{ &lt;0,0,0&gt;, 1
+        pigment{ Pigment_1
+               } // end pigment
+        normal { pigment_pattern { Pigment_1 }
+                 3 // BUMP_SIZE
+               } // end normal
+        finish { phong 1 }
+      } // end of sphere</td></pre></font>
+
+
+</tr>
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="1"><p><b>julia</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_julia1.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>julia</b> &lt;0.360, 0.250&gt;, 20
+         interior 1, 1  scale 0.60
+         color_map{[0.0 color rgb &lt;0,0,0&gt;]
+                   [0.2 color rgb &lt;1,0,0&gt;]
+                   [0.4 color rgb &lt;1,1,0&gt;]
+                   [1.0 color rgb &lt;1,1,1&gt;]
+                   [1.0 color rgb &lt;0,0,0&gt;]}
+        } // end of pigment</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="4"><p><b>magnet</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_magnet1.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>magnet</b> 1 // magnet type 1 or 2
+         mandel 20  interior 1, 1
+         scale 0.25 rotate&lt;0,30,0&gt;
+         color_map{[0.0 color rgb &lt;0,0,0&gt;]
+                   [0.2 color rgb &lt;1,0,0&gt;]
+                   [0.4 color rgb &lt;1,1,0&gt;]
+                   [1.0 color rgb &lt;1,1,1&gt;]
+                   [1.0 color rgb &lt;0,0,0&gt;]}
+        } // end of pigment</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_magnet2.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>
+pigment{ <b>magnet</b> 2 // magnet type 1 or 2
+         mandel 20  interior 1, 1
+         scale  0.36 rotate&lt;0,40,0&gt;
+         color_map{[0.0 color rgb &lt;0,0.5,0&gt;]
+                   [0.2 color rgb &lt;0,0,1&gt;]
+                   [0.4 color rgb &lt;1,0.5,0&gt;]
+                   [1.0 color rgb &lt;1,1,1&gt;]
+                   [1.0 color rgb &lt;0,0,0&gt;]}
+        } // end of pigment</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_magnet3.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>magnet</b> 1 // magnet type 1 or 2
+         julia &lt;0.360, 0.250&gt;, 20  interior 1, 1
+         scale 0.26 rotate&lt;0,40,0&gt;
+         color_map{[0.0 color rgb &lt;1,0.5,0&gt;]
+                   [0.1 color rgb &lt;1,0,0.5&gt;]
+                   [0.4 color rgb &lt;1,1,0&gt;]
+                   [1.0 color rgb &lt;1,1,1&gt;]
+                   [1.0 color rgb &lt;0,0,0&gt;]}
+        } // end of pigment</td></pre></font>
+</tr>
+
+
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/maget1julia_pn.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>#declare Pigment_1 =
+pigment{ magnet 1 // magnet type 1 or 2
+         julia &lt;0.360, 0.250&gt;, 20  interior 1, 1
+         scale 0.26 rotate&lt;0,40,0&gt;
+         color_map{[0.0 color rgb &lt;1,0.5,0&gt;]
+                   [0.1 color rgb &lt;1,0,0.5&gt;]
+                   [0.4 color rgb &lt;1,1,0&gt;]
+                   [1.0 color rgb &lt;1,1,1&gt;]
+                   [1.0 color rgb &lt;0,0,0&gt;]}
+         } // end of pigment -------------------
+sphere{ &lt;0,0,0&gt;, 1
+        pigment{ Pigment_1
+               } // end pigment
+        normal { pigment_pattern { Pigment_1 }
+                 3 // BUMP_SIZE
+               } // end normal
+        finish { phong 1 }
+      } // end of sphere</td></pre></font>
+</tr><!-- --------------------------------------------------- -->
+</table>
+
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+</font>
+</td></tr></table>
+
+
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

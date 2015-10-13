@@ -1,0 +1,323 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=380,height=305");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="sam_400i.htm"><font size="2">Italiano </font></a>
+        <a href="sam_400i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_400f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="sam_400f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_400d.htm"><font size="2">Deutsch </font></a>
+        <a href="sam_400d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_360e.htm">Pawn</a><br>
+ &nbsp; &nbsp; -  <a href="sam_370e.htm">Wireframe Cube</a><br>
+ &nbsp; &nbsp; -  <a href="sam_380e.htm">Octagon</a><br>
+ &nbsp; &nbsp; -  <a href="sam_390e.htm">Egg Shape</a><br>
+ &nbsp; &nbsp; -  <!--a href="sam_400e.htm"--><b>Star</a><br>
+ &nbsp; &nbsp; -  <a href="sam_410e.htm">Optical Lens</a><br>
+ &nbsp; &nbsp; -  <a href="sam_420e.htm">Chessboard</a><br>
+<nobr> &nbsp; &nbsp; -  <a href="sam_440e.htm">Regular Tetrahedron</a></nobr><br>
+ &nbsp; &nbsp; -  <a href="sam_430e.htm">Penrose Triangle</a><br>
+ &nbsp; &nbsp; -  <a href="sam_340e.htm">Yin &amp; Yang</a><br>
+ &nbsp; &nbsp; -  <a href="sam_310e.htm">Fishblob</a><br>
+ &nbsp; &nbsp; -  <a href="sam_320e.htm">Threefold</a><br>
+ &nbsp; &nbsp; -  <a href="sam_330e.htm">Trefoil</a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+<!--&nbsp; -  <a href="sam_400e.htm">Plants</b></a><br-->
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="95%">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="3"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('geo/star0m_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="geo/star00.jpg" border="0" width="80" height="60"
+                   alt="star" title="Click for a bigger example: star"></a></td>
+            </tr></table><br>
+
+ </td>
+ <td valign="top">
+  <h1 align="left"><b>Star</b></h1>
+ <h6>The construction of a simple star shape.  <br>
+ Example for the using of the &quot;intersection&quot; and/or &quot;difference&quot;.
+ <br>
+     Objects: &nbsp; &quot;box&quot;, &quot;sphere&quot;.<br>
+     Methods: &quot;#declare&quot;, &quot;union{...}&quot;, &quot;intersection&quot;, &quot;difference&quot;. <br>
+   Click <a href="javascript:ShowImage('geo/star0m_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">here for an example</a>!
+
+
+   <br>
+  <!--    An include file to use this object as a read-made object you can find
+   at my <a href="../objects/obj_000e.htm">POV-Ray Objects page</a>.-->
+  </td></h6>
+</tr>
+</table>
+<hr size="3">
+
+
+<table cellpadding="5" width="95%">
+<tr>
+ <td valign="top" >
+ <p align="justify"><b><font size="+1">The construction step by step:</font></b><br>
+
+ </td></p>
+ </tr>
+</table>
+
+<table cellpadding="5" width="85%">
+ <td valign="top"><p align="justify">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star01.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><font size="-1">We start with a &quot;box&quot;.
+     To get a clearly defined length of the rays we  scale the box by the square root of 2.
+     (Then the diagonals of it's surfaces have a length of 2 units!)</font>
+ </td></p>
+
+ <td valign="top"><p align="center">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star02.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><pre><b>
+  box { &lt;-1,-1,-1>,&lt; 1,1,1>
+        scale &lt;1,1,1>*sqrt(2)
+      }</b></pre>
+ </td></p>
+ </tr>
+</table>
+
+<table cellpadding="5" width="85%">
+ <td valign="top"><p align="justify">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star03.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><font size="-1">We rotate the box around the z axis by 45 degrees.</font>
+ </td></p>
+
+ <td valign="top"><p align="center">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star04.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><pre><b>  box { &lt;-1,-1,-1&gt;,&lt; 1,1,1&gt;
+        scale &lt;1,1,1&gt;*sqrt(2)
+        rotate&lt;0,0,45>
+      }</b></pre>
+ </td></p>
+ </tr>
+</table>
+
+
+<table cellpadding="5" width="85%">
+ <td valign="top"><p align="justify">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star06.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><font size="-1">Then the box is scaled in y direction and
+    after this it is turned around the x axis by 45 degrees.
+    We use the declare statement to make this shape now
+    to a new object called &quot;Ray_Profile&quot;.</font>
+ </td></p>
+
+ <td valign="top"><p align="center">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star07.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><pre><b>  #declare Ray_Profile =
+   box { &lt;-1,-1,-1&gt;,&lt; 1,1,1&gt;
+        scale &lt;1,1,1&gt;*sqrt(2)
+        rotate&lt;0,0,45&gt;
+        scale &lt;1,0.36,1&gt;
+        rotate&lt;45,0,0&gt;
+      }</b></pre></td>
+ </td></p>
+ </tr>
+</table>
+
+<table cellpadding="5" width="85%">
+ <td valign="top"><p align="justify">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star08.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><font size="-1">The new object is now mirrored
+   at the xy plane in z direction by &quot;scale&lt;1,1,-1&gt;&quot;.
+   Then we make an intersection of the original shape and it's mirror image..</font>
+ </td></p>
+
+ <td valign="top"><p align="center">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star09.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><pre><b> intersection{
+   object{ Ray_Profile }
+   object{ Ray_Profile scale&lt;1,1,-1&gt;}
+   }</b></pre></td>
+ </td></p>
+ </tr>
+</table>
+
+
+<table cellpadding="5" width="85%">
+ <td valign="top"><p align="justify">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star10.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><font size="-1">To be able to make also stars with an odd number of rays
+   we need to subtract  ( = intersection with the inverse shape) a box
+   to get rid of the left part of our ray shape. This shape now we
+   declare as a new object called &quot;'Ray&quot;..</font>
+ </td></p>
+
+ <td valign="top"><p align="center">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star11.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><pre><b>#declare Ray =
+ intersection{
+   object{ Ray_Profile }
+   object{ Ray_Profile scale&lt;1,1,-1&gt;}
+   box{&lt;-2,-1,-1&gt;,&lt;0,1,1&gt; inverse}
+   }</b></pre></td>
+ </td></p>
+ </tr>
+</table>
+
+<table cellpadding="5" width="85%">
+ <td valign="top"><p align="justify">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star12.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><font size="-1">The rays of a star were arranged finally
+   by a while loop rotating them around the y axis.
+   For the right image the rays were made more slender
+   by applying &quot; scale&lt;1,0,5,0.5&gt; &quot;.<br>
+   The resulting star shape has a radius of 2 units.</font>
+ </td></p>
+
+ <td valign="top"><p align="center">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/star13.jpg" width="300" height="300" hspace="0" vspace="0"></td></tr>
+ </table><pre><b>union{
+ #local Nr = 0;     // start
+ #local EndNr = 5;  // end
+ #while (Nr &lt; EndNr)
+ object{Ray rotate&lt;0,Nr*360/EndNr,0&gt;}
+ #local Nr = Nr + 1;// next Nr
+ #end // ------------- end of loop
+rotate&lt;0,0,0&gt;
+translate&lt;0,0,0&gt;
+} // end of union</b></pre></td>
+ </td></p>
+ </tr>
+</table>
+
+<hr size="3">
+
+<table cellpadding="5" width="85%">
+ <td valign="top"><p>
+<td>&nbsp;<br>
+
+ <table align="center" border="5"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+ <tr>
+ <td align="center">
+   <a href="javascript:ShowImage('geo/star0m_im.htm')"
+   onMouseover="window.status='ShowSingleImage';return true"
+   onMouseOut="window.status=''">
+   <img src="geo/star14.jpg" border="0" width="300"  height="300"
+   alt="another star 320x240" title="another star 320x240"></a></td>
+ </tr>
+ </table>
+ <h5 align="center">Scene file for <nobr>POV-Ray:</nobr><br>
+ <a href="geo/star0.txt">&quot;star0.txt&quot;</a> or
+ <a href="geo/star0.pov">&quot;star0.pov&quot;</a></h5>
+</td>
+</tr>
+</table>
+
+</td></tr></table>
+<tr><td>
+<!-- <h5><b>Download of all ready-made POV-Ray objects</b><br>
+ zipped up (with all include files, example files and with <br>
+ the according Insert Menu Add-ons for comfortable use!)<br>
+ at the <a href=""><b>Download Page</b></a>-->
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

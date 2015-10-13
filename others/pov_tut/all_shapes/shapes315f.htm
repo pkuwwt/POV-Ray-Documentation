@@ -1,0 +1,199 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Objets G&eacute;om&eacute;triques avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Objets G&eacute;om&eacute;triques avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D graphiques, infographie, Objets G&eacute;om&eacute;triques avec POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Objets G&eacute;om&eacute;triques en POV-Ray</font></td></div>
+ </td>
+ <td align="right">
+   <a href="shapes315e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="shapes315e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="shapes315i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>&nbsp;
+   <a href="shapes315i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="shapes315d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</b></a>&nbsp;
+   <a href="shapes315d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+   </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_f.htm">Page d'accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000f.htm">Objets G&eacute;om&eacute;triques</b></a><br>
+ &nbsp;&nbsp; table des mati&egrave;res<br>
+<a href="shapes100f.htm">Objets de Base</b></a><br>
+<br>
+<nobr><a href="shapes200f.htm">Objets avec macro + CSG</b></a></nobr><br>
+&nbsp; -  <a href="shapes310f.htm">Spheroid, ellipsoid</b></a><br>
+&nbsp; -&gt;<!--a href="shapes315f.htm"--><b>Disk_X,Disk_Y,Disk_Z</b></a><br>
+&nbsp; -  <a href="shapes330f.htm">Round_Box</b></a><br>
+&nbsp; -  <a href="shapes340f.htm">Round_Cylinder</b></a><br>
+&nbsp; -  <a href="shapes320f.htm">Round_Cone</b></a><br>
+&nbsp; -  <a href="shapes360f.htm">Supercone</b></a><br>
+&nbsp; -  <a href="shapes370f.htm">Supertorus</b></a><br>
+<br>
+<nobr><a href="shapes3_0000f.htm">Objets dans &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400f.htm">D'autres objets comme macros</b></a></nobr><br>
+<a href="shapes600f.htm">Objets 3D text</b></a><br>
+<a href="shapes000f.htm">Autre Objets</b></a><br>
+<a href="shapes666f.htm">Objets Non-CSG</b></a><br>
+<nobr><a href="shapes700f.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900f.htm">Isosurface</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top"> <!-- Content - 2nd column -->
+
+<b> &nbsp; Disk_X, Disk_Y, Disk_Z</b> - cylindres a dimensions d'une unit&eacute; en toutes directions. <br>
+<font size="-1"> &nbsp; D&eacute;clar&eacute;e en &quot;shapes.inc&quot;</font>
+
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="0" width="90%">    <!-- images + syntax-->
+<tr><td>
+<table >
+<tr>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Disk_X.jpg" border="0" width="240" height="180"
+                   alt="Disk_X" title="Disk_X"></a></td></tr></table>
+ </td>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Disk_Y.jpg" border="0" width="240" height="180"
+                   alt="Disk_Y" title="Disk_Y"></a></td></tr></table>
+ </td>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Disk_Z.jpg" border="0" width="240" height="180"
+                   alt="Disk_Z" title="Disk_Z"></a></td></tr></table>
+ </td>
+</tr>
+<tr>
+ <td align="center">
+ <b>Disk_X</b>
+<table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>// --------------------------
+object{
+ Disk_X // no open available!
+ scale &lt;1,1,1&gt;
+ texture{
+  pigment{color rgb&lt;.8,.5,1&gt;}
+  normal {bumps .5 scale .025}
+  finish {phong 1 }
+  } // end of texture
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // end of disc ----------- </b></td></pre></tr></table>
+</td>
+ <td align="center">
+ <b>Disk_Y</b>
+<table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>// --------------------------
+object{
+ Disk_Y
+ scale &lt;1,1,1&gt;
+ texture{
+  pigment{color rgb&lt;.8,.5,1&gt;}
+  normal {bumps .5 scale .025}
+  finish {phong 1 }
+  } // end of texture
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // end of disc ----------- </b></td></pre></tr></table>
+</td>
+ <td align="center">
+ <b>Disk_Z</b>
+<table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>// --------------------------
+object{
+ Disk_Z
+ scale &lt;1,1,1&gt;
+ texture{
+  pigment{color rgb&lt;.8,.5,1&gt;}
+  normal {bumps .5 scale .025}
+  finish {phong 1 }
+  } // end of texture
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // end of disc ----------- </b></td></pre></tr></table>
+
+  </td>
+</tr>
+</table>  <!-- end images + syntax -->
+
+<b>Annotation :</b><br>
+ Toutes ces &quot;Disk" sont d&eacute;clar&eacute;es a dimensions d'une unit&eacute; en toutes directions.<br>
+ Pour changer le mesures on doit utiliser &quot; scale &quot;. <br>
+
+<br>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

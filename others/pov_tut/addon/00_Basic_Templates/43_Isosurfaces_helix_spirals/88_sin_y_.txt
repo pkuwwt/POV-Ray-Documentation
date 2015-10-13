@@ -1,0 +1,23 @@
+//--------------------------------------------------------------------------
+#declare N_Waves = 3; // number of waves per unit y !
+isosurface { //-------------------------------------------------------------
+
+  function { sin( N_Waves*y*2*pi   ) /11
+             + sqrt(x*x*N_Waves + z*z*N_Waves ) 
+             - 0.9 //  2* radius ? 
+           }
+  threshold 0
+  contained_by {box {<-1,0,-1>, < 1, 2, 1>}}
+  max_gradient 10
+  accuracy 0.005
+  open  // optional
+
+         texture { pigment{ color rgb< 1.0, 0.7, 0.1> } //  deep yellow 
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+
+  scale <1,1,1>
+  rotate <0, 0, 0>
+  translate < 0,0, 0>
+} // end of isosurface -----------------------------------------------------

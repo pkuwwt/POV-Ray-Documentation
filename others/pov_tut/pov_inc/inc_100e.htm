@@ -1,0 +1,277 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, Include files tutorial for POV-Ray, self-made include files">
+<meta name="description" content="Include files tutorial for POV-Ray - Self-made include files">
+<title>Include files with POV-Ray - Self-made include files</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Include files with POV-Ray</b></font><br>
+      <font size="-1"><b>How they work and How to make your own include files</b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="inc_100i.htm"><font size="2">Italiano </font></a>
+        <a href="inc_100i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_100f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="inc_100f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="inc_100d.htm"><font size="2">Deutsch </font></a>
+        <a href="inc_100d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000e.htm"--><b>A Short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000e.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_000e.htm">Why Include Files?</b></a><br>
+ &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_100e.htm"--><b>Self-made Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <!--a href="inc_100e.htm"--><b>and how to call them.</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_200e.htm">Special Notations, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_200e.htm">&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300e.htm">Where to store</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="inc_400e.htm">Design of Include Files</b></nobr></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="inc_700e.htm">Adding a new item</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_700e.htm">to the 'Insert Menu'</b></a><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Self-made include files</b></h2>
+
+<p align="justify"><font size="+1"><b>First Example - An include file for an object:</b></font> <br>
+Here the relevant part of a small table 'Table_01' in a simple POV-Ray scene file (red):
+
+<div align="center">
+ <table><tr><td>
+ <table border="1" cellpadding="0" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><pre><b>// POV-Ray 3.6/3.7 scene file sample
+//
+//
+// camera, light, background here !
+// ...
+<font color="#800000">//////////// object definition ///////
+// table dimensions
+#local H = 0.50; // height,
+#local W = 0.45; // width in x and z
+#local R = 0.02; // thickness
+//------------------------
+#declare Table_01 =
+union{
+   // feet
+  cylinder{&lt;0,0,0&gt;,&lt;0,H,0&gt;, R
+           translate&lt; W/2-R,0,-W/2+R&gt;}
+  cylinder{&lt;0,0,0&gt;,&lt;0,H,0&gt;, R
+           translate&lt; W/2-R,0, W/2-R&gt;}
+  cylinder{&lt;0,0,0&gt;,&lt;0,H,0&gt;, R
+           translate&lt;-W/2+R,0, W/2-R&gt;}
+  cylinder{&lt;0,0,0&gt;,&lt;0,H,0&gt;, R
+           translate&lt;-W/2+R,0,-W/2+R&gt;}
+  // seat
+  box{ &lt;-W/2,-0.025,-W/2>,&lt;W/2,0,W/2&gt;
+       translate&lt;0,H,0&gt; }
+
+  pigment{ color rgb&lt;0.75,0.5,0.3>*0.3}
+}// end of union 'Table_01'
+//////////////////////////////////////</font>
+// using the object:
+object{ Table_01
+        rotate&lt;0,0,0&gt;
+        translate&lt;0,0,0&gt;
+      }
+//------------------------------------</b></td></pre>
+ </tr>
+ </table>
+
+
+</td>
+<td>
+<div align="center">
+<table border="2" bgcolor="ffffff"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+ <img src="im/Table_01_0.jpg" alt="Table_00" border="0" width="320" height="240">
+  </td>
+ </tr>
+</table><font size="-1"><b>The object 'Table_01'. </b></font>
+</div>
+
+<br>
+</p></td></tr></table>
+<hr>
+<p align="justify"><font size="+1"><b>Making an Include File and How we refer to it:</b></font><br>
+Now we put the declaration of the object 'Table_01' in a new separate file called 'Table_01.inc'<br>
+and we save it in the same directory as the scene (.pov) file:<br>
+(other possibilties are descriped later!) <br>
+
+
+ <table><tr><td valign="top">
+ <b> The POV-Ray Scene File<br>
+  using the object 'Table_01':<br>
+ <font size="+1">'Table_01_test.pov'</font></b><br>
+
+ <table border="1" cellpadding="0" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%">
+
+<pre><b>//POV-Ray scene 'Scene_with_Table_01.pov'
+<font color="#800000">// needs: &quot;Table_01.inc&quot;</font>
+// ...
+// camera, light, background here !
+// ...
+<font color="#800000">//////////////////////////////////////
+#include &quot;Table_01.inc&quot;
+//////////////////////////////////////</font>
+// using the object:
+object{ Table_01
+        rotate&lt;0,0,0&gt;
+        translate&lt;0,0,0&gt;
+      }
+// ... and again once more:
+object{ Table_01
+        rotate&lt;0,0,0&gt;
+        translate&lt;1,0,0&gt;
+      }
+// ...
+
+//------------------------------------</b></td></pre>
+ </tr>
+ </table>
+<img src="im/warn.gif" border="0" width="32" height="30"> <font size="-1"><b>Notes:</b><br>
+<b>1) </b>An include file must be included in the scene file<br>
+  <b>before</b> anything of it's content can be used!</b><br>
+  The best place is up in the scene file header or before the main objects in the scene!<br>
+<b>2) </b><b>Subsequent uses</b> of the content of an include file<br>
+ (here: object{ Table_01 ...})<br>
+<b>need including the relative include file only once!</b><br></font>
+</td><td>
+
+  <b>The POV-Ray include file<br>
+  <font size="+1">'Table_01.inc'</font><br>
+  &nbsp;  </b>
+ <table border="1" cellpadding="0" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%">
+
+<pre><b>// POV-Ray Include File: 'Table_01.inc'
+<font color="#800000">//////////////////////////////////////
+// table dimensions
+#local H = 0.50; // height,
+#local W = 0.45; // width in x and z
+#local R = 0.02; // thickness
+//------------------------
+#declare  Table_01 =
+union{
+   // feet
+  cylinder{&lt;0,0,0&gt;,&lt;0,H,0&gt;, R
+           translate&lt; W/2-R,0,-W/2+R&gt;}
+  cylinder{&lt;0,0,0&gt;,&lt;0,H,0&gt;, R
+           translate&lt; W/2-R,0, W/2-R&gt;}
+  cylinder{&lt;0,0,0&gt;,&lt;0,H,0&gt;, R
+           translate&lt;-W/2+R,0, W/2-R&gt;}
+  cylinder{&lt;0,0,0&gt;,&lt;0,H,0&gt;, R
+           translate&lt;-W/2+R,0,-W/2+R&gt;}
+  // seat
+  box{ &lt;-W/2,-0.025,-W/2>,&lt;W/2,0,W/2&gt;
+       translate&lt;0,H,0&gt; }
+
+  pigment{ color rgb&lt;0.75,0.5,0.3>*0.3}
+}// end of union 'Table_01'
+//////////////////////////////////////</font>
+// ............... end of include file
+</b></td></pre>
+ </tr>
+ </table>
+<img src="im/warn.gif" border="0" width="32" height="30"><font size="-1"><b>Notes:</b><br>
+<b>3) </b>The include file does not contain any camera, light or
+background items.<br>
+<b>The include file contain only the table declarations - nothing else!</b><br>
+<b>4) </b>Declaring objects in include files: It makes sense to use the <b>objects</b>
+here <b>centered at the origine &lt;0,0,0&gt </b>
+without any rotate or translate! <br>
+Otherwise re-using them in other scenes may become very difficult!<br>
+</font><br>
+
+
+
+</td></tr>
+</table>
+</div>
+
+
+
+
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

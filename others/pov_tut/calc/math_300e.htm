@@ -1,0 +1,217 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="keywords" content="Coordinate systems, systems of coordinates, pov, povray, POV-Ray, raytracing, 3d graphics, raytracing descriptions, povray tutorial">
+<meta name="description" content="Coordinate systems, systems of coordinates, tutorials and samples for the POV-Ray raytracing program">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<title>Raster Plate for Coordinate Systems</title>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=695,height=550");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_300i.htm"><font size="2">Italiano </font></a>
+        <a href="math_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_300f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="math_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_300d.htm"><font size="2">Deutsch </font></a>
+        <a href="math_300d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000e.htm"><nobr>Coordinate Systems</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000e.htm"><nobr>and 2D Functions</nobr></b></a><br>
+<br>
+&nbsp; - <a href="math_100e.htm">Squared Paper</b></a><br>
+<nobr>&nbsp; -  <a href="math_200e.htm">Coordinate Systems</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200e.htm">with Axes</b></a><br>
+<nobr>&nbsp; <b>&gt;</b>  <!--a href="math_300e.htm"--><b>Macro for Grids</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="math_300e.htm"--><b>with 2 Levels</b></a><br>
+&nbsp; -  <a href="math_500e.htm">2D Functions</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500e.htm">Samples</b></a><br>
+<nobr>&nbsp; -  <a href="math_600e.htm">Math Functions</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600e.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+<!--- end of header -->
+
+<table align="center">
+<tr>
+ <td nowrap>
+ <div align="center"><font size="5"><b>Grid with 2 Levels</b></font><br>
+ The construction of a grid with 2 levels <br>
+ <font size="-1">(i.e. 1m and 0.1m)</font> for systems of coordinates.<br>
+  <font size="-1">Objects: &nbsp; plane, cylinder, cone &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;.<br>
+       Methods: color_map, layered textures, #macro</font>
+ </div>
+ </td>
+ <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </td>
+</tr>
+<tr>
+<td>
+<br>
+<b>Construction in details:</b><br>
+<font size="-1">We use a first macro to creat stripes of a given distance in one direction.<br>
+   In a second macro we add the twice in the first scale (i.e. 1 unit) one of them rotate by 90&deg; around y.
+   Then we add the second grid (i.e. 0.1 unit) in the same way.  </font>
+<br>
+<br>
+
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//------------------------------------- ////////////
+#macro Raster_Lines (RScale, LineW, Intensity_)
+ pigment{ gradient x scale RScale
+          color_map{
+           [0.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [1.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           } // end color_map
+         } // end pigment
+ #end// of Raster(RScale, HLine)-macro
+//------------------------------------- ////////////
+//------------------------------------- ////////////
+#macro Raster_Plate(
+    RD1, Width1,//primary raster distance/width,
+    RD2, Width2,//secondary raster distance/width,
+    Base_Texture, //  non = pigment { Clear }
+    Intensity, // Line gray intensity
+    Start_Box, End_Box, // vectors
+  ) //------------------------------------------
+//----------------------------------------------
+box{ Start_Box,End_Box
+     texture{ Base_Texture }
+  #if (RD1 &gt; 0 ) // raster big  RD1, Width1,
+    texture { Raster_Lines(RD1,Width1,Intensity) }
+    texture { Raster_Lines(RD1,Width1,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+  #if (RD2 &gt; 0 ) // raster small RD2, Width2,
+    texture { Raster_Lines(RD2,Width2,Intensity) }
+    texture { Raster_Lines(RD2,Width2,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+} // end box -----------------------------------
+#end // ------------------------------ end of macro
+//------------------------------------- ////////////
+
+// How to use:  ------------------------------------
+#declare B_Tex =
+  texture{ pigment{ color rgb&lt;1,1,1&lt;*1.2}}
+//--------------------------------------------------
+object{ Raster_Plate(
+    1.0, 0.010,// RD1, Width1,// 1st distance/width,
+    0.1, 0.045,// RD2, Width2,// 2nd distance/width,
+    B_Tex, // Base_Texture, // non = pigment{Clear}
+    0.6, // Intensity, // Line gray intensity
+    &lt;-2,-0.05,-2&gt;, &lt;2,0,2&gt;, //Start/End
+  ) //----------------------------------------------
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.001,0&gt;
+} //------------------------------------------------</td></b></pre></tr></table>
+</td>
+<td>
+ <br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_2level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_2ct.jpg" border="0" width="320"  height="240"
+     alt="Grid with 2 Levels" title="Grid with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Grid with 2 levels.<br>
+This scene in POV-Ray: </b><a href="pov/raster_plate_2.pov">raster_plate_2.pov</a></font>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_3level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_3ct.jpg" border="0" width="320"  height="240"
+     alt="Grid with 2 Levels" title="Grid with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Grid with 2 levels with base level.<br>
+ <br>
+<br>
+<br>
+<br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_4level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_4ct.jpg" border="0" width="320"  height="240"
+     alt="Grids with 2 Levels" title="Grids with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Grids 3D with 2 levels.<br>
+This scene in POV-Ray: </b><a href="pov/raster_plate_4.pov">raster_plate_4.pov</a></font>
+</td>
+</tr>
+</table>
+</center>
+<br>
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

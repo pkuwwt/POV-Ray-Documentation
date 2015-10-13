@@ -1,0 +1,264 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Objekte mit POV-Ray 3.6 / 3.7 - Objekte und Macros aus meiner Include-Datei shapes3.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Deutschland">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, 3D-Graphik, Computergrafik, Raytracing Beschreibungen, Povray Anleitungen, Anf&auml;ger, Fortgeschrittene, geometrische Objekte, CSG, Macros">
+<meta name="description" content="Definieren geometrischer Objekte durch Macros f&uuml;r das Freeware-Raytracing-Programm POV-Ray 3.6, povray, pov">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr><a name="top"></a>
+ <hr size="3"><div align="center"><font size="+2">Geometrische K&ouml;rper in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes3_11e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes3_11e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes3_11i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes3_11f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes3_11f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes3_11f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000d.htm"--><b>Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000d.htm">Inhalts&uuml;bersicht</a><br>
+&nbsp;<br>
+<br>
+<nobr><a href="shapes3_0000d.htm">Objekte in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<b>&gt;</b><!--a href="shapes3_11d.htm"--><b>Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20d.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21d.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40d.htm">Egg</b></a><br>
+-  <a href="shapes3_40d.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43d.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42d.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45d.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N</b></a><br>
+-  <a href="shapes3_30d.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30d.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50d.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80d.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85d.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22d.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60d.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65d.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70d.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+<div align="center">
+<font size="2">Geometrische K&ouml;rper aus meiner Include-Datei <a href="../down/insrtd_a.htm" alt="Download" title="Download">&quot;shapes3.inc&quot;</a></font>
+<font size="2">( ehemals &quot;shapes_lo.inc&quot;):</font><br>
+   <font size="5"><b>Segment_of_CylinderRing</b></font><br>
+  Segment eines zylindrischen Rings
+</div>
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="90%">
+<tr>
+  <td valign="top">
+  <br>
+       <table align="center" border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr11big.jpg" border="0" width="320" height="240" alt="Cylinder_Ring_Segment" title="Cylinder_Ring_Segment"></td>
+       </tr></table>
+</td>
+<td>
+   <font size="2">
+   <i>Syntax: </i>
+   </font>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>object{ Segment_of_CylinderRing(
+                  R_out,
+                  R_in,
+                  Height_in_Y,
+                  Segment_Angle
+               ) //---------------
+        texture{ ... ... }
+        scale &lt;1,1,1&gt;
+        rotate&lt;0,0,0&gt;
+        translate&lt;0,0,0&gt;
+      } // end of object ---------</b></td></pre></tr></table>
+ <font size="2">
+    <b>R_out</b> = &auml;u&szlig;erer Radius des Zylinderrings,<br>
+    <b>R_in </b> = innerer Radius des Zylinderrings,,<br>
+    <b>Height</b> = H&ouml;he des Ringsegments,<br>
+    <b>Segment_Angle</b> = Winkel des Ringsegments, <b>links-h&auml;ndig orientiert!</b><br>
+    F&uuml;r Segment_Angle = 0 ergibt sich ein geschlossener Ring oder ein Rohr.<br>
+</font>
+
+
+</td>
+</tr></table>
+<i>Beispiele:</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>#include "shapes3.inc"
+// -------------------------------------------------
+object{ Segment_of_CylinderRing( 3.75,2.25,0.2,-300)
+        texture{ Chrome_Metal
+                 finish { phong 1}
+               } // end of texture
+      } // -----------------------------------------
+object{ Segment_of_CylinderRing( 1.75,1.5,2.0,-270)
+        texture{ pigment {color White*1.1}
+                 finish { phong 1 }
+               } // end of texture
+      } // -----------------------------------------
+object{ Segment_of_CylinderRing( 2.5, 3.0, 1.0, -80)
+        texture{ pigment{ color rgb&lt; 0.7, 1, 0.0&gt; }
+                 finish { phong 1 reflection 0.2}
+               } // end of texture
+      } // -----------------------------------------
+object{ Segment_of_CylinderRing( 1.1, 0.8, 1.5,  0)
+        texture{ pigment{ color rgb&lt; 1,0.7, 0.0&gt; }
+                 finish { phong 1 reflection 0.2}
+               } // end of texture
+      } // -----------------------------------------</b></td></pre></tr></table>
+
+<hr width="90%">
+<table align="center" width="95%">
+<tr><td>
+<font size="4"><b>Das Makro im Detail:</b></font><br>
+<font size="2">
+Zun&auml;chst von einem Zylinder mit Radius R_out ein kleinerer Zylinder mit Radius R_in abgezogen,<br>
+indem man die Schnittmenge des ersten Zylinders mit dem Inversen (Komplement) des zweiten Zylinders bildet.<br>
+Dann werden 2 gegeneinander gedrehte Quader ("box") verwendet um das gew&uuml;nschte Segment auszuschneiden.<br>
+Daf&uuml;r m&uuml;ssen wir zwei F&auml;lle betrachten:  <br>
+1. abs(Segment_Angle) &lt;= 180 180 Grad (Nur die Schnittmenge von Torus und den zwei Quadern) und <br>
+2. abs(Segment_Angle) &gt; 180 Grad (Eine Schnittmenge (intersection) des Torus mit einer Vereinigungsmenge (union) der beiden Quader):</font><br>
+<font size="3">Die folgenden Bilder zeigen wie dieses Makro arbeitet<br>
+(Die Quader wurden in Textur "glass" verdeutlicht):</font><br>
+   <table align="center" border="0" >
+   <tr><td colspan="2">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><img src="im/mymcr11a.jpg" border="0" width="320"  height="320"  alt="Cylinder_Ring_Segment 145 degrees" title="Cylinder_Ring_Segment 145 degrees"></td>
+         <td><img src="im/mymcr11b.jpg" border="0" width="320"  height="320"  alt="Cylinder_Ring_Segment 215 degrees" title="Cylinder_Ring_Segment 215 degrees"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr><td><font size="2"><b>abs(Segment_Angle) &lt;= 180 degrees<br>R_out = 1.25, R_in = 0.75, Angle =-145 </b></font></td>
+       <td><font size="2"><b>abs(Segment_Angle) &gt; 180 degrees<br>R_out = 1.25, R_in = 0.75, Angle =-215 </b></font></td>
+  </tr></table>
+
+
+<div align="center">
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>//--------------------------- Segment_of_CylinderRing()
+#macro Segment_of_CylinderRing( R_out, R_in,
+                                Height,
+                                Segment_Angle
+                              ) //------------
+#local D = 0.0001; // just a little bit
+ #if (Height = 0 ) #local  Height = D; #end
+ #if (Height &lt; 0 ) #local  D = -D; #end
+ #if (R_out &lt; R_in)
+     #local X=R_out; #local R_out=R_in; #local R_in=X;
+ #end
+ #if (Segment_Angle &lt; 0)
+      #local Negativ_Flag = 1;
+      #local Segment_Angle = -Segment_Angle;
+ #else
+      #local Negativ_Flag = 0;
+ #end
+ #if (Segment_Angle &gt;= 360)
+      #local Segment_Angle = mod (Segment_Angle, 360);
+ #end
+
+ intersection{
+   cylinder { &lt;0,0,0&gt;,&lt;0,Height,0&gt;, R_out
+            } // end of outer cylinder  ----------
+   cylinder { &lt;0,-D,0&gt;,&lt;0,Height+D,0&gt;, R_in
+              inverse
+            } // end of inner cylinder  ----------
+
+
+  #if (Segment_Angle &gt; 0) // -----------------------
+  #if (Segment_Angle &gt;= 180)
+  union{
+  #end // then use union!
+
+   box { &lt;-R_out+D,-D,0&gt;,&lt; R_out+D, Height+D, R_out+D&gt;
+       }// end of box
+   box { &lt;-R_out+D,-D,-R_out+D&gt;,&lt; R_out+D, Height+D,0&gt;
+         rotate&lt;0,-Segment_Angle,0>
+       }// end of box
+
+  #if (Segment_Angle &gt;= 180)
+   } // end of union
+  #end // end of union, if union is used!
+
+ #if (Negativ_Flag = 0)  rotate&lt;0,-Segment_Angle,0&gt;
+ scale&lt;-1,1,-1&gt;
+  #end // of "#if (Negativ_Flag = 0)" ------------
+
+  #end // of "#if (Segment_Angle > 0)" ------------
+
+  } // end of intersection
+
+#end // --------- end of macro Segment_of_CylinderRing()</b></font></td></pre>
+   </tr></table>
+</div>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

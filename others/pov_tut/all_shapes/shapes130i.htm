@@ -1,0 +1,286 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=665,height=515");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes130e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes130e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes130f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes130f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes130d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes130d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp;Indice<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+&nbsp; -  <a href="shapes110i.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120i.htm">cylinder</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes130i.htm"--><b>cone</b></a><br>
+&nbsp; -  <a href="shapes140i.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150i.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160i.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170i.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180i.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190i.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350i.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115d.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200i.htm">Forme con macros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+<a href="shapes000i.htm">Altre Oggetti</b></a><br>
+<a href="shapes666i.htm">Forme Non-CSG</b></a><br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900i.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table width="90%" align="center" border="0" cellspacing="5" cellpadding="4" bordercolor="#c0c0c0">
+  <tr><td><!-- global -->
+
+<div align="center">
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="660">
+ <tr>
+  <td><table align="left" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/basics4.jpg" border="0" width="320"  height="240"
+                   alt="Sample cone" title="Sample cone"></td></tr></table>
+  </td>
+  <td>
+    <div align="center">
+      <font size="5"><b>&quot;cone&quot; </b> <nobr>= cono,</nobr></font><br>
+      <font size="5"> e tronco di cono</font>
+    <table border="1" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/cone_truncated_trans.jpg" border="0" width="160"  height="120"
+                   alt="cone" title="cone"></td></tr></table>
+    </div>
+
+  </td>
+</tr>
+<tr>
+  <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/cone1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/cone1t.jpg" border="0" width="320"  height="240"
+                   alt="Samples cones 600x450" title="Samples cones 600x450"></a></td></tr></table>
+      </td>
+<td width="300">
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>Cono - tronco di cono</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+     Sintassi generale:
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>cone{ &lt;x<SUB>1</SUB>,y<SUB>1</SUB>,z<SUB>1</SUB>&gt;,r<sub>1</sub>,&lt;x<SUB>2</SUB>,y<SUB>2</SUB>,z<SUB>2</SUB>&gt;, r<sub>2</sub>
+       texture{ ... ... }
+     } //-----------------------</b></pre></td></tr></table>
+   Qui <nobr>&quot;<b>&lt;x<SUB>1</SUB>,y<SUB>1</SUB>,z<SUB>1</SUB>&gt;</b>&quot;</nobr>  e  <nobr>&quot;<b>&lt;x<SUB>2</SUB>,y<SUB>2</SUB>,z<SUB>2</SUB>&gt;</b>&quot;</nobr>
+   sono le coordinate dei centri delle due fini, e <nobr>&quot;<b> r<sub>1</sub></b>&quot;</nobr>  e
+   <nobr>&quot;<b>r<sub>2</sub></b>&quot;</nobr> sono i raggi corsispondenti.<br>
+   Se uno dei raggi ha il valore 0, il cono si fa puntato a questo fine.
+</td></tr><tr><td colspan="2">
+Gli esempi qui;
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>//--------------- il cono di oro ----------------
+cone{ &lt;-1,2,-3&gt;,1.0,&lt;4,4,5&gt;,0.0
+      texture{ Polished_Chrome
+               pigment{ color rgb&lt;1,0.8,0&gt;}
+               normal { bumps 0.5 scale 0.15}
+               finish { phong 1}
+             }
+    } //------------------------------------------
+//-------- il cono violetto rifettanto  ----------
+cone{&lt;0,0,0&gt;,1.0,&lt;0,2,0&gt;,0.5
+      texture{ Polished_Chrome
+               pigment{ color rgb&lt;1,0,0.5&gt;}
+               normal { crackle 0.5 scale 0.15}
+               finish { phong 1}
+            }
+      translate&lt;2,0,0&gt;
+    } //------------------------------------------</b></pre></td></tr></table>
+  </td></font>
+ </tr>
+</table>
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="660">
+<tr><td>
+<p align="justify"><font face="Arial, Verdana, Helvetica" size="3">
+<b>Consiglio:</b> Per costruire un cono parallelo a un'asse del sistema di coordinate, ma non alla posizione
+zero, possiamo farla in una maniera difficile ma anche in una maniera molto facile (vedi anche a &quot;cylinder&quot;). </font>
+</p></td></tr></table>
+
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="580">
+ <tr>
+  <td>
+     Lo stile per lo pi&ugrave; molto cattivo &egrave; questo: <br>
+     Punto di start e punto del fine del cono definito con valori definitivi<br>
+     =&gt; la lunghezza e la posizione &egrave; difficile da capire!
+  </td>
+ </tr>
+ <tr>
+  <td>
+    <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>cone{ &lt;4,2,2&gt;,0.5, &lt;4,2,5&gt;,1.0
+      texture{ ... ... }
+    } //------------------------</b></pre></td></tr></table>
+   </td>
+  </tr>
+ <tr>
+  <td>
+     Lo stile pi&ugrave; buono,  pi&ugrave; facile da capire &egrave; questo<br>
+     <b>Principio di Costruzione:</b><br>
+     <b>Passo primo:</b> modellare (lunghezza e raggio) il corpo al punto zero.<br>
+     <b>Passo secondo:</b> muovere il corpo alla sua posizione finale.</b><br>
+    In questo caso le istruzioni sono pi&ugrave; facili da capire come nel seguente:
+   </td>
+ </tr>
+ <tr>
+  <td>
+    <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>cono{ &lt;0,0,0&gt;,0.5, &lt;0,0,3&gt;,1.0
+      translate&lt;4,2,2&gt;
+      texture{ ... ... }
+    } //------------------------</b></pre></td></tr></table>
+  </td>
+ </tr>
+</table>
+<br>
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="660">
+ <tr>
+  <td>
+   <font face="Arial, Verdana, Helvetica" size="3">
+   <b>Effeto speciale:</b> Se scegliamo uno raggio negativo,<br>
+      riceviamo un cono doppio: </font>
+  <table border="2" bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>cone{ &lt;0,0,0&gt;,0.5, &lt;0,1.00,0&gt;,<b>-0.2</b>
+      texture{ pigment{ color rgb&lt;0.8,0.55,1.0&gt;*0.75}
+               finish { phong 0.4 }
+             } // end of texture
+      scale &lt;1,1,1&gt; rotate&lt;0,0,0&gt; translate&lt;0,0,0&gt;
+    } // end of cone --------------------------------</b></pre></td></tr></table>
+  </td>
+  <td>
+   <table align=left border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/cone_double.jpg" border="0" width="160"  height="200"
+                   alt="double cone" title="double cone"></td></tr></table>
+  </td>
+  </tr>
+</table>
+<br>
+<table border="0" align="center" cellspacing="3" cellpadding="2" width="660">
+<tr>
+ <td>
+   <font face="Arial, Verdana, Helvetica" size="3">
+   <b>Effeto speciale II:</b> Con la comando optional &quot;<b>open</b>&quot;,<br>
+   abbiamo un cono aperto: </font>
+  <table border="2" bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>cone{ &lt;0,0,0&gt;, 0.3, &lt;0,1.00,0&gt;, 0.5 <b>open</b>
+      texture{ pigment{ color rgb&lt;0.8,1.0,0.25&gt;*0.75}
+               finish { phong 0.4}
+             } // end of texture
+      scale &lt;1,1,1&gt; rotate&lt;0,0,0&gt; translate&lt;0,0,0&gt;
+    } // end of cone ----------------------------------</b></pre></td></tr></table>
+  </td>
+  <td>
+   <table align="left" border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/cone_open.jpg" border="0" width="160"  height="200"
+                   alt="cone open" title="cone open"></td></tr></table>
+  </td>
+  </tr>
+</table>
+
+</td></tr></table><!-- global -->
+</div>
+
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

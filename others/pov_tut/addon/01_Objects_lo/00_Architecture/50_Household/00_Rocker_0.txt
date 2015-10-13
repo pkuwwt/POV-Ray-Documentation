@@ -1,0 +1,41 @@
+//-----------------------------------------------------------------------------------------------------------
+#declare Time =  clock - 0.00 ; 
+
+#include "Rocker_0.inc" 
+//-----------------------------------------------------------------------------------------------------------
+object{  Rocker_0( 12* sin(Time*2*pi) -2) // ( Rocking_Angle  )  
+         texture { pigment{ color rgb< 0.75, 0.5, 0.30>*0.35 }// very dark brown  
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+         rotate<0,  0,0>
+         translate<0,0,0> 
+      } // end of Rocker
+//-----------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------
+
+
+/* 
+; Persistence Of Vision raytracer
+; version 3.6 / 3.7
+; animation ini sample file.
+;Display_Gamma=1.8
+;File_Gamma=1.8
+
+Antialias=On
+Antialias_Threshold=0.3
+Antialias_Depth=3
+
+Input_File_Name=Rocker_0_.pov
+
+Initial_Frame=1
+Final_Frame=45
+Initial_Clock=0
+Final_Clock=1 
+
+;Subset_Start_Frame=11
+;Subset_End_Frame=30
+
+Cyclic_Animation=on
+Pause_when_Done=off
+*/ 

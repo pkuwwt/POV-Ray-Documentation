@@ -1,0 +1,215 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="language" content="de">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="realistische Himmel, Raytracing, PoV, POVRAY, POV-Ray 3.6, 3D-Graphik, 3D-Grafik, Computergrafik, Computergraphik">
+<meta name="Description" content="Realistische Himmel mit POV-Ray">
+<title>Realistische Himmel mit POV-Ray - Teil 1 - Einfache realistische Himmel</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#CAC8C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<table border="0" cellspacing="5" width="100%">
+<tr>
+ <td align="left"><h6 align="left"><a name="top"></a><nobr>Beschreibungen und Beispiele
+     zum Raytracer POV-Ray</nobr> <br> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td>
+ <td align="right"><nobr>
+ <a href="p_sky1.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_sky1.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_sky1i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky1i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_sky1f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_sky1f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr>
+</table></div>
+<hr>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000d.htm">Realistische Himmel</font></b></a></nobr><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky1d.htm"--><b>Realistische Himmel</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky2d.htm">Teilweise bew&ouml;lkt</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3d.htm">Wolkenschichten</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4d.htm">Gestapelte Ebenen</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky5d.htm">Schatten werfend</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky6d.htm">Wolken aus media</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70d.htm">Sonnenuntergang</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7d.htm">Sternenhimmel</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky8d.htm">Skydomes + Skymaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky9d.htm">Skyboxes + Cubemaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky10d.htm">HDRI Umgebungen</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">Realistische Himmel mit POV-Ray</h2>
+<p align="center"><font size="-1"><a href="p_sky000d.htm">Inhalt</a> |
+<!--a href="p_sky1d.htm"-->1</a><b> | <a href="p_sky2d.htm">2</a> |
+<a href="p_sky3d.htm">3</a> | <a href="p_sky4d.htm">4</a>  |
+<a href="p_sky5d.htm">5</a>   | <a href="p_sky6d.htm">6</a>  |
+<a href="p_sky70d.htm">7.0</a> | <a href="p_sky7d.htm">7.1</a> | <a href="p_sky8d.htm">8</a>  |
+<a href="p_sky9d.htm">9</a>  | <a href="p_sky10d.htm">10</a></b></font></p>
+
+
+<div align="center">
+<table border="0" width="90%" align="center"  cellspacing="10">
+<tr><td valign="top">
+    <h3 align="left"><b>Einfacher klarer, blauer Sommerhimmel:</b></h3>
+    <h5 align="justify">Die Welt in einer Halbkugel Typ &quot;K&auml;seglocke&quot; :
+        mit einem realistischen Nebelschleier am Horizont erzeugt mittels <nobr>&quot;color_map{gradient <0,1,0> ...&quot;</nobr>
+        wechselt die Farbe von Weiss am Horizont zu tiefem Blau im Zenit.
+        Alles zusammen aufgeblasen durch &quot;scale 10000&quot; - das einzige Problem:
+        Man muss die Sonnenposition innerhalb dieser Halbkugel halten, sonst sieht man nur die
+        ambient-Komponente aller Texturen!<br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// sky ------------------------------------
+sphere{&lt;0,0,0&gt;,1 hollow
+ texture{
+  pigment{gradient &lt;0,1,0&gt;
+          color_map{
+           [0.0 color White]
+           [0.8 color rgb&lt;0.1,0.25,0.75&gt;]
+           [1.0 color rgb&lt;0.1,0.25,0.75&gt;] }
+         } // end pigment
+  finish {ambient 1 diffuse 0}
+  } // end of texture
+ scale 10000
+ } // end of sphere -----------------------</b></td></pre></tr></table>
+        Man erh&auml;lt dasselbe Resultat ohne diese Einschr&auml;kungen durch den Gebrauch der
+        &quot;sky_sphere&quot; mit diesem &quot;pigment&quot;.
+</h5>
+    </td>
+    <td valign="top"><h5 align="center">
+    <table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="im/p_sky01.jpg" border="0" width="300" height="225" hspace="0" vspace="0"></td></tr>
+        </table>
+     Einfacher klarer Himmel, Typ &quot;K&auml;seglocke&quot;<br>
+     <font size="-1"><a href="pov/p_sky01.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font>
+
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>sky_sphere{
+ pigment{ gradient &lt;0,1,0&gt;
+          color_map{
+          [0.0 color rgb&lt;1,1,1&gt;        ]
+          [0.8 color rgb&lt;0.1,0.25,0.75&gt;]
+          [1.0 color rgb&lt;0.1,0.25,0.75&gt;]}
+        } // end pigment
+ } // end of sky_sphere -----------------</b></td></pre></tr></table>
+</td></h5></tr>
+<tr><td valign="top">
+    <h3 align="left"><b>Gute Wolken<br> - schlechter Horizont:</b></h3>
+    <h5 align=justify>Mit der Welt innerhalt einer Halbkugel Typ &quot;K&auml;seglocke&quot;
+        sollte man nicht zu Wolkentexturen wechseln, denn das f&uuml;hrt zu einen sehr unrealistische
+        Crash der Wolken mit dem Horizont!<br><br>
+        Leider leiden auch die meisten Wolkenhimmel, welche mit &quot;sky_sphere&quot; erstellt wurden
+        unter dieser Krankheit!
+        </h5>
+    </td>
+    <td valign="top"><h5 align="center">
+    <table border="3" bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="im/p_sky02.jpg" border="0" width="300" height="225" hspace="0" vspace="0"></td></tr>
+        </table>Schlechter Himmel: Wolken-Crash am Horizont.
+     <font size="-1"><a href="pov/p_sky02.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font>
+</td></h5></tr>
+<tr><td valign="top">
+    <h3 align="left"><b>Teilweise bew&ouml;lkter Himmel<br> mit realistischem Horizont:</b></h3>
+    <h5 align="justify">Der Himmel wird durch eine blaue Ebene gebildet, die mit einem Wolkenmuster
+        dekoriert wurde. Die Wolken werden zum Horizont hin kleiner - was bedeutend realistischer
+        aussieht! <br>
+        Dieser Effekt kann nicht beim Gebrauch der &quot;sky_sphere&quot; erreicht werden!<br>
+        Ein realistisch wirkender <b>Nebelschleier deckt die schwarze Linie am Horizont ab</b>
+        - die L&uuml;cke zwischen der Grundebene und der Himmelsebene.<br>
+        Das einzige Problem hierbei:<br>
+        Man muss die Sonnenposition unterhalb der Wolkenebene halten, sonst sieht man nur die
+        ambient-Komponente aller Texturen! </h5>
+    Eine Version eine realistischen Wolkenhimmels <b>ohne Nebel (fog)</b> findet man im 2. Beispiel
+    hier: <a href="p_sky5d.htm">5</a>.
+    </td>
+    <td valign="top"><h5 align="center">
+    <table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="im/p_sky03.jpg" border="0" width="300" height="225" hspace="0" vspace="0"></td></tr>
+        </table>Teilweise bew&ouml;lkter Himmel mit realistischem Horizont.
+      <font size="-1"><a href="pov/p_sky03.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font></h5>
+
+   </td></tr>
+<tr><td colspan="2">
+<p align="right"><font size="-1"><a href="p_sky000d.htm">Inhalt</a> |
+<!--a href="p_sky1d.htm"-->1</a><b> | <a href="p_sky2d.htm">2</a> |
+<a href="p_sky3d.htm">3</a> | <a href="p_sky4d.htm">4</a>  |
+<a href="p_sky5d.htm">5</a>   | <a href="p_sky6d.htm">6</a>  |
+<a href="p_sky70d.htm">7.0</a> | <a href="p_sky7d.htm">7.1</a> | <a href="p_sky8d.htm">8</a>  |
+<a href="p_sky9d.htm">9</a>  | <a href="p_sky10d.htm">10</a></b></font></p>
+
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+
+</font>
+</body>
+</html>

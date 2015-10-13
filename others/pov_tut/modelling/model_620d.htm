@@ -1,0 +1,457 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Beispiele zur Erstellung von Objekten f&uuml;r POV-Ray in 3D Computergraphik">
+<meta name="keywords" content="Beispiele zu POV-Ray, Beispielobjekte, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="model_620e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="model_620e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="model_620i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="model_620i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="model_620f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="model_620f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="model_000d.htm">Modelleisenbahn u.</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">Eisenbahn-Modelle</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">mit POV-Ray</b></a><br></b>
+ &nbsp;&nbsp;&nbsp; <a href="model_000d.htm"-->Inhaltsverzeichnis</b></a><br>
+<br>
+&nbsp; - <a href="model_300d.htm">Mein Rail Track System</b></a><br>
+&nbsp; &nbsp; <a href="model_300d.htm">f&uuml;r POV-Ray</b></a><br>
+&nbsp; &nbsp;  <a href="model_300d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; - <a href="model_320d.htm">Geraden &amp; Kurven</b></a><br>
+ &nbsp; &nbsp; - <a href="model_330d.htm">Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Y- u. 3Wege-Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Kreuzungen</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_400d.htm">Vereinfachte Anwendung</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_400d.htm">mit RT_System_00.inc</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_420d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="model_420d.htm">mit RT_System_00.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_500d.htm">An Modell-Ma&szlig;st&auml;be</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_500d.htm">angepa&szlig;te Gleiselemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_540d.htm">H0 Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_550d.htm">N Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_560d.htm">Z Scale Gleise</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_600d.htm">Gleisplan-Design mit</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_600d.htm"> skalierten Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_610d.htm">Verlegen von Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp;<b>&gt;</b> <!--a href="model_620d.htm"--><b>Gleise rauf u. runter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_700d.htm">Gleisplan-Design Beispiele</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_710d.htm">Einfach zyklisch</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_720d.htm">Einfacher Achter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="dwn/RT_down_d.htm">Download </b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="dwn/RT_down_d.htm">Rail Track System</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table >
+<tr>
+ <td>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene_0mf20b_64c25s.gif" border="0" width="200" height="80"
+                   alt="Tracks up and down" title="Tracks up and down"></a></td>
+            </tr></table>
+ </td>
+ <td valign="top">
+  <font size="+2"><font size="+1">Gleisplan-Design mit skalierten Gleisen</b></font><br>
+  &nbsp; &nbsp;<b>Gleise rauf u. runter</b>
+ </font>
+</td></tr></table>
+<hr>
+<table>
+<tr>
+<td valign="top" rowspan="2"><font size="-1">Demonstration mit <b>Spur N</b> Gleissystem von Geometrie Typ A</a>:</font> <br>
+<br>
+<b>1) Geraden und Kurven rauf u. runter</font><br>
+<br><font size="-1">
+<b>Gleise rauf u. runter durch Scherung mit dem Makro<br>
+&nbsp; &nbsp; <font size="-1">Track_Up_00(&quot;<i>NAME</i>&quot;,<i>STEP,GRADIENT_TYPE</i>)</b></b><br>
+Hier: <br>
+<b>NAME</b> der Name des Gleiselements das geschert werden soll: <br>
+z.B.: T_222, T_115, T_111, T_107, T_058, T_055, T_028, <br>
+T_R1_45, T_R1_30, T_R1_15, T_R2_45, T_R2_30, ...<br>
+<b>STEP</b> der Wert der H&ouml;hendifferenz in Meter f&uuml;r Spur N Gleise.<br>
+<b>GRADIENT_TYPE:</b><br>
+  <b>0 f&uuml;r einfach aufw&auml;rts</b> (oder abw&auml;rts, falls negativer STEP)<br>
+  <b>1 f&uuml;r unterteiltes Anfangs-Aufw&auml;rts mit weichen &Uuml;bergang</b> (nur f&uuml;r T_222, T_115, T_111, T_107,
+  und Kurven der Winkel 45&deg;, 30&deg; und 15!.)<br>
+  <b>2 f&uuml;r unterteiltes End-Aufw&auml;rts mit weichen &Uuml;bergang</b> (nur f&uuml;r T_222, T_115, T_111, T_107,
+  und Kurven der Winkel 45&deg;, 30&deg; und 15!.)<br>
+
+<br></font>
+<br>
+<font size="-1"><b>Anmerkung:</b> Die Verwendung einer Scherung anstelle einer Rotation ist
+aus geometrischer Sicht nat&uuml;rlich nicht ganz genau.
+Die senkrechte Projektion eines nach oben gedrehten Gleises auf die Grundebenen ist k&uuml;rzer als das Gleis selbst (Pythagoras!)!<br>
+Aber diese Vereinfachung macht das Designen von Gleispl&auml;nen dramatisch einfacher, da man nicht irgendwelche ver&auml;nderten L&auml;ngen
+berechnen mu&szlig;.<br>
+Und f&uuml;r geringe Steigungen ist der Unterschied meistens kleiner als die Toleranz, welche man
+bei wirklichen Modellbahngleisen hat.<br>
+</font>
+<font size="-1"></font> </b>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//----------------------------------------------//
+#local Step_1 = 0.02;
+object{ Track_Up_00(&quot;T_111&quot;,Step_1,0)
+                  translate&lt;0*L111,0*Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_111&quot;,Step_1,0)
+                  translate&lt;1*L111,1*Step_1*N,0&gt;}
+//----------------------------------------------//</td></b></pre>
+            </tr></table>
+<br>
+<b>Harter und weicher &Uuml;bergang:</b><br>
+<font size="-1">Wenn man Steigungen mit scharfen Knicks am Anfang und am Steigungsende
+macht, so ist dies nicht nur eine &auml;sthetisch suboptimale L&ouml;sung,
+es wird auch bei den Modellbahnz&uuml;gen schwere Probleme hervorrufen.<br>
+Um dies bei POV-Ray-Gleispl&auml;nen zu vermeiden, kann man die Unterteilung <br>
+<i>GRADIENT_TYPE</i> 1 (start) und  2 (end of gradient)<br>
+ mit ~ 1/2 der sonst verwendeten Steigung <i>STEP</i> verwenden.
+
+</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//----------------------------------------------//
+#local Step_1 = 0.0225;
+object{ Track_Up_00(&quot;T_111&quot;, Step_1/2, 1)
+                translate&lt;0*L111,0.0*Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_111&quot;, Step_1  , 0)
+                translate&lt;1*L111,0.5*Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_111&quot;, Step_1/2, 2)
+                translate&lt;2*L111,1.5*Step_1*N,0&gt;}
+//----------------------------------------------//</td></b></pre>
+            </tr></table>
+
+</td>
+<td valign="top">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene25.jpg" border="0" width="400" height="128"
+                   alt="Sharp and smooth transition" title="Sharp and smooth transition"></a></td>
+            </tr></table>  <font size="-1"><b>Gleise geschert mit dem Makro<br>
+               Track_Up_00(&quot;<i>NAME</i>&quot;,<i>STEP,GRADIENT_TYPE</i>)</b></a></font>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</td>
+</tr>
+<tr>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene20.jpg" border="0" width="400" height="128"
+                   alt="Sharp and smooth transition" title="Sharp and smooth transition"></a></td>
+            </tr></table>  <font size="-1"><b>Harter und weicher &Uuml;bergang</b></a></font>
+
+
+</td>
+
+</tr>
+<tr>
+<td colspan="2"> <hr>
+</td>
+</tr>
+
+<tr>
+<td valign="top" rowspan="3">
+<b>2) Kurven rauf und runter.</b><br>
+<font size="-1">Spezielles Problem dabei:
+ Es gibt keine Funktion in POV-Ray die ein Objekt spiralf&ouml;rmig verdreht!
+ Daher kann man keinen weichen &Uuml;bergang f&uuml;r beide Schienen durch Rotieren und/oder Scherung der Gleise erhalten.<br>
+<b>L&ouml;sung:</b> Man kann die Kurvenelemente unterteilen um die Abweichung zu minimieren!<br>
+<b>Anmerkung:</b> Dies ist nur relevant bei den POV-Ray-Darstellungen von Steigungen in Kurven!<br>
+Wirkliche Modellbahngleise machen hier normalerweise keine Probleme!<br>
+
+
+<b>Anstatt:</b></font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//----------------------------------------------//
+object{ Track_Up_00(&quot;T_L1<font color="#AA0000">_45</font>&quot;,Step_1,0)
+        Rotate_Around_Trans(&lt;0,<font color="#AA0000">-0*45</font>,0&gt;,&lt;0,0,R1&gt;)
+        translate&lt;0,0*Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#AA0000">_45</font>&quot;,Step_1,0)
+        Rotate_Around_Trans(&lt;0,<font color="#AA0000">-1*45</font>,0&gt;,&lt;0,0,R1&gt;)
+        translate&lt;0,1*Step_1*N,0&gt;}
+//----------------------------------------------//</td></b></pre>
+            </tr></table>
+
+<font size="-1"><b>Besser: Using curves splitted in smaller angles:</b></font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//----------------------------------------------//
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        Rotate_Around_Trans(&lt;0,<font color="#00AA00">-0*15</font>,0&gt;,&lt;0,0,R1&gt;)
+        translate&lt;0,<font color="#00AA00">0*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#008800">_15</font>&quot;,Step_1,0)
+        Rotate_Around_Trans(&lt;0,<font color="#00AA00">-1*15</font>,0&gt;,&lt;0,0,R1&gt;)
+        translate&lt;0,<font color="#00AA00">1*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        Rotate_Around_Trans(&lt;0,<font color="#00AA00">-2*15</font>,0&gt;,&lt;0,0,R1&gt;)
+        translate&lt;0,<font color="#00AA00">2*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        Rotate_Around_Trans(&lt;0,<font color="#00AA00">-3*15</font>,0&gt;,&lt;0,0,R1&gt;)
+        translate&lt;0,<font color="#00AA00">3*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        Rotate_Around_Trans(&lt;0,<font color="#00AA00">-4*15</font>,0&gt;,&lt;0,0,R1&gt;)
+        translate&lt;0,<font color="#00AA00">4*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        Rotate_Around_Trans(&lt;0,<font color="#00AA00">-5*15</font>,0&gt;,&lt;0,0,R1&gt;)
+        translate&lt;0,<font color="#00AA00">5*</font>Step_1*N,0&gt;}
+//----------------------------------------------//</td></b></pre>
+            </tr></table>
+
+<font size="-1"><b>Anmerkung:</b> Unterteilte Kurvengleise (<i>GRADIENT_TYPE</i> 1 oder 2)
+               gibtes nur bei den Kurvenwinkeln 45&deg;, 30&deg; und 15&deg;.<br>
+             Unterteilte gerade Gleise gibt es nur f&uuml;r die Geraden T_222, T_115, T_111, and T_105.
+            <br>
+            F&uuml;r den weichesten &Uuml;bergang in Kurven sollte man nur die 15&deg;-Segmente von Kurven hierbei verwenden!<br>
+<font size="-1"> F&uuml;r gebogene Gleise ben&ouml;tigt man oft eine Drehung des Gleises um einem Winkel um ein Rotationszentrum
+                 unter Verwendung des Makros 'Rotate_Around_Trans( RotationVector, Center_of_Rotation )' aus der
+                 Include-Datei '<b>transforms.inc</b>'.<br>
+                 Man kann den langen Befehl <br>
+                 'Rotate_Around_Trans(&lt;0, 1*15,0&gt;,&lt;0,0,-R1&gt;)' <br>
+                 durch den k&uuml;rzeren Ausdruck ersetzen, <br>
+                 wie etwa 'RTyz( 1*15, -R1 )' <br>
+                indem man das folgende Makro deklariert:</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//-----------------------------------------------//
+#include "transforms.inc"
+#macro RTyz( Y_Angle, Z_Distance )
+Rotate_Around_Trans(&lt;0,Y_Angle,0&gt;,&lt;0,0,Z_Distance&gt;)
+#end
+//-----------------------------------------------//</td></b></pre>
+            </tr></table>
+<font size="-1">Damit wird obiger Text wesentlich k&uuml;rzer:</font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//----------------------------------------------//
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        RTyz(<font color="#00AA00">-0*15</font>,R1) translate&lt;0,<font color="#00AA00">0*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#008800">_15</font>&quot;,Step_1,0)
+        RTyz(<font color="#00AA00">-1*15</font>,R1) translate&lt;0,<font color="#00AA00">1*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        RTyz(<font color="#00AA00">-2*15</font>,R1) translate&lt;0,<font color="#00AA00">2*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        RTyz(<font color="#00AA00">-3*15</font>,R1) translate&lt;0,<font color="#00AA00">3*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        RTyz(<font color="#00AA00">-4*15</font>,R1) translate&lt;0,<font color="#00AA00">4*</font>Step_1*N,0&gt;}
+object{ Track_Up_00(&quot;T_L1<font color="#00AA00">_15</font>&quot;,Step_1,0)
+        RTyz(<font color="#00AA00">-5*15</font>,R1) translate&lt;0,<font color="#00AA00">5*</font>Step_1*N,0&gt;}
+//----------------------------------------------//</td></b></pre>
+            </tr></table>
+            </font>
+            </td>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene10.jpg" border="0" width="400" height="256"
+                   alt="screw without smooth transition" title="screw without smooth transition"></a></td>
+            </tr></table>  <font size="-1"><b>Kurvengleise geschraubt mittels Scherung in y -  ohne weichen &Uuml;bergang</b></font>
+</td>
+</tr>
+<tr>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene11.jpg" border="0" width="400" height="256"
+                   alt="screw with more smooth transition" title="screw with more smooth transition"></a></td>
+            </tr></table>  <font size="-1"><b>Kurvengleise geschraubt mittels Scherung in y -  mit weichem &Uuml;bergang</b></font>
+</td>
+</tr>
+<tr>
+<td valign="top">
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseScene15.jpg" border="0" width="400" height="256"
+                   alt="screw with more smooth transition" title="screw with more smooth transition"></a></td>
+            </tr></table>  <font size="-1"><b>Kurvengleise geschraubt mittels Scherung in y -  mit weichem &Uuml;bergang</b></font>
+
+</td>
+</tr>
+</tr>
+<tr>
+<td colspan="2"> <hr>
+</td>
+</tr>
+
+
+
+<tr>
+<td valign="top" rowspan="1">
+<b>2) Weichen und andere Gleiselemente rauf und runter.</b><br>
+<font size="-1">Mit Weichen und Kreuzungen kann man '<b>Track_Up_00(...)</b>' nicht verwenden!<br>
+F&uuml;r solche Gleiselemente ben&ouml;tigt man direkt die Scherung mittels Matrix von POV-Ray.<br>
+Dies kann durch das folgende Makro vereinfacht werden, <br>
+welches ein Element der x-L&auml;nge 'Shear_Len' schert<br>
+um eine Schritth&ouml;he von 'Step_Up'('+' oder '-' in Spur-N-Werten in Meter) in y-Richtung: <br></font>
+
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>#macro Shear_Up(Shear_Len,Step_Up) //-----------//
+ matrix&lt;1,Step_Up*N/Shear_Len ,0,
+         0,1,0, 0,0,1, 0,0,0&gt;
+#end // end of macro ---------------------------//</td></b></pre>
+            </tr></table>
+<br>
+<font size="-1"><b>Das Beispiel des nebenstehende Bildes:</b></font>
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td>
+<pre><b>//----------------------------------------------//
+#declare TD = Track_Distance;
+object{ SW_L( SD_1) translate&lt; 0*L111,0,0&gt;}
+object{ T_R9_15
+        Rotate_Around_Trans(&lt;0,-1*15,0&gt;,&lt;0,0, R9&gt;)
+                    translate&lt; 0*L111,0,0&gt;}
+object{ T_111       translate&lt; 1*L111,0,0&gt;}
+// <font color="#550000">tracks upward:</font>
+object{ <font color="#550000">Track_Up_00("T_111",Step_1,0)</font>
+        translate&lt;2*L111,0*Step_1*N,1*TD&gt;}
+object{ <font color="#550000">Track_Up_00("T_111",Step_1,0)</font>
+        translate&lt;2*L111,0*Step_1*N,0&gt;}
+
+object{ SW_R(SD_2) <font color="#AA0000">Shear_Up(L111,Step_1)</font>
+        translate&lt;3*L111,1*Step_1*N,1*TD&gt;}
+object{ <font color="#550000">Track_Up_00("T_111",Step_1,0)</font>
+        translate&lt;3*L111,1*Step_1*N,0&gt;}
+
+object{ <font color="#550000">Track_Up_00("T_111",Step_1,0)</font>
+        translate&lt;4*L111,2*Step_1*N,1*TD&gt;}
+object{ SW_R(SD_3) <font color="#AA0000">Shear_Up(L111,-Step_1)</font>
+        rotate&lt;0,180,0&gt;
+        translate&lt;5*L111,3*Step_1*N,0&gt;}
+//----------------------------------------------//</td></b></pre>
+            </tr></table>
+
+</td>
+<td valign="top">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RT_N_A111_BaseSwitchUp_002.jpg" border="0" width="400" height="256"
+                   alt="shearing of turnouts" title="shearing of turnouts"></a></td>
+            </tr></table>  <font size="-1"><b>Scherung von Weichen und anderen Gleiselementen</b></font>
+</td>
+</tr>
+</table>
+<br>
+<br>
+
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

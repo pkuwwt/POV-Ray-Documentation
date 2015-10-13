@@ -1,0 +1,33 @@
+
+
+isosurface { //-------------------------------------------------------------
+  function{
+    f_helical_torus (
+        x,y,z,
+        1 , //P0: major radius,           
+        1 , //P1: number of winding loops  
+        1,   //P2: Twistiness of winding. When zero, each winding loop is separate. 
+             // When set to one, each loop twists into the next one. When set to two, each loop twists into the one after next
+        0.5, //P3: Fatness of winding? 
+        0.0, //P4: Threshold. Setting this parameter to 1 and the threshold to zero has s similar effect 
+                        // as setting this parameter to zero and the threshold to 1
+        0.0, //P5 : Negative minor radius? Reducing this parameter increases the minor radius of the central torus. 
+             // Increasing it can make the torus disappear and be replaced by a vertical column. 
+             // The value at which the surface switches from one form to the other depends on several other parameters
+        0,   //P6: Another fatness of winding control? 
+
+        1,    // P7: Groove period. Increase this for more grooves       
+        0.17, // P8: Groove amplitude. Increase this for deeper grooves   
+        2     // P9: Groove phase. Set this to zero for symmetrical grooves     
+      )
+  }          
+ contained_by {box {<-1.5,-1,-1.5>,<1.5,1,1.5>}}
+ max_gradient 50
+
+ texture{ pigment{ color rgb <1,0.8,0.6>} 
+          finish { specular 0.1 roughness 0.1 phong 0.2 }
+        }
+ rotate<0,0,0>
+ scale 1
+ translate< 0,1.01, 0>
+} // end of isosurface -------------------------------------------------------

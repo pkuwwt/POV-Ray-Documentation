@@ -1,0 +1,74 @@
+//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------- textures
+#declare Wall_Texture_Outside = 
+      texture { pigment{ color rgb< 1, 0.78, 0.58>*0.70}               
+                normal { pigment_pattern{ gradient y  scallop_wave 
+                                           color_map {[0, rgb 0.8]
+                                                      [0.975, rgb 0.8]
+                                                      [1, rgb 0.2]}
+                                           scale 0.10}
+                         0.3 translate<0,-0.16,0>}
+                finish { phong 0.1}
+              } // end of texture
+//--------------------------------------------------------                                 
+#declare Wall_Texture_Inside = 
+      texture { pigment{ color White*1.0}
+                finish { phong 1}
+              } // end of texture
+//--------------------------------------------------------
+#declare Roof_Texture = 
+// layered texture!!!
+      texture { pigment{ color rgb<1,1,1>*0.65} //Scarlet*1.3
+                normal { gradient z scallop_wave scale<1,1,0.10>} 
+                finish { phong 1}
+              } // end of texture
+ 
+      texture { pigment{ gradient x 
+                         color_map{[0.00 color Clear]
+                                   [0.90 color Clear]
+                                   [0.95 color White*0.1]
+                                   [1.00 color White*0.1]}
+                          scale 0.25}
+                 finish { phong 1}
+              } // end of texture
+
+//--------------------------------------------------------
+#declare Window_Texture = 
+         texture{ pigment{ color White*1.2}
+                  finish { phong 0.1}}
+//--------------------------------------------------------
+#declare Base_Texture = // texture{Wall_Texture_Outside}
+         texture{ pigment{ color rgb< 0.75, 0.65, 0.60>*1.0}
+                  normal { bumps 0.5 scale 0.005 }
+                  finish { phong 0.0}}
+//----------------------------------------------------------------------------------------
+#//---------------------------------------------------------------------------------------
+#include "House_35_0.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ House_35_0( 2.30 , // Half_House_Width_X, // >= 2.00
+                    5.50 , // Total_House_Width_Z,// >= 2.00
+                    3.20 , // House_Height_Y,     // >= 2.00
+                    20   , // Roof___Angle, // ca. 10 ~ 60 degrees
+                    // door and windows open/closed  
+                    0.7, //Window_Open_Frontside_1, left: 0=closed  ~ 1=open 
+                    0.3, //Window_Open_Frontside_2,right: 0=closed  ~ 1=open 
+                    0.2, //Window_Open_Backside_1,  left: 0=closed  ~ 1=open 
+                    0.0, //Window_Open_Backside_2, right: 0=closed  ~ 1=open 
+                    0.0, //Window_Open_RightSide_1, back: 0=closed  ~ 1=open 
+                    0.2, //Door_Open_Rightside_1, middle: 0=closed  ~ 1=open 
+                    0.6, //Window_Open_RightSide_2,front: 0=closed  ~ 1=open 
+                    0.3, //Window_Open_LeftSide_1,  back: 0=closed  ~ 1=open 
+                    1.0, //Window_Open_LeftSide_2,middle: 0=closed  ~ 1=open 
+                    1.0, //Window_Open_LeftSide_3, front: 0=closed  ~ 1=open 
+                    // textures  
+                    Wall_Texture_Outside ,
+                    Wall_Texture_Inside  , 
+                    Window_Texture       ,
+                    Roof_Texture, 
+                    Base_Texture
+                   ) //----------------------------------------------------------------//
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.00, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

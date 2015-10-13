@@ -1,0 +1,205 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohm&uuml;ller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2015 - all rights reserved">
+<meta name="Description" content="Loops, Sine, Cosine and POV-Ray part I - tutorials and samples for the POVRAY raytracing program">
+<meta name="keywords" content="mathematics, loops, while, sine, cosine, pov, povray, POV-Ray, raytracing, 3d graphics, raytracing descriptions, povray tutorial, povray, POVRAY, pov, POV-Ray 3.6">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Loops, Sine, Cosine and POV-Ray - part I</title>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+ <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Loops, Sine, Cosine and POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+
+  <td align="right">
+     <a href="povsi3i1.htm"><font size="2">Italiano </font></a>
+     <a href="povsi3i1.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povsi3f1.htm"><font size="2">Fran&ccedil;ais </font></a>
+     <a href="povsi3f1.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povsi3d1.htm"><font size="2">Deutsch </font></a>
+     <a href="povsi3d1.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3e1.htm"--><b>Loops,</b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3e1.htm"--><b>Sine, Cosine</b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3e1.htm"--><b>and POV-Ray</b></a><br>
+&nbsp;<b>&gt;</b>1.  <!--a href="povsi3e1.htm"--><b>Linear Waves</b></a><br>
+&nbsp;&nbsp;  2.  <a href="povsi3e2.htm">Concentric waves</b></a><br>
+&nbsp;&nbsp;  3.  <a href="povsi3e3.htm">Flying Carpets</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</nobr>
+ &nbsp; - <a href="../down/pov_dwng.htm">Download</b></a><br>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<h2 align="center">Sine and Cosine linear</h2>
+
+<table width="95%" align="center" cellpadding="5"><tr>
+<td colspan="2">
+<p align="justify">This description wants to demonstrate some games with sine and cosine function.
+Some basics about loops will show the following sample of a double nested while loop.<br>
+First we consider a simple loop which places little spheres along the x axis between
+<nobr>x = 5 bis x = +5</nobr>:</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Ball =
+  sphere{&lt;0,0,0&gt;,0.25
+    texture{
+      pigment{color rgb&lt;1,0.8,0&gt;}
+      finish {diffuse 0.9 phong 1}
+    }// end of texture
+  }// end of sphere
+
+//------------------------------------
+#declare X = -5;    // start value X
+#declare EndX = 5;  //   end value X
+#declare Step = 0.5;// step value
+
+#while ( X &lt; EndX + Step)//loop start
+  object{ Ball translate &lt;X,0,0&gt;}
+
+#declare X = X + Step; // next X
+#end // ------------------- loop end</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop0.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="2">
+ <p align="justify">If you nest the existing loop in an additional loop, which runs throug the z-values
+between <nobr>z = -5 bis z = +5</nobr>, you will get a quadratic area which is
+totally covered by spheres:</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Z = -5;  // start value Z
+#declare EndZ = 5;  //   end value Z
+#declare Step = 0.5;// step value
+// loop start Z:
+#while ( Z &lt; EndZ + Step)
+
+  #declare X = -5;  // start value X
+  #declare EndX = 5;//   end value X
+  //loop start X:
+  #while ( X &lt; EndX + Step)
+
+   object{ Ball translate &lt;X,0,Z&gt;}
+
+  #declare X = X + Step;//next X
+  #end // ----------- loop end X
+
+#declare Z = Z + Step; //next Z
+#end // ------------ loop end Z</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop1.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr></table>
+<br>
+<table width="90%" align="center" border="0"><tr><td>
+<p align="justify">So far the necessary quick information about loops!<br>
+&nbsp;<br>
+Now we want to bring some rythmic movement in this area.
+To do this we need to use the sine or the cosine function - in POV-Ray
+described by <b>sin(A)</b> respectively <b>cos(A)</b>
+and here A is the value of the angle messured in radians.
+
+Do we change the previous nested loop in the following way:<br>
+<font size="2"><b>&nbsp;&nbsp;object{ Ball translate &lt; X,
+sin(X), Z&gt; } &nbsp;&nbsp;</b><br>
+</font><font size="3">or with the half value for the steps: Step = 0.25<br>
+</font><font size="2"><b>&nbsp;object{ Ball translate &lt; X,
+sin(2*X), Z&gt; }<br>
+</b></font>we will get these images:</p>
+<div align="center">
+
+<table align="center" border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+    <tr>
+        <td><img src="povloop2.jpg" width="320" height="240"></td>
+        <td><img src="povloop3.jpg" width="320" height="240"></td>
+    </tr>
+</table>
+</div>
+
+<hr size="3">
+<table align="center">
+<tr>
+ <td><a href="../pov__eng.htm">Overview</b></a></td>
+ <td><a href="../pov__eng.htm"><img src="arr_prev.gif" border="0" width="20" height="20"></a></td>
+ <td width="20"></td>
+ <td><a href="povsi3e2.htm"><img src="arr_next.gif" border="0" width="20" height="20"></a></td>
+ <td><a href="povsi3e2.htm">Now it goes round and round ...!</b></a></td>
+</tr>
+</table>
+
+
+</td></tr></table>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

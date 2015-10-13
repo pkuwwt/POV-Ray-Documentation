@@ -1,0 +1,314 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller">
+<meta name="keywords" content="animations, 3d animations, mpeg video, avi video, animated gifs, raytracing, PoV, POV-Ray, POVRAY, 3d graphics, raytracing descriptions, povray tutorial">
+<meta name="description" content="Animations with POV-Ray - descriptions, tutorials and examples for the POV-Ray raytracing program">
+<title>Basic Example for 3D Animations with POV-Ray - Descriptions, tutorials and examples for the POV-Ray raytracing program</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table  border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__eng.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="back to overview" title="back to overview"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animations with POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Some basics and examples on animations.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim001i.htm"><font size="2">Italiano </font></a>
+        <a href="anim001i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim001f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="anim001f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim001d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim001d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">3D Animations Gallery</b></a><br>
+ - <a href="../pov__eng.htm#ani"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anie.htm">3D Animation Tutorial</b></a><br>
+ &nbsp;&nbsp; <i>Index of Content</i><br>
+&nbsp; <!--a href="anim001e.htm"-->  0. Basic Knowledge</b></a><br>
+&nbsp; <b>&gt</b> 1. <!--a href="anim001e.htm"--><b>Basic Example</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002e.htm">From Images to Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005e.htm">Basic Terms</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008e.htm">Animation Commands</b></a><br>
+&nbsp; <!--a href="anim110e.htm"--> I. Cyclic Animations</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11e.htm">Rotating Objects</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112e.htm">Planets in Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113e.htm">Clock Animation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12e.htm">Rotating Camera</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121e.htm">Straight Moving Camera</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13e.htm">Western Wheel</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13e.htm"> Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131e.htm">Rolling Wheels</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14e.htm">Gears</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141e.htm">Roller Chain</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142e.htm">Bike Chain</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15e.htm">Swinging Pendulum</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151e.htm">Newton's Cradle</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152e.htm">Rock the Rocker</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16e.htm">Spiral Pendulum</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170e.htm">Coupling Rods</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17e.htm">Connecting Rods</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18e.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190e.htm">Counters + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200e.htm">Folding of a Cube</b></a><br>
+
+&nbsp; II. Non-linear Movements<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220e.htm">Speed Up/Slow Down 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222e.htm">Speed Up/Slow Down 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240e.htm">Fall + Bounce</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260e.htm">Acceleration by</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260e.htm">physical Formulas</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280e.htm">Speed Controll by</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280e.htm">Spline Functions</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animation Paths<br>&nbsp; &nbsp; &nbsp; with Spline Curves</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210e.htm">Spline Curves</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21e.htm">Closed Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22e.htm">Animation Paths</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table align="center" width="95%" cellpadding="10">
+<tr><td width="100">
+      <img src="im/sphere1st.gif" border="0" width="80" height="60"></td>
+    <td >
+     <h1>&nbsp; &nbsp; &nbsp;A First Example&nbsp; </h1>
+     <h5>About scene files, animation ini files and the clock values.</td></h5>
+</tr></table>
+<table align="center" width="95%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="2">
+ &nbsp; &nbsp; &nbsp; For an animation with POV-Ray you'll need only 2 files:<br>
+ &nbsp; &nbsp; &nbsp;
+ 1. a POV-Ray scene file (extension: .pov), which uses the clock value and <br>
+ &nbsp; &nbsp; &nbsp;
+ 2. a POV-Ray amimation initialisation file (extension: .ini), which defines the clock value <br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ and repeatedly calls the scene file with changed clock values.<br>
+ <br>
+ <font size="+1"><b>Step 0:</b></font> We start with building a simple scene file like this:
+  </td>
+<tr>
+<tr>
+ <td colspan="1">
+  <h3><b>&quot;sphere.pov&quot;</b></h3>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre>#version 3.7;
+global_settings {  assumed_gamma 1.0 }
+//---------------------------------------
+camera{ ultra_wide_angle
+        angle 75
+        right x*image_width/image_height
+        location  &lt;0.0 , 1.0 ,-3.0&gt;
+        look_at   &lt;0.0 , 0.0 , 0.0&gt; }
+//---------------------------------------
+light_source{ &lt;1500,2500,-2500&gt;
+              color rgb&lt;1,1,1&gt; }
+//---------------------------------------
+sky_sphere{ pigment{color rgb&lt;1,1,1&gt;}}
+//---------------------------------------
+// the rotating sphere:
+sphere{ &lt;0,0,0&gt;, 0.25
+        texture { pigment{ rgb&lt;1,0,0&gt; }
+                  finish { diffuse 0.9
+                           phong 1}
+                } // end of texture
+        translate &lt; 1.0, 0, 0&gt;
+        <b>rotate &lt; 0,360*clock,0&gt;//  &lt;-!!!!</b>
+       } // end of sphere ---------------
+//----------------------------------- end</td></pre></tr></table>
+ </td>
+ <td colspan=1>
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/anim00.jpg" width="258"  height="320"  alt="scene file" title="scene file"></td></tr>
+  </table>
+</td></tr>
+<tr><td colspan="2">
+<p align="justify"><b>Note:</b> The sphere is moved to the right side by the statement
+ <b><nobr>translate &lt; 1.0, 0, 0&gt;</nobr></b>. Then it will be turned in this animation around the
+ <nobr>y axis</nobr> by <b><nobr>rotate &lt; 0,360*clock 0&gt;</nobr></b>.
+ <br> (Be sure to translate before you rotate it! Otherwise the result will not be very fascinating!)<br>
+ The <b>&quot;clock&quot; value</b> (it's zero by default!)
+will be defined by an animation ini file.<br>
+<br><b>Test renderings:</b> We can start rendering this scene file like a normal pov file for test renderings.
+We don't need to declare a value for &quot;clock&quot;. The default value of &quot;clock&quot; is zero. To see
+how the scene i.e. in the middle of our animation looks like, we can replace temporarily the word &quot;clock&quot; by i.e. &quot;0.5&quot;.
+<br><b>Output file type:</b><br>
+New in POV-Ray 3.7: The default output file type has changed to png (DTA don't understand .png files!)<br>
+ The <b>new output file type &quot;.jpg&quot;</b> works now correctly. Command line: <b>+fj</b><br>
+ (It's also recommanded because of the usually big number of frames in animations).<br>
+In  POV-Ray 3.6 default output file on Windows was &quot;.bmp&quot;. Command line: <b>+fb</b><br>
+ </td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1">
+  <font size="+1"><b>Step 1:</b></font> We need to create an animation ini file:<br>
+<font size="-1">Note: The ini file must be in the same directory<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+as the POV-Ray scene description file!<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+Use &quot;<b>;</b>&quot; instead of &quot;//&quot;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+ for comments in POV-Ray ini files!<br>
+<br>
+  <h2><b>&quot;sphere.ini&quot;</b></h2>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>; POV-Ray animation ini file
+Antialias=Off
+Antialias_Threshold=0.1
+Antialias_Depth=2
+
+Input_File_Name="sphere.pov"
+
+Initial_Frame=1
+Final_Frame=30
+Initial_Clock=0
+Final_Clock=1
+
+Cyclic_Animation=on
+Pause_when_Done=off</b><td></pre></tr></table>
+ </td>
+ <td colspan="1">
+ <table align="center" border="5" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="im/anim01.jpg" width="258" height="356" alt="animation ini file" title="animation ini file"></td></tr>
+ </table>
+ <div><h6 align="center">
+ Scene descriptions for POV-Ray:<br><a href="pov/sphere.ini"> &quot;sphere.ini&quot;</a>
+    and <br> <a href="pov/sphere.pov">&quot;sphere.pov&quot;</a></h6>
+ </div>
+ </td>
+
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b>Step 2:</b> Starting the rendering of the animation<br>
+  We select an appropriate render solution. For testing it would be a good idea to select
+  a small image size (i.e. &quot;160 x 120&quot;) without anti aliasing (&quot;No AA&quot;).<br>
+  <br>
+  <b> We start the animation by starting the ini file</b> (not the pov file!!!!) <br>
+  We start rendering with the ini file in the active window!
+  <br>
+  POV-Ray start rendering the file &quot;sphere1.pov&quot; with the &quot;clock&quot; value of 0
+  and saves the resulting image as frame #1 with the file name &quot;sphere101.bmp&quot;.
+  <br>
+  Then the program calculates the next &quot;clock&quot; value <nobr>(new clock = last clock + 1/Final_Frame,</nobr>
+  <nobr>here: 0 + 1/30)</nobr> and starts rendering of our scene  &quot;sphere1.pov&quot; again.
+  The output will be saved as &quot;sphere102.bmp&quot;.
+  <br>
+  This continues until &quot;clock&quot; = 1 is reached with the output file &quot;sphere130.bmp&quot;.
+  </p>
+ <p><i><b>Any probems by starting animations with <nobr>POV-Ray 3.6</nobr> running on Windows Vista?</b></i><br>
+<font size="-1"> Be sure that you have seen my hints about
+ <nobr>&quot; <a href="../basic/povtutob.htm#vista">10. Using POV-Ray 3.6 with Windows Vista</a> &quot;!</nobr>
+  </font>
+ </p>
+</td>
+ <td colspan="1">
+ <table align="center" border="1" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="im/sphereall.jpg" width="300" height="250" alt="all frames" title="all frames"></td></tr>
+ </table><br>
+  <font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;  Thumbnail view of the resulting images (&quot;frames&quot;).</font></td>
+
+
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b>Step 3: </b>Post processing<br>
+  POV-Ray is not able to save the output of an animation rendering in any other form then simply numbered frames.<br>
+  We can use a fast graphic viewer with a slice show function to see our animations.<br>
+  If we want to save our animations as <b>animated gif, avi, mov or mpeg</b> file, we need to use other programs.<br>
+ </p>
+
+
+
+</td>
+ <td colspan=1>
+   <table align="center"><tr><td>
+   <table align="center" border="2"
+    bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff" >
+    <tr><td><img src="im/sphere1.gif" width="160"  height="120" ></td></tr></table>
+    <br><font size="-1">The animation as an animated gif file.</font>
+    </td></tr></table>
+ </td>
+</tr>
+<tr>
+ <td colspan="2"><p align="justify">
+  To achieve this there is a great variety of freeware and shareware programs.
+  <br>For making avi files we can use a shareware program like &quot;Dave's Targa Animator v 3.0 - DTA30&quot;.
+  For making mpeg files we can i.e. use &quot;avi2mpg1.exe&quot; - this program is distributed under the GNU copyright.
+  Software and utilities for 3D animation  we find i.e. here:
+  <a href="http://www.povray.org/resources/links/3D_Animation_Utilities/">
+  http://www.povray.org/resources/links/3D_Animation_Utilities/</a>.
+  </p>
+</td>
+</tr>
+
+
+</table>
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>
+</body>
+</html>

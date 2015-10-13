@@ -1,0 +1,210 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font>
+  <hr size="3">
+  <div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font>
+  </div>
+ </td>
+ <td align="right">
+        <a href="shapes110e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes110e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes110i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes110i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes110f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes110f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; Inhalts&uuml;bersicht<br>
+<a href="shapes100d.htm">Grundformen</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes110d.htm"--><b>sphere</b></a><br>
+&nbsp; -  <a href="shapes120d.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130d.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140d.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150d.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160d.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170d.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180d.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190d.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350d.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115d.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200d.htm">K&ouml;rper mit Makros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000d.htm">K&ouml;rper in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400d.htm">Andere K&ouml;rper als Makros</b></a></nobr><br>
+<a href="shapes600d.htm">3D-Text-Objekte</b></a><br>
+<a href="shapes000d.htm">Andere Formen</b></a><br>
+<a href="shapes666d.htm">Non CSG K&ouml;rper</b></a><br>
+<nobr><a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900d.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4">
+ <tr>
+<td width="750">
+<div align="center">
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4">
+ <tr>
+  <td><table border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/basics2.jpg" border="0" width="320"  height="240"
+                   alt="Sample sphere" title="Sample sphere">
+            </td></tr></table>
+  </td>
+  <td><div align="center"><font size ="5">
+         <b>sphere</b></font><font size ="5"> = Kugel,<br>
+         <nobr>Sph&auml;re, Ellipsoid</nobr></font></div>
+  </td>
+ </tr>
+ <tr>
+  <td valign="top">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/sphere1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/sphere1t.jpg" border="0" width="320"  height="240"
+                   alt="Samples spheres 600x450" title="Samples spheres 600x450"></a>
+            </td></tr></table>
+      </td>
+  <td valign="top" width="300">
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>sphere = Kugel</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+     allgemeiner Syntax:
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>sphere{ &lt;x<SUB>M</SUB>,y<SUB>M</SUB>,z<SUB>M</SUB>&gt;, r
+        texture{ ... ... }
+      }</b></td></pre></tr></table>
+    Hierbei sind &lt;x<SUB>M</SUB>,y<SUB>M</SUB>,z<SUB>M</SUB>&gt;
+    die Koordinaten des Mittelpunktes und r der Radius.<br>
+    Die Beispiele hier:</font>
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>sphere{&lt;&nbsp;0,0,&nbsp;0&gt;,1.0 texture{...}}
+sphere{&lt;-1,2,-3&gt;,1.0 texture{...}}
+sphere{&lt;&nbsp;2,3,&nbsp;5&gt;,1.0 texture{...}}</b></pre></td></tr></table>
+  </td>
+ </tr>
+</table>
+<table align="center" cellpadding="10" width="90%"><tr><td>
+<p align="justify"><font face="Arial, Verdana, Helvetica" size="3">
+Soll die Kugel durch &quot;scale&lt;&nbsp;,&nbsp;,&nbsp;&gt;&quot; zu einem <font size="5">Ellipsoid</font>
+verformt werden, so ist es sinnvoll dabei nach folgendem <B>Konstruktions-Prinzip</B> zu verfahren:<br>
+</font><b>1. K&ouml;rper am Koordinaten-Ursprung (Nullpunkt) modellieren (skalieren) und<br>
+          2. K&ouml;rper in seinen endg&uuml;ltige Positon schieben.<br>
+</b>Da sich die Skalierung immer auf die Mittelpunktskoordinaten bezieht,
+sollte vorzugsweise zuerst skaliert und dann verschoben werden<B>.</b></font>
+</p></td></tr></table>
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+ <tr>
+  <td valign="top">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/sphere2im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/sphere2t.jpg" border="0" width="320"  height="240"
+                   alt="Samples spheres 600x450" title="Samples spheres 600x450"></a>
+            </td></tr></table>
+      </td>
+
+  <td valign="top" width="300>
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>sphere + scale<...> = Ellipsoid</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+         allgemeiner Syntax:
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>sphere{ &lt;x<SUB>M</SUB>,y<SUB>M</SUB>,z<SUB>M</SUB>&gt;, r
+        scale&lt;s<SUB>x</SUB>,s<SUB>y</SUB>,s<SUB>z</SUB>&gt;
+        texture{ ... ... }
+      }</b></td></pre></tr></table>
+    Hier sind &lt;x<SUB>M</SUB>,y<SUB>M</SUB>,z<SUB>M</SUB>&gt; die Koordinaten<br>
+    des Mittelpunktes, r der Radius und <br>
+    s<SUB>x</SUB>,s<SUB>y</SUB>,s<SUB>z</SUB> die Ma&szlig;stabsfaktoren<br>
+    in x-, y- und z-Richtung.<br>
+    Die Beispiele hier:
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>sphere{&lt;0,0,0&gt;,1.0 scale&lt;2,0.4,1&gt;
+      translate&lt; 0,0, 0&gt; texture{...}}
+sphere{&lt;0,0,0&gt;,1.0 scale&lt;1,1,2&gt;
+      translate&lt;-1,2,-3&gt; texture{...}}
+sphere{&lt;0,0,0&gt;,1.0 scale&lt;1,1,0.2&gt;
+      translate&lt; 2,3, 5&gt; texture{...}}</b></td></pre></tr></table>
+  </td></font>
+ </tr>
+</table>
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr>
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

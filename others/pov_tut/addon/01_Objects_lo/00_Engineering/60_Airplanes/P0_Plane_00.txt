@@ -1,0 +1,68 @@
+//----------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------- textures
+#declare APlane_Outside_Texture =       
+    texture { pigment{color Silver}
+              finish { phong 1} }
+
+#declare APlane_Wings_Texture =          
+    texture { pigment{color Silver}
+              finish { phong 1} } 
+ 
+#declare  APlane_Inside_Texture=                
+    texture { pigment{color White}
+              finish { phong 1 } } 
+              
+#declare Window_Glass =                       
+     texture{  NBbeerbottle }    
+            
+#declare Blades_Texture =                     
+    texture { Chrome_Metal
+              finish { phong 1}}
+
+#declare Engine_Texture =                      
+    texture { APlane_Outside_Texture }
+
+#declare Undercarriage_Metal =                   
+    texture { pigment { color Silver}
+              finish  { phong 1}}
+
+#declare Pneu_Texture = 
+    texture { pigment{ color Gray20}         
+              finish { phong 1}}
+
+//---------------------------------------------------------------------------------------------
+#include "Plane_00.inc" 
+//-----------------------------------------------------------------------------// 
+object{ Plane_00(   5, // Number_of___Blades,             
+                    10,// Rotation_Angle___Right, //
+                    15,// Rotation_Angle___Left, //
+                    1, // Rotor_On___Right, // activates rotation blur 
+                    1, // Rotor_On___Left, // activates rotation blur 
+                 
+                    Window_Glass,  // glass texture without interior
+                    APlane_Outside_Texture // airplane texture of the outside, 
+                    APlane_Inside_Texture, // airplane inside texture
+                   
+                    Blades_Texture, //
+                    Engine_Texture, //
+                    Undercarriage_Metal, //
+                    Pneu_Texture, //  
+                 ) //----------------------------------------------------------//
+        // Length over ground:  from x = -10.25 to x = +3.75 
+        // total Length over ground 14.00 ; 
+        // Height = 4.00 ;  
+        rotate<0,0,10>  // fix rotation for tail wheel touch down 
+        translate<0.50,3.00, 0.00>  // fix height for all wheels on the ground 
+        //---------------------------------------------------------------------//
+        scale 1
+        // rotate<0,0,-10> // starting
+        
+        rotate<0,0,0> translate<0,0,0> } 
+//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+
+
+
+
+
+

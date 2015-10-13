@@ -1,0 +1,46 @@
+//---------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------- textures
+#declare Brick_Scale     = < 0.064,0.065,0.140>; 
+#declare Brick_Translate = < 0.00,-0.20,  0.30>*3;
+#declare Brick_Intensity = 0.35; 
+//------------------------------------------------------------- textures
+#declare Wall_Texture_1 = // sand stone
+         texture { pigment{ color rgb< 0.90, 0.78, 0.60>}
+                   normal { pigment_pattern{ brick 
+                                             color rgb 0.2, 
+                                             color rgb 0.8 
+                                             scale Brick_Scale 
+                                             translate Brick_Translate
+                                             rotate<0,0,0>} Brick_Intensity}
+                   finish { phong 0.1 }
+                 } // end of texture 
+#declare Wall_Texture_2 = // sand stone
+         texture { pigment{ color rgb< 0.90, 0.78, 0.60>*0.95}
+                            // color rgb< 0.4,1,0.0>} // test_color
+                   normal { pigment_pattern{ brick 
+                                             color rgb 0.2, 
+                                             color rgb 0.8 
+                                             scale Brick_Scale
+                                             translate Brick_Translate
+                                             rotate<0,90,0>} Brick_Intensity}
+                   finish { phong 0.1}
+                 } // end of texture 
+//---------------------------------------------------------------------------------------
+#include "Battlements_0.inc" 
+//-------------------------------------------------------------------------------------// 
+object{ Battlements_0(   3.00, // Wall__W, // half wall width in x                                
+                         8.50, // Wall__H, // wall heigth in y 
+                         1.50, // Wall__D, // wall deepth in z 
+                         1.55, // Balustrade_H, // balustrade high
+                         0.40, // Battlement__Wall_D, // battlement wall deepth 
+                         0.70, // Battlement__H,    // battlements height in y
+                         0.20, // Battlement__R,  // half battlements width in x or z 
+                         1.25, // Tween_Distance, // >2*Battlement__R;  tween distance  
+                         Wall_Texture_1, // outside texture
+                         Wall_Texture_2  // battlements tween texture
+                       ) //------------------------------------------------------------// 
+        scale <1,1,1>*1
+        rotate<0,0,0> 
+        translate<0.00,0.00, 0.00>}
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

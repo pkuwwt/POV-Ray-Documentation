@@ -1,0 +1,196 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Triangolo rettangolo, Geometria di Base per Raytracing con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica, geometria di base per raytracing con POV-Ray, triangolo rettangolo, mediana, Thales’ Theorem">
+<title>Geometria di Base - per Raytracing con POV-Ray - Triangolo Rettangolo</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Geometria di Base </b></font> -
+      <font size="-1">per Raytracing</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_050e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="geom_050e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="geom_050f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="geom_050f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_050d.htm"><font size="2">Deutsch</font></a>
+        <a href="geom_050d.htm"><img src="../flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#objects"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000i.htm">Geometria di Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000i.htm">per Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="geom_050i.htm"--><b>Triangolo Rettangolo</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070i.htm">Teorema di Pitagora</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080i.htm">Trigonometria di Base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090i.htm">Teorema del Coseno</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100i.htm">Triangolo Equilatero</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150i.htm">Poligono Regulare</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200i.htm"--><i>Poliedro</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200i.htm">Tetraedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250i.htm">Ottaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300i.htm">Cubo e Cuboide</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500i.htm">Dodecaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700i.htm">Icosaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260i.htm">Cubottaedro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270i.htm">Ottaedro troncato</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280i.htm">Rombicubottaedro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800i.htm">Icosaedro troncato</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000i.htm"--><i>Cerchi</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100i.htm">Cerchi tangenti</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200i.htm">Tangenti interne</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300i.htm">Tangenti esterne</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Animazioni Geometriche 3D</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%"><tr>
+   <td><h2><b>Triangolo Rettangolo</b></td></h2>
+</tr></table>
+<font size="-2">Nota: Per <b>evitare collisioni con denominazioni installate e parole riservate di POV-Ray</b>,<br>
+si &egrave; racommandato assolutamente di <b>usare solo parole con una maiuscola come lettera iniziale,</b><br>
+per tutte denominazioni di variabili e oggetti dichiarrate degli utenti, per es. si usa &quot;Ri&quot; invece di &quot;r&quot;
+e si usa &quot;H&quot; invece di &quot;h&quot;.</font><br>
+<br>
+
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td><b>Dimensions and Names</b><br>
+ <font size="-1">
+ Il lato pi&ugrave; lungo &egrave; opposto all'angolo retto <i><b>&#947;</b></i> al punto C.<br>
+ Questo lato si chiama <b>ipotenusa c</b>,<br>
+ I altri due late si chiama <b>cateti</b>  <b>a</b> e <b>b</b>.<br>
+ <nobr>L'angolo <i><b>&#945;</b></i> si trova a <b>A</b> e l'angolo <i><b>&#976;</b><i> e l'angolo a <b>B</b>.</nobr></font></td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top">
+ <nobr><b>&#945;</b></b> + <i><b>&#976;</b></i> = <b>90</b> <font size="-1">degrees.</font></nobr><br>
+
+
+ <font size="-1">Il raggio del circumcerchio:</font><br>
+ <b> R =  1/2 * c = 1/2* d(A,B);</b><br>
+<br>
+ <font size="-1"><b>La regola della <b>mediana</b></b>:<br>
+ Per un triangolo rettangolo: <br>
+ Si M<sub>AB</sub> &egrave; la media della ipotenusa c,<br>
+ poi <b>CM<sub>AB</sub> = &frac12; c</b>.<br>
+  Si pu&ograve; anche dire che il punto C si trova su un cherchio con il diametro [AB].<br>
+  Ou inversamente detto: Si C &egrave; un punto su un cherchio con il diametro [AB],
+  poi l'angolo C nel triangolo ABC &egrave; un angolo retto.<br>
+  </font>
+ </td>
+ </tr>
+</table>
+
+</div>
+
+</td>
+<td width="50%" valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Right_angled_Triangle_000.jpg" width="320" height="200" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Un triangolo rettangolo</font>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Thales_Ani_001_60.gif" width="360" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Un triangolo rettangolo e il &quot;Thales’ Theorem&quot;,<br>
+                                  il teorema dell’angolo retto inscritto nella semi-circonferenza.</font>
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;<br>
+</td>
+<td colspan="1">
+</td>
+</tr>
+
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td>&nbsp;
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

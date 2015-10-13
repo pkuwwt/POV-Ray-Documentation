@@ -1,0 +1,219 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>Stereo-Bilder und Stereo-Animationen mit POV-Ray - Stereo-Bilder</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="3D-Stereo-Bilder und 3D-Stereo-Animationen mit POV-Ray - Stereo-Bilder">
+<meta name="keywords" content="3D-Stereo-Bilder, 3D-Stereo-Animationen mit, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D-Graphik, 3D-Animation">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Stereo-Bilder und Stereo-Animationen <nobr>mit POV-Ray</nobr></b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="stereo_200e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="stereo_200e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="stereo_200i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_200i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_200f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="stereo_200f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<font size="+1"> &nbsp;       <a href="stereo_000d.htm">Stereo-Bilder</font>  und</b></a><br>
+<font size="+1"> &nbsp;       <a href="stereo_000d.htm">Stereo Animationen</b></a><br></font>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="stereo_050d.htm">Kreuzblick <font size="1">(Cross-Eye)</font></b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100d.htm">Stereo-Bilder basic</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150d.htm">Stereo-Bilder advanced</b></a><br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_200d.htm"--><b>Bildpaare kombinieren</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300d.htm">Stereo-Animation 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310d.htm">Stereo-Animation 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400d.htm">Beispiele Stereo-Anims</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="95%" align="center"><tr><td colspan="2"><!-- global table-->
+<font size="5"><b>Zusammenf&uuml;gen von Bildpaaren zu Stereobildern</b></font><br>
+<hr>
+<font size="2"><b>Stereo-Bildpaare lassen sich in POV-Ray mittels
+  'image_map' und 'orthographic' Kamera<br>
+  zu einem Bild kombinieren.</font></b></font><br>
+</td>
+</tr>
+<tr>
+<td valign="top"><br>
+<font size="2">&nbsp;&nbsp;Angenommen wir haben ein Stereo-Bildpaar:<br>
+ rechts&auml;ugiger Blick: <b><font color="#800000">Stereo_Image_1.jpg</font></b> <br>
+ links&auml;ugiger Blick: &nbsp; <b><font color="#800000">Stereo_Image_2.jpg</font></b><br>
+<br>
+ Abmerkung: In the folgenden POV-Ray-Szene gibt<br>
+  es ke&iacute;ne 'light_source'! Die einzigen in der<br>
+ Szene sichtbaren Dinge sind die Bilder, beide<br>
+  mit 'finish{ ambient 1 }'.<br>
+<br>
+ Das folgende Beispiel ist f&uuml;r <b>POV-Ray 3.7</b>.<br>
+ F&uuml;r <b>POV-Ray 3.6.2</b>, m&uuml;sssen wir zus&auml;tzlich<br>
+ Gamma-Korrekturen bei den Bild-Eingaben<br>
+ mittels Makro hinzuf&uuml;gen und zudem <br>
+ die Datei-Endungen &quot;.jpg&quot; durch &quot;.bmp&quot;<br>
+ und den image type 'jpeg' durch 'sys',<br>
+ in den image_maps unten ersetzen.<br>
+ Mehr Details siehe die angef&uuml;gte Szenendatei.<br>
+<br>
+   Wenn wir Bilder im Format <b>240x240 pixel</b> haben,<br>
+   &nbsp; verwenden wir die Kommandozeile:<br>
+   &quot; <b>+w480 +h240</b> &quot;. <br>
+   Mit POV-Ray 3.7 und jpeg-Output auch:<br>
+   &quot; <b>+w480 +h240 +fj100</b> &quot;. <br>
+</font>
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>//--------------------------------
+camera{
+ <font color="#800000">orthographic</font>
+ location &lt;0, 0.5,-8.18>
+ right x*image_width/image_height
+ angle 14
+ look_at  &lt;0, 0.5, 0.00>
+} //------------------------------
+box{ &lt;0,0,0&gt;,&lt; 1, 1, 0.01&gt;
+     texture{
+       pigment{
+         image_map{
+       // Bild des rechten Auges:
+       <font color="#800000">jpeg "Stereo_Image_1.jpg"</font>
+         map_type 0
+         interpolate 2
+         once
+         } // end of image_map
+       } //  end of pigment
+       finish{ <b>ambient 1</b> }
+    } // end of texture
+    translate&lt;-1,0,0&gt;
+} // end of box //----------------
+//--------------------------------
+box{ &lt;0,0,0&gt;,&lt; 1, 1, 0.01&gt;
+     texture{
+       pigment{
+         image_map{
+       // Bild des linken Auges:
+       <font color="#800000">jpeg "Stereo_Image_2.jpg"</font>
+         map_type 0
+         interpolate 2
+         once
+         } // end of image_map
+       } //  end of pigment
+       finish{ <b>ambient 1</b> }
+    } // end of texture
+    translate&lt; 0,0,0&gt;
+} // end of box //----------------</b></td></pre>
+  </tr>
+  </table>
+</td>
+<td valign="top" width="290">
+<div align="center">
+<br>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_1.jpg" border="0" width="240"  height="240"
+       alt="image for image_map" title="image for image_map"></a>
+      </td></tr></table><font size="2">Stereo_Image_1.jpg: rechts&auml;ugiger Blick.</font><br>
+
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_2.jpg" border="0" width="240"  height="240"
+       alt="non-stereo image" title="image_map with POV-Ray 3.6"></a>
+      </td></tr></table><font size="2">Stereo_Image_2.jpg: links&auml;ugiger Blick.</font>
+
+<br>
+<br>
+
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Image_Combine_.jpg" border="0" width="480"  height="240"
+       alt="stereo image for cross-eye view" title="stereo image for cross-eye view"></a>
+      </td></tr></table><font size="2">Das zusammengef&uuml;gte Stereobild f&uuml;r cross-eye-Blick.</font><br>
+
+<div align="left">
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Command_Line_480x240.jpg" border="0" width="393"  height="116"
+       alt="command line" title="command line"></a>
+      </td></tr></table><font size="2"><b>Die Kommandozeile f&uuml;r Stereo_Image_Combine_.pov </b></font>
+</div>
+
+<br>
+<font size="2">POV-Ray 3.7 Stereo-Szenendatei: <br>
+               <a href="pov/Stereo_Image_Combine_.pov">Stereo_Image_Combine_.pov</a><br>
+<font size="2">POV-Ray 3.6 Stereo-Szenendatei: <br>
+               <a href="pov/Stereo_Image_Combine_36.pov">Stereo_Image_Combine_36.pov</a><br>
+<br>
+<font size="2"> Wir m&uuml;ssen diese POV-Ray-Datei im Verzeichnis der Bilder speichern<br>
+  - andernfalls m&uuml;ssen wir die vollen Pfadnamen zu den Bildnamen hinzuf&uuml;gen.<br>
+</font>
+</div>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</td>
+</tr>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

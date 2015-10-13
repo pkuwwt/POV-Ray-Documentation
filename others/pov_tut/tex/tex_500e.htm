@@ -1,0 +1,314 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures with POV-Ray - Regulare patterns: checker, hexagon, square, triangular</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="description" content="textures with POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design of Surfaces by &quot;texture&quot; with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_500d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_500d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a><br>
+        <a href="tex_500i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_500i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_500f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_500f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000e.htm">Design of Surfaces</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000e.htm">Colors and Textures</b></a><br>
+  &nbsp;&nbsp;&nbsp; <a href="tex_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001e.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001e.htm">Basic Sample</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200e.htm">pigment{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300e.htm">normal{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330e.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2e.htm">normal Samples</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400e.htm">finish{...} </b></a><br>
+-->
+ &nbsp; &nbsp;  <a href="tex_210e.htm">Ready-made Textures</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210e.htm">Rules</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150e.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160e.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110e.htm">Do-it-yourself Colors</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110e.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120e.htm">Transparency</b></a><br>-->
+ &nbsp; &nbsp; <!--a href="tex_700e.htm"--><b>Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700e.htm">pattern types</b></a><br>
+ &nbsp; &nbsp;&nbsp; Regular patterns</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_500e.htm"--><b>checker, hexagon,</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<!--a href="tex_500e.htm"--><b>square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550e.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560e.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561e.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562e.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570e.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580e.htm">pavement</b></a><br>
+ &nbsp; &nbsp;&nbsp; Stripe patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600e.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; Patterns by pigments</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650e.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651e.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750e.htm">Patterns Lists</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750e.htm">Regular Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755e.htm">Random Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760e.htm">Fractal Patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765e.htm">Other Patterns</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780e.htm">Warps</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_780e.htm">warp mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_790e.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800e.htm">Mapping</b></a><br>
+<!--  &nbsp; &nbsp; - <a href="tex_800e.htm">Mapping Methods</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600e.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820e.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830e.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840e.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850e.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860e.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870e.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880e.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890e.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890e.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900e.htm">Your own Textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="85%" align="center"><tr><td><!-- global table-->
+
+<font size="5"><b><p>Regular Patterns:<br>
+&nbsp;&nbsp; checker, hexagon, square, triangular</font></b>
+ <hr></p>
+
+
+
+<table width="85%" align="center"><tr>
+<td><font size="4"><b>checker</b></font>
+   <br>
+<font size="2">(original field lenght and width: 1 unit)</font><br>
+    <font size="-1"><i>Example:</i></font>
+<pre><b>pigment{ checker </b>// 2 colors/textures<b>
+         color White
+         color Black } &nbsp; &nbsp;</b></td><pre>
+<td><table align="center" border="2" cellspacing="1" cellpadding="4"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/txtur_p0.jpg"   border="0" width="80" height="80"></td></tr></table>
+</td>
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/checker_0t.jpg" border="0" width="80" height="80"></td></tr></table>
+</td>
+</tr></table>
+<p align="center"><hr></p>
+<table width="85%" align="center"><tr>
+<td><font size="4"><b>hexagon</b></font>  <br>
+    <font size="-1"><i>Example:</i></font>
+<pre><b>pigment{ hexagon </b>// 3 colors/textures<b>
+         color Red
+         color Yellow
+         color Orange } &nbsp;&nbsp;</b></td><pre>
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/txtur_p1.jpg"  border="0" width="80" height="80"></td></tr></table>
+</td>
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/hexagon_0.jpg" border="0" width="80" height="80"></td></tr></table>
+</td>
+</tr></table>
+<p align="center"><hr></p>
+<table width="85%" align="center"><tr>
+<td><font size="4"><b>square</b></font><br>
+<font size="-1"><b>New in POV-Ray 3.7</b></font><br>
+<font size="2">(original field lenght and width: 1 unit)</font><br>
+    <font size="-1"><i>Example::</i></font>
+<pre><b>pigment{ square </b>//max.4 colors/textures<b>
+         color White
+         color rgb&lt;1.00, 0.00, 0.30&gt;,
+         color rgb&lt;0.10, 0.70, 0.00&gt;,
+         color Orange } &nbsp; &nbsp;</b></td><pre>
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/square01.jpg"   border="0" width="80" height="80"></td></tr></table>
+</td>
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/square03.jpg" border="0" width="80" height="80"></td></tr></table>
+</td>
+</tr></table>
+<p align="center"><hr></p>
+<table width="85%" align="center"><tr>
+<td><font size="4"><b>triangular</b></font> <font size="-1">- couleurs  triangulaire -</font><br>
+<font size="-1"><b>New in POV-Ray 3.7</b></font><br>
+<font size="2">(original triangle width : 1 unit)</font><br>
+    <font size="-1"><i>Example:</i></font>
+<pre><b>pigment{ triangular </b>//max.6 colors/textures <b>
+         color Red,
+         color rgb&lt;1.0, 0.4, 0.0&gt;,
+         color rgb&lt;1.0, 0.9, 0.0&gt;,
+         color rgb&lt;0.5, 1.0, 0.0&gt;,
+         color rgb&lt;0.5, 0.5, 1.0&gt;,
+         color rgb&lt;0.5, 0.0, 1.0&gt;} </b></td><pre>
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/triangular14.jpg"   border="0" width="80" height="80"></td></tr></table>
+</td>
+<td><table align="center" border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/triangular10.jpg" border="0" width="80" height="80"></td></tr></table>
+</td>
+</tr></table>
+
+
+
+<p><hr></p>
+<table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/check1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/check1t.jpg" border="0" width="320"  height="240"
+       alt="Sample hexagon with colors 640x480" title="Sample hexagon with colors 640x480"></a>
+      </td>
+      <td>
+      <a href="javascript:ShowImage('im/check2i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/check2t.jpg" border="0" width="320"  height="240"
+       alt="Sample hexagon with textures 640x480" title="Sample hexagon with textures 640x480"></a>
+      </td></tr></table>
+<br>
+<b><font face="Arial"><p>Example </b> of checker and hexagon: </p></font>
+</td></tr></table><!-- global table -->
+<table border="1" align="center" cellspacing="2" cellpadding="4">
+<tr><td  bgcolor="#f8f8f0">
+<pre>//---------------------<b> checker mit colors</b> ------------------
+<b>plane{&lt;0,1,0&gt;,0
+      texture{
+              pigment{<b>checker</b>
+                         color White color rgb&lt;0.8,0.65,0.8&gt;
+                      scale 0.5}
+              finish { diffuse 0.35 reflection 0.5}
+             }// end of texture
+        }</b></td></pre>
+</tr>
+</table>
+
+
+<table border="1" align="center" cellspacing="2" cellpadding="4">
+<tr><td  bgcolor="#f8f8f0">
+<pre>//---------------------<b>hexagon mit colors</b> -------------------
+<b>sphere {&lt;0,0,0&gt;,0.8 translate&lt;0.5,1,1&gt;
+        texture {pigment{hexagon  // needs 3 colors!
+                         color rgb&lt;1,0.85,0.1&gt;
+                         color rgb&lt;1,0.95,0.5&gt;
+                         color rgb&lt;0.7,0.3,0.5&gt;
+                         rotate&lt;90,-50,0&gt; scale 0.2
+                         } // end of pigment
+                 normal { wrinkles 0.75 scale 0.025 }
+                 finish { diffuse 0.9 specular 0.2}
+                } //end of texture
+       translate&lt;-0.7,2.25,-1.2&gt;
+      } //end of sphere</b></td></pre>
+</tr>
+</table>
+
+<table border="1" align="center" cellspacing="2" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+
+<pre>//---------------------<b> hexagon mit textures</b> ----------------
+<b>sphere {&lt;0,0,0&gt;,0.8
+    texture {
+      hexagon // needs 3 textures!
+      texture {
+       Polished_Chrome  //replace Chrome color by:
+       pigment{ color rgb&lt;1,0.85,0.1&gt;}
+       normal { crackle 0.5 scale 0.05 }
+       finish { diffuse 0.9 specular 0.2}
+              }// end of 1st texture
+      texture {
+       Polished_Chrome  //replace Chrome color by:
+       pigment{ color rgb&lt;1,0.85,0.1&gt;}
+       finish { diffuse 0.9 specular 0.2}
+              }// end of 2nd texture
+      texture {
+       Polished_Chrome //replace Chrome color by:
+       pigment{ color rgb&lt;1,0.75,0&gt;}
+       normal { bumps 0.5 scale 0.15 }
+       finish { diffuse 0.9 }
+              }// end of 3rd texture
+      scale 0.2 rotate&lt;110,-50,0&gt;
+     }// ---------------------------end of texture
+  translate&lt;-0.7,2.25,-1.2&gt;
+ }//--------------------------- end of sphere ---------</b></td></pre>
+</tr>
+</table>
+<br>
+<table border="1" align="center" cellspacing="2" cellpadding="4">
+<tr><td bgcolor="#f8f8f0">
+<pre><b>//-------------- Rainbow Stripes Sphere ---------------------
+sphere {&lt;0,0,0&gt;,2 scale&lt;1,0.5,1&gt;
+        texture {pigment{ radial frequency 15}
+                 finish { diffuse 0.9 specular 0.7}
+                }// end of texture
+        translate&lt;0,1.5,2&gt;}</b></td></pre>
+</tr>
+</table>
+
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

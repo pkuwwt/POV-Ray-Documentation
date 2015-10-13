@@ -1,0 +1,190 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray - material_map</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_860e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_860e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_860f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_860f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_860d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_860d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700i.htm">tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_860i.htm"--><b>material_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map {...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_875i.htm">image_map+gif 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_876i.htm">image_map+gif 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_878i.htm">image_map+gamma</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_885i.htm">transparency maps 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_886i.htm">transparency maps 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_887i.htm">transparency maps 3</b></a><br>
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+<h2>&quot;material_map{ ... }&quot;
+<font size="-1"> - Mapping secondo motivi di immagini</font></h2>
+<hr>
+<p align="justify"><font size="2"><b>material_map{ ... }</b>
+crea una testura que usa testure differenti con il indice di colore di un immagine <br>
+con una gamma di colori (i.e. 256 color gif immagine)<br>
+nel piano xy di &lt;0,0,0&gt; a &lt;1,1,0&gt;. ( proiezione parallela in direzione z) </p>
+</font>
+<hr>
+<b><font face="Arial" size="2"><p>Sample &quot;material_map&quot;:</p>
+</b></font>
+
+ <table align="center" border="4"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td>
+      <a href="javascript:ShowImage('im/materi1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+      <img src="im/materi1t.jpg" border="0" width="320"  height="240"
+       alt="Sample material_map 640x480" title="Samples material_map 640x480"></a>
+      </td></tr></table>
+<br>
+<table border cellspacing="4" cellpadding="4">
+<tr><td valign="topP" bgcolor="#f8f8f,">
+<pre><b>box{ &lt;0,0,0&gt;,&lt; 1,1,1&gt;
+     scale 2 rotate&lt;0,-20,0&gt; translate&lt;-0.5,0,0&gt;
+     texture{
+          material_map {gif "plasma3.gif" // image file
+          // (allowed are: iff, gif, tga, png, sys)
+          map_type 0
+          // Projection types:
+          // 0=planar, 1=spherical, 2=cylindrical, 5=torus
+          interpolate 2
+          // Interpolation types: 0=none, 1=linear,
+          // 2=bilinear, 4=normalized distance
+          // [once] // optional -       // texture per
+          texture { EMBWood1 scale 0.3 }// color index # 0
+          texture { EMBWood1 scale 0.3 }// color index # 1
+          texture { EMBWood1 scale 0.3 }// color index # 2
+          texture { Polished_Chrome    }// color index # 3
+          texture { Polished_Chrome    }// color index # 4
+          texture { Polished_Chrome    }// color index # 5
+          texture { pigment {Pine_Wood}}// color index # 6
+          texture { pigment {Pine_Wood}}// color index # 7
+          texture { pigment {Pine_Wood}}// color index # 8
+          texture { pigment {Pine_Wood}}// color index # 9
+          texture { pigment {Pine_Wood}}// color index # 10
+          texture { pigment {Pine_Wood}}// color index # 11
+          texture { pigment {Pine_Wood}}// color index # 12
+          texture { pigment {Pine_Wood}}// color index # 13
+          texture { pigment {Pine_Wood}}// color index # 14
+          texture { pigment {Jade }    }// color index # 15
+          // etc. etc. etc. ---
+         } // end of material_map
+       scale 1
+      }// end of texture ----------------------------------
+ }// end of sphere ------------------------------</b></pre></td>
+</tr>
+</table>
+
+
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

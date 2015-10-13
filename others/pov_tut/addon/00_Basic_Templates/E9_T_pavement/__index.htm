@@ -1,0 +1,883 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Insert Menu Add-on for POV-Ray - HTML version">
+<title>Insert Menu Add-on for POV-Ray - by Friedrich A.Lohmueller - HTML version</title>
+<link rel="stylesheet" type="text/css" href="../povray_style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="1"><nobr>Insert Menu Add-on for POV-Ray</nobr> - <nobr>by Friedrich A.Lohmueller</nobr>
+ <hr size="3">
+ <div align="center"><font size="+2"><b>pavement patterns</b></font> New in POV-Ray 3.7 </div>
+ </td></font>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index - Content - 1st column -->
+<font size="2">
+<br>
+ <font size="+1"><b>Insert Menu Add-on</b></font>
+ <br>
+ &nbsp; <a href="../_index.htm">Basic Templates</b></a><br>
+ &nbsp; &nbsp; <a href="../10_Ready_made_scenes/__index.htm">Ready-made Scenes</b></a><br>
+ &nbsp; &nbsp; <a href="../20_Basic_Shapes_round/__index.htm">Basic Shapes round</b></a><br>
+ &nbsp; &nbsp; <a href="../21_Basic_Shapes_angular/__index.htm">Basic Shapes angular</b></a><br>
+ &nbsp; &nbsp; <a href="../22_Shapes2/__index.htm">Shapes 2</b></a><br>
+ &nbsp; &nbsp; <a href="../23_Shapes3/__index.htm">Shapes 3</b></a><br>
+ &nbsp; &nbsp; <a href="../25_shapes_lo2/__index.htm">shapes_lo2</b></a><br>
+ &nbsp; &nbsp; <a href="../37_blob_fractal/__index.htm">Blob and Fractal</b></a><br>
+ &nbsp; &nbsp; <a href="../36_3D_text_shapes/__index.htm">3D text shapes</b></a><br>
+ &nbsp; &nbsp; <a href="../38_height_field_HF_macros/__index.htm">height_field, HF_macros</b></a><br>
+ &nbsp; &nbsp; <a href="../39_Non_CSG_shapes/__index.htm">Mesh and Non-CSG shapes</b></a><br>
+ &nbsp; &nbsp; <a href="../40_Isosurfaces_basic_functions/__index.htm">Isosurfaces basic functions</b></a><br>
+ &nbsp; &nbsp; <a href="../41_Isosurfaces_function.inc/__index.htm">Isosurfaces function.inc</b></a><br>
+ &nbsp; &nbsp; <a href="../42_Isosurfaces_pattern_functions/__index.htm">Isosurfaces by patterns</b></a><br>
+ &nbsp; &nbsp; <a href="../43_Isosurfaces_helix_spirals/__index.htm">Isosurfaces helix spirals</b></a><br>
+ &nbsp; &nbsp; <a href="../47_Polynomial_Quartic/__index.htm">Polynomial, Cubic, Quartic</b></a><br>
+ &nbsp; &nbsp; <a href="../48_Parametric_Surfaces/__index.htm">Parametric Surfaces</b></a><br>
+ &nbsp; &nbsp; <a href="../49_meshmaker_inc/__index.htm">Meshes by meshmaker.inc</b></a><br>
+ &nbsp; &nbsp; <a href="../70_While_Loops_For_Loops/__index.htm">While Loops, For Loops</b></a><br>
+<nobr> &nbsp; &nbsp; <a href="../75_sphere_sweep_Splines/__index.htm">sphere_sweep, Spline curves</b></a></nobr><br>
+ &nbsp; &nbsp; <a href="../B0_Random/__index.htm">Random</b></a><br>
+ &nbsp; &nbsp; <a href="../50_CSG_Modifiers/__index.htm">CSG, Shape modifiers</b></a><br>
+ &nbsp; &nbsp; <a href="../60_Shear_Transform/__index.htm">Shearing and transform</b></a><br>
+ &nbsp; &nbsp; <a href="../D0_Colors/__index.htm">Colors in textures</b></a><br>
+ &nbsp; &nbsp; <a href="../E0_Textures_Materials/_index.htm">Textures and Materials</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E1_T_Skies_Clouds/__index.htm">Skies_and_Clouds</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E2_T_Stones_Granits/__index.htm">Stones and Granits</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E3_T_Woods/__index.htm">Woods</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E5_T_Metals/__index.htm">Metals</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E6_T_Mirrors_Glasses/__index.htm">Mirrors and Glasses</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E7_T_Normal_Examples/__index.htm">Normal Examples</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../E8_T_tiling/__index.htm">tiling patterns</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="../E9_T_pavement/__index.htm"--><b>pavement patterns</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="../EA_T_fractal_patterns/__index.htm">fractal patterns</b></a><br>
+ &nbsp; &nbsp; <a href="../H0_Lights_skies_fogs_rainbow/__index.htm">Lights, skies, fogs, rainbow</b></a><br>
+ &nbsp; &nbsp; <a href="../I0_Cameras/__index.htm">Cameras</b></a><br>
+ &nbsp; &nbsp; <a href="../K0_Radiosity_Photons/__index.htm">Radiosity and Photons</b></a><br>
+ &nbsp; &nbsp; <a href="../A0_Include/__index.htm">Own include files</b></a><br>
+ &nbsp; &nbsp; <a href="../80_Math_functions/__index.htm">Math functions</b></a><br>
+ &nbsp; &nbsp; <a href="../85_Analytical_Geo/__index.htm">Analytical Geometry</b></a><br>
+ &nbsp; &nbsp; <a href="../90_Directives/__index.htm">Directives</b></a><br>
+ &nbsp; &nbsp; <a href="../L0_Expressions/__index.htm">Expressions</b></a><br>
+ &nbsp; &nbsp; <a href="../M0_Statements/__index.htm">General statements</b></a><br>
+ &nbsp; &nbsp; <a href="../C0_Animation/__index.htm">Animation</b></a><br>
+
+ &nbsp; &nbsp; ___________________<br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp;<a href="../../../01_objects_lo/_index.htm">Ready-made Objects</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<tr>
+<td valign="top" width="50%">
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t1_p01.txt" target="_new">
+          <img src="pavement_s3_t1_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t1_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t2_p01.txt" target="_new">
+          <img src="pavement_s3_t2_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t2_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t3_p01.txt" target="_new">
+          <img src="pavement_s3_t3_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t3_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t4_p01.txt" target="_new">
+          <img src="pavement_s3_t4_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t4_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t4_p02.txt" target="_new">
+          <img src="pavement_s3_t4_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t4_p02</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t4_p03.txt" target="_new">
+          <img src="pavement_s3_t4_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t4_p03</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t5_p01.txt" target="_new">
+          <img src="pavement_s3_t5_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t5_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t5_p02.txt" target="_new">
+          <img src="pavement_s3_t5_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t5_p02</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t5_p03.txt" target="_new">
+          <img src="pavement_s3_t5_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t5_p03</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t5_p04.txt" target="_new">
+          <img src="pavement_s3_t5_p04.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t5_p04</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p01.txt" target="_new">
+          <img src="pavement_s3_t6_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p02.txt" target="_new">
+          <img src="pavement_s3_t6_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p02</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p03.txt" target="_new">
+          <img src="pavement_s3_t6_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p03</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p04.txt" target="_new">
+          <img src="pavement_s3_t6_p04.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p04</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p05.txt" target="_new">
+          <img src="pavement_s3_t6_p05.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p05</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p06.txt" target="_new">
+          <img src="pavement_s3_t6_p06.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p06</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p07.txt" target="_new">
+          <img src="pavement_s3_t6_p07.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p07</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p08.txt" target="_new">
+          <img src="pavement_s3_t6_p08.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p08</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p09.txt" target="_new">
+          <img src="pavement_s3_t6_p09.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p09</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p10.txt" target="_new">
+          <img src="pavement_s3_t6_p10.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p10</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p11.txt" target="_new">
+          <img src="pavement_s3_t6_p11.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p11</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s3_t6_p12.txt" target="_new">
+          <img src="pavement_s3_t6_p12.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s3_t6_p12</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t1_p01.txt" target="_new">
+          <img src="pavement_s4_t1_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t1_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t2_p01.txt" target="_new">
+          <img src="pavement_s4_t2_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t2_p01</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t3_p01.txt" target="_new">
+          <img src="pavement_s4_t3_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t3_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t4_p01.txt" target="_new">
+          <img src="pavement_s4_t4_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t4_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t4_p02.txt" target="_new">
+          <img src="pavement_s4_t4_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t4_p02</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t4_p03.txt" target="_new">
+          <img src="pavement_s4_t4_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t4_p03</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t4_p04.txt" target="_new">
+          <img src="pavement_s4_t4_p04.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t4_p04</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t4_p05.txt" target="_new">
+          <img src="pavement_s4_t4_p05.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t4_p05</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p01.txt" target="_new">
+          <img src="pavement_s4_t5_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p02.txt" target="_new">
+          <img src="pavement_s4_t5_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p02</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p03.txt" target="_new">
+          <img src="pavement_s4_t5_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p03</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p04.txt" target="_new">
+          <img src="pavement_s4_t5_p04.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p04</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p05.txt" target="_new">
+          <img src="pavement_s4_t5_p05.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p05</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p06.txt" target="_new">
+          <img src="pavement_s4_t5_p06.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p06</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p07.txt" target="_new">
+          <img src="pavement_s4_t5_p07.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p07</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p08.txt" target="_new">
+          <img src="pavement_s4_t5_p08.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p08</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p09.txt" target="_new">
+          <img src="pavement_s4_t5_p09.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p09</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p10.txt" target="_new">
+          <img src="pavement_s4_t5_p10.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p10</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p11.txt" target="_new">
+          <img src="pavement_s4_t5_p11.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p11</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t5_p12.txt" target="_new">
+          <img src="pavement_s4_t5_p12.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t5_p12</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p01.txt" target="_new">
+          <img src="pavement_s4_t6_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p01</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p02.txt" target="_new">
+          <img src="pavement_s4_t6_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p02</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p03.txt" target="_new">
+          <img src="pavement_s4_t6_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p03</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p04.txt" target="_new">
+          <img src="pavement_s4_t6_p04.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p04</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p05.txt" target="_new">
+          <img src="pavement_s4_t6_p05.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p05</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p06.txt" target="_new">
+          <img src="pavement_s4_t6_p06.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p06</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p07.txt" target="_new">
+          <img src="pavement_s4_t6_p07.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p07</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p08.txt" target="_new">
+          <img src="pavement_s4_t6_p08.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p08</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p09.txt" target="_new">
+          <img src="pavement_s4_t6_p09.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p09</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p10.txt" target="_new">
+          <img src="pavement_s4_t6_p10.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p10</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p11.txt" target="_new">
+          <img src="pavement_s4_t6_p11.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p11</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p12.txt" target="_new">
+          <img src="pavement_s4_t6_p12.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p12</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p13.txt" target="_new">
+          <img src="pavement_s4_t6_p13.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p13</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p14.txt" target="_new">
+          <img src="pavement_s4_t6_p14.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p14</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p15.txt" target="_new">
+          <img src="pavement_s4_t6_p15.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p15</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p16.txt" target="_new">
+          <img src="pavement_s4_t6_p16.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p16</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p17.txt" target="_new">
+          <img src="pavement_s4_t6_p17.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p17</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p18.txt" target="_new">
+          <img src="pavement_s4_t6_p18.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p18</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p19.txt" target="_new">
+          <img src="pavement_s4_t6_p19.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p19</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p20.txt" target="_new">
+          <img src="pavement_s4_t6_p20.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p20</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p21.txt" target="_new">
+          <img src="pavement_s4_t6_p21.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p21</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p22.txt" target="_new">
+          <img src="pavement_s4_t6_p22.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p22</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p23.txt" target="_new">
+          <img src="pavement_s4_t6_p23.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p23</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p24.txt" target="_new">
+          <img src="pavement_s4_t6_p24.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p24</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p25.txt" target="_new">
+          <img src="pavement_s4_t6_p25.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p25</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p26.txt" target="_new">
+          <img src="pavement_s4_t6_p26.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p26</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p27.txt" target="_new">
+          <img src="pavement_s4_t6_p27.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p27</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p28.txt" target="_new">
+          <img src="pavement_s4_t6_p28.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p28</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p29.txt" target="_new">
+          <img src="pavement_s4_t6_p29.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p29</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p30.txt" target="_new">
+          <img src="pavement_s4_t6_p30.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p30</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p31.txt" target="_new">
+          <img src="pavement_s4_t6_p31.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p31</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p32.txt" target="_new">
+          <img src="pavement_s4_t6_p32.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p32</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p33.txt" target="_new">
+          <img src="pavement_s4_t6_p33.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p33</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p34.txt" target="_new">
+          <img src="pavement_s4_t6_p34.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p34</font>
+ </td>
+ <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s4_t6_p35.txt" target="_new">
+          <img src="pavement_s4_t6_p35.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s4_t6_p35</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t1_p01.txt" target="_new">
+          <img src="pavement_s6_t1_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t1_p01</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t2_p01.txt" target="_new">
+          <img src="pavement_s6_t2_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t2_p01</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t3_p01.txt" target="_new">
+          <img src="pavement_s6_t3_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t3_p01</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t3_p02.txt" target="_new">
+          <img src="pavement_s6_t3_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t3_p02</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t3_p03.txt" target="_new">
+          <img src="pavement_s6_t3_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t3_p03</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t4_p01.txt" target="_new">
+          <img src="pavement_s6_t4_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p01</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t4_p02.txt" target="_new">
+          <img src="pavement_s6_t4_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p02</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t4_p03.txt" target="_new">
+          <img src="pavement_s6_t4_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p03</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t4_p04.txt" target="_new">
+          <img src="pavement_s6_t4_p04.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p04</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t4_p05.txt" target="_new">
+          <img src="pavement_s6_t4_p05.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p05</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t4_p06.txt" target="_new">
+          <img src="pavement_s6_t4_p06.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p06</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t4_p07.txt" target="_new">
+          <img src="pavement_s6_t4_p07.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p07</font>
+ </td>
+
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p01.txt" target="_new">
+          <img src="pavement_s6_t5_p01.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p01</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p02.txt" target="_new">
+          <img src="pavement_s6_t5_p02.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p02</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p03.txt" target="_new">
+          <img src="pavement_s6_t5_p03.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p03</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p04.txt" target="_new">
+          <img src="pavement_s6_t5_p04.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p04</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p05.txt" target="_new">
+          <img src="pavement_s6_t5_p05.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p05</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p06.txt" target="_new">
+          <img src="pavement_s6_t5_p06.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p06</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p07.txt" target="_new">
+          <img src="pavement_s6_t5_p07.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p07</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p08.txt" target="_new">
+          <img src="pavement_s6_t5_p08.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p08</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p09.txt" target="_new">
+          <img src="pavement_s6_t5_p09.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p09</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p10.txt" target="_new">
+          <img src="pavement_s6_t5_p10.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p10</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p11.txt" target="_new">
+          <img src="pavement_s6_t5_p11.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p11</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p12.txt" target="_new">
+          <img src="pavement_s6_t5_p12.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p12</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p13.txt" target="_new">
+          <img src="pavement_s6_t5_p13.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p13</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p14.txt" target="_new">
+          <img src="pavement_s6_t5_p14.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p14</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p15.txt" target="_new">
+          <img src="pavement_s6_t5_p15.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p15</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p16.txt" target="_new">
+          <img src="pavement_s6_t5_p16.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p16</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p17.txt" target="_new">
+          <img src="pavement_s6_t5_p17.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p17</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p18.txt" target="_new">
+          <img src="pavement_s6_t5_p18.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p18</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p19.txt" target="_new">
+          <img src="pavement_s6_t5_p19.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p19</font>
+ </td>
+</tr></table>
+
+<table border="0" cellpadding="1" cellspacing="0" width="85%"  bgcolor="#d8d8d0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p20.txt" target="_new">
+          <img src="pavement_s6_t5_p20.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p20</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p21.txt" target="_new">
+          <img src="pavement_s6_t5_p21.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p21</font>
+ </td>
+  <td width="100">
+   <table border="2" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td><a href="pavement_s6_t5_p22.txt" target="_new">
+          <img src="pavement_s6_t5_p22.jpg" width="120" height="64" border="0"></a></td>
+   </tr></table><font size="-2">pavement_s6_t4_p22</font>
+ </td>
+  <td width="100">&nbsp;</td>
+  <td width="100">&nbsp;</td>
+  <td width="100">&nbsp;</td>
+  <td width="100">&nbsp;</td>
+
+
+</tr></table>
+
+</div>
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center">
+<tr>
+ <td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+ </td>
+ <td>&nbsp;</td>
+ <td>&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

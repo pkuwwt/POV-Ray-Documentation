@@ -1,0 +1,227 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="numeri pseudo-casuali, numeri casuali, valori &nbsp;aleatori et casualit&agrave; con in POV-Ray - parte I - tutorial et esempi per POV-Ray, un programma di raytracing">
+<meta name="keywords" content="numeri pseudo-casuali, numeri casuali, valori &nbsp;aleatori, casualit&agrave;, pov, povray, POV-Ray, raytracing, 3d grafica, raytracing descrizioni, povray tutorial">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Casualit&agrave; con POV-Ray - parte 4</title>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="1"><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr> di <nobr>Friedrich A. Lohm&uuml;ller,</nobr></font><br>
+ <hr size="3">
+ <div align="center"><font size="5">Casualit&agrave; con POV-Ray</font>&nbsp; - parte 4 &nbsp; &nbsp;</div>
+ </td>
+
+  <td align="right">
+        <a href="random4e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="random4e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="random4f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="random4f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="random4d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="random4d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr>  <a href="random00i.htm"><font size="3">Casualit&agrave; con POV-Ray</font></b></a></nobr><br>
+<nobr>&nbsp;&nbsp; -  <a href="random1i.htm">Numeri casuali in Loops</b></a></nobr><br>
+&nbsp;&nbsp; -  <a href="random2i.htm">Quadratico e cubico</b></a><br>
+&nbsp;&nbsp; -  <a href="random3i.htm">Colori e Scale</b></a><br>
+&nbsp;&nbsp;<b>&gt;</b> <!--a href="random4i.htm"--><b>Inclinare e piegare</b></a><br>
+&nbsp;&nbsp; -  <a href="random5i.htm">Alberi con casualit&agrave;</b></a><br>
+&nbsp;&nbsp; -  <a href="random6i.htm">L'include file 'rand.inc'</b></a><br>
+&nbsp;&nbsp; -  <a href="random7i.htm">height_field riempito</b></a><br>
+&nbsp;&nbsp; -  <a href="random8i.htm">Fiore casuale</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../addon/insert5.htm">Insert Menu Add-on</b></a><br>
+&nbsp; &nbsp; &amp; <a href="../down/pov_dwni.htm">Download</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/random_mast2s.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="5"><nobr>Inclinare e piegare per caso</font> &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="2">
+   <p align="justify">Come inclinare e piegare irregolare per caso una serie d'oggetti.<br>
+   Usiamo una serie di cilindri, che arrangiamo in una linea con un while loop.
+   </p>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//------------------------------------
+#declare Mast =  // un palo
+cylinder{ &lt;0,0,0&gt;,&lt;0,2,0&gt;,0.1
+ texture{
+  pigment{ color rgb&lt;0.40,0.25,0.15&gt;}
+  normal { bumps 0.5
+           scale &lt;0.005,0.25,0.005&gt;}
+  finish { phong 0.5}
+ } // end of texture
+} // end of cylinder -----------------
+
+#declare NrX = -10;     // start
+#declare EndNrX = 10;   // end
+#while (NrX &lt; EndNrX+1)
+   object{ Mast
+           translate&lt;0,0,Nr*1.5&gt;
+         } // end of object
+
+ #declare NrX = NrX + 1;  //next Nr
+#end // ------------ end of loop -----
+</b></td></pre>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/random_3.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+  <div align="center"><font size="2">File di scena per POV-Ray <a href="pov/random_3.pov">.pov</a>
+  or <a href="pov/random_3.txt">.txt</a></font></div>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+   <p align="justify">
+   Perch&eacute; l'espressione <nobr>&quot;<b>rand(Random_1)</b>&quot;</nobr> genera valori casuali
+   tra 0 e 1, possiamo ottenere con l'espressione
+   <nobr>&quot;<b>rand(Random_1) - 0.5</b>&quot;</nobr> valori tra -0.5 e +0.5.
+   Per consequenza il termine <nobr>&quot;<b> 2 * ( rand(Random_1) - 0.5 )</b>&quot;</nobr>
+   genera valori tra -1 e 1. <br>
+   Per ottenere una rotazione intorno a l'asse z per es. di +/-10 gradi maximale dobbiamo moltiplicare
+   l'espressione precedente con l'ammontare di quest'angolo maximale:
+</p>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>//-------------------------------------
+#declare NrX = -10;     // start
+#declare EndNrX = 10;   // end
+#while (NrX &lt; EndNrX+1)
+object{
+  Mast
+  rotate&lt;0,0,10*2*(rand(Random_1)-0.5)&gt;
+  translate&lt;0,0,Nr*1.5&gt;
+} // end of object
+
+ #declare NrX = NrX + 1;  //next Nr
+#end // -------------- end of loop ----</b></td></pre>
+ </tr>
+</table>
+ </td>
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/random_4.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+ <div align="center"><font size="2">File di scena per POV-Ray <a href="pov/random_4.pov">.pov</a>
+  or <a href="pov/random_4.txt">.txt</a></font></div>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+   <p align="justify">
+   Questa scena si pu&ograve; migliorare con facilit&agrave;, come si vede nell'immagine seguente:
+   </p>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+    <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+             bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+       <tr><td><img src="im/random_mast0.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+      </tr></table>
+
+</td>
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('im/im_random_mast2.htm')"
+             onMouseover="window.status='ShowSingleImage';return true"
+             onMouseOut="window.status=''">
+            <img src="im/random_mast2t.jpg" width="320" height="240" border="0" hspace="0" vspace="0"
+             alt="click for higher resolution" alt="click for higher resolution"></a></td>
+    </tr></table><font size="-1">Cliccare qui per un immagine in resoluzione pi&ugrave; alto!</font>
+
+<div align="center"><b>
+<a href="random00i.htm">0</a> |
+<a href="random1i.htm">1</a> | <a href="random2i.htm">2</a> | <a href="random3i.htm">3</a> |
+<!--a href="random4i.htm"-->4</a> | <a href="random5i.htm">5</a> | <a href="random6i.htm">6</a> |
+<a href="random7i.htm">7</a> | <a href="random8i.htm">8</a></b></div>
+
+ </td>
+</tr>
+
+</table>
+</div>
+
+</td></tr> <!--end 2nd column -->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

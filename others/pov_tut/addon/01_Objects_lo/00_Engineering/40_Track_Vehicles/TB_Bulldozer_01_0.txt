@@ -1,0 +1,47 @@
+//-----------------------------------------------------------------------------
+//----------------------------------------------------------------------------- bulldozer textures
+#local Body_Texture =  
+        texture { pigment{ color rgb< 1.0, 0.65, 0.0> } //  deep yellow 
+               // normal { bumps 0.5 scale 0.05 }
+                  finish { phong 1 reflection 0.00}
+                } // end of texture 
+#local Chassis_Texture =  
+        texture { pigment{ color rgb< 1.0, 1, 1>*0.35 } //  gray
+                  normal { bumps 0.15 scale 0.05 }
+                  finish { phong 1 reflection 0.00}
+                } // end of texture 
+#local Scoop_Texture = 
+        texture{ Chrome_Metal
+                 finish { diffuse 0.9 phong 1 }
+                 normal { bumps 0.05 scale 0.0025}
+               } // end of texture ---------------------------  
+ 
+
+#local Chain_Color =  color rgb< 1, 1, 1>*0.65;     // base color of the chains
+#local Wheel_Texture =  texture { pigment{ color rgb< 1, 0.75, 0.50>*0.5 } // brown 
+                                  normal { bumps 0.5 scale 0.01 }
+                                  finish { phong 1 reflection 0.00}
+                                } // end of texture 
+
+//-----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+#include "Bulldozer_01.inc"
+//-----------------------------------------------------------------------------
+object{ Bulldozer_01(  0, // Scoop_Angle_,  // 0~15  winkel der Baggerschaufel !!!
+                       1, // Scoop_ON_, // 1= on, 0 = off
+                       Body_Texture,  // 
+                       Chassis_Texture,  // 
+                       Scoop_Texture, // 
+                       Chain_Color,  // base color of the chains  
+                       Wheel_Texture //  texture of the wheels  
+                    )  //------------------------------------------  
+        scale <1,1,1> 
+        rotate<0,0,0> 
+        translate<0,0,0> }//---------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
+
+
+

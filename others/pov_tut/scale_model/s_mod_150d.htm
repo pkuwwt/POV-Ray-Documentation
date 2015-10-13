@@ -1,0 +1,241 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Ma&szlig;stabgetreues Modellieren mit POV-Ray - Orthographische Ansicht</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Ma&szlig;stabgetreues Modellieren mit POV-Ray">
+<meta name="keywords" content="Ma&szlig;stabgetreues Modellieren, Beispiele zu POV-Ray, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=685,height=380");
+ New.focus();  }
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=1065,height=570");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Ma&szlig;stabsgerechtes Modellieren mit POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="s_mod_150e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="s_mod_150e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="s_mod_150i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="s_mod_150i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="s_mod_150f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="s_mod_150f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="s_mod_000d.htm">Ma&szlig;stabsgerechtes </b></a><br>
+ &nbsp; <a href="s_mod_000d.htm">Modellieren mit POV-Ray</b></a><br>
+<br>
+ &nbsp; - <a href="s_mod_100d.htm">Karierter Hintergrund</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_100d.htm">in m und cm</b></a><br>
+ &nbsp;<b>&gt;</b>&nbsp;<!--a href="s_mod_150d.htm"--><b>Orthographische Ansicht</b></a><br>
+ &nbsp; -  <a href="s_mod_300d.htm">Pl&auml;ne auf karierten</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_300d.htm">Hintergrund anpassen</b></a><br>
+
+ &nbsp; -  <a href="s_mod_500d.htm">Rendering von</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="s_mod_500d.htm">Mehrfachansichten</b></a><br>
+<br>
+<br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<font size="+2"><b>Orthographische Ansicht</b></font><br><br>
+
+<table >
+<tr>
+<br>
+ <td valign="top"><b>Verwendung der orthographischen Kamera</b><br>
+  <font size="-1"> (Siehe auch nebenstehendes Bild!).
+  Wenn wir mit einer 'orthographic' Kamera senkrecht auf den Plan schauen, dann
+  k&ouml;nnen wir die Dimensionen unseres Objektes direkt mit denen des Planes auf dem
+  karierten Hintergrund vergleichen! <br>
+  Bei einer orthographischen Kamera gibt es keine perspectivische Verk&uuml;rzung!<br>
+  Das ist eine einfache Parallel-Projektion!<br></font>
+
+<br>
+<br><font size="-1"><b>Ein simple orthographische Kamera:</b></font>
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//----------------------------------------------&lt;&lt;&lt;
+camera{ orthographic
+        location  &lt; 0.00, 1.60,-10.00&gt;
+        right     x*image_width/image_height
+        angle     50
+        look_at   &lt; 0.00, 1.60,  0.00&gt;;
+      } //---------------------
+//----------------------------------------------&lt;&lt;&lt;</td></b></pre></tr></table>
+<br>
+<font size="-1"><b>Ein komfortablere orthographische Kamera:<br>
+                 'orthographic' oder 'perspective' :</b></font>
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>// choosing the camera number:
+//------------------------------------&lt;&lt;&lt;
+#declare Camera_Number = 0 ;
+//------------------------------------&lt;&lt;&lt;
+#switch ( Camera_Number )
+#case (0) // front view orthographic
+  #declare Orthographic_On = 1;
+  #declare Camera_Position = &lt; 1.55, 1.60,-10.00&gt;;
+  #declare Camera_Look_At  = &lt; 1.55, 1.60,  0.00&gt;;
+  #declare Camera_Angle    =  20;
+#break
+#case (1) // diagonal view perspective ('normal')
+  #declare Orthographic_On = 0;
+  #declare Camera_Position = &lt;15.00, 8.00,-15.00&gt;;
+  #declare Camera_Look_At  = &lt; 0.50, 1.70, -0.50&gt;;
+  #declare Camera_Angle    =  25;
+#break
+#end // of "#switch ( Camera_Number )" ----------
+//----------------------------------------------&lt;&lt;&lt;
+camera{ #if (Orthographic_On = 1) orthographic #end
+        location Camera_Position
+        right    x*image_width/image_height
+        angle    Camera_Angle
+        look_at  Camera_Look_At
+      } //---------------------
+//----------------------------------------------&lt;&lt;&lt;</td></b></pre></tr></table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<b>Abschneiden von Objekten mit der orthographische Kamera</b><br>
+<font size="-1">Mit einer Kamera vom Typ 'orthographic' wie z.B. im Folgenden
+kan man einen Querschnitt durch ein Objekt erzeugen.<br>
+Kein 'look_at', aber der Vektor 'direction'!</font><br>
+
+
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//--------------------------------------------&lt;&lt;&lt;
+camera{ orthographic
+        location  &lt; 0.00, 1.75, -1.80&gt;
+        right     x*image_width/image_height
+        angle    88
+        direction &lt;0,0,1&gt;
+      } //---------------------
+//----------------------------------------------&lt;&lt;&lt;</td></b></pre></tr></table>
+<br>
+<font size="-1">Aber es ist eine wesentlich elegantere Methode einen Schitt durch ein Objekt zu erzeugen,
+indem man eine 'intersection'(Schnittmenge) mit einer entsprechenden 'box' verwendet.
+Dabei kann man zudem auch noch die Farbe der Schnittoberfl&auml;che w&auml;hlen.
+ (Siehe nebenstehendes Bild!)
+</font>
+ </td>
+ <td align="center" valign="top">
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Perspectiv_1c.jpg" border="0" width="320" height="240"
+                   alt="Perspective View" title="Perspective View"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Perspectivische Ansicht<br>
+              Blick von links mit einer 'normalen' Kamera.</b></font><br>
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Orthographic_1c.jpg" border="0" width="320" height="240"
+                   alt="Orthographic View" title="Orthographic View"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Orthographische Ansicht.<br>
+             Eine parallel blickende Kamera.</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Orthographic_2c.jpg" border="0" width="320" height="240"
+                   alt="Orthographic Front View" title="Orthographic Front View"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Orthographisch Frontansicht.</b></a></font>
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Orthographic_3c.jpg" border="0" width="320" height="208"
+                   alt="Clipping objects" title="Clipping objects"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Schnitt durch Objekte mittel 'orthographic' Kamera</b></a></font>
+
+
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Orthographic_inters_1c.jpg" border="0" width="320" height="208"
+                   alt="intersection with a box" title="intersection with a box"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Orthographisch Kamera und ein Querschnitt<br>
+                                         mittels 'intersection' mit 'box'.</b></a></font>
+
+            <br>
+<br>
+<br>
+
+</tr>
+</table>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

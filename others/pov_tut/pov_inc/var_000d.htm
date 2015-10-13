@@ -1,0 +1,266 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Variable in POV-Ray - &uuml;ber vordefinierte Variable">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Variable in POV-Ray, vordefinierte Variable">
+<title>Variable in POV-Ray - Vordefinierte Variable</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>&Uuml;ber Variable in POV-Ray</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="var_000e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="var_000e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="var_000i.htm"><font size="2">Italiano</font></a>
+        <a href="var_000i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="var_000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="var_000f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000d.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+ &nbsp;&nbsp;<b>&gt;</b>  <!--a href="var_000d.htm"--><b>Vordefinierte Variable</a></b><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_100d.htm">#declare, #local</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_200d.htm">Ausdr&uuml;cke</b></a><br>
+<!--
+ &nbsp; &nbsp; &nbsp; <a href="var_300d.htm">Funktionen</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_400d.htm">Vektoren</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_500d.htm">Arrays</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_600d.htm">Strings</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_700d.htm">#macro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_800d.htm">trace, inside,</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp;<a href="var_820d.htm">max_extent</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="var_840d.htm">#default</b></a><br>
+-->
+<br>
+ &nbsp;&nbsp;- <a href="inc_000d.htm">Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000d.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Vordefinierte Variable in POV-Ray</b></h2>
+<p align="justify">In der Szenenbeschreibungssprache (SDL) von POV-Ray sind einige
+Variable fest eingebaut und daher gebrauchsfertig - aber sie k&ouml;nnen nicht mittels #declare oder #local neu-deklariert werden.<br>
+</p></td></tr></table>
+
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="30%"><b>Vordefinierte Variable</b><br> <font size="-1">mit festen Werten</font></td>
+  <td width="50%"><b>Vordefinierte Variable</b><br> <font size="-1">ohne feste Werte</font></b></td>
+ </tr>
+ <tr>
+  <td width="30%" valign="top">
+<pre><b>pi = 3.1415926535897932384626
+true = 1
+yes = 1
+on = 1
+false = 0
+no = 0
+off = 0
+u = &lt;1,0&gt;
+v = &lt;0,1&gt;
+o = &lt;0,0,0&gt;
+x = &lt;1,0,0&gt;
+y = &lt;0,1,0&gt;
+z = &lt;0,0,1&gt;
+t = &lt;0,0,0,1&gt;</b></pre></a></td>
+  <td width="50%"><pre><font size="-1"><i>Zum Gebrauch in Animationen:</i></font>
+<b>clock        // gegnwärtiger 'clock'-Wert in Animationen (0..1)
+clock_delta     // clock step between frames
+initial_clock   // start clock value (+KIn.n)
+final_clock     // end clock value (+KFn.n)
+initial_frame   // start frame number (+KFIn.n)
+final_frame     // end frame number (+KFFn.n)
+frame_number    // current frame number
+clock_on        // 1(true) if animation</b>
+<font size="-1"><i>For use of controlling the aspect ration of the camera:</i></font>
+<b>image_width     // width of current render
+image_height    // height of current render</b>
+<font size="-1"><i>For compatibility of POV-Ray version:</i></font>
+<b>version         // version (default value is 3.6, or 3.7
+                // depending of the POV-Ray version you use.
+                // Can be changed with #version)</b></td></pre>
+ </tr>
+</table>
+
+
+<p align="justify"><img src="im/warn.gif" border="0" width="32" height="30">  Um jegliche <b>Kollision vordefinierten Variablen und reservierten W&ouml;rter in POV-Ray<br>
+zu vermeiden, ist es dringend empfohlen</b>, bei durch den Benutzer definierten Variablen <br>
+<b>nur Worte zu verwenden, die mit Gro&szlig;buchstaben beginnen</b>.<br>
+<font size="-1">In zuk&uuml;nftigen Versionen enth&auml;lt die obige Liste m&ouml;glicherweise noch weitere
+Kle&iacute;nbuchstaben als reservierte W&ouml;rter.
+Aus diesem Grund und zum Erhalt der Bedeutungsklarheit in einer Szenedatei sollte obiger Rat
+befolgt werden.</font><br>
+<br>
+<b>Beispiele:</b>
+<div align="center">
+<table border="1" cellpadding="5" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="20%"><b><font size="-1">schlecht / zu vermeiden</font></b></td>
+  <td width="20%"><b><font size="-1">okay </font></b></td>
+  <td width="60%"><b><font size="-1">Begr&uuml;ndung</font></b></td>
+ </tr>
+ <tr>
+  <td width="20%" valign="top">
+  <pre><b>#declare <font color="#FF0000">x</font> = 2.5;</b></pre></a></td>
+
+  <td width="20%" valign="top">
+  <pre><b>#declare X = = 2.5;</b></pre></a></td>
+
+  <td width="60%" valign="top">
+  <font size="-1"><img src="im/Undeclared_Identifier_x.jpg" border="0" width="401" height="51"><br>
+                  <b><i>Kleines 'x' ist vordefiniert als &lt;1,0,0&gt; !</i>
+                                      </b></font></a></td>
+
+ </tr>
+ <tr>
+  <td width="20%" valign="top">
+  <pre><b>#declare <font color="#FF0000">v</font> = &lt;1.5,2,0&gt;;</b></pre></a></td>
+
+  <td width="20%" valign="top">
+  <pre><b>#declare V = &lt;1.5,2,0&gt;; </b></pre></a></td>
+
+  <td width="60%" valign="top">
+  <font size="-1"><nobr><img src="im/Undeclared_Identifier_v.jpg" border="0" width="401" height="51"><br>
+                  <b><i>Kleines 'v' ist vordefiniert als &lt;0,1&gt; !</i>
+                       </b></font></a></td>
+
+ </tr>
+ <tr>
+  <td width="20%" valign="top">
+  <pre><b>#local <font color="#FF0000">x</font> = 0;     // start
+#local End = 10;  // end
+#while ( <font color="#FF0000">x</font> &lt; End )
+ sphere{ &lt;0,0,0>,0.5
+         pigment{ rgb&lt;1,0,0> }
+         translate&lt;<font color="#FF0000">x</font>*1.5,0,0>
+       }
+ #local <font color="#FF0000">x</font> = <font color="#FF0000">x</font> + 1;  // next
+ #end // ------ end of loop</b></pre></a></td>
+
+  <td width="20%" valign="top">
+  <pre><b>#local I = 0;       // start
+#local End_I = 10;  // end
+#while ( I &lt; End_I )
+ sphere{ &lt;0,0,0>,0.5
+         pigment{ rgb&lt;1,0,0> }
+         translate&lt; I*1.5,0,0>
+       }
+#local I = I + 1;  // next I
+#end // ------ end of loop</b></pre></a></td>
+
+  <td width="60%" valign="top">
+  <font size="-1"><img src="im/Undeclared_Identifier_x.jpg" border="0" width="401" height="51"><br>
+                  <b><i>Kleines 'x' ist vordefiniert als &lt;1,0,0&gt; !<br>
+                  Man verwende statt dessen etwas wie 'X, 'I', 'J', 'Ctr', 'Zaehler', ... !</i></b></font></a></td>
+</tr>
+<tr>
+
+  <td width="20%" valign="top">
+  <pre><b>#local i = 0;     // start
+#local End = 10;  // end
+#while (i &lt; End )
+ sphere{ &lt;0,0,0>,0.5
+         pigment{ rgb&lt;1,0,0> }
+         translate&lt;i*1.5,0,0>
+       }
+ #local i = i + 1;  // next
+ #end // ------ end of loop</b></pre></a></td>
+
+  <td width="20%" valign="top">
+  <pre><b>#local I = 0;       // start
+#local End_I = 10;  // end
+#while ( I &lt; End_I )
+ sphere{ &lt;0,0,0>,0.5
+         pigment{ rgb&lt;1,0,0> }
+         translate&lt; I*1.5,0,0>
+       }
+#local I = I + 1; // next I
+#end // ------ end of loop</b></pre></a></td>
+
+  <td width="60%" valign="top">
+  <font size="-1">Kleines '<b>i</b>' ist kein wirklicher 'Parse Error'!<br>
+                  <b><i>Es ist nur ein inkonsequenter Gebrauch eines Kleinbuchstabens,
+                  der vermieden werden sollte, wenn wir auf der sicheren Seite sein wollen.
+                  Denn beginnt man einmal damit, f&ouml;rdert
+                  dies das Nachlassen der Aufmerksamkeit darauf, wie Benutzervariable
+                  deklariert werden sollten.</i></b></font></a></td>
+
+<tr>
+</table>
+
+
+  <br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

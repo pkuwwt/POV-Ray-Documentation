@@ -1,0 +1,261 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="keywords" content="3D-Animationen, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg Video, avi Video, animierte Gifs, Raytracing Beschreibungen, POV-Ray Beispiele, POV-Ray Anleitungen">
+<meta name="Description" content="3D-Animationen mit POV-Ray -  deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik">
+<title>Schaukelstuhl - eine 3D-Animation mit POV-Ray - deutsche Beschreibungen zum Raytracer POVRAY mit Beispielen
+       zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ger.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="zur&uuml;ck zur &Uuml;bersicht" title="zur&uuml;ck zur &Uuml;bersicht"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animationen mit POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Grundlagen und Beispiele zu Animationen.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim152e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim152e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim152i.htm"><font size="2">Italiano</font></a>
+        <a href="anim152i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim151f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="anim151f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm"> Animationen Galerie</b></a><br>
+ - <a href="../pov__ger.htm"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anid.htm">3D Animation</b></a><br>
+ &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; <!--a href="anim1d.htm"-->  0. Grundlagen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001d.htm">Beispiel</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002d.htm">Von Bildern zum Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005d.htm">Grundbegriffe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008d.htm">Animationsbefehle</b></a><br>
+&nbsp; <!--a href="anim11d.htm"--> I. Zyklische Animationen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11d.htm">Objekt-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112d.htm">Planeten im Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113d.htm">Animierte Uhr</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12d.htm">Kamera-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121d.htm">Kamera Geradeausflug</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13d.htm">Western-Kutschen</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim13d.htm">-Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131d.htm">Rollende R&auml;der</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14d.htm">Zahnradgetriebe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141d.htm">Rollende Kette</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142d.htm">Fahrradkette</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15d.htm">Pendelschwingung</b></a><br>
+&nbsp;&nbsp;&nbsp;  5.1. <a href="anim151d.htm">Newtonpendel</b></a><br>
+&nbsp;<b>&gt</b> 5.2: <!--a href="anim152d.htm"--><b>Schaukelstuhl</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16d.htm">Federpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170d.htm">Koppelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17d.htm">Pleuelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18d.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190d.htm">Z&auml;hler + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200d.htm">Faltung eines W&uuml;rfels</b></a><br>
+
+&nbsp; II. Nichtlineare Bewegungen<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim220d.htm"> +Bremsen 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim222d.htm"> + Bremsen 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240d.htm">Fallen + H&uuml;pfen</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260d.htm">Beschleunigung nach</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260d.htm">physikalischen Formeln</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280d.htm">Geschwindigkeitssteuerung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280d.htm">mit Spline-Funktionen</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animationspfade<br>&nbsp; &nbsp; &nbsp;  mit Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210d.htm">Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21d.htm">Geschlossene Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22d.htm">Animationspfade</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="95%" cellpadding="5">
+<tr><td width="10">&nbsp; &nbsp; &nbsp;</td>
+     <td width="80" align="right">
+       <table align="center" border="0" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><img src="im/Rocker_01ss_80t.gif" border="0" width="80" height="80"></tr></td></table>
+    </td>
+    <td width="70%" align="center">
+      <font size="6"><b>Schaukelstuhl</b></font><br>
+      <font size="3">Ein Schaukelstuhl, der im Sinusrythmus schaukelnd rollt.</font></td>
+     <td width="50" align="right">
+     &nbsp; &nbsp; &nbsp;</td> </tr></table>
+<table align="center" width="90%" cellpadding="5">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b>Ein Schaukelstuhl in Action</b><br>
+  <font size="-1">Auf den ersten Blick scheint ein Schaukelstuhl etwa wie ein schwingendes Pendel zu funktionieren.<br>
+    Aber bei n&auml;herem Hinsehen erkennen wir das dies eher wie ein rollendes Rad funktioniert, das vorw&auml;rts
+    und r&uuml;ckw&auml;rts rollt und dies im Rythmus eines schwingenden Pendels.
+    <br>
+    <br>
+    Hier wird zur Vereinfachung der Schaukelstuhl auf eine einzelne Kufe als Makro-Objekt reduziert.<br>
+    Zu einem vollst&auml;ndigen Schaukelstuhl-Objekt siehe die Szenendatei unten!</font>
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#macro Rocker0( Rocking_Angle )
+//---------------------------------
+#local D = 0.00001; // just a little bit!
+#local R_R = 1.20; // Kufen-Radius
+#local R_rotate = 25; // Kufen-Winkel +/-
+#local D_feet = 0.055;
+//---------------------------------------
+#local Skid =   // Kufe
+ intersection{
+   box{&lt;-R_R,-R_R-D,-D_feet/2-2*D&gt;,
+       &lt;0,R_R+D,D_feet/2+2*D&gt;
+       rotate&lt;0,0,-R_rotate&gt;
+       inverse }
+   box{&lt;-R_R,-R_R-D,-D_feet/2-2*D&gt;,
+       &lt;0,R_R+D,D_feet/2+2*D&gt;
+       rotate&lt;0,0,-R_rotate&gt;
+       inverse
+       scale&lt;-1,1,1&gt; }
+   cylinder{&lt;0,0,-D_feet/2&gt;,
+            &lt;0,0,D_feet/2&gt;, R_R}
+   cylinder{&lt;0,0,-D_feet/2-D&gt;,
+            &lt;0,0,D_feet/2+D&gt;, R_R-D_feet
+            inverse }
+ } // end intersection Skid
+//---------------------------------------
+
+object{ Skid  // Kufe
+  <font color="#800000">rotate&lt; 0,0,Rocking_Angle&gt;
+  translate&lt; 0, R_R, 0&gt;
+</font>// move by the
+// according part of the circumference:
+  <font color="#800000">translate
+  &lt;-(2*pi*R_R)*(Rocking_Angle/360),0,0&gt;</font>
+} // end of Skid
+#end // end of macro Rocker0() ----------</b></td></pre></tr></table>
+
+
+</td>
+ <td colspan="1" valign="top">
+  <table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Rocker_0011.gif" width="240"  height="240"  alt="Rocking Chair" title="Rocking Chair"></td></tr>
+  </table><font size="-1"><b>&nbsp; &nbsp;Ein Schaukelstuhl in Action</b></font>
+
+  <table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Rocker_0021.gif" width="240"  height="260"  alt="Rocking Chair" title="Rocking Chair"></td></tr>
+  </table><font size="-1"><b>Wie ein Schaukelstuhl schaukelt.</b></font>
+<br>
+<br>
+<br>
+<br>
+  <table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Rocker0.gif" width="240"  height="128"  alt="Rocker0" title="Rocker0"></td></tr>
+  </table><font size="-1"><b>Die schaukelnde Kufe 'Rocker0'.</b></font>
+
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+<b>Und hier nun wie man das Makro anwendet:</b>
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare Time =  clock + 0.00;
+//---------------------------------------
+object{
+  Rocker0( 12* sin(Time*2*pi) )
+    texture{
+      pigment{ color rgb&lt;0.2,0.12,0.08&gt;}
+      finish { phong 1 reflection 0}
+    } // end of texture
+    rotate&lt;0,0,0&gt;
+    translate&lt;0,0,0&gt;
+} // end of Rocker0 ---------------------</b></td></pre></tr></table>
+<h6 align="center">
+ Szenendateien f&uuml;r obiges Kufen-Demo in POV-Ray:<br>
+   <a href="pov/Rocker0.ini"> &quot;Rocker0.ini&quot;</a>
+    and  <a href="pov/Rocker0.pov">&quot;Rocker0.pov&quot;</a></h6>
+
+
+</td>
+ <td colspan="1" valign="top">
+  <table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Rocker_01.gif" width="240"  height="240"  alt="Rocking Chair" title="Rocking Chair"></td></tr>
+  </table><font size="-1"><b>&nbsp; &nbsp; Der Schaukelstuhl 'Rocker_01'</b></font><br>
+<br>
+ <font size="-1">&nbsp; &nbsp;  Szenendateien eines<br>
+ &nbsp; &nbsp; <b>Schaukelstuhls</b> in POV-Ray:<br>
+   <a href="pov/Rocker0.ini"> &quot;Rocker_01.ini&quot;</a>
+    und  <a href="pov/Rocker0.pov">&quot;Rocker_01.pov&quot;</a></font>
+
+
+ </td>
+</table>
+
+
+ <font size="-1"><b>Gr&ouml;&szlig;ere Animationen mit Schaukelst&uuml;hlen<br>
+  findet man in meiner <a href="../../pov_anim/ani_3000d.htm">Gallery of 3D Animations - Oszillations</a></b></font>.
+ </p>
+</tr>
+</table>
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

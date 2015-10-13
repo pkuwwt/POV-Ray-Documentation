@@ -1,0 +1,128 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Ein kurzes Include File Tutorial f&uuml;r POV-Ray">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Include File Tutorial ">
+<title>Ein kurzes Include-Dateien-Tutorial f&uuml;r POV-Ray </title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Kleines Include-Dateien-Tutorial f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="inc_300e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="inc_300e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="inc_300i.htm"><font size="2">Italiano</font></a>
+        <a href="inc_300i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_300f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="inc_300f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000d.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000d.htm"--><b>Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000d.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_000d.htm">Wozu Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">Eigene Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">und wie aufrufen.</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_200d.htm">Schreibweisen, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_200d.htm">&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_300d.htm"--><b>Wo speichern?</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="inc_400d.htm">Design von Include Files</b></nobr></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="inc_700d.htm">Eigene Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_700d.htm">zum 'Insert Menu'</b></a><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="90%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Speicherort f&uuml;r eigene Include-Dateien.</b></h2>
+
+<font size="+1"> Verschiedene Mehtoden mit Vor- und Nachteilen:</font>
+<p align="justify">
+1) <font size="+1"><b>Speichern der Include-Dateien bei den Szenen-Dateien:</b></font><br>
+&nbsp; Die einfachste Art ist die Speicherung der eigenen Include-Dateien im gleichen Verzeichnis wie die Szenendatei f&uuml;r die sie
+gemacht wurden.<br>
+Aber dies ist nur optimal f&uuml;r sehr szenenspezifische Include-Dateien (wie z.B. Teile eines gr&ouml;&szlig;eren Projektes).<br>
+Es kann auch der einzig praktikable Weg sein, die eigenen Include-Dateien zu verwenden, wenn man an einem tempor&auml;ren Arbeitsplatz
+z.B. in einer Schule arbeitet, wo man nicht die Datei 'povray.ini' individuell ver&auml;ndern sollte!<br>
+Normalerweise packen wir aber Dinge von allgemeinerer Bedeutung und Nutzen in Include-Dateien (wie z.B. Objekte oder Texturen),
+welche wir auch in anderen Szenen wieder verwenden wollen. <br>
+Daf&uuml;r sind die folgenden Methoden wesentlich bessere Wege.
+</font><br>
+<br>
+
+<font size="+1">2) <b>Speichern im  Include-Dateien-Verzeichnis von POV-Ray:</b></font><br>
+Das Problem hier: es gibt bereits an die 59 Dateien dort - also bereits ziemlich &uuml;berf&uuml;llt!<br>
+Daher w&auml;re es nicht einfach &uuml;ber all das dort den &Uuml;berblick zu behalten!<br>
+<br>
+<font size="+1"> 3) <b>Das eigene Include-Dateien-Verzeichnis:</b></font><br>
+Hierzu machen wir uns ein spezielles Verzeichnis (im POV-Ray Verzeichnis bei 'Eigene Dokumente' oder irgenwo anders!),
+in welchem wir unsere selbstgemachten Include-Dateien sammeln.<br>
+Dazu m&uuml;ssen wir einen entsprechenden 'Library_Path' zu unseren eigene Include-Dateien
+in der Ini-Datei des POV-Ray-Programms 'povray.ini' einf&uuml;gen. Dies wird POV-Ray sagen wo es unsere eigenen Include-Dateien suchen soll.
+(bis zu 20 solcher Pfade k&ouml;nnen spezifiziert werden!).</b><br>
+Wenn wir wollen, dass POV-Ray unsere eigenen Include-Dateien z.B. im Verzeichnis '<b>povray_inc</b>' findet,
+dann m&uuml;ssen wir in der Datei '<b>povray.ini</b>' die folgende Zeile unten anf&uuml;gen:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <b>Library_Path=&quot;C:\MeineDateien\povray_inc\&quot;</b></font><br>
+<br>
+<div align="center">
+</div>
+<font size="-1">....</font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

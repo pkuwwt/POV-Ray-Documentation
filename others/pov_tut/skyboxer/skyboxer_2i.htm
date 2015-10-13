@@ -1,0 +1,298 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="it">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="cielo, nubi realistici, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, grafica elettronica 3d, computer graphics">
+<meta name="Description" content="Skybox Viewer con POV-Ray, panorama a 360 gradi">
+<meta name="Description" content="Uno Skybox Viewer per l'uso con POV-Ray - vista di panorama a 360 gradi">
+
+<title>Uno Skybox Viewer per l'uso con POV-Ray - part 2</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <td align="right"><nobr>
+ <a href="skyboxer_2.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="skyboxer_2.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="skyboxer_2d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="skyboxer_2d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="skyboxer_2f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="skyboxer_2f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm"><b>Home</b></a><br>
+ - <a href="../pov__ita.htm#ani"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+<nobr> - <b><font size="+1">SkyboxViewer</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="skyboxer_1i.htm"><b>Che cosa &egrave;? + Download</b></a><br>
+ &nbsp; &nbsp;&gt; <!--a href="skyboxer_2i.htm"--><b>Skyboxes con POV-Ray</b></a><br>
+ &nbsp; &nbsp; -  <a href="skyboxer_3i.htm"><b>Galeria di Skybox</b></a><br>
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h1 align="center"><b>Uno Skybox Viewer per scene di <nobr>POV-Ray</nobr></b></h1>
+<p align="center"><font size="-1"><b>
+                  <a href="skyboxer_1i.htm">Informazioni di base + Download</a>  |</b>
+                  <!--a href="skyboxer_2i.htm"-->Skyboxes con POV-Ray</a><b> |
+                  <a href="skyboxer_3i.htm">Galeria di Skybox</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" cellspacing="10">
+<tr><td valign="top" colspan="2">
+    <h3 align="left"><b>Come si fa immagini di Skybox per lo SkyboxViewer<br>
+                        con scene di POV-Ray?</b>
+
+</td></h3>
+</tr>
+<tr><td><p align="justify"><font size="-1">Ci sono due modo per fare questo.<br>
+
+    Tutt'e due metodi usanno il include file &quot;<b>SkyboxCamera.inc</b>&quot;
+    per dirigere la camera di guardare nelle
+    6 direzioni - questo file non si deve mai editare!</font><br>
+    <b>Preperazione di una scena POV-Ray:</b><br>
+    <font size="-1">Si deve copiare il file della scena POV-Ray <font size="-1">(p.es. MyScene1.pov)</font>
+        nel directory &quot;<b>Skyboxes</b>&quot; <br>
+        Dobbiamo aprire il file POV-Ray e deattivare o rimuovere la camera,
+        dichiarare una varibile denominata <b>camLoc</b> con la positione della camera (&quot;location&quot;)
+        e aggiungere la linea: <nobr>'<b>#include "SkyboxCamera.inc"</b>'</nobr>.</font>
+</td>
+
+<td valign="bottom"><p align="center">
+<table border="2" cellpadding="3" cellspacing="2" bgcolor="#f8f8f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><tr>
+<td><pre><b><font color="#990000">/*</font></b><font color="#006600">camera{
+   location <b><font color="#990000">&lt;0,1,-5&gt;</font></b>
+   right x*image_width/image_height
+   angle   45
+   look_at &lt;0,1,0&gt;
+} </font><b><font color="#990000"><b>*/</font>
+#declare camLoc =<font color="#990000"> &lt;0,1,-5&gt;;</font>
+#include "SkyboxCamera.inc"</b></td></pre>
+</tr>
+</table><font size="-2">Preperazione del file di scena POV-Ray</font></p>
+
+</td></tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr><td colspan="2">
+    <br>
+    <b>Metodo 1: Per mezzo di batch file e  SkyboxCamera.inc </b><br>
+         <font size="-1">Qui usiamo due batch file i quali si deve piazzare nello stesso directory come
+           nostro file di scena POV-Ray: <br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>RenderSkybox6sides.bat</b> e <b>RenderSkyboxStart.bat</b>.<br>
+           <b>Per editare</b> questo tipo di file si deve aprire il loro directory nel Windows Explorer e <b>clicciare destra sul nome</b>
+           e <b>selezionare</b> del menu popup &quot;<b>editare</b>&quot;.<br>
+           <b>Per run</b> questo tipo di file si deve solament <b>cliccare dobbio sul nome</b> nel Windows Explorer.<br>
+           <br>
+</td></tr>
+<tr><td colspan="2">
+Adesso prima e solo una volta:<br>
+Nel <b>RenderSkybox6sides.bat</b>:<br>
+<font size="-1">Qui si deve inserire il pathname dell'installazione PovRay ... /<br>
+Questo si pu&ograve; trovare con un clic destra sulla icona del programma POV-Ray,<br>
+p.es. con POV-Ray 3.6:<br>
+<table border="2" cellpadding="3" cellspacing="2" bgcolor="#f8f8f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><tr>
+<td><pre><b>Rem --> please set PovRay installation path here...
+Set povray="C:\Programme\POV_Ray\bin\pvengine.exe"</font></b></td></pre>
+</tr>
+</table>
+
+p.es. con POV-Ray 3.6.2:<br>
+<table border="2" cellpadding="3" cellspacing="2" bgcolor="#f8f8f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><tr>
+<td><pre><b>Rem --> please set PovRay installation path here...
+Set povray="C:\Users\MyName\AppData\Roaming\POV-Ray\v3.6\bin\pvengine.exe"</font></b></td></pre>
+</tr>
+</table>
+
+p.es. con POV-Ray 3.7 beta su Vista/Windows7 64bit:<br>
+<table border="2" cellpadding="3" cellspacing="2" bgcolor="#f8f8f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><tr>
+<td><pre><b>Rem --> please set PovRay installation path here...
+Set povray="C:\Users\MyName\AppData\Roaming\POV-Ray\v3.7\bin\pvengine64.exe"</font></b></td></pre>
+</tr>
+</table>
+</font>
+
+<br>
+Poi ogni volta se vogliamo generare un alto skybox set:<br>
+Nel <b>RenderSkyboxStart.bat</b>: <br>
+Selezione di image resolution e inserimento del filename<br>
+
+
+<table border="2" cellpadding="3" cellspacing="2" bgcolor="#f8f8f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><tr>
+<td><pre><b>rem --> please choose the picture resolution here...
+rem set res=64
+rem set res=128
+<b>set res=256</b>
+rem set res=512
+rem set res=1024
+rem set res=2048
+rem set res=4096
+
+rem --> please set filename of scenery and output file here...
+Call RenderSkybox6sides.bat <b>MyScene1</b> %res%
+rem Call RenderSkybox6sides.bat Skybox_Demo1  %res%
+rem Call RenderSkybox6sides.bat Skybox_Demo2_Water %res%
+
+pause
+</font></b></td></pre>
+</tr>
+</table> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<font size="-1">Preperazione del file <b>RenderSkyboxStart.bat</b>.</font></p>
+
+
+Con questo tutte les preperazioni necessarie sono fatto!<br>
+Addesso per start il rendering: <b>run RenderSkyboxStart.bat</b>
+&nbsp; (double click the name !)<br>
+Doppo questo le 6 immagini skybox sono generate e memorizzate
+nello stesso directory che il file della scena POV-Ray: &quot;Skyboxes&quot;.
+<br>
+<br>
+</font>
+</td></tr>
+
+<tr><td colspan="2"><hr></td></tr>
+<tr><td colspan="2">
+       <br>
+<b>Metodo 2 : Per mezzo di SkyboxSerie.ini e SkyboxCamera.inc</b><br>
+</td></tr>
+
+<tr><td>
+<font size="-1">Qui usiamo il file <b>SkyboxSerie.ini</b> per iniziare il rendering des 6 immagini.
+Questo file si deve piazzare nello stesso directory che nostro file della scena POV-Ray.<br>
+<br>
+Apriamo SkyboxSerie.ini e inseriamo il nome della scena attuale nella linea seguente:<br>
+Input_File_Name=<b>MyScene1.pov</b><br>
+Altre manipolazioni possibili:<br>
+&nbsp; <b>Display_Gamma=1.9</b><br>
+&nbsp; <b>File_Gamma=1.9</b><br>
+&nbsp; Cambio di gamma per aggiungere pi&ugrave;(&gt;2.2) <br>
+&nbsp;&nbsp;&nbsp;  o meno(&gt;2.2) contrasto all'immagini.<br>
+&nbsp; Per output png con 24 bit colori si scrive: +FN24
+<br>
+<br>
+<b>Questo file si lancia (&quot;Run&quot;) direttamente dal editore di POV-Ray!</b><br>
+Quest'azione produce 6 file d'immagine con nomi con numeri aggiunti 0 a 5.
+in vostro standard POV-Ray output file directory definito da
+Output_File_Name=&quot;C:\Users\...&quot;<br>
+Poi dobbiamo renominare le immagini secondo la sequenza seguente (prudenza! Non scambiare!).<br>
+Con les immagini di per es. <b>MyScene1.pov</b>:<br>
+&nbsp; &nbsp; MyScene1<b>0</b>.bmp  --> MyScene1<b>_front</b>.bmp<br>
+&nbsp; &nbsp; MyScene1<b>1</b>.bmp  --> MyScene1<b>_right</b>.bmp<br>
+&nbsp; &nbsp; MyScene1<b>2</b>.bmp  --> MyScene1<b>_back</b>.bmp<br>
+&nbsp; &nbsp; MyScene1<b>3</b>.bmp  --> MyScene1<b>_left</b>.bmp<br>
+&nbsp; &nbsp; MyScene1<b>4</b>.bmp  --> MyScene1<b>_top</b>.bmp<br>
+&nbsp; &nbsp; MyScene1<b>5</b>.bmp  --> MyScene1<b>_base</b>.bmp<br>
+
+Alla fine dobbiamo muovere quest'immagini nel nostro subdirectory '<b>Skyboxes</b>'
+e lanciare lo SkyboxViewer.<br>
+
+</font>
+  </td>
+    <td valign="top">
+<br>
+<br>
+<br>
+<p align="center">
+<table border="2" cellpadding="3" cellspacing="2" bgcolor="#f8f8f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><tr>
+<td><pre>; Persistence Of Vision raytracer
+; POV-Ray version 3.6 / 3.7
+; ini file for Skybox renderings.
+; for SkyboxViewer images
+<b><font color="#800000">;</font>Display_Gamma=1.9
+<font color="#800000">;</font>File_Gamma=1.9
+
+Antialias=On
+Antialias_Threshold=0.3
+Antialias_Depth=3
+
+Input_File_Name=<font color="#800000"><b>MyScene1</font>.pov</b>
+
+Initial_Frame=0
+Final_Frame=5
+Initial_Clock=0
+Final_Clock=5
+
+Cyclic_Animation=off
+Pause_when_Done=off
+</font></b></td></pre>
+</tr>
+</table><font size="-2">Preperazione dello <b>SkyboxSerie.ini</b></font></p>
+
+<tr><td colspan="2"><hr></td></tr>
+
+<tr><td colspan="2">
+<p align="right"><font size="-1"><b>
+                  <a href="skyboxer_1i.htm">Informazioni di base + Download</a>  |</b>
+                  <!--a href="skyboxer_2i.htm"-->Skyboxes con POV-Ray</a><b> |
+                  <a href="skyboxer_3i.htm">Galeria di Skybox</a></b></font></p>
+</td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+
+</font>
+</body>
+</html>

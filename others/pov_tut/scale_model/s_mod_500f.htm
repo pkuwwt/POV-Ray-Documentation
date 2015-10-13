@@ -1,0 +1,228 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Modeler &agrave; l'&eacute;chelle avec POV-Ray - Rendering &agrave; vues multiples</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Modeler &agrave; l'&eacute;chelle avec POV-Ray">
+<meta name="keywords" content="Modeler &agrave; l'&eacute;chelle, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafique, infographique, 3D Graphique">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=680,height=539");
+ New.focus();  }
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=840,height=859");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Modeler &agrave; l'&eacute;chelle avec POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+   <a href="s_mod_500e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="s_mod_500e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="s_mod_500i.htm"><font size="2">Italiano</font></a>&nbsp;
+   <a href="s_mod_500i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="s_mod_500d.htm"><font size="2">Deutsch</b></a>&nbsp;
+   <a href="s_mod_500d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<br>
+ -  <a href="s_mod_000f.htm">Modeler &agrave; l'&eacute;chelle</b></a><br>
+ &nbsp; <a href="s_mod_000f.htm">avec POV-Ray</b></a><br>
+<br>
+&nbsp; - <a href="s_mod_100f.htm">Fond quadrill&eacute;</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_100f.htm">en m et cm</b></a><br>
+ &nbsp; - <a href="s_mod_150f.htm">Vue orthographique</b></a><br>
+ &nbsp; - <a href="s_mod_300f.htm">Adaption des plans</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_300f.htm">au fond quadrill&eacute;</b></a><br>
+
+ &nbsp; <b>&gt;</b>&nbsp;<!--a href="s_mod_500f.htm"--><b>Rendering</b></a><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="s_mod_500f.htm"--><b>&agrave; vues multiples</b></a><br>
+<br>
+<br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td>
+
+<td valign="top" align="left" width="70%" rowspan="2"> <!-- Content - 2nd column -->
+
+ <a name="Top"></a>
+<font size="+2"><b>Rendering &agrave; vues multiples</b></font><br>
+<br>
+
+<table >
+<tr>
+ <td valign="top"><br><font size="-1">Pour obtenir des vues multiples avec un rendering unique
+ nous devons premi&egrave;rement d&eacute;clarer un object special comme une union du objet et du fond !
+ ........<br>
+ Premi&egrave;rement nous d&eacute;clarons le <b>fond quadrill&eacute;</b><br>
+ avec la macro <b>Raster_Lines</b>, voir ici : <a href="s_mod_100f.htm" target="_new">Fond quadrill&eacute;</a>.
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//------------------------------------- /////
+#macro Raster_Lines (RScale, LineW, Intensity_)
+#local Raster_XY =
+object{ Raster_Plate(
+   1.0,   0.025, // 1st raster distance/width,
+   0.1,   0.100, // 2nd raster distance/width,
+   Base_Texture, // non = pigment { Clear }
+   0.7, // Intensity, // Line gray intensity
+   &lt;-3.00,-0.055,-0.0&gt;, &lt;3.00,0,3.00&gt;, //Start, End
+ ) //-----------------------------------------------
+ rotate&lt;-90,0,0&gt;
+ translate&lt;0,0,3&gt;
+} //------------------------------------------------</td></b></pre></tr></table>
+Nella m&ecirc;me m&eacute;thode nous faisons les objet  'Raster_XZ' et 'Raster_YZ'.<br>
+Puis  nous d&eacute;clarons l'<b>objet 'House1'</b> utilissant le fichiers include correspondant :<br>
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//---------------------------------------------- ///
+#include "House1.inc"
+//---------------------------------------------- ///
+#declare House =
+object{ House_1( 2.00, // Half_House_Width_X,
+                 4.00, // Total_House_Width_Z,
+                 2.80, // House_Height_Y,
+                 15,   // Roof___Angle, degrees
+               ) //----------------------------- ///
+        translate&lt;0.00,0.00,-2.00&gt;
+} //-------------------------------------------- ///</td></b></pre></tr></table>
+Puis nous devons faire les 'union's des objets correspondant.
+Finalement nous arrangeons ces objets dans la sc&egrave;ne :<br>
+
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>// Scene for front view !!
+#declare Scene_XY =
+union{
+ object{ Raster_XY }
+ object{ House }
+} //--------------------------
+// Scene for ríght side view !!
+#declare Scene_YZ =
+union{
+ object{ Raster_YZ }
+ object{ House }
+} //--------------------------
+// Scene for top/diagonal view !!
+#declare Scene_XZ =
+union{
+ object{ Raster_XZ }
+ object{ House }
+} //--------------------------
+
+union{ // all together now
+  object{ Scene_XZ
+          rotate&lt;-90,0,0&gt;    translate&lt;-3.1, 3.1,5&gt;}
+  object{ Scene_XY  translate&lt;-3.1,-3.1,0&gt; }
+  object{ Scene_YZ
+          rotate&lt;0,90,0&gt;     translate&lt; 3.1,-3.1,0&gt;}
+  object{ Scene_XZ scale 0.93
+          rotate&lt;-45,40,-33&gt; translate&lt; 3.2, 2.5,8&gt;}
+} // end union---------------------------------- ///</td></b></pre></tr></table>
+<font size="-1"><b>Note :</b> La vue diagonale est une projection parallele sans nessune raccourcissement
+de perspective !</font>
+ </td>
+ <td align="center" valign="top">
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Multiple2_001c.jpg" border="0" width="320" height="128"
+                   alt="2 Views" title="2 Views"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Deux vues dans un rendering unique.</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/show_Multiple_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Multiple_001c.jpg" border="0" width="320" height="240"
+                   alt="Multiple Views" title="Multiple Views"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Les vues multiples.</b></font>
+<br>
+<font size="-1"><b>Cette sc&egrave;ne en POV-Ray: <br>
+<a href="pov/Multiple_001.pov">Multiple_001.pov</a><br>
+Les fichiers include necessaires ici :<br>
+<a href="pov/House1.inc">House1.inc</a><br>
+<a href="pov/Window_1.inc">Window_1.inc</a><br>
+<a href="pov/Door_1.inc">Door_1.inc</a><br>
+    </font><br>
+<br>
+<br>
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage2('im/show_Multiple_Loco_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Loco_Multiple_001c.jpg" border="0" width="320" height="320"
+                   alt="Multiple Views Rendering of a Loco" title="Multiple Views Rendering of a Loco"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Rendering &agrave; vues multiple d'une locomotive.</b></font>
+
+
+
+</tr>
+</table>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

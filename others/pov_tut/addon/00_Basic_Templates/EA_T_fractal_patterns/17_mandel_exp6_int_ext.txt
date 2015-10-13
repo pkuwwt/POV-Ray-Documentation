@@ -1,0 +1,38 @@
+// fractal pattern typ Mandelbrot 
+/*
+MANDELBROT:
+  mandel ITERATIONS [, BUMP_SIZE]
+  [exponent EXPONENT]
+  [exterior EXTERIOR_TYPE, FACTOR]
+  [interior INTERIOR_TYPE, FACTOR]
+ 
+ ITERATIONS = number of times to iterate (up to 2^32-1) the algorithm.
+ EXPONENT is an integer between 2 and 33. Default = 2.
+ interior and exterior specify special coloring algorithms.
+   We can specify one of them or both at the same time. 
+   They only work with the fractal patterns. 
+ EXTERIOR_TYPE and INTERIOR_TYPE are integer values between 0 and 6 (inclusive). 
+   When not specified. Defaults: INTERIOR_TYPE = 0 and EXTERIOR_TYPE = 1. 
+ FACTOR is a float. The return value of the pattern is multiplied by FACTOR before returning it. 
+ It can be used to scale the value range of the pattern when using interior and exterior coloring 
+ (often needed to get the desired effect). Default FACTOR = 1.
+*/ 
+sphere{ <0,0,0>, 1 
+       pigment{ 
+         mandel 50 exponent 6 //2...33
+         interior 1, 5 
+         exterior 2, 1 
+         scale 0.70 translate<0.15,0,0>
+         color_map{[0.00 color rgb <0.5,0,0.25>]
+                   [0.08 color rgb <0.8,0,0.10>]
+                   [0.20 color rgb <1,0.4,0.05>]
+                   [0.30 color rgb <1,0.7,0>]
+                   [0.60 color rgb <0.0,0,0>]
+                   [0.80 color rgb <0,0,0>]
+                   [1.00 color rgb <1,1,1>]}
+         } // end of pigment
+         finish { phong 1 } 
+       
+         scale<1,1,1>  rotate<0,0,0>  translate<0,0,0>
+       } // end of sphere ----------------------------
+ 

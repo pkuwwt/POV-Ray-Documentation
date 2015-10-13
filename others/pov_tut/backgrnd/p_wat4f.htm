@@ -1,0 +1,226 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="fr">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="eau r&eacute;aliste, , raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, infographie 3D, computer graphics">
+<meta name="Description" content="Comment cr&eacute;er de l'eau r&eacute;aliste avec POV-Ray">
+
+<title>Eau r&eacute;aliste avec POV-Ray - part 4</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <td align="right"><nobr>
+ <a href="p_wat3.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_wat3.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_wat3d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_wat3d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_wat3i.htm"><font size="2">Italiano</font></a>
+ <a href="p_wat3i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr> - <a href="p_wat1f.htm"><font size="+1">Eau r&eacute;aliste</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_wat1f.htm">opaque r&eacute;fl&eacute;chissante</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat2f.htm">la mer agit&eacute;e</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat3f.htm">transparence partielle</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_wat4f.htm"--><b>Un tourbillon</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat5f.htm">Un verre d'eau</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat6f.htm">L'eau par l'isosurface</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat7f.htm">L'eau de mer isosurface</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h1 align="center">Eau r&eacute;aliste avec POV-Ray</h1>
+<p align="center"><b>part
+<a href="p_wat1f.htm"> 1</a>  | <a href="p_wat2f.htm"> 2</a> | <a href="p_wat3f.htm"> 3</a> |
+<!--a href="p_wat4f.htm"--></b> 4</a><b> | <a href="p_wat5f.htm"> 5</a> | <a href="p_wat6f.htm"> 6</a>  |
+<a href="p_wat7f.htm"> 7</a></b></p>
+
+<div align="center">
+<table border="0" width="90%" align="center" cellpadding="4">
+<tr><td align="center" valign="top">
+    <h3 align="left"><b>Un trou dans l'eau - un tourbillon</b></h3>
+    <h5 align="justify">Cela on peu faire avec quelques fonctions simples de CSG.
+        &Agrave; la fin nous devons appliquer une texture avec un composant 'normal' appropri&eacute;
+        sur le plan pour simuler le tourbillon de l'eau.
+         <br> <font size="-1">Pour plus de clart&eacute; j'ai d&eacute;coup&eacute; un quart du plan.</font>
+         <br>  </h5><br>
+      <font size="-1"><b>Un trou dans l'eau.<br>
+      Description de cette sc&egrave;ne pour POV-Ray :<br>
+     <a href="povw/hole01.pov">hole01.pov</a>
+     or <a href="povw/hole01.txt">hole01.txt</a></font></b></td>
+
+     <td><table border="3"  bgcolor="#efefef"
+
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole00.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Hole in the Water 0" title="Hole in the Water 0"></a></td></tr>
+        </table>
+     </td>
+</tr>
+<tr>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole01.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 1" title="Hole in the Water 1"></a></td></tr>
+        </table></td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole02.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 2" title="Hole in the Water 2"></a></td></tr>
+        </table></td>
+</tr>
+<tr><td>
+   <h5 align="center">Nous prenons un plan xz ( plane{&lt;0,1,0&gt;,0} ) et un cylindre un peu plus haut.
+       pour &eacute;viter des surfaces co&iuml;ncidentes dans une 'difference'.
+    </td></h5>
+    <td>
+    <h5 align="center">Nous soustrayons ce cylindre du notre plan.<br>
+    Nous obtenons un trou avec un ar&ecirc;te vive. <br>
+    </td></h5>
+</tr>
+<tr>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole03.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 2" title="Hole in the Water 3"></a></td></tr>
+        </table></td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole04.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 4" title="Hole in the Water 4"></a></td></tr>
+        </table></td>
+</tr>
+<tr>
+   <td>
+      <h5 align="center">Pour arrondir cet ar&ecirc;te vive nous prenons un autre cylindere avec le rayon agrandi
+      du rayon du bords ronds.
+    </td></h5>
+   <td>
+    <h5 align="center">Anchore une fois nous soustrayons ce deuxi&egrave;me cylindre !
+   </td></h5>
+</tr>
+<tr>
+  <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole05.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 5" title="Hole in the Water 5"></a></td></tr>
+        </table></td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole06.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 6" title="Hole in the Water 6"></a></td></tr>
+        </table></td>
+</tr>
+<tr>
+  <td>
+    <h5 align="center">Puis nous ajoutons un tore (un anneau) avec<br>
+   le rayon majeur = rayon de notre deuxi&egrave;me cylindre<br>
+    and le rayon mineur = rayon du bords ronds.
+  </td></h5>
+  <td>
+    <h5 align="center">La construction est fini!
+  </td></h5>
+</tr>
+<tr>
+   <td>
+    <h5 align="center">&Agrave; la fin nous ajoutons &agrave; la texture de l'eau <br>
+    un 'normal' come cela :</h5>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>   normal {spiral1  20  0.25&nbsp;
+           sine_wave
+           turbulence 0.1
+           rotate&lt;90,0,0&gt;
+           scale 0.5 }</b></td></pre></tr></table><br>
+
+     <h5>Fini !</h5>
+     </td>
+
+   <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole07.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 7" title="Hole in the Water 7"></a></td></tr>
+        </table>
+ </h5>
+<p align="right"><b>part
+<a href="p_wat1f.htm"> 1</a>  | <a href="p_wat2f.htm"> 2</a> | <a href="p_wat3f.htm"> 3</a> |
+<!--a href="p_wat4f.htm"--></b> 4</a><b> | <a href="p_wat5f.htm"> 5</a> | <a href="p_wat6f.htm"> 6</a>  |
+<a href="p_wat7f.htm"> 7</a></b></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

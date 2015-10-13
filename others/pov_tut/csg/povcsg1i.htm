@@ -1,0 +1,183 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, csg, Constructive Solid Geometry, boolean algebra, union, merge, intersection, difference, inverse">
+<meta name="description" content="tutorial on CSG - Constructive Solid Geometry with POV-Ray - part I">
+<title>CSG - Constructive Solid Geometry - Algebra Booleana con Solidi et POV-Ray - parte I, italiano</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg1e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="povcsg1e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg1f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="povcsg1f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg1.htm"><font size="2">Deutsch </font></a>
+        <a href="povcsg1.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwni.htm">paggina download</nobr></b></a><br>
+<br>
+ &nbsp;<b>&gt;</b> <!--a href="povcsg1i.htm"--><b>CSG  Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--a href="povcsg1i.htm"--><b>Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--a href="povcsg1i.htm"--><b>Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2i.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3i.htm">difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4i.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4i.htm">e invers</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg5i.htm">clipped_by</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg6i.htm">superfici</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg6i.htm">coincidenti</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg7i.htm">testure e CSG</b></a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h2 align="center">Algebra Booleana con Solidi - parte I</h2>
+
+<table border="0" width="95%" align="center"><tr><td>
+<div align="center">
+
+<p align="justify">&nbsp; &nbsp; Qui una introduzione breve a qualche dei principi fondamentali della
+costruzione di solidi nuove e pi&ugrave; complessi combinando forme primitive.
+Per questo usiamo la tecnica chiamata 'CSG' (in italiano: Geometria Solida Costruttiva),
+che usa - descritto brevemente -
+gli stessi operazioni con solidi come siamo abituato al algebra booleana
+e anche un po' di pi&ugrave;. I questo caso un solido e considerato come un insieme di
+punti nello spazio tridimensionale. Con questo insieme di punti possiamo lavorare
+con le operazioni booleane per insiemi. <br>
+&nbsp; &nbsp; <b>Oggetti CSG:</b>
+Queste operazioni si pu&ograve; usare con tutti i solidi e forme geometrichi che hanno
+un &quot;interno&quot; e &quot;esterno&quot; chiaro definito.
+I piu importanti oggetti di questo tipo sono:
+&quot;box&quot;, &quot;sphere&quot;, &quot;cylinder&quot;, &quot;cone&quot;,
+&quot;torus&quot;, &quot;prism&quot;. Un piano &quot;plane&quot; debbe essere
+considerato specialmente:  Il vettore normale indica sempre al &quot;esterno&quot;
+del piano, mentre ogni punto dietro questo piano al altro lato di questo &quot;plane&quot;
+e definito come &quot;interno&quot;. <br>
+Anche i mesh triangolari (mesh, mesh2) si pu&ograve; usare con queste operazioni, a condizione che c'&egrave;
+ un inside_vector.  <br>
+
+Tutte le operazioni csg si pu&ograve; combinare liberamente.<br>
+Le operazioni <b>CSG</b> sono nel dettaglio:
+</p></td></tr></table>
+
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td width="140" height="30"><b>union of sets</b></td>
+  <td width="140" height="30"><b>difference </b></td>
+  <td width="140" height="30"><b>intersection</b></td>
+  <td width="140" height="30"><b>complement</b></td>
+  <td width="140" height="30"><b>opening<br>by cuting off</b></td>
+ </tr>
+ <tr>
+  <td><a href="povcsg2i.htm"><img src="boole_u.gif" width="130" height="100" border="0"></a></td>
+  <td><a href="povcsg3i.htm"><img src="boole_d.gif" width="130" height="100" border="0"></a></td>
+  <td><a href="povcsg4i.htm"><img src="boole_i.gif" width="130" height="100" border="0"></a></td>
+  <td><a href="povcsg4i.htm#inverse"><img src="boole_k.gif" width="130" height="100" border="0"></a></td>
+  <td><a href="povcsg5i.htm"><img src="boole_cl.gif" width="130" height="100" border="0"></a></td>
+ </tr>
+ <tr>
+  <td width="140" height="50"><a href="povcsg2i.htm">union{...}</b><br> o merge{...}</b></a></td>
+  <td width="140" height="50"><a href="povcsg3i.htm">difference{...}</b></a></td>
+  <td width="140" height="50"><a href="povcsg4i.htm">intersection{...}</b></a></td>
+  <td width="140" height="50"><a href="povcsg4i.htm#inverse">inverse</b></a></td>
+  <td width="140" height="50"><a href="povcsg5i.htm">clipped_by{...}</b></a></td>
+ </tr>
+ <tr>
+  <td colspan ="5">
+      <table align="center" border="2" cellpadding="0" cellspacing="0" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+      <tr><td colspan ="5"><nobr>
+           <a href="povcsg2i.htm"><img src="boole_u.jpg" width="130" border="0" height="98" alt="union and merge" title="union and merge"></a>
+           <a href="povcsg3i.htm"><img src="boole_d.jpg" width="130" border="0" height="98" alt="difference" title="difference"></a>
+           <a href="povcsg4i.htm"><img src="boole_i.jpg" width="130" border="0" height="98" alt="intersection" title="intersection"></a>
+           <a href="povcsg4i.htm#inverse"><img src="boole_in.gif" width="130" border="0" height="100" alt="inverse" title="inverse"></a>
+           <a href="povcsg5i.htm"><img src="boole_c.jpg" width="130" border="0" height="98"  alt="clipped_by" title="clipped_by"></a>
+        </nobr>
+      </td></tr></table>
+  </td>
+</table>
+</div>
+<br>
+
+</td></tr></table> <!-- global-->
+
+<hr size="3">
+<div align="center">
+<table border="0" align="right">
+<tr>
+ <td><font size="-1"><!--a href="povcsg1i.htm"-->CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2i.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3i.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4i.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5i.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6i.htm">superfici coincidenti</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7i.htm">testure</b></a></font></td>
+</tr>
+</table>
+</div>
+
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

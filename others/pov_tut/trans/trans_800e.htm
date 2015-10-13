@@ -1,0 +1,422 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Transformations with POV-Ray - rotate</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013 by Friedrich A. Lohmueller">
+<meta name="Description" content="Basics about geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d grafics, 3d graphics, computer graphics,
+      geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometric Transformations with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_800d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_800d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a><br>
+        <a href="trans_800i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_800i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_800f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_800f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp; <a href="trans_000e.htm">Geometric</b></a><br>
+ &nbsp; <a href="trans_000e.htm">Transformations</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Elementary </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100e.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200e.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">mirror symmetry</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Other</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400e.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450e.htm">Shearing</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470e.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500e.htm">&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="trans_500e.htm"--><b>&nbsp;and &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Vectors and</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vrotate">vrotate</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vaxis_rotate">vaxis_rotate</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vtransform">vtransform</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vtransform">vinv_transform</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vturbulence">vturbulence</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vnormalize">vnormalize</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vcross">vcross</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vdot">vdot()</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#vlength">vlength()</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#VAngle">VAngle(), VAngleD()</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_800e.htm#VProject">VProject_Axis</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+ <tr>
+  <td>
+  <div align="center"><font size="5"><b>Vectors and Transformations</b></font><br>
+  <font size="2">Vector transformations and other vector related things in POV-Ray:</b></font>
+  </div>
+<hr size="3">
+</td></tr></table>
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="85%">
+ <tr>
+  <td>
+  <div align="justify">
+  <a name="vrotate"></a>
+      <font size="3"><b>vrotate( V, &lt;Rotate.x, Rotate.y, Rotate.z&gt;)</b></font><br>
+      <font size="2">Rotation of a vector V around the center &lt;0,0,0&gt; <br>
+      by a rotation vector &lt;Rotate.x, Rotate.y, Rotate.z&gt;.</font>
+    </div>
+
+   <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>vrotate( &lt; 2.5, 1, 0&gt;,
+          &lt; 0, 90, 0&gt; ) </b></td></pre></tr></table>
+  </td>
+  <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="vrotate.jpg" border="0" width="160" height="120"
+                 alt="vrotate example" title="vrotate example"></td></tr></table>
+  </td>
+ </tr>
+
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td>
+  <div  align="justify">
+  <a name="vaxis_rotate"></a>
+      <font size="3"><b>vaxis_rotate( V1, V2, A)</b></font><br>
+      <font size="2">Rotates a vector V1 around a vector V2 as axis of rotation by A degrees.</font></div>
+
+
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>vaxis_rotate(&lt; 0, 1, 0.5&gt;,
+             &lt; 2, 3,   0&gt;,
+                       70 ) </b></td></pre></tr></table>
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="vaxis_rotate.jpg" border="0" width="160" height="120"
+                 alt="vaxis_rotate example" title="vaxis_rotate example"></td></tr></table>
+  </td>
+ </tr>
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td colspan="1">
+  <div  align="justify">
+    <a name="vtransform"></a>
+      <font size="3"><b>vtransform ( V, Transformation )<br>
+                        vinv_transform( V , Transformation )</b></font><br>
+      <font size="2">Needs: <b>#include "transform.inc"</b><br>
+       Combining transformations translate, scale, rotate and matrix.<br>
+       <b>vtransform()</b> applies a transformation to a point.<br>
+       <b>vinv_transform()</b> does the inverse transformation ('undo').</font></div>
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare A = &lt; 1.5, 0.3, 0.25 &gt;;
+#declare Trans1 =
+   transform{ rotate&lt;0,-50,0&gt;
+              translate&lt;0,0.7,0&gt; };
+#declare B = vtransform ( A, Trans1 );</b></td></pre></tr></table>
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="vtransform.jpg" border="0" width="160" height="120"
+                 alt="vtransform example" title="vtransform example"></td></tr></table>
+  </td>
+ </tr>
+
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td>
+  <div  align="justify">
+    <a name="vturbulence"></a>
+      <font size="3"><b>vturbulence(Lambda, Omega, Octaves, V)</b></font><br>
+      <font size="2">Returns the turbulence vector for the point V based on the given turbulence values.
+        (For Lambda, Omega, Octaves see <a href="http://wiki.povray.org/content/Reference:Warp#Turbulence_Warp">POV-Ray Wiki</a>.<br>
+
+        The amplitude Ampl of turbulence can be controlled by multiplying the turbulence vector.
+        The frequency Freq at which the turbulence vector changes can be controlled by multiplying V.<br>
+        We can get a turbulated version of the vector V by :
+         </font></div>
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare V_Turb =
+    V + Ampl*vturbulence(2, 0.5, 6, V*Freq);</b></td></pre></tr></table>
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="vturbulence.jpg" border="0" width="160" height="120"
+                 alt="vturbulence example" title="vturbulence example"></td></tr></table>
+               <font size="2">Example <a href="vturbulence.txt" target="_new">vturbulence.txt</a></font>
+  </td>
+ </tr>
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td>
+  <div  align="justify">
+    <a name="vnormalize"></a>
+      <font size="3"><b>vnormalize( V )</b></font><br>
+      <font size="2">Normalized vector A, a unit length vector in direction of A.<br>
+        Formula: vnormalize(A)= A / vlength(A).<br>
+        <font color="#800000"><b>Warning:</b></font> Using vnormalize(&lt;0,0,0&gt;) will result in an error.</font></div>
+
+
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#if( vlength(V) != 0 )// if is not &lt;0,0,0&gt;
+  #declare Vo = vnormalize( V );
+#end</b></td></pre></tr></table>
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="vnormalize.jpg" border="0" width="160" height="120"
+                 alt="vnormalize example" title="vnormalize example"></td></tr></table>
+  </td>
+ </tr>
+
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td>
+  <div  align="justify">
+    <a name="vcross"></a>
+      <font size="3"><b>vcross( V1, V2)</b></font><br>
+      <font size="2">Cross product of A and B (' A x B '),<br>
+       A vector perpendicular to the two original vectors and
+       with the length equal to the area of the parallelogram defined by them. Formula:<br>
+       AxB = |A|*|B|*sin(angle(A,B))*perpendicular_unit_vector(A,B)<br>
+       The length of the cross product vector is proportional to the sine of the angle between A and B.</font></div>
+
+
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare YellowVector =
+            vcross( BlueVextor, GreenVector);</b></td></pre></tr></table>
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="vcross.jpg" border="0" width="160" height="120"
+                 alt="vcross example" title="vcross example"></td></tr></table>
+  </td>
+ </tr>
+
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td>
+  <div  align="justify">
+    <a name="vdot"></a>
+      <font size="3"><b>vdot( V1, V2)</b></font><br>
+      <font size="2">Dot product of V1 and V2. ('scalar product').
+      It's directly proportional to the length of the vectors V1 and V2
+      and the cosine of the angle between V1 and V2.<br>
+      If vdot(A,B) = 0, then VAngleD(A,B) = 90 degrees.<br>
+      Formula: vdot=V1.x*V2.x + V1.y*V2.y + V1.z*V2.z.</font></div>
+
+
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare Vyellow =
+ Vright*vdot(Vleft,Vright)/vdot(Vright,Vright);</b></td></pre></tr></table>
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="vdot.jpg" border="0" width="160" height="120"
+                 alt="vdot example" title="vdot example"></td></tr></table>
+  </td>
+ </tr>
+
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td>
+  <div  align="justify">
+    <a name="vlength"></a>
+      <font size="3"><b>vlength( V )</b></font><br>
+      <font size="2">Returns the length of V as a float value.<br>
+      Formula: vlength=sqrt(vdot(A,A)).
+      </font></div>
+
+
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare Distance_AB = vlength( B-A );</b></td></pre></tr></table>
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="vlength.jpg" border="0" width="160" height="120"
+                 alt="vlength example" title="vlength example"></td></tr></table>
+  </td>
+ </tr>
+
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td>
+  <div  align="justify">
+    <a name="VAngle"></a>
+      <font size="3"><b>VAngle( V1, V2 )<br>
+                        VAngleD( V1, V2 )</b></font><br>
+      <font size="2">Needs:<b> #include &quot;math.inc&quot;</b><br>
+       These return the angle between the vectors V1 and V2.<br>
+       VAngle() returns the angle in radians, VAngleD() in degrees.</font></div>
+
+
+
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="VAngle.jpg" border="0" width="160" height="120"
+                 alt="VAngle example" title="VAngle example"></td></tr></table>
+  </td>
+ </tr>
+
+
+ <tr><td colspan="2"><hr size="3"></td></tr>
+
+ <tr>
+  <td>
+  <div  align="justify">
+    <a name="VProject"></a>
+      <font size="3"><b>VProject_Axis(V, Axis)</b></font><br>
+      <font size="2">Needs:<b> #include &quot;math.inc&quot;</b><br>
+      <font size="2">Projects a vector V onto the an axis Axis.<br>
+      Formula: Axis*vdot(V, Axis)/vdot(Axis, Axis).
+      </font></div>
+
+
+    <table align="center" valign="middle" border="1"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+    <pre><b>#declare YellowV =
+      VProject_Axis( BlueV, GreenV);</b></td></pre></tr></table>
+   </td>
+   <td valign="top">
+     <table align="center" border="2"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="VProject_Axis.jpg" border="0" width="160" height="120"
+                 alt="VProject_Axis example" title="VProject_Axis example"></td></tr></table>
+  </td>
+ </tr>
+
+</table>
+<hr size="3">
+
+<div align="justify">
+ <font size="2">
+ The vector transformations shown here are also available as text templates
+ in the section &quot;Shearing &amp; transform&quot;
+ in my <nobr><a href="../down/insrtd_a.htm">&quot;<b>Insert Menu Add-on</b>&quot;</a></nobr>
+ .</font></div>
+
+
+</div>
+<hr size="3">
+<h6 align="justify">
+ <a href="trans_100e.htm">translate</a> |
+ <a href="trans_200e.htm">rotate</a> |
+ <a href="trans_300e.htm">scale</a> |
+ <a href="trans_400e.htm">matrix</a> |
+ <a href="trans_450e.htm">shearing</a> |
+ <a href="trans_470e.htm">transforms.inc</a> |
+ <a href="trans_500e.htm">transform</a> |
+ <!--a href="trans_800e.htm" -->vector transformations</a>
+<h6>
+
+
+
+</td></tr></table></td></tr>
+
+
+<!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

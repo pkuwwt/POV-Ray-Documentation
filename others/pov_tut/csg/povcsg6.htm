@@ -1,0 +1,203 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="CSG - Constructive Solid Geometry Teil V">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, csg, Constructive Solid Geometry, boolesche Algebra, union, merge, intersection, difference, konstruieren">
+<title>CSG - Constructive Solide Geometry mit POV-Ray - Teil V deutsch</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; <b>CSG - Constructive Solid Geometry</b></font>
+      <font size="-1"><b></b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg6e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povcsg6e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg6i.htm"><font size="2">Italiano</font></a>
+        <a href="povcsg6i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg6f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povcsg6f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg1.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg1.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3.htm">difference</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4.htm">intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4.htm">+ invers</b></a><br>
+ &nbsp; &nbsp; -   <a href="povcsg5.htm">clipped_by</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg6.htm"--><b>Koinzidenzprobleme</b></a><br>
+ &nbsp; &nbsp; -   <a href="povcsg7.htm">Texturen u. CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Boolesche Algebra mit K&ouml;rpern - Teil VI</h5>
+<h2 align="center">&Uuml;ber Koinzidenzprobleme bei CSG<br>
+<font size="2">(Koinzidenz = Deckunggleichheit)</font></h2>
+&nbsp; Wie bereits im Zusammenhang mit <a href="povcsg3.htm">'difference'</a> erw&auml;hnt,
+kommt es bei koinzidenten Fl&auml;chen unvermeidlicher Weise zu <b>Eindeutigkeitsprobleme</b>n.
+Diese Art von 'Fehlern' kann prinzipiell bei allen Computerprogrammen auftauchen,
+die irgenwelche Schnittpunkte von Geraden ('Sehstrahlen') mit mehreren
+geometrischen Objekten berechnen. <br>
+Dies ist kein Fehler des POV-Ray-Programms!<br>
+&nbsp; Es bleibt allein die <b>Aufgabe des Konstrukteurs</b>, dem Computer <b>eindeutige Angaben</b> zu machen
+und <b>koinzidente Fl&auml;chen unbedingt</b> zu <b>vermieden</b>.<br>
+
+
+<table border="0" width="90%" align="center"><tr><td>
+<div align="center">
+<table border="0" cellpadding="2" cellspacing="2">
+  <tr>
+       <td colspan="2" valign="top"><b>Das Problem deckungsgleicher Fl&auml;chen</b><br>
+       (koinzidenter Fl&auml;chen)
+       kann besonders mit allen CSG-Operationen Probleme bereiten.
+       Der 'Fehler' zeigt sich meist nur bei bestimmten Blickrichtungen, Blickwinkeln und Entfernungen
+       der Kamera. Aber auch andere Objekte in der Szenerie beeinflu&szlig;en u.U. das Auftreten.<br>
+       <br>
+       Die folgenden Bilder zeigen einige dieser Symptome:<br>
+       Hier zun&auml;chst bei der <b>'union'</b> zweier gleichgro&szlig;er Quader ('box').
+       </td>
+       <td> <table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_000ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>Ein einfacher roter W&uuml;rfel<br>
+                            box{&lt;0,0,0&gt;,&lt;3,3,3&gt;} </b></font>
+       </td>
+  </tr>
+    <tr>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_001ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>in 'union' mit einer gelben 'box'<br>
+              von der gleichen Gr&ouml;&szlig;e<br>
+              um 2 nach oben geschoben.<br>
+              Gelbe 'box' voll sichtbar!</b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_002ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>Von einem anderen Standpunkt<br>
+             aus gesehen:<br>
+             Rote'box' voll sichtbar!<br>
+             &nbsp; </b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_003ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>Von einem anderen Standpunkt<br>
+             aus kann es noch viel seltsamer<br>
+              aussehen!</b></font>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="2" cellspacing="2">
+    <tr>
+        <td colspan="2" valign="top">Nun das Ganze, indem man die 'union' aus
+        rotem und gelben Quader von einem gr&uuml;nen Quader abzieht ('difference').
+        Dabei wird der mittlere Teil der koinzidenten Fl&auml;chen sogar &uuml;berwiegend durchsichtig!
+        <br>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_union_0s.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>Zus&auml;tzlich eine gr&uuml;ne 'box'.<br>
+             &nbsp;<br>
+              </b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_difference_2s.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>Die 'difference' aus <br>
+             Gr&uuml;n minus Gelb und Rot. </b></font>
+        </td>
+    </tr>
+</table>
+
+</div>
+<p align="justify">
+<b>Das Auftreten oder Verschwinden dieser Effekte ist v&ouml;llig unvorhersehbar!  </b>
+Daher sollte man sich keinesfalls darauf verlassen, das sie irgendwie reproduzierbar bleiben
+(Verwenden Sie diese Effekte nie als ein Gestaltungselement!).
+Noch sollte man darauf hoffen, dass sie in gewissen Situationen schon nicht auftauchen werden!
+<br>
+Es bleibt die einfache Regel: <br>
+&nbsp; &nbsp; &nbsp;
+<table align="center" border="2" cellpadding="5" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><font size="+1"><b>Koinzidente Fl&auml;chen unbedingt vermieden!</b></font></b></td></tr></table>
+<br>
+Ein konsequentes Beachten dieser Regel kann viel unn&ouml;tigen Frust vermeiden!  <br>
+<font size="-1">Ein Beispiel wie dies konkret geschehen kann man bei der Beschreibung von <a href="povcsg3.htm">'difference'</a> finden.</font>
+</tr></td></table>
+<br>
+</p>
+
+</td></tr></table> <!-- global-->
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1.htm">CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg6.htm"--><b>Koinzidenz</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7.htm">Texturen</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

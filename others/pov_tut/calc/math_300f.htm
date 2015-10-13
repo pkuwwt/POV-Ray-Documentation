@@ -1,0 +1,219 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Syst&egrave;me de coordonn&eacute;es avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller">
+<meta name="description" content="Syst&egrave;mes de coordonn&eacute;es avec POV-Ray">
+<meta name="keywords" content="Syst&egrave;mes de coordonn&eacute;e, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafique, infographique, 3D Graphique">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=695,height=550");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"> </a>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+   <a href="math_300e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="math_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="math_300i.htm"><font size="2">Italiano</font></a>&nbsp;
+   <a href="math_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="math_300d.htm"><font size="2">Deutsch</b></a>&nbsp;
+   <a href="math_300d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'AccueilHome</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000f.htm"><nobr>Syst&egrave;mes de coordonn&eacute;es</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000f.htm"><nobr>et Fonctions en 2D</nobr></b></a><br>
+<br>
+      &nbsp; - <a href="math_100f.htm">Papier quadrill&eacute;</b></a><br>
+<nobr>&nbsp; -  <a href="math_200f.htm">Syst&egrave;me de coordonn&eacute;es</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200f.htm">avec les Axes</b></a><br>
+<nobr>&nbsp; <b>&gt;</b>  <!--a href="math_300f.htm"--><b>Macro pour un quadrillage</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <!--a href="math_300f.htm"--><b>avec deux niveaux</b></a><br>
+&nbsp; -  <a href="math_500f.htm">Fonctions 2D</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500f.htm">Examples</b></a><br>
+<nobr>&nbsp; -  <a href="math_600f.htm">Fonctions math&eacute;matiques</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600f.htm">en POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center" border="0" width="80%" cellpadding="3">
+<tr>
+ <td nowrap colspan="2" >
+   <font size="6"><b>Un quadrillage avec deux niveaux</b></font><br>
+   La Construction d'un plan avec une quadrillage avec deux formats
+  <font size="-1">(p.ex. 1m et 0.1m)</font> <br>
+  par la superposition de 5  textures
+   pour un syst&egrave;me de coordonn&eacute;e.</b><br>
+ <font size="-1">Objets:&nbsp;&nbsp;&nbsp; &quot;plane, cylinder, cone&quot;.<br>
+      M&eacute;thods: &quot;color_map, layered textures, macro&quot;</font>
+ </td>
+ <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </td>
+</tr>
+<tr>
+<td>
+<br>
+<b>Construction en d&eacute;tail :</b><br>
+<font size="-1">Nous utilisons une premi&egrave;re macro pour creer rayures avec une distance impos&eacute;e vers une direction.<br>
+   Avec une seconde macro nous ajoutons un premier quadrillage avec cette rayures deux fois avec la premi&egrave;re &eacute;chelle
+   (par ex. avec 1 unit&eacute;) et avec une  tourn&eacute;e de 90&deg; autour de l'axe y.
+   Puis nous ajoutons le second quadrillage avec la second &eacute;chelle (par ex. avec 0.1 unit&eacute;) de la m&ecirc;me mani&egrave;re.</font>
+<br>
+<br>
+
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//------------------------------------- ////////////
+#macro Raster_Lines (RScale, LineW, Intensity_)
+ pigment{ gradient x scale RScale
+          color_map{
+           [0.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [0+LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,1&gt;]
+           [1-LineW color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           [1.000   color rgbt&lt;1,1,1,0&gt;*Intensity_]
+           } // end color_map
+         } // end pigment
+ #end// of Raster(RScale, HLine)-macro
+//------------------------------------- ////////////
+//------------------------------------- ////////////
+#macro Raster_Plate(
+    RD1, Width1,//primary raster distance/width,
+    RD2, Width2,//secondary raster distance/width,
+    Base_Texture, //  non = pigment { Clear }
+    Intensity, // Line gray intensity
+    Start_Box, End_Box, // vectors
+  ) //------------------------------------------
+//----------------------------------------------
+box{ Start_Box,End_Box
+     texture{ Base_Texture }
+  #if (RD1 &gt; 0 ) // raster big  RD1, Width1,
+    texture { Raster_Lines(RD1,Width1,Intensity) }
+    texture { Raster_Lines(RD1,Width1,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+  #if (RD2 &gt; 0 ) // raster small RD2, Width2,
+    texture { Raster_Lines(RD2,Width2,Intensity) }
+    texture { Raster_Lines(RD2,Width2,Intensity)
+              rotate&lt;0,90,0&gt;}
+  #end
+} // end box -----------------------------------
+#end // ------------------------------ end of macro
+//------------------------------------- ////////////
+
+// How to use:  ------------------------------------
+#declare B_Tex =
+  texture{ pigment{ color rgb&lt;1,1,1&lt;*1.2}}
+//--------------------------------------------------
+object{ Raster_Plate(
+    1.0, 0.010,// RD1, Width1,// 1st distance/width,
+    0.1, 0.045,// RD2, Width2,// 2nd distance/width,
+    B_Tex, // Base_Texture, // non = pigment{Clear}
+    0.6, // Intensity, // Line gray intensity
+    &lt;-2,-0.05,-2&gt;, &lt;2,0,2&gt;, //Start/End
+  ) //----------------------------------------------
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0.001,0&gt;
+} //------------------------------------------------</td></b></pre></tr></table>
+</td>
+<td>
+ <br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_2level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_2ct.jpg" border="0" width="320"  height="240"
+     alt="Grid with 2 Levels" title="Grid with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Quadrillage avec deux niveaux.<br>
+T&eacute;l&eacute;chargement de cette sc&egrave;ne pour POV-Ray :  </b><a href="pov/raster_plate_2.pov">raster_plate_2.pov</a></font>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_3level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_3ct.jpg" border="0" width="320"  height="240"
+     alt="Grid with 2 Levels" title="Grid with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Quadrillage avec deux niveaux avec plan de base.<br>
+ <br>
+<br>
+<br>
+<br>
+ <table  align="center"  border="3"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/grid_4level_i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/raster_plate_4ct.jpg" border="0" width="320"  height="240"
+     alt="Grids with 2 Levels" title="Grids with 2 Levels"></a></td>
+  </tr>
+ </table><font size="-1"><b>Quadrillage 3D avec deux niveaux.<br>
+T&eacute;l&eacute;chargement de cette sc&egrave;ne pour POV-Ray : </b><a href="pov/raster_plate_4.pov">raster_plate_4.pov</a></font>
+</td>
+</tr>
+</table>
+</center>
+<br>
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

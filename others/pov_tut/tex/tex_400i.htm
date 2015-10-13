@@ -1,0 +1,256 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_400e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_400e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_400f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_400f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_400d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_400d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp; &nbsp;<a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300e.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330i.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp;  <b>&gt;</b>  <!--a href="tex_400e.htm"--><b>finish{ ... } </b></a><br>
+ &nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br>  -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="85%" align="center"><tr><td><!-- global table-->
+<table><tr>
+ <td>
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/txtur_r0.jpg" width="80" height="80" alt="color rgb" border="0"></td></tr></table>
+ </td>
+ <td><h3 align="left"><b>&nbsp; Sintassi di &raquo;texture&laquo;</b></h3>
+   <font size="5"><b><p>&nbsp;
+     &quot;finish {.....}&quot;
+     &nbsp; &nbsp;</p>
+ </td>
+</tr></table>
+
+<h5 align="justify">Questo comando definisce la chiarezza della superficie, il luce ambientale,
+il chiarore e la riflessione di una testura. La rifrazione di luce &eacute; definito da
+ &quot;interior {.....}&quot;.<br>
+I valori pi&ugrave; importanti soni i parametri seguenti:</h5>
+<table cellpadding="5"><tr>
+<td><h5 align="justify">
+  <b>ambient 0.10</b>(default: ambient 0.1)
+   Questo parametro definisce la chiarezza di un oggetto nel lato in ombra.
+  <br>
+  Questo &eacute; una simulazione del'illuminazione causata di luce indiretto.
+   - una calculazione concreta di tutti questi raggi di luce &eacute; practicamente impossibile!
+ <br>
+  Quest'approssimazione risulte in effetti molto realistici tenta
+  la tecnica di &quot;radiosity&quot;)
+  &quot;ambient 1 diffuse 0&quot; voler dire que l'oggetto
+  privo d'ombra gettata di un altr'oggetto e l'oggetto &eacute; sempre
+  illuminato con piena luce  (bene per un cielo blu! ).
+
+ <b>diffuse 0.9</b> (default: diffuse 0.6) La parte d'illuminazione contributa
+ della luce diretta.
+  </h5></td>
+  <td><img src="im/txtur_fi00.jpg" border="0" width="240" height="80"></td>
+</tr><tr>
+<td><h5 align="justify">
+  <b>ambient color&lt;0.25,0,0&gt;</b> Questo &eacute; una possibilit&agrave;  di definire
+   il colore della illuminazione indiretta.
+  </h5></td>
+  <td><img src="im/txtur_fi07.jpg" border="0" width="240" height="80"></td>
+</tr><tr>
+ <td><h5 align="justify">
+  <b>phong 1.0</b> Effetto di luce con methodo Phong.<br>
+  <b>phong_size 70</b> L'estensione di effetto phong:  1 = molto smorto; 40 = plastica; 250 = tirato a lucido, !<br>
+  <b>specular</b> Effetto di luce simile a phong</h5>
+  </td>
+  <td><img src="im/txtur_fi01.jpg" border="0" width="240" height="80"></td>
+</tr><tr>
+ <td><h5 align="justify">
+<b>specular</b> Effetto di luce simile a phong<br>
+<b>roughness</b> L'estensione di effetto specular  1 =  tirato a lucido;
+<nobr>0.05 (default) plastica;</nobr> <nobr>0,0005 molto tenue</nobr>, senza effetto di luce.</h5>
+</td>
+  <td><img src="im/txtur_fi06.jpg" border="0" width="240" height="80"></td>
+ <td>
+</tr><tr>
+ <td><h5 align="justify">
+   <b>reflection 0.15</b> riflessione in percento.</h5>
+  </td>
+  <td><img src="im/txtur_fi02.jpg" border="0" width="240" height="80"></td>
+</tr><tr>
+ <td><h5 align="justify"><b>metallic</b> (senza nessun valore!)
+  per simulare una brillantezza metallica con phong o specular.<br>
+</h5>
+<br>
+</td>
+  <td> </td>
+ <td>
+</tr><tr>
+ <td><h5 align="justify">
+  <b>brilliance 4</b> brillanza della superficie, (default = 1) <br>
+  alto valore <nobr>-&gt;</nobr> `i&ugrave; metallica.</h5>
+ </td>
+  <td><img src="im/txtur_fi05.jpg" border="0" width="240" height="80"></td>
+ <td>
+</tr><tr>
+ <td><h5 align="justify">
+   <b>irid { 0.25</b> simulare iridescenza = interferenze a strati sottili
+    ( velo d'olio, etc.) 0.25 = la parte di luce rifletta<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>thickness 0.2</b> // di strato<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>turbulence 0.7 }</b></h5>
+</td>
+  <td><img src="im/txtur_fi03.jpg" border="0" width="240" height="80"></td>
+ <td>
+</tr>
+</table>
+</h5>
+
+<h5 align="justify"><b>Importante:</b> i valori preregolati (default values) sono:
+ &quot;finish {ambient 0.1 diffuse 0.6 }&quot;.<br>
+ Con computer tipo Intel compatible cosi i colori sembrano topo buio.
+Per evitare questo &eacute; racommandato d'incrementare questi valori con
+ &quot;finish {ambient 0.1 diffuse 0.9}&quot; .
+</h5>
+
+<table width="95%" align="center">
+<tr>
+<td><pre><b>texture{ pigment{color White}
+         finish {ambient 0.1
+                 diffuse 0.9
+                 phong 1}
+       } // end of texture </b></pre>
+<h5 align="justify">
+&Egrave; meglio di definire questi valori al inizio della scena:</h5>
+<pre><b>
+#default{finish{ambient 0.1 diffuse 0.9}}</b></pre>
+</td>
+<td><img src="im/white1.gif" border="0" width="120"  height="120"  alt="con ambient 0.1 diffuse 0.9"
+     title="with ambient 0.1 diffuse 0.9"><br>con ambient 0.1 diffuse 0.9</td>
+<td><img src="im/white2.gif" border="0" width="120"  height="120"  alt="senza ambient e diffuse"
+     title="without ambient and diffuse"><br>senza ambient e diffuse</td>
+</tr></table>
+</h5>
+<h5 align="justify">
+Se vogliamo un oggetto di essere pi&ugrave; plastico
+ma non pi&ugrave; chiaro (meno luce indiretta, pi&ugrave; contrasti, ombre pi&ugrave; bui ),
+dobbiamo ricordare che la somma di ambient e diffuse deve essere circa 1.0.
+Per esempio con: &quot;finish {ambient 0.05 diffuse 0.95}&quot; .
+Con questo abbiamo la brillanteza delle parti illuminati diretto costante!
+Per una illuminazione realistica la somma dei valori di
+ ambient + diffuse + reflection non deve mai superare 1 !<br>
+&Egrave; possibile di schiarire un colore come &quot;Red&quot; = rgb&lt;&nbsp;1&nbsp;,&nbsp;0&nbsp;,
+&nbsp;0&nbsp;&gt; con aumentare i valori di &quot;ambient&quot; e &quot;diffuse&quot;,
+ma dobbiamo evitare questa tecnica perche questo pu&ograve; provocare
+una proporzione innaturale tra luce e ombra con una perdita completa di plasticit&agrave;.
+Per prodiure un &quot;rosso chiaro&quot; &eacute; meglio di incrementare la componente bianca
+(= valori rgb uguali!)  di questo colore:
+per es. con &quot;rgb&lt;1 ,0.5 ,0.5 &gt;&quot;.
+Anche un &quot;rosso buio&quot; si p&ugrave;o fare cosi: rgb&lt;0.5, 0,0&gt;.<br>
+</h5>
+
+
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

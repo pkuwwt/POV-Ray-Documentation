@@ -1,0 +1,195 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray, povray, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, csg, Constructive Solid Geometry, boolean algebra, union, merge, intersection, difference, inverse">
+<meta name="description" content="tutorial on CSG - Constructive Solid Geometry with POV-Ray - part V">
+<title>csg tutorial - Constructive Solid Geometry with POV-Ray - part V</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font>
+      <font size="-1"></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg6i.htm"><font size="2">Italiano </font></a>
+        <a href="povcsg6i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg6f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="povcsg6f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg6.htm"><font size="2">Deutsch </font></a>
+        <a href="povcsg6.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1e.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1e.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1e.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2e.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3e.htm">difference</a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4e.htm">intersection</a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4e.htm">+ invers</a><br>
+ &nbsp; &nbsp; -  <a href="povcsg5e.htm">clipped_by</a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg6e.htm"--><b>coincident surfaces</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg7e.htm">textures in CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="90%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Boolean Algebra with Solids - part VI</h5>
+<h2 align="center">The Coincident-Surface Problems<br>
+<font size="2"> </font></h2>
+&nbsp; As always mentioned before in <a href="povcsg3e.htm">'difference'</a>
+with coincident surfaces it's inevitable to get <b>problems of unambiguity</b>.
+This kind of 'issue' in principle can appear with al computer programs, which
+have to calulate any intersections of straight lines ('lines of sight') with several geometric objects.<br>
+This is not an issue of the POV-Ray program!<br>
+&nbsp; It's the <b>task of the designer</b>, to deliver <b>unambiguous information</b> to the program<br>
+ and therefore to <b>avoid coinzidente surfaces</b> under all conditions.<br>
+
+<table border="0" width="90%" align="center"><tr><td>
+<div align="center">
+<table border="0" cellpadding="2" cellspacing="2">
+  <tr>
+       <td colspan="2" valign="top"><b>The coincident-surface problems</b><br>
+       can make difficult problems specially when we are using CSG operations.
+       Most time the 'issue' appears only under certain directions of view, angles of view
+       and distances of the camera. But also other objects in the scene can influence the appearance under some circumstances.<br>
+       <br>
+       The following images show some of these symptoms:<br>
+       Here first while using a <b>'union'</b> of two boxes of the same size.
+       </td>
+       <td> <table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_000ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>A simple red box{&lt;0,0,0&gt;,&lt;3,3,3&gt;}</b> </b></font>
+       </td>
+  </tr>
+    <tr>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_001ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>in a union with a yellow box of<br>
+              the same size moved up by 2.<br>
+              Yellow box completly visible!</b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_002ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>From another point of view<br>
+             Red box completly visible!<br>
+             &nbsp; </b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_Surfaces_003ss.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>From another point of view <br>
+             it meight look much more strange!</b></font>
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="2" cellspacing="2">
+    <tr>
+        <td colspan="2" valign="top">And now the hole thing by subtrakting the 'union' of the
+        red and yellow boxes from a green box by 'difference'.
+        Now the middle part of the coincident surfaces even can become predominantly transparent!
+        <br>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_union_0s.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>An additional green 'box'.<br>
+             &nbsp;<br>
+             </b></font>
+        </td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="Coincident_difference_2s.jpg" width="200" height="150"></td></tr></table>
+             <font size="2"><b>The 'difference' of <br>
+             Green minus Yellow and Red. </b></font>
+        </td>
+    </tr>
+</table>
+
+</div>
+<p align="justify">
+<b>The appearance or the disappearance of this effect is totaly unpredictable!  </b>
+Because of this you never can rely on these effect to be somehow reproducible
+(Don't use these effects as a design element!).
+Nor you should hope, that these effects will not appeare in some situations!
+<br>
+The only solution is the following important rule: <br>
+&nbsp; &nbsp; &nbsp;
+<table align="center" border="2" cellpadding="5" bgcolor="#EEEEEE"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td><font size="+1"><b>Avoid coincidente surfaces!</b></font></b></td></tr></table>
+<br>
+A consistent observance of this rule can avoid many unnecessary frustration!  <br>
+<font size="-1">A concrete example on how to do this you will find here: <a href="povcsg3e.htm">'difference'</a>.</font>
+</tr></td></table>
+<br>
+</p>
+
+</td></tr></table> <!-- global-->
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1e.htm">CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2e.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3e.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4e.htm">intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5e.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg6e.htm"-->coincident surfaces</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7e.htm">textures</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

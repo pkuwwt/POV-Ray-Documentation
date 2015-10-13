@@ -1,0 +1,216 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Language Directives">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Language Directives">
+<title>Language Directives mit POV-Ray - Teil I deutsch</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Bedingte Anweisungen</b><font size="-1"> - Anwendungen</font></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="dir_820e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="dir_820e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="dir_820i.htm"><font size="2">Italiano</font></a>
+        <a href="dir_820i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="dir_820f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="dir_820f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <!--a href="dir_000d.htm"--><b>Bedingte</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="dir_000d.htm"--><b> Anweisungen</b></a><br>
+<br>
+ &nbsp; <b>Verzweigungen</b></a> <br>
+ &nbsp; &nbsp;<a href="dir_000d.htm">#if(...) ... #else ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100d.htm">in Schleifen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_200d.htm">in Macros</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_300d.htm">in Animationen</b></a> <br>
+<nobr> &nbsp; &nbsp; -  <a href="dir_400d.htm">Ein-/Ausschalten von Teilen</b></a></nobr><br>
+ &nbsp; &nbsp;<a href="dir_000d.htm">#switch(...) #case(..) ...</b></a> <br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="dir_000d.htm">#range(..) ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_700d.htm">Auswahl-Listen</b></a> <br>
+<br>
+ &nbsp; <b>Existenz-&Uuml;berpr&uuml;fungen</b></a> <br>
+ &nbsp; &nbsp;<a href="dir_800d.htm">#ifdef(...) #ifndef(...)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_810d.htm"-->Check in Include-Dateien</b></a> <br>
+<nobr> &nbsp; &nbsp; &gt;<!--a href="dir_820d.htm"--><b>Defaults in Include-Dateien</b></nobr></a> <br>
+<br>
+ &nbsp; <b>Schleifen</b></a> <br>
+<nobr> &nbsp; <a href="dir_900d.htm">Prechecked, Postchecked,</b></a></nobr><br>
+<nobr> &nbsp; <a href="dir_900d.htm">Count-controlled, Early-Exit</b></a></nobr><br>
+ &nbsp; &nbsp;<a href="dir_900d.htm">#while(...)... #end</b></a> <br>
+ &nbsp; &nbsp;<a href="dir_900d.htm">#for(...)... #end</b></a> <br>
+ &nbsp; &nbsp; - Beispiele: <br>
+<nobr> &nbsp; &nbsp; - <a href="../loop/povlup1d.htm" target="_new">Schleifen in POV-Ray</a></nobr><br>
+ &nbsp; &nbsp; - <a href="../sinus/povsi3d1.htm" target="_new">Schleifen, Sinus, Kosinus</a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h2 align="center">Defaults in Include-Dateien<br>
+Das Setzen von Voreinstellungswerten</h2>
+
+<table align="center" width="100%" border="0"><tr><td>
+<p align="justify">Mit &quot;#ifndef&quot; lassen sich Include-Dateien Voreinstellungswerte festlegen, welche
+vor einem Aufruf bei Bedarf &uuml;berschrieben werden k&ouml;nnen.<br>
+<b>Beispiel: </b><br>
+Bei der Include-Datei einer Stra&szlig;e mit Mittelstreifen sollen sowohl die Stra&szlig;enfarbe als auch die Farbe der
+Mittelstreifen eine Voreinstellung besitzen. Die beiden Texturen sollen aber auch frei w&auml;hlbar sein.<br>
+<br>
+<font size="-1">Um vor einem erneuten Aufruf der Include-Datei wieder die Wahl der Default-Texturen zu erm&ouml;glichen
+kann man mit &quot;#undef (Variablenname)&quot; eventuell zuvor deklarierte Variable gleichen Namens
+wieder beseitigen.</font>
+</p></td></tr></table>
+
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%" valign="top" bgcolor="eeeeee">
+  <i>Include-Datei einer Stra&szlig;e mit Mittelstreifen:</i>
+<pre><b>//include file "Street_0.inc"
+// ------------------------------------
+#macro Street_0(  Street_Width,  //
+                  Street_Length, //
+                  Stripes_Width, //
+                  Stripes_Len
+                ) //-------------------
+//-------------------------------------
+#ifndef( Stripes_Texture )
+#declare Stripes_Texture =
+texture{ pigment{ color rgb&lt;1,1,1&gt;*1.1}
+         finish { diffuse 0.9 phong 0.5}
+       } // end of texture
+#end //--------------------------------
+#ifndef( Street_Texture )
+#declare Street_Texture =
+texture{ pigment{ color rgb&lt;1,1,1&gt;*.3}
+         normal { bumps 0.5 scale 0.005}
+         finish { diffuse 0.9 phong 0.1}
+       } // end of texture
+#end //--------------------------------
+#local D = 0.001;
+//-------------------------------------
+union{
+box{ &lt;-Street_Width/2, 0, 0&gt;,
+     &lt; Street_Width/2, D, Street_Len&gt;
+     texture{Street_Texture}
+   } // end of box --------------------
+ #local Number_of_Stripes =
+   int(Street_Length/(2*Stripes_Len));
+ #local Nr = 0; //start
+ #local EndNr=Number_of_Stripes;//end
+ #while (Nr&lt; EndNr)
+ box{ &lt;-Stripes_Width/2,   0, 0&gt;,
+      &lt; Stripes_Width/2,2*D,Stripes_Len&gt;
+      texture{ Stripes_Texture}
+      translate&lt;0,0,Nr*2*Stripes_Len&gt;
+    } // end of box
+ #local Nr = Nr + 1;  // next Nr
+ #end // -------- end of loop
+} // end of union
+#end//-------------------- end of macro
+//----------------- end of include file</b></td></pre>
+
+
+  <td width="50%" valign="top" bgcolor="eeeeee">
+ <i>Lesen der Include-Dateien mit Grundeinstellung:</i><pre><b>#include "Street_0.inc"
+//------------------------------------
+object{ Street_0 (   6, // Width,
+                   500, // Length,
+                  0.10, // Stripes_W,
+                  1.00, // Stripes_Len
+                 ) //-----------------
+        translate&lt;0,0,-5.00&gt;}
+//------------------------------------</b></pre>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Default_Textures_1.jpg" width="320" height="240" alt="Background" border="0"></td>
+ </tr></table><br>
+
+ <i>Lesen der Include-Dateien mit ver&auml;nderten Texturen:</i><pre><b>#declare Street_Texture =
+texture{ pigment{ color rgb<1,1,1>*0.4}
+         normal { bumps 0.75 scale 0.015}
+         finish { diffuse 0.9 phong 0.1}
+       } // end of texture
+#declare Stripes_Texture =
+texture{ pigment{ color rgb<1,0.75,0>*1.1}
+         finish { diffuse 0.9 phong 0.5}
+       } // end of texture
+#include "Street_0.inc"
+//------------------------------------
+object{ Street_0 (   6, // Width,
+                   500, // Length,
+                  0.10, // Stripes_W,
+                  1.00, // Stripes_Len
+                 ) //-----------------
+        translate&lt;0,0,-5.00&gt;}
+//------------------------------------</b></pre>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Default_Textures_2.jpg" width="320" height="240" alt="Background" border="0"></td>
+ </tr></table>
+
+
+</td>
+ </tr></table>
+ </td>
+ </tr>
+</table>
+</div>
+<br>
+
+</td></tr></table> <!-- global-->
+
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td>&nbsp;
+ </td>
+ <td></td>
+&nbsp;</tr></table><!-- end footer -->
+</body>
+</html>

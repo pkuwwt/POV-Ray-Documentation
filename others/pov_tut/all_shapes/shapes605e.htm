@@ -1,0 +1,166 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">&nbsp; &nbsp; Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes605i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes605i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes605f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes605f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes605d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes605d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Index<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000e.htm">Shapes in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400e.htm">Other Shapes by macros</b></a></nobr><br>
+
+<br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+&nbsp; -  <a href="shapes601e.htm">text</b></a><br>
+&nbsp; -  <a href="shapes602e.htm">Bevelled_Text</b></a><br>
+&nbsp; -  <a href="shapes603e.htm">Circle_Text</b></a><br>
+&nbsp; -&gt;<!--a href="shapes605e.htm"--><b>Circle_Text_Valigned</b></a><br>
+&nbsp; -  <a href="shapes604e.htm">Unicode text</b></a><br>
+&nbsp; -  <a href="shapes608e.htm">Unicode for Asia</b></a><br>
+<br>
+<a href="shapes000e.htm">other Shapes</b></a><br>
+<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+<nobr><a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900e.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center" width="95%"><tr><td colspan="2">
+<font size="+1"><b>Circle_Text_Valigned macro</b></font><br>
+(<font size="-1">New in POV-Ray 3.7!  With POV-Ray 3.6 it needs to include:  <b>#include &quot;<a href="../down/Circle_Text_Valigned.inc" target=_new>Circle_Text_Valigned.inc</a>&quot; !!!</b>)<br>
+ An extention of Ron Parkers &quot;Circle_Text&quot; macro
+ extended with &quot;valign&quot; by Mike Thorn </font></b>
+<br>
+ <p> Sample &quot;Circle_Text_Valigned( ... )&quot;: <br>
+Circle_Text_Valigned( Font, Text, Size, Spacing, <br>
+Thickness, Radius, Inverted, Justification,<br>
+ Circle angle, Valign )</p>
+ </td></tr>
+<tr><td>
+ <table align="center" border="2" bgcolor="#EFEFEF"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080"
+            cellspacing="1" cellpadding="4">
+ <tr><td valign="middle">
+ <pre><b>object{
+Circle_Text_Valigned(
+ "arial.ttf", // Font
+ "POV-Ray",// Text
+  0.35,    // Size
+  0.0005,  // Spacing
+  0.20,    // Thickness
+  1.00,    // Radius
+  1,       // Inverted
+  Align_Left,// Align_Right, Align_Center
+  50,      // Circle angle
+ -90 )     // Valign:
+  // Rotates -90 = right side up,
+  // 90 = upside-down, 0 = horzontal.
+ texture{
+   pigment{ color rgb&lt;1,0.75,0.0&gt;}
+   normal { bumps 0.5 scale 0.005}
+   finish { specular 1 reflection 0.15}
+   } // end of texture
+rotate&lt;90,140,0&gt;
+translate&lt;0,0.2,0&gt;
+}// end of Circle_Text_Valigned object</td></pre></b>
+</tr>
+</table><br>
+</td>
+<td>
+<table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <!--a href="javascript:ShowImage('im/text3.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''"-->
+              <img src="im/Circle_Text_Valigned.jpg" border="0" width="320"  height="240"
+                   alt="Circle_Text_Valigned" title="Circle_Text_Valigned"></a></td></tr></table>
+            <h5 align="center"><br>
+             &nbsp;<br>
+             &nbsp;<br>
+             &nbsp;<br>
+             &nbsp;<br>
+             <!--A HREF="pov/circle_text.txt">Scene for POV-Ray--></A></h5>
+</td></tr>
+</table>
+</td></tr>
+</table>
+
+
+</td></tr>
+
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table>
+  <!-- footer -->
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

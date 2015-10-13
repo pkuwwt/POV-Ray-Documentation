@@ -1,0 +1,512 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti POV-Ray - Oggetti pronto per l'uso</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici di Base in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica, Oggetti Geometrici di Base in POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=530,height=680");
+ New.focus();  }
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Oggetti Geometrici di Base in POV-Ray</b></font>
+ </td></h6>
+ <td align="right">
+        <a href="shapes000e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes000e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes000d.htm"><font size="2">Deutsch</font></a>
+        <a href="shapes000d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+&gt;<!--a href="shapes000i.htm"--><b>Oggetti Geometrici</b></a><br>
+ &nbsp;Indice  <br>
+&nbsp;<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+&nbsp; -  <a href="shapes110i.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120i.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130i.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140i.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150i.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160i.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170i.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180i.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190i.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350i.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115i.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200i.htm">Forme con macros + CSG</b></a></b></nobr><br>
+&nbsp; -  <a href="shapes310i.htm">Spheroid, ellipsoid</b></a><br>
+&nbsp; -  <a href="shapes315i.htm">Disk_X,Disk_Y,Disk_Z</b></a><br>
+&nbsp; -  <a href="shapes330i.htm">Round_Box</b></a><br>
+&nbsp; -  <a href="shapes340i.htm">Round_Cylinder</b></a><br>
+&nbsp; -  <a href="shapes320i.htm">Round_Cone</b></a><br>
+&nbsp; -  <a href="shapes360i.htm">Supercone</b></a><br>
+&nbsp; -  <a href="shapes370i.htm">Supertorus</b></a><br>
+<br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Segment_of_CylinderRing</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Segment_of_Torus</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Segment_of_Object</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Egg</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Egg_Shape</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Facetted_Egg</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Facetted_Egg_Shape</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Facetted_Sphere</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Ring_Sphere</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Column_N</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Column_N_AB</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Pyramid_N</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Pyramid_N_AB</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Round_Pyramid_N_out</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Round_Pyramid_N_in</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Round_Cylinder_Tube</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Rounded_Tube_AB</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Rounded_Tube</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Round_N_Tube_Polygon</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Round_Conic_Torus</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Round_Conic_Prism</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Half_Hollowed_Rounded_Cyl1</b></a><br>
+&nbsp; -  <a href="shapes3_0000i.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+
+<br>
+<nobr><a href="shapes400e.htm">Altri Oggetti come Macros</b></a></nobr><br>
+&nbsp; -  <a href="shapes400i.htm">Winding_Wire_1</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Ring_Torus</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Tube_2_Tube</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Tube_2_Tape</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Cone_Flatted</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Cone_Flatted_Q</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Twisted_Box_X</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Erlenmeyer_Shape</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Round_Bottom_Mace</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Round_Mace_Torus</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Round_Mace_Prism</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Two_Cylinder_Blob</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Cone_Flatted_Q</b></a><br>
+&nbsp; -  <a href="shapes400i.htm">Star_1</b></a><br>
+<br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+&nbsp; -  <a href="shapes601i.htm">text</b></a><br>
+&nbsp; -  <a href="shapes602i.htm">Bevelled_Text</b></a><br>
+&nbsp; -  <a href="shapes603i.htm">Circle_Text</b></a><br>
+&nbsp; -  <a href="shapes605i.htm">Circle_Text_Valigned</b></a><br>
+&nbsp; -  <a href="shapes604i.htm">Unicode text</b></a><br>
+&nbsp; -  <a href="shapes608i.htm">Unicode Asia</b></a><br>
+<br>
+<!--a href="shapes000i.htm"--><b>Altri Oggetti</b></a><br>
+&nbsp; -  <a href="shapes620i.htm">blob</b></a> <br>
+&nbsp; -  <a href="shapes630i.htm">sphere_sweep</b></a> <br>
+&nbsp; -  <a href="shapes640i.htm">julia_fractal</b></a> <br>
+&nbsp; -  <a href="shapes500i.htm">Regulare Polyhedron</b></a><br>
+<nobr>&nbsp; -  <a href="shapes530i.htm">Paraboloid, Hyperboloid</b></a></nobr><br>
+&nbsp; -  <a href="shapes540i.htm">Equazioni Polynomiali</b></a><br>
+&nbsp; -  <a href="shapes550i.htm">Cubic &amp; Quartic shapes</b></a><br>
+&nbsp; -  <a href="shapes570i.htm">Parametric shapes</b></a><br>
+<br>
+<a href="shapes666i.htm">Forme Non-CSG</b></a><br>
+&nbsp; -  <a href="shapes660i.htm">disc</b></a><br>
+&nbsp; -  <a href="shapes665i.htm">polygon</b></a><br>
+&nbsp; -  <a href="shapes670i.htm">triangle</b></a><br>
+&nbsp; -  <a href="shapes672i.htm">smooth_triangle</b></a><br>
+&nbsp; -  <a href="shapes675i.htm">bicubic_patch</b></a><br>
+&nbsp; -  <a href="shapes680i.htm">mesh</b></a><br>
+&nbsp; -  <a href="shapes690i.htm">mesh2</b></a><br>
+<br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes650i.htm">height_field con immagini</b></a></nobr><br>
+&nbsp; -  <a href="shapes652i.htm">height_field retinato</b></a><br>
+<nobr>&nbsp; -  <a href="shapes654i.htm">height_field con funzioni</b></a></nobr><br>
+&nbsp; -  <a href="shapes655i.htm">height_field massivo</b></a><br>
+&nbsp; -  <a href="shapes656i.htm">HF - monti e valli</a><br>
+&nbsp; -  <a href="shapes710i.htm">HF_Square</b></a><br>
+&nbsp; -  <a href="shapes720i.htm">HF_Sphere</b></a><br>
+&nbsp; -  <a href="shapes730i.htm">HF_Cylinder</b></a><br>
+&nbsp; -  <a href="shapes740i.htm">HF_Torus</b></a><br>
+<br>
+<nobr><a href="shapes900i.htm">Isosurfaces</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes910i.htm">with Basic Surfaces</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes920i.htm">with Sine Functions </b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes930i.htm">by Built-in Functions</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes940i.htm">by Helix Functions</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes950i.htm">by Pattern Functions</b></a></nobr><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+<h3 align="center"><a name="Top"></a>
+</h3>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes110i.htm"><img src="im/basics2s.jpg" alt="sphere" title="sphere" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes120i.htm"><img src="im/basics3s.jpg" alt="cylinder" title="cylinder" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes130i.htm"><img src="im/basics4s.jpg" alt="cone" title="cone" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes140i.htm"><img src="im/basics5s.jpg" alt="torus" title="torus" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes150i.htm"><img src="im/basics6s.jpg" alt="box" title="box" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes160i.htm"><img src="im/basics7s.jpg" alt="prism" title="prism" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes170i.htm"><img src="im/basicsas.jpg" alt="plane" title="plane" width="80" height="60" border="0"></a></td></tr></table></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes180i.htm"><img src="im/basics8s.jpg" alt="sor" title="sor" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes190i.htm"><img src="im/lathes.jpg" alt="lathe" title="lathe" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes350i.htm"><img src="im/superellipsoids.jpg" alt="superellipsoid" title="superellipsoid" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes350i.htm"><img src="im/superellipsoid03s.jpg" alt="superellipsoid" title="superellipsoid" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes350i.htm"><img src="im/superellipsoid04s.jpg" alt="superellipsoid" title="superellipsoid" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes350i.htm"><img src="im/superellipsoid05s.jpg" alt="superellipsoid" title="superellipsoid" width="80" height="60" border="0"></a></td></tr></table></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes115i.htm"><img src="im/ovus_s.jpg" alt="ovus" title="ovus" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes310i.htm"><img src="im/Spheroid_0s.jpg" alt="Spheroid" title="Spheroid" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes315i.htm"><img src="im/Disk_Xs.jpg" alt="Disc_X" title="Disc_X" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes315i.htm"><img src="im/Disk_Ys.jpg" alt="Disc_Y" title="Disc_Y" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes315i.htm"><img src="im/Disk_Zs.jpg" alt="Disc_Z" title="Disc_Z" width="80" height="60" border="0"></a></td></tr></table></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes330i.htm"><img src="im/Round_Boxs.jpg" alt="Round_Box" title="Round_Box" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes330i.htm"><img src="im/Wire_Boxs.jpg" alt="Wire_Box" title="Wire_Box" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes340i.htm"><img src="im/Round_Cylinders.jpg" alt="Round_Cylinder" title="Round_Cylinder" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes320i.htm"><img src="im/Round_Cone1s.jpg" alt="Round_Cone" title="Round_Cone" width="45" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes320i.htm"><img src="im/Round_Cone2s.jpg" alt="Round_Cone2" title="Round_Cone2" width="45" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes320i.htm"><img src="im/Round_Cone3s.jpg" alt="Round_Cone3" title="Round_Cone3" width="45" height="60" border="0"></a></td></tr></table></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes360i.htm"><img src="im/Supercone02s.jpg" alt="Supercone" title="Supercone" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes370i.htm"><img src="im/Supertorus01s.jpg" alt="Supertorus" title="Supertorus" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes370i.htm"><img src="im/Supertorus02s.jpg" alt="Supertorus" title="Supertorus" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes370i.htm"><img src="im/Supertorus03s.jpg" alt="Supertorus" title="Supertorus" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes370i.htm"><img src="im/Supertorus04s.jpg" alt="Supertorus" title="Supertorus" width="80" height="60" border="0"></a></td></tr></table></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/macro20s.jpg" alt="Segment_of_Torus" title="Segment_of_Torus" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr11s.jpg" alt="Segment_of_CylinderRing" title="Segment_of_CylinderRing" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymacr21s.jpg" alt="Segment_of_Object" title="Segment_of_Object" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr40as.jpg" alt="Egg" title="Egg" width="45" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr41a.jpg" alt="Egg_Shape" title="Egg_Shape" width="45" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr42as.jpg" alt="Facetted_Sphere" title="Facetted_Sphere" width="60" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr43as.jpg" alt="Facetted_Egg" title="Facetted_Egg" width="45" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr44a.jpg" alt="Facetted_Egg_Shape" title="Facetted_Egg_Shape" width="45" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr45as.jpg" alt="Wire_Sphere" title="Wire_Sphere" width="60" height="60" border="0"></a></td></tr></table></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr30s.jpg" alt="Column_N" title="Column_N" width="60" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/mymcr31s.jpg" alt="Pyramid_N" title="Pyramid_N" width="60" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/macro55s.jpg" alt="Round_Column_N" title="Round_Column_N" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/macro52s.jpg" alt="Round_Pyramid_N" title="Round_Pyramid_N" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/macro53s.jpg" alt="Round_Pyramid_N" title="Round_Pyramid_N" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/macro50s.jpg" alt="Wire_Round_Pyramid_N" title="Wire_Round_Pyramid_N" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/macro51s.jpg" alt="Wire_Round_Pyramid_N" title="Wire_Round_Pyramid_N" width="80" height="60" border="0"></a></td></tr></table></td>
+
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/Round_Cylinder_Tube_s.jpg" alt="Round_Cylinder_Tube" title="Round_Cylinder_Tube" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/Tube_Rounded_s.jpg" alt="Tube_Rounded" title="Tube_Rounded" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/Round_N_Tube_Polygon_1s.jpg" border="0" width="60" height="60"alt="Round_N_Tube_Polygon" title="Round_N_Tube_Polygon"></a></td></tr></table></td>
+ <td><table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/Round_N_Tube_Polygon_2s.jpg" border="0" width="60" height="60"alt="Round_N_Tube_Polygon" title="Round_N_Tube_Polygon"></a></td></tr></table></td>
+ <td><table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/Round_Conic_Torus_80.jpg" border="0" width="60" height="60"alt="Round_Conic_Torus" title="Round_Conic_Torus"></a></td></tr></table></td>
+ <td><table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_0000i.htm"><img src="im/Round_Conic_Prism_80.jpg" alt="Round_Conic_Prism" title="Round_Conic_Prism" border="0" width="60" height="60"></a></td></tr></table></td>
+ <td><table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_000i.htm"><img src="im/Half_Hollowed_Rounded_Cylinder1_80.jpg" border="0" width="80" height="60"alt="Half_Hollowed_Rounded_Cylinder1" title="Half_Hollowed_Rounded_Cylinder1"></a></td></tr></table></td>
+ <td><table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes3_000i.htm"><img src="im/Half_Hollowed_Rounded_Cylinder2_80.jpg" alt="Half_Hollowed_Rounded_Cylinder2" title="Half_Hollowed_Rounded_Cylinder2" border="0" width="80" height="60"></a></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Winding_Wire_1_s.jpg" alt="Winding_Wire_1" title="Winding_Wire_1" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Ring_Torus_s.jpg" alt="Ring_Torus" title="Ring_Torus" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Tube_2_Tube_s.jpg" alt="Tube_2_Tube" title="Tube_2_Tube" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Tube_2_Tape_s.jpg" alt="Tube_2_Tape" title="Tube_2_Tape" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Cone_Flatted_s.jpg" alt="Cone_Flatted" title="Cone_Flatted" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Cone_Flatted_Q_s.jpg" alt="Cone_Flatted" title="Cone_Flatted" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Twisted_Box_X_s.jpg" alt="Twisted_Box_X" title="Twisted_Box_X" width="80" height="60" border="0"></a></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Star_1_ss.jpg" alt="Star_1" title="Star_1" width="60" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Erlenmeyer_Shape_macro_18.jpg" alt="Erlenmeyer_Shape" title="Erlenmeyer_Shape" width="60" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Round_Bottom_Mace_1ss.jpg"     alt="Round_Bottom_Mace" title="Round_Bottom_Mace" width="60" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Round_Mace_Torus_60.jpg" alt="Round_Conic_Prism" title="Round_Conic_Prism" border="0" width="60" height="60"></a></td></tr></table></td>
+ <td><table align="center" border="1"  bgcolor="#efefef" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Round_Mace_Prism_60.jpg" alt="Round_Conic_Prism" title="Round_Conic_Prism" border="0" width="60" height="60"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes400i.htm"><img src="im/Two_Cylinder_Blob_0s.jpg"      alt="Two_Cylinder_Blob" title="Two_Cylinder_Blob" width="80" height="60" border="0"></a></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes601i.htm"><img src="im/text1ss.jpg" alt="txt" title="txt" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes602i.htm"><img src="im/text2ss.jpg" alt="Bevelled_Text" title="Bevelled_Text" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes603i.htm"><img src="im/text3ss.jpg" alt="Circle_Text" title="Circle_Text" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes605i.htm"><img src="im/Circle_Text_Valigneds.jpg" alt="Circle_Text_Valigned" title="Circle_Text_Valigned" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes604i.htm"><img src="im/unicode0ss.jpg" alt="Unicode" title="Unicode" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes608i.htm"><img src="im/Unicode_Asia_Arial.jpg" alt="Unicode_Asia" title="Unicode_Asia" width="80" height="60" border="0"></a></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes620i.htm"><img src="im/blob_00.jpg" alt="blob" title="blob" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes620i.htm"><img src="im/blob003.jpg" alt="blob" title="blob" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes620i.htm"><img src="im/blob006s.jpg" alt="blob" title="blob" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes630i.htm"><img src="im/sphere_sweep_b1s.jpg" alt="sphere_sweep" title="sphere_sweep" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes640i.htm"><img src="im/julia_fractal01.jpg" alt="julia_fractal" title="julia_fractal" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes640i.htm"><img src="im/julia_fractal02s.jpg" alt="julia_fractal" title="julia_fractal" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes640i.htm"><img src="im/julia_fractal03.jpg" alt="julia_fractal" title="julia_fractal" width="80" height="60" border="0"></a></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes500i.htm"><img src="im/povshat2s.jpg" alt="Regulare Polyhedra" title="Regulare Polyhedra" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes530i.htm"><img src="im/povshat1s.jpg" alt="Paraboloid, Hyperboloid" title="Paraboloid, Hyperboloid" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes540i.htm"><img src="im/quartic_Torus_s.jpg" alt="Polynomial equations" title="Polynomial equations" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes550i.htm"><img src="im/poly_Twin_Globs.jpg" alt="Cubic+Quartic" title="Cubic+Quartic" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes570i.htm"><img src="im/parametric_04s.jpg" alt="Parametric" title="Parametric" width="80" height="60" border="0"></a></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes660i.htm"><img src="im/disc_01s.jpg" alt="disc" title="disc" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes665i.htm"><img src="im/polygon1s.jpg" alt="polygon" title="polygon" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes670i.htm"><img src="im/triangles.jpg" alt="triangle" title="triangle" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes672i.htm"><img src="im/smooth_triangles.jpg" alt="smooth_triangle" title="smooth_triangle" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes675i.htm"><img src="im/bicubic_patch3s.jpg" alt="bicubic_patch" title="bicubic_patch" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes680i.htm"><img src="im/mesh_0s.jpg" alt="mesh" title="mesh" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes690i.htm"><img src="im/mesh2_01s.jpg" alt="mesh2" title="mesh2" width="80" height="60" border="0"></a></td></tr></table></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes650i.htm"><img src="im/mount2s.jpg" alt="height_field" title="height_field" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes652i.htm"><img src="im/raster_mountain_ts.jpg" alt="height_field" title="height_field" width="80" height="60" border="0"></a></td></tr></table></<td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes654i.htm"><img src="im/HF_by_function_06ss.jpg" alt="height_field" title="height_field" width="80" height="60" border="0"></a></td></tr></table></<td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes655i.htm"><img src="im/HF_by_function_30ss.jpg" alt="height_field" title="height_field" width="80" height="60" border="0"></a></td></tr></table></<td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes656i.htm"><img src="im/HF_by_function_32bss.jpg" alt="height_field" title="height_field" width="80" height="60" border="0"></a></td></tr></table></<td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes710i.htm"><img src="im/HF_Square_00s.jpg" alt="HF_Square" title="HF_Square" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes720i.htm"><img src="im/HF_Sphere_00s.jpg" alt="HF_Sphere" title="HF_Sphere" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes730i.htm"><img src="im/HF_Cylinder_00s.jpg" alt="HF_Cylinder" title="HF_Cylinder" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes740i.htm"><img src="im/HF_Torus_00s.jpg" alt="HF_Torus" title="HF_Torus" width="80" height="60" border="0"></a></td></tr></table></td>
+</tr></table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes910i.htm"><img src="im/iso_0020s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes920i.htm"><img src="im/iso_0080s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes930i.htm"><img src="im/iso_0105s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes940i.htm"><img src="im/iso_0200s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><a href="shapes950i.htm"><img src="im/iso_0315s.jpg" alt="isosurface" title="isosurface" width="80" height="60" border="0"></a></td></tr></table></td>
+</tr>
+</table>
+
+
+
+ <!--table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<p align="left"><font size="2">
+Was benötigt man dafür? <br>
+<b>Build-in shapes:</b> - hier sind keine weitere Include-Dateien notwendig<br>
+<b>Shapes aus &quot;shapes.inc&quot;</b><br>
+<b>Shapes aus &quot;shapes_lo.inc&quot;</b> <br>
+<b>Shapes aus &quot;shapesq.inc&quot;</b> <br>
+<b>Shapes aus anderen include-Datein wie &quot;Circle_Text_Valigned.inc&quot;</b> <br>
+
+</font>
+
+&nbsp;
+</td>
+</tr>
+</table-->
+</div>
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2015  - tous les droits d'auteur r&eacute;serv&eacute; - all rights reserved">
+<meta name="keywords" content="Tutoriel POV-Ray, Didacticiel POV-Ray, raytracing, PoV, POVRAY, POV-Ray, povray, graphique 3d, infographie, info graphique, lancer de rayons, trac&eacute; de rayons, suivi de rayons, images photor&eacute;alistes, raytracing descriptions, POV-Ray instuctions, 3D grafic">
+<meta name="Description" content="Didacticiel POV-Ray - Boucles, Sinus, Cosinus et POV-Ray : 1.  Ondes lin&eacute;aires.">
+<meta name="keywords"
+content="raytracing, PoV, POVRAY, POV-Ray 3.6/3.7, povray, tutoriel, didacticiel, mathematiques, boucle while, while loop, ondes lin&eacute;aires,  ondes concentriques, tapis volants">
+<title>Boucles, Sinus, Cosinus et POV-Ray - 1.  Ondes lin&eacute;aires.</title>
+
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr>raytracer POV-Ray</nobr>
+ <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Boucles, Sinus, Cosinus et POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+
+  <td align="right">
+     <a href="povsi3e1.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+     <a href="povsi3e1.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+     <a href="povsi3i1.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+     <a href="povsi3i1.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povsi3d1.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+     <a href="povsi3d1.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Home - Page d'accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3f1.htm"--><b>Boucles avec</b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3f1.htm"--><b>Sinus, Cosinus</b></a><br>
+&nbsp;&nbsp;  <!--a href="povsi3f1.htm"--><b>et POV-Ray</b></a><br>
+&nbsp;<b>&gt;</b>1.  <!--a href="povsi3f1.htm"--><b>Ondes lin&eacute;aires.</b></a><br>
+&nbsp;&nbsp;  2.  <a href="povsi3f2.htm">Ondes </b></a><br>
+&nbsp;&nbsp;  &nbsp; &nbsp;  <a href="povsi3f2.htm">concentriques.</b></a><br>
+&nbsp;&nbsp;  3.  <a href="povsi3f3.htm">Tapis volants.</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</nobr>
+ &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement </b></a><br>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<h2 align="center">Sinus et cosinus lin&eacute;aires.</h2>
+
+<table width="95%" align="center" cellpadding="5"><tr>
+<td colspan="2">
+<p align="justify">Avec cette description je veux d&eacute;montrer quelques jeux avec les fonctions sinus et cosinus.<br>
+L'exemple suivant d'une boucle imbriqu&eacute;e d&eacute;montre quelches choses &eacute;l&eacute;mentaires sur boucles.<br>
+D'abord nous consid&eacute;rons une boucle simple qui place de petites sph&egrave;res le long de l'axe de x, de
+<nobr>x = 5 &agrave; x = +5</nobr> :</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Ball =
+  sphere{&lt;0,0,0&gt;,0.25
+    texture{
+      pigment{color rgb&lt;1,0.8,0&gt;}
+      finish {diffuse 0.9 phong 1}
+    }// fin de texture
+  }// fin de sphere
+
+//----------------------------------
+#declare X = -5;  // start value X
+#declare EndX = 5;  // end value X
+#declare Step = 0.5;// step value
+// début de boucle
+#while ( X &lt; EndX + Step)//loop start
+  object{ Ball translate &lt;X,0,0&gt;}
+
+#declare X = X + Step; // next X
+#end // ------ fin de boucle ------- </b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop0.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr>
+<tr>
+ <td colspan="2">
+ <p align="justify">
+ Si nous imbriquons une boucle existante dans une autre boucle, faisant un pas de la valeur z de
+<nobr> z = 0 &agrave; z = +5,</nobr> nous obtenons un carr&eacute; couvert par des sph&egrave;res :</p>
+</td></tr>
+<tr><td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Z = -5;  // start value Z
+#declare EndZ = 5;  //   end value Z
+#declare Step = 0.5;// step value
+// début de boucle Z:
+#while ( Z &lt; EndZ + Step)
+
+  #declare X = -5;  // start value X
+  #declare EndX = 5;//   end value X
+  //début de boucle X:
+  #while ( X &lt; EndX + Step)
+
+   object{ Ball translate &lt;X,0,Z&gt;}
+
+  #declare X = X + Step;//next X
+  #end // ------ fin de boucle X
+
+#declare Z = Z + Step; //next Z
+#end // ------- fin de boucle Z</b></td></pre>
+ </tr>
+</table>
+</td>
+<td>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="povloop1.jpg" width="320" height="240"></td>
+        </tr></table>
+</td>
+</tr></table>
+<br>
+<table width="90%" align="center" border="0"><tr><td>
+<p align="justify">Jusqu'ici l'information sans d&eacute;tours sur boucles <b>while</b> !<br>
+&nbsp;<br>
+Maintenant nous voulons mettre de l'entrain et rythme dans cet r&eacute;gion :
+Pour faire cela nous avons besoin de le fonctions de sinus ou de cosinus - en POV-Ray
+d&eacute;crit par <b>sin(A)</b> respectivement <b>cos(A)</b>
+et ici A est le valeur del'angle en radian.
+
+Si nous  utilisons pour la boucle imbriqu&eacute;e pr&eacute;c&eacute;dente :<br>
+<font size="2"><b>&nbsp;&nbsp;object{ Ball translate &lt; X,
+sin(X), Z&gt; } &nbsp;&nbsp;</b><br>
+</font><font size="3">ou avec le pas moiti&eacute; moins grand : Step = 0.25;<br>
+</font><font size="2"><b>&nbsp;object{ Ball translate &lt; X,
+sin(2*X), Z&gt; }<br>
+</b></font>nous obtenons ces images :</p>
+<div align="center">
+
+<table align="center" border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+    <tr>
+        <td><img src="povloop2.jpg" width="320" height="240"></td>
+        <td><img src="povloop3.jpg" width="320" height="240"></td>
+    </tr>
+</table>
+</div>
+
+<hr size="3">
+<table align="center">
+<tr>
+ <td><a href="../pov__fra.htm">Overview</b></a></td>
+ <td><a href="../pov__fra.htm"><img src="arr_prev.gif" border="0" width="20" height="20"></a></td>
+ <td width="20"></td>
+ <td><a href="povsi3f2.htm"><img src="arr_next.gif" border="0" width="20" height="20"></a></td>
+ <td><a href="povsi3f2.htm">2. Ondes concentriques.</b></a></td>
+</tr>
+</table>
+
+
+</td></tr></table>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Transformationen mit POV-Ray - matrix</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2008, Friedrich A. Lohmueller">
+<meta name="Description" content="Geometrische Transformationen in POV-Ray, Skalieren, Ma&szlig;stabsver&auml;nderung, Parallel-Streckung, Streckung, Spiegelung an einer Koordinatenebene, Euler-Affinit&auml;t, Rotieren, Drehung, Translation, Parallelverschiebung, Transformationsmatrizen, Scherung, affine Abbildungen, affine Abbildungsmatrizen, zusammengefa&szlig;te Transformationen">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Povray, Raytracing, 3D-Grafik, 3d-Graphik, Computergraphik, konstruieren, geometrische Transformationen, Skalieren, Ma&szlig;stabsver&auml;nderung, Parallel-Streckung, Streckung, Spiegelung an einer Koordinatenebene, Euler-Affinit&auml;t, Rotieren, Rotation, Drehung, Translation, Parallelverschiebung, Transformationsmatrizen, Scherung, affine Abbildungen, affine Abbildungsmatrizen, zusammengefa&szlig;te Transformationen">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometrische Transformationen in POV-Ray </b></font>
+ </td></h6>
+ <td align="right">
+        <a href="trans_400e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="trans_400e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="trans_400i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_400i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_400f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_400f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <a href="trans_000d.htm">Geometrische</b></a><br>
+ &nbsp;       <a href="trans_000d.htm">Transformationen</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Elementare </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Transformationen</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100d.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200d.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot; </a><br>
+ &nbsp; &nbsp; - <a href="trans_300d.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300d.htm">Spiegelung</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_400d.htm"-->Weitere</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_400d.htm"-->Transformationen</b></a><br>
+ &nbsp; &nbsp; - <!--a href="trans_400d.htm"--><b>&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450d.htm">Scherung</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470d.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500d.htm">&quot;transform { &nbsp;...&nbsp; } &quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="trans_500d.htm">&nbsp;und &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800d.htm">Vektoren und</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800d.htm">Transformationen</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table align="center" border="1" cellpadding="4" cellspacing="4" >
+    <tr>
+        <td align="center" width="50%" bgcolor="#FFFFFF">
+        <a href="shear1im.htm"><img src="matrix2t.jpg" alt="Normal senkrecht" title="Normal senkrecht" border="0" width="120"  height="160"></td></a>
+        <td align="center" width="50%" bgcolor="#FFFFFF">
+        <a href="shear1im.htm"><img src="matrix1t.jpg" alt="Scherung" title="Scherung"                 border="0" width="120"  height="160"></td></a>
+
+    </tr>
+</table>
+
+<h2 align="center">matrix &lt; , , &gt;  <br> Matrizen und affine Abbildungen
+</h2>
+
+Das &quot;matrix&quot;-Schl&uuml;sselwort kann dazu benutzt werden<br>
+explizit die Transformationsmatrix f&uuml;r Objekte oder Texturen
+festzulegen.<br>
+Der Syntax des Schl&uuml;sselwortes: <br>
+<div align="center">
+<table border="1" cellpadding="4" cellspacing="4"
+bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b> matrix &lt;m</b><sub><b>00</b></sub><b>, m</b><sub><b>01</b></sub><b>, m</b><sub><b>02</b></sub><b>,
+         m</b><sub><b>10</b></sub><b>, m</b><sub><b>11</b></sub><b>, m</b><sub><b>12</b></sub><b>,
+         m</b><sub><b>20</b></sub><b>, m</b><sub><b>21</b></sub><b>, m</b><sub><b>22</b></sub><b>,
+         m</b><sub><b>30</b></sub><b>, m</b><sub><b>31</b></sub><b>, m</b><sub><b>32</b></sub><b>&gt;</b></td></pre>
+    </tr>
+</table>
+</div>
+
+<p align="center">wobei die Zahlen m<sub>ij</sub>
+beliebige Kommazahlen- Ausdr&uuml;cke (&quot;float expressions&quot;)<br>
+sein d&uuml;rfen, welche die Elemente der ersten 3 Spalten einer 4x4-Martrix darstellen,
+deren 4. Spalte hierbei fest als &lt;0,0,0,1&gt; definiert ist.<br>
+Ein Punkt P<sub>1</sub>(x<sub>1</sub>/y<sub>1</sub>/z<sub>1</sub>)
+wird in einen Punkt P<sub>2</sub>(x<sub>2</sub>/y<sub>2</sub>/z<sub>2</sub>)
+transformiert, wobei gilt: </p>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF" height="57"><p
+        align="center"><font size="2" face="Arial"><b>x</b><sub><b>2
+        = </b></sub><b>m</b><sub><b>00</b></sub><b>*x</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>10</b></sub><b>*y</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>20</b></sub><b>*z</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>30<br>
+        </b></sub><b>y</b><sub><b>2</b></sub><b> = m</b><sub><b>01</b></sub><b>*x</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>11</b></sub><b>*y</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>21</b></sub><b>*z</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>31<br>
+        </b></sub><b>z</b><sub><b>2</b></sub><b> = m</b><sub><b>02</b></sub><b>*x</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>12</b></sub><b>*y</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>22</b></sub><b>*z</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>32</b></sub></font></p>
+        </td>
+    </tr>
+</table>
+</div>
+<hr>
+Hier einige Beispiele: <br>
+
+<div align="center">
+<table border="1" width="90%" cellpadding="3">
+<tr>
+<td width ="50%" valign="top">
+ 1) Matrix der identischen Abbildung:<br>
+ <div align="center">
+ <table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+ <tr><td valign="top" bgcolor="#FFFFFF">
+ <pre><b>matrix &lt; 1, 0, 0,
+         0, 1, 0,
+         0, 0, 1,
+         0, 0, 0 &gt;</b></pre></td>
+ </tr></table></div>
+</td>
+<td width =50% valign="top">
+2) Diese Matrix bewirkt eine Parallel-Verschiebung um den Vektor &lt;2,3,4&gt;:<br>
+ <div align="center">
+ <table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+ <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>matrix &lt; 1, 0, 0,
+         0, 1, 0,
+         0, 0, 1,
+         2, 3, 4 &gt;</b></td></pre>
+    </tr></table></div>
+&nbsp;&nbsp;&nbsp;Dasselbe, nur wesentlich rationeller u. anschaulicher, beschreibt der Befehl:
+&nbsp;&nbsp;&nbsp;<b><nobr>translate&lt; 2, 3, 4&gt;.</nobr></b></td></p>
+</tr>
+<tr>
+<td width ="50%" valign="top">
+ 3) Drehung um die y-Achse mit einen Winkel Alpha (in Grad) durch die folgende Matrix: <br>
+<font size=-1>   (Besonderheit: sin und cos ben&ouml;tigen in POV-Ray das Winkel-Argument in Radians!)<br></font>
+<div align="center">
+ <table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b>#declare A = radians(Alpha);
+matrix&lt;cos(A), 0, sin(A),
+          0  , 1,    0  ,
+      -sin(A), 0, cos(A),
+          0  , 0,    0   &gt;</b></pre></td>
+    </tr></table></div>
+<p align="center">Drehung um die y-Achse um 30&deg;<br>
+(sin30&deg; = 0.5; cos30&deg; = 0.886): <br></p>
+
+<div align="center">
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b>matrix &lt;0.886, 0,   0.5,
+          0  , 1,     0,
+       -0.5  , 0, 0.886,
+          0  , 0,     0 &gt;</b></pre></td>
+    </tr>
+</table>
+</div>
+
+<p align="center">Dasselbe, nur ebenfalls rationeller und anschaulicher, beschreibt
+der bekannte Befehl: <b><nobr>rotate&lt; 0, &szlig;, 0&gt; .</nobr></b><br>
+<br>
+</td>
+<td width ="50%" valign="top">
+
+4) Die folgende Matrix bewirkt eine zentrische Streckung um den
+Streckungsfaktor k = 3 mit dem Ursprung O(0/0/0) als Zentrum: <br>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b>matrix &lt; 3, 0, 0,
+         0, 3, 0,
+         0, 0, 3,
+         0, 0, 0 &gt;</b></pre></td>
+    </tr>
+</table>
+</div>
+
+<p align="center">
+Auch diese Abbildung ist mittels &quot;<b>scale&lt; 3, 3, 3&gt;</b>&quot;
+oder einfacher durch &quot;<b>scale 3</b>&quot; leichter und
+anschaulicher zu erreichen.</p>
+</td>
+</tr></table></div>
+<hr>
+
+<p align="justify">Diese Beispiele zeigen, da&szlig; sich
+mit &quot;matrix&quot; alle einfachen Abbildung erreichen lassen.
+F&uuml;r gew&ouml;hnlich wird man f&uuml;r einfachere Transformationen
+(Verschiebung, Skalierung = zentrische Streckung, Drehung) keine
+Transformationsmatrix verwenden, da sie die Abbildung mit
+gr&ouml;&szlig;erem Aufwand beschreibt und schwerer vorzustellen ist. Es
+gibt jedoch einen interessanten Aspekt des Matrizenbefehls:
+Er erlaubt allgemeinere <b>affine Abbildungen</b>, wie z.B. die
+<b>Scherung</b> (shering), welche auf andere Weise nicht zu erreichen sind.<br>
+</p>
+
+<div align="center">
+
+<a name="sheer"></a>
+
+<div align="center">
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr><td colspan="2">
+     <h4 align="center">Eine Scherung l&auml;ngs der x-Richtung um 30&deg;<br>
+      mit der z-Achse als Fixgerade bewirkt:</td></h4></tr>
+    <tr><td><table align="center" valign="middle"><tr>
+            <td valign="top" bgcolor="#FFFFFF">
+<pre><b>
+  matrix&lt; 1 , 0, 0,
+         0.5, 1, 0,
+          0 , 0, 1,
+          0 , 0, 0 &gt;</b></pre></td></tr></table>
+        </td>
+        <td valign="top" bgcolor="#FFFFFF">
+        <p align="center"><img src="povmatr3.gif" width="217" height="162"></p>
+        </td>
+    </tr>
+</table>
+</div><br>
+<hr size="3">
+<p align="center">Hintereinander-Ausf&uuml;hung verschiedener Abbildungen sind bei Matrizen selten
+optisch leicht zu trennen. Die folgende Matrix mag dies verdeutlichen. Sie rotiert um die y-Achse
+um 30&deg; und schert l&auml;ngs der y-Achse und verschiebt parallel in y-Richtung:</p>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+        <pre><b> matrix&lt; 0.886, 0.5,  0.5  ,
+           0  , 1  ,  0    ,
+           0  , 0  ,  0.886,
+           0  , 1.5,  0     &gt;</b></td></pre>
+    </tr>
+</table></div>
+<p align="center"><br>
+Es ist daher empfehlenswert solche wenig durch- schaubare Abbildungsanh&auml;ufungen,
+sofern man wenig Routine besitzt, m&ouml;glichst klassisch, d.h. getrennt abzuhandeln:</p>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b>rotate&lt;0,30,0&gt;
+</b>//Scherung in y-Richtung:
+<b> matrix&lt;1, 0.5, 0,
+        0, 1  , 0,
+        0, 0  , 1,
+        0, 0  , 0 &gt;
+ translate&lt;0,1.5,0&gt;</b></td></pre>
+    </tr>
+</table>
+</div>
+
+<p align="center">Diese Befehlsfolge bewirkt dasselbe. </p>
+
+<hr>
+
+<h2>Streckungen mit Linearer Algebra</h2>
+Die folgenden Abbildungen in Raum lassen sich mittels Abbildungsmatrizen in Form von
+einfachen 3x3-Matrizen mathematisch beschreiben. Dabei sind ausschlie&szlig;lich die Diagonalelemente ungleich Null. <br>
+Diese lassen sich in POVRAY sowohl mit dem Kommando
+&quot;matrix&lt;...&gt;&quot; als auch mit dem einfacheren Befehl &quot;scale&lt; ...&gt;&quot; realisieren. <br>
+<b>Zentrische Streckung</b> bzgl. Ursprung(0/0/0) <br>
+(gleicher Faktor k in alle Richtungen) <br>
+Abbildungsmatrix A = <br>
+
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#c0c0c0">
+    <tr>
+        <td valign="top" width="56%" bgcolor="#FFFFFF">
+        <pre><b> matrix &lt;k, 0, 0,
+         0, k, 0,
+         0, 0, k,
+         0, 0, 0 &gt;</b> </td></pre>
+        <td valign="top" width="44%" bgcolor="#FFFFFF">&nbsp;&nbsp;&nbsp;
+        <img src="povmatr4.gif" width="70" height="70"></td>
+    </tr>
+</table>
+
+kurz: &quot;<b>scale k</b> &quot; oder &quot;<b>scale&lt;k,k,k&gt;</b>&quot;<br>
+<br>
+<b>Parallel-Streckung</b> <br>
+(nur in eine Richtung bzgl. Koordinatenebene, sonst konstant),<br>
+Abbildungsmatrix A = <br>
+
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#c0c0c0">
+    <tr>
+        <td valign="top" width="56%" bgcolor="#FFFFFF">
+        <pre><b> matrix &lt;k, 0, 0,
+         0, 1, 0,
+         0, 0, 1,
+         0, 0, 0 &gt;</b></td></pre>
+        <td valign="top" width="44%" bgcolor="#FFFFFF">&nbsp;&nbsp;&nbsp;
+        <img src="povmatr5.gif" width="75" height="71"></td>
+    </tr>
+</table>
+
+kurz: &quot;<b>scale&lt;k,1,1&gt;</b>&quot;<br>
+<br>
+<b>Euler-Affinit&auml;t</b> <br>
+(in jede Richtung bzgl. Koordinatenebenen mit anderem Faktor)<br>
+Abbildungsmatrix A = <br>
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#c0c0c0">
+    <tr>
+        <td valign="top" width="56%" bgcolor="#FFFFFF">
+        <pre><b> matrix &lt;p, 0, 0,
+         0, q, 0,
+         0, 0, r,
+         0, 0, 0 &gt;</b></td></pre>
+        <td valign="top" width="44%" bgcolor="#FFFFFF">&nbsp;&nbsp;&nbsp;
+        <img src="povmatr6.gif" width="70" height="75"></td>
+    </tr>
+</table>
+
+kurz: &quot;<b>scale&lt;p,q,r&gt;</b>&quot;<br>
+
+<hr>
+<h5>Weiterf&uuml;hrende Literatur:<br>
+&quot;Mathematik Sekundarstufe II - Analytische Geometrie und lineare Algebra - Erweiterte Ausgabe &quot;<br>
+diverse Verfasser, Cornelsen Verlag, Berlin, 1993, ISBN 3-590-12319-2<br>
+(Befa&szlig;t sich leider nur mit 2dimensionalen affinen Abbildungen)</h5>
+
+<table align="center" width="95%"><tr><td>
+<p align="justify"><font size="3">
+<b> Hinweis: </b><br>
+&quot;matrix&quot; kann sowohl auf K&ouml;rper, als auch auf andere Objekte wie Texturen(&quot;texture&quot;),
+Farbmuster (&quot;pigment&quot;), scheinbare Oberfl&auml;chenverformungen (&quot;normal&quot;) angewandt werden.
+</font>
+</p>
+
+
+</td>
+</tr>
+</table>
+</div><hr>
+<h6 align="justify">
+ <a href="trans_100d.htm">translate</a> |
+ <a href="trans_200d.htm">rotate</a> |
+ <a href="trans_300d.htm">scale</a> |
+ <!--a href="trans_400d.htm"-->matrix</a> |
+ <a href="trans_450d.htm">Scherung</a> |
+ <a href="trans_470d.htm">transforms.inc</a> |
+ <a href="trans_500d.htm">transform</a> |
+ <a href="trans_800d.htm">Vektor-Transformationen</a>
+<h6>
+
+
+</td></h5></div>    <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2008<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

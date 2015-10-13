@@ -1,0 +1,202 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=840,height=645");
+ New.focus();  }
+//-->
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=840,height=445");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="tec_806i.htm"><font size="2">Italiano </font></a>
+        <a href="tec_806i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_806f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="tec_806f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_806d.htm"><font size="2">Deutsch </font></a>
+        <a href="tec_806d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+<!--&nbsp; -  <a href="sam_400e.htm">Plants</b></a><br-->
+&nbsp; -  <a href="tec_000 e.htm">Engineering</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_750e.htm">Ladder</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_700e.htm">Pylons</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_710e.htm">Railing</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_720e.htm">Bridge</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_730e.htm">Tubes</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_731e.htm">Tube Fork</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_732e.htm">Tube Stopcock</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_400e.htm">Chain</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_450e.htm">Coil of Wire</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_500e.htm">Torpedo</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_000 e.htm">Cruise Missile</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_900e.htm">Rocket</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_190e.htm">Wheel</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_100e.htm">Truck</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_850e.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_800e.htm">Airplane</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 1. <a href="tec_801e.htm">Body (1)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 2. <a href="tec_802e.htm">Body (2)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 3. <a href="tec_803e.htm">Windows (1)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 4. <a href="tec_804e.htm">Windows (2)</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 5. <a href="tec_805e.htm">Wings</b></a><br>
+ &nbsp; &nbsp; &nbsp;  - 6. <!--a href="tec_806e.htm"--><b>Propellers</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_550e.htm">Canoe</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_050e.htm">Guitar Body</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_010d.htm">7-Segment Display</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_020e.htm">Ribbon Cable</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_030e.htm">Cable Harness</b></a><br>
+<!-- &nbsp; &nbsp; -  <a href="sam_000e.htm">Ships</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_000e.htm">Railroad</b></a><br>-->
+
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="80%">
+<tr>
+ <td align="left" valign="top">
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+        <tr><td><a href="javascript:ShowImage2('plane/aplane_5im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''">
+         <img src="plane/aplan03s.jpg" border="0" width="160" height="80"></td></tr>
+        </table><br>
+  </td>
+ <td align="left" valign="top">
+  <p align="justify"><font size="6"><b>Airplane</b></font><br>
+  <font size="2">Adding Propeller Engines. <br>
+   &nbsp;<br>
+
+   An include file to use this object as a read-made object you can find
+   at my <a href="../objects/obj_000e.htm">POV-Ray Objects page</a>.
+  </td> </font></p>
+</tr>
+<tr>
+ <td colspan="2"><p><b>How to Add Simple Propeller Engines to this Airplane:</b><br>
+   <p align="justify">For this I'll refer to &quot;How To Simulate a Rotating Propeller?&quot;.
+   We have only to copy the complete definition of the macro &quot;Engine(...)&quot;
+   in this scene file and then add the following to our final union. <br>
+    </p></td></p>
+</tr>
+</table>
+
+
+<table align="center" width="80%"><tr><td>
+<pre><b>//---------------------------------------------------------------
+//#macro{ Engine(Number_of_Blades, Blade_Radius,
+//               Rotation_Angle, Rotor_On)
+
+ object{ Engine( 5, 2.35, 10, 1)
+         scale 0.85
+         rotate &lt;0,-90,0&gt;
+         translate &lt;-0.30,-0.70,-5.00&gt;
+       }
+
+ object{ Engine( 5, 2.35, 10, 1)
+         scale 0.85
+         rotate &lt;0,-90,0&gt;  scale &lt;1,1,-1&gt;
+         translate &lt;-0.30,-0.70,-5.00&gt;
+         scale &lt;1,1,-1&gt;
+       }
+//---------------------------------------------------------------</b></pre></td></tr></table>
+
+
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><a href="javascript:ShowImage2('plane/aplane_5im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''">
+         <img src="plane/aplan03.jpg" width="400" height="200" border="0"
+          alt="Airplane with Propellers" title="Airplane with Propellers"></a></td></tr>
+ </table>
+
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><a href="javascript:ShowImage('plane/aplane_0im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''">
+         <img src="plane/aplan11m.jpg" width="400" height="300" border="0"
+          alt="Airplane with Propellers" title="Airplane with Propellers"></a></td></tr>
+ </table>
+ <p align="center"><b>The airplane with windows, wings and propellers.</b><br>
+ <font size="1">Cliquez sur l'image pour un r&eacute;solution plus grande !</font></p>
+
+<h5 align="center">Scene file for <nobr>POV-Ray:</nobr><br>
+ <a href="plane/the_plan.txt">&quot;the_plan.txt&quot;</a> or
+ <a href="plane/the_plan.pov">&quot;the_plan.pov&quot;</a></h5>
+&nbsp;<br>
+<h5><b>Download of all ready-made POV-Ray objects</b><br>
+ zipped up (with all include files, example files and with <br>
+ the according Insert Menu Add-ons for comfortable use!)<br>
+ at the <a href=""><b>Download Page</b></a>
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

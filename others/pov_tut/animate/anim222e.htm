@@ -1,0 +1,294 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="keywords" content="Speed Up and Slow Down, realistic nonlinear movements, animations, 3d animations, mpeg video, avi video, animated gifs, raytracing, PoV, POV-Ray, POVRAY, 3d graphics, raytracing descriptions, povray tutorial">
+<meta name="description" content="Speed Up and Slow Down - realistic nonlinear movements, - Animations with POV-Ray - descriptions, tutorials and examples for the POV-Ray raytracing program">
+<title>Speed Up and Slow Down - 3D Animation with POV-Ray - Descriptions, Tutorials and Examples for the POV-Ray Raytracing Program</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table  border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__eng.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="back to overview" title="back to overview"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animations with POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Some basics and examples on animations.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim222i.htm"><font size="2">Italiano </font></a>
+        <a href="anim222i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim222f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="anim222f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim222d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim222d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">3D Animations Gallery</b></a><br>
+ - <a href="../pov__eng.htm#ani"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anie.htm">3D Animation Tutorial</b></a><br>
+ &nbsp;&nbsp; <i>Index of Content</i><br>
+&nbsp; <!--a href="anim1d.htm"--><b>  0. Basic Knowledge</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001e.htm">Basic Example</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002e.htm">From Images to Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005e.htm">Basic Terms</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008e.htm">Animation Commands</b></a> &nbsp; </nobr><br>
+&nbsp; <!--a href="anim110e.htm"--> I. Cyclic Animations</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11e.htm">Rotating Objects</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112e.htm">Planets in Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113e.htm">Clock Animation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12e.htm">Rotating Camera</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121e.htm">Straight Moving Camera</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13e.htm">Western Wheel</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13e.htm"> Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131e.htm">Rolling Wheels</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14e.htm">Gears</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141e.htm">Roller Chain</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142e.htm">Bike Chain</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15e.htm">Swinging Pendulum</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151e.htm">Newton's Cradle</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152e.htm">Rock the Rocker</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16e.htm">Spiral Pendulum</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170e.htm">Coupling Rods</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17e.htm">Connecting Rods</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18e.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190e.htm">Counters + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200e.htm">Folding of a Cube</b></a><br>
+
+&nbsp; II. Non-linear Movements<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220e.htm">Speed Up/Slow 0Down 1</b></a><br>
+&nbsp; <b>&gt</b> 1.1 <!--a href="anim222e.htm"--><b>Speed Up/Slow Down 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240e.htm">Fall + Bounce</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260e.htm">Acceleration by</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260e.htm">physical Formulas</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280e.htm">Speed Controll by</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280e.htm">Spline Functions</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animation Paths<br>&nbsp; &nbsp; &nbsp; with Spline Curves</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210e.htm">Spline Curves</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21e.htm">Closed Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22e.htm">Animation Paths</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="85%" align="center" cellpadding="10"><!--1-->
+<tr><td width="10%"><img src="im/smoothy01s.gif" border="1" width="80" height="80"></td>
+    <td width="80%" align="center">
+     <h1>Speed Up and Slow Down (2)<br>
+      <font size="-1">Realistic nonlinear movements with useful basic functions.</font></td></h1>
+
+</tr>
+</table>
+<table width="85%" align="center" cellpadding="5"><!--1-->
+<tr>
+<td colspan="1" valign="top">
+<b><nobr>A more Realistic Simulation of</nobr><br>
+   <nobr>Acceleration and Retardation</nobr><br>
+   <nobr>with start and end at v = 0
+   and a = 0.</nobr></b><br>
+<br>
+With an approximation by<br>
+<b>f(x)= (0.5-0.5*cos(  pi*x))</b> or<br>
+<b>f(x)= - 2*x<sup>3</sup>+ 3*x<sup>2</sup></b><br>
+we have f(0) = 0, f(1) = 1<br>
+and f'(0)=f'(1)=0.<br>
+<br>
+For a movement starting and ending with v = 0 and a = 0,
+we should use a function,
+which not only have the 1st deviation with f'(0)=0 (start) and f'(1)=0 (end).<br>
+We need a function with also the<br>
+<b>2nd deviation</b> f''(0) = f''(1) = 0, like<br>
+ f(x) = 6x<sup>5</sup> - 15x<sup>4</sup> + 10x<sup>3</sup></b> =<br>
+ f(x) = x&sdot;x&sdot;x&sdot;(10+x&sdot;(6&sdot;x-15))<br>
+The difference is obvious in the opposite image.
+</b>
+
+ </td>
+ <td colspan="2">
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Smoothing_functions01.jpg" width="320" height="320" alt="Smoothing_function" title="Smoothing_function"></td></tr>
+   </table>
+  f(X)= 3*X*X - 2*X*X*X [orange] and<br>
+  f(X)= X*X*X*(10+X*(6*X-15)) [green]
+
+ </td>
+</tr>
+<tr>
+<td>
+<font size="-1">4 useful macros:</font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td>
+<pre><b>//---------------------------
+#macro Smoothy_01 ( X )
+  X*X*X*(10+X*(6*X-15))
+#end
+//---------------------------
+#macro Smoothy_010 ( X )
+  #if( X &lt;= 0.5 )
+ (X*2)*(X*2)*(X*2)
+  *(10+(X*2)*(6*(X*2)-15))
+  #else
+  1-((X*2-1)*(X*2-1)*(X*2-1)
+  *(10+(X*2-1)*(6*(X*2-1)-15)))
+  #end
+#end
+//---------------------------
+#macro Smoothy_10 ( X )
+  1-X*X*X*(10+X*(6*X-15))
+#end
+//---------------------------
+#macro Smoothy_101( X )
+  #if( X &lt;= 0.5 )
+  1-((X*2)*(X*2)*(X*2)
+     *(10+(X*2)*(6*(X*2)-15)))
+  #else
+  (X*2-1)*(X*2-1)*(X*2-1)
+  *(10+(X*2-1)*(6*(X*2-1)-15))
+  #end
+#end
+//---------------------------</b></td></pre></tr> </table>
+
+<td colspan="1" valign="top">
+  <p align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy01.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table><font size="1">macro 'smoothy01( TIME )'<br>
+    <b>Start smooth, end smooth.</b><br>&nbsp;</font></p>
+
+
+  <p align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy10.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table><font size="1">macro 'smoothy10( TIME )'<br>
+    <b>Start smooth, end smooth.</b></font></p>
+
+</td>
+<td colspan="1" valign="top">
+  <p align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy010.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table><font size="1">macro 'smoothy010( TIME )'<br>
+   <b>Start smooth, return smooth,<br>
+             come back and end smooth.</b></font></p>
+  <p align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy101.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table><font size="1">macro 'smoothy101( TIME )'<br>
+      <b>Start smooth, return smooth,<br>
+             come back and end smooth.</b></font></font></p>
+</td>
+
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+</table>
+
+<table width="85%" align="center" cellpadding="10"><!--1-->
+<!--tr><td colspan="2"><hr></td></tr-->
+<tr>
+ <td colspan="3" valign="top">
+   <font size="+1"><b>Calculation of a polynomial function of the 5th degree:</b></font><br>
+   We seek a function with f(0)=0 and f(1) = 1 and<br>
+    the 1st and 2nd deviation = 0 at &lt;0/0&gt; and &lt;1/1&gt;.<br>
+   <br>
+  General form:
+  <b>&nbsp;f(x) =&nbsp; &nbsp; &nbsp;a&sdot;x<sup>5</sup> +&nbsp;&nbsp;&nbsp; &nbsp; b&sdot;x<sup>4</sup> + &nbsp; &nbsp; c&sdot;x<sup>3</sup> + &nbsp;&nbsp; d&sdot;x<sup>2</sup> + e&sdot;x + f</b><br>
+  1st deviation:
+  <b>&nbsp;f'(x) =&nbsp; 5&sdot;a&sdot;x<sup>4</sup> + &nbsp; 4&sdot;b&sdot;x<sup>3</sup> + 3&sdot;c&sdot;x<sup>2</sup> + 2&sdot;d&sdot;x + e </b><br>
+  2nd deviation:
+  <b>f''(x) = 20&sdot;a&sdot;x<sup>3</sup> + 12&sdot;b&sdot;x<sup>2</sup> + 6&sdot;c&sdot;x + 2&sdot;d </b><br>
+  Conditions at point &lt;0/0&gt;: &nbsp;
+  <b>f(0) = 0, f'(0) = 0, f''(0) = 0; </b><br>
+  Therfore we get:<b> f = 0, e = 0 and d = 0.</b><br>
+<br>
+  Reduced general forms:<br>
+  <b>&nbsp; f(x) =&nbsp;&nbsp; &nbsp; &nbsp; a&sdot;x<sup>5</sup> + &nbsp;&nbsp; &nbsp; b&sdot;x<sup>4</sup> + &nbsp;&nbsp; c*x<sup>3</sup></b><br>
+  <b>&nbsp;f'(x) =&nbsp;&nbsp; 5&sdot;a&sdot;x<sup>4</sup> + &nbsp; 4&sdot;b&sdot;x<sup>3</sup> + 3&sdot;c&sdot;x<sup>2</sup></b><br>
+  <b>f''(x) = 20&sdot;a&sdot;x<sup>3</sup> + 12&sdot;b&sdot;x<sup>2</sup> + 6&sdot;c&sdot;x</b><br>
+  Conditions at point &lt;1/1&gt;: &nbsp;
+  <b>f(1) = 1, f'(1) = 0, f''(1) = 0;</b> <br>
+ <br>
+  &nbsp; f(1) = <b>&nbsp;&nbsp; &nbsp;&nbsp; a  + &nbsp; &nbsp;&nbsp;&nbsp; b + &nbsp; &nbsp;&nbsp; c = 1 </b> (I)<br>
+  &nbsp;f'(1) = <b>&nbsp; 5&sdot;a + &nbsp; 4&sdot;b + 3&sdot;c = 0</b> (II)<br>
+   f''(1) = <b>20&sdot;a  + 12&sdot;b + 6&sdot;c = 0</b> (III)<br>
+<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;II : <b>&nbsp;&nbsp; 5a + 4b +3c = 0</b><br>
+  <u>&nbsp;-3&sdot;I: <b>&nbsp;-3a -&nbsp;3b - 3c = -3</b></u><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;=&gt;  &nbsp; 2a + b &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;= -3 </b>&nbsp; (IV)<br>
+  <br>
+  &nbsp;&nbsp; &nbsp; II : <b>&nbsp; &nbsp;5a + 4b +&nbsp;3c = 0</b><br>
+  <u>&nbsp;III/2 : <b>&nbsp;10a +&nbsp;6b +&nbsp;3c = 0</b></u><br>
+  &nbsp;&nbsp;&nbsp;<b>=&gt;  &nbsp; &nbsp; 5a + 2b &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 0 </b>&nbsp; (V)<br>
+  <br>
+  -2&sdot;IV : <b>&nbsp;-4a - 2b = 6</b><br>
+  <u>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; V : <b>&nbsp;5a +&nbsp;2b = 0</b></u><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<b>=&gt;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <u>a  &nbsp;= 6 </b></u><br>
+  <br>
+  a in IV : <b>&nbsp;12 + b = -3</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u><b>&nbsp;b = -15</b></u><br>
+<br>
+  a,b in I: <b>&nbsp;6 - 15 + c  = 1</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>-9 + c = 1</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u><b>&nbsp;c = 10</b></u><br>
+ <br>
+  The resulting function is<br>
+  <b>&nbsp; f(x) = &nbsp; 6&sdot;x<sup>5</sup> - 15&sdot;x<sup>4</sup> + 10&sdot;x<sup>3</sup></b><br>
+
+
+ </td>
+</tr>
+</table>
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

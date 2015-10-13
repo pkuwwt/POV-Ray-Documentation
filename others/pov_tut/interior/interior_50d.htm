@@ -1,0 +1,229 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Gestaltung des Inneren von transparenten K&ouml;rpern mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Interior mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Material, Inneres transparenter K&ouml;rpern, interior, material, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Gestaltung des Inneren von transparenten K&ouml;rpern</b></font>
+      <font size="-1"><b> in POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_50e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_50e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_50i.htm"><font size="2">Italiano</font></a>
+        <a href="interior_50i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_50f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_50f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp; <a href="interior_000d.htm">Inhalts&uuml;bersicht</a><br>
+ &nbsp; <a href="interior_000d.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05d.htm">Syntax material</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="interior_05d.htm">texture + interior</b></a> <br>
+&nbsp; -  <a href="interior_03d.htm">Window Glass</b></a><br>
+ &nbsp; &nbsp; &nbsp; + max_trace_level <br>
+&nbsp; -  <a href="interior_001d.htm">Nebel - fog</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10d.htm">Syntax Media</b></a> <br>
+&nbsp; -  <a href="interior_30d.htm">Media + Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp;  mit/ohne density map <br>
+&nbsp; -  <a href="interior_20d.htm">Lichtkegel im Nebel</b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -   <a href="interior_40d.htm">Lichtschwert</b></a> <br>
+&nbsp; -   <a href="interior_44d.htm">Kerzenflammen</b></a> <br>
+&nbsp; Scattering Media</b></a><br>
+&nbsp; -   <!--a href="interior_50d.htm"--><b>Licht durch Fenster</b></a><br>
+&nbsp; -   <a href="interior_70d.htm">Dampf, Rauch, Wolken</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -   <a href="interior_60d.htm">Staubteufel</b></a> <br>
+
+<nobr>&nbsp; Spezialprobleme mit Media</b></a></nobr><br>
+&nbsp; -  <a href="interior_080d.htm">Skalieren von Media</b></a> <br>
+&nbsp; -  <a href="interior_090d.htm">&Uuml;berlappende Media</b></a> <br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<h2 align="center"><a name="Top"></a><b>Licht durchs Fenster<br> mit Scattering Object Media</b>
+
+
+      <br><font size="-1">Die Verwendung &quot;media&quot; und &quot;scattering&quot; Schl&uuml;sselworte<br>
+                         f&uuml;r lokale atmospherische Effekte<br>
+                           innerhalb von Objekten.</font><br>
+</h2>
+<td>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/Scattering_box_ani_66.gif" width="240"  height="180"  vspace="0" hspace="0"></td>
+    </tr></table><font size="-2">Lichtstrahlen in streuendem 'media'</font>
+
+</td></tr></table><hr>
+<table border="0" width="90%" align="center" cellpadding="10"><tr><td>           <!-- inner table -->
+
+<tr>
+ <td valign="top">
+ <p align="justify"><b>Sonnenlicht, das in einen Raum scheint.</b><br>
+ <b>Lokaler Nebel mit scattering media:</b><br>
+  ( scattering = lichtstreuend )<br>
+  Um ein lokales lichtstreuendes atmosph&auml;risches Medium
+  f&uuml;r Nebel in einem Raum zu erzeugen, setzt man &quot;media&quot; mit
+  einen begrenzenden Container ein:
+ </p>
+ <br>
+
+
+ </td>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/Scattering_box_0c.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+    &nbsp;</b>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+ <b>Der Raum gef&uuml;llt mit Nebel:</b><br>
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre>box{
+   &lt;0,0,0&gt;, &lt;R_x, R_y, R_z&gt;
+   pigment { rgbt 1 } // clear
+   hollow
+   interior{
+     media{
+       scattering{ 1, 0.17 extinction 0.01}
+       samples 10, 20 // min, max
+     } // end media
+   } // end interior
+ } // end box
+//----------------------------------------
+</b></td></pre></tr></table>
+Dies sieht noch ziemlich grob aus! <br>
+Man erkennt die Schichten der einzelnen &quot;samples&quot;!
+ </td>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/Scattering_box_1c.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+ </td>
+</tr>
+
+
+<tr>
+ <td valign="top">
+ <b>Box mit streuendem 'media' f&uuml;llt einen Raum mit Nebel:</b><br>
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre>box{
+   &lt;0,0,0&gt;, &lt;R_x, R_y, R_z&gt;
+   pigment { rgbt 1 } // clear
+   hollow
+   interior{
+     media{
+       scattering{ 1, 0.17 extinction 0.01}
+       samples 100, 500  // min, max
+     } // end media
+   } // end interior
+ } // end box
+//----------------------------------------
+</b></td></pre></tr></table>
+Mit erh&ouml;hter Sample-Anzahl!
+  </td>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/Scattering_box_2c.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+<tr>
+ <td valign="top">
+ <b>Und zum Schlu&szlig; noch eine T&uuml;re:</b><br>
+
+
+ </td>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/Scattering_box_4c.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+<h5 align="center">Szenenbeschreibung f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="pov/Scattering_box_4.txt">&quot;Scattering_box_4.txt&quot;</a> oder
+ <a href="pov/Scattering_box_4.pov">&quot;Scattering_box_4.pov&quot;</a></h5>
+ </td>
+</tr>
+
+</table>
+
+
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

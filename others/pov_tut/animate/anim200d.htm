@@ -1,0 +1,277 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="keywords" content="Faltung eines W&uuml;rfels, 3D-Animationen, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg Video, avi Video, animierte Gifs, Raytracing Beschreibungen, POV-Ray Beispiele, POV-Ray Anleitungen">
+<meta name="Description" content="Faltung eines W&uuml;rfels - 3D-Animationen mit POV-Ray -  deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik">
+<title>Faltung eines W&uuml;rfels - 3D-Animationen mit POV-Ray - deutsche Beschreibungen zum Raytracer POVRAY mit Beispielen
+       zur 3D-Graphik mittels Raytracing und photorealistischer Computergraphik</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ger.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="zur&uuml;ck zur &Uuml;bersicht" title="zur&uuml;ck zur &Uuml;bersicht"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animationen mit POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Grundlagen und Beispiele zu Animationen.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim200e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim200e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim200i.htm"><font size="2">Italiano</font></a>
+        <a href="anim200i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim200f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="anim200f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm"> Animationen Galerie</b></a><br>
+ - <a href="../pov__ger.htm"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anid.htm">3D Animation</b></a><br>
+ &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; <!--a href="anim001d.htm"-->  0. Grundlagen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001d.htm">Beispiel</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002d.htm">Von Bildern zum Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005d.htm">Grundbegriffe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008d.htm">Animationsbefehle</b></a><br>
+&nbsp; <!--a href="anim11d.htm"--> I. Zyklische Animationen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11d.htm">Objekt-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112d.htm">Planeten im Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113d.htm">Animierte Uhr</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12d.htm">Kamera-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121d.htm">Kamera Geradeausflug</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13d.htm">Western-Kutschen</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim13d.htm">-Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131d.htm">Rollende R&auml;der</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14d.htm">Zahnradgetriebe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141d.htm">Rollende Kette</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142d.htm">Fahrradkette</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15d.htm">Pendelschwingung</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151d.htm">Newtonpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152d.htm">Schaukelstuhl</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16d.htm">Federpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170d.htm">Koppelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17d.htm">Pleuelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18d.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190d.htm">Z&auml;hler + Countdowns</b></a><br>
+&nbsp; <b>&gt</b>10. <!--a href="anim200d.htm"--><b>Faltung eines W&uuml;rfels</b></a><br>
+
+&nbsp; II. Nichtlineare Bewegungen<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim220d.htm"> +Bremsen 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim222d.htm"> + Bremsen 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240d.htm">Fallen + H&uuml;pfen</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260d.htm">Beschleunigung nach</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260d.htm">physikalischen Formeln</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280d.htm">Geschwindigkeitssteuerung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280d.htm">mit Spline-Funktionen</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animationspfade<br>&nbsp; &nbsp; &nbsp;  mit Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210d.htm">Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21d.htm">Geschlossene Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22d.htm">Animationspfade</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table align="center" width="85%" cellpadding="10">
+<tr><td width="10%"><img src="im/Fold_Cube_1s.gif" border="1" width="80" height="80"></td>
+    <td>
+     <h1>Die Faltung <br>
+         eines W&uuml;rfelnetzes<br>
+      <font size="-1">Die Faltung geometrischer Objekte in POV-Ray.</font></td></h1>
+    <td width="10%"><img src="im/Fold_Cube_22s.gif" border="1" width="80" height="80"></td>
+</tr>
+</table>
+<table align="center" width="85%" cellpadding="10"><!--1-->
+<!--tr><td colspan="2"><hr></td></tr-->
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b><font size="+1">Wie man einen W&uuml;rfel faltet:</font></b><br>
+  Ein W&uuml;rfel besteht aus 6 Quadraten die gegen ihren benachbarten Quadraten in einem 90&deg;-Winkel gefaltet sind.<br>
+  Daher beginnen wir damit ein Objekt namens 'Quadrat' zu deklaren. <br>
+  <font size="-1">(Deklarieren zuerst Sie die entsprechenden Texturenen nach Ihren Wunsch!)</font>
+
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// -------------------- dimensions
+#declare D = 0.00001;
+#declare S = 1;
+#declare Rl = 0.02;// "edge" radius
+#declare Rp = 0.04;//"point" radius
+// ------------------------- square
+// square, Quadrat, quadrato, carré
+#declare Quadrat =
+union{
+ // Die Eckpunkte
+ union{
+  sphere{ &lt;0,0,0&gt;, Rp }
+  sphere{ &lt;S,0,0&gt;, Rp }
+  sphere{ &lt;S,0,S&gt;, Rp }
+  sphere{ &lt;0,0,S&gt;, Rp }
+  texture{ Corner_Texture } }
+ // Die Kanten
+ union{
+  cylinder{ &lt;0,0,0&gt;,&lt;S,0,0&gt;, Rl }
+  cylinder{ &lt;S,0,0&gt;,&lt;S,0,S&gt;, Rl }
+  cylinder{ &lt;0,0,S&gt;,&lt;S,0,S&gt;, Rl }
+  cylinder{ &lt;0,0,0&gt;,&lt;0,0,S&gt;, Rl }
+  texture{ Edge_Texture } }
+ // Die Fläche
+ box{ &lt;0,-D,0&gt;,&lt;1,D,1&gt;
+  texture{ Face_Texture }}
+} // end of union ------------------</b></td></pre></tr> </table>
+</td></p>
+
+<td colspan="1" valign="top">
+<br>
+<br>
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Folding_a_Cube_001.jpg" width="240" height="180" alt="Folding of a Cube" title="Folding of a Cube"></td></tr>
+   </table>Ein Quadrat zur Faltung eines W&uuml;rfels<br>
+<br>
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Cube_Net_001.jpg" width="240" height="240" alt="Cube Net" title="Cube Net"></td></tr>
+   </table>Das W&uuml;rfelnetz</h6>
+</td>
+
+</tr>
+</table>
+
+<table align="center" width="85%" cellpadding="10">
+<!--tr><td colspan="2"><hr></td></tr-->
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b><font size="+1">Eine Kette von Quadraten:</font></b><br>
+  Zur Faltung eines W&uuml;rfelnetzes
+  <font size="-1">(wie hier recht oben)</font><br>
+  m&uuml;ssen wir eine Kette von Quadraten A,B,C und D mittels verschachtelter 'union's erstellen.<br>
+  Wir spolten uns vergegenw&auml;rtigen, dass die Rotation mit 'rotate' immer um die Koordinatenachsen dreht!<br>
+  Daher m&uuml;ssen wir <b>zuerst</b> die <b>Rotation</b> ausf&uuml;hren und <b>dann</b> die <b>Translation</b> (Verschiebung) wie es im Bild
+  hier rechts f&uuml;r die ersten beiden Quadrate A und B gezeigt wird.<br>
+  <font size="-1">Hinweis: 'Rotation um eine Koordinatenachse' und 'Translation' sind im allgemeinen <b>nicht kommutative</b> oder
+     nicht vertauschbar, d.h.: Wir d&uuml;rfen die Reihenfolge nicht willk&uuml;rlich wechseln!</font>
+<br>
+<br>
+  <font size="+1"><b>Die Animation der Faltung: </b></font><br>
+ Um ein langsames sanftes starten und stoppen der Bewegung zu erreichen, verwenden wir das folgende Makro:<br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#macro Cos_010( X ) //-----
+  (0.5-0.5*cos(2*pi*X))
+#end //--------------------
+#declare Fold_Angle =
+    -90*Cos_010(clock);
+//---------------------------------
+</b></td></pre></tr> </table>
+Der Zusammenbau der Komponenten des W&uuml;rfels:
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>union{ // A + B + C
+  object{ Quadrat } // C ------
+  union{ // A + B
+     object{ Quadrat } // B ------
+     object{ Quadrat   // A ------
+             rotate&lt;Fold_Angle,0,0&gt;
+             translate&lt;0,0,S&gt;
+           } //--------------
+     rotate&lt;Fold_Angle,0,0&gt;
+     translate&lt;0,0,S&gt;
+  } // end A + B
+  rotate&lt;Fold_Angle,0,0&gt;
+  translate&lt;0,0,S&gt;
+} // end A + B + C
+
+object{ Quadrat } // D ------
+object{ Quadrat   // E ------
+        translate&lt;-S,0,0>
+        rotate&lt;0,0,Fold_Angle&gt;
+      } //------------------
+object{ Quadrat   // F ------
+        rotate&lt;0,0,-Fold_Angle&gt;
+        translate&lt;S,0,0&gt;
+      } //------------------
+</b></td></pre></tr> </table>
+</td></p>
+
+<td colspan="1" valign="top">
+  <h6 align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Folding_a_Cube_1.gif" width="240" height="240" alt="Folding_a_Cube" title="Folding_a_Cube"></td></tr>
+   </table>W&uuml;rfelfaltung: rotieren, wegschieben, n&auml;chsten hinzuf&uuml;gen!</h6>
+<br>
+  <h6 align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Function_cos_010.jpg" width="240" height="240" alt="Cos_010()" title="Cos_010()"></td></tr>
+   </table>Das Makro 'Cos_010(...)'</h6>
+  <h6 align="center">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Folding_a_Cube_2.gif" width="240" height="240" alt="Folding_a_Cube" title="Folding_a_Cube"></td></tr>
+   </table>W&uuml;rfelfaltung<br>
+ Szenenbeschreibung f&uuml;r POV-Ray:<br><a href="pov/Folding_a_Cube_2.ini"> &quot;Folding_a_Cube_2.ini&quot;</a>
+    und <br> <a href="pov/Folding_a_Cube_2.pov">&quot;Folding_a_Cube_2.pov&quot;</a></h6>
+</td>
+
+</tr><tr>
+<td colspan="2">Zu weiteren Beispielen zur Faltung regul&auml;rer Polyeder siehe:<br>
+                <a href="../geo/geom_000d.htm">Elementare Geometrie f&uuml;r Raytracing</a>
+                oder: <a href="../../pov_anim/ani_3500d.htm">3D-Animationen - Geometrie</a>
+</td></tr>
+</table>
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

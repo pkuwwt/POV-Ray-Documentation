@@ -1,0 +1,161 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2007, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes530e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes530e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes530f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes530f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes530d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes530d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+&nbsp; Indice<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+<nobr><a href="shapes200i.htm">Forme con macros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+<br>
+<a href="shapes000i.htm">Altri Oggetti</b></a><br>
+&nbsp; -  <a href="shapes620i.htm">blob</b></a> <br>
+&nbsp; -  <a href="shapes630i.htm">sphere_sweep</b></a> <br>
+&nbsp; -  <a href="shapes640i.htm">julia_fractal</b></a> <br>
+&nbsp; -  <a href="shapes500i.htm">Regulare Polyhedron</b></a><br>
+<nobr>&nbsp; -&gt;<!--a href="shapes530i.htm"--><b>Paraboloid, Hyperboloid</b></a></nobr><br>
+&nbsp; -  <a href="shapes540i.htm">Equazioni Polynomiali</b></a><br>
+&nbsp; -  <a href="shapes550i.htm">Cubic &amp; Quartic shapes</b></a><br>
+&nbsp; -  <a href="shapes570i.htm">Parametric shapes</b></a><br>
+<br>
+<a href="shapes666i.htm">Forme Non-CSG</b></a><br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900i.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table width="90%" align="center" border="0"><tr><td><!-- global -->
+<h3 align="center"><b>Paraboloide e Iperboloide</b> del include file <b>&quot;shapes.inc&quot;</b>
+</h3>
+Prima che si puo usare le forme geometriche seguente si deve inserire
+il include file corrispondente nel testo della scena con: <br>
+<b>#include &quot;shapes.inc&quot;</b> <br>
+<br>
+&nbsp;<br>
+<div align="center">
+<table border="5"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><tr>
+<tr>
+ <td>
+   <a href="javascript:ShowImage('im/povsha1i.htm')"
+    onmouseover="window.status='ShowSingleImage';return true"
+    onmouseout="window.status=''">
+    <img src="im/povshat1.jpg" border="0" width="320"  height="240"
+     alt="shape1.inc 640x480" title="shape1.inc 640x480"></a></td>
+</tr>
+</table>
+</div>
+<br>
+<h5>
+<table border="0" align="center">
+<tr><td>Paraboloidi<br>
+        (in direzione positiva x,y e z)</td>
+    <td>Iperboloidi &nbsp; </td>
+</tr>
+<tr><td width="50%" valign="top"><b>Paraboloid_X, </b></td>
+    <td width="50%" valign="top"><b>Hyperboloid </b>&nbsp;&nbsp;&nbsp;&nbsp;(sella a sinistera)</td>
+</tr>
+<tr><td width="50%" valign="top"><b>Paraboloid_Y &nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+    <td width="50%" valign="top"><b>Hyperboloid_Y </b></td>
+</tr>
+<tr><td width="50%" valign="top"><b>Paraboloid_Z &nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+    <td width="50%" valign="top">(cono doppio in direzione y in centro,
+                                  e a destra volto con &quot;rotate&lt;90,0,0&gt;&quot;)</td></h5>
+</tr>
+</table>
+Queste superfici infinite si p&ugrave;o usare nelle funzioni csg come
+"intersection" ou "clipped_by" con oggetti normali come &quot;box&quot; per
+ottenere oggetti finiti di questa forma.<br>
+Questi oggeti geometici regolari sono defininito in <b>simmetria a &lt;0,0,0&gt;</b>.
+Un esempio come usarle con la parola chiave &quot;object&quot;:
+<table align="center"><tr><td>
+<pre><b>object{ Paraboloid_Y
+        texture{....}
+        translate&lt;...&gt; }</b></pre>
+</td></tr></table>
+
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr>
+</table>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

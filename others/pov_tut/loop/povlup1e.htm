@@ -1,0 +1,292 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="POV-Ray tutorial- While loops and POV-Ray - linear transformations">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, tutorial, mathematics, while loop, linear transformation">
+<title>About Loops and POV-Ray - Linear Transformations</title>
+
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+ <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>About Loops with POV-Ray</b></b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+     <a href="povlup1i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+     <a href="povlup1i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povlup1f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+     <a href="povlup1f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povlup1d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+     <a href="povlup1d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0e.htm"><font size="3"><nobr>Loops in POV-Ray</nobr></font></b></a><br>
+ &nbsp; 1.  <a href="povlup7e.htm">For + While</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup7e.htm">Comparison</b></a><br>
+<b>&gt;</b>2.  <!--a href="povlup1e.htm"--><b>Linear</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="povlup1e.htm"--><b>Transformations</b></a><br>
+ &nbsp; 3.  <a href="povlup2e.htm">Circular</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="povlup2e.htm">Transformations</b></a><br>
+ &nbsp; 4.  <a href="povlup3e.htm">Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4e.htm">Screws</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup4e.htm"> &amp; Spirals</b></a><br>
+ &nbsp; 6.  <a href="povlup5e.htm">Twisting</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5e.htm">Spirals</b></a><br>
+ &nbsp; 7.  <a href="povlup6e.htm">Snails</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6e.htm">&amp; Ammonites</b></a><br>
+ &nbsp; 8.  <a href="povlup9e.htm">Spherical Spirals 1</b></a><br>
+ &nbsp; 9.  <a href="povlup10e.htm">Spherical Spirals 2</b></a><br>
+ &nbsp;10.  <a href="povlup8e.htm">Fibonacci Spirals</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+
+
+<!--h1 align="center">About While-Loops with POV-Ray</h1-->
+<h2 align="center">Loops and Linear Transformations</h2>
+
+<div align="center">
+<table border="0" cellpadding="2" cellspacing="5">
+<tr>
+ <td colspan="2">
+  <div align="justify">A demonstration of some elementary
+  applications of the while loops in <nobr>POV-Ray.</nobr><br>
+  Here the while loop is used for the regular placing of objects by translations.<br>
+  The following examples want to show single and nested loops.<br>
+</td></div>
+</tr><tr>
+ <td valign="top">
+  <font size="3"><b>Single Loop:</b></font><br>
+  <font size="2">This loop puts spheres along the x axis<br>
+    from X = -5 to X = +5:</font>
+<table border="2" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#808080" bordercolordark="#FFFFFF">
+ <tr><td>
+<pre ><b>#declare Ball =
+ sphere{ &lt;0,0,0&gt;,0.5
+         texture{ pigment{ color Red }
+                  finish { phong 1 }
+                }
+        } //--------------------------
+//------------------------------------
+#declare <font color="#800000">X</font> = -5;  // start
+#declare <font color="#800000">End_X</font> = 5; // end
+#while ( <font color="#800000">X &lt;= End_X</font> )
+ object{ Ball translate &lt;<font color="#800000"> X</font>, 0.5, 0&gt; }
+#declare <font color="#800000">X = X</font> + 1; // next
+#end //-------------- end of loop ----</b></td></pre>
+ </tr>
+</table>
+  <table>
+  <td colspan="1" width="36" valign="top">
+  <img src="im/warn.gif" border="0" width="32" height="30">
+  </td>
+  <td colspan="1">
+  <font size="1"><b>To avoid any collision with built-in identifiers and<br>
+    reserved words in POV-Ray (all in lower case !)</b>,<br>
+    <b>it's strongly recommanded to use only words beginning<br>
+    with  capital letters  for all identifiers of variables<br>
+    declared by the user.</b><br>
+  I.e. <b>x = &lt;1,0,0&gt;</b> is a built-in identifier,<br>
+  so that is why we have to use i.e. <b>&quot;X&quot;</b> instead.</font>
+  </td>
+  </table>
+ </td>
+ <td valign="top">
+ <br>
+ <br>
+ <br>
+ <table align="center" border="2" bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloop1.jpg" width="320" height="240" border="0"></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Scene file for <nobr>POV-Ray:</nobr> <a href="pov/povloop1.pov">povloop1.pov</a> or:
+    <a href="pov/povloop1.txt">povloop1.txt</a></font></div>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <font size="3"><b>Nested Loop:</b></font><br>
+  <font size="2">We nest an existing loop into another loop.<br>
+    We get a rectangular field covered by identical objects:</font>
+<table border="2" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#808080" bordercolordark="#FFFFFF">
+ <tr><td>
+<pre><b>#declare Boxy =
+box{ &lt;0,0,0&gt;,&lt; 1,1,1&gt; scale 0.5
+     texture{ pigment{ color White }
+              finish { specular 0.5}}}
+//------------------------------------
+#declare Dx = 1.00; // distance in x
+#declare Dz = 1.00;
+<font color="#006600">#declare NrX = 0;      // startX
+#declare EndNrX = 7;   // endX
+#while (NrX &lt; EndNrX) // &lt;-- loop X</font>
+<font color="#663300"> #declare NrZ = 0;     // startZ
+ #declare EndNrZ = 7;  // endZ
+ #while (NrZ &lt; EndNrZ) // &lt;- loop Z</font>
+  object{ Boxy
+          translate&lt;NrX*Dx, 0, NrZ*Dz&gt;}
+<font color="#663300"> #declare NrZ = NrZ + 1;  // next NrZ
+ #end // --------------- end of loop Z</font>
+<font color="#006600">#declare NrX = NrX + 1;// next NrX
+#end // ------------- end of loop X</font></b></td></pre>
+ </tr>
+</table>
+
+ </td>
+ <td valign="top">
+ <br>
+ <br>
+ <br>
+ <br>
+ <table align="center" border="2"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloop2.jpg" width="320"  height="240" ></td>
+      </tr></table>
+<div align="center">
+<font size="2">
+    Scene file for <nobr>POV-Ray:</nobr> <a href="pov/povloop2.pov">povloop2.pov</a> or:
+   <a href="pov/povloop2.txt">povloop2.txt</a></font></div>
+  <br>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <font size="3"><b>Multiple-Nested Loop:</b></font><br>
+  <font size="2">We can nest a nested loop in an additional loop.<br>
+  Here we get a cube of by identically formed objects:</font>
+
+<table border="2" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#808080" bordercolordark="#FFFFFF">
+ <tr><td>
+<pre><b>#declare Dx = 1.00;
+#declare Dy = 1.00;
+#declare Dz = 1.00;
+//-------------------------------------
+#declare NrX = 0;      // startX
+#declare EndNrX = 5;   // endX
+#while (NrX &lt; EndNrX)
+ #declare NrY = 0;     // startY
+ #declare EndNrY = 5;  // endY
+ #while (NrY &lt; EndNrY)
+  #declare NrZ = 0;    // startZ
+  #declare EndNrZ = 5; // endZ
+  #while (NrZ &lt; EndNrZ)
+   object{ Boxy
+           translate
+            &lt;NrX*Dx,NrY*Dy,NrZ*Dz&gt;
+         }
+  #declare NrZ = NrZ+1;// next NrZ
+  #end // ---------- end of loop Z
+ #declare NrY = NrY+1;// next NrY
+ #end // ---------- end of loop Y
+ #declare NrX = NrX+1;// next NrX
+#end // ----------- end of loop X -----</b></td></pre>
+ </tr>
+</table>
+ </td>
+
+ <td valign="top">
+ <br>
+ <br>
+ <br>
+ <br>
+  <table align="center" border="2"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloop3.jpg" width="300" height="300"></td>
+      </tr></table>
+<div align="center">
+<font size="2">
+    Scene file for <nobr>POV-Ray:</nobr> <a href="pov/povloop3.pov">povloop3.pov</a> or:
+  <a href="pov/povloop3.txt">povloop3.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+  <div align="justify">With these examples our possibilities regarding to pure translations
+  with loops seam to be exhausted in our three dimensional world.</div>
+ </td>
+</tr>
+</table>
+</div>
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0e.htm">Overview</a> |
+     <a href="povlup7e.htm">For + While</a> |
+     <!--a href="povlup1e.htm"-->Linear</a> |
+     <a href="povlup2e.htm">Circular</a> |
+     <a href="povlup3e.htm">Moebius</a> |
+     <a href="povlup4e.htm">Screws+Spirals</a> |
+     <a href="povlup5e.htm">Twisted Spirals</a> |
+     <a href="povlup6e.htm">Snails</a> |
+     <a href="povlup9e.htm">Spherical 1</a> |
+     <a href="povlup10e.htm">Spherical 2</a> |
+     <a href="povlup8e.htm">Fibonacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

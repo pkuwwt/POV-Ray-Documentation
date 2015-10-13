@@ -1,0 +1,78 @@
+//-------------------------------------------------------------------------------------//
+//--------------------------------------------------------------------optional textures
+#declare Window_Frame_Texture_1 = 
+          texture{ pigment{ color rgb< 1, 1, 1>*1.1 }  
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+#declare Window_Frame_Texture_2 = 
+          texture{ pigment{ color rgb< 1, 1, 1>*0.98 } 
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+#declare Window_Glass = 
+          texture{ pigment{ rgbf <0.98, 0.98, 0.98, 0.9> }
+                   finish { diffuse 0.1 reflection 0.2  
+                            specular 0.8 roughness 0.0003 phong 1 phong_size 400}
+                 } // end of texture -------------------------------------------
+#declare Wall_Texture_1 = 
+          texture{ pigment{ color rgb< 1, 1, 1>*0.9}  
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+#declare Wall_Texture_2 = 
+          texture{ pigment{ color rgb< 1, 1, 1>*0.8 }  
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+#declare Floor_Texture_1 = 
+          texture{ pigment{ color rgb< 1, 1, 1>*0.75 }  
+                // normal { bumps 0.5 scale 0.05 }
+                   finish { phong 1 reflection 0.00}
+                 } // end of texture 
+//-------------------------------------------------------------------------------------//
+#include "BusinessBuilding_000.inc" 
+//-------------------------------------------------------------------------------------//
+object{ BusinessBuilding_000( 
+                    5, // Nx_Elements,  // number of elements in -x,  integer >= 1
+                    8, // Ny_Floors,    // number of floors in    y,  integer >= 1
+                    3, // Nz_Elements,  // number of elements in +z,  integer >= 1
+                    4, // N_of_Windows_per_Element, // 
+
+                   2.30, // Win_H, // window height - de: Fensterhöhe 
+                   0.80, //  Win_Tween_H, // windows tween height - 
+                   1.00, // Win_W, // window width  - de: Fensterbreite 
+                   0.10, // Win_Frame_D, // window frame thickness - Fensterrahmendicke
+                   0.35, // Wall_D,  // wall thickness  - de: Wanddicke
+                   0.50, // Floor_D, // floor thickness - de: Bodendicke
+                 ) //------------------------------------------------------------------//
+        // width in -x = Nx_Elements*( N_of_Windows_per_Element*Win_W+Wall_D)+Wall_D;   
+        // width in +z = Nz_Elements*( N_of_Windows_per_Element*Win_W+Wall_D)+Wall_D;   
+        // top level =  Ny_Floors*(Win_H + Floor_D) + Floor_D; 
+        scale <1,1,1>*1
+        rotate<0, 0,0> 
+        translate<0.00,0.00, 0.00> 
+      } //---------- 
+//-------------------------------------------------------------------------------------//
+object{ BusinessBuilding_000( 
+                    3, // Nx_Elements,  // number of elements in -x,  integer >= 1
+                    6, // Ny_Floors,    // number of floors in    y,  integer >= 1
+                    2, // Nz_Elements,  // number of elements in +z,  integer >= 1
+                    4, // N_of_Windows_per_Element, // 
+
+                   2.30, // Win_H, // window height - de: Fensterhöhe 
+                   0.80, //  Win_Tween_H, // windows tween height - 
+                   1.00, // Win_W, // window width  - de: Fensterbreite 
+                   0.10, // Win_Frame_D, // window frame thickness - Fensterrahmendicke
+                   0.35, // Wall_D,  // wall thickness  - de: Wanddicke
+                   0.50, // Floor_D, // floor thickness - de: Bodendicke
+                 ) //------------------------------------------------------------------//
+        // width in -x = Nx_Elements*( N_of_Windows_per_Element*Win_W+Wall_D)+Wall_D;   
+        // width in +z = Nz_Elements*( N_of_Windows_per_Element*Win_W+Wall_D)+Wall_D;   
+        // top level =  Ny_Floors*(Win_H + Floor_D) + Floor_D; 
+        scale <1,1,1>*1
+        rotate<0, 0,0> 
+        translate<3*(4*1.00++0.35)+0.35,0.00,2*(4*1.00++0.35)> 
+      } //---------- 
+//-------------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------//

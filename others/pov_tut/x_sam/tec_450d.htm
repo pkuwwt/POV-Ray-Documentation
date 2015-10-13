@@ -1,0 +1,331 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, POV-Ray Objects, Fertige Objekte f&uuml;r POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=635,height=445");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Beispiele</b></font> -
+      <font size="-1"><b>Die Erstellung von Objekten f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="tec_450e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tec_450e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tec_450i.htm"><font size="2">Italiano</font></a>
+        <a href="tec_450i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_450f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tec_450f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table><a name="start"></a><hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="sam_000d.htm">POV-Ray Beispiele</b></a><br>
+ &nbsp; &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; -  <a href="sam_300d.htm">Geometrie</b></a><br>
+&nbsp; -  <a href="sam_100d.htm">Architektur</b></a><br>
+&nbsp; -  <a href="tec_000d.htm">Technik</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_750d.htm">Leiter</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_700d.htm">Masten</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_710d.htm">Gel&auml;nder</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_720d.htm">Br&uuml;cke</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_730d.htm">R&ouml;hren</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_731d.htm">Rohrabzweigung</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_732d.htm">Rohr-Absperrhahn</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_400d.htm">Kette</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="tec_450d.htm"--><b>Drahtspule</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_500d.htm">Torpedo</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_600d.htm">Cruise Missile</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_900d.htm">Rakete</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_190d.htm">Rad</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_100d.htm">Truck</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_850d.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_800d.htm">Flugzeug</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_550d.htm">Kanu</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_050d.htm">Gitarrenbody</b></a><br>
+ <nobr>&nbsp; &nbsp; -  <a href="tec_010d.htm">7-Segment Display</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="tec_020d.htm">Flachbandkabel</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_030d.htm">Kabelbaum</b></a><br>
+<!--&nbsp; &nbsp; -  <a href="sam_000d.htm">Schiffe</b></a><br>
+    &nbsp; &nbsp; -  <a href="sam_000d.htm">Eisenbahn</b></a><br>-->
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2" align="left"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="3" width="90%" align="center">
+<tr>
+ <td align="center" valign="top">
+   <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><!--a href="javascript:ShowImage('coil/coil_0im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''"--->
+              <img src="coil/Winding_Wire_macro_sc.gif" width="160" height="120" border="0"
+                   alt="coil" title="coil"></a></td>
+    </tr></table>
+
+  </td>
+ <td align="left" valign="top">
+  <p align="justify"><font size="6"><b><nobr>Drahtspule</nobr></b></font><br>
+        Drahtwindungen<br>
+ <h6>Objekte: cylinder, Segment_of_Torus.<br>
+     Methoden: #local, union, #while,
+     cos, tan, atan, VAngleD(), vlength()
+
+  </td></h6>
+</tr><tr><td colspan="2"><hr></td></tr>
+</table>
+
+<table cellpadding="3" width="90%" align="center">
+<tr>
+ <td valign="top" rowspan="3">
+<font size="4"><b>Die Grunddimensionen:</b></font></b><br>
+
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local WR = 0.065;// wire radius
+#local WD = 0.19; // wire distance (pitch)
+#local BR = 0.50; // base radius
+#local Rmaj= 0.30; // corner radius major
+#local Revolutions = 3 ;// </b></td></pre></tr></table>
+
+  Eine Vierteldrehung des Drahtes, von Punkt
+  A <br> &uuml;ber die Ecke Co zum Endpunkt B.<br>
+  Die H&ouml;he einer Viertelwindung ist WD/4:  <font size="2"><b>(Bild 2)</b></font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local A  = &lt; 0, 0, -BR&gt;;
+#local B  = &lt; BR, WD/4, 0&gt;;
+#local Co = &lt; BR, WD/8, -BR&gt;;//corner     </b></td></pre></tr></table>
+<br>
+<br>
+<font size="4"><b>Ben&ouml;tigte Include-Dateien:</b></font></b><br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#include "math.inc" // for VAngleD()
+#include "shapes3.inc"// Segment_of_Torus </b></td></pre></tr></table>
+<br>
+<br>
+<br>
+<font size="4"><b>Berechnung der Winkel:</b></font><br>
+<br>
+<br>
+
+Berechnung des gelben Winkels: <font size="2"><b>(Bild 3)</b></font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>// angle of vector ACo against xz plane
+#local Wire_Angle = VAngleD(Co-A,&lt;1,0,0&gt;);
+</b></td></pre></tr></table>
+<br>
+Berechnung des violeten Winkels: <font size="2"><b>(Bild 3)</b></font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local Len_Cyan =
+            WD/8*cos(radians(Wire_Angle));
+// rotation angle of 2nd part CoB
+#local Inner_Angle =
+              degrees(atan2(Len_Cyan,BR));
+</b></td></pre></tr></table>
+<br>
+<br>
+<br>
+Berechnung des Eck-Winkels: <font size="2"><b>(Bild 4 + 5)</b></font>
+<br>
+Der Eck-Winkel bei Co ist kleiner als 90&deg; !!!<br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local Corner_Angle = VAngleD(Co-A,B-Co);
+ // corner linear length:
+#local Co_Len =
+    Rmaj*tan(radians(Corner_Angle/2));
+ // linear wire part
+#local Len_X = vlength(Co-A)-Co_Len;      </b></td></pre></tr></table>
+<br>
+<br>
+</td>
+ <td colspan="1">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="coil/Winding_Wire_t01c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+  </table><div align="center"><font size="2"><b>&nbsp; 1) Drahtspule mit 3 Windungen.</b></font></div>
+ </td>
+
+</tr>
+<tr>
+  <td colspan="1">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_t03c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table><div align="center"><font size="2"><b>&nbsp; 2) Eine einzelne Windung.</b></font></div>
+ </td>
+</tr>
+<tr>
+  <td colspan="1">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_t18c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table><div align="center"><font size="2"><b>&nbsp; 3) Geometrie einer Viertelwindung.</b></font></div>
+ </td>
+
+</tr>
+<tr>
+</td>
+
+ <td colspan="1">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_t29c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table><div align="center"><font size="2"><b>&nbsp; 4) Das Torussegment in der Ecke.</b></font></div>
+ </td>
+
+
+ <td colspan="1">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_t35c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table><div align="center"><font size="2"><b>&nbsp; 5) L&auml;nge des Eckteils.</b></font></div>
+ </td>
+
+</tr>
+<tr>
+ <td>
+<br>
+<font size="4"><b>Eine Vierteldrehung des Drahtes:</b></font><br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local W_Corner =
+object{ Segment_of_Torus(
+           Rmaj, // radius major,
+           WR,   // radius minor,
+           -Corner_Angle // segment angle
+         ) //----------------------------
+        rotate&lt;0,90,0&gt;
+        translate&lt;-0,0,+Rmaj&gt;
+      } // ------------------------------
+#local Quarter =
+union{
+   cylinder{ &lt;0,0,0&gt;,&lt;Len_X,0,0&gt;, WR }
+   object{   W_Corner
+             rotate&lt;-Inner_Angle,0,0&gt;
+             translate&lt; Len_X,0,0&gt; }
+   cylinder{ &lt;0,0,0&gt;,&lt;Len_X,0,0&gt;, WR
+             translate&lt;0,0,-Rmaj>
+               rotate&lt;0,-Corner_Angle,0&gt;
+                 translate&lt;0,0,Rmaj&gt;
+             rotate&lt;-Inner_Angle,0,0&gt;
+             translate&lt;Len_X,0,0&gt;
+           } //------------------
+  translate&lt;0,0,-BR&gt;
+  rotate&lt;0,0,Wire_Angle&gt;
+} // end of union  ---------------------- </b></td></pre></tr></table>
+
+<font size="4"><b>Das Aufwickeln des Drahtes:</b></font><br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>union{ //--------------------------------
+ #local Nr = 0;                // start
+ #local EndNr = 4*Revolutions; // end
+ #while (Nr&lt; EndNr)            // loop
+   object{ Quarter
+           translate&lt;0, Nr*WD/4,0&gt;
+           rotate&lt;0,-Nr*90,0&gt;
+         } //----------------
+
+ #local Nr = Nr + 1; // next Nr
+ #end // ---------------// end of loop
+// translate&lt;0,WR ,0&gt;
+ texture{ Wire_Texture }
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0,0&gt;
+} // end of union ----------------------- </b></td></pre></tr></table>
+<br>
+ <div align="center">
+  <font size="2"><b>Szenendatei f&uuml;r POV-Ray:</b><br>
+  <a href="coil/Winding_Wire_x1.txt">&quot;Winding_Wire_x1.txt&quot;</a> oder
+  <a href="coil/Winding_Wire_x1.pov">&quot;Winding_Wire_x1.pov&quot;</a></font></div>
+
+ </td>
+
+ <td>
+<br>
+<br>
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_110c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table>
+
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_100c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table>
+
+
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_105c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table>
+ </td>
+</tr>
+</table>
+
+</td></tr>
+</table>
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

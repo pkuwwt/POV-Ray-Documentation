@@ -1,0 +1,174 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="CSG - Constructive Solid Geometry Teil I">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, csg, Constructive Solid Geometry, boolesche Algebra, union, merge, intersection, difference, konstruieren">
+<title>CSG - Constructive Solide Geometry mit POV-Ray - Teil I deutsch</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg1e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povcsg1e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povcsg1i.htm"><font size="2">Italiano</font></a>
+        <a href="povcsg1i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg1f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povcsg1f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br>
+<br>
+ &nbsp;<b>&gt;</b> <!--a href="povcsg1.htm"--><b>CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--a href="povcsg1.htm"--><b>Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--a href="povcsg1.htm"--><b>Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3.htm">difference</a><br>
+ &nbsp; &nbsp; -  <a href="povcsg4.htm">intersection</a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <a href="povcsg4.htm">+ invers</a><br>
+ &nbsp; &nbsp; -  <a href="povcsg5.htm">clipped_by</a><br>
+ &nbsp; &nbsp; -  <a href="povcsg6.htm">Koinzidenzprobleme</a></b><br>
+ &nbsp; &nbsp; -  <a href="povcsg7.htm">Texturen u. CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h2 align="center">CSG - Boolesche Algebra mit K&ouml;rpern</h2>
+
+<table align="center" width="95%"><tr><td>
+<p align="justify">&nbsp; &nbsp; Dieser Artikel m&ouml;chte einige wesentliche Prinzipien zur Erzeugung neuer und
+komplexerer K&ouml;rper aus den Grundk&ouml;rpern erl&auml;utern.
+Dazu dient die sogenannte CSG-Technik, welche mit K&ouml;rpern im wesentlichen dieselben Operationen
+erlaubt, wie sie bereits aus der Mengenlehre bekannt sind. Dabei werden K&ouml;rper
+als besondere Punktmengen im dreidimensionalen Raum betrachtet. Mit ihnen lassen sich
+alle Mengen-Operationen ausf&uuml;hren, die man von der &quot;Boolschen Algebra&quot; her kennt - und noch etwas mehr! <br>
+&nbsp; &nbsp; <b>CSG-f&auml;hige K&ouml;rper:</b>
+Solche Operationen k&ouml;nnen mit allen K&ouml;rpern ausgef&uuml;hrt werden, bei denen
+eine eindeutige Unterscheidung zwischen &quot;innen&quot; und &quot;au&szlig;en&quot; m&ouml;glich ist.
+Die wichtigsten sind: Quader (box), Kugel (sphere), Zylinder (cylinder), Kegel bzw.
+Kegelstumpf (cone), Prisma (prism). Die Ebene (plane) sei besonders erw&auml;hnt:
+der Normalenvektor zeigt hier nach &quot;au&szlig;en&quot;. Auch Figuren aus Dreiecksnetzen (mesh, mesh2)
+k&ouml;nnen verwendet werden, sofern ein &quot;inside_Vector&quot; definiert ist. <br>
+Nicht verwendbar sind z.B. triangle oder disk,
+da bei diesem Formen kein eindeutiges &quot;innen&quot; und &quot;au&szlig;en&quot; definierbar ist.<br>
+Die <b>CSG-Operationen</b> k&ouml;nnen mehrfach verschachtelt auf Objekte angewandt werden.
+Die CSG-Operationen, welche mit csg-f&auml;higen K&ouml;rpern ausgef&uuml;hrt werden
+k&ouml;nnen, sind im einzelnen:<br>
+</p></td></tr></table>
+
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td width="140" height="30"><b>Vereinigung</b></td>
+  <td width="140" height="30"><b>Differenz</b></td>
+  <td width="140" height="30"><b>Schnittmenge</b></td>
+  <td width="140" height="30"><b>Komplement-<br>menge</b></td>
+  <td width="140" height="30"><b>&ouml;ffnender<br> Schnitt</b></td>
+ </tr>
+ <tr>
+  <td><a href="povcsg2.htm"><img src="boole_u.gif"  width="130" height="100"  border="0"></a></td>
+  <td><a href="povcsg3.htm"><img src="boole_d.gif"  width="130" height="100" border="0"></a></td>
+  <td><a href="povcsg4.htm"><img src="boole_i.gif"  width="130" height="100" border="0"></a></td>
+  <td><a href="povcsg4.htm#inverse"><img src="boole_k.gif"  width="130" height="100" border="0"></a></td>
+  <td><a href="povcsg5.htm"><img src="boole_cl.gif" width="130" height="100" border="0"></a></td>
+ </tr>
+ <tr>
+  <td width="140" height="50"><a href="povcsg2.htm">union{...}</b><br>oder merge{...}</b></a></td>
+  <td width="140" height="50"><a href="povcsg3.htm">difference{...}</b></a></td>
+  <td width="140" height="50"><a href="povcsg4.htm">intersection{...}</b></a></td>
+  <td width="140" height="50"><a href="povcsg4.htm#inverse">inverse</b></a></td>
+  <td width="140" height="50"><a href="povcsg5.htm">clipped_by{...}</b></a></td>
+ </tr>
+ <tr>
+  <td colspan ="5">
+      <table align="center" border="2" cellpadding="0" cellspacing="0" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+      <tr><td colspan ="5"><nobr>
+           <a href="povcsg2.htm"><img src="boole_u.jpg" width="130" border="0" height="98" alt="union and merge" title="union and merge"></a>
+           <a href="povcsg3.htm"><img src="boole_d.jpg" width="130" border="0" height="98" alt="difference" title="difference"></a>
+           <a href="povcsg4.htm"><img src="boole_i.jpg" width="130" border="0" height="98" alt="intersection" title="intersection"></a>
+           <a href="povcsg4.htm#inverse"><img src="boole_in.gif" width="130" border="0" height="100" alt="inverse" title="inverse"></a>
+           <a href="povcsg5.htm"><img src="boole_c.jpg" width="130" border="0" height="98"  alt="clipped_by" title="clipped_by"></a>
+        </nobr>
+      </td></tr></table>
+  </td>
+ </tr>
+</table>
+</div>
+<br>
+<hr>
+<div align="center">
+<table border="0" align="right">
+<tr>
+ <td><font size="-1"><!--a href="povcsg1.htm"-->CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2.htm">union+merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg4.htm">intersection+inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6.htm">Koinzidenz</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7.htm">Texturen</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></tr></table> <!-- global-->
+
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

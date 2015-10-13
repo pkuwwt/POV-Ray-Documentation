@@ -1,0 +1,239 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Plants with POV-Ray - trees by POV-Tree and TOMTREE.inc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="Plants, raytracing, tutorial, pov, povray, 3d graphics, raytracing descriptions, povray tutorials, beginners, advanced, geometric objects, csg, macros">
+<meta name="description" content="POV-Ray tutorial - Plants with POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top">
+     <font size="1"><nobr>POV-Ray Raytracer</nobr> <nobr>Descriptions and Examples</nobr>
+                    <nobr>by Friedrich A. Lohm&uuml;ller</nobr></font><a name="top"></a>
+ <hr size="3">
+   <div align="center">
+      <font size="5">&nbsp; &nbsp;Plants with POV-Ray</font>
+   </div>
+ </td>
+ <td align="right">
+        <a href="plants_400i.htm"><font size="2">Italiano </font></a>
+        <a href="plants_400i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="plants_400f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="plants_400f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="plants_400d.htm"><font size="2">Deutsch </font></a>
+        <a href="plants_400d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="3">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><a href="plants_00e.htm"><font size="+1">Plants with POV-Ray</font></b></a></nobr><br>
+<!--&nbsp;&nbsp; -  <a href="plants_200e.htm">Fibonacci + Random</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_300e.htm">Grass-Macros</b></a><br-->
+&nbsp; <b>&gt;</b> <!--a href="plants_400e.htm"--><b>Trees by POV-Tree</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_410e.htm">POV-Tree examples</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_420e.htm">Textures for POV-Trees</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_500e.htm">Trees by Arbaro</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_510e.htm">Arbaro tree examples</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_520e.htm">Textures for Arbaro</b></a><br>
+<!--&nbsp;&nbsp; -  <a href="plants_600e.htm">Leaves + Flowers</b></a><br-->
+<br>
+&nbsp;&nbsp; -  <a href="plants_050e.htm">Other Plant Examples</b></a><br>
+<br>
+<nobr>&nbsp;&nbsp;-  <a href="../objects/obj_400e.htm">Ready-made Plant Objects</b></a></nobr><br>
+&nbsp;&nbsp;-  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="povtree/im/Linden_01cs.jpg" width="80" height="80" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="5"><nobr>&nbsp;Trees by POV-Tree and TOMTREE.inc</font> &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="2">
+   <p align="justify"><b>POV-Tree</b> is a tree generator written in Java.<br>
+   <font size="-1">Authors: Tom Aust (tree algorithm) and  Gena Obukhov (Java programming).</font><br>
+   Localized versions available:  de, en, fr, it, ja, ru.<br>
+   <b><i>Export formats:</i></b> the trees are exported by POV-Ray include files with POV-Ray mesh or as include files,
+   needed for TOMTREE-1.5.inc with the parameters for a blob tree.<br>
+   The package includes 12 different examples of trees.<br>
+   <b><i>Quality:</i></b> POV-Tree trees are good background trees, with some additional efforts also
+    more detailed for close-up views, i.e. with HF-leaves and trees with flowers and fruits.<br>
+  &nbsp;&nbsp;&nbsp;  If your are using POV-Tree with output by export as POV-Ray meshes, be aware: <br>
+    Mesh files for trees can have sizes of 10 to 20 MB or more - so we need to be patient if we want to load that file in an editor.<br>
+
+   <b><i>Where to get:</i></b><br>
+   The Java program
+   <a href="http://web.archive.org/web/20071101052625/propro.ru/go/Wshop/povtree/download.html">POV-Tree with TOMTREE-1.5.inc</a>  by Gena Obukhov.<br>
+   Very interesting examples can be found on the homepage of Tom Aust (the creator of the original blob tree macro in 'tomtree.zip'):<br>
+   <a href="http://www.aust-manufaktur.de/austv2x.html">http://www.aust-manufaktur.de/austv2x.html</a>.<br>
+   Don't use the original TOMTREE.inc because the version  TOMTREE-1.5.inc is much faster with newer POV-Ray versions.<br>
+   POV-Tree runs with Java version 1.4.2 or newer.
+   &nbsp; <font size="-1">(For Java see <a href="http://java.com/en/download/manual.jsp">Sun Microsystems</a>.)</font>
+   <br>
+   <b><i>Installation and Running:</i></b><br>
+   Download the according file (here: povtree1.5.zip) and unzip it to a directory of your choice.<br>
+   <i>Windows:</i> Double click on the file 'povtree.jar' for starting the program GUI.<br>
+   <i>Linux:</i> command line from the unzipped povtree directory: java -jar povtree.jar<br>
+   <b>POV-Tree start window:</b>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="povtree/im/POVTree_0en.jpg" width="617" height="515" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+    The <b>best way of learning</b> optimal handling of the hundred details of this program is to study the
+    built-in examples. Don't forget, to save any changed tree objects under a new name,
+    so you will not loose the original settings.<br>
+ <b>Open a example tree:<br>
+    Click on image in 2nd row, 2nd column, 'Linden' and press the 'preview'-button:</b>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="povtree/im/POVTree_1en.jpg" width="617" height="545" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+<br>
+  <b>Saving the example tree as a POV-Ray include file &quot;Linden.inc&quot; <br>
+   for a blob tree via TOMTREE.inc:<br>
+   Use: 'File' > 'Save as' </b>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="povtree/im/POVTree_2en.jpg" width="505" height="353" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+   <div align="center">
+     <font size="-1"><i>'File' > 'Save as' </i></font></div>
+ <br>
+
+ <b>Using the tree include file in POV-Ray:</b><br>
+ Here we have to add something like the following lines to our
+ POV-Ray scene file:<br>
+<font size="1"> (Change the pathnames according to your pathes!)</font>
+ <table border="2"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+ <tr>
+ <td valign="top" bgcolor="#ffffff">
+<pre><b>//-----------------------------------------------------
+#include "povtree/trees/Linden.inc"
+#include "povtree/TOMTREE-1.5.inc"
+//-----------------------------------------------------
+#declare Tree_01 = object{TREE double_illuminate hollow}
+//-----------------------------------------------------
+object{ Tree_01
+        scale 4
+        rotate&lt; 0, 0, 0&gt;
+        translate&lt; 0, 0.00, 0&gt;
+      } //--------------------------------------------
+//----------------------------------------------------</b></td></tr></pre>
+ </table>
+<font size="2" align="center"><b>Complete scene description for POV-Ray:</b><br>
+ <a href="povtree/pov/Linden_01.pov">&quot;Linden_01.pov&quot;</a> and
+ <a href="povtree/pov/Linden.inc">&quot;Linden.inc&quot;</a> ( <b>TOMTREE-1.5.inc</b> is part of <b>povtree1.5.zip</b> )</font>
+<br>
+
+<br>
+   <div align="center">
+   <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="povtree/im/Linden_01c.jpg" width="450" height="450" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table>
+     <font size="-1">The POV-Ray image of <b>'Linden_01.pov'</b></font></div>
+<br>
+
+  <br>
+ &quot;<b>Linden.inc</b>&quot; - declares a set of parameter for a blob tree by TOMTREE-1.5.inc,<br>
+ When we first include this set by<br>
+ <b>#include &quot;Linden.inc&quot;</b><br>
+ and then call TOMTREE by <br>
+ <b>#include &quot;TOMTREE-1.5.inc&quot;</b><br>
+ the this file declares an object named <b>&quot;Tree&quot;</b>.<br>
+ This object has a size of about 1 meter (ca. 3 ft),<br>
+ so scaling it by &quot;scale 4&quot; produces a tree of 4 meter size.<br>
+<br>
+<br>
+<br>
+ &nbsp;&nbsp;&nbsp;  <font size="-1"> The original textures are often a bit poor
+   <font size="2">(may be they were good with previous POV-Ray versions)</font>,
+     but there are many possibilties to change them to more realistic ones
+    - see among others my page <font size="-1"><a href="plants_420e.htm">Textures for POV-Trees</a></font>.<br>
+<br>
+<br>
+
+ </td>
+</tr>
+<tr>
+<td>
+<!--div align="center"><b>
+<a href="plants_00e.htm">0</a> |
+<a href="plants_100e.htm">1</a>  | <a href="plants_200e.htm">2</a> | <a href="plants_300e.htm">3</a> |
+<a href="plants_400e.htm">4</a> | <a href="plants_500e.htm">5</a> | <a href="plants_600e.htm">6</a> |
+<a href="plants_700e.htm">7</a> | <a href="plants_800e.htm">8</a></b></div-->
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

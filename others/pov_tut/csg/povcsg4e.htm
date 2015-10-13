@@ -1,0 +1,235 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray, povray, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, csg, Constructive Solid Geometry, boolean algebra, union, merge, intersection, difference, inverse">
+<meta name="description" content="tutorial on CSG - Constructive Solid Geometry with POV-Ray - part IV">
+<title>csg tutorial - Constructive Solid Geometry with POV-Ray - part IV</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>CSG - Constructive Solid Geometry</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="povcsg4i.htm"><font size="2">Italiano </font></a>
+        <a href="povcsg4i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg4f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="povcsg4f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povcsg4.htm"><font size="2">Deutsch </font></a>
+        <a href="povcsg4.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="povcsg1e.htm">CSG Constructive</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1e.htm">Solid</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="povcsg1e.htm">Geometry</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg2e.htm">union + merge</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg3e.htm">difference</a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="povcsg4e.htm"--><b>intersection</b></a><br>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <!--a href="povcsg4e.htm"--><b>+ invers</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg5e.htm">clipped_by</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg6e.htm">coincident surfaces</b></a><br>
+ &nbsp; &nbsp; -  <a href="povcsg7e.htm">textures in CSG</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<a name="start"></a>
+<table width="90%" align="center" border="0"><tr><td> <!-- global-->
+<h5 align="center">Boolean Algebra with Solids - part IV</h5>
+<h2 align="center">About &quot;intersection&quot; and &quot;inverse&quot;</h2>
+
+<table border="0"  width="90%" cellpadding="0" cellspacing="0" >
+<div align="center">
+    <tr>
+        <td align="center"><img src="boole_i.gif" width="130" height="100"></td>
+        <td align="center">
+          <table align="center" border="2" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+           <tr><td><img src="boole_i.jpg" width="130" height="98"></td></tr></table>
+           <font size="2"><nobr>intersection{...}</nobr></font>
+        </td>
+        <td width="10"></td>
+        <td align="center"><img src="boole_ii.gif" width="130" height="100"></td>
+        <td width="10"></td>
+        <td align="center"><br>
+          <table align="center" border="2" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+           <tr><td><img src="boole_d.jpg" width="130" height="98"></td></tr></table>
+           <font size="2"><nobr>inverse</nobr></font>
+
+        </td>
+    </tr>
+
+</table>
+</div>
+<p align="justify">
+<br>
+<b>The statement &quot;intersection{...}&quot;</b><br>
+With two or more shapes it results in a shape which has an area that consists of the area
+common to all these shapes, the area where the objects are overlapping:<br><br>
+
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+<b>Sample &quot;intersection&quot;:</b>
+ <table align="center" border="2" bgcolor="#EEEEEE"
+  bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><pre><b><font color="#800000">intersection{</font>
+box {&lt;-0.5,-0.5,-0.5&gt;,&lt; 0.5,0.5,0.5&gt;
+     texture{
+       pigment{color rgb&lt;1,0.65,0&gt;}
+       finish {phong 0.5}}
+    }
+sphere{&lt;0,0,0&gt;,0.66
+     texture{
+       pigment{color rgb&lt;1,0,0&gt;}
+       finish {phong 0.5}}
+    }
+rotate&lt;0,-30,0&gt;
+translate&lt;0,0.5,0&gt;
+<font color="#800000">}</font> // end of intersection ------------</b></td></pre></tr></table>
+</td>
+        <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_i1.jpg" width="320" height="240"></td></tr></table>
+        </td>
+    </tr>
+</table>
+</div>
+<br>
+<br><a name="inverse"></a>
+<b>The complement - "inverse" </b><br>
+With this statement it is possible to turn a shape's inside out. <br>
+<table><tr><td>Especially true is: </td>
+           <td><table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_it.gif" width="129" height="28"></td></tr></table>
+             </td><td><b>.</b></td></tr></table>
+This is very useful in &quot;differece&quot; and &quot;intersection&quot;- it makes often things easier to describe
+in POV as the following sample shows:<br><br>
+<div align="center">
+<table border="2" cellpadding="2" cellspacing="2" bgcolor="#efefef">
+ <tr>
+  <td>
+   <b><i>Instead of:</i></b>
+  </td>
+  <td>
+   <b><i>write shorter:</i></b>
+ </td>
+</tr>
+<tr>
+<td>
+<pre><b>difference{ intersection {object{A}
+                          object{B}
+                         }
+            object{C}
+          }</b></td></pre>
+<td>
+<pre><b>intersection {object{A}
+              object{B}
+              object{C inverse}
+             }</b></td></pre>
+</tr></table>
+</div>
+<br>
+
+<div align="center">
+<table border="0" wwidth="90%" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+    <tr>
+        <td>
+<b>Sample "inverse": </b><br>
+ <table align="center" border="2" bgcolor="#EEEEEE"
+  bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><pre><b>i<font color="#800000">ntersection{</font>
+box{&lt;-0.5,-0.5,-0.5&gt;,&lt;0.5,0.5,0.5&gt;
+     texture{/*see above*/} }
+sphere{&lt;0,0,0&gt;,0.66
+     texture{/*see above*/} }
+cylinder{&lt;0,0,-1&gt;,&lt;0,0,1&gt;,0.3 <font color="#800000">inverse</font>
+     texture{pigment{color YellowGreen}
+             finish {phong 0.5}}}
+cylinder{&lt;0,-1,0&gt;,&lt;0,1,0&gt;,0.3 <font color="#800000">inverse</font>
+     texture{pigment{color YellowGreen}
+             finish {phong 0.5}}}
+cylinder{&lt;-1,0,0&gt;,&lt;1,0,0&gt;,0.3 <font color="#800000">inverse</font>
+     texture{pigment{color YellowGreen}
+             finish {phong 0.5}}}
+rotate&lt;0,-30,0&gt; translate&lt;0,0.5,0&gt;<font color="#800000">}</font></b></td></pre></tr></table>
+</td>
+        <td><br>
+             <table align="center" border="2" bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+             <tr><td><img src="boole_i2.jpg" width="320" height="240"></td></tr></table>
+        </td>
+    </tr>
+</table>
+</div>
+</p>
+
+</td></tr></table> <!-- global-->
+
+
+<hr size="3">
+<div align="center"></div>
+<table align="right">
+<tr>
+ <td><font size="-1"><a href="povcsg1e.htm">CSG</a></font> | </td>
+ <td><font size="-1"><a href="povcsg2e.htm">union + merge</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg3e.htm">difference</b></a></font> | </td>
+ <td><font size="-1"><!--a href="povcsg4e.htm"-->intersection + inverse</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg5e.htm">clipped_by</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg6e.htm">coincident surfaces</b></a></font> | </td>
+ <td><font size="-1"><a href="povcsg7e.htm">textures</b></a></font></td>
+</tr>
+</table>
+</div>
+
+</td></h5>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

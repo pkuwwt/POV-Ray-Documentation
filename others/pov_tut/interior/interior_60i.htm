@@ -1,0 +1,229 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Design del Interno dei Oggetti trasparenti con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Design del Interno dei Oggetti trasparenti con material, interior e media - une introduzione al linguaggio di descrizione di scene (SDL) del raytracer POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, infographie, 3D computer graphics, oggeti transparenti, material, textures, interior, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr>raytracer POV-Ray </nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Design del Interno dei Oggetti trasparenti</b></font>
+      <font size="-1"><b>con POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_60e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_60e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_60f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_60f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_60d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_60d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+<br>
+<br>
+<nobr> &nbsp; <a href="interior_000i.htm">Indice del contenuto</b></a></nobr><br>
+ &nbsp; <a href="interior_000i.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05i.htm">Sintassi di material,</b></a><br>
+ &nbsp; &nbsp; &nbsp;  texture e interior</b><br>
+&nbsp; -  <a href="interior_03i.htm">Vetro della finestra</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; e max_trace_level </b></a><br>
+&nbsp; -  <a href="interior_001i.htm">fog - Nebia</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10i.htm">Sintassi di media</b></a> <br>
+&nbsp; -  <a href="interior_30i.htm">Media e Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; con/senza density map <br>
+&nbsp; -  <a href="interior_20i.htm">Raggi nella Nebbia </b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -  <a href="interior_40i.htm">Spada di Luce</b></a> <br>
+&nbsp; -  <a href="interior_44i.htm">Fiamme di candele</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -  <a href="interior_50i.htm">Luce della Finestra </b></a><br>
+&nbsp; -  <a href="interior_70i.htm">Vapore, Fumo, Nuvole</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -  <!--a href="interior_60i.htm"--><b>Tromba d'Aria.</b></a> <br>
+
+<nobr>&nbsp; Problemi Speciali con Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_080i.htm">Cambiare la scala di Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_090i.htm">Sovrapposizione di Media</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="90%" align="center" cellpadding="20"><tr><td>           <!-- inner table -->
+
+<h2 align="center"><a name="Top"></a><b>Tromba d'Aria<br> con Absorping Media</b>
+      <br><font size="-1">L'usa della parola chiave &quot;absorption&quot;</nobr> in &quot;media&quot;<br>
+                          per la simulazione di vortici di vento, trombe d'aria e tornado.</font><br>
+</h2>
+<td>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/absorbing_media_05.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table><font size="-2">Dust Devils con media absorption.</font>
+
+</td></tr></table><hr>
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<tr>
+ <td valign="top" rowspan="2">
+ <p align="justify">Con &quot;media absorption&quot; possiamo simulare una tromba d'aria.
+ L'oggetto di container usato (qui: un cilindro) deve essere chiaro e con la parola chiave &quot;hollow&quot;
+ <font size="-1">(Per admettre gli effetti di quot;mediaquot; e di &quot;fog&quot; all'interno dell'oggetto!)</font>.
+ La forma della &quot;density&quot; di media si pu&ograve; essere deformato con un'altra &quot;density&quot; addizionale.<br>
+
+<font size="-1">
+Note: Il colore della luce &quot;absorb&eacute;e&quot; &egrave; specificata doppo la parola chiave &quot; absorption &quot;.
+ Ma la media stessa e la sua ombra, illuminati con luce bianco, si rappresentano nel colore della luce non-assorbita!
+ Vuole dire:
+ Con <nobr>&quot;media{ absorption &lt;1,0,0&gt; ...}&quot;</nobr> (rosso assorbito)
+ il colore di media &egrave; <nobr>&quot;&lt;0,1,1&gt;&quot;, questo &egrave; il colore ;&quot;cyan;&quot;
+ </font></p>
+ <br>
+Esempio &quot;Tromba d'Aria&quot;:
+  <table border="1" cellspacing="0" cellpadding="1" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+  <tr><td>
+<pre> // example de scattering media  "dust devil"
+ // -------------------------------------------------------
+ cylinder{ &lt;0,0,0&gt;,&lt;0,100,0&gt;,1.5
+           pigment { rgbt 1 }
+           hollow
+
+       interior{ //---------------------
+          media{ scattering{ 1, &lt;1,1,1&gt;
+                             extinction  2.5 }
+                 absorption rgb&lt; 0.61, 0.85, 0.85&gt;*2
+                 // density 1
+                 density{ spiral2 10
+                          turbulence 0.20
+                          color_map {
+                                [0.00 rgb 0.00] // border
+                                [0.50 rgb 0.20] //
+                                [1.00 rgb 1.00] // center
+                              } // end color_map
+                          rotate&lt;90,0,0&gt;
+                          scale&lt;1,0.5,1&gt;
+                        } // ----------- end of density 1
+                 // density 2
+                 density{ cylindrical
+                          turbulence 1.0
+                          frequency 1
+                          color_map {
+                                [0.00 rgb 0.00] // border
+                                [0.50 rgb 0.20] //
+                                [0.80 rgb 1.00] //
+                                [1.00 rgb 0.50] // center
+                              } // end color_map
+                          scale&lt;1,2,1&gt;
+                        } // ----------- end of density 2
+          } // end of media ------------------
+         } // ------------------ end of interior
+
+  scale &lt;1,1,1>
+  rotate &lt;0,0,-20>
+  translate &lt;0.00, 0.10, 0.00>
+ }// end of object ----------------------------------------
+</b></td></pre></tr></table>
+ <br>
+
+ </font></p>
+ <br>
+ </td>
+ <td align="center"><h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/absorbing_media_0.jpg" width="240"  height="320"  vspace="0" hspace="0"></td>
+    </tr></table>&quot;media&quot; con <nobr>&quot;absorption &lt;1,0,0&gt;&quot;</nobr> (Red)<br>
+     &egrave; visibile come &quot;&lt;0,1,1&gt;&quot; (Cyan)!</h6>
+ </td>
+</tr>
+<tr>
+ <td align="center"><h6>
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/absorbing_media_02.jpg" width="240"  height="320"  vspace="0" hspace="0"></td>
+    </tr></table>&quot;Dust Devil&quot;, tromba d'aria realizzata con &quot;media absorption&quot;.</h6>
+<h5 align="center">Descizione della scena per <nobr>POV-Ray:</nobr><br>
+ <a href="pov/absorbing_media_02.txt">&quot;absorbing_media_02.txt&quot;</a> o
+ <a href="pov/absorbing_media_02.pov">&quot;absorbing_media_02.pov&quot;</a></h5>
+<br>
+ </td>
+</tr>
+
+<tr><td colspan="2"><hr size="3"></td></tr>
+<tr>
+ <td valign="bottom" align="right">
+Un Vortice di vento &egrave; raramente da sola!
+ </td>
+ <td valign="bottom" align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/absorbing_media_08b.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+ </td>
+</tr>
+
+
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

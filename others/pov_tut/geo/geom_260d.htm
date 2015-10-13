@@ -1,0 +1,196 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Elementare Geometrie f&uuml;r Raytracing mit POV-Ray, Regul&auml;rer Oktaeder">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Elementare Geometrie f&uuml;r Raytracing mit POV-Ray, Kuboktaeder">
+<title>Elementare Geometrie f&uuml;r Raytracing mit POV-Ray - Kuboktaeder</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Elementare Geometrie</b></font>
+      <font size="-1"> f&uuml;r Raytracing</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_260e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="geom_260e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="geom_260i.htm"><font size="2">Italiano</font></a>
+        <a href="geom_260i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_260f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="geom_260f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="geom_000d.htm">Geometrie Grundlagen</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000d.htm">f&uuml;r Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050d.htm">Rechtwinkliges Dreieck</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070d.htm">Pythagoras</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080d.htm">Trigonometrie Basis</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090d.htm">Kosinussatz</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100d.htm">Gleichseitiges Dreieck</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150d.htm">Regul&auml;res Polygon</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200d.htm"--><i>Polyeder</i></b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200d.htm">Regul&auml;rer Tetraeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250d.htm">Regul&auml;rer Oktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300d.htm">W&uuml;rfel &amp; Quader</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500d.htm">Regul&auml;rer Dodekaheder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700d.htm">Regul&auml;rer Ikosaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_260d.htm"--><b>Kuboktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270d.htm">Oktaederstumpf</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280d.htm">Rhombenkuboktaeder</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800d.htm">Ikosaederstumpf</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000d.htm"--><i>Kreise</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100d.htm">Tangierende Kreise</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200d.htm">Interne Tangenten</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300d.htm">Externe Tangenten</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+<table width="80%"><tr>
+   <td><img src="im/Rotate_Cuboctahedron_000c_005_60_08s64ct1.gif" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><h2><b><nobr>Kuboktaeder &nbsp;</nobr></b></h2>
+      <font size="-1">Einige interessante geometrische Eigenschaften</font></td>
+   <td><table border="1" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Fold_Cuboctahedron_000c_010b_64_10s65c.gif" width="160" height="120" border="0" hspace="0" vspace="0">
+    </td>
+    </tr></table><font size="-1">Falten eines Kuboktaeders</font>
+   </td>
+   <td><table border="1" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Fold_Cuboctahedron_000c_010b_64_10s32c.gif" width="160" height="160" border="0" hspace="0" vspace="0">
+    </td>
+    </tr></table>
+    </td>
+</tr></table>
+<br>
+<font size="-2"><i>Im folgenden wird f&uuml;r die Quadratwurzel einer Zahl, der englische Ausdruck &quot;sqrt(</i>ZAHL<i>)&quot; <br>
+gem&auml;&szlig; der von POV-Ray verwendeten Syntax geschrieben.</i></font><br>
+</p>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><b>Dimensionen</b><br>
+ <font size="-1">L&auml;nge der Kanten: <b>a</b>.</font></td>
+ </tr>
+ <tr>
+  <td  valign="top">
+<font size="-1">Der Radius der Umkugel:</font><br>
+<b>R =   a ;</b><br>
+<br>
+<font size="-1">Der Radius der Kantenkugel (tangiert die Kanten):</font><br>
+<b> Re =  a/2 * sqrt(3);</b><br>
+<br>
+<nobr><font size="-1">Der Winkel zwischen Quadrat und Dreieck:  ~ 125,26&deg;</nobr></font><br>
+<nobr><font size="-1">Fl&auml;chen_Winkel = </font><b>degrees(acos(-1/sqrt(3)));</nobr></b><br>
+<br>
+<nobr><font size="-1">Der Winkel zwischen zwei Kanten:  120&deg;</nobr></font><br>
+<nobr><font size="-1">Kanten_Winkel =  </font><b>degrees(acos(-1/2))</nobr></b><br>
+<br>
+</td>
+ </tr>
+</table>
+<br>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Inside_Cuboctahedron_000ci_006_160.gif" width="160" height="160" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Innerhalb des Kuboktaeders:<br>
+                                 4 regelm&auml;&szlig;ige Sechsecke.</font><br>
+</div>
+
+</td>
+<td valign="top" width="50%">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td>
+    <img src="im/Fold_Cuboctahedron_000c_002.jpg" width="384" height="384" border="0" hspace="0" vspace="0"></td>
+    </tr></table><font size="-1">Kuboktaeder</font><br>
+
+
+
+
+
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="I Tipi di Sorgenti di Luce in POV-Ray, tutorial POV-Ray, descrizione di scene di POV-Ray, raytracing, povray, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, descrizione raytracing, grafica 3d">
+<meta name="description" content="Sorgenti di luce - le specialit&agrave; in POV-Ray, un tutorial POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Sorgenti di luce - le specialit&agrave; in POV-Ray</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030"
+      link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a>
+  <h6><nobr>Introduzione al linguaggio di descrizione di scene del raytracer POV-Ray</nobr>
+    <nobr> &nbsp; &nbsp; &nbsp; &nbsp;</nobr><br>
+    di Friedrich A. Lohm&uuml;ller <br>
+ <div align="center"><font size="+1">&nbsp; &nbsp; &nbsp; &nbsp;<b>Camera, Sorgenti di Luce e dettagli in POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="light_e2.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="light_e2.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="light_f2.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="light_f2.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="light_d2.htm"><font size="2">Deutsch</font></a>
+        <a href="light_d2.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br></font>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="camlit_i1.htm">Camera + Luce</b></a><font size="2"><br>
+ &nbsp;&nbsp;</font><a href="camlit_i1.htm">in POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="camlit_i1.htm">Indice del contenuto</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_i1.htm">Tipi di sorgenti di luce</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#point_light">puntiforme</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#Spotlight">spotlight</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#cylindrial">cylindrico</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#parallel">parallel</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i1.htm#area">area_light</b></a>, ombre diffuse</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp;<!--a href="light_i2.htm"--><b>Luce - le specialit&agrave;</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#looks_like">light_source visible</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#shadowless">shadowless</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#projected">projected_through</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_i2.htm#fade_out">Fading</b></a>, attenuazione<br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_i1.htm">Tipi di Camera</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#perspective">perspective</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#ultra_wide_angle">ultra_wide_angle</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#orthographic">orthographic</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#cylindrical">cylindrical</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#spherical">spherical</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#fisheye">fisheye</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#panoramic">panoramic</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i1.htm#omnimax">omnimax</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_i2.htm">Camera - le specialit&agrave;</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#aspect_ratio">Aspect ratio</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#focal_blur">Focal blur</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_i2.htm#perturbated">La camera perturbata</b></a><br>
+<br>
+<nobr>&nbsp;<a href="arc_persp_i1.htm">Prospettiva architettonica</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="no_i1.htm">Mostrare e nascondere</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_shadow">no_shadow</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_reflection">no_reflection</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_image">no_image</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_i1.htm#no_body">no_body</b></a><br>
+
+
+&nbsp;<br>
+<!--nobr>&nbsp; -  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a></nobr><br-->
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+<tr>
+  <td valign="top" colspan="2">
+     <font size="+2"><b>Sorgenti di luce - le specialit&agrave;:</b></font><br>
+
+
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+
+  <font size="+1"><b>L'invisibilit&agrave; di sorgenti luminose
+  e '</b><a name="looks_like"><b>looks_like</b></a><b>'</b></font><br>
+  <font size="-1">I luci puntiformi da s&eacute; sono invisibile:
+  <font size="-2">(Il raggione: perch&eacute; la precisione del calcolo il &egrave; quasi
+  impossibile di colpire la posizione della luce con raytracing
+  - e se questo &egrave; accaduto non vediamo pi&ugrave; che solo un pixel bianco!)</font><br>
+  Qui come si pu&ograve; fare visibile una 'light_source':</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>light_source{&lt;1.3,1,0&gt; color White*0.7
+        <font color="#aa0000">looks_like{
+           sphere{ &lt;0,0,0&gt;,0.5
+                   texture{
+                    pigment{color White}
+                    finish {ambient 0.9
+                            diffuse 0.1
+                            phong 1}
+                   } // end texture
+                } // end of sphere
+         } //end of looks_like</font>
+ } //end of light_source</td></b></pre>
+  </tr>
+  </table>
+</td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_looks_like.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Una 'light_source' con 'looks_like'</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+<td valign="top">
+   <font size="+1"><a name="shadowless">
+   <b>La luce senza ombra - 'shadowless':</b></a></font> <font size="-1"></font>
+
+  <table align="center" border="2"  bgcolor="#efefef"  cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>
+light_source{ &lt;2000,2000, 0&gt; color White
+              <font color="#aa0000">shadowless</font> } </b></td></pre></tr>
+    </table>
+<font size="-1">L'uso: Per un luce per schiarire parti troppo ombreggiati invece di valori pi&ugrave; alti di 'ambient'.<br>
+ <b>Nota:</b> Con questa luce <b>non ci sono riffessi di luce</b> come 'phong'.<br>
+ Questa &egrave; la luce perfetta per un luce di flash per schiarire, se la luce si trova esattamente alla posizione della camera!<br>
+
+ </font>
+</td>
+<td align="center">
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_shadowless.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>Una luce senza ombra</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="projected">La luce proiettata con 'projected_through'</b></a><b></b></font><br>
+  <font size="-1">Questo &egrave; l'inverso a gettare un'ombra.<br>
+  Bisogna di avere dichiarato un oggetti di proiezione:</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre>
+#declare Projector =
+sphere{ &lt;1,0.5,0&gt;, 0.2
+        texture{ pigment{ color Red }
+                 finish { phong 1}
+               } // end of texture
+      } // end of sphere -------------&nbsp;
+
+<b>light_source{ &lt;1.3,1,0&gt;
+              color White *0.7
+    <font color="#aa0000">projected_through { Projector }</font>
+ } //end of light_source</td></b></pre>
+  </tr>
+  </table>
+</td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_projected_through.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>La luce proiettata con 'projected_through' per una sfera.</b></font>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="fade_out">L'attenuazione della luce (light fading)</b></a><b></b></font><br>
+  <font size="-1">Lo smorzamento di luce.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef"   cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>light_source{</b> &lt;1,1,0&gt;
+              color White 0.7
+              <font color="#aa0000">fade_distance 0.75
+              fade_power 2</font> // 1,2,3, ...
+ } //end of light_source</b></td></pre>
+  </tr>
+  </table><font size="-1">
+           <b>fade_distance</b> = la distanza con intensit&agrave; completa<br>
+           <b>fade_power</b>  1 (lineare)<br>
+           <b>fade_power</b> 2 (quadratico)</font>
+ </td>
+<td align="center">
+  <br>
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/light_fading.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>La luce con 'fade_distance' e 'fade_power'.</b></font>
+
+
+
+</td></tr></table>
+<hr>
+</div>
+<table border="0" align="center" width="95%"><tr><td>
+<p><font size="-1">
+<b><a href="camlit_i1.htm">Indice</a> |
+   <a href="light_i1.htm" ><b>Luce</a> |
+   <!--a href="light_i2.htm" --><b>Luce Specialit&agrave;</a> |
+   <a href="camera_i1.htm">Camera</a> |
+   <a href="camera_i2.htm">Camera  Specialit&agrave;</a> |
+   <a href="arc_persp_i1.htm"><nobr>Prospettiva architettonica</nobr></a> |
+   <a href="no_i1.htm">Mostrare + nascondere</a></b></font></p>
+</td></tr></table>
+
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ </td>
+ <td align="right"  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

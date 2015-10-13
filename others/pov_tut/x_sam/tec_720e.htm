@@ -1,0 +1,478 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Modelling Examples - How To Make a Bridge in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="tec_720i.htm"><font size="2">Italiano </font></a>
+        <a href="tec_720i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_720f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="tec_720f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_720d.htm"><font size="2">Deutsch </font></a>
+        <a href="tec_720d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../../index_d.htm">Home</b></a><br>
+ - <a href="../../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="../sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+<!--&nbsp; -  <a href="sam_400e.htm">Plants</b></a><br-->
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_750e.htm">Ladder</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_700e.htm">Pylons</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_710e.htm">Railing</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="tec_720e.htm"--><b>Bridge</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_730e.htm">Tubes</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_731e.htm">Tube Fork</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_732e.htm">Tube Stopcock</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_400e.htm">Chain</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_450e.htm">Coil of Wire</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_500e.htm">Torpedo</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_600e.htm">Cruise Missile</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_900e.htm">Rocket</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_190e.htm">Wheel</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_100e.htm">Truck</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_850e.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_800e.htm">Airplanes</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_550e.htm">Canoe</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_050e.htm">Guitar Body</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_010d.htm">7-Segment Display</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_020e.htm">Ribbon Cable</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_030e.htm">Cable Harness</b></a><br>
+<!-- &nbsp; &nbsp; -  <a href="sam_000e.htm">Ships</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_000e.htm">Railroad</b></a><br>-->
+
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="80%" align="center">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><a href="javascript:ShowImage('bridges/bridge_0im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''">
+              <img src="bridges/Steel_Bridge_1_12sc.jpg" width="160" height="120" border="0"
+                   alt="Steel_Bridge_1" title="Steel_Bridge_1"></a></td>
+    </tr></table><br>
+
+  </td>
+ <td align="left" valign="top">
+  <p align="justify"><font size="6"><b>How To Make a<br>
+                                       Steel Bridge Framework</b></font><br>
+ <h6>Objects: Round_Box, cylinder.<br>
+     Methods: #local, #declare, union, #macro, #while loops, #if, shearing by matrix.</h6>
+ <h6 align="justify">This example shows how to make the framework of a truss bridge for railroad / railway (Warren or Neville type).
+  It is possible to use variable sizes for the dimensions of the bridge.
+  </td></h6>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+</table>
+
+<table cellpadding="10" width="90%" align="center">
+<tr>
+ <td valign="top">
+<p align="justify">
+<font size="+1"><b>The Construction in details:</b></font></b><br>&nbsp; </font><br>
+  <b>Step 0:</b> <font size="-1">First we declare <b>the basic variables</b> for the dimensions of the bridge
+   (textures are up to you!):</font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local L =10.00; // bridge length        .
+#local H = 2.50; // bridge height
+#local W = 1.50; // bridge width
+#local BD = 0.50, // beam diameter
+#local BR = 0.10; // beam border radius</b></td></pre></tr></table>
+
+ <b>Step 1:</b> <font size="-1">Then we calculate the <b>number of subdivisions</b> and their
+<b>lenght for an equidistance distibution</b> of the segments. We also declare the <b>shearing factor</b>
+(How to calculte see the opposite image):</font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b> // number of subdivisions:
+#local NSub = int(L/H);
+// distance for equidistant distribution:      .
+#local SubDistance = L/NSub;
+// shearing factor:
+#local S_Factor = 0.5*SubDistance/H;
+</b></td></pre></tr></table>
+
+  <b>Step 2:</b> <font size="-1">Now we make a <b>pair of diagonal beams</b>: </font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>union{ // pair of diagonals
+ object{
+   Round_Box(&lt;-BD/2,0,-BD/2&gt;,&lt;BD/2,H,BD/2&gt;,BR,0)
+   matrix&lt; 1, 0, 0, //  matrix-shear_y_to_x
+              S_Factor, 1, 0,
+              0, 0, 1,
+              0, 0, 0>
+ } // -----------------------------------------
+ object{
+   Round_Box(&lt;-BD/2,0,-BD/2&gt;,&lt;BD/2,H,BD/2&gt;,BR,0)
+   matrix&lt; 1, 0, 0, //  matrix-shear_y_to_x
+             -S_Factor, 1, 0,
+              0, 0, 1,
+              0, 0, 0>
+   translate&lt;SubDistance,0,0&gt;
+ } // -----------------------------------------
+}// end union pair of diagonals</b></td></pre></tr></table>
+</td>
+ <td colspan="1">
+  <table align="center" border="3" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="bridges/Steel_Bridge_1_000c.jpg" width="320" height="240" alt="shearing" title="shearing"></td></tr>
+  </table> <font size="-1"><b>How to calculate the shearing factor S.</b></font>
+
+ <table align="center" border="3" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="bridges/Steel_Bridge_1_02c.jpg" width="320" height="208" alt="pair of diagonals" title="pair of diagonals"></td></tr>
+ </table> <font size="-1"><b>pair of sheared diagonals.</b></font>
+ </td>
+
+</tr>
+<tr>
+ <td colspan="1">
+  <b>Step 3:</b> <font size="-1">Now we <b>place the diagonals</b> by a while loop (green).
+    For uneven numbers we mirror the beam in x and move it by 'SubDistance/2' in x (red).
+    We also add a bottom beam and a top beam to get a <b>complete side beam</b>: </font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>// number of subdivisions:
+#local NSub = int(L/H);
+// distance for equidistant distribution:      .
+#local SubDistance = L/NSub;
+// shearing factor:
+#local S_Factor = 0.5*SubDistance/H;
+//-----------------------------------------
+#local Side_Beam =
+union{ // side strut
+<font color="#008000">  #local Nr = 0; // start counter at zero!
+  #while (Nr &lt; 2*NSub )
+</font>  object{
+   Round_Box(&lt;-BD/2,0,-BD/2&gt;,
+             &lt;BD/2,H+2*BR,BD/2&gt;,BR,0)
+   matrix&lt; 1, 0, 0, //  matrix-shear_y_to_x
+              S_Factor, 1, 0,
+              0, 0, 1,
+              0, 0, 0&gt;
+<font color="#800000">   #if( Nr/2 != int(Nr/2 )) // uneven numbers
+      scale&lt;-1,1,1&gt;
+      translate&lt;SubDistance/2,0,0&gt;
+   #end</font>
+   translate&lt;Nr*SubDistance/2 + BD/2,-2*BR,0&gt;
+  } // --------------------------------------
+<font color="#008000">  #local Nr = Nr + 1 ;
+  #end // end of loop
+  //-----------------------------------------
+</font>  // bottom strut
+  object{
+   Round_Box(&lt;0,-BD,-BD/2>,&lt;L+BD,0,BD/2&gt;,BR,0)
+  }
+  // top strut
+  object{
+   Round_Box(&lt;SubDistance/2,-BD,-BD/2>,
+             &lt;L-SubDistance/2+BD,0,BD/2&gt;,BR,0)
+   translate&lt;0,H,0&gt;
+  }
+} // end of union side strut
+// ---------------------------------
+object{ Side_Beam  translate&lt;0,0,0&gt;}
+</b></td></pre></tr></table>
+
+</td>
+<td colspan="1" valign="top">
+
+ <table align="center" border="3" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="bridges/Steel_Bridge_1_03c.jpg" width="320" height="160" alt="diagonals" title="diagonals"></td></tr>
+ </table><font size="-1"><b>The diagonals by a while loop.</b></font>
+
+
+ <table align="center" border="3" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="bridges/Steel_Bridge_1_06c.jpg" width="320" height="160" alt="side strut" title="side strut"></td></tr>
+ </table><font size="-1"><b>The object{ Side_Beam }</b></font>
+ </td>
+
+</tr>
+<tr><td colspan="2"><hr width="100%"></td></tr>
+<tr>
+ <td colspan="1" rowspan="2">
+  <p align="justify"><b>Step 4:</b> The macro <b>Steel_Bridge_Framework_1</b><br>
+   <font size="-1">Two side beam, some floor beams and diagonals
+   and some additonals stringers  complete the bridge.
+   We add all together in a macro to keep the construction as flexible as possible!</font>
+
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>//--------------------------------------//////////
+#macro Steel_Bridge_Framework_1(
+                        Len, // bridge length
+                        H, // bridge height
+                        W, // bridge width
+                        BD,// beam diameter
+                        BR,// beam border radius
+                      )// ------------------------
+// -----------------------------------------------
+// ------------------------------- default texture
+#ifndef( Steel_Bridge_1_Texture_1 )
+#declare Steel_Bridge_1_Texture_1 =
+         texture { pigment{ color rgb&lt;1,1,1&gt;*0.5}
+                   normal { bumps 0.25 scale 0.35 }
+                   finish { phong 1 }
+                 } // end of texture
+#end // ------------------------------------------
+#local L = Len-BD; // inner bridge lenght
+//------------------------------------------------
+// number of subdivisions:
+#local NSub = int(L/H);
+// equidistant distribution:
+#local SubDistance = L/NSub;
+// shearing factor:
+#local S_Factor = 0.5*SubDistance/(H+2*BR);
+
+//------------------------------------------------
+#local Side_Beam =
+union{
+ #local Nr = 0; // start counter at zero!
+ #while (Nr &lt; 2*NSub )
+  object{ Round_Box(&lt;-BD/2,0,-BD/2&gt;,
+                    &lt;BD/2,H+2*BR,BD/2&gt;,BR,0)
+          texture{ Steel_Bridge_1_Texture_1 }
+          matrix&lt; 1,0,0, // matrix-shear_y_to_x
+                     S_Factor, 1, 0,
+                     0,0,1,
+                     0,0,0&gt;
+          #if( Nr/2 != int(Nr/2 )) // uneven numbers
+            scale&lt;-1,1,1&gt;
+            translate&lt;SubDistance/2,0,0&gt;
+          #end
+
+          translate&lt;Nr*SubDistance/2+BD/2,-2*BR,0&gt;
+        } // -------------------------------------
+
+ #local Nr = Nr + 1 ;
+ #end // end
+
+ // bottom strut
+ object{ Round_Box(&lt;0,-BD,-BD/2&gt;,&lt;L+BD,0,BD/2&gt;,BR,0)
+         texture{ Steel_Bridge_1_Texture_1 }
+        }
+ // top strut
+ object{ Round_Box(&lt;SubDistance/2,-BD,-BD/2&gt;,
+                   &lt;L-SubDistance/2+BD,0,BD/2&gt;,BR,0)
+         texture{ Steel_Bridge_1_Texture_1 }
+         translate&lt;0,H,0&gt;
+       }
+} // end of union
+// -----------------------------------------------
+// ---------------------------------- final union:
+#union{
+ object{ Side_Beam translate&lt;0,0,-W/2+BD/2&gt; }
+ object{ Side_Beam translate&lt;0,0,-W/2+BD/2&gt;
+                              scale&lt;1,1,-1&gt; }
+ object{Round_Box(&lt;0,-BD/2,-BD/3&gt;,&lt;L+BD,0,BD/3&gt;,BR,0)
+        texture{ Steel_Bridge_1_Texture_1 }
+        translate&lt;0,0,-W/4+BD&gt;
+       }
+ object{Round_Box(&lt;0,-BD/2,-BD/3&gt;,&lt;L+BD,0,BD/3&gt;,BR,0)
+        texture{ Steel_Bridge_1_Texture_1 }
+        translate&lt;0,0, W/4-BD&gt;
+       }
+ #local Nr = 0; // start counter at zero!
+ #while (Nr &lt;= NSub )
+    // foot traversals
+    object{ Round_Box(&lt;-BD/2,-BD,-W/2&gt;,
+                      &lt;BD/2,0,W/2&gt;,BR,0)
+            texture{ Steel_Bridge_1_Texture_1 }
+            translate&lt;Nr*SubDistance + BD/2,0,0&gt;
+          }
+    // foot diagonals
+    #if( Nr &lt; NSub )
+    object{ Round_Box(&lt;-BD/4,-BD,-W/2+BD/2&gt;,
+                      &lt;BD/4,-BD/2,W/2-BD/2&gt;,BR,0)
+          texture{ Steel_Bridge_1_Texture_1 }
+          matrix&lt; 1,0,0, //  matrix-shear_y_to_x
+                     0,1,0,
+                     1*(SubDistance-BD)/(W-BD),0,1,
+                     0,0,0&gt;
+          #if((Nr/2) = int(Nr/2)) // even numbers
+              scale&lt;1,1,-1&gt;
+          #end
+          translate&lt;(Nr+0.5)*SubDistance+BD/2,0,0&gt;
+        }
+    #end // end diagonals
+ #local Nr = Nr + 1 ;
+ #end // end loop
+} // end final union
+#end // ----------------------------- end of macro
+//--------------------------------------//////////
+
+//------------------------------------------------
+object{ Steel_Bridge_Framework_1(
+                       10.00, // bridge length
+                        2.00, // bridge height
+                        4.00, // bridge width
+                        0.30, // beam diameter
+                        0.05,// beam border radius
+                      )// ------------------------
+
+  rotate&lt;0, 0,0&gt; translate&lt;0,0.0,0&gt;
+} //----------------------------------------------</b></td></pre></tr></table>
+<b>Note:</b> For a more comfortable use of this as a ready-made object
+it should be put in an include file as demonstrated in the opposite
+sample files!
+</td>
+
+ <td colspan="1">
+<br>
+<br>
+<br>
+<br>
+ <table align="center" border="5" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="bridges/Steel_Bridge_1_10c.jpg" width="320" height="160" alt="floor beams and diagonals" title="floor beams and diagonals"></td></tr>
+ </table>
+<br>
+<br>
+<br>
+<br>
+
+ <table align="center" border="5" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="bridges/Steel_Bridge_1_11c.jpg" width="320" height="240"alt="floor beams and diagonals" title="floor beams and diagonals"></td></tr>
+ </table><font size="-1"><b>The floor beams, diagonals and stringers.</b></font>
+<br>
+<br>
+<br>
+<br>
+
+ <table align="center" border="5" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="bridges/Steel_Bridge_1_12c.jpg" width="320" height="240"alt="floor beams and diagonals" title="floor beams and diagonals"></td></tr>
+ </table> <font size="-1"><b>The complete framework of the truss bridge.</b></font>
+<font size="5">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> </font>
+
+ <table align="center" border="5" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="bridges/Steel_Bridge_1_12b.jpg" width="320" height="240"alt="floor beams and diagonals" title="floor beams and diagonals"></td></tr>
+ </table> <font size="-1"><b>The framework of a truss bridge.</b><br>
+ Include file for POV-Ray:
+ <a href="bridges/Steel_Bridge_Framework_1.inc">&quot;Steel_Bridge_Framework_1.inc&quot;</a><br>
+ and scene file for POV-Ray:
+ <a href="bridges/Steel_Bridge_Framework_1_1.pov">&quot;Steel_Bridge_Framework_1_1.pov&quot;</a></font>
+
+
+</td>
+</tr>
+<tr>
+
+ <td colspan="1">
+ </td>
+
+
+</tr>
+<tr><td colspan="2"><hr width="100%"></td></tr>
+</table>
+
+&nbsp;<br>
+ <h5><b>Download of all ready-made POV-Ray objects</b><br>
+ zipped up (with all include files, example files and with <br>
+ the according Insert Menu Add-ons for comfortable use!)<br>
+ at the <a href="../objects/obj_000e.htm">POV-Ray Objects</b></a>
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

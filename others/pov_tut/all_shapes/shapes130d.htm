@@ -1,0 +1,287 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=665,height=515");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr></font>
+  <hr size="3">
+  <div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font>
+  </div>
+ </td>
+ <td align="right">
+        <a href="shapes130e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes130e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes130i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes130i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes130f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes130f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; Inhalts&uuml;bersicht<br>
+<a href="shapes100d.htm">Grundformen</b></a><br>
+&nbsp; -  <a href="shapes110d.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120d.htm">cylinder</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes130d.htm"--><b>cone</b></a><br>
+&nbsp; -  <a href="shapes140d.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150d.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160d.htm">prism</b></a><br>
+&nbsp; -  <a href="shapes170d.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180d.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190d.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350d.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115d.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200d.htm">K&ouml;rper mit Makros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000d.htm">K&ouml;rper in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400d.htm">Andere K&ouml;rper als Makros</b></a></nobr><br>
+<a href="shapes600d.htm">3D-Text-Objekte</b></a><br>
+<a href="shapes000d.htm">Andere Formen</b></a><br>
+<a href="shapes666d.htm">Non CSG K&ouml;rper</b></a><br>
+<nobr><a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900d.htm">Isosurfaces</b></a></nobr><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4">
+ <tr>
+<td >
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="660">
+ <tr>
+  <td><table align=left border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/basics4.jpg" border="0" width="320"  height="240"
+                   alt="Sample cone" title="Sample cone"></td></tr></table>
+  </td>
+  <td><div align="center">
+      <font size="5"><b>cone</b> <nobr>= Kegel</nobr></font><br>
+      <font size="3">auch:</font><br>
+    <font size="5">Kegelstumpf, Konus</font>
+    <table border="1" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/cone_truncated_trans.jpg" border="0" width="160"  height="120"
+                   alt="cone" title="cone"></td></tr></table>
+   </div>
+  </td>
+ </tr>
+ <tr>
+  <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/cone1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/cone1t.jpg" border="0" width="320"  height="240"
+                   alt="Samples cones 600x450" title="Samples cones 600x450"></a></td></tr></table>
+      </td>
+<td width="300">
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>cone = Kegel/Kegelstumpf</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+     allgemeiner Syntax:
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>cone{&lt;x<SUB>1</SUB>,y<SUB>1</SUB>,z<SUB>1</SUB>&gt;,r<sub>1</sub>,&lt;x<SUB>2</SUB>,y<SUB>2</SUB>,z<SUB>2</SUB>&gt;, r<sub>2</sub>
+       texture{ ... ... }
+    } //-----------------------</b></pre></td></tr></table>
+    Hier sind &lt;x<SUB>1</SUB>,y<SUB>1</SUB>,z<SUB>1</SUB>&gt; und  &lt;x<SUB>2</SUB>,y<SUB>2</SUB>,z<SUB>2</SUB>&gt;
+    die Koordinaten der Mittelpunkte der beiden Enden und r<sub>1</sub> bzw. r<sub>2</sub> die jeweiligen Radien.
+    W&auml;hlt man f&uuml;r einen der beiden Radien den Wert 0, so erh&auml;lt man einen Kegel mit einer
+    Spitze an diesem Ende.
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+    Die Beispiele hier: </font>
+ <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>//-------------- der golden glitzernde Kegel ---
+cone{ &lt;-1,2,-3&gt;,1.0,&lt;4,4,5&gt;,0.0
+      texture{ Polished_Chrome
+               pigment{color rgb&lt;1,0.8,0&gt;}
+               normal {bumps 0.5 scale 0.15}
+               finish {phong 1}
+             }
+    } //----------------------------------------
+//-------- der violett glitzernder Kegelstumpf
+cone{ &lt;0,0,0&gt;,1.0,&lt;0,2,0&gt;,0.5
+      texture{ Polished_Chrome
+               pigment{color rgb&lt;1,0,0.5&gt;}
+               normal {crackle 0.5 scale 0.15}
+               finish {phong 1}
+             }
+      translate&lt;2,0,0&gt;
+    }//-----------------------------------------</b></pre></td></tr></table>
+  </td>
+ </tr>
+</table>
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="580">
+<tr><td>
+<p align="justify"><font face="Arial, Verdana, Helvetica" size="3">
+<b>Tip:</b>  Will man einen Kegel konstruieren, der zwar mit seiner Mittellinie parallel zu
+einer Koordinatenachse liegt, aber nicht am Nullpunkt anliegt, so kann man dies meist auf
+eine schwerer und auf eine leichter &uuml;berschaubar Weise tun (vergl. &quot;cylinder&quot;): </font>
+</p></td></tr></table>
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="580">
+ <tr>
+  <td>
+     Der meist schlechter &uuml;berschaubare Stil: <br>
+     Anfangs und Endpunkt des Kegel(-stumpfs) werden in endg&uuml;ltigen Werten angegeben.<br>
+     =&gt; die L&auml;nge und die r&auml;umliche Lage ist schwer erkennbar! </td>
+
+  </tr>
+ <tr>
+  <td>
+    <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b> cone{&lt;4,2,2&gt;,0.5, &lt;4,2,5&gt;,1.0
+          texture{ ... ... } }</b></pre></td></tr></table>
+  </td>
+  </tr>
+ <tr>
+  <td>
+     Zur &uuml;berschaubareren Konstruktion verf&auml;hrt man besser an nach folgendem<br>
+     <b>Konstruktions-Prinzip:</b><br>
+     <b> 1. K&ouml;rper am Koordinaten-Ursprung (Nullpunkt) modellieren und dann<br>
+       2. K&ouml;rper in seinen endg&uuml;ltige Positon schieben.</b><br>
+     In diesem Fall w&uuml;rde die &uuml;bersichtlichere Anweisung wie folgt lauten:
+</td>
+
+  </tr>
+ <tr>
+  <td>
+    <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>cone{ &lt;0,0,0&gt;,0.5, &lt;0,0,3&gt;,1.0
+      translate&lt;4,2,2&gt;
+      texture{ ... ... } }</b></pre></td></tr></table>
+  </td>
+  </tr>
+  </table>
+<br>
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="660">
+<tr>
+ <td>
+    <p align="justify"><font face="Arial, Verdana, Helvetica" size="3">
+    <b>Spezial-Effekt:</b> W&auml;hlt man einen der Endradien negativ,<br>
+     so erh&auml;lt man einen Doppelkegel: </font>
+    </p>
+    <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>
+cone{ &lt;0,0,0&gt;,0.5, &lt;0,1.00,0&gt;,<b>-0.2</b>
+      texture{ pigment{ color rgb&lt;0.8,0.55,1.0&gt;*0.75}
+               finish { phong 0.4}
+             } // end of texture
+      scale &lt;1,1,1&gt; rotate&lt;0,0,0&gt; translate&lt;0,0,0&gt;
+    } // end of cone ---------------------------------</b></pre></td></tr></table>
+ </td>
+ <td>
+   <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/cone_double.jpg" border="0" width="160"  height="200"
+                   alt="double cone" title="double cone"></td></tr></table>
+ </td>
+</tr>
+</table>
+<br>
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="660">
+<tr>
+ <td>
+    <p align="justify"><font face="Arial, Verdana, Helvetica" size="3">
+    <b>Spezial-Effekt II:</b>  Mit dem optionalen Kommando &quot;<b>open</b>&quot;,<br>
+      erhalten wir einen offenen Kegel: </font>
+    </p>
+    <table border="2" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+ <tr><td valign="top" bgcolor="#fefefe">
+<pre><b>cone{ &lt;0,0,0&gt;,0.3, &lt;0,1.00,0&gt;,0.5 <b>open</b>
+      texture{ pigment{ color rgb&lt;0.8,1.0,0.25&gt;*0.75}
+               finish { phong 0.4 }
+             } // end of texture
+
+      scale &lt;1,1,1&gt; rotate&lt;0,0,0&gt; translate&lt;0,0,0&gt;
+    } // end of cone ---------------------------------</b></pre></td></tr></table>
+  </td>
+  <td>
+   <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/cone_open.jpg" border="0" width="160"  height="200"
+                   alt="cone open" title="cone open"></td></tr></table>
+  </td>
+  </tr>
+</table>
+
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr>
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

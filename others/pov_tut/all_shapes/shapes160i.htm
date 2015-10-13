@@ -1,0 +1,282 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=695,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes160e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes160e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes160f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes160f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes160d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes160d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp;Indice<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+&nbsp; -  <a href="shapes110i.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120i.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130i.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140i.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150i.htm">box</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes160i.htm"--><b>prism</b></a><br>
+&nbsp; -  <a href="shapes170i.htm">plane</b></a><br>
+&nbsp; -  <a href="shapes180i.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190i.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350i.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115d.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200i.htm">Forme con macros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+<a href="shapes000i.htm">Altre Oggetti</b></a><br>
+<a href="shapes666i.htm">Forme Non-CSG</b></a><br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<nobr><a href="shapes900i.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table width="90%" align="center" border="0" cellspacing="5" cellpadding="4" bordercolor="#c0c0c0">
+  <tr><td><!-- global -->
+
+<div align="center">
+<table width="90%" align="center" cellspacing="5" cellpadding="10" width="90%"">
+ <tr>
+  <td><table align="left" border="1" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/basics7.jpg" border="0" width="320" height="240"
+                   alt="Sample prism" title="Sample prism"></td></tr></table>
+</td><td><h1 align=left>&quot;prism&quot; - prisma</h1>
+</td></tr></table>
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="2" width="660">
+ <tr>
+  <td>
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+    <b>&quot;prism&quot; - prisma ortogonale</b></font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+   Sintassi generale:
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>prism{ y<SUB>1,</SUB> y<SUB> 2,</SUB> n
+      &lt;&nbsp;x<SUB>1, </SUB>z<SUB>1</SUB>&nbsp;&gt;,
+      &lt;&nbsp;x<SUB>2, </SUB>z<SUB>2</SUB>&nbsp;&gt;,
+      &lt;&nbsp;x<SUB>3, </SUB>z<SUB>3</SUB>&nbsp;&gt;,
+          ...
+      &lt;&nbsp;x<SUB>n-1, </SUB>z<SUB>n-1</SUB>&nbsp;&gt;,
+      &lt;&nbsp;x<SUB>1, </SUB>z<SUB>1</SUB>&nbsp;&gt;
+      texture{ ... }
+      }</b></td></pre></tr></table>
+      </td>
+<td>
+     <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+     Con &quot;<b>y<SUB>1</b></SUB>&quot; e <b>&quot;y<SUB>2</SUB></b>&quot;
+     sono definiti i valori dell'inizio e della fine di un prisma ortogonale in direzione y
+     e con il numero <b>&quot;n&quot;</b> delle coordinate seguente della silhouette del prisma nel <nobr>piano xz.</nobr><br>
+     Questa silhouette &egrave; definito con una serie di coordinate di punti <br>
+    <b><nobr>&lt;&nbsp;x<SUB>1, </SUB>z<SUB>1</SUB>&nbsp;&gt;</nobr>,
+       <nobr>&lt;&nbsp;x<SUB>2, </SUB>z<SUB>2</SUB>&nbsp;&gt;</nobr>,
+       <nobr>&lt;&nbsp;x<SUB>3, </SUB>z<SUB>3</SUB>&nbsp;&gt;</nobr>, ... ,
+       <nobr>&lt;&nbsp;x<SUB>n-1, </SUB>z<SUB>n-1</SUB>&nbsp;&gt;</nobr>,
+       <nobr>&lt;&nbsp;x<SUB>1, </SUB>z<SUB>1</SUB>&nbsp;&gt;</nobr> </b> nel <nobr>piano xz.</nobr><br>
+   <b>Da osservare:</b> il punto finale della silhouette deve essere lo stesso come il primo punto all'inizio,
+    in altre parole: la linea attorno alla silhouette deve essere una linea chiusa!  Per esempio con 5 punti noi abbiamo bisogno di annotare
+    n = 6 coordinate, perch&egrave; il primo punto deve essere ripetuto al fine!</font><br>
+ </td></tr>
+<tr><td colspan="2">
+   Per cambiare la posizione e l'orientazione del prisma, dobbiamo usare
+   &quot;rotate&lt;&nbsp; , &nbsp; ,&nbsp;&nbsp; &gt;&quot; e &quot;translate&lt;&nbsp;,&nbsp;,&nbsp;&gt;&quot;.<br>
+</td></tr>
+</table>
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="2" width="660">
+<tr>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/prism1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/prism1t.jpg" border="0" width="320"  height="240"
+                   alt="Sample 1 prism 640x480" title="Sample 1 prism 640x480"></a></td></tr></table>
+      </td>
+ <td rowspan="2">
+   <b>Esempio 1:</b><br>
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>// prisma bianco
+// &agrave; zero:
+prism{ 0.00, 1.00, 4
+       &lt;-1.00, 0.00&gt;,
+       &lt; 1.00, 0.00&gt;,
+       &lt; 0.00, 2.00&gt;,
+       &lt;-1.00, 0.00&gt;
+       texture{
+         pigment{ color White}
+         finish { phong 0.5 }
+       } // fine texture
+     } // fine del prisma
+// prisma violetto
+// &agrave; destra:
+prism{ 0.00, 1.00, 4
+       &lt;-1.00, 0.00&gt;,
+       &lt; 1.00, 0.00&gt;,
+       &lt; 0.00, 2.00&gt;,
+       &lt;-1.00, 0.00&gt;
+       texture{
+         pigment{color Plum}
+         finish { phong 0.5}
+       } // fine texture
+       rotate&lt;-90,0,0&gt;
+       translate&lt;3,0,0&gt;
+     } // fine del prisma
+//-----------------------</b></td></pre></tr></table>
+ </td></font>
+</tr>
+<tr>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+            <tr><td>
+             <img src="im/prism10.gif" border="0" width="320" height="280"
+                   alt="prism 1" title="prism 1"></a></td></tr></table>
+ </td>
+</tr>
+
+<tr>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/prism2im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/prism2t.jpg" border="0" width="320" height="240"
+                   alt="Sample 1 prism 640x480" title="Sample 1 prism 640x480"></a></td></tr></table>
+      </td>
+ <td rowspan="2">
+  <b>Esempio 2:</b><br>
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>// prisma bianco
+// &agrave; zero:
+prism{ -2.00, 2.00, 6
+       &lt;-1.00, 0.00&gt;,
+       &lt; 1.00, 0.00&gt;,
+       &lt; 1.00, 1.00&gt;,
+       &lt; 0.00, 2.00&gt;,
+       &lt;-1.00, 1.00&gt;,
+       &lt;-1.00, 0.00&gt;
+       texture{
+         pigment{color White}
+         finish { phong 0.5 }
+       } // end texture
+  } // fine del prisma
+// prisma violetto
+// &agrave; destra:
+prism{ -2.00, 2.00, 6
+       &lt;-1.00, 0.00&gt;,
+       &lt; 1.00, 0.00&gt;,
+       &lt; 1.00, 1.00&gt;,
+       &lt; 0.00, 2.00&gt;,
+       &lt;-1.00, 1.00&gt;,
+       &lt;-1.00, 0.00&gt;
+       texture{
+         pigment{color Plum}
+         finish { phong 0.5 }
+       } // end texture
+       rotate&lt;-90,0,0&gt;
+       translate&lt;3,0,0&gt;
+     } // fine del prisma
+//-----------------------</b></td></pre></tr></table>
+ </td></font>
+</tr>
+
+<tr>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+             <img src="im/prism11.gif" border="0" width="320" height="280"
+                   alt="prism 2" title="prism 2"></a></td></tr></table>
+ </td>
+</tr>
+</table>
+
+</td></tr></table><!-- global -->
+</div>
+
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Cubo e Cuboide, Geometria di Base per Raytracing con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica, geometria di base per raytracing con POV-Ray, cubo, cuboide">
+<title>Geometria di Base - per Raytracing con POV-Ray - Cubo e Cuboide</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Geometria di Base </b></font> -
+      <font size="-1">per Raytracing</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_300e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="geom_300e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="geom_300f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="geom_300f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_300d.htm"><font size="2">Deutsch</font></a>
+        <a href="geom_300d.htm"><img src="../flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#objects"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000i.htm">Geometria di Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000i.htm">per Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050i.htm">Triangolo Rettangolo</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070i.htm">Teorema di Pitagora</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080i.htm">Trigonometria di Base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090i.htm">Teorema del Coseno</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100i.htm">Triangolo Equilatero</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150i.htm">Poligono Regulare</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200i.htm"--><i>Poliedro</i></b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200i.htm">Tetraedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250i.htm">Ottaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_300i.htm"--><b>Cubo e Cuboide</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500i.htm">Dodecaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700i.htm">Icosaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260i.htm">Cubottaedro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270i.htm">Ottaedro troncato</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280i.htm">Rombicubottaedro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800i.htm">Icosaedro troncato</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000i.htm"--><i>Cerchi</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100i.htm">Cerchi tangenti</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200i.htm">Tangenti interne</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300i.htm">Tangenti esterne</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Animazioni Geometriche 3D</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"><!-- global-->
+
+<table width="100%"><tr>
+   <td><img src="im/Cube_120t.gif" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><img src="im/Cuboid_120t.gif" width="120" height="120" border="0" hspace="10" vspace="0"></td>
+   <td><h2><nobr><b>Cubo <font size="-1">e</font><br>
+                  Cuboide</b></nobr><br>
+  <font size="-1">Qualche fondamento geometrico<br>
+                  molto utile<br>
+                  sul esaedro regolare e <br>
+                  parallelepipedo rettangolo</font></h2></td>
+   <td><img src="im/Folding_a_Cube_02ct.gif" width="80" height="80" border="0" hspace="0" vspace="0"></td>
+  <td><img src="im/Fold_Cube_120t.gif" width="120" height="120" border="0" hspace="0" vspace="0"></td>
+</tr></table>
+<br>
+<font size="-1"><i>Nel seguente si scriva per la radice quadrata di un numero,
+l'espressione inglese &quot;sqrt(</i>Numero<i>)&quot; <br>
+in conformit&agrave; alla sintassi usata con POV-Ray.</i></font><br>
+<br>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="5" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><b>Dimensioni del cubo</b><br>
+ <font size="-1">Lunghezza degli spigoli di un cubo: <b>a</b>.</font></td>
+ </tr>
+ <tr>
+  <td  valign="top">
+<font size="-1">Lunghezza d dei diagonali di facce di un cubo:</font><br>
+<b> &nbsp; &nbsp; d =  sqrt (2) * a ;</b><br>
+<font size="-1">Lunghezza D dei diagonali a traverso di un cubo:</font><br>
+<b> &nbsp; &nbsp; d =  sqrt (3) * a ;</b><br>
+<font size="-1">Il raggio della circumsfera:</font><br>
+<b> &nbsp; &nbsp; R =  1/2*sqrt( 3 ) * a ;</b>
+</td></tr>
+ <tr>
+  <td width="50%"><b>Dimensioni del cuboide</b><br>
+ <font size="-1">Lunghezza degli spigoli: <b>a, b, c</b>.</font></td>
+ </tr>
+<tr><td>
+<font size="-1"><nobr>Lunghezza D dei diagonali a traverso di un cuboide:</nobr></font><br>
+<b> d = sqrt ( a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup> )</b>
+</td>
+ </tr>
+</table>
+</div>
+<br>
+    <img src="im/Fold_Cube_08rot_60_10s32t.gif" width="256" height="256" border="0" hspace="0" vspace="0"><br>
+    <font size="-1">La piegatura di un cubo</font><br>
+
+</td>
+<td valign="top" width="50%">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Cuboid_001.jpg" width="320" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">I diagonali di un cuboide</font><br>
+
+
+<br>
+    <img src="im/Fold_Cube_2t.gif" width="256" height="256" border="0" hspace="0" vspace="0"><br>
+    <font size="-1">La piegatura di un cubo</font><br>
+</td>
+</tr>
+<tr><td colspan="2">
+<hr>
+Come si fa: <a href="../animate/anim200i.htm" target="_new">La Piegatura di un Cubo - Animazione 3D con POV-Ray</a>.
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td>&nbsp;
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+<hr size="3"><p align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font></td></p></h6>
+ </td>
+ <td align="right">
+        <a href="shapes700e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes700e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes700i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes700i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes700f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes700f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;<br>
+<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; Inhalts&uuml;bersicht<br>
+<a href="shapes100d.htm">Grundk&ouml;rper</b></a><br>
+<nobr><a href="shapes200d.htm">K&ouml;rper mit Makros + CSG</b></a></b></nobr><br>
+<a href="shapes600d.htm">3D-Text-Objekte</b></a><br>
+<b>Andere Formen</b><br>
+<a href="shapes200d.htm">Non-CSG Objekte</b></a><br>
+<br>
+<nobr>&gt;<!--a href="shapes700d.htm"--><b>height_field + HF macros</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="shapes650d.htm">height_field aus Bildern</b></a></nobr><br>
+&nbsp; -  <a href="shapes652d.htm">height_field gerastert</b></a><br>
+<nobr>&nbsp; -  <a href="shapes654d.htm">height_field mit Funktionen</b></a></nobr><br>
+&nbsp; -  <a href="shapes655d.htm">height_field massiv</b></a><br>
+&nbsp; -  <a href="shapes656d.htm">HF - Berg und Tal</a><br>
+&nbsp; -  <a href="shapes710d.htm">HF_Square</b></a><br>
+&nbsp; -  <a href="shapes720d.htm">HF_Sphere</b></a><br>
+&nbsp; -  <a href="shapes730d.htm">HF_Cylinder</b></a><br>
+&nbsp; -  <a href="shapes740d.htm">HF_Torus</b></a><br>
+<br>
+<nobr>&nbsp;<a href="shapes900d.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr>
+ <td>
+<b>height_field</b> -<font size="-1"> Dreiecksnetze nach Bildern oder Muster-Funktionen</font> <br>
+<font size="-1">Built-in shapes</font>
+
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr>
+ <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes650d.htm">
+              <img src="im/mount2s.jpg" border="0" width="80"  height="60"
+                   alt="height_field" title="height_field"></a></td>
+            </tr></table><b>height_field</b><br>mit Bildern</h5>
+ </td>
+ <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes652d.htm">
+              <img src="im/raster_mountain_ts.jpg" border="0" width="80"  height="60"
+                   alt="height_field rastered" title="height_field rastered"></a></td>
+                   </tr></table><b>height_field </b><br>gerastert</h5>
+ <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes654d.htm">
+              <img src="im/HF_by_function_06ss.jpg" border="0" width="80"  height="60"
+                   alt="height_field by function" title="height_field by function"></a></td>
+                   </tr></table><b>height_field </b><br>mit Funktionen</h5>
+ <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes655d.htm">
+              <img src="im/HF_by_function_30ss.jpg" border="0" width="80"  height="60"
+                   alt="height_field by function" title="height_field by function"></a></td>
+                   </tr></table><b>height_field </b><br> massiv</h5>
+ <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes656d.htm">
+              <img src="im/HF_by_function_32bss.jpg" border="0" width="80"  height="60"
+                   alt="height_field by function" title="height_field by function"></a></td>
+                   </tr></table><b>height_field </b><br> Berg + Tal</h5>
+ </tr></table>
+ <hr>
+<b>HF macros</b> -
+<font size="-1">Diese Makros generieren Dreiecks-Netze (meshes) in verschiedenen Formen</font><br>
+<font size="-1">Deklariert in &quot;shapes.inc&quot;</font>
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr>
+ <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes710d.htm">
+              <img src="im/HF_Square_00s.jpg" border="0" width="80"  height="60"
+                   alt="HF_Square" title="HF_Square"></a></td>
+            </tr></table><b>HF_Square</b> macro<br>&nbsp;</h5>
+ </td>
+
+ <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes720d.htm">
+              <img src="im/HF_Sphere_00s.jpg" border="0" width="80"  height="60"
+                   alt="HF_Sphere" title="HF_Sphere"></a></td>
+            </tr></table><b>HF_Sphere</b> macro<br>&nbsp;</h5>
+ </td>
+  <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes730d.htm">
+              <img src="im/HF_Cylinder_00s.jpg" border="0" width="80"  height="60"
+                   alt="HF_Cylinder" title="HF_Cylinder"></a></td>
+            </tr></table><b>HF_Cylinder</b> macro<br>&nbsp;<br>
+ </td>
+  <td valign="top" width="25%"><h5 align="center">
+    <table align="center" border="1"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="shapes740d.htm">
+              <img src="im/HF_Torus_00s.jpg" border="0" width="80"  height="60"
+                   alt="HF_Torus" title="HF_Torus"></a></td>
+            </tr></table><b>HF_Torus</b> macro<br>&nbsp;</h5>
+ </td>
+</tr></table>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr>
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

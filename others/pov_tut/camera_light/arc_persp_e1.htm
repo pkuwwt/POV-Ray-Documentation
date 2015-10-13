@@ -1,0 +1,297 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Camera specials in POV-Ray, POV-Ray tutorial, POV-Ray 3.6.2, POV-Ray 3.7">
+<meta name="keywords" content="light sources, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, povray, raytracing, raytracing descriptions, POV-Ray tutorials, scenery description file, 3d graphics, computer graphics">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=685,height=535");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+<title>Architectural Perspective Camera in POV-Ray</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Introduction to the Scenery Description Langage</nobr> of the <nobr> POV-Ray Raytracer</nobr>
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+ <br><nobr>by Friedrich A. Lohm&uuml;ller</nobr></b>
+ <div align="center"><font size="+1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>Cameras, Light Sources and Details in POV-Ray</b></font></div>
+ </td></h6>
+  <td align="right">
+        <a href="arc_persp_i1.htm"><font size="2">Italiano </font></a>
+        <a href="arc_persp_i1.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="arc_persp_f1.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="arc_persp_f1.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="arc_persp_d1.htm"><font size="2">Deutsch </font></a>
+        <a href="arc_persp_d1.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="camlit_e1.htm">Camera + Light</b></a><font size="2"><br>
+ &nbsp;&nbsp;</font><a href="camlit_e1.htm">in POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="camlit_e1.htm">Content&nbsp; - &nbsp;INDEX</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_e1.htm">Types of Light Sources</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#point_light">point light</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#Spotlight">spotlight</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#cylindrial">cylindrical spotlight</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#parallel">parallel light</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#area">area light</b></a>, soft shadows</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_e2.htm">Light Source Specials</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e2.htm#looks_like">Visible light sources</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e2.htm#shadowless">Shadowless light sources</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e2.htm#projected">projected_through</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e2.htm#fade_out">Fade out</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_e1.htm">Types of Cameras</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#perspective">Perspective camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#ultra_wide_angle">Ultra_wide_angle</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#orthographic">Orthographic camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#cylindrical">Cylindrical camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#spherical">Spherical camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#fisheye">Fisheye camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#panoramic">Panoramic camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#omnimax">Omnimax camera</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_e2.htm">Camera Specials</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e2.htm#aspect_ratio">Aspect ratio</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e2.htm#focal_blur">Focal blur</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e2.htm#perturbated">Perturbated camera</b></a><br>
+<br>
+<nobr>&nbsp;<!--a href="arc_persp_e1.htm"--><b>Architectural Perspective</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="no_e1.htm">Show and Hide</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_e1.htm#no_shadow">no_shadow</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_e1.htm#no_reflection">no_reflection</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_e1.htm#no_image">no_image</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_e1.htm#no_body">no_body</b></a><br>
+
+
+&nbsp;<br>
+<!--nobr>&nbsp; -  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a></nobr><br-->
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" align="center" width="95%">
+<tr>
+<td valign="top" colspan="1">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Architectural_Perspective0.gif" width="80" height="80"></td></tr></table>
+</td>
+<td valign="center" colspan="1">
+<font size="5"><b>Architectural Perspective Camera</b></font><br>
+             <font size="3">A sheared perspective camera for <b>avoiding converging vertical</b> lines.<br>
+                            <font size="2">Simulating shifting of the lens upwards or downward,
+                              like with a <b>folding camera</b> or a camera with a <b>perspective control lens</b> (shift lens),
+                              as used in architectural photography.</font></font>
+                <hr>
+</td>
+<td valign="top" colspan="1"><br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/ArcAni.gif" width="80" height="60"></td></tr></table>
+</td>
+</tr>
+</table>
+<table border="0" align="center" width="95%">
+<tr>
+<td valign="top">
+
+
+  <i>For comparison:</i><br>
+  <font size="4"><b>The Standard Perspective Camera</b> </a><b></b></font><br>
+  <font size="2">The perspective camera (POV-Ray default):</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>#declare Camera_Location = &lt;0.0,1.6,-5.0&gt;;
+#declare Camera_Look_At  = &lt;0.0,4.0, 0.0&gt;;
+#declare Camera_Angle    =  45;</b></td></pre>
+  </tr>
+  </table>
+  <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ //perspective //<font size="-1">(optional, it's default)</font>
+        location Camera_Location
+        look_at  Camera_Look_At
+        angle    Camera_Angle
+        right x*image_width/image_height
+      } // ------------------------------ </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1">
+
+    </b><br>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Architectural_Perspective0c.jpg" width="208" height="208" ></td></tr></table>
+  <font size="-1"><b>The default perspective camera<br>
+                  &nbsp;</b></font>
+
+</td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Architectural_Perspective0.jpg" width="157" height="209" ></td></tr></table>
+  <font size="-1"><b>Classic perspective view</b><br>
+                   with 3 vanishing points</font>
+
+</td>
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr>
+<td valign="top">
+<br><i>How to avoid converging lines:</i>
+<br>
+
+  <font size="4"><b>The Architectural Perspective Camera</b></a><b></b></font><br>
+  <font size="2">For a sheared perspective camera:<br>
+                  <br>
+                  Here we need to predeclare:<br>
+                  <b>Camera_Location, Camera_Look_At, Camera_Angle</b></font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>#declare Camera_Location = &lt;0.0,1.6,-5.0&gt;;
+#declare Camera_Look_At  = &lt;0.0,4.0, 0.0&gt;;
+#declare Camera_Angle    =  45;</b></td></pre>
+  </tr>
+  </table>
+<font size="2">Then we have to calculate some additional values and
+to declare the camera with these valuse as follows: <br>
+</font>
+
+
+</td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Architectural_Perspective1c.jpg" width="208" height="208" ></td></tr></table>
+  <font size="-1"><b>Architectural Perspective Camera</b><br>
+                  &nbsp;</font>
+
+</td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Architectural_Perspective1.jpg" width="157" height="208" ></td></tr></table>
+  <font size="-1"><b>Architectural Perspective</b><br>
+                   with 2 vanishing points</font>
+
+
+</td>
+</tr>
+</table>
+<table border="0" align="center" width="95%">
+<tr>
+<td colspan="2" valign="top">
+  <table align="left" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>#include "transforms.inc"
+#declare Cam_V = Camera_Look_At - Camera_Location;
+#declare Cam_Ho = sqrt(pow(Cam_V.x,2)+pow(Cam_V.z ,2));
+#declare Cam_Y  = Camera_Look_At.y - Camera_Location.y;
+//--------------------------------------------------//
+camera{ angle Camera_Angle
+        right x*image_width/image_height
+        location&lt;0,Camera_Look_At.y,-Cam_Ho&gt;
+        matrix&lt;1,0,0, 0,1,0, 0,Cam_Y/Cam_Ho,1, 0,0,0&gt;
+        Reorient_Trans(z,&lt;Cam_V.x,0,Cam_V.z&gt;)
+        translate&lt;Camera_Look_At.x,0,Camera_Look_At.z&gt;
+      } //------------------------------------------//</b></td></pre>
+  </tr>
+  </table>
+</td>
+<td>
+  <font size="2">
+ <b>Note:</b> With this camera we will get <br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this yellow warning:<br>
+ <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#AAAAAA">
+ <font size="2"> <font color="#FED801"><b>// Parse warning: Camera vectors are not perpendicular.
+                                        Making look_at the last statement may help.</b></font></font>
+  </td>
+  </tr>
+  </table>
+  Ignore it! - Don't worry! It still works! <br>
+  Sure the up vector is not perpendicular to the direction vector, but
+  for a perspective control lens, this ought to be like this!
+ </b><br>
+  <hr>
+            <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/BusinessBuilding_000_3im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/BusinessBuilding_000_demo3s.jpg" border="0" width="200" height="150"
+                   alt="BusinessBuilding_000" title="Click for a bigger example: BusinessBuilding_000"></a></td>
+            </tr></table>
+  <div align="center">
+     <font size="2">
+             Example file for POV-Ray: <a href="pov/BusinessBuilding_000_demo3.pov">BusinessBuilding_000_demo3.pov</a>,<br>
+             needs the include file <a href="../objects/arc/BusinessBuilding_000.inc">BusinessBuilding_000.inc</a>.</font>
+  </div>
+ </td>
+</tr>
+</table>
+<hr></div>
+<table border="0" align="center" width="95%"><tr><td>
+<p><font size="-1">
+<b><a href="camlit_e1.htm">Index</a> |
+   <a href="light_e1.htm" ><b>Lights</a> |
+   <a href="light_e2.htm" ><b>Light Specials</a> |
+   <a href="camera_e1.htm">Cameras</a> |
+   <a href="camera_e2.htm">Camera Specials</a> |
+   <!--a href="arc_persp_e1.htm"--><b>Architectural Perspective</a> |
+   <a href="no_e1.htm">Show+Hide</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+  <img src="email.gif" width="15" height="10" border="0" alt="email" title="email"> email:
+  <a href="mailto:Friedrich.Lohmueller_at_t-online.de">Friedrich.Lohmueller_at_t-online.de</a> <br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

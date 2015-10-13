@@ -1,0 +1,384 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Objets G&eacute;om&eacute;triques de POV-Ray 3.6 / 3.7 - de mon fichier include &quot;shapes3.inc&quot;</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, 3d graphics, raytracing descriptions, povray tutorials, beginners, advanced, geometric objects, csg, macros">
+<meta name="description" content="Defining geometric objects by macros for the raytracing program POV-Ray 3.6, povray, pov ">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=570,height=585");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr><a name="top"></a></font>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; Objets G&eacute;om&eacute;triques de POV-Ray</font>
+ </div>
+ </td>
+ <td align="right">
+    <a href="shapes3_22e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+    <a href="shapes3_22e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a></font><br>
+    <a href="shapes3_22i.htm"><font size="2">Italiano</font></a>&nbsp;
+    <a href="shapes3_22f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+    <a href="shapes3_22d.htm"><font size="2">Deutsch</font></a>&nbsp;
+    <a href="shapes3_22d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutori&egrave;l POV-Ray</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000f.htm">Objets G&eacute;om&eacute;triques</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000f.htm">table des mati&egrave;res</a><br>
+<br>
+<a href="shapes3_0000f.htm">Objets de &quot;shapes3.inc&quot;</b></a><br>
+-  <a href="shapes3_11f.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20f.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21f.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40f.htm">Egg</b></a><br>
+-  <a href="shapes3_40f.htm">Egg_Shape</b></a><br>
+-  <a href="shapes3_43f.htm">Facetted_Egg</b></a><br>
+-  <a href="shapes3_43f.htm">Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42f.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45f.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30f.htm">Column_N</b></a><br>
+-  <a href="shapes3_30f.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30f.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30f.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50f.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50f.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80f.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85f.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85f.htm">Rounded_Tube</b></a><br>
+<b>&gt;</b><!--a href="shapes3_22f.htm"--><b>Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60f.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65f.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70f.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70f.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+
+<div align="center">
+<font size="2">Cette forme est d&eacute;finie dans mon
+    <a href="../down/insert_a.htm" alt="Download" title="Download">include file &quot;shapes3.inc&quot;</a>
+   ( anciennement &quot;shapes_lo.inc&quot; ) .</font>
+
+</td></tr>
+<tr>
+<td valign="top">
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="3" cellpadding="2" width="90%">
+ <tr>
+ <td valign="top">
+       <table align="center" border="1" bgcolor="#efefef"
+              bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr22b.jpg" border="0" width="320" height="320" alt="Round_N_Tube_Polygon" title="Round_N_Tube_Polygon"></td>
+       </tr></table>
+ </td>
+ <td><font size="5"><b>Round_N_Tube_Polygon</b></font><br>
+   <font size="2">
+   <i>syntaxe g&eacute;n&eacute;rale :</i>
+   </font>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td  valign="top" bgcolor="#fefefe">
+<pre><b>object{ Round_N_Tube_Polygon( N,
+                           Tube_R,
+                           InCircle_R,
+                           Edge_R,
+                           Filled,
+                           Merge_On
+                         ) //---------
+        texture{ ... ... }
+        scale&lt;1,1,1&gt;
+        rotate&lt;0,0,0&gt;
+        translate&lt;0,0,0&gt;
+      } // end of object -------------</b></td></pre></tr></table>
+
+ <font size="2">
+    <b>N</b> =  nombre de segments en anneau,<br>
+    <b>Tube_R</b> = rayon du tube,<br>
+    <b>InCircle_R</b> = rayon du cercle inscrit ,<br>
+    <b>Edge_R</b> = le rayon majeur des segments des bords.<br>
+    <b>Filled</b>: 1 = rempli; 0 = filaire seulement (Remplissage en pour cent)<br>
+    <b>Merge_On</b>: 0 = union; 1 = merge (quand transparent).<br>
+
+ </font>
+
+
+ </td>
+</tr>
+</table>
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td>
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td>
+              <a href="javascript:ShowImage('im/Round_N_Tube_Polygon_2im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/Round_N_Tube_Polygon_2_160.jpg"
+                border="0" width="160" height="160"
+                alt="Round_N_Tube_Polygon_demo_2" title="Round_N_Tube_Polygon_demo_2"></td>
+       </tr></table>
+    <div align="center">
+    <font size="2"><i><b>Fichier exemple</b></i>
+           <a href="pov/Round_N_Tube_Polygon_demo_2.txt">&quot;.txt&quot;</a>
+        ou <a href="pov/Round_N_Tube_Polygon_demo_2.pov">&quot;.pov&quot;</a></font>
+    </div>
+ </td>
+  <td>
+    <table align="center" border="1" bgcolor="#efefef"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td>
+              <a href="javascript:ShowImage('im/Round_N_Tube_Polygon_1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/Round_N_Tube_Polygon_1_160.jpg"
+                border="0" width="160" height="160"
+                alt="Round_N_Tube_Polygon_demo_1" title="Round_N_Tube_Polygon_demo_1"></td>
+       </tr></table>
+    <div align="center">
+    <font size="2"><i><b>Fichier exemple</b></i>
+           <a href="pov/Round_N_Tube_Polygon_demo_1.txt">&quot;.txt&quot;</a>
+        ou <a href="pov/Round_N_Tube_Polygon_demo_1.pov">&quot;.pov&quot;</a></font>
+    </div>
+ </td>
+</tr>
+</table>
+
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+ <td valign="top">
+       <br>
+       <table align="center" border="1" bgcolor="#efefef"
+              bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/Round_N_Tube_Polygon_transparent.jpg" border="0" width="160" height="120" alt="Round_N_Tube_Polygon" title="Round_N_Tube_Polygon"></td>
+       </tr></table>
+       <table align="center" border="1" bgcolor="#efefef"
+              bordercolor="#c0c0c0" bordercolordark="#ffffff" bordercolorlight="#808080">
+       <tr><td><img src="im/Round_N_Tube_Polygon_hexagonal.jpg" border="0" width="160" height="120" alt="Round_N_Tube_Polygon" title="Round_N_Tube_Polygon"></td>
+       </tr></table>
+
+ </td>
+ <td valign="top">
+ <div align="center">
+   <i>Exemple :</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>#include "shapes3.inc"
+object{ Round_N_Tube_Polygon( 6, // N,
+                            0.1, // Tube_R,
+                           0.85, // Base_Width,
+                           0.25, // Edge_R
+                              1, // Filled,
+                              1, // Merge_On
+                               ) //------------
+        texture{ pigment{ color rgbf&lt;1,1,1,0&gt;}
+                 finish { phong 1
+                          reflection{0.4} }
+               } // end of texture
+        scale &lt;1,1,1&gt;
+        rotate &lt;0,0,0&gt;
+        translate&lt;01,0,0&gt;
+      } // end of object ----------------------</b></font></td></pre>
+   </tr></table>
+ </td>
+</tr>
+</table>
+
+<table align="center" border="0">
+   <tr><td colspan="2">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+       <td><img src="im/mymcr22c.jpg" border="0" width="450" height="450" alt="Facetted_Spheres" title="Facetted_Spheres"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr>
+       <td><font size="2">Variations sur &quot;Round_Tube_Ring_N(...)&quot;</font>
+       </td>
+  </tr>
+</table>
+</div>
+<hr width="90%">
+
+
+<table align="center" width="95%">
+<tr><td>
+<font size="4"><b>Macro en d&eacute;tail :</b></font><br>
+<div align="center">
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>//--------------------- Round_N_Tube_Polygon()
+#macro Round_N_Tube_Polygon( N_in,
+                             Tube_R,
+                             Base_Width,
+                             Edge_R
+                             Filled,
+                             Merge_On
+                           ) // -----------------
+//-----------------------------------------------
+#local N = N_in;
+#if( N &lt; 3) #local N = 3; #end
+//-----------------------------------------------
+#local D = 0.000001; // just a little bit
+// to avoid coincident surfaces! //--------------
+#local Edge_Angle = 360/N ;
+#local Linear_Half_Len =
+  (Base_Width-Edge_R)*tan(radians(Edge_Angle/2));
+//-----------------------------------------------
+#local Edge_Part =
+#if( Filled &gt; 0)
+ #if( Merge_On = 1 )
+ merge{
+ #else
+ union{
+ #end // #if(Merge_On = 1 )
+#end // #if(Filled > 0)
+object{ Segment_of_Torus( Corner_R,
+                            Tube_R,
+                       -Edge_Angle )
+        rotate&lt;-90,0,0&gt;
+        translate
+          &lt;Base_Width-Corner_R,Linear_Half_Len,0&gt;
+      } // end of Torus_Segment(...)
+
+#if( Filled > 0)
+cylinder{ &lt;0,0,-Tube_R*Filled&gt;,
+          &lt;0,0,Tube_R*Filled&gt;, Corner_R
+          translate
+          &lt;Base_Width-Corner_R,Linear_Half_Len,0&gt;
+        }
+}// end union or merge
+#end // #if(Filled > 0)
+//-----------------------------------------------
+#if (Corner_R != Base_Width)
+
+#local Linear_Part =
+#if( Filled > 0)
+ #if( Merge_On = 1 )
+ merge{
+ #else
+ union{
+ #end // #if(Merge_On = 1 )
+#end // #if(Filled > 0)
+
+cylinder { &lt;0,-Linear_Half_Len-D,0&gt;,
+           &lt;0,Linear_Half_Len+D,0&gt;,Tube_R
+           translate&lt;Base_Width,0,0&gt;
+         } // end of cylinder
+
+//----------------------//
+#if( Filled > 0)
+// linear prism in z-direction
+prism{ -Tube_R*Filled-D ,Tube_R*Filled+D , 6
+   &lt;-D, 0.00&gt;,  // first point
+   &lt; Base_Width-Corner_R-D,-Linear_Half_Len-D&gt;,
+   &lt; Base_Width           ,-Linear_Half_Len-D&gt;,
+   &lt; Base_Width           , Linear_Half_Len+D&gt;,
+   &lt; Base_Width-Corner_R-D, Linear_Half_Len+D&gt;,
+   &lt;-D, 0.00&gt;  // last point = first point!
+   // turns prism in z direction:
+   rotate&lt;-90,0,0&gt; scale&lt;1,1,-1&gt;
+ } // end of prism ------------------------------
+
+}// end union or merge
+#end // #if(Filled_On = 1)
+//----------------------//
+#end // #if (Corner_R != Base_Width)
+//-----------------------------------------------
+#if (Corner_R != Base_Width)
+#local One_Segment =
+ #if(Merge_On = 1 )
+ merge{
+ #else
+ union{
+ #end
+        object {Linear_Part}
+        object {Edge_Part}
+      } // end union or merge
+#else
+ #local One_Segment =
+        object {Edge_Part}
+#end
+//-----------------------------------------------
+// final union or merge
+#if(Merge_On = 1 )
+merge{
+#else
+union{
+#end
+  #local Nr = 0;     // start
+  #local EndNr = N; // end
+  #while (Nr &lt; EndNr)
+    object{One_Segment rotate&lt;0,0,Nr * 360/EndNr&gt;}
+  #local Nr = Nr + 1;    // next Nr
+  #end // ---------------  end of loop
+} // end union or merge
+//-----------------------------------------------
+#end // -------- end of macro Round_Tube_Ring_N()</b></font></td></pre>
+   </tr></table>
+
+
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

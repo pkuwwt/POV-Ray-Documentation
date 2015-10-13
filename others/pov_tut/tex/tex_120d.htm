@@ -1,0 +1,207 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - rgb colors</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font>
+ </td></h6>
+ <td align="right">
+        <a href="tex_120e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_120e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_120i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_120i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_120f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_120f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001d.htm">texture Syntax</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330e.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp;<!--a href="tex_110d.htm"--><b>Farben Do-it-Yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_120d.htm"--><b>Transparenz</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700d.htm">Muster</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp; &nbsp; Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+  &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750d.htm">Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="70%" align="center"><tr><td><!-- global table-->
+<table cellpadding="5"><tr><td>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/txtur_fi2.jpg" width="80" height="80" alt="color rgb" border="0"></td></tr></table>
+ </td>
+ <td><font size="5"><b><p>&nbsp; Transparenz - &quot;filter&quot; und &quot;transmit&quot;</p>
+ </td>
+</tr></table>
+
+<font size="2"><p align="justify">Die Durchl&auml;ssigkeit einer Farbe mit oder ohne Filterwirkung l&auml;&szlig;t sich mittels
+&quot;filter&quot; bzw. &quot;transmit&quot; steuern! </p>
+<font size="-2"><p align="justify">Aber Vorsicht! - Da das Programm bei transparenten K&ouml;rpern die K&ouml;rperfarbe und
+die Hintergrund-Farbe im geforderten Verh&auml;ltnis und beides mal abh&auml;ngig von
+der Beleuchtungsrichtung zusammenrechnen mu&szlig;, explodiert bei zuviel solchen
+Texturen die Rechenzeit - und der Spa&szlig; nimmt umgekehrt proportional dazu ab !!!!!</p></font>
+<table><tr>
+ <td><font size="2"><b><p>Transparenz mit &quot;transmit&quot;</b><br>
+    Reine Lichtdurchl&auml;ssigkeit ohne jegliche Filterwirkung &nbsp; &nbsp;<br> erh&auml;lt man durch
+    &quot;transmit 0.5&quot; (50% durchl&auml;ssig).<br>
+    Beispiel:<br>
+<pre><b>pigment{ color rgb&lt;1,0.7,0&gt; transmit 0.5}</b>
+// alternativ:
+<b>pigment{ color rgbt&lt;1,0.7,0, 0.5&gt;}</b></pre>
+   </p>
+ </td>
+ <td>
+  <table align="center" border="2"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/transparency_ani.gif" width="200" height="150" alt="transmit" title="transmit" border="0"></td></tr></table>
+ </td>
+</tr></table>
+<p align="justify">Die Durchl&auml;ssigkeit einer Farbe mit Filterwirkung
+(K&ouml;rperfarbe filtert Hintergrundfarbe) wird durch den Wert &quot;filter&quot;
+abgek&uuml;rzt mit "f" beschrieben, &quot;transmit&quot; abgek&uuml;rzt &quot;t&quot; gibt den Farbdurchla&szlig;
+ohne Filterung an. Schreibweise:&quot;pigment{color rgbf &lt;1.0 ,0.5,0.0,1.0&gt;}&quot;
+oder auch "pigment{color rgb&lt;1.0,0.5,0.0&gt; filter 1.0}&quot;. </p>
+<p align="justify">Ein K&ouml;rper mit &quot;color rgb &lt;0.9,0.9,0.9&gt;&quot; erscheint
+durch ein Filter wie &quot;color rgbf &lt;1, 0.5,0.0,1.0&gt;&quot;, wie in der Farbe
+&quot;color rgb &lt;0.9,0.45,0.0&gt; gef&auml;rbt. Rot 100%, Gr&uuml;n 50% ( 0.45) und Blau
+v&ouml;llig blockiert!<br></font>
+<table border="1" width="90%" align="center" cellpadding="5">
+ <tr>
+ <td bgcolor="#f8f8f0">
+ <font size="3">
+<pre><b>// Beispiel für &quot;filter&quot; und &quot;transmit&quot;:
+//--------------------------------------------- rgbf
+sphere{ &lt;,0,0&gt;, 1
+        texture { pigment{ color rgbf&lt;1,0.7,0, 0.7&gt;}
+                  finish { diffuse 0.9 phong 0.5}
+                } // end of texture
+        translate&lt;-1,1.25,-1&gt;
+      } // end of sphere ---------------------------
+//--------------------------------------------- rgbt
+sphere{ &lt;0,0,0&gt;, 1
+        texture { pigment{ color rgbt&lt;1,0.7,0,0.7&gt;}
+                  finish { diffuse 0.9 phong 0.5}
+                } // end of texture
+        translate&lt;-1,-1.25,-1&gt;
+      } // end of sphere -------------------------
+</b></td></pre></font>
+ <td>
+  <table align="center" border="3"  bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/transparency1.jpg" width="160" height="240" alt="transparency" title="transparency" border="0"></td></tr></table>
+ </td>
+</tr></table>
+
+<font size="2">
+<p align="justify">Die Kombination &quot;color rgbf &lt;1,1,1,1&gt; &quot;
+(&quot;color Clear&quot;) ergibt eine v&ouml;llig transparente Textur,
+&quot;color rgbt&lt;0,0,0,1&gt;&quot; oder &quot;color transmit 1.0&quot; l&auml;&szlig;t alles
+durch und mischt nichts dazu, ergibt also dasselbe! </p>
+<p align="justify">Transparente Farbpartien finden ihre wichtigste
+Anwendung bei &uuml;berlagerten Texturen (layered textures). Durch sie
+lassen sich &uuml;ber undurchsichtige Mustertexturen teilweise durchsichtige
+Texturen legen. Mit dieser Technik kann man Steinstrukturen mit dar&uuml;berlaufenden
+dunklen oder hellen Adern erzeugen. </p>
+
+</font>
+
+
+</td></tr></table><!-- global table -->
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

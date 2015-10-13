@@ -1,0 +1,260 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Ready-made Objects for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=540,height=435");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="sam_250i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="sam_250i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_250f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="sam_250f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_250d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="sam_250d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_110e.htm">Houses</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_115e.htm">Roof</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_130e.htm">Tower</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_134e.htm">Castle</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_14_e.htm">Window + Door</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_15_e.htm">Stairs</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_158e.htm">Pyramid</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_510e.htm">Columns</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_18_e.htm">Arch</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_160e.htm">Fences</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_220e.htm">Furnitur</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="sam_250e.htm"--><b>Houshold</b></a><br>
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="5" width="90%">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="3"  bgcolor="#efefef"
+            bordercolor="#d0d0d0" bordercolordark="#ffffff"  bordercolorlight="#a0a0a0">
+            <tr><td>
+            <a href="javascript:ShowImage('household/cheese_1im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="household/cheese_1s.jpg" hspace="1" vspace="1"
+                   border="0" width="80" height="60"
+                   alt="table" title="Click for a bigger example: cheese"></a></td>
+            </tr></table><br>
+ </td>
+ <td valign="top">
+  <h2 align="center"><b>A Piece of Cheese</b></h2>
+ <h6>Objects: &quot;box&quot;, &quot;sphere&quot;, &quot;Rounded Cylinder&quot;, &quot;shapes_lo.inc&quot;<br>
+     Methods: &quot;#declare&quot;, &quot;union&quot;, &quot;difference&quot;, &quot;#while&quot;, &quot;#macro&quot;<br>
+     Model scale:  1 unit = 1.00 meter</h6>
+   <h6 align="justify">
+   <!--An include file to use this object as a read-made object you can find
+   at my <a href="../objects/obj_000e.htm">POV-Ray Objects page</a>.-->
+  </td></h6>
+</tr>
+</table>
+<table border="0" cellpadding="5" width="80%">
+<tr>
+ <td>
+     <font size="2"> First we arange some spheres in a rectangular grid:
+<!--// table 1 -->
+  <table align="center" border="1"  bgcolor="#f9f9f0" cellpadding="5"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr><td>
+<pre><b>#declare Cheese_R_ = 0.30; // width in x
+#declare Cheese_H_ = 0.14; // width in y
+#local Max_D =  Cheese_H_/4; // distance
+#local Max_Num_X = int(Cheese_R_/Max_D)-0.5;
+#local Max_Num_Y = max(1,int(Cheese_H_/Max_D)-0.5);
+//-------------------------------------------------
+ #local NrX = 0.75; // outer loop x
+ #while (NrX &lt; Max_Num_X)
+  #local NrY = 0.5; // inner loop y
+  #while (NrY &lt;  Max_Num_Y)
+    sphere{ &lt;0,0,0>,Max_D/2
+      translate&lt;(NrX+0.5),(NrY+0.5),0>*Max_D
+      pigment{color rgb&lt;1,0.7,0.3>} finish{phong 1}
+    } // ------- end sphere
+  #local NrY = NrY + 1;  // next Nr y
+  #end // --------------- end of inner loop y
+  // end inner loop
+ #declare NrX = NrX + 1;  // next Nr x
+ #end // --------------- end of outer loop x </td></pre></b>
+  </tr></table></font>
+<!--// end table 1 -->
+<font size="2">Than we add some random in scale and position.
+We add before the loop
+<!--// table 2 -->
+  <table align="center" border="1"  bgcolor="#f9f9f0" cellpadding="5"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr><td>
+<pre><b>#declare Rnd_ = seed( 18926 );</td></pre></b>
+  </tr></table></font>
+<!--// end table 2 -->
+<font size="2"> and replace the sphere by this:
+<!--// table 2 -->
+  <table align="center" border="1"  bgcolor="#f9f9f0" cellpadding="5"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr><td>
+<pre><b>sphere{ &lt;0,0,0>,Max_D/2
+      scale&lt;1+0.5*(rand(Rnd_)),
+            1-0.5*(rand(Rnd_)),
+            1+0.5*(0.5-rand(Rnd_))>
+      translate&lt;(NrX+0.5)+0.85*(0.5-rand(Rnd_)), &nbsp;&nbsp;
+                (NrY+0.5)+0.85*(0.5-rand(Rnd_)),
+                0.15*(0.5-rand(Rnd_))> * Max_D
+       pigment{ color rgb&lt;1,0.7,0.3&gt;}
+     } // ------- end sphere
+</td></pre></b>
+  </tr></table></font>
+<!--// end table 2 -->
+<font size="2">Now we cut a piece of cheese using
+ the macro Round_Cylinder and my macro Segment_of_Object(Object,Angle) :<br>
+ For download see &quot;Step 2&quot; here <a href="../down/insert_a.htm " taget="_new">shapes_lo.inc</a>.
+ <!--// table 2 -->
+  <table align="center" border="1"  bgcolor="#f9f9f0" cellpadding="5"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr><td>
+<pre><b>#include "shapes_lo.inc"
+#declare Cheese_R_  = 0.30; // radius
+#declare Cheese_H_  = 0.15; // height
+#declare Cheese_Border_R_ = 0.05;
+#declare Cut_Angle_ = 30; // degrees
+//------------------------------------
+#declare Cheese_Shape_ =
+object{ Round_Cylinder(
+        &lt;0,0,0>,&lt;0,Cheese_H_,0>,
+        Cheese_R_ , Cheese_Border_R_, 0) }
+object{ Segment_of_Object(Cheese_Shape_,Cut_Angle_)
+        texture{ Cheese_Texture }
+      } // ----------------------------------------
+</td></pre></b>
+  </tr></table></font>
+<!--// end table 2 -->
+<br>
+<font size="2">Now all we have to do is to subtrakt the holes
+from the front and backside of this cheese shape!<br>
+(See the scene file for the details!)</font>
+</td><td>
+<br>
+<h6 align="center">
+        <table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr>
+        <td align="center">
+              <img src="household/cheese_holes_01.jpg" border="0" width="240"  height="176"
+                   alt="regulare grid" title="regulare grid"></a></td>
+        </tr>
+        </table><b>Regular grid</b>
+
+        <table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr>
+        <td align="center">
+              <img src="household/cheese_holes_02.jpg" border="0" width="240"  height="176"
+                   alt="regulare grid" title="regulare grid"></a></td>
+        </tr>
+        </table><b>Regular grid<br> with added random scale and translate</b>
+
+</h6>
+<h6 align="center">
+        <table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr>
+        <td align="center">
+              <img src="household/cheese_00.jpg" border="0" width="240"  height="176"
+                   alt="cut of cheese" title="cut of cheese"></a></td>
+        </tr>
+        </table><b>A cut of cheese</b>.
+        <table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr>
+        <td align="center">
+            <a href="javascript:ShowImage('household/cheese_1im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="household/cheese_02.jpg" border="0" width="240"  height="176"
+                   alt="cut of cheese" title="cut of cheese"></a></td>
+        </tr>
+        </table><b>A cut of cheese with holes</b>. <br>
+      Click here for the scene file for <nobr>POV-Ray:</nobr><br>
+ <a href="household/cheese_01.txt">&quot;.txt&quot; file</a> or
+ <a href="household/cheese_01.pov">&quot;.pov&quot; file</a>
+</td></h6>
+</tr></table>
+
+
+
+ <h5><b>Ready-made POV-Ray objects</b> as <br>
+ include files and example files you'll find <br>
+  at the <a href="../objects/obj_000e.htm">POV-Ray Objects Page</b></a></h5>
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="30%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

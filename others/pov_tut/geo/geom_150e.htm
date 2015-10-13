@@ -1,0 +1,210 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Regular polygon, Geometric Basics for Raytracing with POV-Ray">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, povray tutorial, 3D grafic, geometric basics for raytracing, regular polygon">
+<title>Geometric Basics for Raytracing - Geometry with POV-Ray - Regular Polygon</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"> &nbsp; &nbsp; <b>Elementary Geometry</b></font>
+      <font size="-1"> for Raytracing</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_150i.htm"><font size="2">Italiano </font></a>
+        <a href="geom_150i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_150f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="geom_150f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_150d.htm"><font size="2">Deutsch </font></a>
+        <a href="geom_150d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="geom_000e.htm">Geometrical Basics</b></a><br>
+ &nbsp; &nbsp; <a href="geom_000e.htm">for Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050e.htm">Right-angled Triangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070e.htm">Pythagorean Theorem</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080e.htm">Trigonometry Basics</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090e.htm">Law of cosines</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100e.htm">Equilateral Triangle</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_150e.htm"--><b>Regular Polygon</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200e.htm"--><i>Polyhedron</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200e.htm">Tetrahedron</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250e.htm">Octahedron</a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300e.htm">Cube &amp; Cuboid</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500e.htm">Dodecahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700e.htm">Icosahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260e.htm">Cuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270e.htm">Truncated Octahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280e.htm">Rhombicuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800e.htm">Truncated Icosahedron</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_c000e.htm"--><i>Circles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100e.htm">Tangent circles</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200e.htm">Internal Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300e.htm">External Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+ <tr>
+ <td>&nbsp;</td>
+ <td><p align="justify"><h2><b>Regular Polygon</b></h2>
+ <font size="-1">A regular polygon is a polygon with the properties, that all angles are equal and all sides have the same length.<br>
+  The equilateral triangle (3), the sqare (4), the regular pentagon (5), the regular hexagon (6), the heptagon (7),<br>
+  the octagon (8), the nonagon or enneagon (9), the decagon (10), the hendecagon (11), the dodecagon (12), ... ,<br>
+  the hectagon (100), the chiliagon (1000), the  miriagon (10000), the  megagon (1000000), <br>
+  the gigagon (1000 000 000),  the teragon (1000 000 000 000 000 000), <br>
+  the petagon (1000 000 000 000 000 000 000), ...   , the circle (&#8734;).</font></p>
+</h2>
+ </td>
+ </tr>
+</table>
+
+
+<font size="-2">Note: The <b>trigonometric functions sin(X), cos(X) and tan(X) in POV-Ray</b> <br>
+ <b>need their arguments X in radians !!!  &nbsp; The symbole &#960; = pi en POV-Ray.</b><br>
+</p>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+ <td width="50%" valign="top">
+<nobr> In a <b>regolar polygon with N corners</b> or N sides:</nobr><br>
+ <font size="-1">
+  <b>The sum of the interior angles</b></font><b> = 180*(N-2);</b><br>
+ <font size="-1">
+  <b>The interior angle</b></font><b>  = 180-360/N;</b>
+<pre><font size="-1"> equilateral triangle: 180-360/3 = 180 - 120 =  <b>60</b>;
+ sqare:                180-360/4 = 180 -  90 =  <b>90</b>;
+ regular pentagon:     180-360/5 = 180 -  72 = <b>108</b>;
+ regular hexagon:      180-360/6 = 180 -  60 = <b>120</b>;
+ regolar heptagon:     180-360/7 = 180-51,43 = <b>128,57</b>;
+ regolar octagon:      180-360/8 = 180 -  45 = <b>135</b>;
+ regolar enneagon:     180-360/9 = 180 -  40 = <b>140</b>;
+ regolar decagon:      180-360/10= 180 -  36 = <b>144</b>;
+ regolar hendecagon:   180-360/11= 180 -32,7 = <b>147,3</b>;
+ regolar dodecagon:    180-360/12= 180 -  30 = <b>150</b>;</td></font></pre>
+
+</tr>
+<tr>
+ <td>
+ <font size="-1">A regolar polygon with N corners and<br>
+ <b>with the radius of the circumcircle R</b>,<br>
+ or <b>with the radius of the incircle Ri</b>:</font><br>
+
+
+ <font size="-1">The length of <b>side a</b>:</font><br>
+ <b> a = 2* R  * sin( radians( 180/N ) );</b> or <br><b> a = 2*R *sin( pi/N  );</b><br>
+ <b> a = 2* Ri * tan( radians( 180/N ) );</b> or <br><b> a = 2*Ri*tan( pi/N  );</b><br>
+ </td>
+</tr>
+<tr>
+ <td>
+ <font size="-1">With the length of the side <b>a</b> of the regolar polygon :</font><br>
+ <font size="-1">The radius of the <b>circumcircle</b>:<br></font>
+<b>R  = 1/2 * a/sin( radians( 180/N ) ) );</b> o<br>
+<b>R  = 1/2 * a/sin( pi/N );</b><br>
+ <font size="-1">The radius of <b>incircle</b>:<br></font>
+<b>Ri = 1/2 * a/tan( radians( 180/N ) ) );</b> o<br>
+<b>Ri = 1/2 * a/tan( pi/N );</b><br>
+ </td>
+</tr>
+<tr>
+</table>
+
+</div>
+
+</td>
+<td width="50%" valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Polygon_Angles_001.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">A regolar polygon - angles, sides, radii.</font>
+
+
+
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- global-->
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td>
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

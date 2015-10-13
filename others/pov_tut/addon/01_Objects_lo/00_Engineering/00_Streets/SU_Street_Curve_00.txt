@@ -1,0 +1,34 @@
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+/* 
+// alternative declaration of textures
+#declare Street_Texture = 
+      texture{ pigment{ color rgb<1,1,1>*0.4}
+               normal { bumps 0.25 scale 0.005}
+               finish { diffuse 0.9 phong 0.1}
+             } // end of texture
+#end
+#ifndef( Stripes_Texture )
+#declare Stripes_Texture = 
+      texture{ pigment{ color rgb<1,1,1>*1.1}
+             //normal { bumps 0.5 scale 0.005}
+               finish { diffuse 0.9 phong 0.5}
+             } // end of texture
+*/
+//-------------------------------------------------------------------------------------// 
+#include "Street_Curve_00.inc" // curved street with middle stripes 
+//-------------------------------------------------------------------------------------// 
+object{ Street_Curve_00( 4.00,  // Street_Widthm, // 
+                        50,    // Curve_Angle,   // degrees, right handed
+                        30.00,  // Curve_Radius,  // 
+                        0.10,  // Stripes_Width, // 
+                        1.00,  // Stripes_Length                                  
+                      ) //-------------------------------------------------------------//
+        scale <1,1,1>*1 // curve to the right by "scale<-1,1,1>"
+        rotate<0,0,0> 
+        translate<0.00,0.00, -5.00>}
+//-------------------------------------------------------------------------------------// 
+//-------------------------------------------------------------------------------------// 
+
+
+

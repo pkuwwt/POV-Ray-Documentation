@@ -1,0 +1,254 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Textures avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="Textures avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Conception de Surface en &raquo;texture&laquo; avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_001e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_001e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_001i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_001i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_001d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_001d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+<br>
+ &nbsp;       <!--a href="tex_000f.htm"--><b>Conception de Surface</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000f.htm">Coleurs et Textures</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp;<!--a href="tex_001f.htm"--><b>Syntaxe de texture</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_001f.htm"--><b>Exemple de base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200f.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300f.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330f.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2f.htm">Exemples normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400f.htm">finish{ ... } </b></a><br>
+ <nobr>&nbsp; &nbsp; <a href="tex_210f.htm">Textures pr&ecirc;tes-&agrave;-l'emploi</b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="tex_210f.htm">Rules</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_150f.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160f.htm">textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110f.htm">Couleurs en do-it-yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110f.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120f.htm">Transparence</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700f.htm">Motifs - Patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700f.htm">types de motifs</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500f.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550f.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp;Motifs rayures</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750f.htm">Listes de Motifs</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750f.htm">Motifs régulaires</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755f.htm">Motifs par hasard</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760f.htm">Motifs Fractal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Autres motifs</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780f.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780f.htm">warp mapping</b></a><br> -->
+ &nbsp; &nbsp; <a href="tex_790f.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800f.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800f.htm">méthodes de mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600f.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820f.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830f.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840f.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850f.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860f.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870f.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880f.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890f.htm">Superpositions</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890f.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900f.htm">Votre textures</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="70%" align="center"><tr><td><!-- global table-->
+
+<h1 align="center"><a name="Top"></a><b>Syntaxe de &raquo;texture&laquo;<br></b>
+</h1>
+
+<font face="Arial">Texture = Qualit&eacute; de la Surface<br>
+(Par ex. : couleur, transparence, rugosit&eacute;, luminosit&eacute;, r&eacute;flexion, transparence)</p>
+<p align="center">Ici un example pour les </font><b>
+<font face="Arial" size="4"> r&egrave;gles syntaxiques </b></font>
+ <font face="Arial"> des objets g&eacute;om&eacute;triques:</p></font>
+<div align="center">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#f8f8f0"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <r><td>
+<font face="Arial, Verdana, Helvetica">
+<pre>sphere{&lt;0,0,0&gt;, 1 translate&lt;0,1,0&gt;
+      <b>texture{ pigment{</b>color Orange<b>}</b>
+               <b>normal {</b>bumps 0.5 scale 0.05<b>}</b>
+               <b>finish {</b>diffuse 0.9 phong 1.0<b>}</b>
+             <b>}</b> // end of texture
+      } // end of sphere</b></td></pre>
+ </tr>
+</table>
+<br>
+<table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr><td>
+<img src="im/texamle.jpg" border="0" width="320"  height="240"  vspace="0" hspace="0"></td>
+</tr>
+</table>
+</div>
+
+<hr size="3">
+
+<b>La description compl&egrave;te de la texture est compos&eacute;e de trois composants:</b>
+<ol>
+
+<li><b>qualit&eacute; de la couleur (obligatoire!):, including transparence (option!)</b><br>
+     &nbsp; &nbsp; <a href="tex_200f.htm">
+     pigment{ ... }</b></a>&nbsp;&nbsp;&nbsp;
+     // la qualit&eacute; de la coleur doit &ecirc;tre defin&eacute;e!</li>
+<li><b>structure de la surface</b> (rugosit&eacute;).<br>
+     &nbsp; &nbsp; <a href="tex_300f.htm">
+     normal&nbsp;&nbsp;{ ... }</b></a>&nbsp;&nbsp;&nbsp;
+     // option!</li>
+<li><b>luminosit&eacute; et la qualit&eacute; de la r&eacute;flexions</b>:<br>
+     &nbsp; &nbsp; <a href="tex_400f.htm">
+     finish&nbsp;&nbsp;&nbsp;&nbsp;{ ... }</b></a>&nbsp;&nbsp;&nbsp;
+     // minimum: &quot;finish{ambient 0.1 diffuse 0.9}&quot;<br>
+     &nbsp; &nbsp; &nbsp; (il est indiqu&eacute;! Voyez aussi mes remarques &agrave; &raquo;finish&laquo; )</li>
+</ol>
+
+
+<p align="justify">
+Il est indiqu&eacute; de respecter cons&eacute;quent de mieux cette forme clair.
+Quelque fois aussi descriptions plus incons&eacute;quent et avec des erreurs logiques
+peuvent fonctionner - quelque fois &ccedil;a fait causer seulement un avertissement,
+un message d'erreur sans cons&eacute;quences.<br>
+
+Quand m&ecirc;me, il faut &eacute;liminer ces erreurs intensivement, car ils sont souvent
+l'origine de malentendus plus grands et ils grandissent souvent &agrave; un probl&egrave;me de mani&egrave;re
+&raquo;fatal error&laquo;. Au surplus n'est pas s&ucirc;r que les versions &agrave; l'avenir
+ont la m&ecirc;me tol&eacute;rance - un erreur petit d'aujourd'hui peut devenir un erreur fatal &agrave; l'avenir!
+</p>
+<hr>
+
+<p align="justify">Couleurs, pigments et textures on peut faire &raquo;&agrave; la main&laquo;
+comme c'est indiqu&eacute; suivant, mais on peut aussi utiliser des programmes sp&eacute;ciaux pour POV-Ray.
+Ces &raquo;texture editors&laquo; ont besoin d'une connaissance de cause tr&egrave;s profonde !</p>
+
+<p align="justify">Pour faire passer des tests &agrave; textures est tr&egrave;s utile
+appliquer une sc&egrave;ne simple
+ (un ciel monochrome et un sol simple, camera, light_source (color White ou color rgb&lt;1,1,1&gt;)
+  &agrave; une distance grand, comme quand il fait soleil).
+L'objet d'exp&eacute;rience: une sph&egrave;re simple, un cylindre,
+un parall&eacute;l&eacute;pip&egrave;de rectangle (&raquo;box&laquo;) -
+pour comparer les effets sur surfaces de caract&egrave;res diff&eacute;rents. C'est tr&egrave;s important
+par ex. avec rehauts de type &raquo;phong&laquo;!</p>
+
+<p align="justify">Un jour ou l'autre nous avons fait notre collection de textures et couleurs
+sp&eacute;ciales. Puis nous voulons utiliser ces textures dans autres sc&egrave;nes. On peut faire cela
+par copier les d&eacute;finitions (Par ex. : #declare Mon_Rouge  = color &lt;1, 0, 0.25&gt; )
+dans un <a href="tex_900f.htm"> fichier include personnel</a>
+(Par ex. : avec le nome &raquo;mes_couleurs.inc &laquo;).
+Puis il faut int&eacute;grer ces d&eacute;finitions au d&eacute;but de notre descriptions de sc&egrave;nes
+par <b>&raquo; #include &quot;mes_couleurs.inc&quot &laquo;</b> .
+Il faut placer ce fichier include personnel dans le chemin
+<nobr>&raquo;C:\programmes\POV-Ray for Windows v3.6\include\&laquo;</nobr>
+ou dans le chemin du fichier .pov de la description de sc&egrave;ne actuelle.
+Dans ces chemins POV-Ray cherche les fichiers par les valeurs pr&eacute;r&eacute;gl&eacute;s (default values).
+Mais attention, s'il vous pla&icirc;t! : Ne changez pas un ficher include original
+telle que &raquo;colors.inc&laquo;, car autrement il peut &ecirc;tre
+que quelques sc&egrave;nes originaux ne marchent plus!
+ </p>
+
+<hr>
+<p align="justify">
+<b>Important:</b> &quot;scale&quot;, &quot;rotate&quot; et &quot;translate&quot;
+ont un effet seulement sur les objets dans les accolades actuelles.
+
+Par cons&eacute;quent est possible utiliser &quot;scale&quot;, &quot;rotate&quot; ou &quot;translate&quot;
+avec motifs en couleurs dans &quot;pigment{ ...}&quot;, aussi avec la simulation d'une d#eformation de la surface par
+ &quot;normal{...}&quot; ind&eacute;pendant et s&eacute;par&eacute; de la g&eacute;om&eacute;trie de l'objet.</p>
+<p>Exemple :</p>
+</td></tr></table><!-- global table-->
+
+<div align="center">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#f8f8f0"
+  bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr><td valign="top">
+<pre><b>sphere{&lt;0,0,0&gt;,1
+       scale &lt;1.2,1,1&gt;
+       translate&lt;0,1,0&gt;//Ce fait effet sulement sur la géométrie de la sphère!
+       texture{
+         pigment{Candy_cane
+                 scale 0.25 }// Ce fait effet sulement sur &quot;pigment&quot;!
+         normal {wrinkles 0.75
+                 scale 0.1} // Ce fait effet sulement sur &quot;normal&quot;!
+         finish {ambient 0.15
+                 diffuse 0.85
+                 phong 0.3}
+         rotate&lt;0,0,45&gt;
+                 // Ce fait effet sur la texture entière ,
+                 // mais pas sur la géométrie de la sphère!
+              } // fin de &quot;texture&quot;
+       scale 0.5 // fait effet sur la sphère avec la texture!
+                 //Attention: fait effet aussi sur
+                 // la translation avec &quot;translate&quot;!
+                 // Centre de la sphère est ici: &lt;0,0.5,0&gt;!
+       } // fin de &quot;sphere&quot;</b></td></pre>
+ </tr>
+</table>
+</div>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

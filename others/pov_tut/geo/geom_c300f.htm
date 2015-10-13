@@ -1,0 +1,281 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Tangentes externes, G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafique, infographique, 3D Graphique, g&eacute;om&eacute;trie de base pour Raytracing, tangentes externes">
+<title>G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray - Tangentes externes</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"> &nbsp; &nbsp; &nbsp; <b>G&eacute;om&eacute;trie de Base</b></font> -
+      <font size="-1"><b>pour Raytracing</b</font></div>
+ </td></h6>
+ <td align="right">
+   <a href="geom_c300e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="geom_c300e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="geom_c300i.htm"><font size="2">Italiano</font></a>&nbsp;
+   <a href="geom_c300i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="geom_c300d.htm"><font size="2">Deutsch</b></a>&nbsp;
+   <a href="geom_c300d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000f.htm">G&eacute;om&eacute;trie de Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000f.htm">pour Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050f.htm">Triangle rectangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070f.htm">Th&eacute;or&egrave;me de Pythagore</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080f.htm">Trigonom&eacute;trie de base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090f.htm">Loi des cosinus</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100f.htm">Triangle &eacute;quilat&eacute;ral</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150f.htm">Polygone r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200f.htm"--><i>Poly&egrave;dre</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200f.htm">T&eacute;tra&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250f.htm">Octa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300f.htm">Cube et Cubo&iuml;de</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500f.htm">Dod&eacute;ca&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700f.htm">Icosa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260f.htm">Cubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270f.htm">Octa&egrave;dre tronqu&eacute;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280f.htm">Rhombicubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800f.htm">Icosa&egrave;dre tronqu&eacute;</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000f.htm"--><i>Cercles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100f.htm">Cercles touchants</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200f.htm">Tangentes internes</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_c300f.htm"--><b>Tangentes externes</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+
+
+
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+ <tr>
+ <td><h2><b>Tangentes externes aux deux Cercles</b><br>
+<font size="-1"><i>Note 1: En POV-Ray nous utilisons &quot;sqrt(X)&quot; pour la racine carr&eacute;e de X
+ et nous utilisons &quot;X*X&quot;  ou &quot;pow(X,2)&quot; pour X<sup>2</sup>.</i></font><br>
+ <font size="-2">Note 2: Les objets de la g&eacute;om&eacute;trie 2D sont repr&eacute;sent&eacute;s par des objets 3D dans le plan des xy.
+ Pour cela dans toutes les coordonn&eacute;es herefore all coordinates le z-composant doit &ecirc;tre z&eacute;ro! ( &lt;?,?,0&gt; !)</b></font></td></h2>
+
+ </tr>
+ </table>
+
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<table border="1" cellpadding="5" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+ <td>
+ <font size="-1"><nobr>Nous cherchons les <b>tangentes externes <b>entre les points de tangente</nobr><br>
+    T<sub>1</sub> et T<sub>2</sub></b> aux les deux cercles
+    C<sub>1</sub>(M<sub>1</sub>,r<sub>1</sub>)</b> et <b>C<sub>2</sub>(M<sub>2</sub>,r<sub>2</sub>)</b><br>
+    avec les rayons <b>r<sub>1</sub> &gt; r<sub>2</sub></b>,
+    comme figur&eacute; sur l'image ci-contre.<br>
+    La distance des centres est <b>d</b>.<br>
+    La diff&eacute;rence des rayons est <b>r<sub>i</sub> = r<sub>1</sub> - r<sub>2</sub>.</b><br>
+ </font>
+ </td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top">
+ <font size="-1">Le triangle M<sub>1</sub>,S,M<sub>2</sub> a un angle rectangle &agrave; S.
+ La ligne (T<sub>1</sub>,T<sub>2</sub>) est parall&egrave;le &agrave; la ligne (M<sub>2</sub>,S) et a la m&ecirc;me longueur.<br>
+ Ansi <b>t = |T<sub>1</sub>,T<sub>2</sub>| = sqrt( d<sup>2</sup> - r<sub>i</sub><sup>2</sup>).</b><br>
+ L'angle<b> &#945; = atan(r<sub>i</sub>/t).</b> ou  &nbsp; <b> &#945; =  asin(r<sub>i</sub>/d).</b><br>
+ </font></td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top">
+ <font size="-1">La calulation de la longueur de la ceinture autour le deux cercles :<br>
+ La longueur du  segment de cercle autour du cercle C<sub>1</sub> :<br>
+ <b>l<sub>1</sub> = 2&#960;&#183;r<sub>1</sub> &#183;(180+2&#183;&#945;)/360</b>.<br>
+ La longueur du  segment de cercle autour du cercle C<sub>2</sub>:<br>
+ <b>l<sub>2</sub> = 2&#960;&#183;r<sub>2</sub> &#183;(180-2&#183;&#945;)/360</b>.<br>
+ La longueur de la ceinture compl&egrave;te :
+ <b>l = l<sub>1</sub> + l<sub>2</sub> + 2&#183;t </b>.<br>
+ </font>
+ </td>
+ </tr>
+</table>
+
+</div>
+
+</td>
+<td width="50%"  valign="top" align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/External_Tangents_00ec.jpg" width="400" height="256" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Tangentes externes aux deux Cercles rendu avec POV-Ray</font><br>
+
+ <!--font size="-2">Note: To <b>avoid any collision with built-in identifiers and reserved words in POV-Ray</b>,
+ it's strongly recommanded to <b>use only words beginning with capital letters for all identifiers of variables declared by the user,</b><br>
+   i.e. use &quot;R1&quot; instead of &quot;r<sub>1</sub>&quot;
+ and use &quot;Y2&quot; instead of &quot;y<sub>M2</sub>&quot;.</font>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local X1= 0.40; #local Y1= 0.80; #local R1= 0.20;
+#local X2= 0.64; #local Y2= 0.15; #local R2= 0.15;
+#local M1 = &lt;X1,Y1,0&gt;; #local M2 = &lt;X2,Y2,0&gt;
+//------------------------------------------------
+#local M_Dist = sqrt(pow(X2-X1,2)+pow(Y2-Y1,2));
+#local M2_S = sqrt(pow(M_Dist,2)-pow(R1+R2,2));
+#if ( X1 &lt; X2) #local Alpha =
+          180-abs(degrees(atan((Y2-Y1)/(X2-X1))));
+#else          #local Alpha =
+            abs( degrees( atan((Y2-Y1)/(X2-X1))));
+#end
+#local Beta = abs(degrees(asin( M2_S/M_Dist)));
+#local Gamma =  Alpha - Beta;
+#local T1 = M1-&lt;(R1)*cos( radians(Gamma)),
+                (R1)*sin( radians(Gamma)),0&gt;;
+#local T2 = M2+&lt;(R2)*cos( radians(Gamma)),
+                (R2)*sin( radians(Gamma)),0&gt;;</b></td></pre>
+    </tr></table><font size="-1">The calulation of the tangent from T<sub>1</sub> to T<sub>2</sub> in POV-Ray
+</font-->
+
+</td>
+</tr><tr><td colspan="2"><hr></td></tr>
+<table>
+
+<table align="center" border="0" cellpadding="2" width="95%"> <!--pair left -->
+<tr><td colspan="2" valign="top" width="50%" align="center"><p align="left">
+<b>&Agrave; quoi est util cette g&eacute;om&eacute;trie ?</b><br>
+Ici quelques exemples :
+ </td></p>
+<td colspan="2" valign="top" width="50%" align="center">
+ </td></p>
+
+
+</td>
+</tr>
+<tr>
+ <td colspan="2" width="390" valign="top">
+     <table><tr><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><img src="im/Round_Conic_Torus_1.jpg" border="0" width="160" height="160"></td>
+   </tr></table><font size="1">Un tore conique arrondi.</b>
+    </td><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><img src="im/Round_Conic_Prism_1.jpg" border="0" width="160" height="160"></td>
+   </tr></table><font size="1"><b>Un prisme conique arrondi.</b>
+
+       </td></tr></table>
+ </td>
+<td colspan="2" width="390" valign="top">
+     <table><tr><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><a href="../animate/anim141e.htm" target="_new"><img src="im/Roller_Chain_014t.gif" border="0" width="160" height="120"></a></td>
+   </tr></table><font size="1"><b>Une cha&icirc;ne &agrave; rouleaux ou un convoyeur.</b></font><br>
+  <font size="-1">Tutorial d'Animation :<br>
+    <a href="../animate/anim141f.htm">'Cha&icirc;ne &agrave; rouleaux'</a></font><br>
+
+          </td><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><a href="../animate/anim142f.htm" target="_new"><img src="im/Bike_Chain_35t.gif" border="0" width="160" height="160"></a></td>
+   </tr></table><font size="1"><b>Une cha&icirc;ne de v&eacute;lo.</b></font><br>
+   <font size="-1">Tutorial d'Animation :<br>
+    <a href="../animate/anim142f.htm">'Cha&icirc;ne de v&eacute;lo'</a><br>
+    Pour une animation voir ici :<br>
+    <a href="../../pov_anim/ani_4000d.htm">'Animations des cha&icirc;nes &agrave; rouleaux'</a> </font>
+       </td></tr></table>
+ </td>
+ </tr>
+<tr><td colspan="2">
+  <!--This shape in a macro as a <b>ready made object</b>: <a href="../objects/obj_350e.htm">Erlenmeyer_Shape_1</a> <br>
+  Application of this  shape in a macro as a <b>ready made object</b>: <a href="../objects/obj_880e.htm">Erlenmeyer_Shape_1</a> <br>
+  </font-->
+</td>
+<td colspan="2">
+</td>
+</table>
+
+</td></tr>
+</table>
+
+
+
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

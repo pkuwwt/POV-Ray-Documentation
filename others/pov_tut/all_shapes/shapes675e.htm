@@ -1,0 +1,245 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+<hr size="3"><p align="center"><font size="+2">Geometric Shapes in POV-Ray &nbsp; &nbsp; &nbsp;</font></td></p></h6>
+ </td>
+ <td align="right">
+        <a href="shapes675i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes675i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes675f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes675f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes675d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes675d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Index<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+<a href="shapes000e.htm">Other Shapes</b></a><br>
+<br>
+&nbsp;<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+&nbsp; -  <a href="shapes660e.htm">disc</b></a><br>
+&nbsp; -  <a href="shapes665e.htm">polygon</b></a><br>
+&nbsp; -  <a href="shapes670e.htm">triangle</b></a><br>
+&nbsp; -  <a href="shapes672e.htm">smooth_triangle</b></a><br>
+&nbsp; -&gt;<!--a href="shapes675e.htm"--><b>bicubic_patch</b></a><br>
+&nbsp; -  <a href="shapes680e.htm">mesh</b></a><br>
+&nbsp; -  <a href="shapes690e.htm">mesh2</b></a><br>
+<br>
+<nobr>&nbsp;<a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+&nbsp;<a href="shapes900e.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+
+</td><td valign="top"> <!-- Content -->
+
+<table><tr>
+<td>
+ <td><table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><img src="im/bicubic_patch3s.jpg" alt="mesh" title="mesh" width="80" height="60" border="0"></td></tr></table>
+</td>
+<td valign="top">
+<b>bicubic_patch{ ...} </b>
+<br><font size="-1">Shape with curved surface created with a mesh of triangles <br>
+<br>
+built-in shape, non-CSG</font><br>
+</font></td>
+</tr></table>
+<br>
+
+
+<table border="0" cellspacing="1" cellpadding="2">
+<tr><td bgcolor="#eeeeee" colspan="2"><pre>
+//Syntax: ------------------------------
+<b>bicubic_patch{
+   <i>patch_type</i>  // (boolean: 0 or 1)
+  // 0 = Bezier patch, stores only the triangular vertices.
+  // 1 = Bezier patch, stores all plane equations defined by
+  // the triangulation of the patch into sub patches
+  // (faster, needs more RAM)
+  <i>flatness</i> //value from 0.0 to 1.0,
+  // higher values are giving flatter, less smooth results!
+  u_steps <i>u_steps_number</i> // number of triangles to subdivide (1 to 5)
+  v_steps <i>u_steps_number</i> // number of triangles to subdivide (1 to 5)
+  &lt;<i>vertex_11</i>&gt;,&lt;<i>vertex_12</i>&gt,&lt;<i>vertex_13</i>&gt,&lt;<i>vertex_14</i>&gt;,
+  &lt;<i>vertex_21</i>&gt;,&lt;<i>vertex_22</i>&gt,&lt;<i>vertex_23</i>&gt,&lt;<i>vertex_24</i>&gt;,
+  &lt;<i>vertex_31</i>&gt;,&lt;<i>vertex_32</i>&gt,&lt;<i>vertex_33</i>&gt,&lt;<i>vertex_34</i>&gt;,
+  &lt;<i>vertex_41</i>&gt;,&lt;<i>vertex_42</i>&gt,&lt;<i>vertex_43</i>&gt,&lt;<i>vertex_44</i>&gt;,
+ } //--------------------- </b>
+// Default values: flatness : 0.0
+//                 u_steps  : 0
+//                 v_steps  : 0
+</td></pre>
+</tr></table>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+
+    <table align="center" border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <!--a href="javascript:ShowImage('prism1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''"-->
+              <img src="im/bicubic_patch.jpg" border="0" width="240"  height="180"
+                   alt="bicubic_patch" title="bicubic_patchc"></a>
+            </td></tr></table>
+ </td>
+ <td>Example:
+  <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>bicubic_patch{
+  type 1
+  flatness 0.1
+  u_steps 4
+  v_steps 4
+  &lt;0, 0, 2&gt;,&lt;1, 0, 0&gt;,&lt;2, 0, 0&gt;,&lt;3, 0,-2&gt;,
+  &lt;0, 1, 0&gt;,&lt;1, 1, 0&gt;,&lt;2, 1, 0&gt;,&lt;3, 1, 0&gt;,
+  &lt;0, 2, 0&gt;,&lt;1, 2, 0&gt;,&lt;2, 2, 0&gt;,&lt;3, 2, 0&gt;,
+  &lt;0, 3, 2&gt;,&lt;1, 3, 0&gt;,&lt;2, 3, 0&gt;,&lt;3, 3,-2&gt;
+  texture{ pigment{ color rgb&lt;0.75,0.5,1&gt;}
+           finish { phong 0.3}
+         } // end of texture
+  scale&lt;1,1,1&gt;
+  rotate&lt; 0,90,0&gt;
+  translate&lt;0,0,0&gt;
+} // end of bicubic_patch ---------------- </b></td></pre></tr></table>
+</td></tr></table>
+
+<hr size="3">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+Note: &quot;bicubic_patch&quot; usually are not created by hand
+but are converted from other files.
+</td>
+</tr>
+</table>
+</div>
+<hr size="3">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr>
+<td valign="top">
+Example of a &quot;hand-made&quot; bicubic_patch:
+    <table align="center" border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/bicubic_patch3.jpg" border="0" width="240" height="180"
+                   alt="bicubic_patch" title="bicubic_patch"></a>
+            </td></tr></table>
+</td>
+<td>
+  <table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>// --------------------------------------
+#local A = &lt;1.20,3.50,0&gt;;
+#local B = &lt;0.00,3.00,0&gt;;
+#local C = &lt;3.00,0.30,0&gt;;
+#local D = &lt;0.00,0.00,0&gt;;
+#local Blow = &lt; 0,0, 0.8&gt;;
+// blowing in z direction
+#local DB = B-D; #local DC = C-D;
+#local CA = A-C; #local DB = B-D;
+
+#local P01=  3/3*A      ;
+#local P02=  2/3*A+1/3*B;
+#local P03=  1/3*A+2/3*B;
+#local P04=        3/3*B;
+
+#local P13=  3*C/3;
+#local P14=  2*C/3+1*D/3;
+#local P15=  1*C/3+2*D/3;
+#local P16=        3*D/3;
+
+#local P05=  2/3*CA + C+0.25*Blow;
+#local P09=  1/3*CA + C+0.25*Blow;
+#local P08=  2/3*DB + D;
+#local P12=  1/3*DB + D;
+
+#local P10=P16+2/3*DC+1/3*(P02-P14)+Blow;
+#local P11=P16+1/3*DC+1/3*(P03-P15)+Blow;
+#local P06=P16+2/3*DC+2/3*(P02-P14)+Blow;
+#local P07=P16+1/3*DC+2/3*(P03-P15)+Blow;
+
+bicubic_patch{ //------------------------
+ type 1
+ flatness 0
+ u_steps 4 // 1~5
+ v_steps 4 //
+ P01, P02, P03, P04,
+ P05, P06, P07, P08,
+ P09, P10, P11, P12,
+ P13, P14, P15, P16
+
+ texture{ pigment{ color rgb&lt;1,1,1&gt;}
+          finish { phong 1}
+        } // end of texture
+rotate&lt;0,90,0&gt;
+} // end of bicubic_patch --------------- </b></td></pre></tr></table>
+</td>
+</tr></table>
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

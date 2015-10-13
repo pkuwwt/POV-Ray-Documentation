@@ -1,0 +1,219 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische Transformationen mit POV-Ray - transform</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2008, Friedrich A. Lohmueller">
+<meta name="Description" content="Geometrische Transformationen in POV-Ray, Skalieren,
+      Ma&szlig;stabsver&auml;nderung, Parallel-Streckung, Streckung, Spiegelung an einer Koordinatenebene, Euler-Affinit&auml;t,
+      Rotieren, Drehung, Translation, Parallelverschiebung, Transformationsmatrizen, Scherung, affine Abbildungen, affine Abbildungsmatrizen, zusammengefa&szlig;te Transformationen">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Povray, Raytracing, 3D-Grafik, 3d-Graphik, Computergraphik, konstruieren,
+      geometrische Transformationen, Skalieren, Ma&szlig;stabsver&auml;nderung, Parallel-Streckung, Streckung, Spiegelung an einer Koordinatenebene, Euler-Affinit&auml;t,
+      Rotieren, Rotation, Drehung, Translation, Parallelverschiebung, Transformationsmatrizen, Scherung, affine Abbildungen, affine Abbildungsmatrizen, zusammengefa&szlig;te Transformationen">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometrische Transformationen in POV-Ray </b></font>
+ </td></h6>
+ <td align="right">
+        <a href="trans_500e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="trans_500e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="trans_500i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_500i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_500f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_500f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;       <a href="trans_000d.htm">Geometrische</b></a><br>
+ &nbsp;       <a href="trans_000d.htm">Transformationen</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Elementare </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Transformationen</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100d.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200d.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</a><br>
+ &nbsp; &nbsp; - <a href="trans_300d.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300d.htm">Spiegelung</b></a><br>
+ <br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Weitere</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001d.htm"-->Transformationen</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400d.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450d.htm">Scherung</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470d.htm">&quot;transforms.inc&quot;</a><br>
+<br>
+ &nbsp; &nbsp; - <!--a href="trans_500d.htm"--><b>&quot;transform { &nbsp;...&nbsp; }&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="trans_500d.htm"--><b>&nbsp;und &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800d.htm">Vektoren und</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800d.htm">Transformationen</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insrtd_a.htm">Insert Menu Zusatz</b></a><br>
+ &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td>
+    <font size="6"> &quot;transform{ ... }&quot;</font>  <font size="4"><nobr> =  zusammengefa&szlig;te Transformationen</nobr></font><br>
+    <font size="6"> &quot;transform{ ... invers }&quot;</font> <font size="4"><nobr> = invertierte Transformation</nobr></font>
+</td></tr></table>
+
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td>
+<p align="justify">Mit diesem Kommando ist es m&ouml;glich mehrere Transformationen wie &quot;scale&quot;,
+&quot;rotate&quot;, &quot;translate&quot; und/oder &quot;matrix&quot;, in beliebiger Reihenfolge
+nacheinander ausgef&uuml;hrt, zu einem einzigen Transformations-Befehl zusammenzufassen.<br>
+
+Syntax:
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF"><pre><b> #declare <i>MeineTransformation</i>
+ = transform{ <i>Beliebige Folge v. Transformationen</i>}</b></td></pre>
+  </tr></table>
+<font size="2">&nbsp; (Transformationen hier: translate, rotate, scale, oder matrix.)</font><br>
+
+
+<font size="3">Anwendung wie folgt:
+<table border="1" cellpadding="4" cellspacing="4"  bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF"><pre><b> object{ <i>Mein_Objekt</i> transform <i>MeineTransformation</i>}
+  //oder durch
+ object{ <i>Mein_Objekt</i> transform {<i>MeineTransformation</i>} }</b></td></pre>
+ </tr></table>
+<font size="2">&nbsp; (mit oder ohne innere Klammern!)</font> <br>
+<font size="3">und die umgekehrte Transformation:</font>
+<table border="1" cellpadding="2" cellspacing="2"  bordercolor="#FFFFFF">
+  <tr><td bgcolor="#FFFFFF">
+<pre><b> object{ <i>Mein_Objekt</i> transform {<i>MeineTransformation</i> <font color="#800000">inverse</font>} } </b></td></pre>
+ </tr></table>
+<font size="2">&nbsp; (Ben&ouml;tigt die inneren Klammern!)</font>
+<br>
+<br>
+Hier eine Anwendung:
+
+<table  border="1" bordercolor="#c0c0c0" cellspacing="5" cellpadding=4>
+ <tr>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="canu7s.jpg" border="0" width="240"  height="180"
+                   alt="canoes" title="canoes">
+            </td></tr></table>
+  </td>
+  <td bgcolor="#eee8d0" >F&uuml;r Details<br> zum Kanu-Bau<br> vgl. Beispiele!</td>
+</tr><tr>
+<td bgcolor="#eee8d0" colspan="2">
+    <p align="justify"><font size="4">
+    Ein Objekt namens &quot;Canoe&quot; sowie die dazugeh&ouml;renden L&ouml;cher in der Wasserfl&auml;che &quot;Canoe_outside&quot; sollen
+    z.B. an 3 verschiedenen Positionen in verschiedenen Gr&ouml;&szlig;bzw. Lagen bzw. Orientierungen platziert werden:</font><br>
+    </p>
+    <font size="3">
+     Dazu definiert man zuerst die Transformationen, welche zu den gew&uuml;nschten Positionen f&uuml;hren:
+<pre><b>//------------------------------------- Positionen:
+#declare Canoe_Position1
+  = transform { rotate&lt; 0,30,0&gt; translate&lt;0.0,0,1&gt;}
+#declare Canoe_Position2
+  = transform { rotate&lt;-6,20,0&gt; translate&lt;1.5,0,5&gt;}
+#declare Canoe_Position3
+  = transform { rotate&lt; 5, 0,0&gt; scale 0.55
+                          translate&lt; -0.3,0,-2.00&gt;}
+//-------------------------------------------------
+</b></pre>
+Sodann werden die Kanus positioniert:
+<pre><b>
+//---------------------- Kanus an ihren Positionen:
+object{ Canoe transform Canoe_Position1}
+object{ Canoe transform Canoe_Position2}
+object{ Canoe transform Canoe_Position3}
+//-------------------------------------------------
+</b></pre>
+
+und ebenso die dazugehorenden L&ouml;cher in der Wasserfl&auml;che:</font>
+<pre><b>//-------------------------------------------------
+difference{
+plane{&lt;0,1,0&gt;>, 0 }
+object{Canoe_outside transform Canoe_Position1 }
+object{Canoe_outside transform Canoe_Position2 }
+object{Canoe_outside transform Canoe_Position3 }
+   texture{Polished_Chrome
+                    normal {crackle 1 scale 5
+                            turbulence 1
+                            translate&lt;,0,0,5&gt;}
+                    finish {ambient 0.35 diffuse 0.25
+                            reflection 0.40}}
+          }// end of difference
+//----------------------------------------------- end</b></td></pre>
+
+</tr></table>
+
+</td>
+</tr>
+</table>
+</div>
+<h6 align="justify">
+ <a href="trans_100d.htm">translate</a> |
+ <a href="trans_200d.htm">rotate</a> |
+ <a href="trans_300d.htm">scale</a> |
+ <a href="trans_400d.htm">matrix</a> |
+ <a href="trans_450d.htm">Scherung</a> |
+ <a href="trans_470d.htm">transforms.inc</a> |
+ <!--a href="trans_500d.htm"-->transform</a> |
+ <a href="trans_800d.htm">Vektor-Transformationen</a>
+<h6>
+
+
+</td></h5></div>    <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

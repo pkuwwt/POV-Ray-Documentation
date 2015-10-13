@@ -1,0 +1,161 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes665e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes665e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes665f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes665f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes665d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes665d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp; <br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp;&nbsp; Indice<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+<nobr><a href="shapes200i.htm">Oggetti con macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+<a href="shapes000i.htm">altri Oggetti</b></a><br>
+<br>
+<a href="shapes666i.htm">Oggetti Non-CSG</b></a><br>
+&nbsp; -  <a href="shapes660i.htm">disc</b></a><br>
+&nbsp; -&gt;<!--a href="shapes665i.htm"--><b>polygon</b></a><br>
+&nbsp; -  <a href="shapes670i.htm">triangle</b></a><br>
+&nbsp; -  <a href="shapes672i.htm">smooth_triangle</b></a><br>
+&nbsp; -  <a href="shapes675i.htm">bicubic_patch</b></a><br>
+&nbsp; -  <a href="shapes680i.htm">mesh</b></a><br>
+&nbsp; -  <a href="shapes690i.htm">mesh2</b></a><br>
+<br>
+<nobr>&nbsp;<a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+&nbsp;<a href="shapes900i.htm">Isosurfaces</b></a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top"> <!-- Content - 2nd column -->
+
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<b>polygon{ ...} </b><font size="-1"> - poligono  dichiarato in piano xy.</font><br>
+<font size="-1">built-in shape, non-CSG</font>
+
+
+<table border="0" cellspacing="1" cellpadding="2">
+<tr><td bgcolor="#eeeeee" colspan="2"><pre>
+//Sintassi: ------------------------------------
+<b>polygon { <i>number_of_points</i>,
+      // list of closed series of &lt;x,y&gt; points
+      &lt;<i>x1, y1</i>&gt;,
+       // ....
+      &lt;<i>xn, yn</i>&gt;,
+    } //-------------------------------------- </b></td></pre>
+
+</tr></table>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td valign="top">
+
+    <table align="center" border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/polygon1.jpg" border="0" width="240"  height="180"
+                   alt="disc" title="disc"></a>
+            </td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>// --------------------------------------------
+polygon {  17,
+  &lt;0.0, 0.0&gt;, &lt;0.00, 2.5&gt;, &lt;0.50, 2.5&gt;,
+  &lt;0.5, 0.5&gt;, &lt;1.25, 0.5&gt;, &lt;1.25, 0.0&gt;,
+  &lt;0.0, 0.0&gt;,
+
+  &lt;1.5,0.0&gt;, &lt;1.5,2.0&gt;, &lt;3.0,2.0&gt;, &lt;3.0,0.0&gt;,
+  &lt;1.5,0.0&gt;,
+
+  &lt;2.0,0.5&gt;, &lt;2.0,1.5&gt;, &lt;2.5,1.5&gt;, &lt;2.5,0.5&gt;,
+  &lt;2.0,0.5&gt;
+  texture { pigment{ color rgb&lt;1,0.8,0.65&gt;*0.7}
+            normal { bumps 1.5 scale 0.05 }
+            finish { diffuse 0.6 phong 0.5
+                     reflection 0.4}
+          } // end of texture
+  scale&lt;1,1,1&gt;
+  rotate&lt;0,0,0&gt;
+  translate&lt;0,0,0&gt;
+} // end of polygon --------------------------- </b></td></pre></tr></table>
+</td></tr></table>
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+
+</td>
+</tr>
+</table>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

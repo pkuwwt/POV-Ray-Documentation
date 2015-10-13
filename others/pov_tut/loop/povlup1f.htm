@@ -1,0 +1,290 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="Didacticiel POV-Ray - Boucles tant que While avec POV-Ray - Boucles et Transformations Lin&eacute;aires.">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, tutoriel, didacticiel, mathematiques, boucle while, while loop, transformation lin&eacute;aire.">
+<title>>Boucles avec POV-Ray - Boucles et Transformations Lin&eacute;aires.</title>
+
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"> <h6>
+   <nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+   <nobr>par Friedrich A. Lohmueller</nobr>.
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Boucles avec POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+     <a href="povlup1e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+     <a href="povlup1e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+     <a href="povlup1i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+     <a href="povlup1i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="povlup1d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+     <a href="povlup1d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0f.htm"><font size="3">Boucles en POV-Ray</font></b></a><br>
+ &nbsp; 1.  <a href="povlup7f.htm">'For' et 'While'</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup7f.htm">Comparaison</b></a><br>
+<b>&gt;</b>2.  <!--a href="povlup1f.htm"--><b>Transformations</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <!--a href="povlup1f.htm"--><b>Lin&eacute;aires</b></a><br>
+ &nbsp; 3.  <a href="povlup2f.htm">Transformations</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup2f.htm">Circulaires</b></a><br>
+ &nbsp; 4.  <a href="povlup3f.htm">Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4f.htm">Vis, H&eacute;lices</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup4f.htm">et Spirales</b></a><br>
+ &nbsp; 6.  <a href="povlup5f.htm">Spirales</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5f.htm">avec Torsion</b></a><br>
+ &nbsp; 7.  <a href="povlup6f.htm">Coquilles</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6f.htm"> d'Escargot</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6f.htm">et Ammonites</b></a><br>
+<nobr> &nbsp; 8.  <a href="povlup9f.htm">Spirales sph&eacute;riques 1</b></a></nobr><br>
+<nobr> &nbsp; 9.  <a href="povlup10f.htm">Spirales sph&eacute;riques 2</b></a></nobr><br>
+ &nbsp;10.  <a href="povlup8f.htm">Spirales Fibonacci</b></a><br>
+
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+
+</font>
+</div>
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--h1 align="center">Boucles &quot; tant que &quot; While avec POV-Ray</h1-->
+<h2 align="center">Boucles et Transformations Lin&eacute;aires.</h2>
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="5" width="90%">
+<tr>
+ <td colspan="2">
+  <p align="justify">
+  Quelques applications &eacute;l&eacute;mentaires de la <nobr>boucle &laquo; tant que &raquo;</nobr><nobr> [ <i>while loop</i> ] </nobr>dans POV-Ray.<br>
+  La boucle <b>While</b> est employ&eacute;e pour le placement r&eacute;gulier des objets.<br>
+  Ici quelques exemples d'une boucle simple et des boucles imbriqu&eacute;es.</p>
+</td>
+</tr><tr>
+ <td valign="top">
+  <font size="3"><b>Boucle simple :</b></font><br>
+  <font size="2">Une boucle simple qui place de petites sph&egrave;res
+  le long de l'axe de X, de X = -5 &agrave; X = +5 :</font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre ><b>#declare Ball =
+ sphere{ &lt;0,0,0&gt;,0.5
+         texture{ pigment{ color Red }
+                  finish { phong 1 }
+                }
+        } //--------------------------
+//------------------------------------
+#declare <font color="#800000">X</font> = -5;  // start
+#declare <font color="#800000">End_X</font> = 5; // end
+#while ( <font color="#800000">X &lt;= End_X</font> )
+ object{ Ball translate &lt;<font color="#800000"> X</font>, 0.5, 0&gt; }
+#declare <font color="#800000">X = X</font> + 1; // next
+#end //------------ fin de boucle ----</b></td></pre>
+ </tr>
+</table>
+  <table border="0" cellpadding="5" cellspacing="5" width="95%"><!--sub table-->
+  <tr>
+  <td colspan="1" width="36" valign="top">
+  <img src="im/warn.gif" border="0" width="32" height="30">
+  </td>
+  <td colspan="1">
+  <font size="1">
+   <b>Pour eviter chaque collision avec des noms<br>
+   incorpor&eacute;s et des mots r&eacute;serv&eacute;s de POV-Ray,<br>
+   il est tr&egrave;s recommand&eacute; de utiliser seulement des<br>
+   mots que commencent avec des capitals<br>
+   ( lettres majuscules ! )</b>
+   pour tous les noms des<br> variables declar&eacute;s par le utilisateur.<br>
+   On doit tenir compte que <b>x = &lt;1,0,0&gt;</b> est un mot r&eacute;serv&eacute;, on prend au lieu par ex. &quot;X&quot;.
+   </font>
+  </td>
+  </tr></table> <!--sub table-->
+ </td>
+
+ <td valign="top">
+ <br>
+ <br>
+ <br>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloop1.jpg" width="320" height="240"></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Fichier de sc&egrave;ne pour <nobr> POV-Ray : </nobr> <a href="pov/povloop1.pov">.pov</a> ou :
+    <a href="pov/povloop1.txt">.txt</a></font></div>
+</td>
+</tr>
+<tr>
+ <td valign="top">
+  <font size="3"><b>Boucle imbriqu&eacute;e :</b></font><br>
+  <font size="2">Si nous imbriquons une boucle dans une autre boucle.<br>
+  Nous obtenons un champ rectangulaire couvert par<br>
+  des objets identiques : </font>
+  <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Boxy =
+box{ &lt;0,0,0&gt;,&lt; 1,1,1&gt; scale 0.5
+     texture{ pigment{ color White }
+              finish { specular 0.5}}}
+//------------------------------------
+#declare Dx = 1.00; // distance in x
+#declare Dz = 1.00;
+<font color="#006600">#declare NrX = 0;      // startX
+#declare EndNrX = 7;   // endX
+#while (NrX &lt; EndNrX) // &lt;-- loop X</font>
+<font color="#663300"> #declare NrZ = 0;     // startZ
+ #declare EndNrZ = 7;  // endZ
+ #while (NrZ &lt; EndNrZ) // &lt;- loop Z</font>
+  object{ Boxy
+          translate&lt;NrX*Dx, 0, NrZ*Dz&gt;}
+<font color="#663300"> #declare NrZ = NrZ + 1;  // next NrZ
+ #end // --------------- end of loop Z</font>
+<font color="#006600">#declare NrX = NrX + 1;// next NrX
+#end // ------------- end of loop X</font></b></td></pre>
+ </tr>
+</table>
+ </td>
+
+ </td>
+ <td><table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloop2.jpg" width="320"  height="240" ></td>
+      </tr></table>
+<div align="center">
+<font size="2">
+    Fichier de sc&egrave;ne pour <nobr>POV-Ray :</nobr> <a href="pov/povloop2.pov">.pov</a> ou :
+   <a href="pov/povloop2.txt">.txt</a></font></div>
+  <br>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <font size="3"><b>Boucle multiples imbriqu&eacute;e :</b></font><br>
+  <font size="2">Il est posibble d'imbriquer une boucle dans une boucle<br>
+   additionnelle imbriqu&eacute;e. Avec ceci, nous obtenons une<br>
+   bo&icirc;te constitu&eacute;e par les objets identiquement form&eacute;s :</font>
+  <table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b>#declare Dx = 1.00;
+#declare Dy = 1.00;
+#declare Dz = 1.00;
+//-------------------------------------
+#declare NrX = 0;      // startX
+#declare EndNrX = 5;   // endX
+#while (NrX &lt; EndNrX)
+ #declare NrY = 0;     // startY
+ #declare EndNrY = 5;  // endY
+ #while (NrY &lt; EndNrY)
+  #declare NrZ = 0;    // startZ
+  #declare EndNrZ = 5; // endZ
+  #while (NrZ &lt; EndNrZ)
+   object{ Boxy
+           translate
+            &lt;NrX*Dx,NrY*Dy,NrZ*Dz&gt;
+         }
+  #declare NrZ = NrZ+1;// next NrZ
+  #end // ---------- end of loop Z
+ #declare NrY = NrY+1;// next NrY
+ #end // ---------- end of loop Y
+ #declare NrX = NrX+1;// next NrX
+#end // ----------- end of loop X -----</b></td></pre>
+ </tr>
+</table>
+ </td>
+
+ <td><table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/povloop3.jpg" width="300" height="300"></td>
+      </tr></table>
+<div align="center">
+<font size="2">
+    Fichier de sc&egrave;ne pour <nobr>POV-Ray :</nobr> <a href="pov/povloop3.pov">povloop3.pov</a> ou :
+  <a href="pov/povloop3.txt">povloop3.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+<tr>
+ <td colspan="2">
+  <p align="justify">En trois dimensions nos options des mouvements de translation pures
+    avec imbrication de boucles semblent &ecirc;tre &eacute;puis&eacute;es.</p>
+ </td>
+</tr>
+</table>
+</div>
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0f.htm">Contenu</a> |
+     <a href="povlup7f.htm">'For' et 'While'</a> |
+     <!--a href="povlup1f.htm"-->Lin&eacute;are</a> |
+     <a href="povlup2f.htm">Circulaire</a> |
+     <a href="povlup3f.htm">Moebius</a> |
+     <a href="povlup4f.htm">H&eacute;lices et Spirales</a> |
+     <a href="povlup5f.htm">Torsion</a> |
+     <a href="povlup6f.htm">Coquilles</a> |
+     <a href="povlup9f.htm">Sph&eacute;rique 1</a> |
+     <a href="povlup10f.htm">Sph&eacute;rique 2</a> |
+     <a href="povlup8f.htm">Fibonacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

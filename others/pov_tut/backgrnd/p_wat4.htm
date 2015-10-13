@@ -1,0 +1,223 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="language" content="en-us">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="realistic water, raytracing, PoV, povray, POV-Ray, POV-Ray 3.6,  3d graphics, 3d grafic, computer grafics, computer graphics">
+<meta name="Description" content="A Hole in the Water - Whirlpool - Realistic Water with POV-Ray - part 4">
+<title>Realistic water with POV-Ray - part 4</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=550");
+ New.focus();  }
+-->
+</SCRIPT>
+</head>
+<body bgcolor="#CAC8C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+<div align="center"><a name="top">
+<table border="0" width="95%"><tr>
+ <td><h6><nobr>Descriptions and Examples for the POV-Ray raytracer</nobr><br>
+         <nobr>by Friedrich A. Lohm&uuml;ller</nobr> </td></h6>
+ <td align="right"><nobr>
+ <a href="p_wat4d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_wat4d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_wat4i.htm"><font size="2">Italiano</font></a>
+ <a href="p_wat4i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_wat4f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_wat4f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr>
+</table></div>
+<a name="start"></a>
+<hr size="4" width="95%" align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr> - <a href="p_wat1.htm"><font size="+1">Realistic Water</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_wat1.htm">opaque reflecting</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat2.htm">Heavy Seas</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat3.htm">partly transparent</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_wat4.htm"--><b>Whirlpool</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat5.htm">Water in a Glass</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat6.htm">Isosurface Water</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat7.htm">Isosurface Sea</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwne.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+
+<h1 align="center">Realistic Water with POV-Ray</h1>
+<p align="center"><b>part
+<a href="p_wat1.htm"> 1</a>  | <a href="p_wat2.htm"> 2</a> | <a href="p_wat2.htm"> 3</a> |
+<!--a href="p_wat4.htm"--></b> 4</a><b> | <a href="p_wat5.htm"> 5</a> | <a href="p_wat6.htm"> 6</a> |
+<a href="p_wat7.htm"> 7</a></b></p>
+
+<div align="center">
+<table border="0" width="90%" align="center" cellpadding="4">
+<tr><td valign="top">
+    <h3 align="left"><b>How to make a Hole in the Water - Whirlpool</b></h3>
+    <h5 align="justify">This shows how to do this by simple CSG.<br>
+         At last we have to put a texture with an according &quot;normal&quot; component
+         on the plane to simulate the wirling of the water.
+         <br> For making it easier to see what happens a quater of the plane is cut off.
+         <br>  </h5><br>
+     <h5 align="center">Hole in the water:<br>
+     <font size="-1">Description of this scene for POV-Ray: <a href="povw/hole01.pov">.pov file</a>
+     or <a href="povw/hole01.txt">.txt file</a></font></td></h5>
+
+     <td><table border="3"  bgcolor="#efefef"
+
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole00.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Hole in the Water 0" title="Hole in the Water 0"></a></td></tr>
+        </table>
+     </td>
+</tr>
+<tr>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole01.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 1" title="Hole in the Water 1"></a></td></tr>
+        </table></td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole02.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 2" title="Hole in the Water 2"></a></td></tr>
+        </table></td>
+</tr>
+<tr><td>
+   <h5 align="center">We take a xz plane (plane{&lt;0,1,0&gt;,0}  and a cylinder as deep as we want our hole to be.
+        The upper end must be a little bit higher than the plane to avoid coincident surfaces in difference.
+    </td></h5>
+    <td>
+    <h5 align="center">We subtract this cylinder from our plane.<br>
+    We've got a hole with a sharp edge. <br>
+    </td></h5>
+</tr>
+<tr>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole03.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 2" title="Hole in the Water 3"></a></td></tr>
+        </table></td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole04.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 4" title="Hole in the Water 4"></a></td></tr>
+        </table></td>
+</tr>
+<tr>
+   <td>
+      <h5 align="center">To get a round edge we have to take another cylinder of the
+      radius of our first cylinder plus the edge radius which we want.
+    </td></h5>
+   <td>
+    <h5 align="center">Once again we subtract it!
+   </td></h5>
+</tr>
+<tr>
+  <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole05.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 5" title="Hole in the Water 5"></a></td></tr>
+        </table></td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole06.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 6" title="Hole in the Water 6"></a></td></tr>
+        </table></td>
+</tr>
+<tr>
+  <td>
+    <h5 align="center">Now we add a torus with<br>
+    the major radius = radius of our second cylinder<br>
+    and the minor radius = our edge radius.
+  </td></h5>
+  <td>
+    <h5 align="center">This is all we need for a hole with a rounded edge.
+  </td></h5>
+</tr>
+<tr>
+   <td>
+    <h5 align="center">At last we have to add to our water texture<br>
+    a normal like this:</h5>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>   normal {spiral1  20  0.25
+           sine_wave
+           turbulence 0.1
+           rotate&lt;90,0,0&gt;
+           scale 0.5 }</b></td></pre></tr></table><br>
+
+     <h5>That's it!</h5>
+     </td>
+
+   <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/hole07.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                  alt="Hole in the Water 7" title="Hole in the Water 7"></a></td></tr>
+        </table>
+ </h5>
+<p align="right"><b>part
+<a href="p_wat1.htm"> 1</a>  | <a href="p_wat2.htm"> 2</a> | <a href="p_wat2.htm"> 3</a> |
+<!--a href="p_wat4.htm"--></b> 4</a><b> | <a href="p_wat5.htm"> 5</a> | <a href="p_wat6.htm"> 6</a> |
+<a href="p_wat7.htm"> 7</a></b></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

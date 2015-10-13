@@ -1,0 +1,284 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Tangenti interne, Geometria di Base per Raytracing con POV-Ray">
+<meta name="keywords" content="Tangenti interne, POV, POVRAY, POV-Ray, Raytracing, 3D-grafica, 3D graphica, geometria di base per raytracing con POV-Ray">
+<title>Geometria di Base - per Raytracing con POV-Ray - Tangenti interne</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"><b>Geometria di Base </b></font> -
+      <font size="-1">per Raytracing</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_c200e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="geom_c200e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="geom_c200f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="geom_c200f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_c200d.htm"><font size="2">Deutsch</font></a>
+        <a href="geom_c200d.htm"><img src="../flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#objects"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000i.htm">Geometria di Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000i.htm">per Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050i.htm">Triangolo Rettangolo</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070i.htm">Teorema di Pitagora</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080i.htm">Trigonometria di Base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090i.htm">Teorema del Coseno</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100i.htm">Triangolo Equilatero</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150i.htm">Poligono Regulare</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200i.htm"--><i>Poliedro</i></b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200i.htm">Tetraedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250i.htm">Ottaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300i.htm">Cubo e Cuboide</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500i.htm">Dodecaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700i.htm">Icosaedro Regolare</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260i.htm">Cubottaedro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270i.htm">Ottaedro troncato</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280i.htm">Rombicubottaedro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800i.htm">Icosaedro troncato</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000i.htm"--><i>Cerchi</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100i.htm">Cerchi tangenti</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_c200i.htm"--><b>Tangenti interne</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300i.htm">Tangenti esterne</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Animazioni Geometriche 3D</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+ <tr>
+   <td><h2><b>Tangenti interne</b><br>
+<font size="-1"><i>Nel seguente si scriva per la radice quadrata di un numero,
+l'espressione inglese &quot;sqrt(</i>Numbero<i>)&quot; <br>
+in conformit&agrave; alla sintassi usata con POV-Ray.</i></font><br>
+ <font size="-2">Nota: Qui oggetti in geometria 2D sono rapresentati con forme 3D nel piano di xy.<br>
+ Per questo tutte le coordinate devono avere la componente di z zero! ( &lt;?,?,0&gt;)</font></td></h2>
+
+
+ </tr>
+ </table>
+
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<table border="1" cellpadding="5" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td>
+ <font size="-1"><nobr>Cerchiamo una <b>tangente interna di due cerchi</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</nobr>
+     <b>di T<sub>1</sub> a T<sub>2</sub></b>, come nella immagine a margine.<br>
+     <b>Cerchio 1</b>: <b>M<sub>1</sub> = &lt;x<sub>1</sub>,y<sub>1</sub>,0&gt;</b>, <b>r<sub>1</sub></b>.<br>
+     <b>Cerchio 2</b>: <b>M<sub>2</sub> = &lt;x<sub>2</sub>,y<sub>2</sub>,0&gt;</b>, <b>r<sub>2</sub></b>.</font></td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top">
+ <font size="-1">Una tangente interna &egrave; parallela a un'altra tangente dal centro di un cerchio pi&ugrave; picolo (qui: M<sub>2</sub>)
+ a un altro cerchio intorno al centro del cerchio pi&ugrave; grande (M<sub>1</sub>) ma con il raggio  r<sub>1</sub>+r<sub>2</sub>.<br>
+  -------------------- &nbsp; &nbsp; &nbsp;<br>
+ Per calculo del punto S dobbiamo calculare i lati del triangolo (M<sub>2</sub>,M<sub>1</sub>,S).<br>
+
+ <b>d(M<sub>1</sub>,S) = r<sub>1</sub>+r<sub>2</sub></b> . <br>
+ Secondo il teorema di Pitagora possiamo calculare:<br>
+ <b>d(M<sub>1</sub>,M<sub>2</sub>) = sqrt((x<sub>2</sub>-x<sub>1</sub>)<sup>2</sup>+(y<sub>2</sub>-y<sub>2</sub>)<sup>2</sup>)</b> .<br>
+ Cosi il terzi lato <font size="-2">(di nuovo con il teorema di Pitagora)</font>:<br>
+ <b>d(M<sub>2</sub>,S) = sqrt( d(M<sub>1</sub>,S)<sup>2</sup>+d(M<sub>1</sub>,M<sub>1</sub>)<sup>2</sup>)</b> <br>
+ <br>
+ L'angolo entro la direzione di (M<sub>1</sub>,M<sub>2</sub>) e la <nobr>direzione dei x</nobr> possiamo trovare
+ con funzioni trigonometriche.<br>
+ <b>Se x<sub>1</sub> &lt; x<sub>2</sub></b> abbiamo <br>
+ <b>&nbsp; &#945  = abs(degrees( atan ((y<sub>2</sub>-y<sub>1</sub>)/(x<sub>2</sub>-x<sub>1</sub>)))</b>.<br>
+ <b>altrimenti: &nbsp;</b><br>
+ <b>&nbsp; &#945  = 180&deg; - abs(degrees( atan ((y<sub>2</sub>-y<sub>1</sub>)/(x<sub>2</sub>-x<sub>1</sub>)))</b>,<br>
+
+<br>
+ Poi possiamo calulare &#946 e &#947 come segue: <br>
+<b>&nbsp; &#946  = abs( degrees( asin( d(M<sub>1</sub>, S ) / d(M<sub>1</sub>,M<sub>2</sub>)  ) )) .</b><br>
+<b>&nbsp; &#947  =  &nbsp; &#945 - &nbsp; &#946 .</b><br>
+ La posizione di T<sub>1</sub>:<br>
+ <b>&nbsp; x<sub>T1</sub> = x<sub>1</sub> - r<sub>1</sub>&#183;cos( Angle(M<sub>1</sub>S) )</b>.<br>
+ <b>&nbsp; y<sub>T1</sub> = y<sub>1</sub> - r<sub>1</sub>&#183; sin( Angle(M<sub>1</sub>S) )</b>.<br>
+ La posizione di T<sub>2</sub>:<br>
+ <b>&nbsp; x<sub>T2</sub> = x<sub>2</sub> + r<sub>1</sub>&#183;cos( Angle(M<sub>1</sub>S) )</b>.<br>
+ <b>&nbsp; y<sub>T2</sub> = y<sub>2</sub> + r<sub>1</sub>&#183; sin( Angle(M<sub>1</sub>S) )</b>.<br>
+ <br>
+<br>
+ </font>
+
+ </td>
+ </tr>
+</table>
+
+</div>
+
+</td>
+<td width="50%"  valign="top" align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Internal_Tangents_1ec.jpg" width="400" height="400" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Una tangente interna di due cerchi con POV-Ray</font><br>
+
+ <font size="-2">Nota: Per <b>evitare collisioni con denominazioni installate e parole riservate<br>
+ di POV-Ray</b>, si &egrave; racommandato assolutamente di <b>usare solo parole con una<br>
+  maiuscola come lettera iniziale,</b>
+per tutte denominazioni di variabili e oggetti dichiarrate degli utenti, <br>
+per es. si usa &quot;R1&quot; invece di &quot;r<sub>1</sub>&quot;
+e si usa &quot;Y2&quot; invece di  y<sub>M2</sub>.</font>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local X1= 0.40; #local Y1= 0.80; #local R1= 0.20;
+#local X2= 0.64; #local Y2= 0.15; #local R2= 0.15;
+#local M1 = &lt;X1,Y1,0&gt;; #local M2 = &lt;X2,Y2,0&gt;
+//------------------------------------------------
+#local M_Dist = sqrt(pow(X2-X1,2)+pow(Y2-Y1,2));
+#if ( X1 &lt; X2) #local Alpha =
+            abs( degrees( atan((Y2-Y1)/(X2-X1))));
+#else          #local Alpha =
+          180-abs(degrees(atan((Y2-Y1)/(X2-X1))));
+#end
+#local Beta = abs(degrees(asin((R1+R2)/M_Dist)));
+#local Gamma =  Alpha - Beta;
+#local T1 = M1-&lt;(R1)*cos( radians(Gamma)),
+                (R1)*sin( radians(Gamma)),0&gt;;
+#local T2 = M2+&lt;(R2)*cos( radians(Gamma)),
+                (R2)*sin( radians(Gamma)),0&gt;;</b></td></pre>
+    </tr></table><font size="-1">Il calcolo della tangente di T<sub>1</sub> a T<sub>2</sub> in POV-Ray</font>
+
+</td>
+</tr><tr><td colspan="2"><hr></td></tr>
+<table>
+
+<table align="center" border="0" cellpadding="2" width="95%"> <!--pair left -->
+<tr><td colspan="2" valign="top" width="50%" align="center"><p align="left">
+<b>Per che cosa si pu&ograve; usare questa geometria?</b><br>
+Qui qualche esempio:
+<font size="-1">Possiamo considerare il cerchio basso come un taglio trasversale di un toro
+e il cerchio superiore come un taglio trasversale di un alto toro
+da sottrarre dal cilindro giallo:</font>
+ </td></p>
+<td colspan="2" valign="top" width="50%" align="center">
+<br>
+<p align="left"><font size="-1"> :</font>
+ </td></p>
+
+
+</td>
+</tr>
+<tr>
+ <td colspan="2" width="390" valign="top">
+     <table><tr><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><a href="../objects/obj_350i.htm" target="_new"><img src="im/Erlenmeyer_Flask_plan2t.jpg" border="0" width="208" height="208"></a></td>
+   </tr></table><font size="1"><b>Un taglio trasversale di<br>
+                                  un matraccio di Erlenmeyer</b>
+          </td><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><a href="../objects/obj_880i.htm" target="_new"><img src="im/Erlenmeyer_Flask_macro.jpg" border="0" width="120" height="160"></a></td>
+   </tr></table><font size="1"><b>Un matraccio di Erlenmeyer<br>
+                                  per il laboratorio</b>
+
+       </td></tr></table>
+ </td>
+<td colspan="2" width="390">
+     &nbsp;
+ </td>
+ </tr>
+<tr><td colspan="2">
+  <font size="-1">Questa forma in una macro come un <b>oggetto pronto per l'uso</b>:
+  <a href="../objects/obj_350i.htm" target="_new">Erlenmeyer_Shape_1</a> <br>
+   Una applicazione in una macroo come un <b>oggetto pronto per l'uso</b>:
+   <a href="../objects/obj_880i.htm" target="_new">Erlenmeyer_Flask_1</a></font> <br>
+  </font>
+</td>
+<td colspan="2">
+ &nbsp; &nbsp; &nbsp;
+</td>
+</table>
+
+</td></tr>
+</table>
+
+
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td>&nbsp;
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+//----------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------//
+#include "shapes_lo2/Round_Mace_Prism.inc"  
+//-------------------------------------------------------------------------------------//
+object{ Round_Mace_Prism (  0.40, // R_main,    // mace radius, >0 and > basic half width
+                            0.05, // R_Border,  // border radius >= 0, 0 = nor rounded borders
+                            0.70, // H_main,    // height y ( + = up ; - = down ) of main circle center
+                            0.15, // R_base,    // basic half width in x of the mace > 2*border radius !
+ 
+                           -0.45, // Depth_Z,   // z depth (+/-) > 2*border radius !  
+                            0.00, // Linear_Base_End, // 0 = non 
+                            0,    // Rounded_Base_End, // 0/1: 0 = non, 1 = lower end with rounded cylinder 
+
+                            1 // Merge_On - for transparent materials
+
+                                 
+                          ) // --------------- in x+direction ----------------------//
+    
+        
+        texture { pigment{ color  rgb< 1, 1, 1>}
+                  finish { phong 1 reflection 0.00}
+                } // end of texture 
+          
+      /* 
+        material{   //-----------------------------------------------------------
+          texture { pigment{ rgbf <0.98, 0.98, 0.98, 0.99> }
+                    finish { diffuse 0.1 reflection 0.25  
+                             specular 0.8 roughness 0.0003 phong 0.5 phong_size 400}
+                  } // end of texture -------------------------------------------
+          interior{ ior 1.5  caustics 0.5
+                  } // end of interior ------------------------------------------
+         } // end of material ----------------------------------------------------
+      */  
+        scale<1,1,1>   
+        rotate< 0,0,0>
+        translate<0,0,0>  
+      } // end of object --------------------------------------------------------------// 
+//-------------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------//

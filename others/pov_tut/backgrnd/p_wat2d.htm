@@ -1,0 +1,222 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="language" content="de">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="Realistisches Wasser, raytracing, PoV, povray, POV-Ray, POV-Ray 3.6, 3D-Graphik, 3D-Grafik, Computergrafik, Computergraphik">
+<meta name="Description" content="Realistisches Wasser mit POV-Ray">
+<title>Realistisches Wasser mit POV-Ray - Teil 2</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=550");
+ New.focus();  }
+-->
+</SCRIPT>
+
+</head>
+<body bgcolor="#CAC8C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+<div align="center"><a name="top">
+<table border="0" cellspacing="5" width="100%">
+<tr>
+ <td align="left"><h6 align="left"><a name="top"></a><nobr>Beschreibungen und Beispiele
+     zum Raytracer POV-Ray</nobr> <br> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td>
+ <td align="right">
+ <a href="p_wat2.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_wat2.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_wat2i.htm"><font size="2">Italiano</font></a>
+ <a href="p_wat2i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_wat2f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_wat2f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr>
+</table></div>
+<a name="start"></a>
+<hr size="4" width="95%" align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr> - <a href="p_wat1d.htm"><font size="+1">Realistisches Wasser</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_wat1d.htm">undurchsichtig spiegelnd</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_wat2d.htm"--><b>bewegte See</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat3d.htm">teilweise transparent</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat4d.htm">Wasserstrudel</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat5d.htm">Wasser im Glas</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat6d.htm">Isosurface Wasser</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat7d.htm">Isosurface Meer</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwng.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+
+<h1 align="center">Realistisches Wasser mit POV-Ray</h1>
+<p align="center"><b>Teil
+<a href="p_wat1d.htm"> 1</a> | <!--a href="p_wat2d.htm"--></b> 2</a><b> | <a href="p_wat3d.htm"> 3</a> |
+<a href="p_wat4d.htm"> 4</a> | <a href="p_wat5d.htm"> 5</a> | <a href="p_wat6d.htm"> 6</a> |
+<a href="p_wat7d.htm"> 7</a></b></p>
+
+<div align="center">
+<table border="0" width="90%" align="center" cellpadding="4">
+<tr><td valign="top">
+    <p align="justify"><font size="+1"><b>St&auml;rker gekr&auml;uselte<br>Wasserfl&auml;chen:</b><br></font>
+     <font size="2">Sie erh&auml;lt man, wenn man in der Textur folgendes eingef&uuml;gt:</font></p>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>normal {bumps 0.3
+         scale 0.05
+         turbulence 0.6}
+//-----------------------------------</b></td></pre></tr></table><br>
+
+    <font size="2">Einen auch sehr realistisch wirkenden Effekt erh&auml;lt man,
+     wenn man in der Textur z.B. eingef&uuml;gt:
+         </font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b> normal {crackle 0.15
+          scale 0.75
+          turbulence 0.3
+          translate&lt;-1,0,5&gt;}
+//-----------------------------------</b></td></pre></tr></table><br>
+
+    </td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_watr2.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/p_watr2t.jpg" border="0" width="300" height="225" hspace="0" vspace="0"
+                 alt="Sample Water 2 640x480" title="Sample Water 2 640x480"></a></td></tr>
+        </table>
+    <h5 align="center">St&auml;rker gekr&auml;uselte Wasserfl&auml;che mit &quot;bumps&quot;.
+      <font size="-1"><a href="p_watr2.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font></h5>
+<table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_watr3.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/p_watr3t.jpg" border="0" width="300" height="225" hspace="0" vspace="0"
+                  alt="Sample Water 3 640x480" title="Sample Water 3 640x480"></a></td></tr>
+        </table>
+    <h5 align="center">St&auml;rker gekr&auml;uselte Wasserfl&auml;che mit &quot;crackle&quot;.
+      <font size="-1"><a href="povw/p_watr3.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font></h5>
+<tr><td valign="top">
+   <p align="justify"><font size="+1"><b>Eine vom Wind<br> aufgek&auml;mmte Wasserfl&auml;che:<br></b></font>
+   <font size="2">Die erh&auml;lt man ebenfalls mittles &quot;bozo&quot; mit &quot;turbulence&quot;
+        indem man
+        in x- und y-Richtung verschieden skaliert und evt. quer zur Windrichtung dreht: </font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>normal{ bozo 1.75
+         scale &lt;2.0,1,0.3&gt;*0.20
+         rotate&lt;0,10,0&gt;
+         turbulence 0.9
+         translate&lt;0,0,-2&gt;
+       }
+//-------------------------------------</b></td></pre></tr></table><br>
+</p>
+    </td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_watr4.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/p_watr4t.jpg" border="0" width="300" height="225" hspace="0" vspace="0"
+                  alt="Sample Water 1 640x480" title="Sample Water 1 640x480"></a></td></tr>
+        </table>
+    <h5 align="center">Eine vom Wind aufgek&auml;mmte Wasserfl&auml;che:<br>
+<font size="-1"><a href="povw/p_watr4.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font></h5>
+
+</td></tr>
+<tr><td>
+     <font size="2">&Auml;hnlicher Effekt mittles &quot;crackle&quot;: </font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>normal{ pigment_pattern{
+             crackle
+             colour_map { [0, rgb 0]
+                          [1, rgb 1] }
+             turbulence 1.7
+             translate &lt;0,0,1&gt;}
+             0.5}
+       scale &lt;2.0,1,0.3&gt;*2
+       rotate&lt;0,10,0&gt;
+     }
+//-------------------------------------</b></td></pre></tr></table><br>
+    </td>
+    <td><table border="3"  bgcolor="#efefef"
+               bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_watr4b.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/p_watr4bt.jpg" border="0" width="300" height="225" hspace="0" vspace="0"
+                  alt="Sample Water 1 640x480" title="Sample Water 1 640x480"></a></td></tr>
+        </table>
+    <h5 align="center">Eine vom Wind aufgek&auml;mmte Wasserfl&auml;che:<br>
+<font size="-1"><a href="povw/p_watr4b.txt">Szenenbeschreibung f&uuml;r POV-Ray</a></font></h5>
+</td>
+</tr>
+<tr><td colspan="2">
+<b>Anmerkung: </b> Dies sin d nur simulierte wellige Oberfl&auml;chen! Geometrisch sind sie immer noch total flach.
+um wirklich <b>drei-dimensionale wellige Oberfl&auml;chen</b> zu erhalten ben&ouml;tigt man
+ wesentlich mehr! Siehe <a href="p_wat6d.htm">hier</a> und <a href="p_wat7d.htm">hier</a>!<br>
+
+<p align="right"><b>Teil
+<a href="p_wat1d.htm"> 1</a> | <!--a href="p_wat2d.htm"--></b> 2</a><b> | <a href="p_wat3d.htm"> 3</a> |
+<a href="p_wat4d.htm"> 4</a> | <a href="p_wat5d.htm"> 5</a> | <a href="p_wat6d.htm"> 6</a> |
+<a href="p_wat7d.htm"> 7</a></b></p>
+
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

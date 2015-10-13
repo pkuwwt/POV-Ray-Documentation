@@ -1,0 +1,221 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2014 - all rights reserved">
+<meta name="Description" content="POV-Ray tutorials - While loops and POV-Ray  - Spirali Fibonacci">
+<meta name="keywords" content="raytracing, PoV, POVRAY, POV-Ray 3.6, 3.7, povray, rendering, 3d graphica, computer graphica, tutorial, descrizioni, while loop, for loop, spirali Fibonacci">
+<title>Cicli e POV-Ray -  Spirali Fibonacci</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr> di <nobr>Friedrich A. Lohm&uuml;ller,</nobr>
+<br>&nbsp; <br>
+  <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Cicli in POV-Ray</b>&nbsp; &nbsp; &nbsp;</font></div>
+ </td></h6>
+  <td align="right">
+        <a href="povlup8e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povlup8e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povlup8f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="povlup8f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povlup8d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="povlup8d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp; <a href="povlup0i.htm"><font size="3">Cicli con POV-Ray</font></b></a><br>
+ &nbsp; 1.  <a href="povlup7i.htm">For e While</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup7i.htm">Comparazione</b></a><br>
+ &nbsp; 2.  <a href="povlup1i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup1i.htm">lineari</b></a><br>
+ &nbsp; 3.  <a href="povlup2i.htm">Trasformazioni</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup2i.htm">circolari</b></a><br>
+ &nbsp; 4.  <a href="povlup3i.htm">Moebius etc.</b></a><br>
+ &nbsp; 5.  <a href="povlup4i.htm">Viti e spirali</b></a><br>
+ &nbsp; 6.  <a href="povlup5i.htm">Spirali</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup5i.htm">intrecciate</b></a><br>
+ &nbsp; 7.  <a href="povlup6i.htm">Chiocciole</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp; <a href="povlup6i.htm">e ammoniti</b></a><br>
+ &nbsp; 8.  <a href="povlup9i.htm" >Spirali sferiche 1</b></a><br>
+ &nbsp; 9.  <a href="povlup10i.htm">Spirali sferiche 2</b></a><br>
+<b>&gt;</b>10.  <!--a href="povlup8i.htm"--><b>Spirali Fibonacci</b></a><br>
+
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp; - <a href="../down/pov_dwni.htm">Download</b></a><br>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+</div>
+<a name="start"></a>
+<h2 align="center">Spirali con i Numeri di Fibonacci</h2>
+
+<div align="center">
+<table border="0" cellpadding="5" cellspacing="0" width="95%">
+<tr>
+ <td colspan="2">
+<div align="justify"><font size="3">Qui si usa la proporzione tra due numeri di Fibonacci<br>
+ per calcolare l'angolo di rotazione degli elementi a spirale.</b></font></div>
+</td>
+</tr>
+<tr>
+ <td>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b><font color="#600000">#local R = 0.25; // start radius</font>
+#local Nr = 0;          // start
+#local End_Nr = 37;     // end
+#while ( Nr &lt;= End_Nr ) // loop
+ sphere{ &lt;0,0,0&gt;, <font color="#600000">R</font>*0.25 //------------
+         scale &lt;1,0.6,1&gt;
+         texture{
+           pigment{color rgb&lt;0.8,1,0&gt;}
+           finish {phong 1}
+         } //--------------
+         translate &lt;<font color="#600000">R</font>,0,0&gt;
+         rotate &lt;0,-Nr*360*<font color="#aa0000">(8/13)</font>,0&gt;
+      } //-----------------------------
+<font color="#600000"> #local R = R*1.05; // growing radius</font>
+ #local Nr = Nr + 1;    // next Nr
+ #end // ---------------  end of loop</b></td></pre>
+ </tr>
+</table>
+<font size="2">Lo stesso precedure con un ciclo for:</font>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b><font color="#600000">#local R = 0.25; // start radius</font>
+//#for(Identifier,Start,End[,Step])
+#for ( Nr , 0, 37, 1 )
+ sphere{ &lt;0,0,0&gt;, <font color="#600000">R</font>*0.25 //------------
+         scale &lt;1,0.6,1&gt;
+         texture{
+           pigment{color rgb&lt;0.8,1,0&gt;}
+           finish {phong 1}
+         } //--------------
+         translate &lt;<font color="#600000">R</font>,0,0&gt;
+         rotate &lt;0,-Nr*360*<font color="#aa0000">(8/13)</font>,0&gt;
+      } //-----------------------------
+<font color="#600000"> #local R = R*1.05; // growing radius</font>
+ #end // ---------------  end of loop</b></td></pre>
+ </tr>
+</table>
+ </td>
+
+ <td valign="top">
+<div align="justify"><font size="2"><b>//     Fibonacci numbers:<br>
+//     Rules: A(1)= 1; A(2) = 1; and <br>
+// &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for N>2: A(N) = A(N-1) + A(N-2).<br>
+//     1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, ...<br>
+<br>
+</b></font></div>
+ <table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/FibonacciSpiral_01.jpg" width="320"  height="320" ></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Scena per <nobr>POV-Ray:</nobr> <a href="pov/FibonacciSpiral_01.pov">FibonacciSpiral_01.pov</a><br>
+                                 o: <a href="pov/FibonacciSpiral_01.txt">FibonacciSpiral_01.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+<div align="justify"><font size="3">Con una crescita lineare del raggio R<br>
+   si ottiene questa forma:</font></div>
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<pre><b><font color="#600000">#local R = 0.018; // start radius</font>
+#local Nr = 0;          // start
+#local End_Nr = 300;    // end
+#while ( Nr &lt;= End_Nr ) // loop
+ sphere{ &lt;0,0,0&gt;,<font color="#600000">0.25 + Nr*0.0015</font> //----
+         scale &lt;1,1.6,1&gt;
+         texture{
+           pigment{color rgb&lt;1,0.7,0&gt;}
+           finish {phong 1}
+         } //--------------
+         translate &lt;<font color="#600000">R*0.65</font>,0,0&gt;
+         rotate &lt;0,-Nr*360*<font color="#aa0000">(34/89)</font>,0&gt;
+      } //-----------------------------
+<font color="#600000"> #local R = R+0.038; // growing radius</font>
+ #local Nr = Nr + 1;    // next Nr
+ #end // ---------------  end of loop</b></td></pre>
+ </tr>
+</table>
+ </td>
+
+ <td><table align="center" border="1"  bgcolor="#EFEFEF"
+      bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+      <tr><td><img src="im/FibonacciSpiral_05.jpg" width="320"  height="320" ></td>
+       </tr></table>
+<div align="center">
+<font size="2">
+    Scena per <nobr>POV-Ray:</nobr> <a href="pov/FibonacciSpiral_05.pov">FibonacciSpiral_05.pov</a><br>
+                                o:  <a href="pov/FibonacciSpiral_05.txt">FibonacciSpiral_05.txt</a></font></div>
+ <br>
+ </td>
+</tr>
+</table>
+
+
+<hr size="3">
+<div align="center">
+<table border="0">
+<tr>
+ <td><font size="-1"><b>
+     <a href="povlup0i.htm">Index</a> |
+     <a href="povlup7i.htm">Cicli for e while</a> |
+     <a href="povlup1i.htm">lineare</a> |
+     <a href="povlup2i.htm">circolare</a> |
+     <a href="povlup3i.htm">Moebius</a> |
+     <a href="povlup4i.htm">Viti et Spirali</a> |
+     <a href="povlup5i.htm">intrecciato</a> |
+     <a href="povlup6i.htm">Chiocciole</a> |
+     <a href="povlup9i.htm">Sferico 1</a> |
+     <a href="povlup10i.htm">Sferico 2</a> |
+     <!--a href="povlup8i.htm"-->Fibonnacci</a> |
+     </b></font>
+ </td>
+</tr>
+</table>
+</div>
+
+
+</td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

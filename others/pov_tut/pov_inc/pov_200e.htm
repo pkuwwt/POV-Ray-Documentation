@@ -1,0 +1,191 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, POV-Ray Details, quickres.ini">
+<meta name="description" content="tutorial on POV-Ray Details - The POV-Ray resolution file 'quickres.ini'">
+<title>Include files with POV-Ray - The POV-Ray resolution file 'quickres.ini'</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>POV-Ray Details</b></font><br>
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="pov_200i.htm"><font size="2">Italiano </font></a>
+        <a href="pov_200i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov_200f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="pov_200f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="pov_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="pov_000d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_000e.htm">What's Where?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_100e.htm">'povray.ini'</b></a><br>
+ &nbsp;&nbsp;&nbsp;<b>&gt;</b> <!--a href="pov_200e.htm"--><b>'quickres.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_300e.htm">Output directives</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_400e.htm">Command Line</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="inc_000e.htm">A short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000e.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center">The resolutions ini file<b> 'quickres.ini'</b></h2>
+<p align="justify">
+<font size="+1"><b>Location:</b></font> (Win7, Vista)<br>
+<font size="-1">User directory: </font><br>
+ <b>C:\Users\USERNAME\Documents\POV-Ray\3.7\</b><br>
+&nbsp; <font size="-1">subdirecory:</font> <b>ini\quickres.ini:</b> <br>
+ <font size="-1">The file 'quickres.ini' contains the resolutions which can be choosed by  <br>
+ the left upper resolution field (pull-down menu) in the POV-Ray editor. (see image!)</font><br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_res_1.jpg" alt="POV-Ray resolutions" title="POV-Ray resolutions"
+           border="0" hspace="0" vspace="0" width="466" height="202"></a>
+     </td>
+  </tr></table>
+</div>
+
+<br>
+<b>Adding Your own resolutions</b> to the drop down menu:<br>
+The content of the resolutions in the drop down menu is stored in '<b>quickres.ini</b>'.<br>
+How to edit 'quickres.ini': <br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_tools_2.jpg" alt="POV-Ray tools" title="POV-Ray tools"
+           border="0" hspace="0" vspace="0" width="466" height="202"></a>
+     </td>
+  </tr></table>
+</div>
+
+<br>
+<div align="center">
+<table cellspacing="20" width="85%">
+<tr><td valign="top">
+To add new resolutions like i.e.
+1280x720 pixels (16:9) in mosaic rendering and in rendering with antialiasing
+we have to open the file 'quickres.ini' and
+copy the following text somewhere in that file, as shown in the opposite image.
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td><pre><b>
+[1280x720,16:9,No AA,mosaic]
+Width=1280
+Height=720
+Antialias=Off
++B2048
++SP16
++B1024
+
+[1280x720,16:9,AA 0.3]
++B2048
+Width=1280
+Height=720
+Antialias=On
+Antialias_Threshold=0.3&nbsp;<br>
+</b></td></pre>
+  </tr>
+  </table>
+
+</td>
+<td><div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_new_res_1.jpg" alt="POV-Ray adding resolutions" title="POV-Ray adding resolutions"
+           border="0" hspace="0" vspace="0" width="282" height="262"></a>
+  </td>
+  </tr></table><font size="-1"><b>A new resolution with 'mosaic' and 'antialiasing'</b></font></div>
+
+</td>
+</tr>
+<tr><td colspan="2">
+<font size="-1"><b>Note:  &nbsp; &nbsp;</b>
+If you use other aspect ratio than 4:3,<br>
+don't forget to use a camera with the proportions defined by<br>
+&nbsp; &nbsp; &nbsp; <b>right  &nbsp; &nbsp; x*image_width/image_height </b> &nbsp; &nbsp;  &nbsp; &nbsp; !!!!<br>
+Otherwise the image field will look stretched or compressed!
+</font>
+</td>
+</tr>
+</table>
+<br>
+
+<img src="im/warn.gif" border="0" width="32" height="30">POV-Ray reads 'povray.ini' and 'quickres.ini' only once while starting.<br>
+<b>Any change in these files need a shut down and restart of the <nobr>POV-Ray</nobr> program to take effect!</b>
+<br>
+</td>
+</tr>
+</table>
+</div>
+
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

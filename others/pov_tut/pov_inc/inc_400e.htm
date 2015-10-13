@@ -1,0 +1,186 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, include files tutorial, Self-made Include Files">
+<meta name="description" content="Include files tutorial for POV-Ray - Design of Self-made Include Files">
+<title>Include files with POV-Ray - Design of Self-made Include Files</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Include files with POV-Ray</b></font><br>
+      <font size="-1"><b>How they work and How to make your own include files</b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="inc_400i.htm"><font size="2">Italiano </font></a>
+        <a href="inc_400i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_400f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="inc_400f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="inc_400d.htm"><font size="2">Deutsch </font></a>
+        <a href="inc_400d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000e.htm"--><b>A Short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000e.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_000e.htm">Why Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100e.htm">Self-made Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100e.htm">and how to call them.</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_200e.htm">Special Notations, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_200e.htm">&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300e.htm">Where to store</b></a><br>
+<nobr> &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_400e.htm"--><b>Design of Include Files</b></nobr></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="inc_700e.htm">Adding a new item</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_700e.htm">to the 'Insert Menu'</b></a><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>The Design of Self-made Include Files.</b></h2>
+
+<p align="justify">
+<font size="+1">
+   For the <b>design of 'good' include files</b> we take a look on the way how POV-Ray standard include files
+   are designed:</font><br>
+ <table border="1" cellpadding="0" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><pre><b>// POV-Ray 3.6/3.7 sample include file &quot;<font color="#008000">NAME</font>.inc&quot;
+// author, date:
+//---------------------------------------------------------
+#ifndef( <font color="#008000">NAME_Inc_Temp</font>)
+#declare <font color="#008000">NAME_Inc_Temp</font> = version;
+#version 3.6;
+//---------------------------------------------------------
+    // .... your include file content
+//---------------------------------------------------------
+#version <font color="#008000">NAME_Inc_Temp</font>;
+#end
+//------------------------------------- end of include file</b></td></pre>
+ </tr>
+ </table>
+This method garanties 2 things at once:<br>
+1. It avoids the unnecessary reloading of an already readed include file.<br>
+2. It changes POV-Ray to work with mode '#version 3.6;' during parsing the content of the include file
+and changes back to the version which the calling scenen file uses.<br>
+<br>
+&nbsp; For an include file named '<b>NAME.inc</b>' we declare a global variable named '<b>NAME_Inc_Temp</b>'
+which contains the POV-Ray version used by the calling POV-Ray scene file. <br>
+&nbsp; If this variable is declared, than the include file was loaded somewhere before
+and will not be loaded again. So unnecessary loading actions are avoided.
+This version can be restored at the end.<br>
+
+
+&nbsp; <i>POV-Ray can change between the mode of a current version (like 3.6 or 3.7) by '#version 3.6;'
+       and change back to older modes (like 3.5 or 3.6) for a part of the text by '#version 3.7;'.<br>
+       This allows some (not a total) backward compatibility to the syntax of older versions.<br>
+       Here the conditional statement '<b>#ifndef (VARIABLE) /*Do read the include file in mode*/ #end</b>' is used
+       to store the currend version mode, change the mode to 3.6 for this content and restore the current mode
+       at the end.</i><br>
+<br>
+<font size="+1"><b>Make sure that all necessary standard include files are loaded:</b></font><br>
+Another good idea is to <b>make sure that all necessary standard include files</b> which this include file uses
+(i.e. color.inc, textures.inc, shapes.inc, shapes.inc etc.) <b>are loaded also if the calling scene does not
+load these include files</b> (red part):<br>
+ <table border="1" cellpadding="0" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><pre><b>// POV-Ray 3.6/3.7 sample include file &quot;<font color="#008000">NAME</font>.inc&quot;
+// author, date:
+// What's that: ...
+//---------------------------------------------------------
+#ifndef( <font color="#008000">NAME_Inc_Temp</font>)
+#declare <font color="#008000">NAME_Inc_Temp</font> = version;
+#version 3.6;
+//---------------------------------------------------------
+<font color="#990000">#ifndef(  Colors_Inc_Temp)
+#include "colors.inc"
+#end
+#ifndef(  Textures_Inc_Temp)
+#include "textures.inc"
+#end
+#ifndef(  Shapes_Inc_Temp)
+#include "shapes.inc"
+#end
+#ifndef(  Shapes2_Inc_Temp)
+#include "shapes2.inc"
+#end</font>
+//---------------------------------------------------------
+
+    // .... your include file content
+
+//---------------------------------------------------------
+#version <font color="#008000">NAME_Inc_Temp</font>;
+#end
+//------------------------------------- end of include file</b></td></pre>
+ </tr>
+ </table>
+<br>
+<font size="+1"><b>Add Comment about the sense and an Example for usage:</b></font>
+Besides of these basics it's recommanded to <b>add comments</b> with a good description about what this include file
+makes as well as <b>an example of how to call it from a scene file</b>!
+
+</font><br>
+<br>
+
+<br>
+<div align="center">
+</div>
+<font size="-1">....</font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

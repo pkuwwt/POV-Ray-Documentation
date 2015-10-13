@@ -1,0 +1,196 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Triangle rectangle, th&eacute;or&egrave;me de Thal&egrave;s, le cercle de Thal&egrave;s, G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafique, infographique, 3D Graphique, g&eacute;om&eacute;trie de base pour Raytracing, triangle rectangle, th&eacute;or&egrave;me de Thal&egrave;s, cercle de Thal&egrave;s">
+<title>G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray - Triangle rectangle, Th&eacute;or&egrave;me de Thal&egrave;s, Le cercle de Thal&egrave;s</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"> &nbsp; &nbsp; &nbsp; <b>G&eacute;om&eacute;trie de Base</b></font> -
+      <font size="-1"><b>pour Raytracing</b</font></div>
+ </td></h6>
+ <td align="right">
+   <a href="geom_050e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="geom_050e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="geom_050i.htm"><font size="2">Italiano</font></a>&nbsp;
+   <a href="geom_050i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="geom_050d.htm"><font size="2">Deutsch</b></a>&nbsp;
+   <a href="geom_050d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000f.htm">G&eacute;om&eacute;trie de Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000f.htm">pour Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="geom_050f.htm"--><b>Triangle rectangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070f.htm">Th&eacute;or&egrave;me de Pythagore</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080f.htm">Trigonom&eacute;trie de base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090f.htm">Loi des cosinus</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100f.htm">Triangle &eacute;quilat&eacute;ral</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150f.htm">Polygone r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200f.htm"--><i>Poly&egrave;dre</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200f.htm">T&eacute;tra&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250f.htm">Octa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300f.htm">Cube et Cubo&iuml;de</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500f.htm">Dod&eacute;ca&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700f.htm">Icosa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260f.htm">Cubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270f.htm">Octa&egrave;dre tronqu&eacute;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280f.htm">Rhombicubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800f.htm">Icosa&egrave;dre tronqu&eacute;</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000f.htm"--><i>Cercles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100f.htm">Cercles touchants</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200f.htm">Tangentes internes</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300f.htm">Tangentes externes</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%"><tr>
+   <td><h2><b>Triangle rectangle</b></td></h2>
+ </tr>
+ </table>
+<font size="-2">Note: Pour <b>eviter chaque collision avec des noms incorpor&eacute; et des mots r&eacute;serv&eacute;s de POV-Ray</b>,<br>
+il est tr&egrave;s recommand&eacute; de <b>utiliser seulement des mots que commencent avec des capitals (lettres majuscules)</b><br>
+pour tous les noms des variables declar&eacute;s par le utilisateur, par ex. on prend &quot;Ri&quot; au lieu de &quot;r&quot;
+et &quot;H&quot; au lieu de &quot;h&quot;.</font><br>
+&nbsp;<br>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="15" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><b>Dimensions et Noms</b><br>
+ <font size="-1">
+ <nobr>On appelle <b>hypot&eacute;nuse c</b> le c&ocirc;t&eacute; plus long,</nobr><br>
+ <nobr>c'est le c&ocirc;t&eacute; oppos&eacute; &agrave; l'angle droit <i><b>&#947;</b></i> &agrave; point <b>C</b>.</nobr><br>
+ On appelle <b>cath&egrave;te</b> chaque c&ocirc;t&eacute; adjacent &agrave; l'angle droit.<br>
+ Le c&ocirc;t&eacute; <b>a</b> est oppos&eacute; &agrave; l'angle <b>&#945;</b><br>
+ et le e c&ocirc;t&eacute; <b>b</b> est oppos&eacute; &agrave; l'angle <b>&#976;</b>.<br>
+<nobr>L'angle <i><b>&#945;</b></i> est au point <b>A</b> et <i><b>&#976;</b><i> est au <b>B</b>. &nbsp;</nobr></font></td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top"         >
+ <font size="-1"></font><b><b>&#945;</b></b> + <i><b>&#976;</b></i> = <b>90</b> degrees. <br>
+
+
+ <font size="-1">Le rayon du cercle circonscrit au triangle:</font><br>
+ <b> R =  1/2 * c = 1/2* d(A,B);</b><br>
+<br>
+ <font size="-1"><b>Le <b>th&eacute;or&egrave;me de la m&eacute;diane</b></b>:<br>
+ Une r&egrave;gle pour le triangle rectangle: <br>
+ Si M<sub>AB</sub> est le centre de l'hypot&eacute;nuse c, poi <b>CM<sub>AB</sub> = &frac12; c</b>.<br>
+  On peut aussi dire que le point C est situ&eacute; sur un cercle avec le diam&egrave;tre [AB].<br>
+  Pour consequence, si C est un point sur le cercle avec le diam&egrave;tre [AB],
+  puis l'angle &agrave; C dans le triangle ABC est un angle droit.<br>
+  </font>
+ </td>
+ </tr>
+</table>
+
+</div>
+
+</td>
+<td width="50%" valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Right_angled_Triangle_000.jpg" width="320" height="200" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Un triangle rectangle</font>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Thales_Ani_001_60.gif" width="360" height="240" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Un triangle rectangle et le th&eacute;or&egrave;me de la m&eacute;diane, <br>
+                                  et le th&eacute;or&egrave;me de Thal&egrave;s -   Le cercle de Thal&egrave;s.</font>
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;<br>
+</td>
+<td colspan="1">
+</td>
+</tr>
+
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

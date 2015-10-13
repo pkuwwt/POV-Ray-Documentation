@@ -1,0 +1,149 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometrische K&ouml;rper in POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Geometrische K&ouml;rper in POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, Geometrische K&ouml;rper">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+<hr size="3"><p align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Geometrische K&ouml;rper in POV-Ray</font></td></p></h6>
+
+ </td>
+ <td align="right">
+        <a href="shapes660e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="shapes660e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes660i.htm"><font size="2">Italiano</font></a>
+        <a href="shapes660i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes660f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes660f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;<br>
+<a href="shapes000d.htm">Geometrische K&ouml;rper</b></a><br>
+ &nbsp;&nbsp; Inhalts&uuml;bersicht<br>
+<a href="shapes100d.htm">Grundk&ouml;rper</b></a><br>
+<nobr><a href="shapes200d.htm">Shapes by macro + CSG</b></a></nobr><br>
+<a href="shapes600d.htm">3D-Text-Formen</b></a><br>
+<a href="shapes000d.htm">Andere K&ouml;rper</b><br>
+<br>
+&nbsp;<a href="shapes666d.htm">Non-CSG Objekte</b></a><br>
+&nbsp; -&gt;<!--a href="shapes660d.htm"--><b>disc</b></a><br>
+&nbsp; -  <a href="shapes665d.htm">polygon</b></a><br>
+&nbsp; -  <a href="shapes670d.htm">triangle</b></a><br>
+&nbsp; -  <a href="shapes672d.htm">smooth_triangle</b></a><br>
+&nbsp; -  <a href="shapes675d.htm">bicubic_patch</b></a><br>
+&nbsp; -  <a href="shapes680d.htm">mesh</b></a><br>
+&nbsp; -  <a href="shapes690d.htm">mesh2</b></a><br>
+<br>
+<nobr>&nbsp;<a href="shapes700d.htm">height_field + HF macros</b></a></nobr><br>
+&nbsp;<a href="shapes900d.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+<h5 align="center"><a name="Top"></a>
+</h5>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<b>disc{ ...} </b><font size="-1"> - flache Kreisscheibe, Loch in der Mitte ist optional</font><br>
+<font size="-1">built-in shape, non-CSG</font><br>
+
+
+<table border="0" cellspacing="1" cellpadding="2">
+<tr><td bgcolor="#eeeeee" colspan="2"><pre>
+//Syntax: -----------------------
+<b>disc{ &lt;<i>center</i>&gt;,
+      &lt;<i>normal vector</i>&gt;,
+      <i>outer radius</i>,
+      <i>hole radius</i> //(optional!)}
+    } //------------------------- </b></td></pre>
+
+</tr></table>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+
+    <table align="center" border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <!--a href="javascript:ShowImage('prism1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''"-->
+              <img src="im/disc_01.jpg" border="0" width="240"  height="180"
+                   alt="disc" title="disc"></a>
+            </td></tr></table>
+ </td>
+ <td valign="top"><table border="3"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+ <pre><b>// ------------------------------------
+disc{ &lt;0,0,0&gt;, &lt;0,1,0&gt;, 1.0, 0.4
+      texture{
+        pigment{ color rgb&lt;0.8,0.5,1.0&gt;}
+        normal { bumps 0.5 scale 0.025}
+        finish { phong 1}
+             } // end of texture
+       scale &lt;1,1,1&gt;
+       rotate &lt;0,0,0&gt;
+       translate &lt;0,0.01,0&gt;
+     } // end of disc -----------------</b></td></pre></tr></table>
+</td></tr></table>
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+
+</td>
+</tr>
+</table>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="keywords" content="Animazione 3D, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg video, avi video, gif animate,  esempi POV-Ray, tutoriale POV-Ray">
+<meta name="Description" content="Animazioni 3D con POV-Ray - Descrizioni ed esempi per il raytracer POV-Ray di Friedrich A. Lohmueller">
+<title>Animazioni 3D con POV-Ray - Descrizioni ed esempi per il raytracer POV-Ray. </title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ita.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="Tutorial POV-Ray" title="Tutorial POV-Ray"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; Animazione 3D con POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Fondamenti ed esempi per l'animazione 3D.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim008e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim008e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim008f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="anim008f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim008d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim008d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+   </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">Galeria Animazione 3D</b></a><br>
+ - <a href="../pov__ita.htm#ani"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anii.htm">Animazione 3D</b></a><br>
+ &nbsp;&nbsp; <i>Indice del contenuto</i><br>
+&nbsp; <!--a href="anim001i.htm"-->  0. Nozioni fondamentali</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001i.htm">Esempio di base</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002i.htm">Da Immagini al Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005i.htm">Termini tecnici di base</b></a><br>
+&nbsp; <b>&gt</b> 4. <!--a href="anim008i.htm"--><b>Comandi di Animazione</b></a><br>
+&nbsp; <!--a href="anim11i.htm"--> I. Animazioni ciclici</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11i.htm">Oggetti rotanti</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112i.htm">Pianeti in orbita</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113i.htm">L'Orologio</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12i.htm">Fotocamera rotante</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121i.htm">Fotocamera in volo dritto</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13i.htm">Il Problema di</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13i.htm"> Ruota Western</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131i.htm">Ruote Girante</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14i.htm">Ingranaggi</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141i.htm">Catena di Trasmissione</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142i.htm">Catena della Bicicletta</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15i.htm">Pendolo oscillante</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151i.htm">Pendolo di Newton</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2. <a href="anim152i.htm">Rock il Rocking Chair!</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16i.htm">Molla a spirale</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170i.htm">Biella di accoppiamento</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17i.htm">Biella motrice</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18i.htm">Psychedelico + Op-Art </b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190i.htm">Contatori + Countdown</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200i.htm">Piegatura di un Cubo</b></a><br>
+
+&nbsp; II. Movimenti non-lineari<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220i.htm">Accelerare e Frenare 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222i.htm">Accelerare e Frenare 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240i.htm">Cadere e Saltellare</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260i.htm">Accelerazione secondo</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260i.htm">le formule de la fisica</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280i.htm">Controllo di movimenti</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280i.htm">con funzioni spline</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Sentieri di Animazione<br>&nbsp; &nbsp; &nbsp; con Spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210i.htm">Curve Spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21i.htm">Spline ciuso</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22i.htm">Sentieri di Animazione</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="95%" cellpadding="5">
+<tr><td width="130"><img src="im/sphere1st.gif" border="0" width="80" height="60"></td>
+    <td >
+     <h1>Comandi di Animazione</h1>
+     <h5> &nbsp; per POV-Ray file di scena et file ini di animazione.</td></h5>
+</tr></table>
+<table align="center" width="95%" cellpadding="5">
+<tr><td colspan="2"><hr></td></tr>
+<tr> <td colspan="1">
+   <p>
+   <b><font size="+1">I comandi di animazione per file ini:</font></b><br>
+   <br>
+   <b><font size="+1">Comandi di Animazione di Base:</font></b>
+   <br>
+   <font size="-1">Si deve usare &quot;<b>;</b>&quot; invece di &quot;//&quot; per commenti<br>
+   in POV-Ray ini file!<br>
+   </font><br>
+
+   <b>Input_File_Name="sphere.pov"</b><br>
+   &nbsp; &nbsp; &nbsp;  <font size="-1">; il nome di POV-Ray file per il rendering.</font>
+   <br>
+
+   <b>Initial_Frame=1</b> &nbsp; &nbsp; &nbsp; ;<font size="-1"> Inizio con frame_number 1</font><br>
+   <b>Final_Frame=10</b> &nbsp;&nbsp;&nbsp; ;<font size="-1"> Fine con frame_number 10</font><br>
+
+   <b>Initial_Clock=0</b> &nbsp; &nbsp; &nbsp; ;<font size="-1">  Inizio con clock valore 0</font><br>
+   <b>Final_Clock=1</b> &nbsp; &nbsp; &nbsp;&nbsp; ;<font size="-1"> Fine con clock valore 1 !</font><br>
+   <br><b>Cyclic_Animation=On</b> &nbsp; &nbsp; &nbsp;&nbsp;    ; <font size="-1">&quot;On&quot; o &quot;Off&quot;</font><br>
+ <font size="-1">Questo &egrave; molto pratico animazioni cicliche come per esempio <br>
+  girare un oggetto in torno con 360 gradi:<br>
+
+ Questo causa con un numero di frames di 10 una suddivisione della differenza 1 <br>
+  in 10 segmenti e una calculazione con
+  clock = 0.0, 0.1, 0.2, ..... , 0.8, 0.9 -  ma non con 1.0 !<br>
+ Cosi con rotate&lt;0,clock*360,0&gt; un oggetto gira  <br>
+ con 0, 36, 72, 108, 144, 180, 216, 252, 288, 324 gradi,<br>
+ ma non con 360 gradi, perche questo est lo stesso come il primo frame!</font><br>
+
+<palign="justify">Comandi di Antialiasing: <br>
+<nobr><b>Antialias=On</b>  ; <font size="-1">Sp&egrave;gne questo per test di scene complesse!</font></nobr><br>
+<b>Antialias_Threshold=0.3</b> <br>
+<b>Antialias_Depth=3</b>
+<font size="-1">Descrizione in breve: <br>
+     Antialiasing &egrave; una metodo per evitare
+     la apparenza di scala di linee inclinate, di linee sottili interrotte et di motivo moir&eacute; di sovrapposizione
+    con la calculazione del colore di un pixel usando la media di pi&ugrave; che un raggio.
+    &quot;Antialias_Depth=3&quot; significa che POV-Ray usa un reticolo di 3x3 per un pixel
+    ma questo significa anche che bisogna 3x3 = 9 volte di tempo per calculare!
+    &quot;Antialias_Threshold=0.3&quot; significa il antialiasing commincia (se si usa &quot;Antialias=On&quot;)
+    solo se la differenza tra due pixel &egrave; piu che 0.3.</font>
+
+   <br>
+   <b><font size="+1">Comandi di Animazione Addizionali:</font></b>
+   <br>
+   <br>
+   Comandi per il &quot;partial rendering&quot;:<br>
+   <b>Subset_Start_Frame=11 <br>
+      Subset_End_Frame=27</b><br>
+   <font size="-1">Con questo si pu&ograve; calculare solo una parte di una animazione senza cambiare &quot;clock&quot; o &quot;frame rate&quot;.</font>
+<br>
+   <b>Frame_Step=3</b><br>
+   <font size="-1">Con questo si pu&ograve; calculare solo ogni terza immagine (default = 1).</font>
+<br>
+<br>
+  Comandi per la correzione di Gamma:<br>
+  <font size="-1"> <i><b>Nuovo in POV-Ray version 3.7 !</b></i></font><br>
+ <b>Display_Gamma=1.5</b> ;<font size="-1"> si usa display gamma 1.5</font><br>
+ <b>File_Gamma=1.5</b>   ;<font size="-1">
+ Usa il gamma per il file di immagine.</font><br>
+</p>
+</td>
+<td valign="top">
+ <h3><b>&quot;sphere.ini&quot;</b>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>; POV-Ray animation ini file
+Antialias=Off
+Antialias_Threshold=0.1
+Antialias_Depth=2
+
+Input_File_Name=sphere1.pov
+
+Initial_Frame=1
+Final_Frame=30
+Initial_Clock=0
+Final_Clock=1
+
+Cyclic_Animation=on
+Pause_when_Done=off</b><td></pre></tr></table>
+<font size="-2">Comandi di Animazione di Base</font></h3>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <h3><b>&quot;sphere.ini&quot; - extended</b>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>; Persistence Of Vision raytracer
+; version 3.6/3.7
+; animation ini example file.
+
+;Display_Gamma=1.5
+;File_Gamma=1.5   ; only in version 3.7
+
+Antialias=Off
+Antialias_Threshold=0.3
+Antialias_Depth=3
+
+Input_File_Name=animation2.pov
+
+Initial_Frame=1
+Final_Frame=30
+Initial_Clock=0
+Final_Clock=1
+
+;Subset_Start_Frame=11
+;Subset_End_Frame=30
+
+Cyclic_Animation=on
+Pause_when_Done=off
+
+</b><td></pre></tr></table>
+<font size="-2">Comandi di Animazione Addizionali</font></h3>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td><p align="justify"><font size="+1"><b>Valori di animazione per l'uso<br> in POV-Ray file di scena.</b></font><br>
+I valori di animazione seguente si pu&ograve; usare nei file di scena di POV-Ray (.pov) come variabili
+per controllare il flusso di animazione.<br>
+<font size="-1">(Attenzione: Questi valori sono letto degli opzioni di animazione (con file ini).<br>
+No si pu&ograve; mai re-dichiarare queste variabili!)
+</font>
+<br>
+<br>
+  <b>Valori per animazioni basato sul 'clock':</b><br>
+  <b>clock</b> &nbsp; &nbsp; <font size="-1"> il valore attuale di clock </font><br>
+  <b>initial_clock</b>  &nbsp;&nbsp;&nbsp; ; <font size="-1"> il valore del inizio di &quot;clock&quot;</font><br>
+  <b>final_clock</b>  &nbsp; &nbsp; &nbsp; ; <font size="-1"> il valore del fine di &quot;clock&quot;<br>
+  (Il valore finale reale dipende, se &quot;Cyclic_Animation&quot; &egrave; &quot;On&quot; o  &quot;Off&quot;) </font>
+<br>
+ <font size="-1">&quot;clock&quot; &egrave; un methodo molto utile e comodo per controllare animazioni
+   in modo indipendente del numero totale dei frame.
+   Possiamo provare una animazione con un picolo numero di frames, per esempio
+   initial_frame = 1 , final_frame = 20  e aumentare il numero pi&ugrave; tardi.
+   Aumentare il numero di frames riduce la velocit&agrave; di una animazione,
+  ridurre  il numero di frames aumenta la velocit&agrave; di una animazione.</font>
+<br>
+<br>
+<nobr><b>Valori per animazioni basato sul 'frame_number':</b></nobr><br>
+  <b>frame_number</b>     ; <font size="-1">Il numero di frame attuale!</font><br>
+  <font size="-1">Questo &egrave; molto pratico, se vogliamo un numero di frame preciso con passi fissi tra i frames.
+  per esempio con un display a sette segmenti come contatore o con animazioni con elementi pre-animati importati di
+  altri programmi 3D come di Poser.</font><br>
+
+  <b>initial_frame</b>  &nbsp;&nbsp;; <font size="-1">il primo numero di frame</font><br>
+  <b>final_frame</b> &nbsp; &nbsp;; <font size="-1">l'ultimo numero di frame</font><br>
+
+  <b>clock_delta</b> ; <font size="-1">Riturna il tempo tra due valori di clock in animazioni con POV-Ray.</font><br>
+  <b>clock_on</b>;<font size="-1">Questo valore booleano indica lo status di clock: 1 = on, 0 = off.</font><br>
+
+</p>
+</td>
+<td>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>sphere { &lt;0,0,0&gt;, 0.15
+         pigment{ color rgb&lt;1,0,0&gt;}
+         translate&lt;1,0,0&gt;
+         rotate&lt;0,360*(clock+0.00),0&gt;
+       }  // end of sphere ---------
+</b><td></pre></tr></table>
+<font size="-2">Esempio di rotazione con clock</font></h3>
+<br>
+<br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>sphere { &lt;0,0,0&gt;, 0.15
+         pigment{ color rgb&lt;1,0,0&gt;}
+         translate&lt;-1+3*clock,00&gt;
+       }  // end of sphere ----------
+</b><td></pre></tr></table>
+<font size="-2">Esempio di translazione con clock</font></h3>
+<br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>text { ttf "arial.ttf",
+       str(frame_number,0,0),0.1,0
+     pigment{ color rgb&lt;1,1,1&gt; }
+     scale&lt;1,2,1>*0.5
+     translate&lt;-2.4,0.25,0.3>
+   } // end of text object ----------
+</b><td></pre></tr></table>
+<font size="-2">Esempio di oggetti con frame_number</font></h3>
+<br>
+</td>
+</tr>
+</table>
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Design del Interno dei Oggetti trasparenti con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Design del Interno dei Oggetti trasparenti con material, interior e media - une introduzione al linguaggio di descrizione di scene (SDL) del raytracer POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, infographie, 3D computer graphics, oggeti transparenti, material, textures, interior, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr>raytracer POV-Ray </nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Design del Interno dei Oggetti trasparenti</b></font>
+      <font size="-1"><b>con POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_000e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_000e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="interior_000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_000d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+<br>
+<br>
+<nobr> &nbsp; <!--a href="interior_000i.htm"--><b>Indice del contenuto</b></a></nobr><br>
+&nbsp; <!--a href="interior_000i.htm"--><b>material, interior, media</b></a><br>
+<br>
+&nbsp; -  <a href="interior_05i.htm">Sintassi di material,</b></a><br>
+ &nbsp; &nbsp; &nbsp;  texture e interior</b><br>
+&nbsp; -  <a href="interior_03i.htm">Vetro della finestra</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; e max_trace_level </b></a><br>
+&nbsp; -  <a href="interior_001i.htm">fog - Nebbia</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10i.htm">Sintassi di media</b></a> <br>
+&nbsp; -  <a href="interior_30i.htm">Media e Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; con/senza density map <br>
+&nbsp; -  <a href="interior_20i.htm">Raggi nella Nebbia </b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -  <a href="interior_40i.htm">Spada di Luce</b></a> <br>
+&nbsp; -  <a href="interior_44i.htm">Fiamme di candele</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -  <a href="interior_50i.htm">Luce della Finestra </b></a><br>
+&nbsp; -  <a href="interior_70i.htm">Vapore, Fumo, Nuvole</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -  <a href="interior_60i.htm">Tromba d'Aria.</b></a> <br>
+
+<nobr>&nbsp; Problemi Speciali con Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_080i.htm">Cambiare la scala di Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_090i.htm">Sovrapposizione di Media</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!--table border="0" width="90%" align="center"><tr><td>        <!-- inner table -->
+
+
+<table border="0" width="90%" align="center" cellpadding="3"><tr><td colspan="2">
+<h1 align="center"><a name="Top"></a><b>Indice del contenuto</b></h1>
+</td></tr>
+<tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_05i.htm"><img src="im/interior_02vs.jpg"
+              width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Sintassi<b>
+  di <b>&quot;material&quot;</b>,<b>&quot;texture&quot;</b>
+  e <b>&quot;interior&quot;</b> <br>
+ <font size="-1">Esempi di base.</font>
+ </p></td><tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_03i.htm"><img src="im/windowglass_wvs.jpg"
+            width="120" height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Vetro della finestra e max_trace_level:</b><br>
+ <font size="-1">Per un vetro della finestra
+ no dobbiamo usare un materiale di vetro reale
+ con definizione dell'indice di refrazione (&quot;ior&quot;) !</font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_001i.htm"><img src="im/fog5vs.jpg"
+              width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>&quot;fog&quot; - Una simulazione semplice di nebbia senza nessuna interazione con la luce.</b> <br>
+ <font size="-1">Se non abbiamo bisogno di visualizare alcune raggi di sole o di lampade o di spot,
+ questo methodo basta per una simulazione di nebbia bassa o di nebbia globale.<br>
+ Per una nebbia con interazione con la luce dobbiamo usare <nobr>&quot;atmospheric media&quot;</nobr>
+ .</font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_10i.htm"><img src="im/media_types_all.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Sintassi di &quot;media&quot; <br> -  Esempi di base per &quot;emission&quot;,
+ &quot;scattering&quot; et &quot;absorption&quot; in <nobr>&quot;media&quot;</nobr>.
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_30i.htm"><img src="im/density_patterns_05vs.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>&quot;media&quot; e &quot;density maps&quot;<br> - esempi di base
+ su &quot;density maps&quot; per <nobr>&quot;media&quot;</nobr>.
+ </font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_20i.htm"><img src="im/atmospheric_media_t3vs.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Raggi nella Nebbia - con &quot;Atmospheric Media&quot; <br>
+  Nebbia globale con interazione con la luce.</b> <br>
+ <font size="-1">Come si fa visible i raggi di luce di sole, di lampade o di spot in un paesaggio
+ con <nobr>&quot;atmospheric media&quot;</nobr>.
+ </font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_40i.htm"><img src="im/Light_Sword_3vs.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Una Spada di Luce - con &quot;Emitting Object Media&quot; <br>
+ Media senza ombre di fontes di luce esterne.</b> <br>
+ <font size="-1">Bene per simulare fonte luminose come tubo fluorescente,
+  spada di luce, raggi di laser o anche fiamme e plasma fluorescente. </font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_44i.htm"><img src="im/Candle_1demo_vs.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Fiamme di candele - con &quot;Emitting Object Media&quot; <br>
+   Media senza ombre di fontes di luce esterne.</b> <br>
+ <font size="-1">Come simulare una candela accesa con media emission e density maps.</font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_50i.htm"><img src="im/Scattering_box_4vs.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Luce della Finestra - con &quot;Scattering Object Media&quot; <br>
+  Raggi in una nebbia locale, con interazione con la luce.</b> <br>
+ <font size="-1">Se vogliamo visualizare raggi di luce di sole o di lampade o di spot
+  in una regione limitate possono applicare <nobr>&quot;scattering media&quot;</nobr>
+  in un oggetto di container limitato. </font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_70i.htm"><img src="im/steam_smoke_1vs.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Vapore, Fumo, Nuvole  -  &nbsp;Vapore o fumo local, con interazione con la luce.</b> <br>
+ <font size="-1">Un esempio per <nobr>&quot;scattering media&quot;</nobr>
+  intero di un oggetto di container limitato con una &quot;density_map&quot; -
+  anche schiarito con <nobr>&quot;emission&quot;</nobr>.</font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_60i.htm"><img src="im/absorbing_media_08vs.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b> Tromba d'Aria  -  vortice di vento, tromba d'aria e tornado con interazione con la luce.</b> <br>
+ <font size="-1"> Un esempio per l'applicazione di <nobr>&quot;media absorption&quot;</nobr> con container cylindrici
+ e <nobr>&quot;density maps&quot;</nobr> per simulare vortici di vento, tornado o trombe d'aria.</font>
+ </p></td></tr>
+
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_080i.htm"><img src="im/scaling03s.jpg"
+             width="120"  height="90" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Problemi Speciali con Media</b> <br>
+ <font size="-1"> <nobr>Cambiare la scala di &quot;object media&quot;</nobr>.</font>
+ </p></td></tr>
+ <tr>
+ <td align="center">
+    <table border="2" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><a href="interior_090i.htm"><img src="im/smoke_chain_1.jpg"
+             width="120"  height="60" border="0" vspace="0" hspace="0"></a></td>
+    </tr></table>
+ </td>
+ <td valign="top">
+ <p align="justify"><b>Problemi Speciali con Media</b> <br>
+ <font size="-1"> <nobr>La sovrapposizione di &quot;object media&quot;</nobr>.</font>
+ </p></td></tr>
+
+ </table>
+
+<table border="0" width="90%" align="center"><tr><td>
+<tr><td>
+</td></tr>
+<tr><td>
+
+
+
+
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

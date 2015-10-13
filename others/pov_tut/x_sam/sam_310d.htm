@@ -1,0 +1,212 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Beispiele, Erstellung von Objekten f&uuml;r POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik, POV-Ray Objects, Fertige Objekte f&uuml;r POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=380,height=305");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Beispiele</b></font> -
+      <font size="-1"><b>Die Erstellung von Objekten f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="sam_310e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="sam_310e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="sam_310i.htm"><font size="2">Italiano</font></a>
+        <a href="sam_310i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="sam_310f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="sam_310f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table><a name="start"></a><hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="sam_000d.htm">POV-Ray Beispiele</b></a><br>
+ &nbsp; &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; -  <a href="sam_300d.htm">Geometrie</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_360d.htm">Bauern-Figur</a><br>
+ &nbsp; &nbsp; -  <a href="sam_370d.htm">Drahtgittter-W&uuml;rfel</a><br>
+ &nbsp; &nbsp; -  <a href="sam_380d.htm">Oktagon</a><br>
+ &nbsp; &nbsp; -  <a href="sam_390d.htm">Eiform</a><br>
+ &nbsp; &nbsp; -  <a href="sam_400d.htm">Star - Stern</a><br>
+ &nbsp; &nbsp; -  <a href="sam_410d.htm">Optische Linse</a><br>
+ &nbsp; &nbsp; -  <a href="sam_420d.htm">Schachbrett</a><br>
+ &nbsp; &nbsp; -  <a href="sam_450d.htm">Rundkolben-Form</b></a><br>
+<nobr> &nbsp; &nbsp; -  <a href="sam_470d.htm">Erlenmeyerkolben-Form</b></a></nobr><br>
+ &nbsp; &nbsp; -  <a href="sam_460d.htm">Zwei-Zylinder-Blob</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_440d.htm">Regul&auml;rer Tetraeder</a><br>
+ &nbsp; &nbsp; -  <a href="sam_430d.htm">Penrose-Dreieck</a><br>
+ &nbsp; &nbsp; -  <a href="sam_340d.htm">Yin &amp; Yang</a><br>
+ &nbsp; &nbsp; -  <!--a href="sam_310d.htm"--><b>Fischblase</a><br>
+ &nbsp; &nbsp; -  <a href="sam_320d.htm">3fach Fischblase</a><br>
+ &nbsp; &nbsp; -  <a href="sam_330d.htm">Dreipass</a><br>
+&nbsp; -  <a href="sam_100d.htm">Architektur</b></a><br>
+<!--&nbsp; -  <a href="sam_400d.htm">Pflanzen</b></a><br-->
+&nbsp; -  <a href="tec_000d.htm">Technik</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+<table cellpadding="5" width="95%">
+<tr>
+ <td align="center" valign="top">&nbsp;<br>
+   <table align="center" border="0"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('geo/Fishblob_000demo_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="geo/fishblobs.gif" border="0" width="80" height="80"
+                   alt="fishblobs" title="Klicken Sie f&uuml;r ein gr&ouml;&szlig;eres Beispiel: fishblobs"></a></td>
+            </tr></table><br>
+
+ </td>
+ <td valign="top">
+  <h1 align="left"><b>Fischblase</b></h1>
+ <h6>Objekte: &nbsp; &quot;torus&quot;, &quot;Segment_of_Torus&quot;-Makro aus &quot;shapes3.inc&quot;.<br>
+     Methoden: &quot;#declare&quot;, &quot;union{...}&quot;, &quot;object{...}&quot; <br>
+   Klicken Sie <a href="javascript:ShowImage('geo/Fishblob_000demo_im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">hier f&uuml;r ein Beispiel</a>!
+
+
+
+   <br>
+  <!-- Eine Include-Datei mit der man dieses Objekt als Fertig-Objekt verwenden kann
+   findet man auf meiner <a href="../objects/obj_000d.htm">POV-Ray Objects-Seite</a>.-->
+  </td></h6>
+</tr>
+</table>
+
+
+<table cellpadding="5" width="85%">
+<tr>
+ <td valign="top" >
+ <h6 align="justify"><b><font size="+1">Die Konstruktion im Detail:</font></b><br>
+ <b>Bestimmung des Radius Ri
+ <br>der inneren Kreise:</b><br>
+
+      In nebenstehender Zeichnung gilt:<br>
+      Ri  (orange) = 1/2*Ra.<br>
+      Ist der Mittelpunkt des &auml;u&szlig;eren Kreises<br>
+      bei M<sub>0</sub>  = &lt;0,0,0&gt;, <br>
+      so liegen die Mittelpunkte der inneren Kreise<br>
+      bei M<sub>1</sub>  = &lt;Ri,0,0&gt; und M<sub>1</sub>  = &lt;-Ri,0,0&gt; . <br>
+      <br>
+      Im folgenden wird f&uuml;r das Torussegment mein Makro
+      <b>&quot;#macro Segment_of_Torus( R_major, R_minor, Segment_Angle)&quot;</b>
+      aus meiner Inlude-Datei verwendet.<br>
+      Hierzu mu&szlig; die entsprechende Inlude-Datei
+      mittels <b><nobr>#include &quot;shapes_lo.inc&quot;</nobr></b>
+      in den Text eingebunden werden!
+ </td></h6>
+
+ <td><h6 align="center">
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/fishblob1.jpg" width="240" height="240" hspace="0" vspace="0"></td></tr>
+ </table><b>Bestimmung des Radius Ri<br> der inneren Kreise.</b><br>
+
+ </td>
+</tr>
+<tr>
+  <td>
+  <table align="center" border="1"  bgcolor="#f9f9f0" cellpadding="5"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080"><h6>
+  <tr><td>
+  <pre><b>// center:
+#declare M  = &lt;0,0,0&gt;;
+// outer radius:
+#declare Ra = 3.00 -R0;
+// radius of inner half circles:
+#declare Ri  = Ra /2 ;
+
+//  2 torus segments
+#include "shapes3.inc"
+
+union{   //-----------------------
+torus { Ra,  R0
+        rotate&lt;90,0,0&gt;
+        translate M0
+  } // end of torus  -------------
+object{
+   Segment_of_Torus( Ri, R0, -180)
+   rotate&lt;-90,0,0&gt;
+   translate &lt; Ri,0,0&gt;
+ } // end of Torus_Segment(...) --
+object{
+   Segment_of_Torus( Ri, R0, -180)
+   rotate&lt;-90,0,0&gt; rotate&lt;0,0,180&gt;
+   translate &lt;-Ri,0,0&gt;
+ } // end of Torus_Segment(...) --
+}// end of union
+//---------------------------- end</td></pre></b></tr></table>
+</td>
+<td>
+ <table  align="center" border="4"  bgcolor="#EFEFEF"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+ <tr><td><img src="geo/fishblob2.jpg" width="240" height="240" hspace="0" vspace="0"></td></tr>
+ </table>
+ <h5 align="center">Szenenbeschreibung f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="geo/fishblob.txt">&quot;.txt&quot;-Datei</a> oder
+ <a href="geo/fishblob.pov">&quot;.pov&quot;-Datei</a></h5>
+</td></tr></table>
+
+  <!--<h5><b>Download aller gebrauchsferigen POV-Ray Objekte</b><br>
+   zip-gepackt (Include-Dateien mit Beispieldateien und mit den<br>
+   entsprechenden Insert Menu Add-ons  für komfortable Benutzung)<br>
+  auf der <a href=""><b>Download-Seite</b></a>.-->
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

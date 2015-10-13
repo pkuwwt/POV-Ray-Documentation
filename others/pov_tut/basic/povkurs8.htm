@@ -1,0 +1,253 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, PoV, POV-Ray, POV-Ray 3.6, Raytracing-Beschreibung, POV-Ray-Anleitungen, 3D-Grafik, #declare, #macro, #include">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>#declare, #macro, #include, POV-Ray-Kurs Teil 8</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055" >
+
+<!-- header -->
+ <table border="0" width="100%"><tr>
+ <td valign="top"><a name="top"></a><h6><nobr>Einf&uuml;hrung in die Beschreibungssprache des Raytracers POV-Ray</nobr>
+  &nbsp; <nobr> &nbsp; &nbsp; - Seite 8</nobr><br>
+ von Friedrich A. Lohm&uuml;ller</td></h6>
+ <td align="right">
+        <a href="povtuto8.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="povtuto8.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="povtuti8.htm"><font size="2">Italiano</font></a>
+        <a href="povtuti8.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="povtutf8.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="povtutf8.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<hr size="3">
+<a name="start"></a>
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="povkurs0.htm">POV-Ray Einf&uuml;hrung</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="povkurs0.htm">INHALT&nbsp; - &nbsp;INDEX</b></a><br>
+ &nbsp;<br>
+<nobr>&nbsp;<b> 1.</b> <a href="povkurs1.htm">Arbeiten mit POV-Ray</b></a>:</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; &quot;Insert Menu Add-on&quot;.</b></nobr><br>
+<nobr>&nbsp;<b> 2.</b> <a href="povkurs2.htm">Grunds&auml;tzliches zum</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm">Erstellen von Szenentexten.</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#xyzKoordinaten">R&auml;umliche Koordinaten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs2.htm#ZahlenundVektoren">Zahlen und Vektoren</b></a></nobr><br>
+<nobr>&nbsp;<b> 3.</b> <a href="povkurs3.htm">Szenen-Aufbau</b></a></nobr><br>
+<nobr>&nbsp; &nbsp; &nbsp; Ein Grundbeispiel.<br>
+<nobr>&nbsp;<b> 4.</b> <a href="povkurs4.htm">Header einer Szene</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; #include-Dateien<br>
+<nobr> &nbsp; &nbsp; &nbsp; camera, light_source.</b></a></nobr><br>
+<nobr>&nbsp;<b> 5.</b> <a href="povkurs5.htm">Geometrische Grundobjekte</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; plane, sphere, box,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; cylinder, cone, torus.</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; und andere K&ouml;rper</b></a></nobr><br>
+<nobr>&nbsp;<b> 6.</b> <a href="povkurs6.htm">Transformationen</b></a></nobr> <br>
+<nobr> &nbsp; &nbsp; &nbsp; Streckung, Drehung, </b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Verschiebung u. andere.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; <a href="povkurs6.htm#CSG">CSG</b></a>: </b>union, </nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; difference, intersection.</b></nobr><br>
+<nobr>&nbsp;<b> 7.</b> <a href="povkurs7.htm">Farben und Oberfl&auml;chen</b></nobr></a>
+<nobr> &nbsp; &nbsp; &nbsp; texture, pigment, normal, finish</b></nobr><br>
+<nobr><b>&gt;8.</b> <!--a href="povkurs8.htm"--><b>#declare, #local, #macro</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Platzhalter, flexible Objekte.</b></nobr><br>
+<nobr>&nbsp;<b> 9.</b> <a href="povkurs9.htm">#while</b></a> Schleifen</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Grundbeispiele.</b></nobr><br>
+<nobr>&nbsp;<b>10.</b> <a href="povkursa.htm">#include</b></a>, Include-Dateien.</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Wiederverwendbare Objekte.</b></nobr><br>
+<nobr>&nbsp;<b>11.</b> <a href="povkursb.htm">Rationelles Arbeiten</b></a>,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Geschwindigkeit, Flexibilit&auml;t,</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; modulares Arbeiten</nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.1 auf 3.5/3.6</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; Anpassung v. 3.5/3.6 auf 3.7</b></nobr><br>
+<nobr> &nbsp; &nbsp; &nbsp; POV-Ray + Windows Vista</a>.</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp; -  <a href="../down/insrtd_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwng.htm">Download</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<!--- end of header -->
+
+
+<table border="0" align="center" width="90%"><tr><td>
+<font size="+1"><font size="+2"><b>#<a name="declare">declare, #local</a></font></font> - Abk&uuml;rzungen, Platzhalter, flexible Objekte.<br>
+<font size="-1">Definieren von Platzhaltern (Variablen) und Objekten</b><br>
+Bitte beachten Sie f&uuml;r die Wahl eigener Namen und Abk&uuml;zungen:<br>
+<b>&gt; Verwenden Sie keine deutschen Umlaute! <br>
+&gt; Verwenden Sie keine reservierten Schl&uuml;sselworte! <br>
+&gt; Gro&szlig;- und Kleinschreibung wird unterschieden! <br>
+&gt; Empfohlen: alle selbstdefinierten Sachen sollten mit Gro&szlig;buchstaben beginnen!</b><br>
+&nbsp; &nbsp;Alle reservierten Schl&uuml;sselworte von POV-Ray sind in Kleinbuchstaben geschrieben!<br>
+</font><br>
+<font size="-1"><b>#declare</b> verwendet man f&uuml;r <b>global geltende Variablen</b>, w&auml;hrend in Makros oder Include-Dateien
+mit <b>#local</b> nur <b>lokal g&uuml;ltige Variable</b> definiert werden k&ouml;nnen. Diese lokalen Variablen k&ouml;nnen
+innerhalb eines Makros oder einer Include-Datei ver&auml;ndert werden. Z.B.: Bei Z&auml;hlvariablen in einer
+While-Schleife. &Auml;nderungen einer lokalen Variablen bewirken keine &Auml;nderungen gleichnamiger globaler Variablen, welche au&szlig;erhalb definiert wurden.)
+Lokale Variable sind allerdings auch au&szlig;erhalb des Bereiches in dem sie deklariert wurden unsichtbar!</font>
+</font>
+<br>
+<font size="-1"><b>Beispiel f&uuml;r die Definition von eigenen Objekten und die Verwendung definierter Objekte:</b></font>
+
+<div align="center">
+<table border="0" cellspacing="5" cellpadding="0">
+<tr><td valign="top" bgcolor="#ffffff">
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#declare R1 = 0.25 ; // ball radius
+#declare RR = 1.00 ; // ring radius
+#declare Position_1 =  &lt;0,0.25,1&gt; ;
+#declare Ball_Texture =
+ texture{ pigment{ color rgb&lt;1,0.65,0&gt;}
+          finish { phong 1.0 }
+        } // end of texture
+#declare Ball1 =
+ sphere{ &lt;RR,0,0&gt;,R1
+         texture{Ball_Texture}}
+//-------------------------------------
+#declare BallHalfCircle =
+union{
+  object{Ball1 rotate &lt;0,  0,0&gt;}
+  object{Ball1 rotate &lt;0, 20,0&gt;}
+  object{Ball1 rotate &lt;0, 40,0&gt;}
+  object{Ball1 rotate &lt;0, 60,0&gt;}
+  object{Ball1 rotate &lt;0, 80,0&gt;}
+  object{Ball1 rotate &lt;0,100,0&gt;}
+  object{Ball1 rotate &lt;0,120,0&gt;}
+  object{Ball1 rotate &lt;0,140,0&gt;}
+  object{Ball1 rotate &lt;0,160,0&gt;}
+  object{Ball1 rotate &lt;0,180,0&gt;}
+ } // end of BallHalfCircle
+// drawing command:
+object{ BallHalfCircle
+        translate Position_1}
+// -------------------------------- end&nbsp;</b></td></pre></tr></table></td>
+<td align="right" valign="bottom">
+     <table border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/BallHalfCircle_1.jpg" border="0" width="240" height="180"
+                   alt="Example declare" title="Example declare"></td>
+            </tr></table>
+<div align="center"><font size="2">Szenenbeschreibung f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="pov/BallHalfCircle_1.pov">BallHalfCircle_1.pov</a></font></div>
+<br>
+<br>
+<br>
+</td>
+</tr></table></div>
+<br>
+<br>
+<font size="+2"><b>#<a name="macro">macro ... #end</a></font> - Beispiel: flexibles Definieren von Objekten.<br>
+ <font size="-1">Zur Wahl eigener Namen und Abk&uuml;zungen vgl. Bemerkungen bei &quot;#declare&quot;.</font><br>
+<font size="-1"><b>Beispiel f&uuml;r die Definition von eigenen Objekten mittels &quot;#macro&quot;:</b></font>
+<div align="center">
+<table border="0" cellspacing="5" cellpadding="0">
+<tr><td valign="TOP" bgcolor="#ffffff">
+
+<table border="2" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>#macro BallHalfCircle (R1, RR, Texture)
+#local Ball1 =
+ sphere{ &lt;RR,0,0&gt;,R1 texture{Texture}}
+union{
+  object{Ball1 rotate &lt;0,  0,0&gt;}
+  object{Ball1 rotate &lt;0, 20,0&gt;}
+  object{Ball1 rotate &lt;0, 40,0&gt;}
+  object{Ball1 rotate &lt;0, 60,0&gt;}
+  object{Ball1 rotate &lt;0, 80,0&gt;}
+  object{Ball1 rotate &lt;0,100,0&gt;}
+  object{Ball1 rotate &lt;0,120,0&gt;}
+  object{Ball1 rotate &lt;0,140,0&gt;}
+  object{Ball1 rotate &lt;0,160,0&gt;}
+  object{Ball1 rotate &lt;0,180,0&gt;}
+ } // end of BallHalfCircle
+#end // ------------------ end of macro
+//-------------------------------------
+#declare Texture1 =
+  texture{ pigment{ color rgb&lt;1,0.65,0&gt;}
+           finish { phong 1.0}
+         }
+#declare Texture2 =
+  texture{ pigment{ color rgb&lt;1,0.2,0&gt;}
+           finish { phong 1.0}
+         }
+// drawing commands:
+object{
+  BallHalfCircle(0.25, 1.00, Texture1)
+  translate&lt;0,0.25,1&gt;}
+object{
+  BallHalfCircle(0.15, 0.50, Texture2)
+  translate&lt;0,0.5,1&gt;}
+// -------------------------------- end&nbsp;</b></td></pre></tr></table></td>
+<td align="right" valign="bottom">
+     <table border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/BallHalfCircle_2.jpg" border="0" width="240" height="180"
+                   alt="Example macro" title="Example macro"></td>
+            </tr></table>
+<div align="center"><font size="2">Szenenbeschreibung f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="pov/BallHalfCircle_2.pov">BallHalfCircle_2.pov</a></font></div>
+<br>
+<br>
+<br>
+<br>
+</td>
+</tr></table></div>
+</p></td></tr></table>
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p align="center"><font size="-1">
+<b><a href="povkurs0.htm">Teil 0</a> |
+<a href="povkurs1.htm">Teil 1</a>  | <b><a href="povkurs2.htm">Teil 2</a> |
+<a href="povkurs3.htm">Teil 3</a>  | <a href="povkurs4.htm">Teil 4</a> |
+<a href="povkurs5.htm">Teil 5</a>  | <a href="povkurs6.htm">Teil 6</a> |
+<a href="povkurs7.htm">Teil 7</a>  | <!--a href="povkurs8.htm"-->Teil 8</a> |
+<a href="povkurs9.htm">Teil 9</a>  | <a href="povkursa.htm">Teil 10</a> |
+                                     <a href="povkursb.htm">Teil 11</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

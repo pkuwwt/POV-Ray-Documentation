@@ -1,0 +1,315 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>3D Stereo Images and 3D Stereo Animations with POV-Ray - Stereo Animations</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller">
+<meta name="description" content="3D Stereo Images and 3D Stereo Animations with POV-Ray - Stereo Animations">
+<meta name="keywords" content="Stereo Animations, 3D Stereo Images, 3D Stereo Animation, POV, POVRAY, POV-Ray, Raytracing, 3d graphic, 3d animations">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Stereo Images and Stereo Animations <nobr>with POV-Ray</nobr></b></font>
+ </td></h6>
+ <td align="right">
+        <a href="stereo_310d.htm"><font size="2">Deutsch </font></a>
+        <a href="stereo_310d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a><br>
+        <a href="stereo_310i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_310i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_310f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="stereo_310f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<font size="+1"> &nbsp;       <a href="stereo_000e.htm">Stereo Images</font> and</b></a><br>
+<font size="+1"> &nbsp;       <a href="stereo_000e.htm">Stereo Animations</b></a></font><br>
+ &nbsp;&nbsp;&nbsp; <a href="stereo_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="stereo_050e.htm">Cross-Eye View</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100e.htm">Stereo Image simple</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150e.htm">Stereo Image advanced</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200e.htm">Combining Image Pairs</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300e.htm">Stereo Animations 1</b></a><br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_310e.htm"--><b>Stereo Animations 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400e.htm">Examples Stereo Ani</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="100%" align="center"><tr><td colspan="2"><!-- global table-->
+<font size="5"><b>Stereo Animations</b> (2)</font><br>
+<hr>
+</td>
+</tr><!-- global -->
+<tr>
+<td valign="top">
+  <b><font size="3">Combining Image Pairs for Animations</font></b>.</font><br>
+<font size="2"><font size="3"><b>2.1:</b></font> <font size="3"><b>Combining a Serie of Stereo Image Pairs</b>,</font><br>
+   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; from the previous part <a href="stereo_300e.htm" target="_new">Stereo Amimation 1</a>.<br>
+   The following combining scene file and the according ini file<br>
+   should be placed in the image file directory!<br>
+<br>
+  The combining scene file <font size="3"><b>Stereo_Ani_00_Combi_.pov :</b></font><br>
+
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>camera{ orthographic
+        location &lt; 0.00, 0.50,-8.18 &gt;
+        right    x*image_width/image_height
+        look_at  &lt; 0.00, 0.50, 0.00 &gt;
+        angle    14
+      } //------------------------------------
+#declare I_Number_r = 2*frame_number-1;
+#declare I_Number_l = 2*frame_number;
+// left box with image_map texture -----------
+box{ &lt;0, -0.5,0&gt;,&lt;0, 0.5, 0.01&gt;
+     texture{
+       pigment{
+         image_map{
+         jpeg concat("<font color="#800000">Stereo_Ani_00_</font>",
+                      str(I_Number_r,<font color="#00AA20">-2</font>,0),
+                      ".jpg")
+         map_type 0 interpolate 2 once
+         } // end of image_map
+       } //  end of pigment
+       finish{ ambient 1 }
+       translate&lt;0,-0.5,0&gt;
+     } // end of texture
+     translate&lt; -1,0,0&gt;
+     scale&lt;1,image_height/(image_width/2),1&gt;
+} // end of left box //-----------------------
+// right box with image_map texture ----------
+box{ &lt;0, -0.5,0&gt;,&lt;0, 0.5, 0.01&gt;
+     texture{
+       pigment{
+         image_map{
+         jpeg  concat("<font color="#800000">Stereo_Ani_00_</font>",
+                      str(I_Number_l,<font color="#00AA20">-2</font>,0),
+                      ".jpg")
+         map_type 0 interpolate 2 once
+         } // end of image_map
+       } //  end of pigment
+       finish{ ambient 1 }
+       translate&lt;0,-0.5,0&gt;
+     } // end of texture
+     scale&lt;1,image_height/(image_width/2),1&gt;
+} // end of right box //----------------------</b></pre></td>
+  </tr>
+  </table>
+   <font size="1"><b>With POV-Ray 3.6 we need an additional gamma correction of the input files<br>
+                     and also the file_type 'sys' instead of 'jpeg' for .bmp images.<br>
+                     - For details see the according scene file!</b></font><br>
+   If the image files have the size <b>240x240 pixels</b><br>
+   &nbsp; we use in the command line:<br>
+   &quot; <b>+w480 +h240</b> &quot;. <br>
+   With POV-Ray 3.7 we can use the jpeg output by<br>
+   &quot; <b>+w480 +h240 +fj100</b> &quot;. <br>
+&nbsp; &nbsp; &nbsp;   The attached example file works also with e.g. an<br>
+   image size of 200x300 pixels, then we use &quot; <b>+w400 +h300</b> &quot;.<br>
+&nbsp; &nbsp; &nbsp;  If we work with a number of stereo images >= 100, we must<br>
+   change <b>str(I_Number_l,<font color="#00AA20">-2</font>,0)</b> to <b>str(I_Number_l,<font color="#00AA20">-3</font>,0)</b>.
+
+  <table  border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Command_Line_480x240.jpg" border="0" width="393"  height="116"
+       alt="command line" title="command line"></a>
+      </td></tr></table><font size="2"><b>The comandline for Stereo_Ani_00_Combi_.pov/.ini</b></font>
+<br>
+<br>
+</td>
+
+<!-- 2.column -->
+<td valign="top" width="320" align="left">
+ <div align="center">
+ <b>Cross-Eye View</b><br>
+ <font size="2">right eye views: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left eye views: </font>
+ <table align="center" border="0">
+ <tr>
+ <td>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_01.jpg" border="0" width="120" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_<b>01</b>.jpg</font>
+ </td>
+ <td>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_02.jpg" border="0" width="120" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_<b>02</b>.jpg</font>
+  </td>
+  </tr>
+ <tr>
+ <td>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_03.jpg" border="0" width="120" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_<b>03</b>.jpg</font>
+ </td>
+ <td>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_04.jpg" border="0" width="120" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_<b>04</b>.jpg</font>
+  </td>
+  </tr>
+ <tr>
+ <td>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_05.jpg" border="0" width="120" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_<b>05</b>.jpg</font>
+ </td>
+ <td>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_06.jpg" border="0" width="120" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_<b>06</b>.jpg</font>
+  </td>
+  </tr>
+  </table>
+   <b> ...</b><br>
+   <b>Combinded stereo image pairs:</b><br>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_Combi_01.jpg" border="0" width="240" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_Combi_<b>01</b>.jpg</font>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_Combi_02.jpg" border="0" width="240" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_Combi_<b>02</b>.jpg</font>
+  <table align="center" border="3" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_Combi_03.jpg" border="0" width="240" height="120"></a>
+      </td></tr></table><font size="1">Stereo_Ani_00_Combi_<b>03</b>.jpg</font>
+<br>
+   <b> ...</b><br>
+  </div>
+
+</td>
+</tr>
+</table>
+
+
+<!-- general table 2 -->
+<table border="0" width="100%" align="center">
+<tr>
+<td colspan="2" valign="top"><font size="3"><b>2.2:</b></font>
+  <font size="2">We start with combining the whole serie of stereo<br>
+  image pairs by an animation ini file<br>
+ <font size="3"><b>Stereo_Ani_00_Combi_.ini</b></font>:
+
+  <table border="1" cellspacing="4" cellpadding="4">
+  <tr><td bgcolor="#f8f8f0"><pre><b>Antialias=On
+Antialias_Threshold=0.3
+Antialias_Depth=3
+Input_File_Name=Stereo_Ani_00_Combi_.pov
+Initial_Frame=1
+Final_Frame=30
+; for 60 stereo image pairs
+Initial_Clock=0
+Final_Clock=1
+Cyclic_Animation=on
+Pause_when_Done=off</b></pre></td>
+  </tr>
+  </table>
+
+<font size="2">Running this file
+combines a serie of 30 stereo image pairs:<br>
+from 30 right eye views: numbered 01,03,05,...,29<br>
+&nbsp;and 30 left eye views: numbered 02,04,06,...,30,<br>
+combined to Stereo_Ani_00_Combi_01.jpg, to ..._30.jpg.
+
+<br>
+<br>
+We can use a fast graphic viewer with a slice show function<br>
+to see our animations - POV-Ray does has have a buildt-in<br>
+video-maker program!<br>
+If we want to save our animations as animated gif, we need<br>
+to use other programs like a gif animator.
+
+</font>
+</td>
+<td valign="top">
+<font size="2"><b>POV-Ray 3.7</b><br>
+  combining scene file: <a href="pov/Stereo_Ani_00_Combi_.pov">Stereo_Ani_00_Combi_.pov</a><br>
+  combining ini file:   <a href="pov/Stereo_Ani_00_Combi_.ini">Stereo_Ani_00_Combi_.ini</a><br>
+ <font size="2"><b>POV-Ray 3.6</b><br>
+ combining scene file: <a href="pov/Stereo_Ani_00_Combi_36_.pov">Stereo_Ani_00_Combi_36_.pov</a><br>
+ combining ini file:   <a href="pov/Stereo_Ani_00_Combi_36_.ini">Stereo_Ani_00_Combi_36_.ini</a><br>
+ <b>The according combining scene file and ini file<br>
+  should be placed in the image file directory<br>
+  of the single images</b>,<br>
+  otherwise we must add the full image paths<br>
+  in the file Stereo_Ani_00_Combi_.pov .
+<br>
+<br>
+<br>
+<br>
+ <font size="2">These cominated files we can put <br>
+  in an gif animator program:</font>
+
+ <div align="center">
+  <table align="center" border="2" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/Stereo_Ani_00_Combi_240x120.gif" border="0" width="240"  height="120"></a>
+      </td></tr></table><font size="2">Stereo animated gif.</font>
+
+  </div>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</td>
+</tr>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Polygone r&eacute;gulier, G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafique, infographique, 3D Graphique, g&eacute;om&eacute;trie de base pour Raytracing, polygone r&eacute;gulier">
+<title>G&eacute;om&eacute;trie de base - pour Raytracing avec POV-Ray - Polygone r&eacute;gulier</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"> &nbsp; &nbsp; &nbsp; <b>G&eacute;om&eacute;trie de Base</b></font> -
+      <font size="-1"><b>pour Raytracing</b</font></div>
+ </td></h6>
+ <td align="right">
+   <a href="geom_150e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="geom_150e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="geom_150i.htm"><font size="2">Italiano</font></a>&nbsp;
+   <a href="geom_150i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="geom_150d.htm"><font size="2">Deutsch</b></a>&nbsp;
+   <a href="geom_150d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="geom_000f.htm">G&eacute;om&eacute;trie de Base</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<a href="geom_000f.htm">pour Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050f.htm">Triangle rectangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070f.htm">Th&eacute;or&egrave;me de Pythagore</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080f.htm">Trigonom&eacute;trie de base</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090f.htm">Loi des cosinus</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100f.htm">Triangle &eacute;quilat&eacute;ral</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_150f.htm"--><b>Polygone r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200f.htm"--><i>Poly&egrave;dre</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200f.htm">T&eacute;tra&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250f.htm">Octa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300f.htm">Cube et Cubo&iuml;de</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500f.htm">Dod&eacute;ca&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700f.htm">Icosa&egrave;dre r&eacute;gulier</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260f.htm">Cubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270f.htm">Octa&egrave;dre tronqu&eacute;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280f.htm">Rhombicubocta&egrave;dre</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800f.htm">Icosa&egrave;dre tronqu&eacute;</b></a><br>
+
+ &nbsp; &nbsp; <!--a href="geom_c000f.htm"--><i>Cercles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c100f.htm">Cercles touchants</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200f.htm">Tangentes internes</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300f.htm">Tangentes externes</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+ <tr>
+ <td>&nbsp;</td>
+ <td><p align="justify"><h2><b>Polygone r&eacute;gulier</b> </h2>
+ <font size="-1">Un polygone r&eacute;gulier est un polygone avec tous les c&ocirc;t&eacute;s et tous les angles sont &eacute;gals.<br>
+  Le triangle &eacute;quilat&eacute;ral (3), le carr&eacute; (4), le pentagone r&eacute;gulier (5), le hexagone r&eacute;gulier (6), le heptagone (7),<br>
+  le octogone (8), le enn&eacute;agone ou nonagone (9), le  d&eacute;cagone (10), le hend&eacute;cagone (11), le dod&eacute;cagone (12), ... , <br>
+  le chiliogone (1000), le myriagone (10000), le megagone (1000000), il gigagone (1000 000 000), <br>
+  il teragone (1000 000 000 000 000 000), il petagone (1000 000 000 000 000 000 000), ...... le cercle (&#8734;). <br>
+  </font></p>
+</h2>
+ </td>
+ </tr>
+</table>
+
+<font size="-2">Note: Les <b>fonctions trigonom&eacute;triques sin(X), cos(X) et tan(X) en POV-Ray</b> <br>
+ <b>ont besoin de leurs arguments X en radians !!! &nbsp; Le symbole &#960; = pi en POV-Ray.</b><br>
+</p>
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<div align="center">
+
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+ <td width="50%" valign="top">
+<nobr>Le <b>polygone r&eacute;gulier avec N angles</b> ou N cot&eacute;s :</nobr><br>
+ <font size="-1">
+  <b>La somme des angles int&eacute;rieurs</b></font><b> = 180*(N-2);</b><br>
+ <font size="-1">
+  <b>L'angle ext&eacute;rieur</b></font><b>  = 180-360/N;</b>
+
+
+    <pre><font size="-1"> triangle équilatéral: 180-360/3 = 180 - 120 =  <b>60</b>;
+ carré:                180-360/4 = 180 -  90 =  <b>90</b>;
+ pentagone régulier:   180-360/5 = 180 -  72 = <b>108</b>;
+ hexagone régulier:    180-360/6 = 180 -  60 = <b>120</b>;
+ heptagone régulier:   180-360/7 = 180-51,43 = <b>128,57</b>;
+ octogone régulier:    180-360/8 = 180 -  45 = <b>135</b>;
+ ennéagone régulier:   180-360/8 = 180 -  40 = <b>140</b>;
+ décagone régulier:    180-360/8 = 180 -  36 = <b>144</b>;
+ hendécagone régulier: 180-360/11= 180 -32,7 = <b>147,3</b>;
+ dodécagone régulier:  180-360/12= 180 -  30 = <b>150</b>;</td></font></pre>
+
+</tr>
+<tr>
+ <td>
+ <font size="-1">Un polygone r&eacute;gulier avec N angles et<br>
+ <b>avec le rayon du cercle circonscrit R</b>,<br>
+ ou <b>avec le rayon du cercle inscrit Ri</b>:</font><br>
+
+
+ <font size="-1">La lunghezza del <b>lato a</b>:</font><br>
+ <b> a = 2*R  *sin( radians( 180/N ) );</b> ou <br><b> a = 2*R *sin( pi/N  );</b><br>
+ <b> a = 2*Ri *tan( radians( 180/N ) );</b> ou <br><b> a = 2*Ri*tan( pi/N  );<br>
+ </td>
+</tr>
+<tr>
+ <td>
+ <font size="-1">Avec la longueur <b>a</b> d'un c&ocirc;t&eacute; de base du polygone</font><br>
+ <font size="-1">le rayon du <b>cercle circonscrit</b>:<br></font>
+<b>R  = 1/2 * a/sin( radians( 180/N ) ) );</b> ou<br>
+<b>R  = 1/2 * a/sin( pi/N );</b><br>
+ <font size="-1">le rayon du <b>icercle inscrit</b>:<br></font>
+<b>Ri = 1/2 * a/tan( radians( 180/N ) ) );</b> ou<br>
+<b>Ri = 1/2 * a/tan( pi/N );</b><br>
+ </td>
+</tr>
+
+</table>
+
+</div>
+
+</td>
+<td width="50%" valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/Polygon_Angles_001.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Polygone r&eacute;gulier - angles, cot&eacute;s, rayons.</font>
+
+
+
+
+</td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

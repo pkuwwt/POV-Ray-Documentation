@@ -1,0 +1,432 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Geometric Shapes</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2007, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Geometric Shapes">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Geometric Shapes">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">Geometric Shapes in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes550i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano </font></a>
+        <a href="shapes550i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes550f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais </font></a>
+        <a href="shapes550f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes550d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch </font></a>
+        <a href="shapes550d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000e.htm">Geometric Shapes</b></a><br>
+ &nbsp;&nbsp; Overview<br>
+<a href="shapes100e.htm">Basic Shapes</b></a><br>
+<nobr><a href="shapes200e.htm">Shapes by macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000e.htm">Shapes in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400e.htm">Other Shapes by macros</b></a></nobr><br>
+<a href="shapes600e.htm">3D text shapes</b></a><br>
+<br>
+<a href="shapes000e.htm">Other Shapes</b></a><br>
+&nbsp; -  <a href="shapes620e.htm">blob</b></a><br>
+&nbsp; -  <a href="shapes630e.htm">sphere_sweep</b></a><br>
+&nbsp; -  <a href="shapes640e.htm">julia_fractal</b></a><br>
+&nbsp; -  <a href="shapes500e.htm">Regulare Polyhedron</b></a><br>
+<nobr>&nbsp; -  <a href="shapes530e.htm">Paraboloid, Hyperboloid</b></a></nobr><br>
+&nbsp; -  <a href="shapes540e.htm">Polynomial equations</b></a><br>
+&nbsp; -&gt;<!--a href="shapes550e.htm"--><b>Cubic &amp; Quartic shapes</b></a><br>
+&nbsp; -  <a href="shapes570e.htm">Parametric shapes</b></a><br>
+<br>
+<a href="shapes666e.htm">Non CSG Shapes</b></a><br>
+<nobr><a href="shapes700e.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900e.htm">Isosurfaces</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<div align="center">
+<table width="80%" align="center" border="0"><tr><td><!-- global -->
+<h3 align="center"><b>Cubic &amp; Quartic shapes</b> from the include file <b>&quot;shapesq.inc&quot;,</b><br>
+   <font size="-1">an include file by Alexander Enzmann</font></h3>
+
+Before you can use the following geometric shapes the include file must be inserted
+in the scenery description file by: <br>
+<b>#include &quot;shapesq.inc&quot;</b> <br>
+For <i>POV-Ray for Windows</i> there are also Insert Menu items for these shapes available
+in my <nobr>&quot;<a href="../down/insert_a.htm">Insert Menu Add-on</a>&quot;.</nobr><br>
+<br>
+<div align="center">
+<table border="2"  bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+<tr><td><img src="im/poly_Glob_5.jpg" border="0" width="160"  height="200"
+         alt="Glob_5" title="Glob_5"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Glob_5 //---------------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,.9,.7&gt;}
+           finish { phong 1}
+               }
+        rotate &lt;0,0,-90&gt;
+        scale &lt;1,1,1&gt;
+        translate &lt;0,1,0&gt;
+       } // ------------- end of object
+</b>
+</td></pre></tr>
+<tr><td><img src="im/poly_Twin_Glob.jpg" border="0" width="240"  height="180"
+         alt="Twin_Glob" title="Twin_Glob"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Twin_Glob //---------------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,.95,.9&gt;}
+           finish { phong 1}
+               }
+        rotate &lt;0,0,0&gt;
+        scale &lt;1,1,1&gt;
+        translate &lt;0,1,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+<tr><td><img src="im/poly_Sinsurf.jpg" border="0" width="240"  height="180"
+         alt="Sinsurf" title="Sinsurf"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Sinsurf //---------------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,.95,.9&gt;}
+           finish { phong 1}
+               }
+        rotate &lt;0,0,0&gt;
+        scale &lt;-1,1,1&gt;
+        translate &lt;1,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+
+<tr><td><img src="im/quartic_Bicon.jpg" border="0" width="240"  height="180"
+         alt=" Bicorn" title=" Bicorn"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Bicorn //---------------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,.95,.9&gt;}
+           finish { phong 1}
+               }
+        scale 1.25
+        rotate &lt;0,0,0&gt;
+        translate &lt;0,0.05,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+<tr><td><img src="im/quartic_Crossed Trough.jpg" border="0" width="240"  height="180"
+         alt="Crossed_Trough" title="Crossed_Trough"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Crossed_Trough //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,.95,.9&gt;}
+           finish { phong 1}
+               }
+        scale 2
+        rotate &lt;0,0,90&gt;
+        rotate &lt;0,0,90&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+<tr><td><img src="im/quartic_Cubic_Cylinder.jpg" border="0" width="240"  height="180"
+         alt="Cubic_Cylinder" title="Cubic_Cylinder"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Cubic_Cylinder //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        rotate &lt;90,35,0&gt;
+        scale &lt; 1,1,1&gt;
+        translate &lt;1,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+<tr><td><img src="im/quartic_Cubic_Saddle_1.jpg" border="0" width="240"  height="180"
+         alt="Cubic_Saddle_1" title="Cubic_Saddle_1"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Cubic_Saddle_1 //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        rotate &lt;90,35,0&gt;
+        scale &lt; 1,1,1&gt;
+        translate &lt;1,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Devils_Curve.jpg" border="0" width="240"  height="180"
+         alt="Devils_Curve" title="Devils_Curve"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Devils_Curve //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        rotate &lt;90,35,0&gt;
+        scale &lt;1,1,1&gt;
+        translate &lt;1,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Folium.jpg" border="0" width="240"  height="180"
+         alt="Folium" title="Folium"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Folium //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        scale &lt;-1,1,1&gt;
+        rotate &lt;0,0,0&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Helix.jpg" border="0" width="240"  height="180"
+         alt="Helix" title="Helix"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Helix //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        scale &lt;1,1,1&gt;
+        rotate &lt;0,0,0&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+<tr><td><img src="im/quartic_Helix_1.jpg" border="0" width="240"  height="180"
+         alt="Helix_1" title="Helix_1"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Helix_1 //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        scale &lt;1,1,1&gt;
+        rotate &lt;0,0,0&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+<tr><td><img src="im/quartic_Hyperbolic_Torus_40_12.jpg" border="0" width="240"  height="180"
+         alt="Hyperbolic_Torus_40_12" title="Hyperbolic_Torus_40_12"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Hyperbolic_Torus_40_12 //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        scale &lt;1,1,1&gt;*0.1
+        rotate &lt;0,0,0&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+       <tr><td><img src="im/quartic_Lemniscate.jpg" border="0" width="240"  height="180"
+         alt="Lemniscate" title="Lemniscate"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Lemniscate //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        scale &lt;1,1,1&gt;*1.5
+        rotate &lt;0,0,0&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Quartic_Loop_1.jpg" border="0" width="240"  height="180"
+         alt="Quartic_Loop_1" title="Quartic_Loop_1"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Quartic_Loop_1 //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        scale &lt;1,1,1&gt;
+        rotate &lt;0,0,0&gt;
+        translate &lt;-1,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Monkey_Saddle.jpg" border="0" width="240"  height="180"
+         alt="Monkey_Saddle" title="Monkey_Saddle"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>intersection{ //-------------------------
+  cylinder{&lt;0,-1,0&gt;,&lt;0,1,0&gt;,1}
+  object{ Monkey_Saddle //------------
+          sturm
+          scale 0.50 rotate&lt; 0,180,0&gt;
+          rotate&lt;-90,0,0&gt;
+        }
+  scale &lt;2,1,2&gt;
+  texture{pigment{color rgb&lt;1,1,1&gt;}
+          finish {phong 1}}
+} // ----------- end of inters.</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Parabolic_Torus_40_12.jpg" border="0" width="240"  height="180"
+         alt="Parabolic_Torus_40_12 " title="Parabolic_Torus_40_12 "></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Parabolic_Torus_40_12  //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        scale &lt;1,1,1&gt;*0.1
+        rotate &lt;0,180,0&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Piriform.jpg" border="0" width="240"  height="180"
+         alt="Piriform" title="Piriform"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Piriform //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        scale &lt;1,1,1&gt;*2
+        rotate &lt;0,0,0&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Quartic_Paraboloid.jpg" border="0" width="240"  height="180"
+         alt="Quartic_Paraboloid" title="Quartic_Paraboloid"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>object{ Quartic_Paraboloid //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        rotate&lt;-90,0,0&gt;
+        clipped_by {sphere {&lt;0,0, 5&lg;,7 }}
+        scale &lt;1,1,1&gt;*0.25
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Quartic_Cylinder.jpg" border="0" width="240"  height="180"
+         alt="Quartic_Cylinder" title="Quartic_Cylinder"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Quartic_Cylinder //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        rotate&lt;0,0,0&gt;
+        scale &lt;1,1,1&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Steiner_Surface.jpg" border="0" width="240"  height="180"
+         alt="Steiner_Surface" title="Steiner_Surface"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Steiner_Surface //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        rotate&lt;0,0,0&gt;
+        scale &lt;1,1,1&gt;*2
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+<tr><td><img src="im/quartic_Witch_Hat.jpg" border="0" width="240"  height="180"
+         alt="Witch_Hat" title="Witch_Hat"></a></td>
+<td bgcolor="#fafafa" valign="top">
+<pre><b>
+object{ Witch_Hat //------------
+        sturm
+        texture{
+           pigment{ color rgb&lt;1,1,1&gt;}
+           finish { phong 1}
+               }
+        rotate&lt;0,0,0&gt;
+        scale &lt;1,-1,1&gt;
+        translate &lt;0,0,0&gt;
+       } // ------------- end of object</b></td></pre></tr>
+
+</table>
+</div>
+
+
+</td></tr></table><!-- global -->
+</div>
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td valign="middle" align="center"><a href="#top">top</a></td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

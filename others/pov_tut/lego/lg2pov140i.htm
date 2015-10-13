@@ -1,0 +1,192 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>LEGO&reg; CAD e POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Rendering di modelli LEGO di programmi CAD come LDraw o LEGO Digital Designer con il programma di raytracing POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, Computer grafica 3D, modelli LEGO, LEGO CAD, LDraw, LEGO Digital Designer, LeoGEO, L3PAO">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=930,height=725");
+ New.focus();  }
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples for the POV-Ray Raytracer </nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <table width="100%" border="0"><tr>
+ <td valign="top">
+<table align="center" border="1" bgcolor="#dddddd" bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+     <tr><td><img src="im/LEGO000tt.jpg" alt="LEGO in POV-Ray" title="LEGO in POV-Ray" width="80" height="60" border="0"></td></tr></table> </td>
+ <td>
+<p align="center"><font size="5">&nbsp; &nbsp; Modelli &nbsp;LEGO<sup>&reg;</sup> Virtuali di Programmi CAD nel POV-Ray</font>
+<br><font size="2">Rendering di modelli LEGO<sup>&reg;</sup> virtuali di programmi CAD <br>
+come <b>LDraw</b>&trade; e <b>LeoGEO</b> o <b>LEGO Digital Designer</b><sup>&reg;</sup> con POV-Ray</font></p></h6>
+ </td>
+ <td align="right">
+        <a href="lg2pov140e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="lg2pov140e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="lg2pov140f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="lg2pov140f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="lg2pov140d.htm"><font size="2">Deutsch </font></a>
+        <a href="lg2pov140d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="lg2pov000i.htm"--><b>LEGO<sup>&reg;</sup> e POV-Ray</b></a><br>
+ &nbsp;&nbsp; <a href="lg2pov000i.htm">Indice del Contenuto</a><br>
+<a href="lg2pov100i.htm"> <b>CAD per LEGO<sup>&reg;</sup></b></a><br>
+&nbsp; <nobr>-  <a href="lg2pov110i.htm">LEGO Digital Designer<sup>&reg;</sup></b></nobr></a><br>
+&nbsp; -&gt;<!--a href="lg2pov140i.htm"--><b>LDraw  &trade;</b></a><br>
+&nbsp; -  <a href="lg2pov160i.htm">LDraw + LeoCAD</b></a><br>
+&nbsp; -  <a href="lg2pov170i.htm">LDraw + MLCad</b></a><br>
+<br>
+<a href="lg2pov200i.htm">Di CAD a POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov220i.htm">LeoCAD a POV-Ray</b></a><br>
+&nbsp; -  <a href="lg2pov240i.htm">Assi + Scale</b></a><br>
+&nbsp; -  <a href="lg2pov260i.htm">Colori adatti</b></a><br>
+<nobr>&nbsp; -  <a href="lg2pov280i.htm">Oggetti POV-Ray di LGeo</b></a></nobr><br>
+<br>
+&nbsp; <nobr>-  <a href="lg2pov300i.htm">LEGO<sup>&reg;</sup> misure + reticolo</b></a></nobr><br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+<h3 align="center"><a name="Top"></a>
+</h3>
+
+<div align="center">
+<table border="0" cellspacing="4" cellpadding="4" width="90%">
+<tr><td>
+<table border="0" cellspacing="0" cellpadding="10">
+<tr>
+  <td>
+   <font size="+2">LDraw<sup>&trade;</sup></font><br> - un software di base CAD gratuito <br>
+   <font size="-1">(Windows  Macintosh  Linux)</font> &egrave; un pacco de Font-Ends e Add-ons
+   comme LeoCAD, MLCad, L3Lab, L3PAO, LDview, LPub.<br>
+    Homepage di LDraw: <a href="http://www.LDraw.org/">www.LDraw.org</a><br>
+ </td>
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="http://www.LDraw.org/"><img src="im/logoshort.gif" width="300" height="84" border="0" hspace="0" vspace="0"
+               title="Go to www.LDraw.org" alt="Go to www.LDraw.org"></a></td>
+    </tr></table>
+  </td>
+</tr>
+<tr><td colspan="2"><p align="justify">
+LDraw<sup>&trade;</sup> &egrave; un standard apperto (open standard) per programme CAD per LEGO<sup>&reg;</sup>
+con questo il &egrave; possibile di creare modelli et scene LEGO<sup>&reg;</sup> virtuali.
+Si pu&ograve; usarle per documentare modelli costruito fisicamente,
+creare istruzioni per il montaggio comme LEGO<sup>&reg;</sup>,
+creare immagini 3D fotorealistiche di modelli virtuali e anche fare delle animazioni. <br>
+La lista delle possibilit&agrave; &egrave; senza fine.
+Ma in modo meglio que con i mattoncini LEGO<sup>&reg;</sup> reali, non si &egrave; limitato della quantit&agrave; limitata degli pezzi e colori,
+in LDraw niente &egrave; impossibile. </p></td>
+
+</tr>
+<tr>
+  <td>
+   Per download (Windows  Macintosh  Linux) <br>
+   de pacco LDraw<sup>&trade;</sup> vede qui: <br>
+   <a href="http://www.LDraw.org/">www.LDraw.org</a>, vede qui: &quot;Get Started&nbsp;<br>
+  Qui si trova anche una descrizione intensiva e istruzioni per l'installazione in inglese degli componenti di LDraw. <br>
+  <br>
+  La <b>versione Windows</b> usato per mie lavori qui &egrave; &quot;LDraw_setup_2006q3_full_J.exe&quot;<br>
+  Questa versione funziona senza problemi anche con Windows Vista,
+  se s'installa il directory LDraw in <b>C:\LDraw</b> invece di
+   C:\Program files\LDraw. <br>
+
+ <td valign="top">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="http://www.LDraw.org/"><img src="im/getstarted.png" width="226" height="85" border="0" hspace="0" vspace="0"
+     title="Go to www.LDraw.org/" alt="Go to www.LDraw.org/"></a></td>
+    </tr></table>
+ </td>
+</tr>
+<tr>
+  <td colspan="2"><p align="justify">  La maniera meglio per convertire
+  <b>modelli virtuali LEGO di formato LDraw in formato POV-Ray</b> &egrave; quella con
+  <a href="lg2pov160d.htm">LeoCAD</b></a>
+  con il uso di <b>LGEO POV Library</b>.
+  La versione pi&ugrave; nuovo di questa library (12-2008) si pu&ograve; download a
+  <a href="http://www.digitalbricks.org/lgeo.html">www.digitalbricks.org/lgeo.html</a>.<br>
+  Questo &egrave; un set di include file per POV-Ray per sostituire tutti i reti di triangoli (mesh) di LDraw
+  con &quot;forme primitive&quot; di POV-Ray per ottenere forme pi&ugrave; realistiche con i spigoli smussati.<br>
+  Vede mio capitolo  <a href="lg2pov160e.htm">LDraw + LeoCAD</b></a> per pi&ugrave; di dettagli.
+  </p>
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+
+ </td>
+ <td>
+
+ </td>
+</tr></table>
+
+
+<br>
+
+ </td></tr>
+
+</div>
+
+
+</td></tr></table>
+</td></tr>
+<tr><td colspan="3">
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+  <img src="../email.gif" width="15" height="10" border="0" alt="email" title="email"> email:
+  <a href="mailto:Friedrich.Lohmueller_at_t-online.de">Friedrich.Lohmueller_at_t-online.de</a><br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+ <table border="1" cellspacing="0" cellpadding="0">
+ <tr><td  width="450"><p align="center">
+     <font size="2">La parola LEGO<sup>&reg;</sup> &egrave; un marchio registrato per le aziende del Gruppo LEGO,<br>
+     che non sponsorizza, autorizza o supporta ufficialmente questo sito.<br>
+      <nobr>&nbsp;La propria homepage di LEGO<sup>&reg;</sup>:
+      <a href="http://www.lego.com"><font size="2">www.lego.com</font></a><font size="2">, e la  propria<br>
+       homepage di LEGO Mindstorms system: </font>
+      <a href="http://www.legomindstorms.com"><font size="2">mindstorms.lego.com</font></a></nobr></td>
+ </tr></table>
+ </td>
+</tr></table><!-- end footer -->
+</td></tr></table><!-- end global -->
+</body>
+</html>

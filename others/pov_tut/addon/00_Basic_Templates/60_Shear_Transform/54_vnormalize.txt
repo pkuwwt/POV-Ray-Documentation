@@ -1,0 +1,13 @@
+//---------------------------------------------------------
+//---------------------------------------------------------
+/* vnormalize( V ) // Normalize vector A. 
+         Returns a unit length vector in the direction of A. 
+        Formula: vnormalize(A)= A / vlength(A).
+!Warning: Using vnormalize(<0,0,0>) will result in an error.
+*/
+//---------------------------------------------------------
+#if( vlength(V) != 0 ) // if is not <0,0,0>
+  #declare Vo = vnormalize( V );
+#end
+//---------------------------------------------------------
+//---------------------------------------------------------

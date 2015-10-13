@@ -1,0 +1,294 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Geometric Transformations with POV-Ray - rotate</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014 by Friedrich A. Lohmueller">
+<meta name="Description" content="Basics about geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d grafics, 3d graphics, computer graphics,
+      geometric transformations with POV-Ray, translate, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Geometric Transformations with POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_200d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_200d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a><br>
+        <a href="trans_200i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_200i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_200f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="trans_200f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp; <a href="trans_000e.htm">Geometric</b></a><br>
+ &nbsp; <a href="trans_000e.htm">Transformations</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000e.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Elementary </b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100e.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <!--a href="trans_200e.htm"--><b>&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300e.htm">&quot;scale&lt;-1,1,1&gt;&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Other</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001e.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_400e.htm">&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450e.htm">Shearing</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470e.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500e.htm">&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="trans_500e.htm">&nbsp;and &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Vectors and</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800e.htm">Transformations</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm"> Download</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+ <tr>
+  <td><h1 align="center"><nobr>&quot;rotate&quot; &nbsp;</nobr>
+      <br><nobr><font size=-1> arround one or more axes of the coordinate system</font></nobr></h1>
+</td></tr></table>
+<br>
+<table  border="1" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td bgcolor="#eee8d0">
+     <table align="center" border="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                <img src="rotatete.gif" border="0" width="320"  height="320"
+                   alt="rotation demo" title="rotation demo">
+            </td></tr></table>
+
+    </td>
+<td bgcolor="#eee8d0">
+     <font size="4">
+    <b>rotate </b></font><br>
+    <font size="3">
+    general syntax:
+<pre><b>rotate &lt;w<SUB>x</SUB>,w<SUB>x</SUB>,w<SUB>z</SUB>&gt;</b></pre>
+    this causes a rotation of an object arround the appropriated coordinate axis of the three basic directions
+    <br> by an angle of <b>w<SUB>x</SUB></b> degrees arround the x axis
+    <br> by an angle of <b>w<SUB>y</SUB></b> degrees arround the y axis and
+    <br> by an angle of <b>w<SUB>z</SUB></b> degrees arround the z axis.<br>
+    <b>Attention:</b> The rotations are <b>not</b> applied relative of any local axes of symetriy through the center of an object and
+    the rotations will be applied in the writen order!</p>
+ </td></font>
+</tr></table>
+<p align="justify" width="90%"><font size="3">
+&quot;<b>rotate&lt; 0,90, 0&gt;</b>&quot; causes a rotation arround the y axis by 90 degrees (lefthanded positive).<br>
+&quot;<b>rotate&lt; 0,90,45&gt;</b>&quot; first causes a rotation arround the y axis by 90 degrees and then
+ a rotation arround the z axis by 45 degrees.<br>
+&quot;<b>rotate&lt; 0, 0,45&gt; rotate&lt; 0,90, 0&gt;</b>&quot; first causes a rotation of 45 degrees arround the z axis<br>
+followed by a rotation of 90 degrees arround the y axis.</p>
+<p align="left"><img src="warn.gif" width="31" height="30" border="0" alt="Attention!" title="Attention!">
+<font size="+1"><b> Attention:</b></font><br>
+ <b>Sequential rotations arround different axes<br> are not interchangeable!</font></b>
+<br> This means the result depends on the order in which we apply these rotations!
+High potential of frustration if we are not carefully enough!!!.
+ </p>
+<p align="left"><img src="warn.gif" width="31" height="30" border="0" alt="Attention!" title="Attention!">
+<font size="+1"><b> Attention:</b></font><br>
+ <b><font size="+1">A rotation by
+ &quot;rotate &lt;  , , &gt;&quot; will be executed always around
+ the according axes of the system of coordinates!
+</b></font><br>
+If we want to turn an object with its center at
+&lt;x<SUB>1</SUB>,y<SUB>1</SUB>,z<SUB>1</SUB>&gt; around the direction of
+<nobr>x, y and/or z</nobr> with <nobr><b>rotate&lt;x<sub>rot</sub>,y<sub>rot</sub>,z<sub>rot</sub>&gt;</b></nobr>
+ relative to its center we  have to do it in this way:<br>
+<table align="center">
+<tr>
+ <td>
+ <pre><b>translate <b>-</b>&lt;x<sub>1</sub>,y<sub>1</sub>,z<sub>1</sub>&gt; // First push it to &lt;0,0,0&gt;! Attention: minus!
+rotate&lt;x<sub>rot</sub>,y<sub>rot</sub>,z<sub>rot</sub>&gt;  // Then rotate the object and
+translate  &lt;x<sub>1</sub>,y<sub>1</sub>,z<sub>1</sub>&gt;  // then push it back to its position!</b></pre><br>
+ </td>
+</tr>
+</table>
+ </p>
+
+<table  border="1" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10">
+ <tr>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('rotate1im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="rotate1t.jpg" border="0" width="320"  height="240"
+                   alt="Samples rotation 640x480" title="Samples rotation 640x480"></a>
+            </td></tr></table><br>
+    <p align="center"> <font size="4">
+    <b>Sample 1:</b></font></p>
+      </td>
+<td bgcolor="#eee8d0">
+    <font size="3">
+<pre>#declare YellowSmarty =
+sphere{&lt;0,0,0&gt;,1
+       scale &lt;1,0.5,1&gt;
+       translate&lt;4,0,0&gt;
+       texture{
+          pigment{ color rgb&lt;1,0.65,0&gt;}
+          finish { diffuse 0.9
+                   phong 1}}} //--
+object{YellowSmarty rotate&lt;0,0, 90&gt;}
+object{YellowSmarty rotate&lt;0,0,105&gt;}
+object{YellowSmarty rotate&lt;0,0,120&gt;}
+object{YellowSmarty rotate&lt;0,0,135&gt;}
+object{YellowSmarty rotate&lt;0,0,150&gt;}
+object{YellowSmarty rotate&lt;0,0,165&gt;}
+object{YellowSmarty rotate&lt;0,0,180&gt;}
+//---------------------------------
+#declare Zylinder_1 =
+cylinder{&lt;0,0,0&gt;,&lt;0,3,0&gt;,0.2
+         translate&lt;0,0,5&gt;
+         texture{
+           pigment{ color NeonPink}
+           finish { diffuse 0.9
+                    phong 1}}} //--
+object{Zylinder_1 rotate&lt;0,  0,0&gt;}
+object{Zylinder_1 rotate&lt;0, 15,0&gt;}
+object{Zylinder_1 rotate&lt;0, 30,0&gt;}
+object{Zylinder_1 rotate&lt;0, 45,0&gt;}
+object{Zylinder_1 rotate&lt;0, 60,0&gt;}
+object{Zylinder_1 rotate&lt;0, 75,0&gt;}
+object{Zylinder_1 rotate&lt;0, 90,0&gt;}
+object{Zylinder_1 rotate&lt;0,105,0&gt;}
+object{Zylinder_1 rotate&lt;0,120,0&gt;}
+object{Zylinder_1 rotate&lt;0,135,0&gt;}
+object{Zylinder_1 rotate&lt;0,150,0&gt;}
+object{Zylinder_1 rotate&lt;0,165,0&gt;}
+object{Zylinder_1 rotate&lt;0,180,0&gt;}
+//----------------------------------</td></pre></font>
+
+ </tr>
+ <tr>
+  <td bgcolor="#eee8d0" valign="top">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('rotate2im.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="rotate2t.jpg" border="0" width="320"  height="240"
+                   alt="Samples rotation 640x480" title="Samples rotation 640x480"></a>
+            </td></tr></table>
+    <p align="center"><font size="4">
+    <b>Sample 2:</b></font></p>
+      </td>
+<td bgcolor="#eee8d0">
+    <font size="3">
+<pre>#declare Ring=
+union{
+object{YellowSmarty rotate&lt;0,  0,0&gt;}
+object{YellowSmarty rotate&lt;0, 30,0&gt;}
+object{YellowSmarty rotate&lt;0, 60,0&gt;}
+object{YellowSmarty rotate&lt;0, 90,0&gt;}
+object{YellowSmarty rotate&lt;0,120,0&gt;}
+object{YellowSmarty rotate&lt;0,150,0&gt;}
+object{YellowSmarty rotate&lt;0,180,0&gt;}
+object{YellowSmarty rotate&lt;0,210,0&gt;}
+object{YellowSmarty rotate&lt;0,240,0&gt;}
+object{YellowSmarty rotate&lt;0,270,0&gt;}
+object{YellowSmarty rotate&lt;0,300,0&gt;}
+object{YellowSmarty rotate&lt;0,330,0&gt;}
+cylinder{&lt;0,-1,0&gt;,&lt;0,1,0&gt;,0.2
+         texture{
+            pigment{ color NeonPink}
+            finish { diffuse 0.9
+                     phong 1} } }
+}// end of union //---------------
+ object{Ring}
+ object{Ring translate&lt;4,1,4&gt; }
+//--------------------------------</td></pre></font>
+
+ </tr>
+</table>
+<table align="center" width="95%"><tr><td>
+<p align="justify"><font size="3">
+<b> Hint: </b><br>
+&quot;rotate&quot; can also be used with geometric shapes as well as with other objects like light sources, textures(&quot;texture&quot;),
+color patterns (&quot;pigment&quot;) and simulated surface deformations (&quot;normal&quot;).
+</font>
+</p></td></tr></table></div>
+<hr size="3">
+<h6 align="justify">
+ <a href="trans_100e.htm">translate</a> |
+ <!--a href="trans_200e.htm"-->rotate</a> |
+ <a href="trans_300e.htm">scale</a> |
+ <a href="trans_400e.htm">matrix</a> |
+ <a href="trans_450e.htm">shearing</a> |
+ <a href="trans_470e.htm">transforms.inc</a> |
+ <a href="trans_500e.htm">transform</a> |
+ <a href="trans_800e.htm">vector transformations</a>
+<h6>
+
+
+
+</td></tr></table></td></tr>
+
+
+<!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

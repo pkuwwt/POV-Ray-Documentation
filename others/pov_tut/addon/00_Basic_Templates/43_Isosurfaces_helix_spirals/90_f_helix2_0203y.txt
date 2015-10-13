@@ -1,0 +1,27 @@
+
+
+isosurface { //-------------------------------------------------------------
+  function{
+      f_helix2(     // Needs a negated function 
+        x,y,z,
+        0,    // not used,
+        4 * 2*pi,// For a number N of turns per 1 unit heigth(y) use: N*2*pi) 
+        0.40*(1-y), // minor radius,  (< or >  major radius!)
+        0.05*(1-y/2), // major radius,
+        0,    // not used, 
+        1.0,  // cross section type,(   1.0 = rounded    (     sine shaped + profile
+            //                          2.0 = ?diamond? 
+        0   // not used ? (without semicolon!) (? "cross section rotation angle")
+      )
+  }          
+ threshold 0.0
+ contained_by {box {<-1,0,-1>,<1,1,1>}}
+ max_gradient 34
+
+ texture{ pigment{  color rgb <0.8,0.5,0.25>*0.65}  // color rgb <1,1,1>} 
+          finish { specular 0.1 roughness 0.005  phong 1 phong_size 20} // reflection {0.45 metallic } }
+        }
+ rotate<0,0,0>                               
+ scale <1,1,1>
+ translate< 0,0.00, 0>
+} // end of isosurface -------------------------------------------------------

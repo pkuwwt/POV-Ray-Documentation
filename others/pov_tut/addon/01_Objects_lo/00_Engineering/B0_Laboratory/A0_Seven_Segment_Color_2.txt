@@ -1,0 +1,56 @@
+//-------------------------------------------------------------------------------------------------
+#declare SSBase_Texture_1 =  texture{ pigment{ color rgb<1,1,1>}} // outer sides
+#declare SSBase_Texture_2 =  texture{ pigment{ color rgb<1,1,1>*0.8}} // inner base sides
+#declare SSBase_Texture_3 =  texture{ pigment{ color rgb< 0.75, 0.5, 0.30>*0.5 }} // inner base top
+#declare SSB_Text_Texture =  texture{ pigment{ color rgb<1,1,1>*0.05 }} // name + manufacturers text 
+// Active_LEDs_Texture,            //  
+// Inactive_LEDs_Texture,          //  
+// DisplaySkin_Texture_Texture,    //  
+// ------------------------------------------------------------------------------------------------
+#declare Socket_Font_  = "courbd.ttf"
+// ------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
+#include "Seven_Segment_LCD_Display.inc" 
+// ------------------------------------------------------------------------------------------------
+object{  Single_Digit_Seven_Segment_Display ( 
+      // choose display type:
+         3, //  SSB_Type, //  1 ~ 7
+// Types of single digit Seven-Segment LED Displays:
+// SSB_Type 0 :  7.5 x  14.0  x  8.4, Pin_Dir= 0;Pin_Row_Dist= 2; "UVS-360"    , Unity Opto Technology Display: (0.36 inch)   9.14 mm
+// SSB_Type 1 :  9.7 x  12.8  x  7.0, Pin_Dir= 0;Pin_Row_Dist= 2; "UVS-4301"   , Unity Opto Technology Display: (0.40 inch)   10.0 mm
+// SSB_Type 2 :  9.6 x  13.0  x  7.0, Pin_Dir= 0;Pin_Row_Dist= 3; "LA-401DN"   , ROHM                  Display: (0.40 inch)   10   mm
+// SSB_Type 3 :  9.7 x  12.9  x  7.0, Pin_Dir= 0;Pin_Row_Dist= 3; "LTS-4301"   , LITE-ON               Display: (0.40 inch)   10   mm
+
+// SSB_Type 4 : 12.4 x  17.55 x  7.0, Pin_Dir= 1;Pin_Row_Dist= 6; "UVS-546"    , UNi                   Display: (0.52 inch)   13.2 mm
+// SSB_Type 5 : 12.4 x  17.55 x  7.0, Pin_Dir= 1;Pin_Row_Dist= 6; "LTS-547 AP" , LITE-ON               Display: (0.52 inch)   13.2 mm
+// SSB_Type 6 : 12.4 x  17.55 x  7.0, Pin_Dir= 1;Pin_Row_Dist= 6; "SA52-11EWA" , KINGBRIGHT            Display: (0.52 inch)   13.2 mm
+// SSB_Type 7 : 12.7 x  19.0  x  8.3, Pin_Dir= 1;Pin_Row_Dist= 6; "SA56-11EWA" , KINGBRIGHT            Display: (0.56 inch)   14.2 mm 
+
+// SSB_Type 8 : 20.0 x  27.7  x  8.4, Pin_Dir= 1;Pin_Row_Dist= 12; "SC08-11SRWA", KINGBRIGHT            Display: (0.80 inch)  20.3 mm 
+// SSB_Type 9 : 22.5 x  27.7  x 10.5, Pin_Dir= 1;Pin_Row_Dist= 12; "KW1-1001", Lucky Light              Display: (1.00 inch)  25.4 mm 
+// SSB_Type 10: 24.0 x  33.0  x 10.5, Pin_Dir= 1;Pin_Row_Dist= 12; "KW1-1002", Lucky Light              Display: (1.00 inch)  25.4 mm 
+
+// SSB_Type 11: 28.8 x  40.8  x  9.0, Pin_Dir= 1;Pin_Row_Dist= 14; "KW1-1201", Lucky Light              Display: (1.20 inch)  30.4 mm 
+// SSB_Type 12: 30.6 x  44.1  x  8.0, Pin_Dir= 1;Pin_Row_Dist= 16; "KW1-1501", Lucky Light              Display: (1.50 inch)  38.1 mm 
+// SSB_Type 13: 90.0 x 122.0  x 15.0, Pin_Dir= 1;Pin_Row_Dist= 42;Raster=2*2.54;"SA56-11EWA",KINGBRIGHT Display: (4.00 inch) 100   mm 
+
+         1, // SS_Text_On, // [ 0 = off, 1 = on ] 
+         Socket_Font_ , //  = "courbd.ttf"
+         
+         4, // DisplayIntegerNumber_, // [ 0, 1, 2,  ..., 9, + hexnumbers: 10=A,11=b, 12=C, 13=d, 14=E, 15=F, degrees: 16="°", minus="-" ] 
+         0, // Point_On_,                  // [ 0 = off, 1 = on ] 
+         3, // ActiveLED_Texture_Number,   // [ 0 = white, 1 = red, 2 = orange, 3 = amber ,4 = yellow, 5 =green, 6 = blue, 7= violet] 
+         4, // InactiveLED_Texture_Number, // [ 0 = dark gray, 1 = light gray, 2 = transparent1, 3 = transparent2, 4 = amber]
+         0, // DisplaySkin_Texture_Number_,// [ 0 = near black, 1 = dark gray, 2 = medium gray, 3 = light gray ] 
+
+         0, // Segment_Type_,  // 0 = angular, 1 = curved // 
+
+		
+         1, //  PackageView_0n, //  = 0 or 1 )
+	 0, //  FootPrint_On, //  = 0 or 1 )
+       ) // ---------------------------------------------------------------------------------------------------
+  rotate< 0,0,0> 
+  translate<0, 0, 0>
+} //-------------------------------------------------------  
+//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------

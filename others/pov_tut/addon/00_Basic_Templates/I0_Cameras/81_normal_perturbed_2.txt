@@ -1,0 +1,8 @@
+        // normal perturbed camera
+camera{ location < 1.70,  2.50, -4.50>
+        angle    75
+        right    x*image_width/image_height
+        look_at  < -1.00, 2.50,  0.00> 
+               normal{ crackle 0.25 turbulence 0 
+                       scale 0.25 translate<0.3,0,0>}
+     } // -------------------------------------------

@@ -1,0 +1,193 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - Mapping-Methode</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2006, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_800e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_800e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_800i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_800i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_800f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_800f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001d.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_110d.htm">Farben Do-it-Yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700d.htm">Muster</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp; &nbsp; Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750d.htm">Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+ &nbsp; &nbsp; <b>&gt;</b>  <!--a href="tex_800d.htm"--><b>Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_875d.htm">image_map+gif 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_876d.htm">image_map+gif 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_878d.htm">image_map+gamma</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_885d.htm">transparency maps 1</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_886d.htm">transparency maps 2</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_887d.htm">transparency maps 3</b></a><br>
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+
+<table border="0" width="90%" align="center"><tr><td><!-- global table-->
+
+<font size="5"><b><p>mapping</a></b> - Texturierung mit Mustern.</font><b><font face="Arial" size="2"> </p>
+</b></font>
+<font size="2"><p align="justify">Von &quot;mapping&quot; redet man in der Raytracer- und Rendering-Technik, wenn man
+die verschiedenen Methoden des Auftragen von Mustern und komplexen Texturen auf K&ouml;rperoberfl&auml;chen beschreibt.
+Dabei werden zwei grunds&auml;tzlich zu unterscheidende Methoden angewandt:</p>
+</font><p><hr></p>
+<font size="4"><p>1. color_map / pigment_map / texture_map / normal_map</p>
+</font><font size="2"><p align="justify">Das Einf&auml;rben bzw. Texturieren wird durch ein mehr oder
+weniger verwirbeltes Steifenmuster aus Farben / Pigmenten / Texturen / Oberfl&auml;chenstrukturen (&quot;normal&quot;) definiert
+(color_map / pigment_map / texture_map / normal_map),
+die nach einer r&auml;umlichen Musterfunktion (gradient&lt;0,1,0&gt; / agate / bozo / wood / etc.) &uuml;ber den
+gesamten Raum verteilt vorstellbar sind. Durch Zuweisung dieser Textur an ein Objekt erh&auml;lt dieses Objekt die
+Textur auf seiner Oberfl&auml;che. Dies geschieht ganz so, als sei dieses Objekt an der Stelle, an der es sich gerade
+befindet aus einer Masse mit dieser Textur herausgeschnitten worden. Man stelle sich diese Texturen etwa wie die
+Maserung im Holz vor. </p>
+<p align="justify">Verschiebt man vor der Texturierung das Objekt an eine andere Stelle in Raum, so erh&auml;lt
+es einen anderen Ausschnitt der Maserung. Andererseits l&auml;&szlig;t sich die Textur auch innerhalb ihrer
+Klammern beliebig skalieren, drehen und verschieben und so eine geeignete Mustergr&ouml;&szlig;e, eine geeignete
+Musterrichtung und/oder ein geeigneter Musterausschnitt erreichen.</p>
+</font><p><hr></p>
+<font size="4"><p>2. image_map / material_map / bump_map </p>
+</font><font size="2"><p align="justify">Die zweite Methode stellt man sich besser als das Aufprojizieren
+von Bildern auf Objekte vor. Dabei wird ein Bild, welches in einer Bilddatei (erlaubt sind: iff, gif, tga, png, sys)
+gespeichert ist, nach verschiedenen Methoden in den Raum projiziert. Durch die Texturzuweisung bildet der K&ouml;rper
+des Objekts die Projektionsoberfl&auml;che. Wobei die Projektion beidseitig erfolgt - von vorn und hinten. Bei vielen
+professionellen Renderprogrammen ist dies die Standard-Methode um gemusterte Oberfl&auml;chen zu erzeugen - bei
+billigeren Programmen sogar die einzige! Sie werden daher meist von ganzen CDs voller Fotos von Oberfl&auml;chen im
+GIF- oder BMP-Format begleitet. Man mu&szlig; sich jedoch immer vor Augen halten, da&szlig; alle Bilder, die hierbei
+verwendet werden, w&auml;hrend der Berechnung der Szenerie ihren Platz im RAM beanspruchen - und dies kann schnell zu
+Problemen f&uuml;hren! Ferner sind zum Erzeugen von nat&uuml;rlichen Materialoberfl&auml;chen nur Bilder geeignet, die
+beim wiederholten Aneinanderkleben sowohl quer als auch senkrecht, keine st&ouml;renden Bruchlinien erzeugen. D.h. solche
+Bilder sollten einen sogenannten &quot;Rapport&quot; besitzen, genau wie gemustertes Tapetenpapier! </p>
+<p>Durch den Befehl&quot;<b>map_type</b>...&quot; wird der Projektionstyp (default: map_type 0) festgelegt.<br>
+Es k&ouml;nnen folgende Projektionstypen verwendet werden:<br>
+&nbsp;&nbsp;&quot;map_type 0&quot; = planar -&gt; projiziert auf xy-Ebene von &lt;0,0,0&gt; bis &lt;1,1,0&gt; parallel zur z-Richtung.<br>
+&quot;once&quot;-Schl&uuml;sselwort = nur einmal
+(--&gt;</font><a href="tex_870d.htm"><font size="2">Beispiel zu image_map</b>
+</font></a>
+<font size="2">), sonst wird weitertapeziert bis zum Ende der Welt<br>
+Will man ein bestimmtes Bildformat erreichen, so mu&szlig; dies durch nachtr&auml;gliches Skalieren
+der image_map oder material_map geschehen. Jedes Bildformat wird auf die <nobr>1x1-Fl&auml;che</nobr>
+zun&auml;chst quadratisch projiziert!<br>
+&nbsp;&nbsp;&quot;map_type 1&quot; =spherical &gt;Kugelprojektion - y-Achse= Nord/S&uuml;d-Pol,
+das Bild beginnt mit der positiven x-Richtung<br>
+Das &quot;once&quot;-Schl&uuml;sselwort ist hier ohne Wirkung.<br>
+&nbsp;&nbsp;&quot;map_type 2&quot; = cylindrical &gt;Zylinderprojektion - immer einmal um die Y-Achse gewickelt,<br>
+beginnend mit y=0 bis y=1 - &quot;once&quot; wirkt hier!<br>
+Die Typen 1 und 2 entsprechen etwa der Umkehrung der Abbildung der Erdoberfl&auml;che auf eine ebene<br>
+rechteckige Landkarte. 3 und 4 sind f&uuml;r sp&auml;tere Entwicklungen reserviert!<br>
+&nbsp;&nbsp;&quot;map_type 5&quot;=torus &gt; Torus-Projektion - Das Bild erscheint um einen Ring mit gro&szlig;em Radius=1
+gewickelt, beginnend mit der positiven x-Achse.<br>
+Der Befehl "<b>interpolate</b> .." : Interpolieren hei&szlig;t hier Ausgleichen zwischen Bildpunkten. Dies ist bei der
+Vergr&ouml;&szlig;erung oder Verkleinerung bei der Projektion oft n&ouml;tig, um das Bild nicht zu k&ouml;rnig erscheinen zu lassen.<br>
+M&ouml;gliche Interpolationstypen: 0=none, 1=linear, 2=bilinear, 4=normalized distance<br>
+Normalized distance ist die etwas schnellere der &quot;besseren beiden&quot; , bilinear liefert die besten Resultate!<br>
+Erscheinen aufprojizierte Bilder zu grob, bringt oft das Interpolieren mehr, als das Verwenden von
+Bildern mit h&ouml;heren Aufl&ouml;sungen.<br>
+<br>
+</font>
+
+</td></tr></table><!-- global table -->
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

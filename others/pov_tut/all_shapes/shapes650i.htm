@@ -1,0 +1,200 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Oggetti Geometrici con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2007, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Oggetti Geometrici con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, Oggetti Geometrici con POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr><td>
+ <font size="2"><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+ <nobr>di Friedrich A. Lohm&uuml;ller</nobr></font>
+<hr size="3"><div align="center"><font size="+2"> &nbsp; &nbsp; Oggetti Geometrici in POV-Ray</font></div>
+ </td>
+ <td align="right">
+        <a href="shapes650e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="shapes650e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="shapes650f.htm"><font face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="shapes650f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="shapes650d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</font></a>
+        <a href="shapes650d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+&nbsp;<br>
+<a href="shapes000i.htm">Oggetti Geometrici</b></a><br>
+ &nbsp;&nbsp; Indice<br>
+<a href="shapes100i.htm">Oggetti di Base</b></a><br>
+<nobr><a href="shapes200i.htm">Forme con macros + CSG</b></a></b></nobr><br>
+<nobr><a href="shapes3_0000i.htm">Oggetti in &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400i.htm">Altri Oggetti come Macros</b></a></nobr><br>
+<a href="shapes600i.htm">Oggetti di Testo 3D</b></a><br>
+<a href="shapes000i.htm">Altri Oggetti</b></a><br>
+<a href="shapes666i.htm">Forme Non-CSG</b></a><br>
+<br>
+<nobr><a href="shapes700i.htm">height_field + HF macros</b></a></nobr><br>
+<nobr>&nbsp; -&gt;<!--a href="shapes650i.htm"--><b>height_field con immagini</b></a></nobr><br>
+&nbsp; -  <a href="shapes652i.htm">height_field rastered</b></a><br>
+<nobr>&nbsp; -  <a href="shapes654i.htm">height_field con funzioni</b></a></nobr><br>
+&nbsp; -  <a href="shapes655i.htm">height_field massivo</b></a><br>
+&nbsp; -  <a href="shapes656i.htm">HF - monti e valli</a><br>
+&nbsp; -  <a href="shapes710i.htm">HF_Square</b></a><br>
+&nbsp; -  <a href="shapes720i.htm">HF_Sphere</b></a><br>
+&nbsp; -  <a href="shapes730i.htm">HF_Cylinder</b></a><br>
+&nbsp; -  <a href="shapes740i.htm">HF_Torus</b></a><br>
+<br>
+<nobr><a href="shapes900i.htm">Isosurfaces</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table width="90%" align="center" border="0"><tr><td><!-- global -->
+<h2>Montagne d'immagini: </h2>
+<h3 align="center">&quot;height_field{ ... }&quot;<br>
+   Come creare montagne con immagini</h3>
+</td><td>
+     <table align="center" border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/mount3.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/mount2.jpg" border="0" width="160"  height="120"
+                   alt="Sample mounts by height_field 600x450" title="Sample mounts by height_field 600x450"></a></td></tr></table>
+</td></tr>
+<tr><td colspan="2">
+<p align="justify"> Con questo methodo si puo fabbricare oggetti con superfici irregulari
+usando disegni dei archivi d'immagine:
+ <br>
+height_field{ ... } : questo &quot;campo della altezza&quot; &egrave; fatto di
+triangoli picoli su un settore quadratico di &lt;0,0,0&gt; a &lt;1,0,1&gt;
+(nel piano xz). Interpreta l'intensit&agrave; dei colori del'immagine per l'altezza
+dei punti: 0 = nero &egrave; interpretato come altezza 0.00 e
+255 = bianco  &egrave; interpretato come  altezza 1.00. Gli altri valori sono
+interpretato conformemente a questa scala.
+<br>
+Si p&ugrave;o usare quasi tutti i formati grafici
+(tipo: tga, gif, pot, png, pgm, ppm, jpg, tif, sys).
+Se vuole fare un paesaggio realistico con forme morbide &egrave; ricommandato di usare
+un programma grafico per disegnare le immagini. Questo programma deve avere
+la capacit&agrave; di usare immagini di tipo true-color e deve avere una funzione
+di tipo airbrush (bombola) (per esempio: &quot;CorelPhotoPaint&quot;, &quot;Gimp&quot;
+- Il programma Windows &quot;Paint&quot; disgraziatamente non &egrave; buono per questo!).
+Un'altra funzione prattica &egrave; un filtro diffusore per parti e per l'immagine intera.
+</p>
+
+<p align="center"><img src="im/povheighi.gif" border="2" width="380" height="300"></p>
+<h5 align="center">A &quot;height_field&quot; interpreta valori grigio comme altezze<br>
+tra 0.00 = black = rgb&lt;0,0,0&gt;
+e 1.00 = white = rgb&lt;1,1,1&gt;. </h5>
+<br>
+<hr>
+<h4 align="center" ><a name="SampleHeightfield"><b>Esempio &quot;height_field&quot; con immagini</a>:</b></h4>
+<table align="center" border="2" bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080"
+            cellspacing="1" cellpadding="4">
+<tr><td valign="middle">
+<pre><b>height_field{ tga "Mount1.tga" smooth
+              texture{Cork scale 0.02
+                      pigment{quick_color Tan}
+                      finish {ambient 0.10 diffuse 0.75 phong 0.1}}
+              translate&lt;-0.5,-0.001,0&gt; scale&lt;100,15,100&gt;}</TD></pre></b>
+</tr>
+</table><br>
+
+<table align="center" border="0" bordercolor="#c0c0c0" cellpadding="0" width="620">
+<tr><td><table border="0"  cellpadding="10"
+               bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+        <tr><td>
+        <h5>L'immagine a destra mostra
+         l'immagine bianco e nero image del file
+        &quot;<b>Mount1.tga</b>&quot;,
+        (un poco ridotto in scala e comprimato con JPEG),
+        usato nel esempio a basso.
+
+        Questa immagine bianco e nero semplice usato per un &quot;height_field&quot;
+        (usato molteplice in scale diverse, volto e spostato) fa un
+        paesaggio con montagne molto interessante e considerevole:
+        </td></h5>
+        </tr></table>
+     </td>
+     <td rowspan="2">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <img src="im/mount1.jpg" width="340" height="340"></td></tr></table>
+    </td>
+</tr>
+<tr><td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/mount3.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/mount2.jpg" border="0" width="160"  height="120"
+                   alt="Sample mounts by height_field 600x450" title="Sample mounts by height_field 600x450"></a></td></tr></table>
+     </td>
+</tr>
+</table>
+</td></tr></table><!-- global -->
+
+</td></tr>
+</table>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

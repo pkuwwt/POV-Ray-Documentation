@@ -1,0 +1,12 @@
+//---------------------------------------------------------
+//---------------------------------------------------------
+/* vdot( V1, V2) // Dot product of V1 and V2. ('scalar product').
+      It's directly proportional to the length of the vectors V1 and V2
+      and the cosine of the angle between V1 and V2. 
+      A*B = |A||B| cos(A,B).  If vdot(A,B) = 0, then VAngleD(A,B) = 90 degrees. 
+      Formula: vdot=V1.x*V2.x + V1.y*V2.y + V1.z*V2.z.
+*/
+//---------------------------------------------------------
+#declare Project_A_to_B = B*vdot(A,B)/vdot(B,B);
+//---------------------------------------------------------
+//---------------------------------------------------------

@@ -1,0 +1,370 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Transformations g&eacute;om&eacute;triques avec POV-Ray - matrix</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2010 by Friedrich A. Lohmueller">
+<meta name="Description" content="Transformations g&eacute;om&eacute;triques avec POV-Ray, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, raytracing, 3d grafic, 3d graphic, computergraphic,
+      transformations g&eacute;om&eacute;triques, scale, changing the scale, parallel stretching,
+      centric stretching, mirrowing at a coorinate plane, Euler affinity, rotate, rotation, turning arround, translate,
+      translation, parallel moving, transformation matrix, shearing, affine mapping, affine matrices, summarized transformations by transform">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Transformations g&eacute;om&eacute;triques avec POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="trans_400e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="trans_400e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="trans_400i.htm"><font size="2">Italiano</font></a>
+        <a href="trans_400i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="trans_400d.htm"><font size="2">Deutsch </font></a>
+        <a href="trans_400d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#textures"><nobr>POV-Ray Tutoriel</nobr></b></a><br>
+ &nbsp; <a href="trans_000f.htm">Transformations</b></a><br>
+ &nbsp; <a href="trans_000f.htm">g&eacute;om&eacute;triques</b></a><br>
+ &nbsp;&nbsp; - <a href="trans_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001f.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001f.htm"-->&eacute;l&eacute;mentaires</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_100f.htm">&quot;translate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_200f.htm">&quot;rotate&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300f.htm">&quot;scale&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_300f.htm">R&eacute;flexion</b></a><br>
+<br>
+ &nbsp; &nbsp; <!--a href="trans_001f.htm"-->Autres</b></a><br>
+ &nbsp; &nbsp; <!--a href="trans_001f.htm"-->Transformations</b></a><br>
+ &nbsp; &nbsp; - <!--a href="trans_400f.htm"--><b>&quot;matrix&lt; &nbsp;...&nbsp;&gt;&quot;</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_450f.htm">Cisaillement</b></a><br>
+ &nbsp; &nbsp; - <a href="trans_470f.htm">transforms.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="trans_500f.htm">&quot;transform{ ...}&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="trans_500f.htm">&nbsp;et &quot;inverse&quot;</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="trans_800f.htm">Vecteurs et</b></a><br>
+ &nbsp; &nbsp; <a href="trans_800f.htm">Transformations</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="../down/inserti_a.htm">Insert Menu Add-on</b></a><br>
+ &nbsp; &nbsp; &nbsp; &amp; <a href="../down/pov_dwnf.htm">t&eacute;l&eacute;chargement</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table align="center" border="0" cellpadding="4" cellspacing="4" width="85%" >
+    <tr>
+        <td>
+
+<table  border="1" bordercolor="#c0c0c0" cellspacing="4" cellpadding="4" align="center">
+ <tr>
+  <td align="center" width="50%" bgcolor="#FFFFFF">
+        <a href="#sheer"><img src="matrix2t.jpg" alt="normal vertical" title="normal vertical" border="0" width="120" height="160"></td></a>
+        <td align="center" width="50%" bgcolor="#FFFFFF">
+        <a href="#sheer"><img src="matrix1t.jpg" alt="shearing" title="shearing" border="0" width="120" height="160"></td></a>
+
+    </tr>
+</table>
+   <h2 align="center">matrix &lt; ,  ,  &gt; <br>Matrice et Carte Affine</h2>
+Le mot cl&eacute; "matrix"- peut &ecirc;tre utilis&eacute; pour d&eacute;finir
+explicitement la matrice de transformation des objet ou textures.
+<br>
+La syntaxe de celui-ci : <br>
+<div align="center">
+<table border="1" cellpadding="4" cellspacing="4" width="217"
+bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b> matrix &lt;m</b><sub><b>00</b></sub><b>, m</b><sub><b>01</b></sub><b>, m</b><sub><b>02</b></sub><b>,
+         m</b><sub><b>10</b></sub><b>, m</b><sub><b>11</b></sub><b>, m</b><sub><b>12</b></sub><b>,
+         m</b><sub><b>20</b></sub><b>, m</b><sub><b>21</b></sub><b>, m</b><sub><b>22</b></sub><b>,
+         m</b><sub><b>30</b></sub><b>, m</b><sub><b>31</b></sub><b>, m</b><sub><b>32</b></sub><b>&gt;</b></td></pre>
+    </tr>
+</table>
+</div>
+
+<p align="center">Le nombre  m<sub>ij</sub>
+peut &ecirc;tre n'importe quelle sorte d'expressions num&eacute;riques<br>
+Il forme les &eacute;l&eacute;ments des 3 premi&egrave;res colonnes d'une matrice 4x4,
+dont la 4&egrave;me colonne est d&eacute;finie fixe en &lt;0,0,0,1&gt;.<br>
+Un point   P<sub>1</sub>(x<sub>1</sub>/y<sub>1</sub>/z<sub>1</sub>)
+ est inpl&eacute;ment&eacute; dans un autre point  P<sub>2</sub>(x<sub>2</sub>/y<sub>2</sub>/z<sub>2</sub>)
+, selon la d&eacute;finition suivante : </p>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" width="274"
+bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF" height="57"><p
+        align="center"><font size="2" face="Arial"><b>x</b><sub><b>2
+        = </b></sub><b>m</b><sub><b>00</b></sub><b>*x</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>10</b></sub><b>*y</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>20</b></sub><b>*z</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>30<br>
+        </b></sub><b>y</b><sub><b>2</b></sub><b> = m</b><sub><b>01</b></sub><b>*x</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>11</b></sub><b>*y</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>21</b></sub><b>*z</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>31<br>
+        </b></sub><b>z</b><sub><b>2</b></sub><b> = m</b><sub><b>02</b></sub><b>*x</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>12</b></sub><b>*y</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>22</b></sub><b>*z</b><sub><b>1</b></sub><b>
+        + m</b><sub><b>32</b></sub></font></p>
+        </td>
+    </tr>
+</table>
+</div>
+<hr>
+Un peu abstrait, n'est-ce pas ?
+Voici quelques exemples pour le clarifier : <br>
+
+<div align="center">
+<table border="1" width="90%" cellpadding="3">
+<tr>
+<td width ="50%" valign="top">
+ 1) La matrice identit&eacute; :<br>
+ <div align="center">
+ <table border="1" cellpadding="4" cellspacing="4" width="179" bordercolor="#FFFFFF">
+ <tr><td valign="top" bgcolor="#FFFFFF">
+ <pre><b>matrix &lt; 1, 0, 0,
+         0, 1, 0,
+         0, 0, 1,
+         0, 0, 0 &gt;</b></pre></td>
+ </tr></table></div>
+</td>
+<td width ="50%" valign="top">
+2) Cette matrice produit une translation parall&egrave;le par le vecteur &lt;2,3,4&gt;:<br>
+ <div align="center">
+ <table border="1" cellpadding="4" cellspacing="4" width="179" bordercolor="#FFFFFF">
+ <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>matrix &lt; 1, 0, 0,
+         0, 1, 0,
+         0, 0, 1,
+         2, 3, 4 &gt;</b></td></pre>
+    </tr></table></div>
+La m&ecirc;me, mais plus efficace et plus facile &agrave; comprendre :
+&nbsp;&nbsp;&nbsp;<b><nobr>translate&lt; 2, 3, 4&gt;.</nobr></b></td></p>
+</tr>
+<tr>
+<td width ="50%" valign="top">
+ 3)  Rotation autour d'un axe avec un angle Alpha
+     (mesur&eacute; en degr&eacute;s) produite par la matrice suivante : <br>
+<font size="-1">   (Remarque : sinus et cosinux en POV-Ray ont besoin de leurs arguments
+                    quand l'angle est en radians !)<br></font>
+ <div align="center">
+ <table border="1" cellpadding="4" cellspacing="4" width="250" bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b>#declare A = radians(Alpha);
+matrix&lt;cos(A), 0, sin(A),
+          0  , 1,    0  ,
+      -sin(A), 0, cos(A),
+          0  , 0,    0   &gt;</b></pre></td>
+    </tr></table></div>
+<p align="center">Rotation autour de &raquo;y&laquo; de 30&deg;<br>
+(sin30&deg; = 0.5; cos30&deg; = 0.886): <br></p>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" width="250"
+bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b>matrix &lt;0.886, 0,   0.5,
+          0  , 1,     0,
+       -0.5  , 0, 0.886,
+          0  , 0,     0 &gt;</b></pre></td>
+    </tr>
+</table>
+</div>
+
+<p align="center">M&ecirc;me chose, seulement plus efficace
+et se comprenant mieux, est d&eacute;crite par la commande :
+<b><nobr>rotate&lt; 0, Alpha, 0&gt; .</nobr></b><br>
+<br>
+</td>
+<td width ="50%" valign="top">
+
+4) La matrice suivante produit un &eacute;tirement d'un
+facteur de k = 3 avec le centre en O(0/0/0): <br>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" width="179"
+bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b>matrix &lt; 3, 0, 0,
+         0, 3, 0,
+         0, 0, 3,
+         0, 0, 0 &gt;</b></pre></td>
+    </tr>
+</table>
+</div>
+
+<p align="center">
+Cette description peut &ecirc;tre d&eacute;finie par &quot;<b>scale&lt;3,3,3&gt;</b>&quot;
+ou plus simplement par &quot;<b>scale 3</b>&quot; plus facile et qui se comprend mieux.</p>
+</td>
+</tr></table></div>
+<hr>
+<p align=justify>
+Ces exemples ont montr&eacute; que des transformations simples sont d&eacute;crites avec
+&quot;matrix&quot;.<br>
+<br>
+Normalement on n'utilise pas des matrices pour les transformations simples
+(translation, scaling = centric streching, rotation), parce-que c'est difficile
+&agrave; comprendre et demande beaucoup d'effort.
+
+Mais il existe un aspect int&eacute;r&ecirc;ssant de l'instruction &raquo;matrix&laquo; :
+Celle-ci permet aussi de d&eacute;finir pr&eacute;cisement le type g&eacute;n&eacute;ral que l'on
+ne peut obtenir d'une autre fa&ccedil;on tel que
+par exemple le cr&eacute;nellage &raquo;<b>shearing</b>&laquo;.
+
+Cette matrice produit un cr&eacute;nellage ou une texture selon l'axe &raquo;y&laquo; :<br>
+
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" width="179" bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b>
+matrix &lt; 1, 1, 0,
+         0, 1, 0,
+         0, 0, 1,
+         0, 0, 0 &gt;</b></pre></td>
+    </tr>
+</table>
+</div>
+<a name="sheer"></a>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" bordercolor="#FFFFFF">
+    <tr><td colspan="2">
+     <h4 align="center">Un cr&eacute;nellage selon la direction &raquo;y&laquo;
+                        avec facteur 0,5 (30&deg;) est produit par :</td></h4></tr>
+    <tr><td><table align="center" valign="middle"><tr>
+            <td valign="top" bgcolor="#FFFFFF" width="179">
+<pre><b>
+  matrix&lt; 1 , 0, 0,
+         0.5, 1, 0,
+          0 , 0, 1,
+          0 , 0, 0 &gt;</b></pre></td></tr></table>
+        </td>
+        <td valign="top" bgcolor="#FFFFFF">
+        <p align="center"><img src="povmatr3.gif" width="217" height="162"></p>
+        </td>
+    </tr>
+</table>
+</div><br>
+
+
+<p align="center">
+La combinaison de diff&eacute;rentes cartes de matrices n'est pas facile &agrave; comprendre.
+La matrice suivante peut le montrer. Cette-ci effectue une rotation d'un objet
+autour de &acirc;??y&acirc;?? de 30 degr&eacute;s ensuite c'est cr&eacute;nell&eacute; selon &raquo;y&laquo; et une
+translation parall&egrave;le dans la direction &raquo;y&laquo; :</p>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" width="184"
+bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+        <pre><b> matrix&lt; 0.886, 0.5,  0.5  ,
+           0  , 1  ,  0    ,
+           0  , 0  ,  0.886,
+           0  , 1.5,  0     &gt;</b></td></pre>
+    </tr>
+</table></div>
+<p align="center"><br>
+Cela montre ce qui est recommand&eacute; &raquo; si vous n'avez pas
+beaucoup d'exp&eacute;rience avec le mapping &laquo; la fa&ccedil;on de
+diviser de tels mappings en le faisant &eacute;tape par &eacute;tape:</p>
+<div align="center">
+
+<table border="1" cellpadding="4" cellspacing="4" width="250"
+bordercolor="#FFFFFF">
+    <tr>
+        <td valign="top" bgcolor="#FFFFFF">
+<pre><b> rotate&lt;0,30,0&gt; </b>
+ //Shearing in y direction:
+<b> matrix&lt;1, 0.5, 0,
+        0, 1  , 0,
+        0, 0  , 1,
+        0, 0  , 0 &gt;
+ translate&lt;0,1.5,0&gt;</b></td></pre>
+    </tr>
+</table>
+</div>
+
+<p align="center">Cette instruction fait pareil ! </p>
+</td></tr></div>
+<tr><td>
+<hr>
+<h6 align="justify">
+ <a href="trans_100f.htm">translate</a> |
+ <a href="trans_200f.htm">rotate</a> |
+ <a href="trans_300f.htm">scale</a> |
+ <!--a href="trans_400f.htm"-->matrix</a> |
+ <a href="trans_450f.htm">cisaillement</a> |
+ <a href="trans_470f.htm">transforms.inc</a> |
+ <a href="trans_500f.htm">transform</a> |
+ <a href="trans_800f.htm">transformations de vecteurs</a>
+<h6>
+
+
+
+</td></tr></table></td></tr>
+
+
+  <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

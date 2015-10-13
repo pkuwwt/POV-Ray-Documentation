@@ -1,0 +1,284 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Objets G&eacute;om&eacute;triques avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Objets G&eacute;om&eacute;triques avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D graphiques, infographie, Objets G&eacute;om&eacute;triques avec POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=785,height=675");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Objets G&eacute;om&eacute;triques en POV-Ray</font></td></div>
+ </td>
+ <td align="right">
+   <a href="shapes170e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="shapes170e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="shapes170i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>&nbsp;
+   <a href="shapes170i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="shapes170d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</b></a>&nbsp;
+   <a href="shapes170d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+   </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_f.htm">Page d'accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+&nbsp;<br>
+ &nbsp;<a href="shapes000f.htm">Objets G&eacute;om&eacute;triques</b></a><br>
+ &nbsp;&nbsp; table des mati&egrave;res</a><br>
+<a href="shapes100f.htm">Objets de Base</b></a><br>
+&nbsp; -  <a href="shapes110f.htm">sphere</b></a><br>
+&nbsp; -  <a href="shapes120f.htm">cylinder</b></a><br>
+&nbsp; -  <a href="shapes130f.htm">cone</b></a><br>
+&nbsp; -  <a href="shapes140f.htm">torus</b></a><br>
+&nbsp; -  <a href="shapes150f.htm">box</b></a><br>
+&nbsp; -  <a href="shapes160f.htm">prism</b></a><br>
+&nbsp; <b>&gt;</b> <!--a href="shapes170f.htm"--><b>plane</b></a><br>
+&nbsp; -  <a href="shapes180f.htm">sor</b></a><br>
+&nbsp; -  <a href="shapes190f.htm">lathe</b></a><br>
+&nbsp; -  <a href="shapes350f.htm">superellipsoid</b></a><br>
+&nbsp; -  <a href="shapes115f.htm">ovus</b></a><br>
+<br>
+<nobr><a href="shapes200f.htm">Objets avec macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000f.htm">Objets dans &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400f.htm">D'autres objets comme macros</b></a></nobr><br>
+<a href="shapes600f.htm">Objets 3D text</b></a><br>
+<a href="shapes000f.htm"><b>Autre Objets</b></a><br>
+<a href="shapes666f.htm">Objets Non-CSG</b></a><br>
+<nobr><a href="shapes700f.htm">height_field + HF macros</b></a></nobr><br>
+<a href="shapes900f.htm">Isosurface</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table  width="90%" align="center"  cellspacing="5" cellpadding="4"><!-- global -->
+<tr>
+<td>
+
+<div align="center">
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="2" width="90%">
+ <tr>
+  <td><table align=left border="1" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+                  <img src="im/basicsa.jpg" border="0" width="320"  height="240"
+                   alt="Sample plane" title="Sample plane"></td></tr></table>
+</td><td><h1 align="center">plane<br>(semispace)</nobr></h1>
+</td></tr></table>
+
+
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+ <tr>
+  <td>
+    <font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+
+    <b>plane (semispace)</font><br>
+    <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+    syntaxe g&eacute;n&eacute;rale :
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>plane{&lt;&nbsp;0,1,0&nbsp;&gt;,0
+       rotate&lt;0,0,0&gt;
+       translate&lt;0,0,0&gt;
+       texture{ ... }
+       }// ----------</b></td></pre></tr></table>
+      </td>
+<td>
+     <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+     Ceci <nobr>"&lt;&nbsp;0,1,0&nbsp;&gt;"</nobr> d&eacute;crit le vecteur normal de surface d'un plan
+     infini et le nombre suivant  &lt;&nbsp; , , &nbsp;&gt;, 0 d&eacute;finie la distance de l'origine dans
+    la direction du vecteur &agrave; la normale.<br>
+     <b>Attention:</b><br>
+     La distance est mesur&eacute;e en direction du vecteur normal de surface  (attention au  signe !)
+    et aucun si le  vecteur normal  de surface  a une longueur de 1         (vecteur normal norm&eacute; ! )
+    la distance est mesur&eacute;e correctement dans l'unit&eacute; de base !
+     <br>
+     </font><br>
+ </td></tr>
+<tr><td colspan="2">
+   Pour changer la  position et l'orientation du plan, il faut le
+   tourner avec <nobr>&quot;rotate&lt;&nbsp; , &nbsp; ,&nbsp;&nbsp; &gt;&quot;</nobr>
+   et l'&ocirc;ter avec <nobr>&quot;translate&lt;&nbsp;,&nbsp;,&nbsp;&gt;&quot;.</nobr><br>
+</td></tr>
+</table>
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="2" width="90%">
+<tr>
+ <td colspan="2"><font face="Arial,Verdana,Helvetica" size="4" color="#505030">
+                <b>Le vecteur normal de surface :</b></font></td>
+ </tr>
+<tr><td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <a href="javascript:ShowImage('im/normaleim.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+              <img src="im/normale.gif" border="0" width="320"  height="320"
+                   alt="normal form of a plane" title="normal form of a plane"></a></td></tr></table>
+      </td>
+ <td><p align="justify">
+   <font face="Arial,Verdana,Helvetica" size="2" color="#505030">
+   <b>La Forme  <nobr>&quot;plane{&lt;a,b,c&gt;,d ... }&quot;</nobr> est &eacute;quivalente
+   &agrave; l'&eacute;quation d'un plan de forme normale de surface r&eacute;put&eacute;e de la g&eacute;om&eacute;trie analytique :
+</b><br>
+<img src="im/plan_nft.gif" border="0" width="218" height="30"
+                   alt="normal form of a plane" title="normal form of a plane"><br>
+ Dans ce cas &ccedil;a d&eacute;crit, un peu diff&eacute;rement de la g&eacute;om&eacute;trie analytique,
+ non seulement les points d'un plan infini, mais ausi tous les points qui sont situ&eacute;s derri&egrave;re ce plan.
+ L'int&eacute;rieur est oppos&eacute; &agrave; l'orientation du vecteur normal de surface. Le vecteur normal de
+ surface pointe vers l'ext&eacute;rieur de ce  &quot;plan&quot;<br>
+ Strictement parlant ce &quot;plan&quot; d&eacute;crit non seulement un plan mais aussi tout le demi espace
+ derri&egrave;re ce plan (relativement au vecteur  normal &agrave; la surface) . <br>
+<font size="1">
+ La raison en est : Si un point est pr&eacute;cisement dans le plan, c'est difficile &agrave; juger
+ pour un ordinateur &agrave; cause des in&eacute;vitables probl&egrave;mes de pr&eacute;cision
+ (arrondi des erreurs ! ) - Qu'un plan soit d&eacute;finitivement derri&egrave;re est beaucoup plus facile &agrave; estimer !
+ </font><br>
+ Avec ce genre d'objets et les op&eacute;ration bool&eacute;ennes (CSG) il devient possible de
+ mod&eacute;liser de nouvelles formes de corps. Par exemple le corps r&eacute;gulier pour les
+ formes de crystal  telle que  &quot;Tetrahedron&quot;, &quot;Dodecahedron&quot;,
+ &quot;Icosahedron&quot; etc., qui sont d&eacute;finis dans &quot;shapes2.inc&quot;,
+ sont construites de cette fa&ccedil;on.<br>
+ Les plans creus&eacute;s devraient &ecirc;tre form&eacute;s par des plans de base.
+ Parce-que un vecteur normal de surface d'un plan inclin&eacute; de 25&deg; est difficile
+ &agrave; calculer, c'est mieux d'utiliser un des plans de coordonn&eacute;es et de l'incliner
+ par &quot;rotate&quot; et de le d&eacute;placer par &quot;translate&quot; pour l'amener
+ &agrave; sa position et &agrave; son orientation finales.
+ </font></p>
+
+</td>
+</tr>
+</table>
+<table border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="10" width="90%">
+<tr>
+ <td>
+   <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+  <b>Exemple 1:</b><br>
+  Le plan
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>plane{&lt;0.25,0.75,0&gt;,
+        sqrt(1*1+3*3)
+     } //-----------------</b></td></pre></tr></table>
+est plus facile &agrave; d&eacute;crire par :
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>plane{&lt;1,3,0&gt;,0
+      translate&lt;1,3,0&gt;
+     } //-----------------</b></td></pre></tr></table>
+
+   </font></td>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+             <a href="javascript:ShowImage('im/normal1fm.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="im/normal1e.gif" border="0" width="388" height="320"
+                   alt="plane 1" title="plane 1"></a></td></tr></table>
+ </td>
+</tr>
+<tr>
+ <td>
+   <font face="Arial,Verdana,Helvetica" size="3" color="#505030">
+  <b>Exemple 2:</b><br>
+  Le plan
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>plane{&lt;-1,-1,0&gt;,-sqrt(18)
+     } //-----------------</b></td></pre></tr></table>
+est identique avec<br>
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>plane{&lt;2,2,0&gt;,3*sqrt(2)
+      inverse
+     } //-----------------</b></td></pre></tr></table>
+
+et plus facile &agrave; d&eacute;crire par :
+<table align="center" border="3" bgcolor="#efefef"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>plane{&lt;-1,0,0&gt;, 0
+      rotate&lt; 0, 0, -45&gt;
+      translate&lt;3,3,0&gt;
+     } //-----------------</b></td></pre></tr></table>
+
+   </font></td>
+ <td>
+     <table align="center" border="4" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+             <a href="javascript:ShowImage('im/normal2fm.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+             <img src="im/normal2e.gif" border="0" width="388" height="320"
+                   alt="plane 1" title="plane 1"></a></td></tr></table>
+ </td>
+</tr>
+</table>
+
+</td></tr></table><!-- global -->
+</div>
+
+<br>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="90%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

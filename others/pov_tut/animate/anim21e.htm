@@ -1,0 +1,180 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2008, Friedrich A. Lohmueller">
+<meta name="keywords" content="animations, 3d animations, mpeg video, avi video, animated gifs, raytracing, PoV, POV-Ray, POVRAY, 3d graphics, raytracing descriptions, povray tutorial">
+<meta name="description" content="Animations with POV-Ray - descriptions, tutorials and examples for the POV-Ray raytracing program">
+<title>Spline Curves - 3D Animation with POV-Ray - Descriptions, tutorials and examples for the POV-Ray raytracing program</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table  border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__eng.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="back to overview" title="back to overview"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp;  3D Animations with POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Some basics and examples on animations.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim21i.htm"><font size="2">Italiano </font></a>
+        <a href="anim21i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim21f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="anim21f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim21d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim21d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">3D Animations Gallery</b></a><br>
+ - <a href="../pov__eng.htm#ani"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anie.htm">3D Animation Tutorial</b></a><br>
+ &nbsp;&nbsp; <i>Index of Content</i><br>
+&nbsp; <!--a href="anim1d.htm"-->  0. Basic Knowledge</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001e.htm">Basic Example</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002e.htm">From Images to Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005e.htm">Basic Terms</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008e.htm">Animation Commands</b></a><br>
+&nbsp; <!--a href="anim110e.htm"--> I. Cyclic Animations</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11e.htm">Rotating Objects</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112e.htm">Planets in Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113e.htm">Clock Animation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12e.htm">Rotating Camera</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121e.htm">Straight Moving Camera</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13e.htm">Western Wheel</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13e.htm"> Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131e.htm">Rolling Wheels</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14e.htm">Gears</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141e.htm">Roller Chain</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142e.htm">Bike Chain</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15e.htm">Swinging Pendulum</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151e.htm">Newton's Cradle</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152e.htm">Rock the Rocker</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16e.htm">Spiral Pendulum</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170e.htm">Coupling Rods</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17e.htm">Connecting Rods</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18e.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190e.htm">Counters + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200e.htm">Folding of a Cube</b></a><br>
+
+&nbsp; II. Non-linear Movements<br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim220e.htm">Speed Up + Slow Down</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240e.htm">Fall + Bounce</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260e.htm">Acceleration by</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260e.htm">physical Formulas</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280e.htm">Speed Controll by</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280e.htm">Spline Functions</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animation Paths<br>&nbsp; &nbsp; &nbsp; with Spline Curves</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210e.htm">Spline Curves</b></a><br>
+&nbsp; <b>&gt</b> 2. <!--a href="anim21e.htm"--><b>Closed Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22e.htm">Animation Paths</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="85%" cellpadding="10">
+<tr><td width="100"><img src="im/spline00s.jpg" border="1" width="80" height="80"></td>
+    <td width="80%" align="center">
+     <h1>Closed Spline Curves<br>
+     <font size="2">For the animation of cyclic repeating non-linear motions.</td></font></h1>
+     <td width="10%">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr></td>
+</tr></table>
+<table align="center" width="85%" cellpadding="10">
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><b>Animation paths with spline curves:</b> As a camera path or as a flight path of animated objects
+  we i.e. can use a closed spline curve.
+<table border="2" bgcolor="#f8f8f0" bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080"><tr>
+<td><pre><b>#declare P1 = &lt;-2.00, 0.20, -2.00&gt;;
+#declare P2 = &lt; 1.00, 0.20, -2.00&gt;;
+#declare P3 = &lt; 2.00, 0.70, -1.00&gt;;
+#declare P4 = &lt; 2.00, 1.20,  2.00&gt;;
+#declare P5 = &lt; 0.00, 0.20,  2.00&gt;;
+#declare P6 = &lt;-2.00, 3.20,  1.50&gt;;
+#declare P7 = &lt;-2.00, 0.70, -1.00&gt;;
+#declare P8 = &lt;-2.00, 0.00, -2.00&gt;;
+
+#declare Spline_1 =
+  spline {
+    natural_spline
+   -0.250, P7, // control point
+    0.000, P1, // starting point
+    0.125, P2,
+    0.250, P3,
+    0.420, P4,
+    0.490, P5,
+    0.780, P6,
+    0.900, P7,
+    1.000, P1, // end point
+    1.125, P2  // control point
+  }// end of spline ---------------</b></td></pre></tr></table>
+</td></p>
+ <td colspan="1" valign="top">
+  <table align="center" border="3" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="spline00.jpg" width="300" height="300"  alt="closed spline curve" title="closed spline curve"></td></tr>
+  </table><h5 align="center">Complete scene description  for POV-Ray:<br>
+   <a href="spline00.pov">&quot;spline00.pov&quot;</a></h5>
+
+  <p align="justify"><b>Closed Spline Curves:</b><br>
+  We'll get a perfectly closed spline curve under the following conditions:<br>
+  The end point is the same as the starting point. <br>
+  The control point before the beginning is the point before the end point.<br>
+  The control point at the end is the point behind the starting point.<br>
+  The distances of the time values at the control point must also fit to those of their according points.
+  </p>
+ </td>
+</tr>
+
+</table>
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2008<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

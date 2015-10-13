@@ -1,0 +1,339 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>POV-Ray Examples - How To Make Objects for POV-Ray - A Coil of Wire</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="POV-Ray Examples - How To Make Objects for POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d grafics, 3d Computergraphics, POV-Ray Objects, Examples for POV-Ray">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=635,height=445");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr> <a name="top"> </a>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; &nbsp; <b>POV-Ray Examples</b></font> -
+      <font size="-1"><b>How To Make Objects for POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="tec_450i.htm"><font size="2">Italiano </font></a>
+        <a href="tec_450i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_450f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="tec_450f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tec_450d.htm"><font size="2">Deutsch </font></a>
+        <a href="tec_450d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+ &nbsp;&nbsp;- <a href="sam_000e.htm">POV-Ray Examples</b></a><br>
+ &nbsp;&nbsp; Index of Content<br>
+&nbsp; -  <a href="sam_300e.htm">Geometry</b></a><br>
+&nbsp; -  <a href="sam_100e.htm">Architecture</b></a><br>
+<!--&nbsp; -  <a href="sam_400e.htm">Plants</b></a><br-->
+&nbsp; -  <a href="tec_000e.htm">Engineering</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_750e.htm">Ladder</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_700e.htm">Pylons</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_710e.htm">Railing</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_720e.htm">Bridge</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_730e.htm">Tubes</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_731e.htm">Tube Fork</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_732e.htm">Tube Stopcock</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_400e.htm">Chain</b></a><br>
+ &nbsp; &nbsp; -  <!--a href="tec_450e.htm"--><b>Coil of Wire</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_500e.htm">Torpedo</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_600e.htm">Cruise Missile</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_900e.htm">Rocket</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_190e.htm">Wheel</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_100e.htm">Truck</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_850e.htm">Propeller</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_800e.htm">Airplanes</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_550e.htm">Canoe</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_050e.htm">Guitar Body</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_010d.htm">7-Segment Display</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_020e.htm">Ribbon Cable</b></a><br>
+ &nbsp; &nbsp; -  <a href="tec_030e.htm">Cable Harness</b></a><br>
+<!-- &nbsp; &nbsp; -  <a href="sam_000e.htm">Ships</b></a><br>
+ &nbsp; &nbsp; -  <a href="sam_000e.htm">Railroad</b></a><br>-->
+
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+
+
+<table cellpadding="3" width="90%" align="center">
+<tr>
+ <td align="center" valign="top">
+   <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td><!--a href="javascript:ShowImage('coil/coil_0im.htm')"
+                 onmouseover="window.status='ShowSingleImage';return true"
+                 onmouseout="window.status=''"--->
+              <img src="coil/Winding_Wire_macro_sc.gif" width="160" height="120" border="0"
+                   alt="coil" title="coil"></a></td>
+    </tr></table>
+
+  </td>
+ <td align="left" valign="top">
+  <p align="justify"><font size="6"><b><nobr>Coil of Wire</nobr></b></font><br>
+       The winding of a wire<br>
+ <h6>Objects: cylinder, Segment_of_Torus.<br>
+     Methods: #local, union, #while,
+     cos, tan, atan, VAngleD(), vlength()
+
+  </td></h6>
+</tr><tr><td colspan="2"><hr></td></tr>
+</table>
+
+<table cellpadding="3" width="90%" align="center">
+<tr>
+ <td valign="top" rowspan="3">
+<font size="4"><b>The basic dimensions:</b></font></b><br>
+
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local WR = 0.065;// wire radius
+#local WD = 0.19; // wire distance (pitch)
+#local BR = 0.50; // base radius
+#local Rmaj= 0.30; // corner radius major
+#local Revolutions = 3 ;// </b></td></pre></tr></table>
+
+  A quarter turn of the wire, from
+  point A (start)<br> to corner Co and end point B.<br>
+  The height of a quarter is WD/4:  <font size="2"><b>(image 2)</b></font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local A  = &lt; 0, 0, -BR&gt;;
+#local B  = &lt; BR, WD/4, 0&gt;;
+#local Co = &lt; BR, WD/8, -BR&gt;;//corner     </b></td></pre></tr></table>
+<br>
+<br>
+<font size="4"><b>Necessary include files:</b></font></b><br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#include "math.inc" // for VAngleD()
+#include "shapes3.inc"// Segment_of_Torus </b></td></pre></tr></table>
+<br>
+<br>
+<br>
+<font size="4"><b>Calculation of the angles:</b></font><br>
+<br>
+<br>
+
+Calculation of the yellow angle: <font size="2"><b>(image 3)</b></font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>// angle of vector ACo against xz plane
+#local Wire_Angle = VAngleD(Co-A,&lt;1,0,0&gt;);
+</b></td></pre></tr></table>
+<br>
+Calculation of the violet angle: <font size="2"><b>(image 3)</b></font>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local Len_Cyan =
+            WD/8*cos(radians(Wire_Angle));
+// rotation angle of 2nd part CoB
+#local Inner_Angle =
+              degrees(atan2(Len_Cyan,BR));
+</b></td></pre></tr></table>
+<br>
+<br>
+<br>
+Calculation of the corner angle: <font size="2"><b>(image 4 + 5)</b></font>
+<br>
+The corner angle at Co is smaller than 90&deg; !!!<br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local Corner_Angle = VAngleD(Co-A,B-Co);
+ // corner linear length:
+#local Co_Len =
+    Rmaj*tan(radians(Corner_Angle/2));
+ // linear wire part
+#local Len_X = vlength(Co-A)-Co_Len;      </b></td></pre></tr></table>
+<br>
+<br>
+</td>
+ <td colspan="1">
+  <table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="coil/Winding_Wire_t01c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+  </table><div align="center"><font size="2"><b>&nbsp; 1) Coil of Wire with 3 revolutions.</b></font></div>
+ </td>
+
+</tr>
+<tr>
+  <td colspan="1">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_t03c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table><div align="center"><font size="2"><b>&nbsp; 2) A single revolution.</b></font></div>
+ </td>
+</tr>
+<tr>
+  <td colspan="1">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_t18c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table><div align="center"><font size="2"><b>&nbsp; 3) Geometry of a quarter revolution.</b></font></div>
+ </td>
+
+</tr>
+<tr>
+</td>
+
+ <td colspan="1">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_t29c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table><div align="center"><font size="2"><b>&nbsp; 4) The torus segment at the corner.</b></font></div>
+ </td>
+
+
+ <td colspan="1">
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_t35c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table><div align="center"><font size="2"><b>&nbsp; 5) Length of the corner part.</b></font></div>
+ </td>
+
+</tr>
+<tr>
+ <td>
+<br>
+<font size="4"><b>A quarter revolution of the wire:</b></font><br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local W_Corner =
+object{ Segment_of_Torus(
+           Rmaj, // radius major,
+           WR,   // radius minor,
+           -Corner_Angle // segment angle
+         ) //----------------------------
+        rotate&lt;0,90,0&gt;
+        translate&lt;-0,0,+Rmaj&gt;
+      } // ------------------------------
+#local Quarter =
+union{
+   cylinder{ &lt;0,0,0&gt;,&lt;Len_X,0,0&gt;, WR }
+   object{   W_Corner
+             rotate&lt;-Inner_Angle,0,0&gt;
+             translate&lt; Len_X,0,0&gt; }
+   cylinder{ &lt;0,0,0&gt;,&lt;Len_X,0,0&gt;, WR
+             translate&lt;0,0,-Rmaj>
+               rotate&lt;0,-Corner_Angle,0&gt;
+                 translate&lt;0,0,Rmaj&gt;
+             rotate&lt;-Inner_Angle,0,0&gt;
+             translate&lt;Len_X,0,0&gt;
+           } //------------------
+  translate&lt;0,0,-BR&gt;
+  rotate&lt;0,0,Wire_Angle&gt;
+} // end of union  ---------------------- </b></td></pre></tr></table>
+
+<font size="4"><b>Winding the wire:</b></font><br>
+<table border="1"  bgcolor="#EFEFEF"
+  bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>union{ //--------------------------------
+ #local Nr = 0;                // start
+ #local EndNr = 4*Revolutions; // end
+ #while (Nr&lt; EndNr)            // loop
+   object{ Quarter
+           translate&lt;0, Nr*WD/4,0&gt;
+           rotate&lt;0,-Nr*90,0&gt;
+         } //----------------
+
+ #local Nr = Nr + 1; // next Nr
+ #end // ---------------// end of loop
+// translate&lt;0,WR ,0&gt;
+ texture{ Wire_Texture }
+ rotate&lt;0,0,0&gt;
+ translate&lt;0,0,0&gt;
+} // end of union ----------------------- </b></td></pre></tr></table>
+<br>
+ <div align="center">
+  <font size="2"><b>Scene file for POV-Ray:</b><br>
+  <a href="coil/Winding_Wire_x1.txt">&quot;Winding_Wire_x1.txt&quot;</a> or
+  <a href="coil/Winding_Wire_x1.pov">&quot;Winding_Wire_x1.pov&quot;</a></font></div>
+
+ </td>
+
+ <td>
+<br>
+<br>
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_110c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table>
+
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_100c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table>
+
+
+ <table align="center" border="2" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="coil/Winding_Wire_105c.jpg" width="320" height="240" alt="coil" title="coil"></td></tr>
+ </table>
+ </td>
+</tr>
+</table>
+
+
+ </td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

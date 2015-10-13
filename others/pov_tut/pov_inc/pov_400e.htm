@@ -1,0 +1,162 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, POV-Ray Details, Command Line Options">
+<meta name="description" content="tutorial on POV-Ray Details - Command Line Options">
+<title>POV-Ray Details - Command Line Options</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>POV-Ray Details</b></font><br>
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="pov_400i.htm"><font size="2">Italiano </font></a>
+        <a href="pov_400i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov_400f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="pov_400f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <br!-->
+        <a href="pov_400d.htm"><font size="2">Deutsch </font></a>
+        <a href="pov_400d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_000e.htm">What's Where?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_100e.htm">'povray.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_200e.htm">'quickres.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_300e.htm">Output directives</b></a><br>
+&nbsp;&nbsp;&nbsp;<b>&gt;</b> <!--a href="pov_400e.htm"--><b>Command Line</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="inc_000e.htm">A short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000e.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="85%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Command Line Options</b></h2>
+<br>
+
+<font size="+1">Here some of the short cuts for the command line with interesting possibilities.</font><br>
+<br>
+<font size="+1"><b>Changing the output file type</b></font> for the rendered images.<br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_command_line_1.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="466" height="200"></a>
+      </td>
+  </tr></table>
+</div>
+&nbsp; <font size="-1">More see here: <a href="pov_300e.htm">Output directives</b></a></font><br>
+<br>
+<font size="+1"><b>Changing the Size</b> of an image.</font><br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_command_line3_1.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="466" height="200">
+      </td>
+  </tr></table>
+</div>
+    Short cut i.e.:  +w400 +h400<br>
+    Long version (i.e. for ini files) i.e.:
+    width=400 height=400 <br>
+
+
+<br>
+<font size="+1"><b>Partial rendering</b> of image sections.</font><br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_command_line4_1.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="466" height="154">
+      </td>
+  </tr></table>
+</div>
+   Short cut i.e.: +sc100 +ec300 +sr50 +er200<br>
+   Long version (i.e. for ini files):
+   Start_Column=100 End_Column=300 Start_Row=50  End_Row=200<br>
+<font size="-1">This is very useful for rendering only a litte detail in very long rendering.
+(i.e. repairing the detail by partial rendering and cut and past in a graphic program!)<br>
+</font><br>
+<br>
+<font size="+1"><b>Continue previous renderings</b></font> with '+c'.<br>
+ This command <b>should not be used  with POV -Ray 3.7<br>
+ if you are rendering with multiple threads !</b><br>
+ <font size="-1">(it's possible that POV-Ray fails in continuing some  of the squares which were previously unfinished.)</font>
+ If you are unsure about the number of threads your POV-Ray uses see Menu 'Render' -> 'Thread Count ...' in POV-Ray editor.<br>
+ <div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_command_line2_1.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="466" height="200">
+      </td>
+  </tr></table>
+</div>
+With this command we can break very long render jobs and continue them by rendering later.<br>
+<font size="-1"><b>Note:</b> The image size must be the same and the temperary file of the previous rending job
+with the extension '.pov-state' must still exist in the output path.</font><br>
+
+<br>
+For more about the command line short cuts please seach in the original POV-Ray scene help!<br>
+<br>
+<br>
+
+
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, raytracing descriptions, povray tutorial, 3D grafic, variables, declare and local">
+<meta name="description" content="tutorial on variables, declare and local with POV-Ray">
+<title>Variables, declare and local with POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                       <nobr                    >by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+3"> &nbsp; &nbsp; <b>About Variables in POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <!--a href="var_200i.htm"><font size="2">Italiano </font></a>
+        <a href="var_200i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="var_200f.htm"><font size="2">Français </font></a>
+        <a href="var_200f.htm"><img src="../flag_fra.gif" alt="français" title="français"align="bottom" width="22" height="15" border="0"></a><br-->
+        <a href="var_200d.htm"><font size="2">Deutsch </font></a>
+        <a href="var_200d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000e.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000e.htm">About Variables</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_000e.htm">Built-in Identifiers</a></b><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_100e.htm">#declare, #local</a><br>
+ &nbsp;&nbsp;<b>&gt;</b>  <!--a href="var_200e.htm"--><b>Expressions</b></a><br>
+<!--
+ &nbsp; &nbsp; &nbsp; <a href="var_300e.htm">Float Functions</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_400e.htm">Vectors</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_500e.htm">Arrays</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_600e.htm">Strings</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_700e.htm">#macro</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="var_800e.htm">trace, inside,</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp;<a href="var_900e.htm">max_extent</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="var_950e.htm">#default</b></a><br>
+-->
+<br>
+ &nbsp;&nbsp;- <a href="inc_000e.htm">A short</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000e.htm">Include File Tutorial</b></a></nobr><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Mathematical Expressions</b><br>
+  <font size="-1"> ... <br></font></h2>
+<p align="justify">In the scenery description language (SDL) of POV-Ray we can use a bundle of <br>
+mathematical and logical operators for calculations in POV-Ray.<br>
+<font size="-1"><b>Operators in POV-Ray:</b></font><br>
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td ><pre><b><font size="+1" color="#000000">Math Operators</font></b>
+<b>(  )  *  /  +  - </b>   <i>and logical NOT:</i> <b> ! </b>
+#declare Result = -0.45*A + (B*B - 4)*C; //
+#local Angle_1 = degrees( atan ( 2.5 / sqrt(2));</b> // angle value in degrees
+<br>
+<b><font size="+1" color="#000000">Relational Operators.</font></b>
+<b>&lt;  &lt;=  =  !=  &gt;=  &gt; </b>
+ #declare Green_or_Red = pigment{ rgb&lt(clock &lt;= 0.5),(clock > 0.5),0;&gt,}
+<br>
+<b><font size="+1" color="#000000">Logical Operators</font></b>
+<b>  &  // = AND</b>
+<b>  |  // = OR </b>
+<b>  &! // = AND NOT</b>
+//<i> Note: The Arguments A and B are not handled bitwise but logical! </i>
+#if (A & B)
+  ... // do this if both A and B are true
+#end
+#if (A | B)
+  ... // do this if either A or B is true
+#end</b></td></pre>
+ </tr>
+<tr>
+<td colspan="2">
+<font size="-1"><b>Note:</b><br>
+- All #declare or #local of a float, vector or color <b>require semicolon at the end</b>.<br>
+</font>
+
+</td>
+ </tr>
+</table>
+</div>
+
+ <br>
+<br>
+
+
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td align="right">&nbsp;</td>
+ <td align="right" width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

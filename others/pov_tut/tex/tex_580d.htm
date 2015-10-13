@@ -1,0 +1,282 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - Muster mit pavement</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_580e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_580e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_580i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_580i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_580f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_580f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001d.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_110d.htm">Farben Do-it-Yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>-->
+ &nbsp; &nbsp;<a href="tex_700d.htm">Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp;&nbsp;Regul&auml;re Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon,</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500d.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560d.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561d.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562d.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570d.htm">tiling</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="tex_580d.htm"--><b>pavement</b></a><br>
+ &nbsp; &nbsp;&nbsp;Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp;&nbsp;Patterns mit pigment</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650d.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651d.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660d.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750d.htm">Regul&auml;re Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>  -->
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880d.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890d.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="85%" align="center"><tr><td><!-- global table-->
+<font size="5"><b><p>Regul&auml;re Musterarten: pavement</font></b>
+ - <font size="-1"><b>Neu in POV-Ray 3.7</b></font>
+ <hr>
+
+
+
+<table width="85%"><tr>
+<td colspan="3"><font size="4"><b>pavement</b></font> = polyforme Kachelung der xz-Ebene.<br>
+<font size="2">(originale Felderl&auml;nge bzw. -breite = 1)</font><br>
+<i> Syntax:</i>
+<table align="center" border="2" cellspacing="1" cellpadding="4"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+ <pre><b>pigment {
+  pavement
+  [ number_of_sides VALUE | number_of_tiles VALUE | pattern VALUE |
+    exterior VALUE | interior VALUE | form VALUE |
+    PATTERN_MODIFIERS ]
+ } // end pigment</b></td></pre></tr></table>
+ <font size="-1"><br>
+ Der Wert <b>number_of_sides</b>: <i>bestimmt das Grundpolygon,<br>
+ <b>3 = gleichseitiges Dreieck, 4 = Quadrat, 6 = Hexagon (Sechseck)</b>.</i></font>
+</td></tr>
+<tr></table>
+<table width="85%">
+<tr>
+<td align="center"><table align="center" border="2" cellspacing="1" cellpadding="4"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/pavement_3_1_p1.jpg"   border="0" width="160" height="160"></td></tr></table>
+    <font size="-1"><b>number_of_sides 3</b></font>
+</td>
+<td align="center"><table align="center" border="2" cellspacing="1" cellpadding="4"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/pavement_4_1_p1.jpg"   border="0" width="160" height="160"></td></tr></table>
+    <font size="-1"><b>number_of_sides 4</b></font>
+</td>
+<td align="center"><table align="center" border="2" cellspacing="1" cellpadding="4"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/pavement_6_1_p1.jpg"   border="0" width="160" height="160"></td></tr></table>
+    <font size="-1" align="center"><b>number_of_sides 6</b></font>
+</td>
+</tr></table>
+<table width="95%">
+<tr>
+<td><i><b>Elementares Beispiel:</b></i>
+<table align="center" border="4" cellspacing="1" cellpadding="4"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff"><pre><b>box{ &lt;-1,0,-1&gt;,&lt;1,1,1&gt;
+     pigment{
+         pavement
+           number_of_sides 3 //  3 triangle,  4 quadrat, 6 hexagon
+           number_of_tiles 1 //  (1 to 5 or 6)
+           pattern 1 // from 1 to the maximum relevant VALUE
+           // corners:  0 = sharp, 1 = bevelled, 2 = rounded
+             exterior 0 // 0, 1 or 2; Not used for hexagon.
+             interior 0 // 0, 1 or 2
+           form 0//  0, 1, 2
+           color_map{ [ 0.00 color rgb&lt;1,1,1&gt;*1 ]
+                      [ 0.20 color rgb&lt;1,1,1&gt;*1 ]
+                      [ 0.20 color rgb&lt;1,1,1&gt;*0 ]
+                      [ 0.40 color rgb&lt;1,1,1&gt;*0 ]
+                      [ 0.50 color rgb&lt;1,1,1&gt;*1 ]
+                      [ 0.90 color rgb&lt;1,1,1&gt;*0 ]
+                      [ 1.00 color rgb&lt;1,1,1&gt;*0 ]
+                    } // end color_map
+           scale 0.25
+        } // end pigment
+ } // end of box ------------- } &nbsp; &nbsp;</b></td><pre></tr></table>
+</td>
+</tr></table>
+<hr>
+<table width="95%" align="center"><tr>
+<td><font size="4">Die maximal m&ouml;gliche Nummer des patterns (Muster)</b></font><br>
+    <font size="-1">ist abh&auml;ngig von <b>number_of_sides</b> und <b>number_of_tiles</b></font>:
+<pre><b>Sides | Tiles: 1   2   3   4   5   6
+------------------------------------------
+  3   |   </b>     1   1   1   3   4   12 <b>
+  4   |   </b>     1   1   2   5   12  35 <b>
+  6   |   </b>     1   1   3   7   22   </b></td><pre>
+</tr></table>
+<p align="center"><hr></p>
+<table width="95%" align="center"><tr>
+<td><font size="4"><b>number_of_sides = 3</b></font><br>
+ <font size="-1"><b>Patterns (Muster) mit number_of_tiles = 1, 2, 3 (1. Zeile), 4(2. Zeile), 5 (3. Zeile)</b></font>
+<table align="center" border="4" cellspacing="1" cellpadding="4"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/pavement_3_12345_all.jpg"   border="0" width="608" height="448"></td></tr></table>
+<font size="-1"> <b>patterns with  number_of_tiles = 6</b></font>
+<table align="center" border="4" cellspacing="1" cellpadding="4"
+           bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/pavement_3_6_all12.jpg" border="0" width="608" height="448"></td></tr></table>
+</td>
+</tr></table>
+
+
+<hr>
+<table width="85%" align="center"><tr>
+<td><font size="4"><b>number_of_sides = 4</b></font><br>
+ <font size="-1"><b>Patterns (Muster) mit number_of_tiles = 6</b></font>
+<table align="center" border="4" cellspacing="1" cellpadding="4"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/pavement_4_6_all35.jpg"   border="0" width="607" height="844"></td></tr></table>
+<font size="-1"></font>
+<hr>
+<table width="95%" align="center"><tr>
+<td><font size="4"><b>number_of_sides = 6</b></font><br>
+ <font size="-1"><b>patterns with  number_of_tiles = 5</b></font>
+<table align="center" border="4" cellspacing="1" cellpadding="4"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/pavement_6_5_all22.jpg"   border="0" width="625" height="625"></td></tr></table>
+
+<table width="95%" align="center"><tr>
+<td>
+
+
+</td></tr></table>
+<table width="95%" align="center"><tr>
+<td><font size="4"><b>'interior' und 'exterior' value</b></font><font size="-1">: f&uuml;r Variationen der Winkel der Ecken:</font><br>
+    <font size="-1">Werte: 0 = scharf, 1 = abgeschr&auml;gt, 2 = gerundet</font><br>
+
+    <font size="4"><b>'form' value</b></font>: <font size="-1"> kopiert das Aussehen von 'interior' f&uuml;r einige zus&auml;tzliche Variationen.</font><br>
+    <font size="-1">Werte: 0, 1, 2</font>
+<table align="center" border="4" cellspacing="1" cellpadding="4"
+       bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080" width="652">
+    <tr><td bgcolor="#ffffff">
+    <img src="im/pavement_4_6_5_in0_ex0_form0.jpg" border="0" width="208" height="208">
+    <img src="im/pavement_4_6_5_in0_ex1_form0.jpg" border="0" width="208" height="208">
+    <img src="im/pavement_4_6_5_in0_ex2_form0.jpg" border="0" width="208" height="208"><br>
+    <img src="im/pavement_4_6_5_in0_ex0_form1.jpg" border="0" width="208" height="208">
+    <img src="im/pavement_4_6_5_in1_ex0_form1.jpg" border="0" width="208" height="208">
+    <img src="im/pavement_4_6_5_in1_ex1_form0.jpg" border="0" width="208" height="208"><br>
+    <img src="im/pavement_4_6_5_in1_ex1_form1.jpg" border="0" width="208" height="208">
+    <img src="im/pavement_4_6_5_in2_ex0_form2.jpg" border="0" width="208" height="208">
+    <img src="im/pavement_4_6_5_in2_ex2_form2.jpg" border="0" width="208" height="208">
+    </td></tr></table>
+
+
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

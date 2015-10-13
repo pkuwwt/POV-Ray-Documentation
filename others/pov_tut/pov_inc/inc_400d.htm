@@ -1,0 +1,191 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Ein kurzes Include File Tutorial f&uuml;r POV-Ray">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Include File Tutorial ">
+<title>Ein kurzes Include-Dateien-Tutorial f&uuml;r POV-Ray </title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Kleines Include-Dateien-Tutorial f&uuml;r POV-Ray</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="inc_400e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="inc_400e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="inc_400i.htm"><font size="2">Italiano</font></a>
+        <a href="inc_400i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="inc_400f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="inc_400f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="pov_000d.htm">POV-Ray Details</b></a><br>
+<br>
+ &nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+<br>
+ &nbsp;&nbsp;- <!--a href="inc_000d.htm"--><b>Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="inc_000d.htm"--><b>Include File Tutorial</b></a></nobr><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_000d.htm">Wozu Include Files?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">Eigene Include Files</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_100d.htm">und wie aufrufen.</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_200d.htm">Schreibweisen, &quot;.inc&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_200d.htm">&quot;#local / #declare&quot;</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="inc_300d.htm">Wo speichern?</b></a><br>
+<nobr> &nbsp; &nbsp;&nbsp;<b>&gt;</b><!--a href="inc_400d.htm"--><b>Design von Include Files</b></nobr></a><br>
+ &nbsp; &nbsp; &nbsp;  <a href="inc_700d.htm">Eigene Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="inc_700d.htm">zum 'Insert Menu'</b></a><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="90%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center"><b>Die Gestaltung von eigenen Include-Dateien.</b></h2>
+
+<p align="justify">
+<font size="+1">
+   F&uuml;r ein <b>'gutes Design' von Include-Dateien</b> schaue man sich die Art wie die POV-Ray-Standard-Include-Dateien
+   gestaltet wurden n&auml;her an:</font><br>
+ <table border="1" cellpadding="0" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><pre><b>// POV-Ray 3.6/3.7 sample include file &quot;<font color="#008000">NAME</font>.inc&quot;
+// author, date:
+//---------------------------------------------------------
+#ifndef( <font color="#008000">NAME_Inc_Temp</font>)
+#declare <font color="#008000">NAME_Inc_Temp</font> = version;
+#version 3.6;
+//---------------------------------------------------------
+    // .... your include file content
+//---------------------------------------------------------
+#version <font color="#008000">NAME_Inc_Temp</font>;
+#end
+//------------------------------------- end of include file</b></td></pre>
+ </tr>
+ </table>
+Dies Methode garantiert 2 Dinge auf einmal:<br>
+1. Es vermeidet unn&ouml;tiges erneutes Lesen von schon gelesen Include-Dateien.<br>
+2. Es &auml;ndert die Arbeitsweise von POV-Ray in den Modus '#version 3.6;' w&auml;hrend des Parsens (lesen und umsetzen in rechenbaren Programmcode)
+ des Inhaltes der Include-Datei und ein Zur&uuml;ckwechseln in den Versionsmodus der Szenendatei von dem aus die Include-Datei
+ aufgerufen wurde.<br>
+<br>
+&nbsp; F&uuml;r eine Include-Datei namens '<b>NAME.inc</b>' deklariert man eine globale Variable namens '<b>NAME_Inc_Temp</b>'
+welche die POV-Ray-Versionsnummer enth&auml;lt, welche die aufrufende POV-Ray-Szenendatei gerade verwendet. <br>
+&nbsp; Wenn diese Variable bereits deklariert ist, dann wurde die Include-Datei bereits irgendwann vorher
+gelesen und wird dann nicht nochmal gelesen sondern &uuml;bersprungen.
+Auf diese Art und Weise wird die unn&ouml;tige nochmalige Aktion des Parsens vermieden.
+Diese Versionsnummer kann dann am Ende wieder zur&uuml;ckgesetzt werden.<br>
+
+
+&nbsp; <i>POV-Ray kann vom Modus der gegenw&auml;rtigen Version (wie z.B. 3.6 oder 3.7) f&uuml;r bestimmte Textabschnitte
+        in den Modus einer fr&uuml;heren Version wechseln: '#version 3.6;' und dann durch '#version 3.7;' wieder zur&uuml;ckwechseln.
+
+       Dies erlaubt einige (wenn auch nicht eine totale) R&uuml;ckw&auml;rts-Kompatiblit&auml;t zum Syntax von &auml;lteren Versionen.<br>
+       Hier wird die bedingte Anweisung '<b>#ifndef (VARIABLE) /*Lies die Include-Datei im Modus ... */ #end</b>'
+       verwendet um die gegenw&auml;rtige Versionsnummer zu speichern, f&uuml;r den Inhalt solange zu 3.6 zu wechseln und am Ende die
+       gegenw&auml;rtige Versionsnummer wieder zur&uuml;ckzuspeichern.</i><br>
+<br>
+<font size="+1"><b>Wie man sicherstellt, dass alle ben&ouml;tigten Standard-Include-Dateien geladeen werden:</b></font>
+Eine weitere gute Idee ist es <b>sicherzustellen, dass alle ben&ouml;tigten Standard-Include-Dateien </b>, welche
+in dieser Include-Datei verwendet werden
+(z.B. color.inc, textures.inc, shapes.inc, shapes.inc etc.), <b>auch geladen werden, auch wenn die aufrufende Szenendatei
+diese nicht l&auml;dt</b> (roter Teil):<br>
+ <table border="1" cellpadding="0" cellspacing="0" bgcolor="eeeeee"
+       bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><pre><b>// POV-Ray 3.6/3.7 sample include file &quot;<font color="#008000">NAME</font>.inc&quot;
+// author, date:
+// What's that: ...
+//---------------------------------------------------------
+#ifndef( <font color="#008000">NAME_Inc_Temp</font>)
+#declare <font color="#008000">NAME_Inc_Temp</font> = version;
+#version 3.6;
+//---------------------------------------------------------
+<font color="#990000">#ifndef(  Colors_Inc_Temp)
+#include "colors.inc"
+#end
+#ifndef(  Textures_Inc_Temp)
+#include "textures.inc"
+#end
+#ifndef(  Shapes_Inc_Temp)
+#include "shapes.inc"
+#end
+#ifndef(  Shapes2_Inc_Temp)
+#include "shapes2.inc"
+#end</font>
+//---------------------------------------------------------
+
+    // .... your include file content
+
+//---------------------------------------------------------
+#version <font color="#008000">NAME_Inc_Temp</font>;
+#end
+//------------------------------------- end of include file</b></td></pre>
+ </tr>
+ </table>
+<br>
+<font size="+1"><b>Kommentare mit Inhaltsbeschreibung und Anwendungsbeispiel:</b></font><br>
+Es ist ferner empfehlenswert einige <b>Kommentarzeilen</b> mit einer guten Beschreibung dar&uuml;ber, <b>was diese Include-Datei
+macht</b> anzuf&uuml;gen. Ebenso sollte in Kommentarklammern /* ... */ <b>ein Anwendungsbeispiel</b> angef&uuml;gt werden, das
+zeigt, wie man diese Include-Datei aufrufen kann!
+
+</font><br>
+<br>
+
+<br>
+<div align="center">
+</div>
+<font size="-1">....</font>
+<br>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

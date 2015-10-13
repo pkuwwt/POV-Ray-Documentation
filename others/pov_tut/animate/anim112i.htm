@@ -1,0 +1,278 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2008, Friedrich A. Lohmueller">
+<meta name="keywords" content="Animazione 3D, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg video, avi video, gif animate,  esempi POV-Ray, tutoriale POV-Ray">
+<meta name="Description" content="Animazioni 3D con POV-Ray - Descrizioni ed esempi per il raytracer POV-Ray di Friedrich A. Lohmueller">
+<title>Animazioni 3D con POV-Ray - Descrizioni ed esempi per il raytracer POV-Ray. </title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray</nobr>
+                      <nobr> di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ita.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="Tutorial POV-Ray" title="Tutorial POV-Ray"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; Animazione 3D con POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Fondamenti ed esempi per l'animazione 3D.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim112e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim112e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim112f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="anim112f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim112d.htm"><font size="2">Deutsch </font></a>
+        <a href="anim112d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+   </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm">Galeria Animazione 3D</b></a><br>
+ - <a href="../pov__ita.htm#ani"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anii.htm">Animazione 3D</b></a><br>
+ &nbsp;&nbsp; <i>Indice del contenuto</i><br>
+&nbsp; <!--a href="anim1d.htm"-->  0. Nozioni fondamentali</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001i.htm">Esempio di base</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002i.htm">Da Immagini al Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005i.htm">Termini tecnici di base</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008i.htm">Comandi di Animazione</b></a><br>
+&nbsp; <!--a href="anim2d.htm"--> I. Animazioni ciclici</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11i.htm">Oggetti rotanti</b></a><br>
+&nbsp; <b>&gt</b> 1.2. <!--a href="anim112i.htm"--><b>Pianeti in orbita</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113i.htm">L'Orologio</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12i.htm">Fotocamera rotante</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121i.htm">Fotocamera in volo dritto</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13i.htm">Il Problema di</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a href="anim13i.htm"> Ruota Western</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131i.htm">Ruote Girante</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14i.htm">Ingranaggi</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141i.htm">Catena di Trasmissione</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142i.htm">Catena della Bicicletta</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15i.htm">Pendolo oscillante</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151i.htm">Pendolo di Newton</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2. <a href="anim152i.htm">Rock il Rocking Chair!</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16i.htm">Molla a spirale</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170i.htm">Biella di accoppiamento</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17i.htm">Biella motrice</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18i.htm">Psychedelico + Op-Art </b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190i.htm">Contatori + Countdown</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200i.htm">Piegatura di un Cubo</b></a><br>
+
+&nbsp; II. Movimenti non-lineari<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220i.htm">Accelerare e Frenare 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222i.htm">Accelerare e Frenare 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240i.htm">Cadere e Saltellare</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260i.htm">Accelerazione secondo</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260i.htm">le formule de la fisica</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280i.htm">Controllo di movimenti</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280i.htm">con funzioni spline</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Sentieri di Animazione<br>&nbsp; &nbsp; &nbsp; con Spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210i.htm">Curve Spline</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21i.htm">Spline ciuso</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22i.htm">Sentieri di Animazione</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table width="95%" cellpadding="5">
+<tr><td width="100">
+    <table align="center" border="1" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+    <tr><td><img src="planet_s20ani.gif" border="0" width="80" height="80"></td></tr></table>
+ </td>
+ <td width="80%" >
+     <h1> &nbsp; &nbsp; Pianeti in Orbita &nbsp; </h1>
+     <h5>Sopra oggetti che girano intorno ad altri ogetti.<br>
+      Animazione cyclica con il sole, la terra e la luna.</td></h5>
+</tr></table>
+<table align="center" width="85%" cellpadding="10">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top">
+  <h5 align="justify"><b>Dimensioni dei Pianeti:</b></h5>
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare Moon_Orbit_Radius   =  4;
+#declare Earth_Orbit_Radius  = 16;
+//--------------------------------
+#declare Moon_Radius   = 0.7;
+#declare Earth_Radius  = 2.0;
+#declare Sun_Radius    = 3;
+//--------------------------------</b></td></pre></tr></table>
+  <h5 align="justify"><b>La Terra, la Luna e il Sole:</b></h5>
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare <b>Moon</b>  =
+sphere{ &lt;0,0,0&gt;,Moon_Radius
+        texture{ ... }}
+#declare <b>Earth</b> =
+sphere{ &lt;0,0,0&gt;,Earth_Radius
+        texture{ ... }}
+#declare <b>Sun</b>   =
+<b>light_source{</b> &lt;0,0,0&gt;
+              color rgb&lt;0,0,0&gt;
+ <b>looks_like{</b>
+ sphere{ &lt;0,0,0&gt;,Sun_Radius
+         texture{ pigment{ ... }
+                  finish{ <b>ambient 1,</b>
+                          diffuse 0}
+                } // end of texture
+       } // end of sphere
+   } // end of looks_like
+ } // end of light_source
+//--------------------------------</b></td></pre></tr></table>
+</td>
+ <td colspan="1" valign="top"><h5 align="center">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/planet_00x.jpg" width="200" height="200" alt="Planeten" title="Planeten"></td></tr>
+  </table> Terra, Luna e Sole </h5>
+<h5 align="center">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/planet_00mf.jpg" width="200" height="200" alt="Planeten" title="Planeten"></td></tr>
+  </table>La luna getta un'ombra: <br>
+   eclipse of the sun.</h5>
+ </td>
+</tr>
+<tr><td colspan="1" valign="top">
+    <h5 align="justify"><b>Gli angoli di rotazione<br>
+      dipendono da tiempo:</b></h5>
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>#declare Time = clock + 0.00;
+ // Time = 0 to 1 in one year !!!
+#declare Earth_around_Sun_Rotation
+ = 360*Time;   // 1 turn per year
+#declare Moon_around_Earth_Rotation
+ = 360*Time*12; //12 months!!!
+#declare Earth_Rotation
+ = 360*Time*360; // ~ 365 days !!!
+//--------------------------------</b></td></pre></tr></table>
+</td>
+
+</td>
+ <td colspan="1" valign="top">
+<h5 align="center">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/planet_00sf.jpg" width="200" height="200" alt="Planeten" title="Planeten"></td></tr>
+  </table>La terra getta un'ombra: <br>
+   Eclissamento della luna.</h5>
+ </td>
+</td></tr>
+</table>
+
+<table align="center" width="85%" cellpadding="10">
+<tr>
+ <td colspan="2" valign="top">
+  <h5 align="justify"><b>Il moto della luna intorno alla terra,<br>
+   e di terra+luna intorno del sole:</b></h5>
+<table align="center" border="4"  bgcolor="#efefef"
+   bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><pre><b>//-----------------------------------------------------------
+<b>union{</b> // Earth + Moon
+  <b>object{ Earth
+          rotate &lt;0,Earth_Rotation,0&gt;
+        }</b> // end Earth
+  <b>object{ Moon
+          translate &lt;Moon_Orbit_Radius,0,0&gt;
+          rotate &lt;0,Moon_around_Earth_Rotation,0&gt;
+        }</b> // end Moon
+
+ // then both  (as union) moveded by Earth_Orbit_Radius away (in +x)
+
+  <b>translate &lt;Earth_Orbit_Radius,0,0&gt; </b>
+ // and let them rotate around the sun
+  <b>rotate &lt;0,Earth_around_Sun_Rotation,0&gt;
+
+}</b> // end of union of &quot;Earth + Moon&quot;
+
+<b>object { Sun }</b>
+//-----------------------------------------------------------</b></td></pre></tr></table>
+
+</td></tr>
+<tr>
+ <td colspan="1" valign="top">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/planet_00ani.gif" width="320" height="200" alt="animated earth,moon + sun" title="animated earth,moon + sun"></td></tr>
+  </table>
+  </td>
+ <td colspan="1" valign="top">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/planet_01ani.gif" width="320" height="200" alt="animated earth,moon + sun" title="animated earth,moon + sun"></td></tr>
+  </table>
+  </td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1" valign="top">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/planet_00ani.jpg" width="360" height="120" alt="animated earth,moon + sun" title="animated earth,moon + sun"></td></tr>
+  </table><br>
+   <h5 align="center">File di scena simplificata per POV-Ray:<br><a href="pov/planet_00ani.ini"> &quot;planet_00ani.ini&quot;</a> e <br>
+   <a href="pov/planet_00ani.pov">&quot;planet_00ani.pov&quot;</a>.</h5>
+  </td>
+ <td>
+ </td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+
+</table>
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2008<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

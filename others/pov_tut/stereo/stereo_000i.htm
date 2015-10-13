@@ -1,0 +1,188 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>Immagini stereo e Animazioni stereo con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Immagini stereo e Animazioni stereo con POV-Ray">
+<meta name="keywords" content="immagini stereo,animazioni stereo, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Immagini stereo e Animazioni stereo con POV-Ray</b></font>
+ </div>
+ </td></h6>
+ <td align="right">
+        <a href="stereo_000e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="stereo_000e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="stereo_000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="stereo_000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_000d.htm"><font size="2">Deutsch</font></a>
+        <a href="stereo_000d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../../pov/g_stereo_00.htm" target="_new">Galeria Immagini Stereo</b></a><br>
+ - <a href="../../pov_anim/ani_9000d.htm" target="_new">Galeria Animazioni Stereo</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>Tutorial POV-Ray</nobr></b></a><br>
+<br>
+<font size="+1">&nbsp;  <!--a href="stereo_000i.htm"--><b>Immagini stereo</font> e</b></a><br>
+<font size="+1">&nbsp;  <!--a href="stereo_000i.htm"--><b>Animazioni stereo</b></a></font><br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_000i.htm"--><b>Contenuto</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="stereo_050i.htm">Occhi incrociati</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100i.htm">Immagini stereo semplici</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150i.htm">Immagini stereo avanzate</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200i.htm">Combinare immagini</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300i.htm">Animazioni stereo 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310i.htm">Animazioni stereo 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400i.htm">Esempi animazioni stereo</b></a><br>
+ &nbsp;<br>
+ &nbsp;<br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="95%">
+  <tr><td colspan="2" valign="top"><!-- global table-->
+
+<table align="center" border="1" cellspacing="2" cellpadding="2" width="90%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<font size="1">
+Questo breve tutorial descrive un metodo veloce per fare immagini stereoscopiche con coppie di immagini
+utilizzando due fotocamere con tronco simmetrico (chiamato anche 'toe-in').
+Per pi&ugrave; sulle immagini stereoscopiche e la teoria che sta dietro vedi qui
+ <a href="http://www.f-lohmueller.de/links/index_te.htm#stereo">Stereo-Links</a>.</font>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_050i.htm"><img src="im/CrossEyeView.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_050i.htm"><font size="3">
+    &nbsp;Occhi incrociati - Cross-Eye View</b></a></font>
+    <font size="2"><br>
+    <nobr>&nbsp;Come osservare immagini stereoscopici<br>
+    &nbsp;con il metodo occhi incrociati o cross-eye.</nobr></font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_100i.htm"><img src="im/Stereo_simple.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_100i.htm"><font size="3">
+    &nbsp;Immagini stereo - methodo semplice</b></a></font>
+    <font size="2"><br>
+    &nbsp;Immagini stereo con una fotocamera <br>
+    &nbsp;guardando fisso nella direzione +z.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_150i.htm"><img src="im/VectorsAdvanced.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_150i.htm"><font size="3">
+   <nobr>&nbsp;Immagini stereo - methodo avanzato</b></a></font></nobr>
+    <font size="2"><br>
+    &nbsp;Immagini stereo con una fotocamera<br>
+    &nbsp;con qualsiasi direzione di vista e posizione.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_200i.htm"><img src="im/Stereo_Pairs.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_200i.htm"><font size="3">
+    <nobr>&nbsp;Combinare coppie d'immagini stereo</nobr></b></a></font>
+    <font size="2"><br>
+    <nobr>&nbsp;La combinazione di coppie di immagini stereo con POV-Ray</nobr><br>
+    &nbsp;usando 'image_map' e fotocamera 'orthographic'.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_300i.htm"><img src="im/Stereo_Serie.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_300i.htm"><font size="3">
+    &nbsp;Animazioni stereo (1)</b></a></font>
+    <font size="2"><br>
+    &nbsp;Come fare una serie di immagini stereo<br>
+    &nbsp;per un'animazione con POV-Ray.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_310i.htm"><img src="im/Stereo_Ani_10_small.gif" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_310i.htm"><font size="3">
+    &nbsp;Animazioni stereo (2)</b></a></font>
+    <font size="2"><br>
+    &nbsp;Come combinare una serie di immagini stereo<br>
+    &nbsp;per un'animazione con POV-Ray.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_400i.htm"><img src="im/Stereo_Ani_01s.gif" border="0" width="160" height="80">
+   <img src="im/Stereo_Ani_04as.gif" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_400i.htm"><font size="3">
+    &nbsp;Esempi per animazioni stereo<br>
+    &nbsp;con POV-Ray</b></a></font><br>
+    <font size="2">
+    &nbsp;Esempi con le source codes.</font></td>
+</tr>
+</table>
+
+
+
+</td>
+</tr>
+</table>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

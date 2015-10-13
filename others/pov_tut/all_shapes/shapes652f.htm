@@ -1,0 +1,256 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Objets G&eacute;om&eacute;triques avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2007, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Objets G&eacute;om&eacute;triques avec POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D graphiques, infographie, Objets G&eacute;om&eacute;triques avec POV-Ray">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=655,height=505");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr> <a name="top"></a></font>
+<hr size="3"><div align="center"><font size="+2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Objets G&eacute;om&eacute;triques en POV-Ray</font></td></div>
+ </td>
+ <td align="right">
+   <a href="shapes652e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+   <a href="shapes652e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+   <a href="shapes652i.htm"><font face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>&nbsp;
+   <a href="shapes652i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+   <a href="shapes652d.htm"><font face="Arial, Verdana, Helvetica" size="2">Deutsch</b></a>&nbsp;
+   <a href="shapes652d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+   </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+
+<font size="2">
+ <a href="../../index_f.htm">Page d'accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+ &nbsp;<br>
+<nobr><a href="shapes000f.htm">Objets G&eacute;om&eacute;triques</b></a></nobr><br>
+ &nbsp;&nbsp; table des mati&egrave;res</a><br>
+<a href="shapes100f.htm">Objets de Base</b></a><br>
+<nobr><a href="shapes200f.htm">Objets avec macro + CSG</b></a></nobr><br>
+<nobr><a href="shapes3_0000f.htm">Objets dans &quot;shapes3.inc&quot;</b></a></nobr><br>
+<nobr><a href="shapes400f.htm">D'autres objets comme macros</b></a></nobr><br>
+<a href="shapes600f.htm">Objets 3D text</b></a><br>
+<a href="shapes000f.htm">Autre Objets</b></a><br>
+<a href="shapes666f.htm">Objets Non-CSG</b></a><br>
+<br>
+<nobr><a href="shapes700f.htm">height_field + HF macros</b></a></nobr><br>
+&nbsp; -  <a href="shapes650f.htm">height_field par images</b></a><br>
+&nbsp; &gt;<!--a href="shapes652f.htm"--><b>height_field r&eacute;gl&eacute;</b></a><br>
+<nobr>&nbsp; -  <a href="shapes654f.htm">height_field par fonctions</b></a></nobr><br>
+&nbsp; -  <a href="shapes655f.htm">height_fields massive</b></a><br>
+<nobr>&nbsp; -  <a href="shapes656f.htm">HF - monts et vaux</a></nobr><br>
+&nbsp; -  <a href="shapes710f.htm">HF_Square</b></a><br>
+&nbsp; -  <a href="shapes720f.htm">HF_Sphere</b></a><br>
+&nbsp; -  <a href="shapes730f.htm">HF_Cylinder</b></a><br>
+&nbsp; -  <a href="shapes740f.htm">HF_Torus</b></a><br>
+<br>
+<a href="shapes900f.htm">Isosurface</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+
+</font>
+
+
+</td><td valign="top"> <!-- Content - 2nd column -->
+
+<div align="center">
+<table width="90%" align="center" border="0"><tr><td><!-- global -->
+     <table align="center" border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/raster_mount_1im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/raster_mountain_t.jpg" border="0" width="160"  height="120"
+                   alt="Sample raster mountains by height_field 600x450" title="Sample raster mountains by height_field 600x450"></a></td>
+                   </tr></table>
+</td>
+<td><h2>Montagnes avec quadrillage :</h2>
+<h3 align="center">Comment cr&eacute;er des montagnes<br> avec une quadrillage</h3>
+</td>
+</tr>
+<tr><td colspan="2">
+<hr>
+</td></tr>
+<tr><td>
+
+<h4 align="left" ><a name="Raster"></a><b>Exemple  &quot;Montagnes avec quadrillage&quot;:</b></h4>
+ <table border="4"  bgcolor="#EFEFEF" bgcolor="#EFEFEF"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>// ground ----------------------------------
+// settings of squared plane dimensions
+// -- Strichabstand:
+#declare RasterScale = 1.0;
+// -- Strichbreite:
+#declare RasterHalfLine  = 0.05;
+// -- dito in z Richtung
+#declare RasterHalfLineZ = 0.05;
+// -- Stichfarbe:
+#declare Raster_Color = &lt;1,1,1&gt;*0.2;
+//------------------------------------------
+#macro Raster(RScale, HLine)
+       pigment{
+           gradient x scale RScale
+           color_map{
+            [0.000   color rgb Raster_Color]
+            [0+HLine color rgb Raster_Color]
+            [0+HLine color rgbt&lt;1,1,1,1>]
+            [1-HLine color rgbt&lt;1,1,1,1>]
+            [1-HLine color rgb Raster_Color]
+            [1.000   color rgb Raster_Color]
+            }// end of color_map
+           }// end of pigment
+ #end// end of Raster(RScale, HLine)-macro
+//-------------------------------------------
+
+union{
+plane{ &lt;0,1,0&gt;, 0  } //---------------
+
+height_field{
+       tga "MountLo1.tga"
+       smooth
+       double_illuminate
+       translate&lt;-0.5,-0.001,0&gt;
+       scale&lt;150,15,150&gt;
+     } // end of height_field ---------------
+
+// Raster mit überlagerten Texturen:
+// 1. -- Hintergrund Textur
+ texture{ pigment{color White*1.1}}
+// 2. -- überlagerte Streifen
+ texture{ Raster(RasterScale,RasterHalfLine )}
+ texture{ Raster(RasterScale,RasterHalfLineZ)
+                           rotate&lt;0,90,0&gt;}
+}// end of union
+//end of squared plane+mountain -----</td></pre></b>
+    </tr></table>
+</td>
+<td valign="top">
+<p align="justify">Dans cet'exemple on se servir de l'image  <nobr>&quot;MountLo1.tga&quot;</nobr>
+(comme dans mon &quot;<a href="../addon/inserti0.htm"><nobr>Insert Menu Add-on</nobr></a>&quot; !)
+ pour cr&eacute;er les montagnes avec un height field.
+In peut t&eacute;l&eacute;charger ce fichier ici comme  &quot;<a href="im/MountLo1.tga">MountLo1.tga</a>&quot;(373 kB) ou
+ comme une versione zip: &quot;<a href="im/MountLo1.zip">MountLo1.zip</a>&quot;(127 kB).<br>
+&nbsp;<br>
+
+<br>
+&nbsp;<br>
+La strat&eacute;gie appliqu&eacute;e pour la quadrillage de ces montagnes est la m&egrave;me comme dans mon tutoriel
+&quot;<a href="../calc/pov__en9.htm">Grid</a>&quot; - voyez ici pour les d&eacute;tails.<br>
+</p>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/raster_mount_1im.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            <img src="im/raster_mountain_s.jpg" border="0" width="200" height="150"></a></td></tr></table>
+
+                Fichier de sc&egrave;ne pour <nobr>POV-Ray :</nobr><br>
+     <a href="pov/raster_mountain.txt">&quot;raster_mountain.txt&quot;</a> ou <br>
+     <a href="pov/raster_mountain.pov">&quot;raster_mountain.pov&quot;</a></h6></td>
+</tr>
+<tr>
+ <td><h4 align="center">Une variation<br>
+   avec rayures verticals :
+ </td></h4>
+ <td><h4 align="center">Eine Variation<br>
+   avec rayures horizontals :
+ </td></h4>
+ </td>
+</tr>
+<tr>
+ <td>
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/raster_mount_vim.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            <img src="im/raster_mountain_ver_s.jpg" border="0" width="200" height="150"></a></td></tr></table>
+
+                Fichier de sc&egrave;ne pour <nobr>POV-Ray :</nobr><br>
+     <a href="pov/raster_mountain_ver.txt">&quot;raster_mountain_ver.txt&quot;</a> ou  <br>
+     <a href="pov/raster_mountain_ver.pov">&quot;raster_mountain_ver.pov&quot;</a></h6></td>
+ <td>
+     <h6 align="center">
+     <table border="4"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/raster_mount_him.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+            <img src="im/raster_mountain_hor_s.jpg" border="0" width="200" height="150"></a></td></tr></table>
+
+                Fichier de sc&egrave;ne pour <nobr>POV-Ray :</nobr><br>
+     <a href="pov/raster_mountain_hor.txt">&quot;raster_mountain_hor.txt&quot;</a> ou <br>
+     <a href="pov/raster_mountain_hor.pov">&quot;raster_mountain_hor.pov&quot;</a></h6></td>
+</tr>
+</table>
+</td></tr></table><!-- global -->
+</div>
+
+<br>
+<hr>
+
+</td></tr>
+<tr></table></td></tr><tr>
+<td valign="middle" align="center"><a href="#top">top</a></td>  <!-- footer -->
+ </tr></table>
+
+<table width="100%">
+<tr>
+<td>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td  align="right">&nbsp;</td>
+</tr></table><!-- end footer -->
+
+</td></tr></table>
+</body>
+</html>

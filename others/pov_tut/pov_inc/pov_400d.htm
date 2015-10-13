@@ -1,0 +1,172 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Ein kurzes Tutorial zu POV-Ray Details, die POV-Ray Kommandozeile">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, POV-Ray Details, Kommandozeile">
+<title>POV-Ray Details - die POV-Ray Kommandozeile</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>POV-Ray Details</b></font></div>
+ </td></h6>
+ <td align="right">
+        <a href="pov_400e.htm"><font size="2">English </font><img src="../flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="pov_400e.htm"><img src="../flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="pov_400i.htm"><font size="2">Italiano</font></a>
+        <a href="pov_400i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="pov_400f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="pov_400f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+&nbsp;&nbsp;- <!--a href="pov_000d.htm"--><b>POV-Ray Details</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_000d.htm">Was ist Wo?</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_100d.htm">'povray.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_200d.htm">'quickres.ini'</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="pov_300d.htm">Ausgabe Kommandos</b></a><br>
+ &nbsp;&nbsp;&nbsp;<b>&gt;</b> <!--a href="pov_400d.htm"--><b>Kommando-Zeile</b></a><br>
+<br>
+&nbsp;&nbsp;- <a href="var_000d.htm">&Uuml;ber Variable</b></a><br>
+<br>
+&nbsp;&nbsp;- <a href="inc_000d.htm">Ein kurzes</b></a><br>
+<nobr>  &nbsp;&nbsp;&nbsp;&nbsp;<a href="inc_000d.htm">Include-Dateien-Tutorial</b></a></nobr><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td> <!-- global-->
+<h2 align="center">Die Optionen der Kommandozeile<b></b></h2>
+<br>
+
+<font size="+1">Es gibt einige Befehlsabk&uuml;rzungen f&uuml;r die Kommandozeile (command line) mit interesanten M&ouml;glichkeiten.</font><br>
+<br>
+<font size="+1"><b>Wechsel des Ausgabeformates (output file type)</b></font> f&uuml;r die gerenderten Bilder.<br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_command_line_1.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="466" height="200"></a>
+      </td>
+  </tr></table>
+</div>
+&nbsp; <font size="-1">Mehr siehe: <a href="pov_300d.htm">Ausgabeformatbefehle</b></a></font><br>
+
+<br>
+<font size="+1"><b>&Auml;nderung der Bildgr&ouml;&szlig;e</b>.</font><br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_command_line3_1.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="466" height="200">
+      </td>
+  </tr></table>
+</div>
+    Short cut z.B.:  +w400 +h400<br>
+    Langversion (z.B. f&uuml;r ini-Dateien):
+    width=400 height=400 <br>
+
+
+<br>
+<font size="+1"><b>Partielles Rendern eines Bildausschnitts.</b></font><br>
+<div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_command_line4_1.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="466" height="154">
+      </td>
+  </tr></table>
+</div>
+   Short cut z.B.: +sc100 +ec300 +sr50 +er200<br>
+   Langversion (z.B. f&uuml;r ini-Dateien):
+   Start_Column=100 End_Column=300 Start_Row=50  End_Row=200<br>
+<font size="-1">Dies ist sehr n&uuml;tzlich zum Rendern von kleinen Details bei sehr langen Bildberechnungen.
+(z.B. um ein Detail durch partielles Rendern zu korregieren und mittels 'cut and past' in einem Graphik-Programm zu reparieren!)<br>
+</font><br>
+<br>
+<font size="+1"><b>Fortsetzung zuvor begonnener Bildberechnungen mit '+c'</b></font> (continue).<br>
+ Dieser Befehl <b>sollte mit POV -Ray 3.7 nicht verwendet werden,<br> wenn das Progamm mit mehreren Threads rechnet !!!</b><br>
+ <font size="-1">(Es ist m&ouml;glich, dass POV-Ray dabei versagt, einige Quadrate fertig zu berechnen, wenn sie zuvor unvollst&auml;ndig berechnet waren.)</font>
+ Wenn Sie &uuml;ber die Zahl der Threads, die das Programm verwendet unsicher sind, dann &ouml;ffnen Sie das Men&uuml; 'Render' -> 'Thread Count ...' im POV-Ray-Editor.<br>
+
+ <div align="center">
+  <table border="3" cellpadding="0" cellspacing="0" bgcolor="#FFFADD"
+         bordercolor="#C0C0C0" bordercolordark="#808080" bordercolorlight="#FFFFFF">
+  <tr><td> <img src="im/povray_command_line2_1.jpg" alt="POV-Ray jpeg" title="POV-Ray jpeg"
+           border="0" hspace="0" vspace="0" width="466" height="200">
+      </td>
+  </tr></table>
+</div>
+Mit diesem Befehl kann man lange Renderaufgaben abbrechen und zu einem sp&auml;teren Zeitpunkt wieder fortsetzen.<br>
+<font size="-1"><b>Anmerkung:</b> Die Bildgr&ouml;&szlig;e muss dieselbe sein und die tempor&auml;re Datei der vorherigen begonnenen Bildberechnung
+mit der Dateiendung '.pov-state' muss im jeweiligen Ausgabepfad noch existieren.</font><br>
+<br>
+Mehr &uuml;ber die m&ouml;glichen Abk&uuml;rzungen f&uuml;r die Kommandozeile siehe originale POV-Ray-Hilfe (unter 'command line')!<br>
+<br>
+<br>
+
+
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+     <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

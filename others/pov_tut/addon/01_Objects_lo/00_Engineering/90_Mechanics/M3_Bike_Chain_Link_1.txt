@@ -1,0 +1,63 @@
+//------------------------------------------------------------------ optionals textures 
+#declare Chain_Link_Outer_Texture = 
+         texture { Chrome_Metal 
+                   pigment{ color rgb< 1, 0.99, 0.95>*0.3 }  
+                   normal { bumps 0.05 scale 0.00005}
+                   finish { phong 1 reflection 0.15 metallic }
+                 } // end of texture 
+#declare Chain_Link_Inner_Texture = 
+         texture { pigment{ color rgb< 1, 1, 1>*0.25 }  
+                   finish { phong 0.6 reflection 0.02 metallic }
+                 } // end of texture 
+#declare Chain_Axis_Texture = 
+         texture { pigment{ color rgb< 1, 0.95, 0.9>*0.15 }  
+                   normal { bumps 0.05 scale 0.00005}
+                   finish { phong 1 reflection 0.15 metallic  }
+                 } // end of texture 
+#declare Chain_Roller_Texture = 
+         texture { pigment{ color rgb< 1, 1, 1>*0.15 } 
+                   finish { phong 0.7 reflection 0.15 metallic  }
+                 } // end of texture 
+//----------------------------------------------------------------------------------------------------// 
+#include "Bike_Chain_Link_1.inc" 
+//----------------------------------------------------------------------------------------------------// 
+union{ 
+object{ Bike_Chain_Link_1( // moving in x+; link axes in z, links vertical !!
+                          // in= narrow links, thick axis(roller)  out = farer distant linksm, thin axis  
+                          0, // Link_Type_, // 0 = inner link, 1 = outer link
+                          0.0127,  // Pitch_,           //  = 0.0127, //   , // pitch or link distance 
+                          0.012/2, // R_end_,           // ~ 0.012/2, // half height, end radius  
+                          0.0125,  // Fillet_R_ ,       // ~ 0.075, //  
+                          0.0039,  // Roller_R_,        // 0.0077,  // roller radius
+                          0.015,   // Total_Width_,     // ~0.015  // in z direction  
+                          0.0015,  // Plate_Thickness_, // ~0.0015 // steel thickness of plates
+                          0.0005,  // Side_Tween_R_,    // ~0.001  // ring between in/out
+                          0.0005,  //Border_R_,  
+                       ) // ---------------------------------------------------------------------------
+        scale<1,1,1>  rotate<0,0,0>  translate<0,0,0>  
+      } // end of object ------------------------------------------------------------------------------ 
+//-----------------------------------------------------------------------------------------------------// 
+object{ Bike_Chain_Link_1( // moving in x+; link axes in z, links vertical !!
+                          // in= narrow links, thick axis(roller)  out = farer distant linksm, thin axis  
+                          1, // Link_Type_, // 0 = inner link, 1 = outer link
+                          0.0127,  // Pitch_,           //  = 0.0127, //   , // pitch or link distance 
+                          0.012/2, // R_end_,           // ~ 0.012/2, // half height, end radius  
+                          0.0125,  // Fillet_R_ ,       // ~ 0.075, //  
+                          0.0039,  // Roller_R_,        // 0.0077,  // roller radius
+                          0.015,   // Total_Width_,     // ~0.015  // in z direction  
+                          0.0015,  // Plate_Thickness_, // ~0.0015 // steel thickness of plates
+                          0.0005,  // Side_Tween_D_,    // ~0.001  // ring between in/out
+                          0.0005,  //Border_R_,  
+                       ) // --------------------------------------------------------------------------- 
+        scale<1,1,1>  rotate<0,0,0>  translate<-0.0127,0,0>  
+      } // end of object ------------------------------------------------------------------------------ 
+rotate< 55,0,0>  
+translate<0.00,-0.00,-0.01>
+} // end uni 
+//---------------------------------------------------------------------------------------------------// 
+
+
+
+
+
+

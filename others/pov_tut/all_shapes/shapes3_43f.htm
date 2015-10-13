@@ -1,0 +1,321 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Objets G&eacute;om&eacute;triques de POV-Ray 3.6 / 3.7 - de mon fichier include &quot;shapes3.inc&quot;</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="keywords" content="raytracing, tutorial, pov, povray, POV-Ray, 3d graphics, raytracing descriptions, povray tutorials, beginners, advanced, geometric objects, csg, macros">
+<meta name="description" content="Defining geometric objects by macros for the raytracing program POV-Ray 3.6, povray, pov ">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><font size="2"><nobr>Descriptions et exemples </nobr> pour le <nobr> POV-Ray raytracer</nobr>
+                      <nobr>par Friedrich A. Lohmueller</nobr><a name="top"></a></font>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> &nbsp; Objets G&eacute;om&eacute;triques de POV-Ray</font>
+ </div>
+ </td>
+ <td align="right">
+    <a href="shapes3_43e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+    <a href="shapes3_43e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a></font><br>
+    <a href="shapes3_43i.htm"><font size="2">Italiano</font></a>&nbsp;
+    <a href="shapes3_43f.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+    <a href="shapes3_43d.htm"><font size="2">Deutsch</font></a>&nbsp;
+    <a href="shapes3_43d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutori&egrave;l POV-Ray</nobr></b></a><br>
+&nbsp;<br>
+<a href="../all_shapes/shapes000f.htm">Objets G&eacute;om&eacute;triques</b></a><br>
+ &nbsp;&nbsp; <a href="../all_shapes/shapes000f.htm">table des mati&egrave;res</a><br>
+<br>
+<a href="shapes3_0000f.htm">Objets de &quot;shapes3.inc&quot;</b></a><br>
+-  <a href="shapes3_11f.htm">Segment_of_CylinderRing</b></a></nobr><br>
+-  <a href="shapes3_20f.htm">Segment_of_Torus</b></a><br>
+-  <a href="shapes3_21f.htm">Segment_of_Object</b></a><br>
+-  <a href="shapes3_40f.htm">Egg</b></a><br>
+-  <a href="shapes3_40f.htm">Egg_Shape</b></a><br>
+<b>&gt;</b><!--a href="shapes3_43f.htm"--><b>Facetted_Egg</b></a><br>
+<b>&gt;</b><!--a href="shapes3_43f.htm"--><b>Facetted_Egg_Shape</b></a><br>
+-  <a href="shapes3_42f.htm">Facetted_Sphere</b></a><br>
+-  <a href="shapes3_45f.htm">Ring_Sphere</b></a><br>
+-  <a href="shapes3_30f.htm">Column_N</b></a><br>
+-  <a href="shapes3_30f.htm">Column_N_AB</b></a><br>
+-  <a href="shapes3_30f.htm">Pyramid_N</b></a><br>
+-  <a href="shapes3_30f.htm">Pyramid_N_AB</b></a><br>
+-  <a href="shapes3_50f.htm">Round_Pyramid_N_out</b></a><br>
+-  <a href="shapes3_50f.htm">Round_Pyramid_N_in</b></a><br>
+-  <a href="shapes3_80f.htm">Round_Cylinder_Tube</b></a><br>
+-  <a href="shapes3_85f.htm">Rounded_Tube_AB</b></a><br>
+-  <a href="shapes3_85f.htm">Rounded_Tube</b></a><br>
+-  <a href="shapes3_22f.htm">Round_N_Tube_Polygon</b></a><br>
+-  <a href="shapes3_60f.htm">Round_Conic_Torus</b></a><br>
+-  <a href="shapes3_65f.htm">Round_Conic_Prism</b></a><br>
+<nobr>
+-  <a href="shapes3_70f.htm">Half_Hollowed_Rounded_Cyl1</b></a></nobr><br>
+-  <a href="shapes3_70f.htm">Half_Hollowed_Rounded_Cyl2</b></a><br>
+
+<br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top"> <!-- Content -->
+
+
+
+<table width="90%" align="center" border="0">
+<tr><td colspan="2"><!-- global -->
+<font size="2">Cette forme est d&eacute;finie dans mon
+    <a href="../down/insert_a.htm" alt="Download" title="Download">include file &quot;shapes3.inc&quot;</a>
+   ( anciennement &quot;shapes_lo.inc&quot; ) .</font>
+
+<div align="center">
+<div align="center">
+<table  border="0" bordercolor="#c0c0c0" cellspacing="5" cellpadding="4" width="90%">
+ <tr>
+  <td>
+  <div align="center">
+   <table align="center" border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr43b.jpg" border="0" width="300" height="400" alt="Facetted_Egg" title="Facetted_Egg"></td>
+       </tr></table>
+   <font size="5"><b>Facetted_Egg</b></font>,<br>oeuf facett&eacute;<br>
+   <font size="2">
+   <i>syntaxe g&eacute;n&eacute;rale :</i>
+   </font>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td  valign="top" bgcolor="#fefefe">
+<pre><b>
+object{ Facetted_Egg(
+          Quarter_Meridian_Segments,
+          Equatorial_Segments
+        ) //------------------------
+        texture{ ... ... }
+      } // end of object -----------
+
+</b></td></pre></tr></table>
+
+  </div>
+  </td>
+  <td>
+  <div align="center">
+
+      <table align="center" border="1"  bgcolor="#efefef"
+             bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+       <tr><td><img src="im/mymcr44b.jpg" border="0" width="300" height="400" alt="Facetted_Egg_Shape" title="Facetted_Egg_Shape"></td>
+       </tr></table>
+   <font size="5"><b>Facetted_Egg_Shape</b></font>,<br>forme d'oeuf facett&eacute;<br>
+   <font size="2">
+   <i>syntaxe g&eacute;n&eacute;rale :</i>
+   </font>
+ <table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+  <tr><td  valign="top" bgcolor="#fefefe">
+<pre><b>object{ Facetted_Egg_Shape(
+          Quarter_Meridian_Segments,
+          Equatorial_Segments,
+          Lower_Scale, Upper_Scale
+        ) //-----------------------
+        texture{ ... ... }
+      } // end of object -----------</b></td></pre></tr></table>
+
+ </div>
+ </td>
+</tr></table>
+    <font size="2">
+     <b>Quarter_Meridian_Segments</b> =   nombre de segments dans un quart de m&eacute;ridien,<br>
+    <b>Equatorial_Segments</b> = nombre de segments le long de l'&eacute;quateur,<br>
+    <b>Lower_Scale</b> = y &eacute;chelle de la moiti&eacute; inf&eacute;rieure de la forme,<br>
+    <b>Upper_Scale</b> =  y &eacute;chelle de la moiti&eacute; sup&eacute;rieure de la forme.<br>
+    La hauteur totale de ces formes est &agrave; l'&eacute;chelle 2 unit&eacute;.<br>
+    </font>
+
+<i>Exemples :</i>
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>#include "shapes3.inc"
+object{ Facetted_Egg (6, 12 )
+        texture{ pigment{ color rgb&lt;1,1,1&gt;}
+                 finish { phong 0.1}
+               }
+        scale 1 rotate&lt;0,10,0&gt;
+        translate&lt;0,1.15,0&gt;
+      } // end of object -----------------------</b></pre>
+</td><td>
+<pre><b>#include "shapes3.inc"
+object{ Facetted_Egg_Shape (9, 22, 1.85, 0.80)
+        texture{ pigment {color rgb&lt;1,1,1&gt;*1.3}
+                 finish { phong 0.1}
+               }
+        scale 1 rotate&lt;0,10,0&gt;
+        translate&lt;0,1.85,0&gt;
+      } // end of object -----------------------</b></td></pre>
+</font>
+
+ </tr>
+</table>
+<br>
+<hr width="90%">
+
+<table align="center" width="95%">
+<tr><td>
+
+<font size="4"><b>La macro en d&eacute;tai</b></font><br>
+<font size="3">
+Ceci est r&eacute;alis&eacute; par une intersection de prismes avec un oeuf facett&eacute; shape externe &agrave; un bout :</font>
+ <div align="center">
+ <table align="center" border="0" >
+   <tr>
+     <td colspan="1">
+      <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+      <tr>
+       <td><img src="im/mymcr43c.jpg" border="0" width="400" height="300" alt="Facetted_Sphere" title="Facetted_Sphere">
+       </td>
+      </tr>
+      </table>
+     </td>
+     <td colspan="1">
+     <table align="center" border="4"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr>
+      <td><img src="im/mymcr43d.jpg" border="0" width="400" height="300" alt="Facetted_Sphere" title="Facetted_Sphere"></td>
+     </tr></table>
+     </td>
+   </tr>
+   <tr>
+       <td><font size="2"><b>Facetted_Sphere - 1 prisme &eacute;l&eacute;ment de l'intersection<br></b></font></td>
+       <td><font size="2"><b>Facetted_Sphere (6, 12 ) = intersection de 12 prismes<br></b></font></td>
+</tr>
+
+
+  </tr></table>
+  </div>
+<br>
+<div align="center">
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>
+//------------------------ macro Facetted_Egg_Shape()
+#macro Facetted_Egg_Shape( Quarter_Segments,
+                           Radial_Segments,
+                           Lower_Scale,
+                           Upper_Scale
+                         ) //-----------------------
+#local Facets_Silhouette =
+union{
+ prism {
+   -2 ,2 ,  Quarter_Segments +3
+   &lt; -2,-1.00&gt;,
+ #local Nr    =  -Quarter_Segments;
+ #local EndNr =  0;
+ #while (Nr &lt; EndNr+1)
+   #local Angle_degrees = Nr* 90/Quarter_Segments;
+   #local Angle_radians = radians(Angle_degrees);
+   &lt; cos (Angle_radians) , sin (Angle_radians)&gt; ,
+ #local Nr = Nr + 1 ;
+ #end
+   &lt; -2, 0>
+ //turns prism in z direction:
+ rotate &lt;-90,0,0&gt; scale &lt;1,1,-1&gt;
+ scale &lt;1,Lower_Scale,1&gt;
+ } // end of prism object --------------------------
+
+ prism {
+  -2 ,2 , Quarter_Segments+4
+  &lt; -2, 0&gt;,
+  #local Nr    =  0;
+  #local EndNr =  Quarter_Segments;
+  #while (Nr &lt; EndNr+1)
+   #local Angle_degrees = Nr* 90/Quarter_Segments;
+   #local Angle_radians = radians(Angle_degrees);
+  &lt; cos (Angle_radians) , sin (Angle_radians)&gt; ,
+  #local Nr = Nr + 1 ;
+  #end
+  &lt; -2, 1&gt;,
+  &lt; -2, 0&gt;
+  //turns prism in z direction:
+ rotate &lt;-90,0,0&gt; scale &lt;1,1,-1&gt;
+ scal e&lt;1,Upper_Scale,1&gt;
+ } // end of prism object -----------------------
+}// end of union
+
+intersection{
+ #local Nr = 0;                  // start
+ #local EndNr = Radial_Segments; // end
+ #while (Nr &lt; EndNr)
+
+ object{ Facets_Silhouette rotate &lt;0,Nr * 360/EndNr,0&gt;}
+
+ #local Nr = Nr + 1;    // next Nr
+ #end // ---------------  end of loop
+} // end of intersection
+
+#end // --------- end of macro Facetted_Egg_Shape()</b></font></td></pre>
+   </tr></table>
+</div>
+
+<font size="2">
+Cet objet oeuf facett&eacute; est r&eacute;alis&eacute;e avec la m&ecirc;me macro avec
+une &eacute;chelle inf&eacute;rieure fixe Lower_Scale = 1.15 et une &eacute;chelle sup&eacute;rieure Upper_Scale = 1.55 :</font>
+
+<div align="center">
+<table border="2" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF" bordercolorlight="#808080">
+   <tr><td>
+<pre><b>// ------------------------------------------------- macro Facetted_Egg()
+#macro Facetted_Egg(N_Quarter_Segments, N_Radial_Segments)
+object{ Facetted_Egg_Shape(N_Quarter_Segments,N_Radial_Segments,1.15,1.55)
+        translate &lt; 0, 1.15, 0&gt;
+        scale 2/(1.15 + 1.55)
+      } //---------------------
+#end // -------------------------------------- end of macro Facetted_Egg()</b></font></td></pre>
+   </tr></table>
+</div>
+
+
+
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

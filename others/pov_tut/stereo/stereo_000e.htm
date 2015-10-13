@@ -1,0 +1,181 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<title>3D Stereo Images and 3D Stereo Animations with POV-Ray - Stereo Images in Cross-Eye View</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller">
+<meta name="description" content="3D Stereo Images and 3D Stereo Animations with POV-Ray - Stereo Images in Cross-Eye View">
+<meta name="keywords" content="Cross-Eye View, 3D Stereo Images, 3D Stereo Animation, POV, POVRAY, POV-Ray, Raytracing, 3d graphic, 3d animations">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                  <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Stereo Images and Stereo Animations <nobr>with POV-Ray</nobr></b></font>
+ </td></h6>
+ <td align="right">
+        <a href="stereo_000d.htm"><font size="2">Deutsch </font></a>
+        <a href="stereo_000d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a><br>
+        <a href="stereo_000i.htm"><font size="2">Italiano</font></a>
+        <a href="stereo_000i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="stereo_000f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="stereo_000f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../../pov/g_stereo_00.htm" target="_new">Gallery Stereo Images</b></a><br>
+ - <a href="../../pov_anim/ani_9000d.htm" target="_new">Gallery Stereo Animation</b></a><br>
+ - <a href="../pov__eng.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<font size="+1">&nbsp;  <!--a href="stereo_000e.htm"--><b>Stereo Images</font> and</b></a><br>
+<font size="+1">&nbsp;  <!--a href="stereo_000e.htm"--><b>Stereo Animations</b></a></font><br>
+ &nbsp;<b>&gt;</b> <!--a href="stereo_000e.htm"--><b>Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="stereo_050e.htm">Cross-Eye View</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_100e.htm">Stereo Image simple</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_150e.htm">Stereo Image advanced</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_200e.htm">Combining Image Pairs</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_300e.htm">Stereo Animations 1</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_310e.htm">Stereo Animations 2</b></a><br>
+ &nbsp; &nbsp; <a href="stereo_400e.htm">Examples Stereo Ani</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table border="0" width="95%">
+  <tr><td colspan="2" valign="top"><!-- global table-->
+<font size="1">This short tutorial descripes a fast method to make stereoscopic image pairs
+by using two cameras with symmetric frustum (also called 'toe-in'). For more on stereoscopic images
+and the theory behind see my <a href="http://www.f-lohmueller.de/links/index_te.htm#stereo">Stereo-Links</a>.</font>
+<table align="center" border="1" cellspacing="2" cellpadding="2" width="90%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_050e.htm"><img src="im/CrossEyeView.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_050e.htm"><font size="3">
+    &nbsp;Cross-Eye View</b></a></font>
+    <font size="2"><br>
+    <nobr>&nbsp;How to view stereoscopic images in Cross-Eye View</nobr></font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_100e.htm"><img src="im/Stereo_simple.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_100e.htm"><font size="3">
+    &nbsp;Stereo Images simple</b></a></font>
+    <font size="2"><br>
+    <nobr>&nbsp;Stereo images with camera looking fix in +z direction.</nobr></font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_150e.htm"><img src="im/VectorsAdvanced.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_150e.htm"><font size="3">
+    &nbsp;Stereo Images advanced</b></a></font>
+    <font size="2"><br>
+    &nbsp;Stereo images with free camera view<br>
+    &nbsp;in every direction.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_200e.htm"><img src="im/Stereo_Pairs.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_200e.htm"><font size="3">
+    &nbsp;Combining Pairs of Stereo Images</b></a></font>
+    <font size="2"><br>
+    &nbsp;Combining stereo image pairs with POV-Ray</nobr><br>
+    &nbsp;using image_map and orthographic camera.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_300e.htm"><img src="im/Stereo_Serie.jpg" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_300e.htm"><font size="3">
+    &nbsp;Stereo Animations (1)</b></a></font>
+    <font size="2"><br>
+    &nbsp;How to make with POV-Ray a serie<br>
+    &nbsp;of stereo images for an animation.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_310e.htm"><img src="im/Stereo_Ani_10_small.gif" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_310e.htm"><font size="3">
+    &nbsp;Stereo Animations (2)</b></a></font>
+    <font size="2"><br>
+    &nbsp;How to combine with POV-Ray a serie<br>
+    &nbsp;of stereo images for an animation.</font></td>
+</tr>
+<tr>
+ <td width="80" height="60" align="center" valign="top">
+   <a href="stereo_400e.htm"><img src="im/Stereo_Ani_01s.gif" border="0" width="160" height="80">
+   <img src="im/Stereo_Ani_04as.gif" border="0" width="160" height="80"></a></td>
+ <td valign="top"><a href="stereo_400e.htm"><font size="3">
+    &nbsp;Examples for Stereo Animations<br>
+    &nbsp;with POV-Ray</b></a></font><br>
+    <font size="2">
+    &nbsp;Examples with source codes.</font></td>
+</tr>
+</table>
+
+
+
+</td>
+</tr>
+</table>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!--footer -->
+<hr size="3">
+<table></tr>
+ <td width="40%" >
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2015<br>
+  <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+ </td>
+ <td width="35%">&nbsp;
+ </td>
+ <td align="right" width="25%">
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+ </font>
+
+ </td>
+ <td>
+   </td></tr></table>
+</body>
+</html>

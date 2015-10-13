@@ -1,0 +1,211 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texturen mit POV-Ray - layered textures - &Uuml;berlagerung von Texturen - Netzgitter, Raster</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2007, Friedrich A. Lohmueller">
+<meta name="description" content="Texturen mit POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Texturen, Design von Oberflaechen">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=660,height=520");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Gestaltung von Oberfl&auml;chen mit POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_893e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_893e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_893i.htm"><font size="2">Italiano</font></a>
+        <a href="tex_893i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_893f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_893f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#texture"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000d.htm">Oberfl&auml;chengestaltung</b></a><br>
+ &nbsp;&nbsp;-      <a href="tex_000d.htm">Farben und Texturen</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000d.htm">Inhalt</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001d.htm">texture Syntax</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001d.htm">Grundbeispiel</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200d.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300d.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2d.htm">normal Beispiele</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400d.htm">finish{ ... } </b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_210d.htm">Vorgefertigtes</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210d.htm">Regeln</a><br>
+ &nbsp; &nbsp; - <a href="tex_150d.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160d.htm">textures.inc</b></a><br>
+-->
+ &nbsp; &nbsp; <a href="tex_110d.htm">Farben Do-it-Yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110d.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120d.htm">Transparenz</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700d.htm">Muster</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700d.htm">patterns -Arten</b></a><br>
+ &nbsp; &nbsp; &nbsp; Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500d.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550d.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Streifenmuster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750d.htm">Muster Listen</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750d.htm">Reguläre Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755d.htm">Random Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760d.htm">Fractal Muster</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765d.htm">Besondere Muster</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780d.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780d.htm">warp mapping</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_790d.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800d.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800d.htm">Mapping-Methoden</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600d.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820d.htm">pigment_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830d.htm">texture_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840d.htm">normal_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850d.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860d.htm">material_map{...}</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870d.htm">image_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890d.htm">&Uuml;berlagerungen</b></a><br>
+ &nbsp; &nbsp; &nbsp;      <a href="tex_890d.htm">Layered Textures</b></a><br>
+ &nbsp; &nbsp; <b>&gt;</b> <!--a href="tex_893d.htm"--><b>Netzgitter, Raster</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_900d.htm">Eigene Texturen</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="90%" align="center"><tr><td><!-- global table-->
+
+<font size="6"><b><p align="center">layered textures</b><br></font><font size="4">  &Uuml;berlagerte Texturen</font><br>
+<h3>Netzgitter, Raster</h3>
+</font></b>
+<font size="2"><p>Zwei Streifengitter, jedes von ihnen durch eine &quot;color_map &quot; (d&uuml;nn dunkel undurchsichtig + breit klar transparent) realisiert.
+ Eines der Gitter wird um 90 Grad rotiert. Die &Uuml;berlagerung wird auf einer wei&szlig;en Grundschicht platziert.<br>
+ Anwendungsm&ouml;glichkeiten: <br>
+ Koordinatensysteme, Karopapier, Fliesen, (ohne wei&szlig;en Hintergrund) Maschendrahtz&auml;une.</p>
+<p><br>
+// <b>Beispiel: &quot;Gitterraster&quot;</b>:</p></font>
+<div align="center">
+<table align="CENTER" border="0" cellspacing="5" cellpadding="5" bordercolor="#c0c0c0" cellpadding=2 >
+<tr>
+<td valign="TOP"">
+<table border="1" cellspacing="3" cellpadding="4" bgcolor="#EFEFEF"
+       bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+<tr><td>
+<pre><b>//------------------&lt;&lt;&lt;&lt; grid macro
+#macro Raster(RScale, RLine)
+pigment{gradient x
+        scale RScale
+        color_map{
+        [0.000   color rgbt&lt;0,0,0,0&gt;]
+        [0+RLine color rgbt&lt;0,0,0,0&gt;]
+        [0+RLine color rgbt&lt;1,1,1,1&gt;]
+        [1-RLine color rgbt&lt;1,1,1,1&gt;]
+        [1-RLine color rgbt&lt;0,0,0,0&gt;]
+        [1.000   color rgbt&lt;0,0,0,0&gt;]
+        }}
+#end // of macro
+//-----------------------------------
+box{&lt;0,0,0&gt;,&lt; 2,0.1,2&gt;
+    texture{
+      pigment{color rgb&lt;1,1,1&gt;*1.3}}
+    texture{ Raster( 1.0, 0.045)
+             scale 0.25}
+    texture{ Raster( 1.0, 0.045)
+             scale 0.25
+             rotate&lt;0,90,0&gt;}
+    rotate&lt;0,0,0&gt;
+    scale 2
+    rotate&lt;5,0,0&gt;
+    translate&lt;-1.0,1.5,-1.5&gt;}
+//-------------------------- end ----</td></b></pre></tr></table>
+</td>
+<td valign="top">
+<font size="-1">Demonstration wie man das macht:</font><br>
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/povgr_0i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/grid_0.jpg" border="0" width="240"  height="180"
+     alt="Sample layered grids 600x450" title="Sample layered grids 600x450"></a></td>
+  </tr>
+ </table>
+<font size="-1">Das daraus resultierende Bild:</font><br>
+ <table  align="center"  border="5"  bgcolor="#EFEFEF"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <a href="javascript:ShowImage('im/povgr00i.htm')"
+     onmouseover="window.status='ShowSingleImage';return true"
+     onmouseout="window.status=''">
+     <img src="im/grid00t.jpg" border="0" width="240"  height="180"
+     alt="Sample grid 600x450" title="Sample grid 600x450"></a></td>
+  </tr>
+ </table>
+</td>
+</tr>
+<tr><td colspan="2"><div align="center">
+<h5 align="center">Zugeh&ouml;rige Szenenbeschreibung der Demo-Szene f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="pov/grid_0.txt">&quot;.txt&quot;-Datei</a> oder
+ <a href="pov/grid_0.pov">&quot;.pov&quot;-Datei</a></h5>
+<h5 align="center">Zugeh&ouml;rige Szenenbeschreibung zur &quot;Raster-Box&quot; f&uuml;r <nobr>POV-Ray:</nobr><br>
+ <a href="pov/grid00.txt">&quot;.txt&quot;-Datei</a> oder
+ <a href="pov/grid00.pov">&quot;.pov&quot;-Datei</a></h5>
+<br>
+
+</div></td></tr>
+</table>
+</div>
+
+</td></tr></table><!-- global table -->
+
+
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2007<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

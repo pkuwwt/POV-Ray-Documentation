@@ -1,0 +1,31 @@
+//-------------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------//
+#include "shapes_lo2/Round_Mace_Torus.inc"  
+//-------------------------------------------------------------------------------------//
+object{ Round_Mace_Torus (  0.50, // R_main,    // mace top radius (r_major)
+                            0.05, // R_Border,  // border radius (r_minor)
+                            0.60, // H_main,    // height y of main circle center
+                            0.25, // R_base,    // basic half width in x of the mace  >= border radius and < mace top radius 
+
+                            1 , // Shape_filled_On, // 0 = non, 1 = filled 
+                            0  // Merge_On - for transparent materials
+                          ) // --------------- in x+direction ----------------------//
+
+        texture { pigment{ color  rgb< 1, 1, 1>}
+                  finish { phong 1 reflection 0.00}
+                } // end of texture 
+
+/*
+        material{   //-----------------------------------------------------------
+          texture{ pigment{ rgbf <0.98, 0.98, 0.98, 0.69> }
+                   finish { diffuse 0.1 reflection 0.1  
+                            specular 0.8 roughness 0.0003 phong 0.5 phong_size 400}
+                  } // end of texture -------------------------------------------
+          interior{ ior 1.5 caustics 0.5
+                  } // end of interior ------------------------------------------
+        } // end of material ----------------------------------------------------
+*/
+          scale<1,1,1>  rotate<0,0,0>  translate<0,0,0>  
+       }  // end of object ----------------------------------- 
+//-------------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------//

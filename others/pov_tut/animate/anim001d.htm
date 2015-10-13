@@ -1,0 +1,345 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller">
+<meta name="keywords" content="3D-Animationen, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg Video, avi Video, animierte Gifs, Raytracing Beschreibungen, POV-Ray Beispiele, POV-Ray Anleitungen">
+<meta name="Description" content="3D-Animationen mit POV-Ray -  deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik">
+<title>3D-Animationen mit POV-Ray - deutsche Beschreibungen zum Raytracer POVRAY mit Beispielen
+       zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ger.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="zur&uuml;ck zur &Uuml;bersicht" title="zur&uuml;ck zur &Uuml;bersicht"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animationen mit POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Grundlagen und Beispiele zu Animationen.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim001e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim001e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim001i.htm"><font size="2">Italiano</font></a>
+        <a href="anim001i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim001f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="anim001f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm"> Animationen Galerie</b></a><br>
+ - <a href="../pov__ger.htm"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anid.htm">3D Animation</b></a><br>
+ &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; <!--a href="anim001d.htm"-->  0. Grundlagen</b></a><br>
+&nbsp; <b>&gt</b> 1. <!--a href="anim001d.htm"--><b>Beispiel</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002d.htm">Von Bildern zum Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005d.htm">Grundbegriffe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008d.htm">Animationsbefehle</b></a><br>
+&nbsp; <!--a href="anim11d.htm"--> I. Zyklische Animationen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11d.htm">Objekt-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112d.htm">Planeten im Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113d.htm">Animierte Uhr</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12d.htm">Kamera-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121d.htm">Kamera Geradeausflug</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13d.htm">Western-Kutschen</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim13d.htm">-Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131d.htm">Rollende R&auml;der</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14d.htm">Zahnradgetriebe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141d.htm">Rollende Kette</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142d.htm">Fahrradkette</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15d.htm">Pendelschwingung</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151d.htm">Newtonpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152d.htm">Schaukelstuhl</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16d.htm">Federpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170d.htm">Koppelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17d.htm">Pleuelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18d.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190d.htm">Z&auml;hler + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200d.htm">Faltung eines W&uuml;rfels</b></a><br>
+
+&nbsp; II. Nichtlineare Bewegungen<br>
+&nbsp; &nbsp;&nbsp; 1.0 <a href="anim220d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim220d.htm"> +Bremsen 1</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.1 <a href="anim222d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim222d.htm"> + Bremsen 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240d.htm">Fallen + H&uuml;pfen</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260d.htm">Beschleunigung nach</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260d.htm">physikalischen Formeln</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280d.htm">Geschwindigkeitssteuerung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280d.htm">mit Spline-Funktionen</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animationspfade<br>&nbsp; &nbsp; &nbsp;  mit Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210d.htm">Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21d.htm">Geschlossene Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22d.htm">Animationspfade</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table align="center" width="95%" cellpadding="5">
+<tr><td width="100"><img src="im/sphere1st.gif" border="0" width="80" height="60"></td>
+    <td >
+     <h1>&nbsp; &nbsp; &nbsp; Ein erstes Beispiel. </h1>
+     <h5> &Uuml;ber Szenen-Dateien, Animations-ini-Dateien und den clock-Wert.</td></h5>
+</tr></table>
+<table align="center" width="95%" cellpadding="5">
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td colspan="2">
+<font size="-1"> F&uuml;r eine Animation mit POV-Ray ben&ouml;tigen wir nur 2 verschiedenartige Dateien:<br>
+ 1. die POV-Ray-Szenendatei file (Endung: .pov), welche den &quot;clock&quot;-Wert benutzt und <br>
+ 2. die POV-Ray-Amimations-Inizialisierungsdatei (Endung: .ini), welche den &quot;clock&quot;-Wert definiert<br>
+ &nbsp; &nbsp;
+ und mit jeweils ver&auml;ndertem &quot;clock&quot;-Wert die Szenendatei wiederholt aufruft.</font><br>
+</td></tr>
+<tr>
+ <td colspan="1" valign="top">
+  <b>Schritt 0:</b>  Wir erstellen eine einfache Szenen-Datei wie folgt:
+  <h3><b>&quot;sphere.pov&quot;</b></h3>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre>#version 3.7;
+global_settings{ assumed_gamma 1.0 }
+//---------------------------------------
+camera{ ultra_wide_angle
+        angle 75
+        right x*image_width/image_height
+        location &lt;0.0 , 1.0 ,-3.0&gt;
+        look_at  &lt;0.0 , 0.0 , 0.0&gt;}
+//---------------------------------------
+light_source{ &lt;1500,2500,-2500&gt;
+              color rgb&lt;1,1,1&gt; }
+//---------------------------------------
+sky_sphere{ pigment{color rgb&lt;1,1,1&gt;}}
+//---------------------------------------
+// Die rotierende Kugel:
+sphere{ &lt;0,0,0&gt;, 0.25
+        texture { pigment{ rgb&lt;1,0,0&gt;}
+                  finish { diffuse 0.9
+                           phong 1}
+                } // end of texture
+        translate&lt; 1.0, 0, 0&gt;
+        <b>rotate &lt; 0,360*clock,0&gt;//  &lt;-!!!!</b>
+       } // end of sphere ---------------
+//----------------------------------- end</td></pre></tr></table>
+</td>
+ <td colspan="1">
+  <table align="center" border="5" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/anim00.jpg" width="258"  height="320"
+           alt="scene file" title="scene file"></td></tr>
+  </table>
+</td></tr>
+<tr><td colspan="2">
+ <p align="justify"><b>Erkl&auml;rung:</b> <br>Die Kugel wird durch den Befehl
+ <b><nobr>translate &lt; 1.0, 0, 0&gt;</nobr></b> zur Seite verschoben.
+ Dann wird sie in dieser Animation um die <nobr>y-Achse</nobr> durch
+ <b><nobr>rotate &lt; 0,360*clock 0&gt;</nobr></b> gedreht.
+ <br><font size="-1"> (Achtung: Zuerst verschieben (translate) und erst dann rotieren!
+  Andernfalls wird das Resultat nicht besonders hinrei&szlig;end!)</font><br>
+ Der <b>&quot;clock&quot;-Wert</b> w&auml;chst w&auml;hrend der Berechnung der Einzelbilder der
+ Animation von 0 auf 1 an. (Seine Grundeinstellung ist &quot;<b>clock = 0</b>&quot;!)
+ Das Hochz&auml;hlen wird durch eine Animations-ini-Datei erledigt. <br>
+ <br><b>Test-Rechnungen:</b> Wir k&ouml;nnen das Bild dieser Szenen-Datei
+ wie jede andere pov-Datei zum Testen berechnen lassen.
+ Wir m&uuml;ssen die Variable &quot;clock&quot; nicht zuvor deklariert haben.
+ Die Grundeinstellung des &quot;clock&quot;-Wertes ist null.
+ Um die Szene z.B. in der Mitte der Animation zu sehen, k&ouml;nnen
+ wir das Wort &quot;clock&quot; vor&uuml;bergehend durch z.B. &quot;0.5&quot;
+ ersetzen.
+<br>
+<b>Ausgabe-Dateitype: (output file type)</b><br>
+Neu in POV-Ray 3.7: Die default-Ausgabe-Dateitype wurde in .png ge&auml;ndert (dies kann DTA nicht!)<br>
+Die <b>neue Ausgabe-Dateitype &quot;.jpg&quot;</b> funktioniert jetzt korrekt. Kommandozeile: <b>+fj</b><br>
+(Dies ist auch wegen der &uuml;blicherweise gro&szlig;en Anzahl von Einzelbildern (frames)<br>
+&nbsp; bei Animationen empfehlenswert).<br>
+In  POV-Ray 3.6 war die default-Ausgabe-Dateitype unter Windows &quot;.bmp&quot;. Kommandozeile: <b>+fb</b><br>
+ </td>
+</tr>
+
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+ <td colspan="1">
+  <b>Schritt 1:</b> Nun erstellen wir eine Animations-Steuerungs-Datei:<br>
+<font size="-1">Anmerkung: Die Ini-Datei muss im selben Verzeichnis<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;
+ wie die POV-Ray Szenendatei liegen!<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;
+ Man benutzt &quot;<b>;</b>&quot; anstatt &quot;//&quot; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;
+ f&uuml;r Kommentare in POV-Ray-ini-Dateien!<br>
+<br>  <h2><b>&quot;sphere.ini&quot;</b></h2>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>; POV-Ray animation ini file
+Antialias=Off
+Antialias_Threshold=0.1
+Antialias_Depth=2
+
+Input_File_Name="sphere.pov"
+
+Initial_Frame=1
+Final_Frame=30
+Initial_Clock=0
+Final_Clock=1
+
+Cyclic_Animation=on
+Pause_when_Done=off</b><td></pre></tr></table>
+ </td>
+ <td colspan="1">
+ <table align="center" border="5" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="im/anim01.jpg" width="258" height="356" alt="animation ini file" title="animation ini file"></td></tr>
+ <div><h6 align="center">
+ Szenen Beschreibungsdateien f&uuml;r POV-Ray:<br><a href="pov/sphere.ini"> &quot;sphere.ini&quot;</a>
+    und <br> <a href="pov/sphere.pov">&quot;sphere.pov&quot;</a></h6>
+ </div>
+ </table>
+</td></tr>
+<tr><td colspan="2">
+<p align="justify"><b>Erkl&auml;rung:</b> In der &quot;ini&quot;-Datei mu&szlig; in der Zeile
+&quot;<b>Input_File_Name=sphere1.pov</b>&quot;
+die richtige Pfadbezeichnung der zu rendernden POV-Ray-Datei stehen.
+Optimal ist es, wenn die zur Steuerung der Animation ben&ouml;tigte &quot;ini&quot;-Datei
+im gleichen Verzeichnis abgelegt ist wie die zugeh&ouml;rige &quot;pov&quot;-Datei!<br>
+Die Zeilen &quot;<b>Initial_Frame=1</b>&quot; und  &quot;<b>Final_Frame=30</b>&quot; legen fest,
+dass 30 Bilder gerechnet werden sollen.<br>
+Die Zeilen &quot;<b>Initial_Clock=0</b>&quot; &quot;<b>Final_Clock=1</b>&quot; geben den Start- und Endwert f&uuml;r
+die clock-Variable an. Er sollte m&ouml;glichst immer nur von 0 bis 1 gez&auml;hlt werden. <br>
+&quot;<b>Cyclic_Animation=on</b>&quot; sorgt daf&uuml;r dass bei einer zyklischen Animation das letzte Bild
+(= das erste Bild) nicht mehr berechnet wird.
+ </td>
+
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+</table>
+<table align="center" width="95%" cellpadding="5">
+<tr>
+ <td colspan="3" rowspan="1" valign="top">
+  <p align="justify"><b>Schritt 2:</b> Starten der Berechnung der Bilder der Animation<br>
+  Wir w&auml;hlen eine passende Bildaufl&ouml;sung. F&uuml;r Testzwecke w&auml;re es gut eine kleine Bildgr&ouml;&szlig;e
+  einzustellen (z.B. &quot;160 x 120&quot;) ohne Antialiasing (&quot;No AA&quot;).<br>
+ <b>Gestartet wird die Animation, indem man die ini-Datei startet</b> (nicht die pov-Datei !!!!) <br>
+  Wir starten mit (&quot;RUN&quot;) die Bildberechnung von POV-Ray, wobei wir die
+  ini-Datei im aktiven Fenster haben m&uuml;ssen!
+  <br>
+  POV-Ray beginnt die Berechnung der Szenendatei &quot;sphere1.pov&quot;
+  mit dem &quot;clock&quot;-Wert von 0
+  und speichert das berechnete Bild als frame Nr.1 mit dem
+  Dateinamen &quot;sphere101.bmp&quot; ab.
+  <br>
+  Dann berechnet das Programm den n&auml;chsten &quot;clock&quot;-Wert
+  <nobr>(neuer clock-Wert </nobr><nobr>= letzter clock-Wert + 1/Final_Frame,</nobr>
+  <nobr>hier: 0 + 1/30)</nobr> und startet die Berechnung unserer Szene
+   &quot;sphere1.pov&quot; mit diesem Wert erneut.
+  Das fertige Teilbild  wird als &quot;sphere102.bmp&quot; gespeichert.
+  <br>
+  Dies geht so weiter bis &quot;clock&quot; = 1 erreicht ist
+  mit der Bildbezeichnung &quot;sphere130.bmp&quot;.
+  </p>
+   <p><i><b>Probleme beim Starten von Animationen<br> mit <nobr>POV-Ray 3.6</nobr> unter Windows Vista?</b></i><br>
+<font size="-1"> Siehe meine Hinweise unter <br>
+ <nobr>&quot; <a href="../basic/povkursb.htm#vista">10. Benutzung von POV-Ray 3.6 unter Windows Vista</a> &quot;
+ !</nobr></font>
+ </p>
+</td>
+</tr>
+<tr>
+ <td colspan="2">
+ <table align="center" border="1" bgcolor="#EFEFEF"
+        bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+ <tr><td><img src="im/sphereall.jpg" width="300" height="250" alt="all frames" title="all frames"></td></tr>
+ </table><br>
+  <font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;  Vorschau-Ansicht der fertigen Einzelbilder (&quot;frames&quot;).</font></td>
+
+
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+
+<tr>
+ <td colspan="1" rowspan="1" valign="top">
+  <p align="justify"><b>Schritt 3: </b>Nachbearbeitung<br>
+  POV-Ray kann eine gerenderte Animation nur als einfache durchnummerierte
+  Einzelbilder (&quot;frames&quot;) abspeichern .<br>
+  Wir k&ouml;nnen einen schnellen Graphik-Betrachter mit einer Diashow-Funktion
+  verwenden um unsere Animation zu betrachten.<br>
+  Wenn wir unsere Animationen als <b>animierte Gif-Datei,
+  avi-, mov- oder mpeg-Datei</b> speichern wollen, m&uuml;ssen wir
+  dazu ein anderes Programm verwenden.<br>
+  </p>
+ </td>
+ <td colspan="1">
+   <table align="center"><tr><td >
+    <table align="center" border="2"
+     bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff" >
+     <tr><td><img src="im/sphere1.gif" width="160"  height="120" ></td></tr></table>
+     <br><font size="-1">Die Animation als eine animierte Gif-Datei.</font>
+    </td></tr></table>
+  </td>
+</tr>
+<tr>
+ <td colspan="2">
+  <p align="justify">Zur Umwandlung von Serien von Einzelbildern in eine Gif-, Avi- oder
+  Mpeg-Datei gibt es eine Vielzahl von Freeware- und Shareware-Programme.
+  Um Avi-Dateien zu erzeugen kann man z.B. das Programm &quot;Dave's
+  Targa Animator v 3.0 - DTA30&quot; verwenden. <br>
+  Um aus Avi-Dateien Mpeg-Dateien zu erstellen gibt es diverse Video-Editoren. Dies kann
+  z.B. auch &quot;avi2mpg1.exe&quot; - ein Programm unter GNU-Copyright.
+  <br>Software und Hilfsmittel f&uuml;r 3D-Animation finden wir u.a. hier:<br>
+  <a href="http://www.povray.org/resources/links/3D_Animation_Utilities/">
+  http://www.povray.org/resources/links/3D_Animation_Utilities/</a>.
+  </p>
+</td>
+</tr>
+</table>
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

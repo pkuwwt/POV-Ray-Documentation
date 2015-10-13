@@ -1,0 +1,335 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Beispiele zur Erstellung von Objekten f&uuml;r POV-Ray in 3D Computergraphik">
+<meta name="keywords" content="Beispiele zu POV-Ray, Beispielobjekte, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=1069,height=830");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="model_500e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="model_500e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="model_500i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="model_500i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="model_500f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="model_500f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="model_000d.htm">Modelleisenbahn u.</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">Eisenbahn-Modelle</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">mit POV-Ray</b></a><br></b>
+ &nbsp;&nbsp;&nbsp; <a href="model_000d.htm"-->Inhaltsverzeichnis</b></a><br>
+<br>
+&nbsp; - <a href="model_300d.htm">Mein Rail Track System</b></a><br>
+&nbsp; &nbsp; <a href="model_300d.htm">f&uuml;r POV-Ray</b></a><br>
+&nbsp; &nbsp;  <a href="model_300d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; - <a href="model_320d.htm">Geraden &amp; Kurven</b></a><br>
+ &nbsp; &nbsp; - <a href="model_330d.htm">Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Y- u. 3Wege-Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Kreuzungen</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_400d.htm">Vereinfachte Anwendung</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_400d.htm">mit RT_System_00.inc</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_420d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="model_420d.htm">mit RT_System_00.inc</b></a><br>
+<br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="model_500d.htm"--><b>An Modell-Ma&szlig;st&auml;be</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="model_500d.htm"--><b>angepa&szlig;te Gleiselemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_540d.htm">H0 Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_550d.htm">N Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_560d.htm">Z Scale Gleise</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_600d.htm">Gleisplan-Design mit</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_600d.htm"> skalierten Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="model_610d.htm">Verlegen von Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; -  <a href="model_620d.htm">Gleise rauf u. runter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_700d.htm">Gleisplan-Design Beispiele</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_710d.htm">Einfach zyklisch</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_720d.htm">Einfacher Achter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="dwn/RT_down_d.htm">Download </b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="dwn/RT_down_d.htm">Rail Track System</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table><tr><td>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/basics_1.jpg" border="0" width="158" height="80"
+                   alt="basics" title="basics"></a></td>
+            </tr></table>
+ </td>
+</td><td>
+<font size="+2">&nbsp; <b>An Modell-Ma&szlig;st&auml;be angepa&szlig;te<br>
+  Gleiselemente des Rail Track Systems</b></font><br>
+  Die Gleise des Rail Track System <br> angepasst an Modellbahngleisen
+  in den Spurweiten H0, N, Z, ....</b>
+
+ </font>
+</td></tr></table>
+ <p align="justify"><font size="2">
+Mit einigen zus&auml;tzlichen Include-Dateien kann man Gleispl&auml;ne entwerfen wie mit den vorgefertigten Gleis-Sets <br>
+f&uuml;r Modelleisenbahnbau auf eine sehr comfortable und einfachen Art und Weise.<br>
+Alle Elemente (Gleise in den Spurweiten H0, N, Z, ...) werden zu einem Ma&szlig;stab von 1 Einheit = 1 m (Meter)<br>
+hochskaliert um sie problemlos zusammen mit anderen POV-Ray-Modellen verwenden zu k&ouml;nnen.</nobr><br>
+Auch hier sind die verschiedenen Vorschau-Typen aus meinem  <b><nobr>'Rail Track System f&uuml;r POV-Ray'</nobr></b> verf&uuml;gbar.</p>
+<br>
+<font size="+1"><b>Ben&ouml;tigte Dateien, Abh&auml;ngigkeiten</b></font>:
+<table width="100%" border="1" cellpadding="0" cellspacing="2">
+ <tr>
+  <td>&nbsp;directory </td>
+  <td colspan="2">&nbsp;Dateiname</td>
+  <td>&nbsp;Inhalt</td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;<b> </b></td>
+  <td colspan="2" valign="top"><font size="-1">&nbsp;<b>shapes_lo.inc</b></font></td>
+  <td valign="top"><font size="-1">&nbsp;<b>&nbsp;Ben&ouml;tigt von den folgenden Dateien!</font></td>
+ </tr>
+ <tr>
+  <td valign="top"><font size="-1">&nbsp;<b>RT_System/</b></font></td>
+  <td colspan="2" valign="top"><font size="-1">&nbsp;<b>RT_System_Sizes_00.inc</b></font></td>
+  <td valign="top" colspan="2"><font size="-1">&nbsp; <b>Grunds&auml;tzliche Gleisdimensionem</b></font><br>
+      </td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;</td>
+  <td colspan="2" valign="top"><b>
+<br>
+            <font size="-1">&nbsp;RT_Track_Straight_00.inc<br>
+                        &nbsp;RT_Track_Curve_00.inc<br>
+                        &nbsp;RT_Track_Level_Junction_00.inc<br>
+                        &nbsp;RT_Track_Switch_A_00.inc<br>
+                        &nbsp;RT_Track_Switch_B_00.inc<br>
+                        &nbsp;RT_Track_Switch_3Ways_A_00.inc <br>
+                        &nbsp;RT_Track_Switch_3Ways_B_00.inc <br>
+                        &nbsp;RT_Track_Switch_Y_00.inc</font>
+        </b></td>
+  <td valign="top" colspan="2"><font size="-1">&nbsp; Die <b>Grundelemente der Gleise</b>:<br>
+                                      &nbsp;gerades Gleis (straight),<br>
+                                      &nbsp;Kurve (curve),<br>
+                                      &nbsp;Kreuzung (level junction),<br>
+                                      &nbsp;Weiche r/l, Typ A, (switch)<br>
+                                      &nbsp;Weiche r/l, Typ B, <br>
+                                      &nbsp;3WegeWeiche Typ A,<br>
+                                      &nbsp;3WegeWeiche Typ B,<br>
+                                      &nbsp;Y-Weiche (Wye).<br>
+                                      <b>Anmerkung: Alle Elemente verlangen 'RT_System_Sizes_00.inc'</b></font></td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;</td>
+  <td colspan="2" valign="top"><font size="-1">&nbsp;<b>RT_System_00.inc </b></font></td>
+  <td valign="top" colspan="2"><font size="-1">&nbsp;<b>Gleise mit verscheidenen Simulations-Modi.</font>
+                   </td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;</td>
+  <td valign="top"><font size="-1"><b>&nbsp;H0_TypeB/</b></font></td>
+  <td valign="top"><font size="-1"><b>&nbsp;RT_H0_TypeB_Set_00.inc</b><br>
+                                          <b>&nbsp;RT_H0_TypeB_Track_Up_00.inc</b></font></td>
+  <td valign="top"><font size="-1">&nbsp; Set typischer Gleise in <b>Spurweite H0</b> Typ B</b><br>
+                                   &nbsp; Makro f&uuml;r Gleise rauf u. runter.</font></td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;</td>
+  <td valign="top"><font size="-1"><b>&nbsp;N_TypeA111/</b></font></td>
+  <td valign="top"><font size="-1"><b>&nbsp;RT_N_TypeA111_Set_00.inc</b><br>
+                                   <b>&nbsp;RT_N_TypeA111_Track_Up_00.inc</b></font></td>
+  <td valign="top"><font size="-1">&nbsp; Set typischer Gleise in <b>Spurweite N</b> Typ A</b><br>
+                                   &nbsp; Makro f&uuml;r Gleise rauf u. runter.</font></td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;</td>
+  <td valign="top"><font size="-1"><b>&nbsp;Z_TypeA110/</b></font></td>
+  <td valign="top"><font size="-1"><b>&nbsp;Z_TypeA110_Set_00.inc</b><br>
+                                   <b>&nbsp;Z_TypeA110_Track_Up_00.inc</b></font></td>
+  <td valign="top"><font size="-1">&nbsp; Set typischer Gleise in <b>Spurweite Z</b> Typ A</b><br>
+                                   &nbsp; Makro f&uuml;r Gleise rauf u. runter.</font></td>
+ </tr>
+</table>
+<b>Anmerkung:</b>  <font size="-1">Meine Gleiss&auml;tze enthalten normalerweise viele zus&auml;tzlichen
+Gleiselemente gegen&uuml;ber den Gleiss&auml;tzen der meisten Modellbahnherstellern.<br>
+ - <b>Ich mache hier keine Gleiss&auml;tze f&uuml;r die Gleise irgenwelcher bestimmter Hersteller.</b> - <br>
+Will man Gleispl&auml;ne f&uuml;r die Gleiss&auml;tze eines bestimmten Herstellers machen, so mu&szlig; man &uuml;berpr&uuml;fen,
+welche dieser Gleise auch wirklich bei diesem Hersteller verf&uuml;gbar sind.<br>
+Z.B.: Normalerweise enthalten meine Gleissets Kurven mit den Radien R1, R2, R3, ...., R10. Viele Hersteller
+stellen jedoch nur Kurven z.B. mit den Radien R1, R2, R3, R4 und R9 her.
+Es macht keinen Sinn diese Include-Datei nur auf diese Radien zu beschr&auml;nken.
+Die meisten Hersteller von Modellbahngleisen produzieren auch flexible Gleise,
+welche nahezu jeden Radius erlauben, den man ben&ouml;tigt.</font><br>
+
+</font>
+
+
+<br>
+<table cellspacing="5">
+<tr>
+ <td>
+<font size="+1"><b>Aktivierung:</b> Hier f&uuml;gen wir folgendes ein: (Beispiel f&uuml;r Spurweite N)</font>
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>#declare Simulate_On = 3 ; //  simulation mode
+#include "RT_System/N_TypeA111/RT_N_TypeA111_Set_00.inc"
+#include "RT_System/N_TypeA111/RT_N_TypeA111_Track_Up_00.inc"
+//---------------------------------------------------------//
+</b></td></pre>
+            </tr></table>
+<font size="-2">Die &uuml;brigen ben&ouml;tigten Dateien von oben werden automatisch eingef&uuml;gt! </font>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td valign="top">
+  <b>Dann kann man die Elements sehr kurz aufrufen, z.B. wie folgt:</b>
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b> object{ SW_L( SD_1)               translate&lt; 0*L111,0,0&gt; }
+ object{ T_R9_15 RTyz( -1*15, R9)  translate&lt; 0*L111,0,0&gt; }
+
+ object{ T_111       translate&lt; 2*L111,0, 1*Track_Distance&gt; }
+ object{ SW_R( SD_1) translate&lt; 3*L111,0, 1*Track_Distance&gt; }
+ object{ T_111       translate&lt; 4*L111,0, 1*Track_Distance&gt; }
+
+ object{ T_111       translate&lt; 1*L111,0,0&gt; }
+ object{ T_111       translate&lt; 2*L111,0,0&gt; }
+ object{ T_111       translate&lt; 3*L111,0,0&gt; }
+ object{ SW_R( SD_1) rotate&lt;0,180,0&gt; translate&lt; 5*L111,0,0&gt; }
+
+//-----------------------------------------------------------//</b></td></pre>
+            </tr></table>
+  </td>
+</tr>
+<tr>
+ <td valign="top">
+      <b>Man kann verschiedene Simulationsmodi verwenden<br>
+      von symbolischen beschrifteten K&ouml;tzchen
+      bis zu realistischer Darstellung der Schienen mit Schotterbett.</b>
+      <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/im_RT_N_A111_BaseScene_1_00c.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/RT_N_A111_BaseScene_1_00ca.jpg" border="0" width="400" height="100"
+                   alt="symbolic blocks with tex" title="symbolic blocks with tex"></a></td>
+            </tr></table> <font size="-1">
+            <a href="javascript:ShowImage('im/im_RT_N_A111_BaseScene_1_00c.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                    Symbolische Kl&ouml;tzchen, beschriftet.</b></a></font>
+
+      <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/im_RT_N_A111_BaseScene_1_00b.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/RT_N_A111_BaseScene_1_00bs.jpg" border="0" width="400" height="300"
+                   alt="real rail tracks on gravel balast" title="real rail tracks on gravel balast"></a></td>
+            </tr></table>  <font size="-1">
+            <a href="javascript:ShowImage('im/im_RT_N_A111_BaseScene_1_00b.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                    Realistische Gleise im Schotterbett</b></a></font>
+
+  </td>
+</tr>
+<tr>
+  <td valign="top">
+  <b>Auch auf- und abw&auml;rts verlaufende Gleise sind einfach zu erzeugen:</b><br>
+ <font size="-1">(Siehe mittles Gleis, obiges Bild)</font>
+     <table border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+<pre><b>#local Step_1 = 0.010;
+ object{ T_111                              translate&lt; 0*L111, 0.0*Step_1*N,0&gt; }
+ object{ Track_Up_00("T_111", Step_1/2, 1)  translate&lt; 1*L111, 0.0*Step_1*N,0&gt; }
+ object{ Track_Up_00("T_111", Step_1  , 0)  translate&lt; 2*L111, 0.5*Step_1*N,0&gt; }
+ object{ Track_Up_00("T_111", Step_1  , 0)  translate&lt; 3*L111, 1.5*Step_1*N,0&gt; }
+ object{ Track_Up_00("T_111", Step_1/2, 2)  translate&lt; 4*L111, 2.5*Step_1*N,0&gt; }
+ object{ T_111                              translate&lt; 5*L111, 3.0*Step_1*N,0&gt; }
+//------------------------------------------------------------------------------//</b></td></pre>
+            </tr></table>
+  </td>
+</tr>
+</table >
+
+<br>
+<br>
+<br>
+<hr>
+</td></h5>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Random Numbers and Loops with POV-Ray part 6: The Include File 'rand.inc'</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller, Friedrich A. Lohmueller, Germany">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="include file 'rand.inc', random numbers, while loops, raytracing, tutorial, pov, povray, 3d graphics, raytracing descriptions, povray tutorials">
+<meta name="description" content="POV-Ray tutorial - random numbers and loops with POV-Ray part V: The Include File 'rand.inc'">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=650,height=500");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top">
+     <font size="1"><nobr>POV-Ray Raytracer</nobr> <nobr>Descriptions and Examples</nobr>
+                    <nobr>by Friedrich A. Lohm&uuml;ller</nobr></font><a name="top"></a>
+ <hr size="3">
+   <div align="center">
+      <font size="5">&nbsp; &nbsp;Random with POV-Ray</font> (Part 6)
+   </div>
+ </td>
+ <td align="right">
+        <a href="random6i.htm"><font size="2">Italiano </font></a>
+        <a href="random6i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="random6f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="random6f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="random6d.htm"><font size="2">Deutsch </font></a>
+        <a href="random6d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr><a href="random00e.htm"><font size="+1">Random in POV-Ray</font></b></a></nobr><br>
+<nobr>&nbsp;&nbsp; -  <a href="random1e.htm">RandomNumbers in Loops</b></a></nobr><br>
+&nbsp;&nbsp; -  <a href="random2e.htm">quadratic + cubic</b></a><br>
+&nbsp;&nbsp; -  <a href="random3e.htm">Colors + Scale</b></a><br>
+&nbsp;&nbsp; -  <a href="random4e.htm">Tilting + Bending</b></a><br>
+&nbsp;&nbsp; -  <a href="random5e.htm">Trees by Random</b></a><br>
+&nbsp;&nbsp;<b>&gt;</b> <!--a href="random6e.htm"--><b>Include File 'rand.inc'</b></a><br>
+&nbsp;&nbsp; -  <a href="random7e.htm">Filled height_field</b></a><br>
+&nbsp;&nbsp; -  <a href="random8e.htm">Random Flower</b></a><br>
+<br>
+&nbsp;&nbsp;-  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a><br>
+&nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a><br>
+&nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="im/rand_functions_3s.jpg" width="80" height="60" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="6"><nobr>&nbsp;The Include File 'rand.inc'</font> &nbsp; &nbsp; &nbsp;</nobr></font>
+   </td>
+ </tr>
+</table>
+
+
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="90%">
+<tr>
+ <td colspan="2">
+   <p align="justify">In the include file <b>'rand.inc'</b> we can find the following functions:<br>
+  For the using of these functions we first have to insert in the scene file: <br>
+<pre><b>#include "rand.inc"</b></pre>
+Some of the most important funtions: <font size="-1">(The variable 'Stream' represents the integer value of 'seed').</font><br>
+<b>SRand(Stream)</b> :<font size="-1"> a signed random number, in the range between -1 and +1.</font><br>
+<b>RRand(Min, Max, Stream)</b> : <font size="-1"> a random number in specified range of [Min, Max].</font><br>
+<b>VRand(Stream)</b> : <font size="-1"> a random point in a box from &lt;0,0,0&gt; to &lt;1,1,1&gt;.</font><br>
+<b>VRand_In_Box(PtA, PtB, Stream)</b> : <font size="-1"> a random point in a box from PtA to PtB.</font><br>
+
+<b>VRand_In_Sphere(Stream)</b> : <font size="-1"> a random vector of a point in a unit-radius sphere{&lt;0,0,0&gt;,1}.</font><br>
+
+<b>VRand_On_Sphere(Stream)</b> : <font size="-1"> a random vector of a point on a unit-radius sphere{&lt;0,0,0&gt;,1}.</font><br>
+
+<b>VRand_In_Obj(Object, Stream)</b> : <font size="-1"> a random point inside an arbitrary object.</font><br>
+<br>
+
+
+Beside of these, there are many other macros for other kind of statistic distributions.<br>
+<font size="-1">For more details on these functions see 'rand.inc'.  </font>
+</td></p></tr>
+<tr><td valign="top">
+<font size="-2">Rand_Normal(Mu, Sigma, Stream)<br>
+Rand_Gauss(Mu, Sigma, Stream)<br>
+Rand_Cauchy(Mu, Sigma, Stream)<br>
+Rand_Binomial(N, P, Stream)<br>
+Rand_Bernoulli(P, Stream)<br>
+Rand_Poisson(Mu, Stream)<br>
+Rand_Student(N, Stream) <br>
+Rand_Chi_Square(N, Stream)<br>
+Rand_F_Dist(N, M, Stream)<br>
+Rand_Spline(Spline, Stream)<br></font></td>
+<td valign="top">
+<font size="-2">
+Rand_Beta(Alpha, Beta, Stream)<br>
+Rand_Gamma(Alpha, Beta, Stream)<br>
+Rand_Tri(Min, Max, Mode, Stream)<br>
+Rand_Erlang(Mu, K, Stream)<br>
+Rand_Exp(Lambda, Stream)<br>
+Rand_Lognormal(Mu, Sigma, Stream)<br>
+Rand_Pareto(Alpha, Stream)<br>
+Rand_Weibull(Alpha, Beta, Stream)<br>
+Prob(P, Stream)<br>
+Rand_Geo(P, Stream)<br></font></td>
+</tr>
+
+
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/rand_functions_1.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><b>VRand_In_Sphere(</b> Random_1 <b>)</b><br>
+   <b>Scene file for POV-Ray</b>:     &nbsp;<a href="pov/rand_functions_1.pov">.pov</a>
+                                         or <a href="pov/rand_functions_1.txt">.txt</a></font>
+  </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/rand_functions_2.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><b>VRand_In_Sphere(</b> Random_1 <b>)+&lt;1,1.5,0&gt;</b><br>
+   <b>Scene file for POV-Ray</b>:         &nbsp;<a href="pov/rand_functions_2.pov">.pov</a>
+                                             or <a href="pov/rand_functions_2.txt">.txt</a></font>
+ </td>
+</tr>
+<tr>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/rand_functions_3.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><b>VRand_On_Sphere(</b> MyObject, Random_1 <b>)</b><br>
+   <b>Scene file for POV-Ray</b>:         &nbsp;<a href="pov/rand_functions_3.pov">.pov</a>
+                                             or <a href="pov/rand_functions_3.txt">.txt</a></font>
+  </td>
+ <td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/rand_functions_4.jpg" width="320" height="320" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1"><b>VRand_In_Obj(</b> MyObject, Random_1 <b>)</b><br>
+   <b>Scene file for POV-Ray</b>:         &nbsp;<a href="pov/rand_functions_4.pov">.pov</a>
+                                             or <a href="pov/rand_functions_4.txt">.txt</a></font>
+ </td>
+</tr>
+<tr><td> &nbsp; &nbsp; </td>
+<td><div align="center"><b>
+<a href="random1e.htm">1</a> | <a href="random2e.htm">2</a> | <a href="random3e.htm">3</a> |
+<a href="random4e.htm">4</a> | <a href="random5e.htm">5</a> | <!--a href="random6de.htm"-->6</a> |
+<a href="random7e.htm">7</a> | <a href="random8e.htm">8</a></b></div>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

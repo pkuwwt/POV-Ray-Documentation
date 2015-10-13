@@ -1,0 +1,217 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="language" content="de">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="Realistisches Wasser, Wasserstrudel, Strudel, Wirbel, Raytracing, PoV, POVRAY, povray, POV-Ray 3.6,  3D-Graphik, Computergrafik, Computergraphiken">
+<meta name="Description" content="Meerwasser mit Wellen mittels Isosurface - Realistisches Wasser mit POV-Ray - part III">
+<title>Realistisches Wasser mit POV-Ray - Teil 7</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=550");
+ New.focus();  }
+-->
+</SCRIPT>
+</head>
+<body bgcolor="#CAC8C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+<div align="center"><a name="top">
+<table border="0" cellspacing="5" width="100%">
+<tr>
+ <td align="left"><h6 align="left"><a name="top"></a><nobr>Beschreibungen und Beispiele
+     zum Raytracer POV-Ray</nobr> <br> <nobr>von Friedrich A. Lohm&uuml;ller</nobr></td>
+ <td align="right">
+ <a href="p_wat7.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_wat7.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_wat7i.htm"><font size="2">Italiano</font></a>
+ <a href="p_wat7i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ <a href="p_wat7f.htm"><font size="2">Fran&ccedil;ais</font></a>
+ <a href="p_wat7f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+</tr>
+</table></div>
+<a name="start"></a>
+<hr size="4" width="95%" align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+<nobr> - <a href="p_wat1d.htm"><font size="+1">Realistisches Wasser</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_wat1d.htm">undurchsichtig spiegelnd</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat2d.htm">bewegte See</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat3d.htm">teilweise transparent</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat4d.htm">Wasserstrudel</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat5d.htm">Wasser im Glas</b></a><br>
+ &nbsp; &nbsp; - <a href="p_wat6d.htm">Isosurface Wasser</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_wat7d.htm"--><b>Isosurface Meer</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwng.htm">Download</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+
+<h1 align="center">Realistisches Wasser mit POV-Ray</h1>
+<p align="center"><b>Teil
+<a href="p_wat1d.htm"> 1</a> | <a href="p_wat2d.htm"> 2</a> | <a href="p_wat3d.htm"> 3</a> |
+<a href="p_wat4d.htm"> 4</a> | <a href="p_wat5d.htm"> 5</a> | <a href="p_wat6d.htm"> 6</a> |
+<!--a href="p_wat7d.htm"--></b> 7</a></b></p>
+
+<div align="center">
+<table border="0" width="90%" align="center" cellpadding="4">
+<tr><td valign="top">
+    <p align="justify"><font size="+1"><b>Meerwasser mit Wellen <br>
+     mittels Isosurface</b></font><br>
+    <font size="-1">Die Idee: Man verwendet ein Isosurface (&Auml;quipotentialfl&auml;che) mit einer Modulation
+    durch ein 'pigment_pattern' f&uuml;r
+    f&uuml;r eine plastische Wasseroberfl&auml;che im Nahbereich und eine Ebene mit dem gleichen Muster als 'normal'
+    f&uuml;r den Fernbereich.</font><br>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>#declare Water_Texture =
+  texture{ Polished_Chrome }
+// Pigment for isosurface modulation
+// and pigment pattern for normal:
+#declare Pigment_01 =
+pigment { bumps
+          turbulence 0.2
+          scale&lt;3,1,1>
+} // end pigment
+//-----------------------------------------
+#declare Pigment_Function_01 =
+function {
+  pigment { Pigment_01 }
+} // end of function
+//-----------------------------------------
+
+// sizes x/z of isosurface container box:
+#local Scale_x = 10;
+#local Scale_z = 7;
+#local Iso_Start=&lt;-Scale_x,-1.0,-Scale_z&gt;;
+#local Iso_End  =&lt; Scale_x, 0.5, Scale_z&gt;;
+//-----------------------------------------
+isosurface {
+  function{
+    y
+   -Pigment_Function_01(x,y,z).gray* 0.95
+  } //
+  contained_by { box {Iso_Start,Iso_End} }
+  accuracy 0.01
+  max_gradient 2
+  texture{ Water_Texture
+           normal{
+            pigment_pattern{Pigment_01}
+             }
+         }
+  // dont scale this isosurface!
+  // scale the Pigment_01 if necessary!
+translate &gt;0, -0.3, 0&gt; // adapt here!
+} // end of isosurface --------------------
+//-----------------------------------------
+// far away with 'pigment pattern':
+difference{
+ plane{&lt;0,1,0&gt;, 0 }
+ box { Iso_Start,Iso_End  }
+ texture{
+    Water_Texture
+    normal{
+     pigment_pattern{ Pigment_01 }, 5}
+          }
+}// end difference
+//-----------------------------------------</b></td></pre></tr></table>
+<br>
+   <font size="-1"><b>Zu weiteren Details siehe die folgende <br>
+   Beschreibung dieser Szene f&uuml;r POV-Ray :<br>
+   &nbsp; &nbsp; &nbsp;   <a href="povw/IsoWater_01.pov">IsoWater_01.pov</a><br>
+   &nbsp; &nbsp; &nbsp;   <a href="povw/IsoWater_02.pov">IsoWater_02.pov</a></b></font>
+<br>
+<br>
+   <b>Spezielle Empfehlung:</b><br>
+   <font size="-1">Mehr &uuml;ber realistische Wellen mit POV-Ray, <br>
+      siehe die ausgezeichneten Seiten von <b>Christoph Hormann</b><br>
+      &uuml;ber <a href="http://www.imagico.de/pov/water/index.html" target="_blank">Realistic water with POV-Ray</a> und auch <br>
+      sein: <a href="http://www.imagico.de/pov/water/water_inc.html" target="_blank">Waves include file</a>, animierbare Wellen!</font>
+
+</td>
+<td valign="top">
+    <table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/IsoWater_001.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="pigment_pattern on plane and isosurface" title="pigment_pattern on plane and isosurface"></a></td></tr>
+        </table><font size="-1"><b>Das 'pigment_pattern' auf Ebene und auf Isosurface</b></font>
+   <table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><img src="imw/IsoWater_1014.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="isosurface with wavy top side" title="isosurface with wavy top side"></a></td></tr>
+        </table><font size="-1"><b>Ein Isosurface mit welliger Oberseite f&uuml;r Wasser</b></font>
+   <table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_isowatsea_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/IsoWater_01s.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Sea water by isosurface" title="Sea water by isosurface"></a></td></tr>
+        </table><font size="-1"><b>Meerwasser mit Isosurface - Szene 1</b></font>
+   <table border="3" bgcolor="#efefef"
+          bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+        <tr><td><a href="javascript:ShowImage('imw/p_isowatsea_2.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+                 <img src="imw/IsoWater_02.jpg" border="0" width="320"  height="240"  hspace="0" vspace="0"
+                 alt="Sea water by isosurface" title="Sea water by isosurface"></a></td></tr>
+        </table><font size="-1"><b>Meerwasser mit Isosurface - Szene 2</b></font>
+<br>
+
+<p align="right"><b>Teil
+<a href="p_wat1d.htm"> 1</a> | <a href="p_wat2d.htm"> 2</a> | <a href="p_wat3d.htm"> 3</a> |
+<a href="p_wat4d.htm"> 4</a> | <a href="p_wat5d.htm"> 5</a> | <a href="p_wat6d.htm"> 6</a> |
+<!--a href="p_wat7d.htm"--></b> 7</a></b></p>
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+</body>
+</html>

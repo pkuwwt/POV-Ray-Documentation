@@ -1,0 +1,315 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script type="text/javascript">
+if (top != self)
+  top.location = self.location;
+</script>
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Tangent circles, Geometric Basics for Raytracing with POV-Ray">
+<meta name="keywords" content="Tangent circles, raytracing, POV-Ray, povray, PoV, POVRAY, 3d graphics, povray tutorial, 3D grafic, geometric basics for raytracing">
+<title>Tangent circles - Geometric Basics for Raytracing - Geometry with POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions and Examples</nobr> for the <nobr> POV-Ray Raytracer</nobr>
+                      <nobr>by Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="+2"> &nbsp; &nbsp; <b>Elementary Geometry</b></font>
+      <font size="-1"> for Raytracing</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="geom_c100i.htm"><font size="2">Italiano </font></a>
+        <a href="geom_c100i.htm"><img src="../flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_c100f.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="geom_c100f.htm"><img src="../flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="geom_c100d.htm"><font size="2">Deutsch </font></a>
+        <a href="geom_c100d.htm"><img src="../flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwne.htm">Download-Page</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <a href="geom_000e.htm">Geometrical Basics</b></a><br>
+ &nbsp; &nbsp; <a href="geom_000e.htm">for Raytracing</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="geom_050e.htm">Right-angled Triangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_070e.htm">Pythagorean Theorem</b></a><br>
+ &nbsp; &nbsp; <a href="geom_080e.htm">Trigonometry Basics</b></a><br>
+ &nbsp; &nbsp; <a href="geom_090e.htm">Law of cosines</b></a><br>
+ &nbsp; &nbsp; <a href="geom_100e.htm">Equilateral Triangle</b></a><br>
+ &nbsp; &nbsp; <a href="geom_150e.htm">Regular Polygon</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_200e.htm"--><i>Polyhedron</i></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_200e.htm">Tetrahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_250e.htm">Octahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_300e.htm">Cube &amp; Cuboid</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_500e.htm">Dodecahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_700e.htm">Icosahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_260e.htm">Cuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_270e.htm">Truncated Octahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_280e.htm">Rhombicuboctahedron</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_800e.htm">Truncated Icosahedron</b></a><br>
+ &nbsp; &nbsp; <!--a href="geom_c000e.htm"--><i>Circles</i></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="geom_c100e.htm"--><b>Tangent Circles</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c200e.htm">Internal Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="geom_c300e.htm">External Tangents</b></a><br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+ &nbsp; &nbsp; &nbsp;  <br>
+<nobr> &nbsp; &nbsp;- <a href="../../pov_anim/ani_0d.htm">Geometric 3D Animations</a></nobr><br>
+
+<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"
+   bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080"><tr><td colspan="2"> <!-- global-->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+ <tr>
+ <td><h2><b>Tangent circles</b><br>
+<font size="-1"><i>In the following we write for the square root of a number the expression &quot;sqrt(</i>ZAHL<i>)&quot; <br>
+ conforming to the syntax used in POV-Ray.</i></font><br>
+ <font size="-2">Note: Here objects in 2D geometry are represented by 3D shapes in the xy-plane.
+ Therefore all coordinates must have the z-components zero! ( &lt;?,?,0&gt;) </font></td></h2>
+
+ </tr>
+ </table>
+
+</td></tr>
+
+<tr>
+<td valign="top" width="50%">
+<table border="1" cellpadding="5" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td><b> </b>
+ <font size="-1"><nobr><b>Circle 1</b>: center
+     <b>M<sub>1</sub> = &lt;0.35,0,0&gt;</b>, radius <b>r<sub>1</sub>= 0.22</b>.</nobr><br>
+     <b>Circle 2</b>: <b>center on y-axis</b>, <b>tangents Circle 1</b> from outside in the point S.</font></td>
+ </tr>
+ <tr>
+ <td width="50%" valign="top">
+ <font size="-1"><b>Problem 1:</b><br>
+ Circle 2 has the <b>radius r<sub>2</sub> = 0.30</b> .<br>
+ Where on the y-axis (height y<sub>2</sub>) is the center of the second circle 2 ? (<b>M<sub>2</sub> = &lt;0,?,0&gt;</b>)<br>
+ </font>
+ <font size="-1"><b>Problem 2:</b><br>
+ Circle 2 has the <b>center M<sub>2</sub> = &lt;0,0.40,0&gt.</b><br>
+ How big must be the radius of a second circle 2, if it intersects (touches) the first circle 1 at the nearest point?<br>
+ </font>
+ <font size="-1"><b>Problem 3:</b><br>
+ What are the coordinates of the point S ? <br>
+ </font>
+ <font size="-1"><b>Problem 4:</b><br>
+ What are the angles at <b>M<sub>1</sub></b> and <b>M<sub>2</sub></b> inside the triangle(0,M<sub>1</sub>,M<sub>2</sub>)?<br>
+ </font>
+</td>
+
+</tr>
+<tr>
+<td valign="top" width="50%"><font size="-1">
+ <nobr><b>The triangle(O,M1,M2) is rectangular!</b><br>
+ Therefore we use the <b>Pythagorean Theorem</b>:</nobr></font><br>
+ <font size="-2">
+ <b> // Problem 1: //--------------------------</b></font><br>
+ <font size="-1">
+ We know two sides of the triangle(O,M1,M2):<br>
+ d(0,M<sub>1</sub>) = x<sub>1</sub> and  d(M<sub>1</sub>,M<sub>2</sub>) = r<sub>1</sub>+r<sub>2</sub>.<br>
+&nbsp;&nbsp; <font size="-1"> <b>y<sub>2</sub> = sqrt(  (r<sub>1</sub>+r<sub>2</sub>)<sup>2</sup> -  x<sub>1</sub><sup>2</sup>)</b> <br>
+&nbsp;&nbsp; <b>M<sub>2</sub> = &lt;0,y<sub>2</sub>,0&gt;</b>.</font><br>
+<br>
+ <font size="-2">
+ <b>// Problem 2: //--------------------------</b></font><br>
+ <font size="-1">
+  Because of<br>
+&nbsp;&nbsp; <b>r<sub>1</sub>+r<sub>2</sub> = d(M<sub>1</sub>,M<sub>2</sub>) = sqrt(x<sub>1</sub><sup>2</sup> + y<sub>2</sub><sup>2</sup>)</b>,<br>
+we get<br>
+ <nobr>&nbsp;&nbsp; <b>d(M<sub>1</sub>,M<sub>2</sub>) = sqrt( x<sub>1</sub><sup>2</sup> - y<sub>2</sub><sup>2</sup> )</nobr></b><br>
+&nbsp;&nbsp; and <b>r<sub>2</sub> = d(M<sub>1</sub>,M<sub>2</sub>) - r<sub>1</sub>.</b><br>
+ <br>
+
+ <font size="-2">
+ <b>// Problem 3: //--------------------------</b></font><br>
+ <font size="-1">There is a simple proportionality:<br>
+&nbsp;  <b>x<sub>S1</sub>/x<sub>M1</sub> = r<sub>2</sub>/  (r<sub>1</sub>+r<sub>2</sub>)</b> and
+        <b>y<sub>S</sub>/y<sub>M2</sub> = r<sub>1</sub>/  (r<sub>1</sub>+r<sub>2</sub>)</b>,<br>
+ so:                     <b>x<sub>S</sub> = x<sub>M1</sub> &#183; r<sub>2</sub>/  (r<sub>1</sub>+r<sub>2</sub>)</b><br>
+&nbsp;&nbsp;&nbsp; &nbsp; <b>y<sub>S</sub> = y<sub>M2</sub> &#183; r<sub>1</sub>/  (r<sub>1</sub>+r<sub>2</sub>).</b></font><br>
+ <br>
+  <font size="-2">
+ <b>// Problem 4: //--------------------------</b></font><br>
+ <font size="-1"><nobr>By the inverse trigonometric function i.e. of tan(x):<nobr><br>
+&nbsp;&nbsp; <b>Angle(M<sub>1</sub>) = atan ( y<sub>2</sub>/ x<sub>1</sub>),</b><br>
+&nbsp;&nbsp; <b>Angle(M<sub>2</sub>) = 90 - Angle(M<sub>1</sub>)</b>.<br>
+
+ </td>
+ </tr>
+</table>
+
+</div>
+
+</td>
+<td width="50%"  valign="top" align="center">
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><img src="im/TwoCircles_01_00ce.jpg" width="400" height="400" border="0" hspace="0" vspace="0"></a></td>
+    </tr></table><font size="-1">Tangent circles rendered with POV-Ray</font><br>
+
+ <font size="-2">Note: To <b>avoid any collision with built-in identifiers and reserved words in POV-Ray</b>,
+ it's strongly recommanded to <b>use only words beginning with capital letters for all identifiers of variables declared by the user,</b><br>
+   i.e. use &quot;R1&quot; instead of &quot;r<sub>1</sub>&quot;
+ and use &quot;Y2&quot; instead of &quot;y<sub>M2</sub>&quot;.</font>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr><td>
+<pre><b>#local R1= 0.22;
+#local R2= 0.30;
+#local M1 = &lt;0.35,0,0&gt;
+#local Y2 = sqrt( pow(R1+R2, 2) - pow(M1.x, 2));
+#local M2 = &lt;0,Y2,0&gt;;</b> </td></pre>
+    </tr></table><font size="-1">Problem 1 in POV-Ray</font>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td>
+<pre><b>#local R1= 0.22;
+#local M1 = &lt;0.35,0,0&gt;
+#local M2 = &lt;0.40,0,0&gt;
+#local R2 = sqrt( pow(M1.x,2)-pow(M2.y,2)) - R1;<br></b></td></pre>
+
+    </tr></table><font size="-1">Problem 2 in POV-Ray</font>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+    <tr><td>
+<pre><b>#local XS = M1.x * R2/(R1+R2);
+#local YS = M2.y * R1/(R1+R2);
+#local S = &lt;XS,YS,0&gt;
+<br>
+#local Angle_M1 = degrees( atan( M2.y / M1.x) );
+#local Angle_M2 = 90 - Angle_M1;</b></td></pre>
+    </tr></table><font size="-1">Problem 3 + 4 in POV-Ray</font>
+
+</td>
+</tr><tr><td colspan="2"><hr></td></tr>
+<table>
+
+<table align="center" border="0" cellpadding="2" width="95%"> <!--pair left -->
+<tr><td colspan="2" valign="top" width="50%" align="center"><p align="left">
+<b>For what can we use this geometry?</b><br>
+Here some examples:<br>
+<font size="-1">We can consider the circle_1 as
+ the cross-section of an horizontal torus
+ and the circle_2 as the cross-section of a bowl:</font>
+ </td></p>
+<td colspan="2" valign="top" width="50%" align="center">
+<br>
+<p align="left"><font size="-1">We can consider the circle_1 and its twin mirrored at the y-axis
+ as the cross-section of two cylinder in z-direction<br>
+ and the circle_2 as the cross-section of another cylinder to subtract from the yellow rectangle:</font>
+ </td></p>
+
+
+</td>
+</tr>
+<tr>
+ <td colspan="2" width="390" valign="top">
+     <table><tr><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><img src="im/TwoCircles_02_01cet.jpg" border="0" width="208" height="208"></a></td>
+   </tr></table><font size="1"><b>Round-bottom Mace</b>
+          </td><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><a href="../objects/obj_350e.htm" target="_new"><img src="im/Round_Bottom_Flask_1t.jpg"  border="0" width="120" height="160"></a></a></td>
+   </tr></table><font size="1"><b>Round-bottom flask<br>
+                                  for the labratory</b>
+
+       </td></tr></table>
+ </td>
+<td colspan="2" width="390">
+     <table><tr><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><img src="im/TwoCircles_03ce.jpg" width="208" height="208"></a></td>
+    </tr></table><font size="1"><b>Two cylinders melting together</b>
+          </td><td>
+ <table border="1" bgcolor="#f9f9f0"
+       bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF"><h6>
+   <tr><td><a href="../objects/obj_870e.htm" target="_new"><img src="im/Chain_link_0000_i21.jpg"  border="0"  width="160" height="120"></a></td>
+    </tr></table><font size="1"><b>Chain link for a bike chain</b>
+       </td></tr></table>
+ </td>
+ </tr>
+<tr><td colspan="2">
+  <font size="-1">This shape in a macro as a <b>ready made object</b>:<br>
+  <a href="../objects/obj_350e.htm" target="_new">Round_Bottom_Mace_1</a>.<br>
+    Applied in a macro for the <b>ready made object</b>:<br> <a href="../objects/obj_880e.htm">Round_Bottom_Flask_1</a>.<br>
+  </font>
+</td>
+<td colspan="2">
+  <font size="-1">This shape in a macro as a <b>ready made object</b>:<br>
+  <a href="../objects/obj_370e.htm" target="_new">Two cylinders melting together</a>.<br>
+    Applied in a macro for the <b>ready made object</b>:<br> <a href="../objects/obj_870e.htm">Bike_Chain_Link_1</a>.<br>
+  </font>
+</td>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- global-->
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td>
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

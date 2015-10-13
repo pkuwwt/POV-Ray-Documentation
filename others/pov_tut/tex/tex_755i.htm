@@ -1,0 +1,441 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray - tipi di motivo (patterns)</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2014, Friedrich A. Lohmueller">
+<meta name="description" content="tipi di motivo, texture con POV-Ray">
+<meta name="keywords" content="tipi di motivo, POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_755e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_755e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_755f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_755f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_755d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_755d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000i.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>-->
+ <nobr>&nbsp; &nbsp; <a href="tex_210i.htm">Testure pronto per l'uso</b></a></nobr><br>
+<!-- &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_160i.htm">textures.inc</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_700i.htm">tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; &nbsp;&nbsp;<a href="tex_500i.htm">square, triangular</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_560i.htm">object pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_561i.htm">object pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_562i.htm">object pattern (3)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_570i.htm">tiling</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_580i.htm">pavement</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con pigment</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_650i.htm">pigment_pattern (1)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_651i.htm">pigment_pattern (2)</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_660i.htm">image_pattern</b></a><br>
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b>  <!--a href="tex_755i.htm"--><b>Motivi per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br> -->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<table border="0" width="80%" align="center"><tr><td><!-- global table-->
+<h2>Motivi (pattern) per pigment e normal</h2>
+
+<table border="1" cellspacing="4" bordercolor="#ffffff" cellpadding="4" width="80%" align="center">
+<tr><td valign="top" bgcolor="#f8f8f0" colspan="4">
+    <p><b>
+    <font size="4">Motivi come par caso per pigment e normal</font><br>
+</tr>
+<tr>
+ <td width="15%" valign="top" bgcolor="#f8f8f0">
+ <b><font size="2"><p>Nome</b></font>
+ </td>
+ <td width="85%" valign="top" bgcolor="#f8f8f0" colspan="2">
+ <b><font size="2"><p>Esempio</b></font>
+ </td>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="3"><p><b>agate</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_agate1.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>agate</b> scale 1  rotate &lt;0,0,0&gt;
+         color_map{ [0.0 color rgb &lt;1,1,1&gt;]
+                    [0.5 color rgb &lt;0,0,0&gt;]
+                    [1.0 color rgb &lt;1,1,1&gt;]
+                  }// end of color_map
+        } //---- end of pigment ------</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_agate1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb&lt;0.45,1,0.9&gt;}
+normal { <b>agate</b> 1.00 // bump depth
+         scale 0.5 }</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_agate2n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb&lt;0.6,1,0&gt;}
+normal { <b>agate</b> 1.0      // bump depth
+         <b>agate_turb</b> 2.0 // default 1 !!!
+         scale 0.5 }</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="3"><p><b>bozo<br>
+  <font size="-1">= spotted</font></b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_bozo1.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>bozo</b> scale 0.25 turbulence 0
+         color_map{ [0.0 color rgb &lt;1,1,0.2&gt;]
+                    [0.5 color rgb &lt;1,0.5,0&gt;]
+                    [1.0 color rgb &lt;1,0,0.5&gt;]
+                  }// end of color_map
+        } //---- end of pigment ------</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_bozo1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;0.2,0.36,0.85&gt;}
+normal { <b>bozo</b> 5.00 scale 0.25}</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_bozo3n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;1,0.35,0&gt;}
+normal { <b>bozo</b> 3.00 scale 0.05}</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="2"><p><b>bumps</b></td></p>
+ <td valign="top" bgcolor="#f8f8f0" colspan="2">
+ <font size="-1">As a pigment pattern identical with <b>&quot;bozo&quot;</b> or <b>&quot;spotted&quot;</b>
+ </td></pre></font>
+</tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_bumps1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;0.75,1,0&gt;}
+normal { <b>bumps</b> 0.50 scale 0.10}</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="3"><p><b>crackle</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_crackle0.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>
+pigment{ <b>crackle</b> scale 1.5 turbulence 0.35
+         color_map { [0.00 color rgb&lt;0,0,0&gt;]
+                     [0.08 color rgb&lt;0,0,0&gt;]
+                     [0.32 color rgb&lt;1,0.65,0&gt;]
+                     [1.00 color rgb&lt;1,1.0,0.5&gt;]
+                   } // end of color_map
+         scale 0.2
+       } // end of pigment -------------</td></pre></font>
+</tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_crackle1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;0.75,1,0&gt;}
+normal { <b>crackle</b> 1.5 // bump depth
+         scale 0.25 }</td></pre></font>
+</tr>
+</tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_crackle2n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;0.8,0.6,1&gt;}
+normal { pigment_pattern{
+         <b>crackle</b>
+         color_map{ [0.0, rgb 0.0]
+                    [0.3, rgb 0.1]
+                    [0.8, rgb 0.9]
+                    [1.0, rgb 1.0]}
+         scale 0.3} // end pigment_pattern
+         0.75 } // end of normal ------</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0"><p><b>dents</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_dents1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;1,0.9,0.8&gt;}
+normal { <b>dents</b> 5.5 scale 0.075 }</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="1"><p><b>facets</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_facets1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre><b>// can only be used in normal statements!!! </b>
+pigment{ color rgb &lt;1,1,1&gt;}
+normal { <b>facets</b> size 0.25 }</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="2"><p><b>granite</b><br></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_granite0.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>
+ pigment{ <b>granite</b> scale 1 turbulence 0
+  /*color_map{ [0.0 color rgb &lt;0,0,0&gt;]
+               [0.5 color rgb &lt;1,1,1&gt;]
+               [1.0 color rgb &lt;0,0,0&gt;]
+             }// end of color_map <font size="-1">// optional</font>
+       */} //---- end of pigment ------</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_granite1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;0.55,0.45,0.3&gt;}
+normal { <b>granite</b> 1.5  scale 1}</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="3"><p><b>marble</b><br></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_marble0.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>marble</b> scale 0.5 turbulence 0 //!!!
+  /*color_map{ [0.0 color rgb &lt;1,1,1&gt;]
+               [1.0 color rgb &lt;0,0,0&gt;]
+             }// end of color_map <font size="-2">// optional</font>
+       */} //---- end of pigment ------</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_marble1.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>marble</b> scale 0.5 turbulence 1.15 //!!!
+  /*color_map{ [0.0 color rgb &lt;1,1,1&gt;]
+               [1.0 color rgb &lt;0,0,0&gt;]
+             }// end of color_map <font size="-1">// optional</font>
+       */} //---- end of pigment ------</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_marble1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;1,1,1&gt;}
+normal { <b>marble</b> 1.5 scale 0.5 turbulence 1.0}</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="3"><p><b>ripples</b><br></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_ripples1.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>
+ pigment{ <b>ripples</b> phase 0.5 frequency 3
+    color_map{ [0.0 color rgb &lt;1,  1,1&gt;]
+               [0.0 color rgb &lt;1,0.3,0&gt;]
+               [1.0 color rgb &lt;0,  0,0&gt;]
+             }// end of color_map
+    translate&lt;0,3,0&gt;} //--- end of pigment --</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_ripples1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ pigment{ color rgb &lt;0.7,1,0&gt;}
+normal{ pigment_pattern{
+           <b>ripples</b> phase 0.5 frequency 3
+           color_map {[0, rgb 0.15]
+                      [1, rgb 0.85]}
+                   } // end of pigment_pattern
+        1.5 } // end of normal</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_ripples2n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;1,1,1&gt;}
+normal { <b>ripples</b> 3 phase 0.5 frequency 5}</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="1"><p><b>spotted</b></td></p>
+ <td valign="top" bgcolor="#ffffff"><p><font size="-1">siehe <b>bozo</b></font></td></p>
+ <td valign="top" bgcolor="#f8f8f0"><p><b></b></td></p>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="2"><p><b>waves</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_waves.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>waves</b> scale 0.1
+         color_map{[0.0 color rgb &lt;1,1,1&gt;]
+                   [0.3 color rgb &lt;1,1,1&gt;]
+                   [0.8 color rgb &lt;1,0,0&gt;]
+                   [1.0 color rgb &lt;1,0,0&gt;]
+                  }//end of color_map
+        } // end of pigment</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_waves_1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;1,1,1&gt;}
+normal { <b>waves</b> 0.75 scale 0.05
+       } // end of normal</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<tr>
+ <td valign="top" bgcolor="#f8f8f0" rowspan="2"><p><b>wrinkles</b></td></p>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_wrinkles1.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ <b>wrinkles</b> scale 0.20
+         color_map{[0.0 color rgb &lt;1,0,0.3&gt;]
+                   [1.0 color rgb &lt;1,1,1&gt;]
+                  }//end of color_map
+        } // end of pigment</td></pre></font>
+</tr>
+<tr>
+ <td valign="top" bgcolor="#ffffff" width="80"><img src="im/pattern_ wrinkles1n.jpg" border="0" width="80" height="80"></td>
+ <td valign="top" bgcolor="#f8f8f0">
+ <font size="-1"><pre>pigment{ color rgb &lt;1,1,1&gt;}
+normal { <b>wrinkles</b> 1.25 scale 0.10
+       } // end of normal</td></pre></font>
+</tr>
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+</table>
+
+<br>
+
+<div align="center">
+<table border cellspacing="4" bordercolor="#ffffff" cellpadding="4" width="80%">
+<tr><td valign="top" colspan="2" bgcolor="#ffffff">
+ <font size="3">attributi per pigment e normal </b></font></td>
+</tr>
+<tr><td width="50%" valign="top" bgcolor="#ffffff">
+<b><font size="2"><p>Denominazione</b></font></td>
+<td width="46%" valign="top" bgcolor="#f8f8f0">
+<b><font size="2"><p>Esempio</b></font></td>
+</tr>
+<tr><td width="54%" valign="TOP" bgcolor="#ffffff" height=368>
+<b><font face="Arial"><p>frequency</b><br>
+// oscillation freq. of radial, ripples, waves, etc<br>
+<b>lambda</b><br>
+// change surface perturbation property<br>
+// makes turbulence more "swirly"<br>
+<b>turbulence</b><br>
+// Takes a float or vector, see also octaves, //omega, lambda, frequency<br>
+<br>
+<b>octaves</b><br>
+// increases the "folds" in turbulence changes<br>
+<b>omega</b><br>
+// change surface perturbation property<br>
+// makes turbulence more "krinkly"<br>
+<b>phase</b><br>
+// change the phase of ripples, etc.<br>
+// Animation note:<br>
+// As phase DECREASES,<br>
+//  ripples move OUTWARD.</font></td>
+<td width="46%" valign="TOP" bgcolor="#ffffff" height=368>
+<b><font face="Arial"><p>frequency 2.0</p>
+</b><p><br>
+<br>
+<b>lambda 1.2</b><br>
+// (1.0...5.0) [2.0]<br>
+<br>
+<b>turbulence &lt;0, 1, 0.5&gt;</p>
+</b><p>// how much to turbulate the texture </p>
+<p>//(0...1 or more)<br>
+<b>octaves 3</p>
+</b><p>// (1...10) [default is 6]<br>
+<b>omega 1.2</p>
+</b><p>// (0.0...2.0) [default is 0.5]<br>
+<br>
+<b>phase 0.5</b></font></td>
+</tr>
+</table>
+
+</td></tr></table>
+
+
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

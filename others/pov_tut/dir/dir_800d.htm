@@ -1,0 +1,160 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2010, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="Description" content="Language Directives">
+<meta name="keywords" content="POV-Ray, povray, POV, POVRAY, Raytracing, 3D-Grafik, Language Directives">
+<title>Language Directives mit POV-Ray - Teil I deutsch</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="6"> &nbsp; &nbsp; <b>Bedingte Anweisungen</b></font> -
+      <font size="-1"><b> </b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="dir_800e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="dir_800e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <!--a href="dir_800i.htm"><font size="2">Italiano</font></a>
+        <a href="dir_800i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="dir_800f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="dir_800f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a>
+        <br!-->
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<!-- - <a href="../down/pov_dwng.htm">Download-Seite</nobr></b></a><br-->
+<br>
+ &nbsp;&nbsp;- <!--a href="dir_000d.htm"--><b>Bedingte</b></a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<!--a href="dir_000d.htm"--><b>Anweisungen</b></a><br>
+<br>
+ &nbsp; <b>Verzweigungen</b></a> <br>
+ &nbsp; &nbsp;<a href="dir_000d.htm">#if(...) ... #else ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_100d.htm">in Schleifen</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_200d.htm">in Macros</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_300d.htm">in Animationen</b></a> <br>
+<nobr> &nbsp; &nbsp; -  <a href="dir_400d.htm">Ein-/Ausschalten von Teilen</b></a></nobr><br>
+ &nbsp; &nbsp;<a href="dir_000d.htm">#switch(...) #case(..) ...</b></a> <br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="dir_000d.htm">#range(..) ... #end</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_700d.htm">Auswahl-Listen</b></a> <br>
+<br>
+ &nbsp; <b>Existenz-&Uuml;berpr&uuml;fungen</b></a> <br>
+ &nbsp; &nbsp;&gt;<!--a href="dir_800d.htm" --><b>#ifdef(...) #ifndef(...)</b></a> <br>
+ &nbsp; &nbsp; -  <a href="dir_810d.htm">Check in Include-Dateien</b></a> <br>
+<nobr> &nbsp; &nbsp; -  <a href="dir_820d.htm">Defaults in Include-Dateien</b></nobr></a> <br>
+<br>
+ &nbsp; <b>Schleifen</b></a> <br>
+<nobr> &nbsp; <a href="dir_900d.htm">Prechecked, Postchecked,</b></a></nobr><br>
+<nobr> &nbsp; <a href="dir_900d.htm">Count-controlled, Early-Exit</b></a></nobr><br>
+ &nbsp; &nbsp;<a href="dir_900d.htm">#while(...)... #end</b></a> <br>
+ &nbsp; &nbsp;<a href="dir_900d.htm">#for(...)... #end</b></a> <br>
+ &nbsp; &nbsp; - Beispiele: <br>
+<nobr> &nbsp; &nbsp; - <a href="../loop/povlup1d.htm" target="_new">Schleifen in POV-Ray</a></nobr><br>
+ &nbsp; &nbsp; - <a href="../sinus/povsi3d1.htm" target="_new">Schleifen, Sinus, Kosinus</a><br>
+
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<a name="Top"></a>
+<table width="95%" align="center" border="0"><tr><td> <!-- global-->
+<h2 align="center">Existenz-&Uuml;berpr&uuml;fungen</h2>
+
+<table align="center" width="95%" border="0"><tr><td>
+<p align="justify">In der Szenenbeschreibungssprache (SDL) von POV-Ray existieren
+Strukturen, die es erm&ouml;glichen eine Anweisungen von der Existenz einer Variable
+abh&auml;ngig zu machen.<br>
+
+
+ <br>
+</p></td></tr></table>
+
+<div align="center">
+<table border="1" cellpadding="10" cellspacing="0" bgcolor="eeeeee" width="80%"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr>
+  <td width="50%"><font size="-1"><i>Syntax in POV-Ray:</i></font><br>
+   </td><br>
+  <td width="50%">&nbsp;
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" valign="top">
+<pre><b>#ifdef (<i></b>Variable</i><b>)</b>
+ ... <i>Anweisungen</i><b>
+#else </b>// (optional)
+ ... <i>Anweisungen2</i><b>
+#end </b></td></pre>
+  <td width="50%" valign="top">
+<b>&Uuml;berpr&uuml;ft ob eine Variable bereits deklariert wurde.</b><br>
+<font size="-1">Die Deklarierung kann dabei sowohl<br>
+global mittels &quot;#declare&quot; als auch <br>
+lokal mittels &quot;#local&quot; erfolgt sein.</font>
+ </tr>
+ <tr>
+  <td width="50%" valign="top"><font size="-2"></font>
+<pre><b>#ifndef (<i></b>Variable</i><b>)</b>
+ ... <i>Anweisungen</i><b>
+#else </b>// (optional)
+ ... <i>Anweisungen2</i><b>
+#end </b></td></pre>
+  <td width="50%" valign="top">
+<b>&Uuml;berpr&uuml;ft ob eine Variable noch nicht deklariert wurde.</b>
+ </tr>
+ <tr>
+  <td width="50%" valign="top"><font size="-2"></font>
+<pre><b>#undef (<i></b>Variable</i><b>)</b>
+</td></pre>
+  <td width="50%" valign="top">
+<b>L&ouml;scht (&quot;zerst&ouml;rt&quot;) eine deklarierte Variable.</b><br>
+<font size="-1">Existieren mehrere lokal verschachtelte Versionen der Variablendeklaration, so
+wird die zuletzt erstellte Deklaration (&quot;#declare&quot; oder &quot;#local&quot;)
+gel&ouml;scht.</font>
+ </tr>
+ </table>
+</div>
+<br>
+
+</td></tr></table> <!-- global-->
+
+
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2010<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">&nbsp;</td>
+ <td align=right  width="25%">&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

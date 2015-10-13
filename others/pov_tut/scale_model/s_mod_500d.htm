@@ -1,0 +1,226 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Ma&szlig;stabgetreues Modellieren mit POV-Ray - Rendering von Mehrfachansichten</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Ma&szlig;stabgetreues Modellieren mit POV-Ray">
+<meta name="keywords" content="Ma&szlig;stabgetreues Modellieren, Beispiele zu POV-Ray, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=680,height=539");
+ New.focus();  }
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=840,height=859");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Ma&szlig;stabsgerechtes Modellieren mit POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="s_mod_500e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="s_mod_500e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="s_mod_500i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="s_mod_500i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="s_mod_500f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="s_mod_500f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="s_mod_000d.htm">Ma&szlig;stabsgerechtes </b></a><br>
+ &nbsp; <a href="s_mod_000d.htm">Modellieren mit POV-Ray</b></a><br>
+<br>
+ &nbsp; - <a href="s_mod_100d.htm">Karierter Hintergrund</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_100d.htm">in m und cm</b></a><br>
+ &nbsp; - <a href="s_mod_150d.htm">Orthographische Ansicht</b></a><br>
+ &nbsp; - <a href="s_mod_300d.htm">Pl&auml;ne auf karierten</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="s_mod_300d.htm">Hintergrund anpassen</b></a><br>
+
+ &nbsp;<b>&gt;</b>&nbsp;<!--a href="s_mod_500d.htm"--><b>Rendering von</b></a><br>
+ &nbsp; &nbsp; &nbsp; <!--a href="s_mod_500d.htm"--><b>Mehrfachansichten</b></a><br>
+<br>
+<br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<a name="Top"></a>
+<font size="+2"><b>Rendering von Mehrfachansichten</b></font><br><br>
+
+<table >
+<tr>
+ <td valign="top"><br><font size="-1">Um mehrfache Ansichten eines Objektes in einem einzigen Rendern
+  zu erzeugen, deklarieren wir zuerst spezielle Objekte als union aus dem originalen Objekt und den entsprechenden
+  Hintergr&uuml;nden!
+ ........<br>
+  Zun&auml;chst deklarieren wir einen <b>karierten Hintergrund</b>,<br>
+  mittels den <b>'Raster_Lines'</b> Makros, siehe hier <a href="s_mod_100d.htm" target="_new">Karierter Hintergrund</a>.
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//------------------------------------- /////
+#macro Raster_Lines (RScale, LineW, Intensity_)
+#local Raster_XY =
+object{ Raster_Plate(
+   1.0,   0.025, // 1st raster distance/width,
+   0.1,   0.100, // 2nd raster distance/width,
+   Base_Texture, // non = pigment { Clear }
+   0.7, // Intensity, // Line gray intensity
+   &lt;-3.00,-0.055,-0.0&gt;, &lt;3.00,0,3.00&gt;, //Start, End
+ ) //-----------------------------------------------
+ rotate&lt;-90,0,0&gt;
+ translate&lt;0,0,3&gt;
+} //------------------------------------------------</td></b></pre></tr></table>
+Auf dieselbe Weise machen wir die Objekte 'Raster_XZ' und 'Raster_YZ'.<br>
+Dann deklarieren wir das <b>Objekt 'House1'</b> unter Verwendung der entsprechenden Include-Dateien:<br>
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>//---------------------------------------------- ///
+#include "House1.inc"
+//---------------------------------------------- ///
+#declare House =
+object{ House_1( 2.00, // Half_House_Width_X,
+                 4.00, // Total_House_Width_Z,
+                 2.80, // House_Height_Y,
+                 15,   // Roof___Angle, degrees
+               ) //----------------------------- ///
+        translate&lt;0.00,0.00,-2.00&gt;
+} //-------------------------------------------- ///</td></b></pre></tr></table>
+Schlie&szlig;lich fassen wir die entsprechenden Objekte zusammen und platzieren sie in der finalen Szene:<br>
+
+ <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#ffffff">
+<pre><b>// Scene for front view !!
+#declare Scene_XY =
+union{
+ object{ Raster_XY }
+ object{ House }
+} //--------------------------
+// Scene for ríght side view !!
+#declare Scene_YZ =
+union{
+ object{ Raster_YZ }
+ object{ House }
+} //--------------------------
+// Scene for top/diagonal view !!
+#declare Scene_XZ =
+union{
+ object{ Raster_XZ }
+ object{ House }
+} //--------------------------
+
+union{ // all together now
+  object{ Scene_XZ
+          rotate&lt;-90,0,0&gt;    translate&lt;-3.1, 3.1,5&gt;}
+  object{ Scene_XY  translate&lt;-3.1,-3.1,0&gt; }
+  object{ Scene_YZ
+          rotate&lt;0,90,0&gt;     translate&lt; 3.1,-3.1,0&gt;}
+  object{ Scene_XZ scale 0.93
+          rotate&lt;-45,40,-33&gt; translate&lt; 3.2, 2.5,8&gt;}
+} // end union---------------------------------- ///</td></b></pre></tr></table>
+<font size="-1"><b>Anmerkung:</b> Die Diagonal-Ansicht ist eine Parallel-Projektion ohne jegliche perspektivische Verk&uuml;rzung!</font>
+ </td>
+ <td align="center" valign="top">
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Multiple2_001c.jpg" border="0" width="320" height="128"
+                   alt="2 Views" title="2 Views"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>2 Ansichten in einem Rendern</b></font>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/show_Multiple_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Multiple_001c.jpg" border="0" width="320" height="240"
+                   alt="Multiple Views" title="Multiple Views"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Mehrfache Ansichten</b></font>
+<br>
+<font size="-1"><b>Diese Szene in POV-Ray: <br>
+<a href="pov/Multiple_001.pov">Multiple_001.pov</a><br>
+Die Szene ben&ouml;tigt folgende Include-Dateien:<br>
+<a href="pov/House1.inc">House1.inc</a><br>
+<a href="pov/Window_1.inc">Window_1.inc</a><br>
+<a href="pov/Door_1.inc">Door_1.inc</a><br>
+    </font><br>
+<br>
+<br>
+<br>
+ <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage2('im/show_Multiple_Loco_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Loco_Multiple_001c.jpg" border="0" width="320" height="320"
+                   alt="Multiple Views Rendering of a Loco" title="Multiple Views Rendering of a Loco"></a></td>
+            </tr></table>&nbsp;<font size="-1"><b>Rendering mehrfacher Ansichten einer Lok</b></font>
+
+
+
+</tr>
+</table>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td  align="right">
+&nbsp; </td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

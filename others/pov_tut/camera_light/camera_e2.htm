@@ -1,0 +1,319 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="en-us">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Camera specials in POV-Ray, POV-Ray tutorial, POV-Ray 3.6.2, POV-Ray 3.7">
+<meta name="keywords" content="light sources, POV-Ray, POV-Ray 3.6.2, POV-Ray 3.7, povray, raytracing, raytracing descriptions, POV-Ray tutorials, scenery description file, 3d graphics, computer graphics">
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+
+<title>Camera Specials in POV-Ray</title>
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Introduction to the Scenery Description Langage</nobr> of the <nobr> POV-Ray Raytracer</nobr>
+ <nobr> &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+ <br><nobr>by Friedrich A. Lohm&uuml;ller</nobr></b>
+ <div align="center"><font size="+1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>Cameras, Light Sources and Details in POV-Ray</b></font></div>
+ </td></h6>
+  <td align="right">
+        <a href="camera_i2.htm"><font size="2">Italiano </font></a>
+        <a href="camera_i2.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="camera_f2.htm"><font size="2">Fran&ccedil;ais </font></a>
+        <a href="camera_f2.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="camera_d2.htm"><font size="2">Deutsch </font></a>
+        <a href="camera_d2.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index.htm">Home</b></a><br>
+ - <a href="../pov__eng.htm#basic"><nobr>POV-Ray Tutorials</nobr></b></a><br>
+ &nbsp;<br>
+ &nbsp;&nbsp;</font><a href="camlit_e1.htm">Camera + Light</b></a><font size="2"><br>
+ &nbsp;&nbsp;</font><a href="camlit_e1.htm">in POV-Ray</b></a><font size="2"><br>
+ &nbsp;&nbsp;<a href="camlit_e1.htm">Content&nbsp; - &nbsp;INDEX</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_e1.htm">Types of Light Sources</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#point_light">point light</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#Spotlight">spotlight</b></a></nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#cylindrial">cylindrical spotlight</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#parallel">parallel light</b></a>,</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e1.htm#area">area light</b></a>, soft shadows</nobr><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="light_e2.htm">Light Source Specials</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e2.htm#looks_like">Visible light sources</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e2.htm#shadowless">Shadowless light sources</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e2.htm#projected">projected_through</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="light_e2.htm#fade_out">Fade out</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="camera_e1.htm">Types of Cameras</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#perspective">Perspective camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#ultra_wide_angle">Ultra_wide_angle</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#orthographic">Orthographic camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#cylindrical">Cylindrical camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#spherical">Spherical camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#fisheye">Fisheye camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#panoramic">Panoramic camera</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e1.htm#omnimax">Omnimax camera</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<!--a href="camera_e2.htm"--><b>Camera Specials</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e2.htm#aspect_ratio">Aspect ratio</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e2.htm#focal_blur">Focal blur</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="camera_e2.htm#perturbated">Perturbated camera</b></a><br>
+<br>
+<nobr>&nbsp;<a href="arc_persp_e1.htm">Architectural Perspective</b></a><br>
+&nbsp;<br>
+<nobr>&nbsp;<a href="no_e1.htm">Show and Hide</b></a>:</nobr><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_e1.htm#no_shadow">no_shadow</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_e1.htm#no_reflection">no_reflection</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_e1.htm#no_image">no_image</b></a><br>
+<nobr>&nbsp;&nbsp;&nbsp;<a href="no_e1.htm#no_body">no_body</b></a><br>
+
+
+&nbsp;<br>
+<!--nobr>&nbsp; -  <a href="../down/insert_a.htm">Insert Menu Add-on</b></a></nobr><br>
+<nobr> &nbsp; &nbsp; &amp; <a href="../down/pov_dwne.htm">Download</b></a></nobr><br-->
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+
+<table border="0" align="center" width="95%">
+<tr>
+<td valign="top" colspan="3">
+<font size="+2"><b>Camera Specials:</b></font><hr>
+</td>
+</tr>
+
+<tr>
+<td valign="top" colspan="2">
+  <font size="+1"><b><a name="aspect_ratio">Aspect ratio</b></a><b></b></font><br>
+  <font size="-1">( aspect ratio = image_width / image_height )<br>
+  The POV-Ray camera with a perspective camera uses the following aspect ratio:</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ location &lt;0,1,-3&gt;
+        look_at  &lt;0,1,0&gt;
+        <font color="#800000">up       &lt;0,1,0&gt;
+        right &lt;1.33,0,0&gt;</font> } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1">
+     The vectors <b>up</b> and <b>right</b> are determing an aspect ratio.
+     Here (by default) we have an aspect ratio of 4:3 (= 1.33/1).
+    </b><br>
+</td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/aspect_ratio_default.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>default aspect ratio 4:3 with image 4:3</b></font>
+
+</td>
+</tr>
+<tr>
+<td valign="top"><b>The Aspect ratio Problem:</b><br>
+  <font size="-1"><b>If we change the image size to a quadatic image or an image in 16:9, we see here:<br>
+  <br>
+  Why this distortions? </b><br>
+  <br>
+  With 1:1 we should use<br>
+  <b>right &lt;1,0,0&gt;</b><br>
+  and with 16:9 we should use <br>
+  <b>right &lt;16/9,0,0&gt;</b> !!!
+
+  </b></font>
+</td>
+<td align="center">
+   <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/aspect_ratio_1_1f.jpg" width="160" height="160" ></td></tr></table>
+   <font size="-1"><b>Default aspect ratio 4:3<br>
+                      with an image 1:1</b></font> <br>
+</td>
+<td align="center">
+   <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/aspect_ratio_16_9f.jpg" width="240" height="128" ></td></tr></table>
+   <font size="-1"><b>Default aspect ratio 4:3<br>
+                       with an image 16:9</b></font> <br>
+
+
+</td>
+</tr>
+<tr>
+<td>
+  <b>Solution of the aspect ratio problem:</b><br>
+  <font size="-1">There are two preset variables in POV-Ray for the actually<br>
+   used image dimensions called <br>
+  <b>image_width</b> and <b>image_height</b>:</font><br>
+  <br>
+  <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ location &lt;0,1,-3&gt;
+        look_at  &lt;0,1,0&gt;
+        right <font color="#800000">x*image_width/image_height</font>
+        }  // no right vector! </b></td></pre>
+  </tr>
+  </table> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="-2">(x = &lt;1,0,0&gt;)
+<br>
+  <font size="-1"><b>Now with this automatic aspect ratio, we'll get this:<br>
+  <br>
+  No distortions anymore!
+
+  </b></font>
+</td>
+<td align="center">
+   <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/aspect_ratio_1_1ok.jpg" width="160" height="160" ></td></tr></table>
+   <font size="-1"><b>Automatic aspect ratio<br>
+                      with an image 1:1</b></font> <br>
+</td>
+<td align="center">
+   <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+   <tr><td><img src="im/aspect_ratio_16_9ok.jpg" width="240" height="128" ></td></tr></table>
+   <font size="-1"><b>Automatic aspect ratio<br>
+                       with an image 16:9</b></font> <br>
+
+</td>
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+</table>
+
+<table>
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="focal_blur">Focal blur</b></a><b></b></font><br>
+  <font size="-1">Simulating the 'depth of field' of a real photographic camera.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ angle 40
+        location &lt; 0.00,2.00,-3.00&gt;
+        look_at  &lt; 0.00,2.00, 1.00&gt;
+        right  x*image_width/image_height &nbsp; &nbsp; &nbsp;
+     <font color="#aa0000">// focal blur settings:
+        focal_point &lt;0.20,1.5,-5.25&gt;
+        aperture 0.7     // 0.05 ~ 1.5
+        blur_samples 100 // 4 ~ 100
+        confidence 0.9   // 0 ~ 1
+        variance 1/128   // 1/64 ~ 1/1024 ~</font>
+      } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1">
+    <b>focal_point</b> &lt;0.20,1.5,-5.25&gt; // This point is in focus 'sharp'<br>
+    (I used a little red sphere to find the correct point!)<br>
+
+    <b>aperture</b> 0.7 // 0.05 ~ 1.5; // more = more blurring <br>
+    <b>blur_samples</b> 100  // 4 ~ 100, more = higher quality; fewer = faster<br>
+    <b>confidence</b> 0.9 // how close to the correct color, 0 ~ 1, default 0.9<br>
+    <b>variance</b> 1/128  //(default) smallest displayable color difference</font>
+  </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/focal_blur_off.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>focal blur off</b></font>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/focal_blur_on.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>focal blur on</b></font> <br>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+  <font size="+1"><b><a name="perturbated">Perturbated camera</b></a><b></b></font><br>
+  <font size="-1">Using normal statement for camera.</font><br>
+
+  <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ angle 40
+        location &lt; 0.00,2.00,-3.00&gt;
+        look_at  &lt; 0.00,2.00, 1.00&gt;
+        right  x*image_width/image_height &nbsp; &nbsp; &nbsp;
+        <font color="#aa0000">normal{ bumps 0.15
+                scale 0.4 translate&lt;-0.2,0,0&gt;}</font>
+      } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1">
+   ....</font>
+<br>
+<br>
+<br>
+<br>
+  <table align="center" border="2"  bgcolor="#efefef" cellpadding="4"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td valign="top" bgcolor="#FFFFFF">
+<pre><b>camera{ angle 40
+        location &lt; 0.00,2.00,-3.00&gt;
+        look_at  &lt; 0.00,2.00, 1.00&gt;
+        right  x*image_width/image_height &nbsp; &nbsp; &nbsp;
+        <font color="#aa0000">normal{ cells 0.15 turbulence 0.2
+                scale 0.3 translate&lt;-0.0,0,0&gt;}</font>
+      } </b></td></pre>
+  </tr>
+  </table>
+  <font size="-1">
+  </td>
+<td align="center">
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_normal.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>perturbated by normal bumps</b></font> <br>
+  <table align="center" border="2"  bgcolor="#efefef"
+         bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr><td><img src="im/camera_cells.jpg" width="240" height="180" ></td></tr></table>
+  <font size="-1"><b>perturbated by normal cells</b></font>
+
+
+</td></tr></table>
+<hr>
+<table border="0" align="center" width="95%"><tr><td>
+<p><font size="-1">
+<b><a href="camlit_e1.htm">Index</a> |
+   <a href="light_e1.htm" ><b>Lights</a> |
+   <a href="light_e2.htm" ><b>Light Specials</a> |
+   <a href="camera_e1.htm">Cameras</a> |
+   <!--a href="camera_e2.htm"--><b>Camera Specials</a> |
+   <a href="arc_persp_e1.htm"><nobr>Architectural Perspective</nobr></a> |
+   <a href="no_e1.htm">Show+Hide</a></b></font></p>
+</td></tr></table>
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+  <img src="email.gif" width="15" height="10" border="0" alt="email" title="email"> email:
+  <a href="mailto:Friedrich.Lohmueller_at_t-online.de">Friedrich.Lohmueller_at_t-online.de</a> <br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

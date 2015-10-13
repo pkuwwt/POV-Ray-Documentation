@@ -1,0 +1,182 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="index,follow">
+<meta http-equiv="language" content="fr">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2013, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="keywords" content="ciel r&eacute;aliste, nuages r&eacute;alistes, realistic sky, raytracing, PoV, povray, POVRAY, POV-Ray 3.6, POV-Ray 3.7, infographie 3D, computer graphics">
+<meta name="Description" content="Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray">
+
+<title>Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray - part 2 -  tutoriels, descriptions et exemples pour le ray tracer de POV-Ray</title>
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=675,height=525");
+ New.focus();  }
+//-->
+</SCRIPT>
+
+
+</head>
+<body bgcolor="#C0C0C0" text="#505030" link="#CC6633" vlink="#993300" alink="#6666CC" >
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et Exemples </nobr> pour le raytracer de <nobr> POV-Ray</nobr>
+                      <nobr>par Friedrich A. Lohm&uuml;ller,</nobr><a name="top"> </a>
+ <td align="right"><nobr>
+ <a href="p_sky2.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+ <a href="p_sky2.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+ <a href="p_sky2d.htm"><font size="2">Deutsch</a></font></nobr>
+ <a href="p_sky2d.htm"><img src="flag_ger.gif" border="0" width="22" height="15"></a><br>
+ <a href="p_sky2i.htm"><font size="2">Italiano</font></a>
+ <a href="p_sky2i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+ </td>
+ </tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm#ani"> <nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr><font size="4">- <a href="p_sky000f.htm">Ciel r&eacute;aliste</font></b></a></nobr><br>
+ &nbsp; &nbsp; - <a href="p_sky1f.htm">Ciel d'azur</b></a><br>
+ &nbsp; &nbsp;<b>&gt;</b> <!--a href="p_sky2f.htm"--><b>Partiellement couvert</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky3f.htm">Couches de nuages</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky4f.htm">Liasse de plans</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky5f.htm">Nuages et ombres</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky6f.htm">Nuages par media</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky70f.htm">Coucher du soleil</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky7f.htm">Ciel parsem&eacute; d&eacute;toiles</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky8f.htm">Skydomes et skymaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky9f.htm">Skyboxes et cubemaps</b></a><br>
+ &nbsp; &nbsp; - <a href="p_sky10f.htm">Environnement HDRI</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="../down/pov_dwnf.htm">T&eacute;l&eacute;chargement</b></a><br>
+ &nbsp;<br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+
+<h2 align="center">Comment cr&eacute;er un ciel r&eacute;aliste avec POV-Ray</h2>
+<p align="center"><font size="-1"><a href="p_sky000f.htm">Contenu</a> |
+<a href="p_sky1f.htm">1</a> | <!--a href="p_sky2f.htm"-->2</a> |
+<a href="p_sky3f.htm">3</a> | <a href="p_sky4f.htm">4</a> |
+<a href="p_sky5f.htm">5</a> | <a href="p_sky6f.htm">6</a> |
+<a href="p_sky70f.htm">7.0</a> | <a href="p_sky7f.htm">7.1</a> | <a href="p_sky8f.htm">8</a> |
+<a href="p_sky9f.htm">9</a> | <a href="p_sky10f.htm">10</a></b></font></p>
+
+<div align="center">
+<table border="0" width="95%" align="center" cellspacing="10">
+<tr><td valign="top">
+    <h3 align="left"><b>Un ciel partiellement couvert :</b></h3>
+    <h5 align=left>Le ciel est form&eacute; d'un plan bleu d&eacute;cor&eacute; avec quelques nuages.
+        Les nuages deviennent plus petites vers l'horizon - r&eacute;aliste !
+        Un brouillard realiste (&quot;fog&quot;) recouvre la ligne noire all'horizon - le trou entre
+        le plan du sol et le plan du ciel. <br>
+        Le seule probl&egrave;me ici :  Nous devons placer le solei sous ce plan!
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td><pre><b>// sky ---------------------------
+plane{&lt;0,1,0&gt;,1 hollow
+       texture{
+        pigment{ bozo turbulence 0.92
+          color_map {
+           [0.00 rgb &lt;0.2, 0.3, 1&gt;*0.5]
+           [0.50 rgb &lt;0.2, 0.3, 1&gt;*0.8]
+           [0.70 rgb &lt;1,1,1&gt;]
+           [0.85 rgb &lt;0.25,0.25,0.25&gt;]
+           [1.0 rgb &lt;0.5,0.5,0.5&gt;]}
+          scale&lt;1,1,1.5&gt;*2.5
+          translate&lt;1.0,0,-1&gt;
+          }// end of pigment
+        finish {ambient 1 diffuse 0}
+        }// end of texture
+        scale 10000
+     }// end of plane
+
+// fog on the ground -------------
+fog { fog_type   2
+      distance   50
+      color      White
+      fog_offset 0.1
+      fog_alt    1.5
+      turbulence 1.8
+    }
+//--------------------------------</b></td></pre></tr></table></h5>
+
+    </td>
+    <td valign="top"><table border="3"  bgcolor="#EFEFEF"
+               bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+        <tr><td><img src="im/p_sky04.jpg" border="0" width="300" height="225" hspace="0" vspace="0"></td></tr>
+        </table>
+    <h5 align="center">Un ciel partiellement couvert<br>
+                          avec l'horizon r&eacute;aliste.<br>
+<font size="-1"><a href="pov/p_sky04.txt">Description de cette sc&egrave;ne pour POV-Ray</a></font></h5>
+
+<br>
+   </td></tr>
+<tr><td colspan="2">
+<p align="right"><font size="-1"><a href="p_sky000f.htm">Contenu</a> |
+<a href="p_sky1f.htm">1</a> | <!--a href="p_sky2f.htm"-->2</a> |
+<a href="p_sky3f.htm">3</a> | <a href="p_sky4f.htm">4</a> |
+<a href="p_sky5f.htm">5</a> | <a href="p_sky6f.htm">6</a> |
+<a href="p_sky70f.htm">7.0</a> | <a href="p_sky7f.htm">7.1</a> | <a href="p_sky8f.htm">8</a> |
+<a href="p_sky9f.htm">9</a> | <a href="p_sky10f.htm">10</a></b></font></p>
+
+
+ </td>
+</tr>
+
+</table>
+</div>
+
+
+</td></h5> <!--end 2nd column -->
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2013<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+ &nbsp;
+ </td>
+ <td "align=right"  width="25%">
+
+ <br>
+ <font size="2">
+ Visitors: <b>
+ <!-- COUNTERSTART -->
+ <script>showme='Y'; st='js'</script>
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </b><br>(since May-1999)<br>
+ Thanks for your visit!
+  </font>
+
+ </td>
+</tr></table><!-- end footer -->
+
+</font>
+</body>
+</html>

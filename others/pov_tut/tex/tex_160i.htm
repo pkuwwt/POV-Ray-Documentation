@@ -1,0 +1,265 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Texture con POV-Ray - Pigmenti &amp; Testure pronto per l'uso</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="author" content="Friedrich Lohmueller">
+<meta name="description" content="texture con POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, Raytracing, 3d graphic, textures, designing surfaces">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=850,height=665");
+ if(navigator.appName =="Netscape") New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi per <nobr>POV-Ray</nobr>
+                  <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"> <b>Design di Superfici con  &quot;texture&quot; in POV-Ray</b></font> -
+ </td></h6>
+ <td align="right">
+        <a href="tex_160e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="tex_160e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="tex_160f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="tex_160f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="tex_160d.htm"><font size="2">Deutsch </font></a>
+        <a href="tex_160d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm#textures"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;       <a href="tex_000i.htm">Design di Superfici</b></a><br>
+ &nbsp;&nbsp;-     <a href="tex_000i.htm">Colori e Texture</b></a><br>
+ &nbsp;&nbsp;&nbsp; <a href="tex_000f.htm">Index</b></a><br>
+<br>
+ &nbsp; &nbsp; <a href="tex_001i.htm">Sintassi di texture</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_001i.htm">Esempio di base</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_200i.htm">pigment{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_300i.htm">normal{ ... }</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="tex_330i.htm">pigment_pattern</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="n/texnor2i.htm">esempi per normal</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_400i.htm">finish{ ... } </b></a><br>
+ &nbsp; &nbsp;<a href="tex_210i.htm">Testure pronto per l'uso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_210i.htm">Regole</a><br>
+ &nbsp; &nbsp; - <a href="tex_150i.htm">colors.inc</b></a><br>
+ &nbsp; &nbsp; <b>&gt;</b>  <!--a href="tex_160i.htm"--><b>textures.inc</b></a><br>
+ &nbsp; &nbsp; <a href="tex_110i.htm">Colori Do-it-yourself</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_110i.htm">color rgb&lt; , , &gt;</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_120i.htm">Trasparenza</b></a><br>
+ &nbsp; &nbsp; <a href="tex_700i.htm">Motivi - patterns</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_700i.htm">Tipi di motivi</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_500i.htm">checker, hexagon</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_550i.htm">brick</b></a><br>
+ &nbsp; &nbsp; &nbsp; Motivi con righe</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{...}</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_750i.htm">Liste di motivi</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_750i.htm">Motivi regolari</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_755i.htm">Motivi come per caso</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_760i.htm">Motivi Frattali</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_765i.htm">Altri motivi</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_780i.htm">Warps</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_780i.htm">warp mapping</b></a><br>    -->
+ &nbsp; &nbsp; <a href="tex_790i.htm">uv_mapping</b></a><br>
+ &nbsp; &nbsp; <a href="tex_800i.htm">Mapping</b></a><br>
+<!-- &nbsp; &nbsp; - <a href="tex_800i.htm">metodi di mapping</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_600i.htm">color_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_820i.htm">pigment_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_830i.htm">texture_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_840i.htm">normal_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_850i.htm">average</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_860i.htm">material_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_870i.htm">image_map{ ... }</b></a><br>
+ &nbsp; &nbsp; - <a href="tex_880i.htm">bump_map{ ... }</b></a><br>-->
+ &nbsp; &nbsp; <a href="tex_890i.htm">Sovrapposizioni</b></a><br>
+ <!--&nbsp; &nbsp; - <a href="tex_890i.htm">layered_textures</b></a><br>-->
+<br>
+ &nbsp; &nbsp; <a href="tex_900i.htm">Vostre testure</b></a><br>
+
+ &nbsp;<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<b><font size="5"><p align="center">Pigmenti e Testuri pronto per l'uso</b></font><br>
+  definito nel file <b> "textures.inc"</b></p>
+<table width="80%"  align="center"><tr>
+<td align="center">
+ <a href="javascript:ShowImage('im/tx3est1i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+<table align="center" border="2" cellspacing="2" cellpadding="0" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td>
+     <img src="im/tex3est1t.jpg" border="0" width="100" height="80"></td></tr></table>
+     <font size="2"><b>Image Textures 1</b></font></a>
+</td><td align="center">
+    <a href="javascript:ShowImage('im/tx3est2i.htm')"
+               onmouseover="window.status='ShowSingleImage';return true"
+               onmouseout="window.status=''">
+<table align="center" border="2" cellspacing="2" cellpadding="0" bgcolor="#efefef"
+        bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+     <tr><td>
+    <img src="im/tex3est2t.jpg" border="0" width="100" height="80"></td></tr></table>
+    <font size="2"><b>Image Textures 2</b></font></a>
+<br>
+</td></tr></table>
+<br>
+
+<table border="1" cellspacing="2"
+       bordercolor="#f8f8f0" bordercolordark="#ffffff"  bordercolorlight="#808080"
+       cellpadding="3" width="80%" align="center">
+<tr>
+<td width="33%" valign="top" bgcolor="#f8f8f0">
+<p><font size="2">//---------- <b>STONES </b>-------</font><br>
+<b><font size="2">
+pigment {<br>
+</b>Jade<br>
+Red_Marble<br>
+White_Marble<br>
+Blood_Marble<br>
+Blue_Agate<br>
+Sapphire_Agate<br>
+Brown_Agate<br>
+Pink_Granite<br>
+<b>texture { </b>//--------- STONES<br>
+PinkAlabaster<br>
+</font><br>
+</td>
+<td width="33%" valign="top" bgcolor="#f8f8f0">
+<font size="2"><p>// ------ <b>GLASSES</b>-------</font><br>
+<font size="2">
+<b>texture {</b><br>
+Glass<br>
+Glass2 //"Plexiglas"<br>
+Glass3 //"Bleiglas"<br>
+Green_Glass<br>
+NBglass<br>
+NBoldglass<br>
+NBwinebottle<br>
+NBbeerbottle<br>
+Ruby_Glass<br>
+Dark_Green_Glass<br>
+Vicks_Bottle_Glass<br>
+Yellow_Glass<br>
+Orange_Glass</font>
+</td>
+
+<td width="33%" valign="top" bgcolor="#f8f8f0">
+<font size="2"><p>// <b>SPECIAL EFFECTS</b> </font><br>
+<font size="2">
+<b>pigment {<br>
+</b>Candy_Cane<br>
+Y_Gradient<br>
+X_Gradient<br>
+<b>texture {<br>
+</b>Peel<br>
+Water<br>
+Cork<br>
+Lightening1<br>
+Lightening2<br>
+Starfield</font></td>
+</tr>
+<tr>
+<td width="33%" valign="top" bgcolor="#f8f8f0">
+<font size="2"><p>// -------- <b>WOODS --------</b></font><br>
+<font size="2"><b>pigment {</b><br>
+Cork<br>
+Cherry_Wood<br>
+Pine_Wood<br>
+Dark_Wood<br>
+Tan_Wood<br>
+White_Wood<br>
+Tom_Wood<br>
+DMFWood1<br>
+DMFWood2<br>
+DMFWood3<br>
+DMFWood4<br>
+DMFWood5<br>
+DMFLightOak<br>
+DMFDarkOak<br>
+<b>texture { </b>// ------ WOOD<br>
+DMFWood6<br>
+EMBWood1<br>
+Yellow_Pine<br>
+Rosewood<br>
+Sandalwood</font></td>
+<td width="33%" valign="top" bgcolor="#f8f8f0">
+<font size="2"><p>// ------ <b>METALS --------</b></font><br>
+<font size="2"><b>texture {</b><br>
+Chrome_Metal<br>
+Brass_Metal<br>
+Bronze_Metal<br>
+Gold_Metal<br>
+Silver_Metal<br>
+Copper_Metal<br>
+Polished_Chrome<br>
+Polished_Brass<br>
+New_Brass<br>
+Spun_Brass<br>
+Brushed_Aluminum<br>
+Silver1 Silver2 Silver3<br>
+Brass_Valley<br>
+Rust<br>
+Rusty_Iron<br>
+Soft_Silver<br>
+New_Penny<br>
+Tinny_Brass<br>
+Gold_Nugget<br>
+Aluminum<br>
+Bright_Bronze</font></td>
+<td width="33%" valign="top" bgcolor="#f8f8f0">
+<font size="2"><p>//<b> ---SKIES and CLOUDS ---</b></font><br>
+<font size="2"><b>pigment {</b><br>
+Blue_Sky<br>
+Bright_Blue_Sky<br>
+Blue_Sky2<br>
+Blue_Sky3<br>
+Blood_Sky<br>
+Apocalypse<br>
+Clouds<br>
+FBM_Clouds<br>
+<b>texture { </b>// -------Sky<br>
+Shadow_Clouds<br>
+<br>
+</font></td>
+</tr>
+</table>
+
+</td></h5>   <!---- -------------------------------------------------- --->
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!--footer -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2006<br>
+   <a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</body>
+</html>

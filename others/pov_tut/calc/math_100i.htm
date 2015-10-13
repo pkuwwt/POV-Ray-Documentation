@@ -1,0 +1,190 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Carta quadrettata - Reticoli per sistemi di coordinate con POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="it">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - tutti diritti riservati - all rights reserved worldwide">
+<meta name="description" content="Reticoli per sistemi di coordinate e la visualizzazione di funzioni matematiche con POV-Ray">
+<meta name="keywords" content="Carta quadrettata, reticoli, sistemi di coordinate, funzioni matematiche, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafica, 3D Graphica">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=530,height=680");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descrizioni ed esempi </nobr> per il <nobr> raytracer POV-Ray </nobr>
+     <nobr>di Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ </td></h6>
+ <td align="right">
+        <a href="math_100e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a>
+        <a href="math_100e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="math_100f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="math_100f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="math_100d.htm"><font size="2">Deutsch</font></a>
+        <a href="math_100d.htm"><img src="flag_ger.gif" alt="Deutsch" title="Deutsch" align="bottom" width="22" height="15" border="0"></a>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_i.htm">Home</b></a><br>
+ - <a href="../pov__ita.htm"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+&nbsp;&nbsp;<a href="math_000i.htm"><nobr>Sistemi di coordinate</nobr></b></a><br>
+&nbsp;&nbsp;<a href="math_000i.htm"><nobr>e funzioni in 2D</nobr></b></a><br>
+<br>
+      &nbsp; <b>&gt;</b> <!--a href="math_100i.htm"--><b>Carta quadrettata</b></a><br>
+<nobr>&nbsp; - <a href="math_200i.htm">Sistemi di coordinate</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_200i.htm">con gli assi</b></a><br>
+<nobr>&nbsp; -  <a href="math_300i.htm">Macro per un reticolo</b></a></nobr><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_300i.htm">con due livelli</b></a><br>
+&nbsp; -  <a href="math_500i.htm">Funzioni 2D</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_500i.htm">Esempio</b></a><br>
+<nobr>&nbsp; -  <a href="math_600i.htm">Funzioni matematiche</b></a><br>
+&nbsp; &nbsp; &nbsp;  <a href="math_600i.htm">in POV-Ray</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2" width="90%" align="center"><!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+
+<table  border="0" width="80%" cellpadding="3">
+<tr>
+ <td nowrap colspan="2" >
+ <font size="5"><b>Carta quadrettata</b><br>
+             Reticoli per sistemi di coordinate</font><br>
+ La Costruzione di una carta quadrettata con una sovrapposizione di 3 testure.<br>
+ <font size="-1">Oggetti;&nbsp;&nbsp;&nbsp; &quot;plane&quot;.<br>
+     Metodi: &quot;color_map, layered textures, macro&quot;</font>
+ <td>
+</tr>
+<tr>
+<td>
+<br>
+<font size="+1"><b>La Costruzione in dettaglio:</b></font><br>
+  Un piano con una testura di base in bianco coperta con
+  due griglie di linee (color_map (sotile grigio + clear trasparente),
+  con uno delle griglie girata di 90 gradi.<br>
+<font size="-1">('layered textures').</font><br>
+<br>
+
+
+
+
+  <table  align="center"  border="3"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+  <tr>
+   <td valign="top" bgcolor="#ffffff">
+<pre><b>// ------------------&lt;&lt;&lt; Raster macro
+#macro Raster(RScale, RLine)
+pigment{
+   gradient x scale RScale
+   color_map{
+     [0.000   color rgb&lt;1,1,1&gt;*0.5]
+     [0+RLine color rgb&lt;1,1,1&gt;*0.5]
+     [0+RLine color rgbt&lt;1,1,1,1&gt;]
+     [1-RLine color rgbt&lt;1,1,1,1&gt;]
+     [1-RLine color rgb&lt;1,1,1&gt;*0.5]
+     [1.000   color rgb&lt;1,1,1&gt;*0.5]
+            }
+       } // end of pigment
+#end// of "Raster(RScale, RLine)"
+
+// -------------------&lt;&lt;&lt;&lt; Grid macro
+#macro Grid(RasterScale,
+            RasterHalfLine,
+            Background_pigment)
+plane{&lt;0,1,0&gt;, 0
+       //layered textures!!!!
+      texture{ Background_pigment
+             } //  base color
+      texture{ Raster(RasterScale,
+                      RasterHalfLine)
+             } // 2nd layer
+      texture{ Raster(RasterScale,
+                      RasterHalfLine)
+               rotate&lt;0,90,0&gt;
+             } // 3rd layer
+     } // end of plane
+#end // end of macro &quot;Grid(...)&quot;
+// -----------------------------------
+// use it:
+object{Grid(0.50,0.035,
+   pigment{color rgb&lt;1,1,1&gt;*1.1})}
+// ------------------------- end -----</td></b></pre></tr></table>
+
+</td>
+<td valign="top">
+<br>
+<br>
+<font size="-1"><b>'layered textures':</b></font><br>
+ <table  align="center"  border="5"  bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr>
+   <td width="240"  height="180" align="center">
+     <img src="im/grid1.jpg" border="0" width="320"  height="240"
+     alt="Sample layered grids 320x240" title="Sample layered grids 320x240"></a></td>
+  </tr>
+ </table><font size="-1"><b>Piano quadrettato</b></font> <br>
+ <table  align="center"  border="5"  bgcolor="#efefef"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+  <tr>
+   <td width="320"  height="240"  align="center">
+     <img src="im/grid2.jpg" border="0" width="320"  height="240"
+     alt="Sample grid 320x240" title="Sample grid 320x240"></a></td>
+  </tr>
+ </table><font size="-1"><b>Piano quadrettato</b></font><br>
+<br>
+<font size="-1">La scena per <nobr>POV-Ray:</nobr>
+ <a href="pov/grid01.pov">grid01.pov&quot;</a></font>
+<br>
+</td>
+</tr>
+</table>
+
+
+
+
+<!-- end 2nd column -->
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a></td></tr>
+</table>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+<a href="http://www.f-lohmueller.de" target="_blank"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,70 @@
+//--------------------------------------------------------------------------
+// sky ---------------------------------------------------------------------
+#local SkyTransform  = transform{ rotate <0,0,0> translate  <-3,0,-1> }  
+//--------------------------------------------------------------------------
+sky_sphere{ pigment{ gradient <0,1,0>
+                     color_map{
+                                [ 0.00 color rgb <0.24, 0.32, 0.8>*0.3 ]
+                                [ 0.23 color rgb <0.16, 0.32, 0.7>*0.6]
+                                [ 0.37 color rgb<1,0.3,0> ]
+                                [ 0.52 color rgb<1,0.6,0> ]
+                                [ 0.65 color rgb <0.36, 0.32, 1.0>*0.7 ]
+                                [ 0.70 color rgb <0.14, 0.32, 1.0>*0.5 ]
+                                [ 1.00 color rgb <0.24, 0.32, 1.0>*0.3 ]
+                              } // end color_map
+                     scale 2
+                     rotate<-15,0,0>
+                     translate <0,0.7,0>
+                   } // end pigment
+           }  // end of sphere --------------------------------------------
+// white clouds:
+plane{<0,1,0>,1 hollow  
+       texture{ pigment{ bozo turbulence 0.92
+                         color_map { [0.00 rgbt<1,1,1,1>] // <0.24, 0.32, 1.0>*0.7]
+                                     [0.50 rgbt<1,1,1,1>] // <0.24, 0.32, 1.0>*0.7]
+                                     [0.60 rgb <1,1,1>]
+                                     [0.85 rgb <0.25,0.25,0.25>]
+                                     [1.00 rgbt<0.5,0.5,0.5, 0.65>]}
+                         scale<1,1,1.5>*3.5  translate< 0.5,0,0>
+                       }
+                finish {ambient 1 diffuse 0 }
+                }      
+       rotate<0, 0,0> transform SkyTransform
+       scale 10000}
+// red orange clouds:
+plane{<0,1,0>,1 hollow  
+       texture{ pigment{ bozo turbulence 0.92
+                         color_map { [0.00 rgbt<1,1,1,1>] // <0.24, 0.32, 1.0>*0.7]
+                                     [0.45 rgbt<1,1,1,1>] // <0.24, 0.32, 1.0>*0.7]
+                                     [0.75 rgbt  <1,0.10,0,0.50>]
+                                     [0.85 rgbt <0.75,0.55,0,0.300>]
+                                     [1.0 rgbt<0.5,0.35,0.15, 0.75>]}
+                         scale<1,1,1.5>*3.5  translate< 0.5,0,1.5> 
+                       }
+                finish {ambient 1 diffuse 0 }
+                }      
+       rotate<0, 0,0>  transform SkyTransform
+       scale 9900}
+//-------------------------------------------------------// end sky + clouds
+// fog on the ground -------------------------------------------------------
+fog { fog_type   2
+      distance   50
+      color      rgb<1,0.55,0.1>  
+      fog_offset 0.1
+      fog_alt    1.0
+      turbulence 1.8
+    } //------------------------------------------------// end of ground fog
+//--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

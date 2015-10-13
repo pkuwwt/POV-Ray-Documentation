@@ -1,0 +1,435 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2011, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Beispiele zur Erstellung von Objekten f&uuml;r POV-Ray in 3D Computergraphik">
+<meta name="keywords" content="Beispiele zu POV-Ray, Beispielobjekte, POV, POVRAY, POV-Ray, Raytracing, 3D-Grafik, 3D Graphik, Computergraphik">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+
+<script language="JavaScript">
+<!--
+ if(top.frames.length > 0)
+ top.location.href=self.location;
+//-->
+</script>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=450,height=460");
+ New.focus();  }
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage2(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=850,height=460");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+      <font size="5"><b>Modelleisenbahn u. Eisenbahn-Modelle mit POV-Ray</b</font></div>
+ </td></h6>
+ <td align="right">
+        <a href="model_300e.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="model_300e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="model_300i.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Italiano</font></a>
+        <a href="model_300i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="model_300f.htm"><font color="#505030" face="Arial, Verdana, Helvetica" size="2">Fran&ccedil;ais</font></a>
+        <a href="model_300f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm">Home</b></a><br>
+ - <a href="../pov__ger.htm#examples"><nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ - <a href="model_000d.htm">Modelleisenbahn u.</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">Eisenbahn-Modelle</b></a><br>
+ &nbsp;&nbsp;<a href="model_000d.htm">mit POV-Ray</b></a><br></b>
+ &nbsp;&nbsp;&nbsp; <a href="model_000d.htm">Inhaltsverzeichnis</b></a><br>
+<br>
+&nbsp;<b>&gt;</b> <!--a href="model_300d.htm"--><b>Mein Rail Track System</b></a><br>
+&nbsp; &nbsp; <!--a href="model_300d.htm"--><b>f&uuml;r POV-Ray</b></a><br>
+&nbsp; &nbsp; <!--a href="model_300d.htm"--><b>Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; - <a href="model_320d.htm">Geraden &amp; Kurven</b></a><br>
+ &nbsp; &nbsp; - <a href="model_330d.htm">Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_340d.htm">Y- u. 3Wege-Weichen</b></a><br>
+ &nbsp; &nbsp; - <a href="model_350d.htm">Kreuzungen</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_400d.htm">Vereinfachte Anwendung</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_400d.htm">mit RT_System_00.inc</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_420d.htm">Gleis Elemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; <a href="model_420d.htm">mit RT_System_00.inc</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_500d.htm">An Modell-Ma&szlig;st&auml;be</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_500d.htm">angepa&szlig;te Gleiselemente</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_540d.htm">H0 Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_550d.htm">N Scale Gleise</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_560d.htm">Z Scale Gleise</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_600d.htm">Gleisplan-Design mit</b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="model_600d.htm"> skalierten Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_610d.htm">Verlegen von Gleisen</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_620d.htm">Gleise rauf u. runter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="model_700d.htm">Gleisplan-Design Beispiele</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_710d.htm">Einfach zyklisch</b></a><br>
+ &nbsp; &nbsp; &nbsp; - <a href="model_720d.htm">Einfacher Achter</b></a><br>
+<br>
+ &nbsp; &nbsp; - <a href="dwn/RT_down_d.htm">Download </b></a><br>
+ &nbsp; &nbsp; &nbsp; <a href="dwn/RT_down_d.htm">Rail Track System</b></a><br>
+<br>
+<br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+
+<table><tr><td>
+<table  border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Test_Spikes_On_02bt.jpg" border="0" width="160" height="80"
+                   alt="Spikes_On" title="Spikes_On"></a></td>
+            </tr></table>
+</td><td>
+<font size="+2">&nbsp; <b>Rail Track System f&uuml;r POV-Ray</b></font><br>
+
+<font size="-1">Dieses System bestehet aus einem B&uuml;ndel von Include-Dateien f&uuml;r POV-Ray
+aus verschiedenen Elementen von Eisenbahngleisen.<br>
+Alle Elemente benutzen einen Ma&szlig;stab von <b>1 Einheit = 1 Meter</b> und sind in die positive x-Richtung ausgerichtet.</font><br>
+<font size="-2">( Anmerkung: Benutzen von Objekten in feet, 1 ft = 1' = 0.3048 m : Man skaliere sie mittels 'scale 0.3048'.
+Mit inches: 1 inch = 1" = 0.0254 m, also 'scale 0.0254'.)</font>
+</td></tr></table>
+<br>
+<font size="+1"><b>Ben&ouml;tigte Dateien, Abh&auml;ngigkeiten</b></font>:
+<table width="100%" border="1" cellpadding="0" cellspacing="2">
+ <tr>
+  <td>&nbsp;directory </td>
+  <td>&nbsp;Dateiname</td>
+  <td>&nbsp;Inhalt</td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;<b> </b></td>
+  <td valign="top"><font size="-1">&nbsp;<b>shapes_lo.inc</b></font></td>
+  <td valign="top"><font size="-1">&nbsp;<b>Viele der folgenden Include-Dateien ben&ouml;tigen diese Datei.<br>
+                                          &nbsp;Man sollte sie irgendwo im eigenen Library_Path speichern.</font></td>
+ </tr>
+ <tr>
+  <td valign="top"><font size="-1">&nbsp;<b>RT_System/</b></font></td>
+  <td valign="top"><font size="-1">&nbsp;<b>RT_System_Sizes_00.inc</b></font></td>
+  <td valign="top" colspan="2"><font size="-1">&nbsp; Die <b>Grunds&auml;tzlichen Gleisabmessungen:</b><br>
+      &nbsp;Voreingestellte Spurweite: <b>Gauge</b>, (Spurweite, gauge, scartamento, &eacute;cartement, ancho).</font><br>
+      <font size="-2">&nbsp;(Standard: 1.435 mm, kanm vor dem Aufruf der Include-Datei ge&auml;ndert werden!)</font><br>
+      <font size="-1">&nbsp;Abmessungen des Schienenprofils und der Schwellen (ties)</b>,<br>
+            &nbsp;H&ouml;he Schienenoberkante incl. Schwellen: <b>Height_Rail_Top</b>.<br>
+            &nbsp; und zudem f&uuml;r europ&auml;ische Puffer:<br>
+            &nbsp; <b>Buffer_Center_Height</b>,&nbsp; <b>Buffer_Half_Distance</b>.</font><br>
+      </td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;</td>
+  <td valign="top"><b>
+<br>
+            <font size="-1">&nbsp;RT_Track_Straight_00.inc<br>
+                        &nbsp;RT_Track_Curve_00.inc<br>
+                        &nbsp;RT_Track_Level_Junction_00.inc<br>
+                        &nbsp;RT_Track_Switch_A_00.inc<br>
+                        &nbsp;RT_Track_Switch_B_00.inc<br>
+                        &nbsp;RT_Track_Switch_3Ways_A_00.inc <br>
+                        &nbsp;RT_Track_Switch_3Ways_B_00.inc <br>
+                        &nbsp;RT_Track_Switch_Y_00.inc</font>
+        </b></td>
+  <td valign="top"><font size="-1">&nbsp; Die <b>Grundelemente der Gleise</b>:<br>
+                                      &nbsp;gerades Gleis (straight),<br>
+                                      &nbsp;Kurve (curve),<br>
+                                      &nbsp;Kreuzung (level junction),<br>
+                                      &nbsp;Weiche r/l, Typ A, (switch)<br>
+                                      &nbsp;Weiche r/l, Typ B, <br>
+                                      &nbsp;3WegeWeiche Typ A,<br>
+                                      &nbsp;3WegeWeiche Typ B,<br>
+                                      &nbsp;Y-Weiche (Wye).<br>
+                                      <b>Anmerkung: Alle Elemente verlangen 'RT_System_Sizes_00.inc'</b></font></td>
+ </tr>
+ <tr>
+  <td valign="top">&nbsp;</td>
+  <td valign="top"><font size="-1">&nbsp;<b>RT_System_00.inc </b></font></td>
+  <td valign="top"><font size="-1">&nbsp;Zur einfachen Handhabung der Elemente in Gleispl&auml;nen,<br>
+                          allein durch den Aufruf einer einzigen allgemeinen Include-Datei,<br>
+                          <b>mit verscheidenen Simulations-Modi</b> zur Entwicklung komplexer Gleis-Layouts.</font>
+                   </td>
+ </tr>
+</table>
+
+
+<br>
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+<tr>
+<td valign="top" colspan="2">
+  <font size="+1"><b>Allgemeine Eigenschaften:</b></font>
+
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+
+<br>
+<b>Schienenschrauben (Spikes):</b><br>
+<font size="-1"> Durch das Deklarieren von <b>#declare Rail_Spikes_On = 1;</b> vor dem Aufruf der entsprechenden
+     Include-Datei werden die Schienenbefestigungen aktiviert.<br>
+     ( Voreingestellter Wert (default): #declare Rail_Spikes_On = 0; )</font><br></td>
+<td valign="top">
+ <table width="80%">
+ <tr>
+ <td align="center">
+     <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage2('im/im_model_Spikes.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+             <img src="im/Test_Spikes_On_1.jpg" border="0" width="200" height="60"
+                   alt="Test_Spikes_On" title="Test_Spikes_On"></a></td>
+            </tr></table> <font size="-2"><b>#declare Rail_Spikes_On = 1;</b></font>
+ </td>
+ <td align="center">
+     <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage2('im/im_model_SpikesOff.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+             <img src="im/Test_Spikes_On_0.jpg" border="0" width="200" height="60"
+                   alt="Test_Spikes_Off" title="Test_Spikes_Off"></a></td>
+            </tr></table>  <font size="-2"><b>#declare Rail_Spikes_On = 0; (default)</b></font>
+  </td>
+  <tr>
+  </table>
+
+
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+
+<br>
+<b>Animation:</b><br>
+<font size="-1">
+     Alle Weichen sind kontinuierlich animierbar durch <br>
+     die Makro-Variable <b>Switch_Direction_</b>,<br>
+      // 0 gerade(straight) ~ 1 rund(round) oder -1 links ~ 0 gerade ~ 1 rechts</font><br>
+
+</td>
+<td valign="top">
+ <table width="80%">
+ <tr>
+ <td align="center">
+     <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+             <img src="im/Rail_Ani_30A_16im_10s32.gif" border="0" width="240" height="128"
+                   alt="Animated Why" title="Animated Why"></a></td>
+            </tr></table> <font size="-2">Monte-Carlo Weiche</font>
+  </td>
+  <tr>
+  </table>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+
+<br>
+ <b>Abstand der Schwellen (ties/sleepers)</b>:<br>
+<font size="-1">Die ungef&auml;hre Dichte der Schwellen kann man definieren durch <br>
+     die Makro-Variable  Ties_Per_Meter_,  // ~1.5<br>
+     Die Schwellen (ties) werden in &auml;quidistanter Weise angeordnet.</font><br>
+</td>
+<td>
+  <table width="80%">
+  <tr>
+  <td align="center">
+     <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Rail_Ani_40A2cs.jpg" border="0" width="200" height="64"
+                   alt="Ties_Per_Meter_ 1.5" title="Ties_Per_Meter_ 1.5"></a></td>
+            </tr></table>  <font size="-2"><b>Gauge = 1.435, Ties_Per_Meter_ = 1.5</b></a></font>
+  </td>
+  <td align="center">
+     <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/RR_Rails_Switch_00_t5cs.jpg" border="0" width="200" height="64"
+                   alt="mining or portable railway"  title="mining or portable railway"></a></td>
+            </tr></table>  <font size="-2">Feld- oder Bergwerksbahn</b></a></font>
+  </td>
+  </tr>
+  </table>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+
+<br>
+<b>Geometrie der Weichen (switch) <br>
+ und Kreuzungen (level junctions):</b><br>
+<font size="-1">
+     Die Geometrie wird bestimmt durch die Variablen<br>
+     L&auml;nge  &nbsp; <b>Switch_Length_</b> (in Meter), Winkel <b>Switch_Angle_</b>(in Grad).<br>
+     Jeder Aufruf der entsprechenden Makros deklariert die automatisch berechneten Werte
+     <b>Switch_Radius_</b> (Radius), und <b>Rail_Distance_</b> (Gleisabstand f&uuml;r Parallelgleis).<br>
+     <br>
+     Es gibt jeweils einen <b> Typ A und Typ B</b> der Weichen und Kreuzungen<br>
+     <b>entsprechend den Typen, die bei Gleisen f&uuml;r Modellbahnbau Verwendung finden:</b></font>
+     <br>
+     <br>
+     <b>Anmerkung:</b> <font size="-1">Die Grundelemente f&uuml;r Weichen und Kreuzungen wurden zum Darstellen
+      von Standard-Gleissets aus dem Modellbahnbau entwickelt.<br>
+       <b>Diese Makros sind in keiner Weise gegen Nonsense-Eingaben abgesichert!</b><br>
+       Z.B. eine Weiche mit der L&auml;nge Switch_Length_= 1.0 und einem Winkel von 5 Grad wird einen Absturz provozieren
+       (Vielleicht nicht physisch, aber zumindet optisch!).</font>
+</td>
+<td>
+  <table width="80%">
+  <tr>
+  <td align="center">
+     <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/im_model_geoA_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Geo_SwitchA_1s.jpg" border="0" width="200" height="200"
+                   alt="Switch Type A" title="Switch Type A"></a></td>
+            </tr></table>  <font size="-1"><a href="javascript:ShowImage('im/im_model_geoA_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''"><b>Weiche Typ A</b></a></font>
+  </td>
+  <td align="center">
+     <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+            <a href="javascript:ShowImage('im/im_model_geoB_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''">
+              <img src="im/Geo_SwitchB_1s.jpg" border="0" width="200" height="200"
+                   alt="Switch Type B" title="Switch Type B"></a></td>
+            </tr></table>  <font size="-1"> <a href="javascript:ShowImage('im/im_model_geoB_1.htm')"
+                    onmouseover="window.status='ShowSingleImage';return true"
+                    onmouseout="window.status=''"><b>Weiche Typ B</b></a></font>
+  </td>
+  </tr>
+  <tr>
+  <td align="center"><table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Geo_SwitchA_00s.jpg" border="0" width="200" height="80"
+                   alt="Switch Type A" title="Switch Type A"></a></td>
+            </tr></table>
+  </td>
+ <td align="center">
+  <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Geo_SwitchB_00s.jpg" border="0" width="200" height="80"
+                   alt="Switch Type B" title="Switch Type B"></a></td>
+            </tr></table>
+  </td>
+  </tr>
+  <tr>
+  <td align="center">
+  <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Geo_SwitchA_Level_Junction_00s.jpg" border="0" width="200" height="100"
+                   alt="Weiche + Kreuzung Typ A" title="Weiche + Kreuzung Typ A"></a></td>
+            </tr></table>
+  </td>
+  <td align="center">
+  <table align="center" border="2" bgcolor="#efefef"
+            bordercolor="#c0c0c0" bordercolordark="#ffffff"  bordercolorlight="#808080">
+            <tr><td>
+              <img src="im/Geo_SwitchB_Level_Junction_00s.jpg" border="0" width="200" height="100"
+                   alt="Weiche + Kreuzung Typ B" title="Weiche + Kreuzung Typ B"></a></td>
+            </tr></table>
+  </td>
+  </tr>
+  </table>
+</td>
+</tr>
+<tr><td colspan="2"><hr></td></tr>
+<tr>
+<td valign="top">
+
+<br>
+<b>Texturen der Schienen und Schwellen:</b><br>
+<font size="-1">
+ Die Textures sind als Default-Texturen in den Makros jedes einzenen Gleiselements deklariert
+ (m&ouml;glicherweise wird dies etwas ver&auml;ndert in einer sp&auml;teren Version meines 'Rail Track System's)<br>
+ Die Texturen der Schienen (rails) sind <b>RailToptex</b> und <b>Railtext, Railtex2, Railtex3</b>, // heller zu dunkler.<br>
+ Die Texturen der Schwellen (ties) sind <b>Tietex1, Tietex2, Tietex3</b>.<br>
+ Wenn man hier andere Texturen definieren will,
+ so sollte dies vor dem Aufruf der entsprechenden Include-Datei erfolgen.
+  </td>
+  <td>
+  </td>
+
+</td></tr>
+<tr><td colspan="2"><hr></td></tr>
+</table>
+
+<br>
+<br>
+<br>
+
+</td>
+</tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2011<br>
+    <a href="http://www.f-lohmueller.de" target="_new"><nobr>www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+ <td align="right">
+&nbsp;</td>
+ <td align="right" width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

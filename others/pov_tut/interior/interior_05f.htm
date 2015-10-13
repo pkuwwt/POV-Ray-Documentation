@@ -1,0 +1,208 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Conception du Int&eacute;rieur des Objets transparents avec POV-Ray</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index">
+<meta name="robots" content="follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2009, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="description" content="Conception du int&eacute;rieur des objets transparents avec POV-Ray par interior, une introduction au langage de description sc&eacute;nique de POV-Ray">
+<meta name="keywords" content="POV, POVRAY, POV-Ray, povray, traceur de rayons, raytracing, infographie, 3D computer graphics, textures, formes transparent, interior, material, media">
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=690,height=545");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<a name="top"></a>
+<table width="100%" border="0"><tr>
+ <td valign="top"><h6><nobr>Descriptions et exemples pour le POV-Ray raytracer</nobr>
+                  <nobr>par Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3" width="95%" align="left">
+ <div align="center">
+      <font size="5"> <b>Conception du Int&eacute;rieur des Objets transparents</b></font>
+      <font size="-1"><b>avec POV-Ray</b</font></div>
+ </td></h6>
+ </td>
+ <td align="right">
+        <a href="interior_05e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="interior_05e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="interior_05i.htm"><font size="2">Italiano</font></a>
+        <a href="interior_05i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="interior_05d.htm"><font size="2">Deutsch </font></a>
+        <a href="interior_05d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" alt="Deutsch" titel="Deutsch"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'Accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriels POV-Ray</nobr></b></a><br>
+<br>
+<br>
+<nobr> &nbsp; <a href="interior_000f.htm">Table des mati&egrave;res - Index</b></a></nobr><br>
+ &nbsp; <a href="interior_000f.htm">material, interior, media</b></a><br>
+<br>
+&nbsp; -  <!--a href="interior_05f.htm"--><b>Syntaxe material, </b></a><br>
+&nbsp; &nbsp; &nbsp; <!--a href="interior_05f.htm"--><b> texture et interior</b></a> <br>
+&nbsp; -  <a href="interior_03f.htm">Verre &agrave; Vitres
+</b></a><br>
+ &nbsp; &nbsp; &nbsp; + max_trace_level <br>
+&nbsp; -  <a href="interior_001f.htm">fog - Brouillard</b></a><br>
+&nbsp; Media</b></a> <br>
+&nbsp; -  <a href="interior_10f.htm">Syntaxe Media</b></a> <br>
+&nbsp; -  <a href="interior_30f.htm">Media+Density Maps</b></a> <br>
+&nbsp; Atmospheric Media</b></a> <br>
+&nbsp; &nbsp; with/without density map <br>
+&nbsp; -  <a href="interior_20f.htm">Rayons en Brouillard</b></a> <br>
+&nbsp; Object Media</b></a> <br>
+&nbsp; Emitting Media</b></a> <br>
+&nbsp; -   <a href="interior_40f.htm">&Eacute;p&eacute;e de Lumi&egrave;re</b></a> <br>
+&nbsp; -   <a href="interior_44f.htm">Flamme de Bougie</b></a> <br>
+&nbsp; Scattering Media</b></a> <br>
+&nbsp; -   <a href="interior_50f.htm">Lumi&egrave;re par la Fen&ecirc;tre </b></a><br>
+&nbsp; -   <a href="interior_70f.htm">Vapeur, Fum&eacute;e, Nuages</b></a> <br>
+&nbsp; Absorbing Media</b></a> <br>
+&nbsp; -   <a href="interior_60f.htm">Trombe</b></a> <br>
+
+<nobr>&nbsp; Probl&egrave;mes sp&eacute;cials avec Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_080f.htm">Changer l'&eacute;chelle du Media</b></a></nobr><br>
+<nobr>&nbsp; -  <a href="interior_090f.htm">Chevauchement du Media</b></a></nobr><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </nobr>
+ </font>
+
+</td><td valign="top" rowspan="2"> <!-- Content -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<table border="0" width="90%" align="center"><tr><td>           <!-- inner table -->
+
+<h1 align="center"><b>Syntaxe de &quot;material&quot;<br></b>
+</h1>
+
+<p align="center">Le <b>Syntaxe</b>
+ pour  <b>&quot;material&quot;</b>,<b>&quot;texture&quot;</b>
+ et <b>&quot;interior&quot;</b> an einem einfachen Beispiel:</p>
+
+<div align="center">
+<table border="1" cellspacing="2" cellpadding="4" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+ <tr><td>
+<font face="Arial, Verdana, Helvetica">
+<pre>sphere{ &lt;0,0,0&gt;, 1
+        translate&lt;0,1,0&gt;
+        <b>material{</b>
+          <b>texture {</b> pigment{ color rgbt&lt;1,1,1,0.5&gt;</b>}
+                    normal { bumps 0.5 scale 0.025 }
+                    finish { phong 1.0 }
+                  <b>}</b> // fin de texture
+          <b>interior{</b> ior 1.5
+                    caustics 0.25
+                  <b>}</b> // fin de interior
+          <b>}</b> //fin de material
+      } // fin de sphère</b></td></pre>
+
+ </tr>
+</table>
+<p align="left">
+ <b>material{...}&quot;</b> est un conteneur pour les qualit&eacute;s suivantes:<br>
+ <b>texture {...}&quot;</b> est un conteneur pour les qualit&eacute;s du <b>Surface</b> (texture)<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <font size="-1">(coloration, rugosit&eacute;, clart&eacute;, brillance, transparence)</font> et <br>
+<b>interior {...}&quot;</b>  est un conteneur pour les qualit&eacute;s du <b>interieur du corps</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <font size="-1">(index de r&eacute;fraction = ior, caustique , absorption de lumi&egrave;re, dispersion)</font> . <br>
+</font>
+  <div align="left">
+  <p align="justify"><font size="-1">La <nobr>&quot;texture{...}&quot;</nobr> est aussi  un conteneur pour
+les qualit&eacute;s <nobr>&quot;pigment{...}&quot;</nobr> (coloration) et <nobr>&quot;normal{...}&quot;</nobr> (deformation simulul&eacute;e du surface) et <nobr>&quot;finish{...}&quot;</nobr> (clart&eacute;, brillance, transparence) .<br>
+Toutes cesqualit&eacute;s (pigment, normal, finish und interior) on peut aussi utiliser sans les conteneurs correspondant,
+comme <b><nobr>material{...}</nobr></b> bzw.<b><nobr>texture{...}</nobr></b>. <br>
+Les conteneurs <nobr>&quot;<b>texture{...}</b>&quot;</nobr> et <nobr>&quot;<b>material{...}</b>&quot;</nobr>
+sont tr&egrave;s utile, quand on veut transformer une qualit&eacute; relativ au corps ou
+quand on veut d&eacute;finer un material ou une texture &agrave; laide de &quot;#declare&quot; avec une  variable.</font>
+</p></div>
+<div align="center">
+
+<table >
+<tr>
+ <td><h6>
+   <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/interior_01.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table><b>
+    De droit a gauche :  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sans transparence,<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; avec transparence, sand ior,<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; avec ior (Brechung), sans caustics, <br>
+    avec ior + caustics.</b>
+ </td></h6>
+ <td><h6>
+    <table border="1" cellspacing="0" cellpadding="0" bgcolor="#fbfaf9"
+     bordercolor="#C0C0C0" bordercolorlight="#FFFFFF" bordercolordark="#808080">
+    <tr><td><img src="im/interior_02.jpg" width="320"  height="240"  vspace="0" hspace="0"></td>
+    </tr></table>
+     &nbsp Demonstration de la  <b>r&eacute;fraction avec ior + caustics</b><br>
+     &nbsp;<br>
+     &nbsp;<br>
+     &nbsp;
+</td></h6>
+</tr><tr>
+<td><hr size="3"></td>
+</tr><tr>
+<td colspan="2"><h5>
+<font size="+1"><b>interior</b></font><br>
+Interior r&eacute;glage &agrave; d&eacute;faut (default values):<br>
+<pre>
+ior                : 1.0
+caustics           : 0.0 //  > 0 simulation de caustiques - ; ne varie pas avec la distance et
+                         // est limité aux partes à l'ombre des objets transparente!
+                         // 0.25, ~ 1  - 2
+dispersion         : 1.0 // Simulation de dispersion par réfraction
+dispersion_samples : 7
+fade_distance      : 0.0 (0=off) = distance a moyen intensité -
+                         = reduction de l'intensité avec la distance
+fade_power         : 0.0 (0=off)  (realiste: 1~2,
+                                  >=1000 -> fonction d'éteindre exponentielle realiste!
+fade_color         : &lt;0,0,0&gt;</pre>
+
+</h5>
+</td>
+</tr>
+</table>
+</div>
+
+
+
+</td></tr>
+</table> <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                                                                  <!-- end of inner table -->
+
+</td></tr>
+<tr><td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table> <!-- end of global table -->
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td>
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2009<br>
+    <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+</td>
+</tr></table><!-- end footer -->
+</body>
+</html>

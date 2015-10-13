@@ -1,0 +1,299 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="de">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller, Friedrich Lohmueller">
+<meta name="copyright" content="Copyright 2012, Friedrich A. Lohmueller">
+<meta name="keywords" content="Beschleunigung und Bremsen, nichtlineare Bewegungen, realistischen Beschleunigung, realistische Verz&ouml;gerung, 3D-Animationen, POV, POV-Ray, POVRAY, Raytracing, 3D-Grafik, 3D-Graphik, mpeg Video, avi Video, animierte Gifs, Raytracing Beschreibungen, POV-Ray Beispiele, POV-Ray Anleitungen">
+<meta name="Description" content="Beschleunigung und Bremsen - Nichtlineare Bewegungen in Animationen zur realistischen Beschleunigung und Verz&ouml;gerung - 3D-Animationen mit POV-Ray -  deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen zu 3D-Graphik mittels Raytracing und photorealistischer Computergraphik">
+<title>Beschleunigung und Bremsen - 3D-Animationen mit POV-Ray - deutsche Beschreibungen zum Raytracer POV-Ray mit Beispielen
+       zur 3D-Graphik mittels Raytracing und photorealistischer Computergraphik</title>
+
+<link rel="stylesheet" type="text/css" href="../lo1style.css">
+</head>
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<!-- header -->
+<table width="100%" border="0"><tr>
+
+ <td valign="top"><h6><nobr>Beschreibungen und Beispiele zum Raytracer POV-Ray</nobr>
+                  <nobr>von Friedrich A. Lohm&uuml;ller</nobr>
+ <hr size="3">
+ <div align="center">
+ <table width="90%"><tr><td>
+   <table align="center" border="0" cellspacing="2" cellpadding="0" width="120">
+   <tr>
+    <td width="120" height="75" align="center" valign="top">
+      <a href="../pov__ger.htm#ani"><img src="lo15a120.gif" alt="logo" width="120"  height="75" border="0"
+      alt="zur&uuml;ck zur &Uuml;bersicht" title="zur&uuml;ck zur &Uuml;bersicht"></a></td>
+    </td>
+   </tr>
+  </table></td>
+  <td align="center">
+      <font size="5"> &nbsp; &nbsp; 3D Animationen mit POV-Ray</b></font><br>
+      <font size="-1"> &nbsp; &nbsp; &nbsp; &nbsp; Grundlagen und Beispiele zu Animationen.</b</font></div>
+  </td></tr></table></td></h6>
+ <td align="right">
+        <a href="anim222e.htm"><font size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+        <a href="anim222e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+        <a href="anim222i.htm"><font size="2">Italiano</font></a>
+        <a href="anim222i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+        <a href="anim222f.htm"><font size="2">Fran&ccedil;ais</font></a>
+        <a href="anim222f.htm"><img src="flag_fra.gif" alt="fran&ccedil;ais" title="fran&ccedil;ais"align="bottom" width="22" height="15" border="0"></a><br>
+    </td>
+</tr></table>
+<a name="start"></a>
+<!--hr size="3"-->
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_d.htm"> Home</b></a><br>
+ - <a href="../../pov_anim/ani_0d.htm"> Animationen Galerie</b></a><br>
+ - <a href="../pov__ger.htm"> <nobr>POV-Ray Tutorial</nobr></b></a><br>
+<br>
+ &nbsp;&nbsp;<a href="pov_anid.htm">3D Animation</b></a><br>
+ &nbsp; Inhalts&uuml;bersicht<br>
+&nbsp; <!--a href="anim001d.htm"-->  0. Grundlagen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim001d.htm">Beispiel</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim002d.htm">Von Bildern zum Video</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim005d.htm">Grundbegriffe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim008d.htm">Animationsbefehle</b></a><br>
+&nbsp; <!--a href="anim11d.htm"--> I. Zyklische Animationen</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim11d.htm">Objekt-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.2. <a href="anim112d.htm">Planeten im Orbit</b></a><br>
+&nbsp; &nbsp;&nbsp; 1.3. <a href="anim113d.htm">Animierte Uhr</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim12d.htm">Kamera-Rotation</b></a><br>
+&nbsp; &nbsp;&nbsp; 2.1. <a href="anim121d.htm">Kamera Geradeausflug</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim13d.htm">Western-Kutschen</b></a><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="anim13d.htm">-Problem</b></a><br>
+&nbsp; &nbsp;&nbsp; 3.1. <a href="anim131d.htm">Rollende R&auml;der</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim14d.htm">Zahnradgetriebe</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.1. <a href="anim141d.htm">Rollende Kette</b></a><br>
+&nbsp; &nbsp;&nbsp; 4.2. <a href="anim142d.htm">Fahrradkette</b></a><br>
+&nbsp; &nbsp;&nbsp; 5. <a href="anim15d.htm">Pendelschwingung</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.1. <a href="anim151d.htm">Newtonpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 5.2: <a href="anim152d.htm">Schaukelstuhl</b></a><br>
+&nbsp; &nbsp;&nbsp; 6. <a href="anim16d.htm">Federpendel</b></a><br>
+&nbsp; &nbsp;&nbsp; 7. <a href="anim170d.htm">Koppelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 7.1. <a href="anim17d.htm">Pleuelstange</b></a><br>
+&nbsp; &nbsp;&nbsp; 8. <a href="anim18d.htm">Psychedelic + Op-Art</b></a><br>
+&nbsp; &nbsp;&nbsp; 9. <a href="anim190d.htm">Z&auml;hler + Countdowns</b></a><br>
+&nbsp; &nbsp;&nbsp;10. <a href="anim200d.htm">Faltung eines W&uuml;rfels</b></a><br>
+
+&nbsp; II. Nichtlineare Bewegungen<br>
+&nbsp; <b>&gt</b> 1.1 <a href="anim220d.htm">Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim220d.htm"> + Bremsen 1</b></a><br>
+&nbsp; <b>&gt</b> 1.0 <!--a href="anim222d.htm"--><b>Beschleunigung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <!--a href="anim222d.htm"--><b> + Bremsen 2</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim240d.htm">Fallen + H&uuml;pfen</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim260d.htm">Beschleunigung nach</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim260d.htm">physikalischen Formeln</b></a><br>
+&nbsp; &nbsp;&nbsp; 4. <a href="anim280d.htm">Geschwindigkeitssteuerung</b></a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="anim280d.htm">mit Spline-Funktionen</b></a><br>
+
+&nbsp; <!--a href="anim2d.htm"--> III. Animationspfade<br>&nbsp; &nbsp; &nbsp;  mit Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 1. <a href="anim210d.htm">Spline-Kurven</b></a><br>
+&nbsp; &nbsp;&nbsp; 2. <a href="anim21d.htm">Geschlossene Splines</b></a><br>
+&nbsp; &nbsp;&nbsp; 3. <a href="anim22d.htm">Animationspfade</b></a><br>
+
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column -->
+<!--- end of header -->
+<a name="top"></a>
+<a name="start"></a>
+
+<table align="center" width="95%" cellpadding="3">
+<tr><td width="10%"><img src="im/smoothy01s.gif" border="1" width="80" height="80"></td>
+    <td>
+     <h1>Beschleunigung und Abbremsen (2)<br>
+      <font size="-1">Nichtlineare Bewegungen in Animationen zur realistischen Beschleunigung und Verz&ouml;gerung mittels elementarer Funktionen in POV-Ray.</font></td></h1>
+</tr>
+</table>
+<table width="85%" align="center" cellpadding="10"><!--1-->
+<tr>
+ <td colspan="1" valign="top">
+  <p align="justify"><font size="+1"><b>Realistischere Simulation von<br>
+   <nobr>Beschleunigung und Verz&ouml;gerung</font></b></nobr><br>
+   <nobr>bei Start und Ende mit v = 0 und a = 0.</nobr></b><br>
+<br>
+Bei der Approximation durch<br>
+<b>f(x)= (0.5-0.5*cos(  pi*x))</b> oder<br>
+<b>f(x)= - 2*x<sup>3</sup>+ 3*x<sup>2</sup></b><br>
+haben wir f(0) = 0, f(1) = 1<br>
+und f'(0)=f'(1)=0.<br>
+<br>
+Bei einer Bewegung, welche mit v = 0 und a = 0 startet und endet,
+sollte man besser eine Funktion verwenden,
+welche nicht nur die 1.Ableitung f'(0)=0 (Start) und f'(1)=0 (Ende) hat.
+Vielmehr ben&ouml;tigen wir eine Funktion, welche auch eine
+<b>2. Ableitung</b><br>
+ mit f''(0) = f''(1) = 0 besitzt, wie <br>
+ f(x) = 6x<sup>5</sup> - 15x<sup>4</sup> + 10x<sup>3</sup></b> =<br>
+ f(x) = x&sdot;x&sdot;x&sdot;(10+x&sdot;(6&sdot;x-15))<br>
+Der Unterschied ist offensichtlich wie nebenstehende Abbildung zeigt.
+</b>
+
+ </td>
+ <td colspan="2">
+  <h6 align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/Smoothing_functions01.jpg" width="320" height="320" alt="Smoothing_function" title="Smoothing_function"></td></tr>
+   </table>
+  f(X)= 3*X*X - 2*X*X*X [orange] und<br>
+  f(X)= X*X*X*(10+X*(6*X-15)) [gr&uuml;n]
+
+ </td>
+</tr>
+<tr>
+<td>
+<font size="-1">4 n&uuml;tzlliche Makros:</font>
+<table border="1" bgcolor="#f8f8f0"><tr>
+<td>
+<pre><b>//---------------------------
+#macro Smoothy_01 ( X )
+  X*X*X*(10+X*(6*X-15))
+#end
+//---------------------------
+#macro Smoothy_010 ( X )
+  #if( X &lt;= 0.5 )
+ (X*2)*(X*2)*(X*2)
+  *(10+(X*2)*(6*(X*2)-15))
+  #else
+  1-((X*2-1)*(X*2-1)*(X*2-1)
+  *(10+(X*2-1)*(6*(X*2-1)-15)))
+  #end
+#end
+//---------------------------
+#macro Smoothy_10 ( X )
+  1-X*X*X*(10+X*(6*X-15))
+#end
+//---------------------------
+#macro Smoothy_101( X )
+  #if( X &lt;= 0.5 )
+  1-((X*2)*(X*2)*(X*2)
+     *(10+(X*2)*(6*(X*2)-15)))
+  #else
+  (X*2-1)*(X*2-1)*(X*2-1)
+  *(10+(X*2-1)*(6*(X*2-1)-15))
+  #end
+#end
+//---------------------------</b></td></pre></tr> </table>
+
+<td colspan="1" valign="top">
+  <p align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy01.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table><font size="1">macro 'smoothy01( TIME )'<br>
+    <b>Start smooth, end smooth.</b><br>&nbsp;</font></p>
+
+
+  <p align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy10.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table><font size="1">macro 'smoothy10( TIME )'<br>
+    <b>Start smooth, end smooth.</b></font></p>
+
+</td>
+<td colspan="1" valign="top">
+  <p align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy010.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table><font size="1">macro 'smoothy010( TIME )'<br>
+   <b>Start smooth, return smooth,<br>
+             come back and end smooth.</b></font></p>
+  <p align="center"><table align="center" border="2" bgcolor="#EFEFEF"
+         bordercolor="#c0c0c0" bordercolordark="#808080"  bordercolorlight="#ffffff">
+  <tr><td><img src="im/smoothy101.gif" width="160" height="160" alt="speed up and slow down" title="speed up and slow down"></td></tr>
+   </table><font size="1">macro 'smoothy101( TIME )'<br>
+      <b>Start smooth, return smooth,<br>
+             come back and end smooth.</b></font></font></p>
+</td>
+
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+</table>
+
+<table width="85%" align="center" cellpadding="10"><!--1-->
+<!--tr><td colspan="2"><hr></td></tr-->
+<tr>
+ <td colspan="3" valign="top">
+   <font size="+1"><b>Berechnung einer Polynom-Funktion des 5.Grades:</b></font><br>
+   Wir suchen eine Funktion mit f(0)=0 und f(1) = 1 und<br>
+   der 1. und 2. Ableitung = 0 bei &lt;0/0&gt; und &lt;1/1&gt;.<br>
+   <br>
+  Allgemeine Form:
+  <b>&nbsp;f(x) =&nbsp; &nbsp; &nbsp;a&sdot;x<sup>5</sup> +&nbsp;&nbsp;&nbsp; &nbsp; b&sdot;x<sup>4</sup> + &nbsp; &nbsp; c&sdot;x<sup>3</sup> + &nbsp;&nbsp; d&sdot;x<sup>2</sup> + e&sdot;x + f</b><br>
+  1.Ableitung:
+  <b>&nbsp;f'(x) =&nbsp; 5&sdot;a&sdot;x<sup>4</sup> + &nbsp; 4&sdot;b&sdot;x<sup>3</sup> + 3&sdot;c&sdot;x<sup>2</sup> + 2&sdot;d&sdot;x + e </b><br>
+  2.Ableitung:
+  <b>f''(x) = 20&sdot;a&sdot;x<sup>3</sup> + 12&sdot;b&sdot;x<sup>2</sup> + 6&sdot;c&sdot;x + 2&sdot;d </b><br>
+  Bedingungen beim Punkt &lt;0/0&gt;: &nbsp;
+  <b>f(0) = 0, f'(0) = 0, f''(0) = 0; </b><br>
+  Daraus ergibt sich:<b> f = 0, e = 0 und d = 0.</b><br>
+<br>
+  Reduzierte allgemeine Form:<br>
+  <b>&nbsp; f(x) =&nbsp;&nbsp; &nbsp; &nbsp; a&sdot;x<sup>5</sup> + &nbsp;&nbsp; &nbsp; b&sdot;x<sup>4</sup> + &nbsp;&nbsp; c*x<sup>3</sup></b><br>
+  <b>&nbsp;f'(x) =&nbsp;&nbsp; 5&sdot;a&sdot;x<sup>4</sup> + &nbsp; 4&sdot;b&sdot;x<sup>3</sup> + 3&sdot;c&sdot;x<sup>2</sup></b><br>
+  <b>f''(x) = 20&sdot;a&sdot;x<sup>3</sup> + 12&sdot;b&sdot;x<sup>2</sup> + 6&sdot;c&sdot;x</b><br>
+  Bedingungen beim Punkt &lt;1/1&gt;: &nbsp;
+  <b>f(1) = 1, f'(1) = 0, f''(1) = 0;</b> <br>
+ <br>
+  &nbsp; f(1) = <b>&nbsp;&nbsp; &nbsp;&nbsp; a  + &nbsp; &nbsp;&nbsp;&nbsp; b + &nbsp; &nbsp;&nbsp; c = 1 </b> (I)<br>
+  &nbsp;f'(1) = <b>&nbsp; 5&sdot;a + &nbsp; 4&sdot;b + 3&sdot;c = 0</b> (II)<br>
+   f''(1) = <b>20&sdot;a  + 12&sdot;b + 6&sdot;c = 0</b> (III)<br>
+<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;II : <b>&nbsp;&nbsp; 5a + 4b +3c = 0</b><br>
+  <u>&nbsp;-3&sdot;I: <b>&nbsp;-3a -&nbsp;3b - 3c = -3</b></u><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;=&gt;  &nbsp; 2a + b &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;= -3 </b>&nbsp; (IV)<br>
+  <br>
+  &nbsp;&nbsp; &nbsp; II : <b>&nbsp; &nbsp;5a + 4b +&nbsp;3c = 0</b><br>
+  <u>&nbsp;III/2 : <b>&nbsp;10a +&nbsp;6b +&nbsp;3c = 0</b></u><br>
+  &nbsp;&nbsp;&nbsp;<b>=&gt;  &nbsp; &nbsp; 5a + 2b &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 0 </b>&nbsp; (V)<br>
+  <br>
+  -2&sdot;IV : <b>&nbsp;-4a - 2b = 6</b><br>
+  <u>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; V : <b>&nbsp;5a +&nbsp;2b = 0</b></u><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<b>=&gt;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <u>a  &nbsp;= 6 </b></u><br>
+  <br>
+  a in IV : <b>&nbsp;12 + b = -3</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u><b>&nbsp;b = -15</b></u><br>
+<br>
+  a,b in I: <b>&nbsp;6 - 15 + c  = 1</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>-9 + c = 1</b><br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u><b>&nbsp;c = 10</b></u><br>
+ <br>
+  Die ergibt die Funktion<br>
+  <b>&nbsp; f(x) = &nbsp; 6&sdot;x<sup>5</sup> - 15&sdot;x<sup>4</sup> + 10&sdot;x<sup>3</sup></b><br>
+
+
+ </td>
+</tr>
+</table>
+
+
+
+</td>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+
+</div>
+
+<!--Footer  -->
+<hr size="3">
+<i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2012<br>
+   <a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></i></a><br>
+ <!-- COUNTERSTART -->
+ <script language="JavaScript" type="text/javascript" src="../../pphlogger.js"></script>
+ <noscript><img alt="" src="http://www.counterbox.de/counter/pphlogger.php?id=flohmuller&st=img"></noscript>
+ <!-- COUNTERENDE -->
+ </font>
+  </td>
+</tr></table>   
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="language" content="fr">
+<meta name="robots" content="index, follow">
+<meta name="Author" content="Friedrich A. Lohmueller">
+<meta name="copyright" content="Copyright 2015, Friedrich A. Lohmueller - all rights reserved worldwide">
+<meta name="copyright" content="Copyright Friedrich A. Lohmueller, 2013 - tous les droits d'auteur r&eacute;serv&eacute; - all rights reserved">
+<meta name="keywords" content="Arbres avec POV-Ray, Tutoriel POV-Ray, Didacticiel POV-Ray, raytracing, PoV, POVRAY, POV-Ray, povray, graphique 3d, infographie, info graphique, lancer de rayons, trac&eacute; de rayons, suivi de rayons, images photor&eacute;alistes">
+<meta name="Description" content="Didacticiel POV-Ray - Arbres avec POV-Ray">
+<title>Arbres avec POV-Tree - POV-Tree exemples originaux</title>
+
+<link rel="stylesheet" type="text/css" href="lo1style.css">
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+function ShowImage(ImageHtml) {
+ New=window.open(ImageHtml, "PictureWin", "status=0,scrollbars=0,resizable=1,width=520,height=705");
+ New.focus();  }
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="#d8d8d0" text="#505030" link="#006677" vlink="#445566" alink="#cc0055">
+
+<table width="100%" border="0"><tr>
+  <td valign="top"><font size="1"><nobr>Descriptions et exemples </nobr> pour le <nobr>raytracer POV-Ray</nobr>
+  <nobr>par Friedrich A. Lohm&uuml;ller</nobr></font>
+  <hr size="3">
+  <div align="center">
+      <font size="5">POV-Tree examples</font> &nbsp; &nbsp; &nbsp;</div>
+  </td>
+  <td align="right">
+     <a href="plants_420e.htm"><font face="Arial, Verdana, Helvetica" size="2">English </font><img src="flag_uk.gif" border="0" width="22" height="15" alt="English" titel="English"</a></nobr>
+     <a href="plants_420e.htm"><img src="flag_usa.gif" border="0" width="22" height="15" alt="English" titel="English"></a><br>
+     <a href="plants_420i.htm"><font size="2">Italiano </font></a>
+     <a href="plants_420i.htm"><img src="flag_ita.gif" alt="Italiano" title="Italiano"align="bottom" width="22" height="15" border="0"></a><br>
+     <a href="plants_420d.htm"><font size="2">Deutsch </font></a>
+     <a href="plants_420d.htm"><img src="flag_ger.gif" border="0" width="22" height="15" ALT="Deutsch" title="Deutsch"></a>
+  </td>
+</tr></table>
+<a name="start"></a>
+<hr size="3">
+<div align="center">
+<table border="0" width="100%" cellspacing="5">  <!--- global table -->
+<tr><td valign="top"> <!-- Index -->
+<font size="2">
+ <a href="../../index_f.htm">Page d'accueil</b></a><br>
+ - <a href="../pov__fra.htm"><nobr>Tutoriel POV-Ray</nobr></b></a><br>
+<br>
+<nobr> -  <a href="plants_00f.htm"><font size="+1">Plantes avec POV-Ray</font></b></a></nobr><br>
+<!--&nbsp;&nbsp; -  <a href="plants_200f.htm">Fibonacci + Random</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_300f.htm">Grass-Macros</b></a><br-->
+&nbsp;&nbsp;  -  <a href="plants_400f.htm">Arbres avec POV-Tree</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_410f.htm">POV-Tree exemples</b></a><br>
+&nbsp;&nbsp;&nbsp; <b>&gt;</b> <!--a href="plants_420f.htm"--><b>Textures pour POV-Tree</b></a><br>
+&nbsp;&nbsp; -  <a href="plants_500f.htm">Arbres avec Arbaro</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_510f.htm">Arbaro exemples</b></a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -  <a href="plants_520f.htm">Textures pour Arbaro</b></a><br>
+<!--&nbsp;&nbsp; -  <a href="plants_600f.htm">Feuilles + Fleurs</b></a><br-->
+<br>
+&nbsp;&nbsp; -  <a href="plants_050f.htm">D'autres exemples de plantes</b></a><br>
+<br>
+<nobr>&nbsp;&nbsp;-  <a href="../objects/obj_400i.htm">Objets de Plantes pr&ecirc;t &agrave; l'usage</b></a></nobr><br>
+&nbsp;&nbsp;-  <a href="../down/insertf_a.htm">Insert Menu Add-on</b></a><br>
+<nobr> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </nobr>
+</font>
+
+
+</td><td valign="top" rowspan="2"> <!-- Content - 2nd column  -->
+
+<table align="center">
+<tr>
+ <table><tr>
+   <tr nowrap>
+    <td width="100" align="center">
+     <table border="1"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+            bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+     <tr><td><img src="povtree/im/povtree_001_seasons.gif" width="80" height="80" hspace="0" vspace="0"></td>
+     </tr></table>
+   </td>
+   <td align="center" valign="middle" nowrap>
+     <font size="5"><nobr>&nbsp;Textures pour POV-Tree</font> &nbsp; &nbsp; &nbsp;</nobr></font><br>
+     <font size="1">Utilise JavaScript pour afficher des images en hautes r&eacute;solutions.</font>
+   </td>
+ </tr>
+</table>
+
+
+<div align="center">
+<table border="0" cellpadding="3" cellspacing="3" width="660">
+<tr>
+ <td colspan="2">
+   <p align="justify">Dans un fichier de donn&eacute;es POV-Tree d'un arbre blob ('Sauvegarder sous ...')<br>
+   there are declared the colors of the trunc (incl. branches and twigs).<br>
+   Also the colors of the leafs are declared in this file.<br>
+   We can change these values by opening this include file in POV-Tree<br>
+   and go to the according POV-Tree section to change the values.<br>
+   <br>
+  Une autre m&eacute;thode simple consiste &agrave; remplacer les valeurs en fonction de nouvelles d&eacute;clarations.<br>
+ <font size="1">  &nbsp;&nbsp; Pour plus de d&eacute;tails sur la fonction de tous les param&egrave;tres pour les arbres blob par TOMTREE.inc
+  voir l'inscription &agrave; &laquo; tomtree.txt &raquo;.<br></font>
+   <br>
+</td>
+</tr>
+<tr>
+<td colspan="1">
+<b><i>Changer les couleurs du feuillage :</i></b><br>
+<font size="2">L'arbre de blob de base tel que d&eacute;clar&eacute; par<br>
+ &quot;povtree_001.inc&quot; avec couleurs de printemps:</font><br>
+  <table border="2"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr>
+    <td valign="top" bgcolor="#ffffff">
+<pre><b>#include "povtree/trees/povtree_001.inc"
+<font color="#800000">// #declare NEW VALUES here!  </font>
+#include "povtree/TOMTREE-1.5.inc"
+//-----------------------------------
+#declare Tree_01 =
+object{ TREE double_illuminate hollow}
+//-----------------------------------
+object{ Tree_01
+        scale  4
+        rotate&lt;0, 0,0&gt;
+        translate&lt;0, 0.00,0&gt;
+      } //---------------------------</b></td></tr></pre>
+ </table>
+<font size="2" align="center"><b>Fichier de sc&egrave;ne complet pour POV-Ray :</b><br>
+ <a href="povtree/pov/povtree_001_spring.pov">&quot;povtree_001_spring.pov&quot;</a> et
+ <a href="povtree/pov/povtree_001.inc">&quot;povtree_001.inc&quot;</a></font>
+</td>
+<td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im/povtree_001_spring.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            <img src="povtree/im/povtree_001_spring_s.jpg" width="240" height="320" border="0" hspace="0" vspace="0"
+             title="Click for higher resolution!"></a></td>
+    </tr></table>
+    <div align="center"><font size="1"><i>Couleurs de printemps</i></font></div>
+</td>
+</tr>
+
+<tr>
+<td colspan="1">
+  <font size="2">Couleurs d'&eacute;t&eacute; :</font><br>
+  <table border="2"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr>
+    <td valign="top" bgcolor="#ffffff">
+<pre><b>#include "povtree/trees/povtree_001.inc"
+<font color="#800000">#declare LEAVES=300*BUNCHES;
+#declare BOTTOM_COLOR_1=&lt;0.3,0.4,0,0,0&gt;;
+#declare BOTTOM_COLOR_2=&lt;0.4,0.5,0,0,0&gt;;
+#declare TOP_COLOR_1=&lt;0.3, 0.5,0,0,0&gt;;
+#declare TOP_COLOR_2=&lt;0.3, 0.6,0,0,0&gt;;</font>
+#include "povtree/TOMTREE-1.5.inc"
+//-----------------------------------
+#declare Tree_01 =
+object{ TREE double_illuminate hollow}
+//-----------------------------------
+object{ Tree_01
+        scale  4
+        rotate&lt;0, 0,0&gt;
+        translate&lt;0, 0.00,0&gt;
+      } //---------------------------</b></td></tr></pre>
+ </table>
+<font size="2" align="center"><b>Fichier de sc&egrave;ne complet pour POV-Ray </b><br>
+ <a href="povtree/pov/povtree_001_summer.pov">&quot;povtree_001_summer.pov&quot;</a> et
+ <a href="povtree/pov/povtree_001.inc">&quot;povtree_001.inc&quot;</a></font>
+</td>
+<td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im/povtree_001_summer.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            <img src="povtree/im/povtree_001_summer_s.jpg" width="240" height="320" border="0" hspace="0" vspace="0"
+             title="Click for higher resolution!"></a></td>
+    </tr></table>
+    <div align="center"><font size="1"><i>Couleurs d'&eacute;t&eacute;</i></font></div>
+</td>
+</tr>
+
+<tr>
+<td colspan="1">
+  <font size="2">Couleurs d'automne :</font><br>
+  <table border="2"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr>
+    <td valign="top" bgcolor="#ffffff">
+<pre><b>#include "povtree/trees/povtree_001.inc"
+<font color="#800000">#declare LEAVES=150*BUNCHES;
+#declare BOTTOM_COLOR_1=&lt;0.6,0.4,0,0,0&gt;;
+#declare BOTTOM_COLOR_2=&lt;0.7,0.5,0,0,0&gt;;
+#declare TOP_COLOR_1=&lt;0.7, 0.5, 0, 0,0&gt;;
+#declare TOP_COLOR_2=&lt;0.8, 0.6, 0, 0,0&gt;;</font>
+#include "povtree/TOMTREE-1.5.inc"
+//-----------------------------------
+#declare Tree_01 =
+object{ TREE double_illuminate hollow}
+//-----------------------------------
+object{ Tree_01
+        scale  4
+        rotate&lt;0, 0,0&gt;
+        translate&lt;0, 0.00,0&gt;
+      } //---------------------------</b></td></tr></pre>
+ </table>
+<font size="2" align="center"><b>Fichier de sc&egrave;ne complet pour POV-Ray :</b><br>
+ <a href="povtree/pov/povtree_001_autumn.pov">&quot;povtree_001_autumn.pov&quot;</a> et
+ <a href="povtree/pov/povtree_001.inc">&quot;povtree_001.inc&quot;</a></font>
+
+</td>
+
+<td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im/povtree_001_autumn.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            <img src="povtree/im/povtree_001_autumn_s.jpg" width="240" height="320" border="0" hspace="0" vspace="0"
+             title="Click for higher resolution!"></a></td>
+    </tr></table>
+    <div align="center"><font size="1"><i>Couleurs d'automne</i></font></div>
+</td>
+</tr>
+<tr>
+<td colspan="1">
+
+
+ <font size="2">Couleurs d'hiver :</font><br>
+  <table border="2"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr>
+    <td valign="top" bgcolor="#ffffff">
+<pre><b>#include "povtree/trees/povtree_001.inc"
+<font color="#800000">#declare LEAVES=20*BUNCHES;
+#declare BOTTOM_COLOR_1=&lt;0.4,0.2,0.1,0,0&gt;;
+#declare BOTTOM_COLOR_2=&lt;0.3,0.2,0.1,0,0&gt;;
+#declare TOP_COLOR_1=&lt;0.4, 0.3, 0.2, 0,0&gt;;
+#declare TOP_COLOR_2=&lt;0.4, 0.3, 0.2, 0,0&gt;;</font>
+#include "povtree/TOMTREE-1.5.inc"
+//-----------------------------------
+#declare Tree_01 =
+object{ TREE double_illuminate hollow}
+//-----------------------------------
+object{ Tree_01
+        scale  4
+        rotate&lt;0, 0,0&gt;
+        translate&lt;0, 0.00,0&gt;
+      } //---------------------------</b></td></tr></pre>
+ </table>
+<font size="2" align="center"><b>Fichier de sc&egrave;ne complet pour POV-Ray :</b><br>
+ <a href="povtree/pov/povtree_001_winter.pov">&quot;povtree_001_winter.pov&quot;</a> et
+ <a href="povtree/pov/povtree_001.inc">&quot;povtree_001.inc&quot;</a></font>
+
+</td>
+
+<td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im/povtree_001_winter.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            <img src="povtree/im/povtree_001_winter_s.jpg" width="240" height="320" border="0" hspace="0" vspace="0"
+             title="Click for higher resolution!"></a></td>
+    </tr></table>
+    <div align="center"><font size="1"><i>Couleurs d'hiver</i></font></div>
+</td>
+</tr>
+<tr>
+<td colspan="1">
+
+
+ <font size="1">Couleurs d'hiver et de la neige :</font><br>
+  <table border="2"  bgcolor="#EFEFEF" cellpadding="0" cellspacing="0"
+        bordercolor="#C0C0C0" bordercolordark="#FFFFFF"  bordercolorlight="#808080">
+  <tr>
+    <td valign="top" bgcolor="#ffffff">
+<pre><b>#include "povtree/trees/povtree_001.inc"
+<font color="#800000">// winter
+#declare LEAVES= 1*BUNCHES;
+#declare BOTTOM_COLOR_1=&lt;0.4,0.2,0.1,0,0&gt;;
+#declare BOTTOM_COLOR_2=&lt;0.3,0.2,0.1,0,0&gt;;
+#declare TOP_COLOR_1=&lt;0.4,0.3,0.2,0,0&gt;;
+#declare TOP_COLOR_2=&lt;0.4,0.3,0.2,0,0&gt;;</font>
+#include "povtree/TOMTREE-1.5.inc"
+//-----------------------------------
+#declare Tree_01 =
+object{ TREE double_illuminate hollow}
+//-----------------------------------
+<font color="#800000">// snow
+#declare SUNKEN_TRUNK_COLOR=&lt;1,1,1&gt;*1.3;
+#declare RAISED_TRUNK_COLOR=&lt;1,1,1&gt;*1.3;
+#declare FOLIAGE_COLOR_AT_BRANCH_END=0;
+#declare LEAVES=0*BUNCHES;</font>
+#include "povtree/TOMTREE-1.5.inc"
+//-----------------------------------
+#declare Tree_01s =
+object{ TREE double_illuminate hollow}
+//-----------------------------------
+union{
+  object{ Tree_01 }
+  object{ Tree_01s scale&lt;1.25,1,1&gt;
+          translate&lt;0.015,0,-0.005&gt;}
+  scale  4
+  rotate&lt;0, 0,0&gt;
+  translate&lt;0, 0.00,0&gt;
+} //---------------------------------</b></td></tr></pre>
+ </table>
+<font size="2" align="center"><b>Fichier de sc&egrave;ne complet pour POV-Ray :</b><br>
+ <a href="povtree/pov/povtree_001_snow.pov">&quot;povtree_001_snow.pov&quot;</a> et
+ <a href="povtree/pov/povtree_001.inc">&quot;povtree_001.inc&quot;</a></font>
+
+</td>
+
+<td>
+  <table border="3" bgcolor="#EFEFEF" cellpadding="0"
+         bordercolor="#C0C0C0" bordercolordark="#808080"  bordercolorlight="#FFFFFF">
+    <tr><td><a href="javascript:ShowImage('povtree/im/povtree_001_snow.htm')"
+                    onMouseover="window.status='ShowSingleImage';return true"
+                    onMouseOut="window.status=''">
+            <img src="povtree/im/povtree_001_snow_s.jpg" width="240" height="320" border="0" hspace="0" vspace="0"
+             title="Click for higher resolution!"></a></td>
+    </tr></table>
+
+     <font size="1"><i>Couleurs d'hiver et de la neige</i></font><br>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<!--div align="center"><b>
+<a href="plants_00f.htm">0</a> |
+<a href="plants_100f.htm">1</a>  | <a href="plants_200f.htm">2</a> | <a href="plants_300f.htm">3</a> |
+<a href="plants_400f.htm">4</a> | <a href="plants_500f.htm">5</a> | <a href="plants_600f.htm">6</a> |
+<a href="plants_700f.htm">7</a> | <a href="plants_800f.htm">8</a></b></div-->
+ </td>
+</tr>
+
+
+</table>
+</div>
+
+
+</td></tr>
+<tr>
+<td valign="middle" align="center"><a href="#top">top</a>
+</td></tr></table>
+</div>
+<!-- footer -->
+<hr size="3">
+<table width="95%" align="center"><tr>
+<td><i><font size="-1">&copy; Friedrich A. Lohm&uuml;ller, 2014<br>
+   homepage:<a href="http://www.f-lohmueller.de"><nobr>http://www.f-lohmueller.de</nobr></font></i></a>
+</td>
+ <td  align="right">
+&nbsp;</td>
+ <td align=right  width="25%">
+&nbsp;</td>
+</tr></table><!-- end footer -->
+</body>
+</html>
